@@ -515,7 +515,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_1:
+    interop_wsbpjs_1:
       rule: "PathPrefix(`/v1.0/wsbpjs/referensi-jadwal-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -523,7 +523,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_2:
+    interop_wsbpjs_2:
       rule: "PathPrefix(`/v1.0/wsbpjs/referensi-poli`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -531,7 +531,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_3:
+    interop_wsbpjs_3:
       rule: "PathPrefix(`/v1.0/wsbpjs/referensi-poli-fingerprint`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -539,7 +539,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_4:
+    interop_wsbpjs_4:
       rule: "PathPrefix(`/v1.0/wsbpjs/referensi-pasien-fingerprint`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -547,7 +547,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_5:
+    interop_wsbpjs_5:
       rule: "PathPrefix(`/v1.0/wsbpjs/update-jawal-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -555,7 +555,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_6:
+    interop_wsbpjs_6:
       rule: "PathPrefix(`/v1.0/wsbpjs/tambah-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -563,7 +563,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_7:
+    interop_wsbpjs_7:
       rule: "PathPrefix(`/v1.0/wsbpjs/tambah-antrian-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -571,7 +571,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_8:
+    interop_wsbpjs_8:
       rule: "PathPrefix(`/v1.0/wsbpjs/update-waktu-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -579,7 +579,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_9:
+    interop_wsbpjs_9:
       rule: "PathPrefix(`/v1.0/wsbpjs/batal-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -587,7 +587,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_10:
+    interop_wsbpjs_10:
       rule: "PathPrefix(`/v1.0/wsbpjs/list-waktu-task-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -595,7 +595,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_11:
+    interop_wsbpjs_11:
       rule: "PathPrefix(`/v1.0/wsbpjs/dashboard-per-tanggal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -603,7 +603,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_12:
+    interop_wsbpjs_12:
       rule: "PathPrefix(`/v1.0/wsbpjs/dashboard-per-bulan`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -611,7 +611,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_13:
+    interop_wsbpjs_13:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-tanggal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -619,7 +619,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_14:
+    interop_wsbpjs_14:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-kode-booking`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -627,7 +627,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_15:
+    interop_wsbpjs_15:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-belum-dilayanai`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -635,7 +635,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-wsbpjs_16:
+    interop_wsbpjs_16:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-parameters`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -643,7 +643,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-tambah-antrian_1:
+    interop_tambah-antrian_1:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -651,7 +651,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-tambah-antrian_2:
+    interop_tambah-antrian_2:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -659,7 +659,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-tambah-antrian_3:
+    interop_tambah-antrian_3:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -667,7 +667,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-tambah-antrian_4:
+    interop_tambah-antrian_4:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -675,7 +675,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-tambah-antrian_5:
+    interop_tambah-antrian_5:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -683,7 +683,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-tambah-antrian_6:
+    interop_tambah-antrian_6:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -691,7 +691,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-task-id_1:
+    interop_task-id_1:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -699,7 +699,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-task-id_2:
+    interop_task-id_2:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -707,7 +707,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-task-id_3:
+    interop_task-id_3:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -715,7 +715,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-task-id_4:
+    interop_task-id_4:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -723,7 +723,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-task-id_5:
+    interop_task-id_5:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -731,7 +731,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-task-id_6:
+    interop_task-id_6:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -739,7 +739,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-task-id_7:
+    interop_task-id_7:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/update-by-booking-taskid/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -747,7 +747,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-task-id_8:
+    interop_task-id_8:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn-harian-parshing-waktu`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -755,7 +755,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_1:
+    interop_ws-antrian_1:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/token`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -763,7 +763,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_2:
+    interop_ws-antrian_2:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/status-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -771,7 +771,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_3:
+    interop_ws-antrian_3:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -779,7 +779,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_4:
+    interop_ws-antrian_4:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -787,7 +787,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_5:
+    interop_ws-antrian_5:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/batal-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -795,7 +795,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_6:
+    interop_ws-antrian_6:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/batal-antrian/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -803,7 +803,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_7:
+    interop_ws-antrian_7:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/sisa-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -811,7 +811,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_8:
+    interop_ws-antrian_8:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/sisa-antrian/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -819,7 +819,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_9:
+    interop_ws-antrian_9:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/check-in`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -827,7 +827,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_10:
+    interop_ws-antrian_10:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/check-in/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -835,7 +835,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_11:
+    interop_ws-antrian_11:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/pasien-baru`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -843,7 +843,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_12:
+    interop_ws-antrian_12:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-rs`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -851,7 +851,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_13:
+    interop_ws-antrian_13:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-rs/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -859,7 +859,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_14:
+    interop_ws-antrian_14:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -867,7 +867,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_15:
+    interop_ws-antrian_15:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-pasien/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -875,7 +875,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_16:
+    interop_ws-antrian_16:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -883,7 +883,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_17:
+    interop_ws-antrian_17:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/status-antrian-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -891,7 +891,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_18:
+    interop_ws-antrian_18:
       rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian/v02/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -899,7 +899,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_19:
+    interop_ws-antrian_19:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -907,7 +907,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_20:
+    interop_ws-antrian_20:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn-harian`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -915,7 +915,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-ws-antrian_21:
+    interop_ws-antrian_21:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/update-parsing-waktu`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
@@ -1339,7 +1339,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_1:
+    interop_inacbg_1:
       rule: "PathPrefix(`/v1.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1347,7 +1347,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_2:
+    interop_inacbg_2:
       rule: "PathPrefix(`/v1.0/inacbg/update-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1355,7 +1355,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_3:
+    interop_inacbg_3:
       rule: "PathPrefix(`/v1.0/inacbg/delete-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1363,7 +1363,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_4:
+    interop_inacbg_4:
       rule: "PathPrefix(`/v1.0/inacbg/set-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1371,7 +1371,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_5:
+    interop_inacbg_5:
       rule: "PathPrefix(`/v1.0/inacbg/grouper-stage-1`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1379,7 +1379,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_6:
+    interop_inacbg_6:
       rule: "PathPrefix(`/v1.0/inacbg/grouper-stage-2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1387,7 +1387,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_7:
+    interop_inacbg_7:
       rule: "PathPrefix(`/v1.0/inacbg/finalisasi-klaim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1395,7 +1395,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_8:
+    interop_inacbg_8:
       rule: "PathPrefix(`/v1.0/inacbg/reedit-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1403,7 +1403,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_9:
+    interop_inacbg_9:
       rule: "PathPrefix(`/v1.0/inacbg/send-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1411,7 +1411,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_10:
+    interop_inacbg_10:
       rule: "PathPrefix(`/v1.0/inacbg/send-claim-individual`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1419,7 +1419,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_11:
+    interop_inacbg_11:
       rule: "PathPrefix(`/v1.0/inacbg/pull-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1427,7 +1427,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_12:
+    interop_inacbg_12:
       rule: "PathPrefix(`/v1.0/inacbg/get-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1435,7 +1435,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_13:
+    interop_inacbg_13:
       rule: "PathPrefix(`/v1.0/inacbg/get-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1443,7 +1443,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_14:
+    interop_inacbg_14:
       rule: "PathPrefix(`/v1.0/inacbg/delete-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1451,7 +1451,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_15:
+    interop_inacbg_15:
       rule: "PathPrefix(`/v1.0/inacbg/claim-print`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1459,7 +1459,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_16:
+    interop_inacbg_16:
       rule: "PathPrefix(`/v1.0/inacbg/search-diagnosis`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1467,7 +1467,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_17:
+    interop_inacbg_17:
       rule: "PathPrefix(`/v1.0/inacbg/search-procedures`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1475,7 +1475,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_18:
+    interop_inacbg_18:
       rule: "PathPrefix(`/v1.0/inacbg/generate-claim-number`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1483,7 +1483,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_19:
+    interop_inacbg_19:
       rule: "PathPrefix(`/v1.0/inacbg/file-upload`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1491,7 +1491,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_20:
+    interop_inacbg_20:
       rule: "PathPrefix(`/v1.0/inacbg/file-delete`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1499,7 +1499,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_21:
+    interop_inacbg_21:
       rule: "PathPrefix(`/v1.0/inacbg/file-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1507,7 +1507,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_22:
+    interop_inacbg_22:
       rule: "PathPrefix(`/v1.0/inacbg/retrieve-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1515,7 +1515,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_23:
+    interop_inacbg_23:
       rule: "PathPrefix(`/v1.0/inacbg/cari-diagnosa-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1523,7 +1523,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_24:
+    interop_inacbg_24:
       rule: "PathPrefix(`/v1.0/inacbg/cari-procedures-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1531,7 +1531,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_25:
+    interop_inacbg_25:
       rule: "PathPrefix(`/v1.0/inacbg/sitb-validate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1539,7 +1539,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbg_26:
+    interop_inacbg_26:
       rule: "PathPrefix(`/v1.0/inacbg/sitb-invalidate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -1547,7 +1547,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_1:
+    interop_pacs_1:
       rule: "PathPrefix(`/v1.0/pacs/order/get-list-order`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1555,7 +1555,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_2:
+    interop_pacs_2:
       rule: "PathPrefix(`/v1.0/pacs/report/get-list-report`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1563,7 +1563,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_3:
+    interop_pacs_3:
       rule: "PathPrefix(`/v1.0/pacs/order/get-by-accession-num/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1571,7 +1571,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_4:
+    interop_pacs_4:
       rule: "PathPrefix(`/v1.0/pacs/report/get-by-accession-num/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1579,7 +1579,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_5:
+    interop_pacs_5:
       rule: "PathPrefix(`/v1.0/pacs/order/create-order`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1587,7 +1587,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_6:
+    interop_pacs_6:
       rule: "PathPrefix(`/v1.0/pacs/report/create-report`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1595,7 +1595,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_7:
+    interop_pacs_7:
       rule: "PathPrefix(`/v1.0/pacs/order/delete-order/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1603,7 +1603,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_8:
+    interop_pacs_8:
       rule: "PathPrefix(`/v1.0/pacs/report/delete-report/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1611,7 +1611,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_9:
+    interop_pacs_9:
       rule: "PathPrefix(`/v1.0/pacs/get-by-patient-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1619,7 +1619,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-pacs_10:
+    interop_pacs_10:
       rule: "PathPrefix(`/v1.0/pacs/update-patient-id/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-pacs
       entryPoints:
@@ -1627,7 +1627,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_1:
+    interop_lis_1:
       rule: "PathPrefix(`/v1.0/lis/demographics/get-list-demographics`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1635,7 +1635,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_2:
+    interop_lis_2:
       rule: "PathPrefix(`/v1.0/lis/ordered-items/get-list-ordered-items`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1643,7 +1643,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_3:
+    interop_lis_3:
       rule: "PathPrefix(`/v1.0/lis/registration/get-list-registration`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1651,7 +1651,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_4:
+    interop_lis_4:
       rule: "PathPrefix(`/v1.0/lis/lab-results/get-list-lab-results`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1659,7 +1659,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_5:
+    interop_lis_5:
       rule: "PathPrefix(`/v1.0/lis/demographics/get-by-patient-id-mr/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1667,7 +1667,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_6:
+    interop_lis_6:
       rule: "PathPrefix(`/v1.0/lis/ordered-items/get-by-order-number-and-item-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1675,7 +1675,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_7:
+    interop_lis_7:
       rule: "PathPrefix(`/v1.0/lis/registration/get-by-patient-id-mr-and-order-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1683,7 +1683,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_8:
+    interop_lis_8:
       rule: "PathPrefix(`/v1.0/lis/lab-results/get-by-lis-reg-no-lis-test-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1691,7 +1691,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_9:
+    interop_lis_9:
       rule: "PathPrefix(`/v1.0/lis/demographics/create-demographics`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1699,7 +1699,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_10:
+    interop_lis_10:
       rule: "PathPrefix(`/v1.0/lis/ordered-items/create-ordered-items`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1707,7 +1707,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_11:
+    interop_lis_11:
       rule: "PathPrefix(`/v1.0/lis/registration/create-registration`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1715,7 +1715,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_12:
+    interop_lis_12:
       rule: "PathPrefix(`/v1.0/lis/lab-results/create-lab-results`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1723,7 +1723,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_13:
+    interop_lis_13:
       rule: "PathPrefix(`/v1.0/lis/demographics/delete-demographics/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1731,7 +1731,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_14:
+    interop_lis_14:
       rule: "PathPrefix(`/v1.0/lis/ordered-items/delete-ordered-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1739,7 +1739,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_15:
+    interop_lis_15:
       rule: "PathPrefix(`/v1.0/lis/registration/delete-registration/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1747,7 +1747,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_16:
+    interop_lis_16:
       rule: "PathPrefix(`/v1.0/lis/lab-results/delete-lab-results/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1755,7 +1755,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_17:
+    interop_lis_17:
       rule: "PathPrefix(`/v1.0/lis/demographics/update-demographics/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1763,7 +1763,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_18:
+    interop_lis_18:
       rule: "PathPrefix(`/v1.0/lis/ordered-items/update-ordered-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1771,7 +1771,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_19:
+    interop_lis_19:
       rule: "PathPrefix(`/v1.0/lis/registration/update-registration/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1779,7 +1779,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_20:
+    interop_lis_20:
       rule: "PathPrefix(`/v1.0/lis/lab-results/update-lab-results/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1787,7 +1787,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-lis_21:
+    interop_lis_21:
       rule: "PathPrefix(`/v1.0/lis/lab-results/update-lab-results2/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lis
       entryPoints:
@@ -1795,7 +1795,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_1:
+    interop_sirs-online_1:
       rule: "PathPrefix(`/v1.0/sirs-online/radiologi/laporan-kategori-item`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1803,7 +1803,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_2:
+    interop_sirs-online_2:
       rule: "PathPrefix(`/v1.0/sirs-online/laboratorium/laporan-kunjungan-pasien-by-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1811,7 +1811,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_3:
+    interop_sirs-online_3:
       rule: "PathPrefix(`/v1.0/sirs-online/pengunjung/jumlah-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1819,7 +1819,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_4:
+    interop_sirs-online_4:
       rule: "PathPrefix(`/v1.0/sirs-online/tindakan/laporan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1827,7 +1827,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_5:
+    interop_sirs-online_5:
       rule: "PathPrefix(`/v1.0/sirs-online/laporan-icd-10/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1835,7 +1835,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_6:
+    interop_sirs-online_6:
       rule: "PathPrefix(`/v1.0/sirs-online/farmasi/order-obat/laporan-farmasi-resep`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1843,7 +1843,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_7:
+    interop_sirs-online_7:
       rule: "PathPrefix(`/v1.0/sirs-online/instalasi/farmasi/laporan-pengadaan-obat`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1851,7 +1851,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_8:
+    interop_sirs-online_8:
       rule: "PathPrefix(`/v1.0/sirs-online/pasien-operasi/laporan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1859,7 +1859,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_9:
+    interop_sirs-online_9:
       rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-igd-sirs/rl33`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1867,7 +1867,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_10:
+    interop_sirs-online_10:
       rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-ranap-sirs/rl32`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1875,7 +1875,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_11:
+    interop_sirs-online_11:
       rule: "PathPrefix(`/v1.0/sirs-online/adm-layanan/laporan-cara-bayar-sirs/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1883,7 +1883,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_12:
+    interop_sirs-online_12:
       rule: "PathPrefix(`/v1.0/sirs-online/pendaftaran/kunjungan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1891,7 +1891,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_13:
+    interop_sirs-online_13:
       rule: "PathPrefix(`/v1.0/sirs-online/pendaftaran/sep/laporan-rl310`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1899,7 +1899,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_14:
+    interop_sirs-online_14:
       rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-kebidanan/rl36`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1907,7 +1907,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_15:
+    interop_sirs-online_15:
       rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-bayi/rl37`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1915,7 +1915,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-sirs-online_16:
+    interop_sirs-online_16:
       rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-pelayanan-khusus/rl314`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1923,7 +1923,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_1:
+    interop_satu-sehat_1:
       rule: "PathPrefix(`/v1.0/schedule/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1931,7 +1931,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_2:
+    interop_satu-sehat_2:
       rule: "PathPrefix(`/v1.0/schedule/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1939,7 +1939,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_3:
+    interop_satu-sehat_3:
       rule: "PathPrefix(`/v1.0/schedule/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1947,7 +1947,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_4:
+    interop_satu-sehat_4:
       rule: "PathPrefix(`/v1.0/location/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1955,7 +1955,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_5:
+    interop_satu-sehat_5:
       rule: "PathPrefix(`/v1.0/location/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1963,7 +1963,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_6:
+    interop_satu-sehat_6:
       rule: "PathPrefix(`/v1.0/location/search-by-identifier`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1971,7 +1971,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_7:
+    interop_satu-sehat_7:
       rule: "PathPrefix(`/v1.0/location/search-by-name`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1979,7 +1979,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_8:
+    interop_satu-sehat_8:
       rule: "PathPrefix(`/v1.0/location/search-by-org`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1987,7 +1987,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_9:
+    interop_satu-sehat_9:
       rule: "PathPrefix(`/v1.0/location/search-by-ide`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -1995,7 +1995,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_10:
+    interop_satu-sehat_10:
       rule: "PathPrefix(`/v1.0/organization/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2003,7 +2003,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_11:
+    interop_satu-sehat_11:
       rule: "PathPrefix(`/v1.0/organization/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2011,7 +2011,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_12:
+    interop_satu-sehat_12:
       rule: "PathPrefix(`/v1.0/organization/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2019,7 +2019,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_13:
+    interop_satu-sehat_13:
       rule: "PathPrefix(`/v1.0/organization/search-by-name`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2027,7 +2027,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_14:
+    interop_satu-sehat_14:
       rule: "PathPrefix(`/v1.0/organization/search-by-partof`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2035,7 +2035,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_15:
+    interop_satu-sehat_15:
       rule: "PathPrefix(`/v1.0/slot/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2043,7 +2043,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_16:
+    interop_satu-sehat_16:
       rule: "PathPrefix(`/v1.0/slot/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2051,7 +2051,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_17:
+    interop_satu-sehat_17:
       rule: "PathPrefix(`/v1.0/slot/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2059,7 +2059,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_18:
+    interop_satu-sehat_18:
       rule: "PathPrefix(`/v1.0/encounter/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2067,7 +2067,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_19:
+    interop_satu-sehat_19:
       rule: "PathPrefix(`/v1.0/encounter/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2075,7 +2075,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_20:
+    interop_satu-sehat_20:
       rule: "PathPrefix(`/v1.0/encounter/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2083,7 +2083,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_21:
+    interop_satu-sehat_21:
       rule: "PathPrefix(`/v1.0/encounter/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2091,7 +2091,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_22:
+    interop_satu-sehat_22:
       rule: "PathPrefix(`/v1.0/encounter/update-inprogress`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2099,7 +2099,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_23:
+    interop_satu-sehat_23:
       rule: "PathPrefix(`/v1.0/encounter/update-discharge-disposition`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2107,7 +2107,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_24:
+    interop_satu-sehat_24:
       rule: "PathPrefix(`/v1.0/encounter/update-finished`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2115,7 +2115,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_25:
+    interop_satu-sehat_25:
       rule: "PathPrefix(`/v1.0/patient/create-by-nik`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2123,7 +2123,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_26:
+    interop_satu-sehat_26:
       rule: "PathPrefix(`/v1.0/patient/create-by-nik-ibu`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2131,7 +2131,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_27:
+    interop_satu-sehat_27:
       rule: "PathPrefix(`/v1.0/patient/search-by-nik`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2139,7 +2139,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_28:
+    interop_satu-sehat_28:
       rule: "PathPrefix(`/v1.0/patient/search-by-nik-ibu`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2147,7 +2147,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_29:
+    interop_satu-sehat_29:
       rule: "PathPrefix(`/v1.0/patient/search-by-name-birthdate-gender`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2155,7 +2155,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_30:
+    interop_satu-sehat_30:
       rule: "PathPrefix(`/v1.0/patient/search-by-name-birthdate-nik`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2163,7 +2163,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_31:
+    interop_satu-sehat_31:
       rule: "PathPrefix(`/v1.0/patient/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2171,7 +2171,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_32:
+    interop_satu-sehat_32:
       rule: "PathPrefix(`/v1.0/practitioner_role/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2179,7 +2179,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_33:
+    interop_satu-sehat_33:
       rule: "PathPrefix(`/v1.0/practitioner_role/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2187,7 +2187,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_34:
+    interop_satu-sehat_34:
       rule: "PathPrefix(`/v1.0/practitioner_role/search-by-reference`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2195,7 +2195,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_35:
+    interop_satu-sehat_35:
       rule: "PathPrefix(`/v1.0/practitioner_role/search-by-reference-org`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2203,7 +2203,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_36:
+    interop_satu-sehat_36:
       rule: "PathPrefix(`/v1.0/practitioner/search-by-nik`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2211,7 +2211,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_37:
+    interop_satu-sehat_37:
       rule: "PathPrefix(`/v1.0/practitioner/search-by-name-birthdate-gender`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2219,7 +2219,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_38:
+    interop_satu-sehat_38:
       rule: "PathPrefix(`/v1.0/practitioner/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2227,7 +2227,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_39:
+    interop_satu-sehat_39:
       rule: "PathPrefix(`/v1.0/organization/search-by-partof`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2235,7 +2235,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_40:
+    interop_satu-sehat_40:
       rule: "PathPrefix(`/v1.0/practitioner_role/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2243,7 +2243,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_41:
+    interop_satu-sehat_41:
       rule: "PathPrefix(`/v1.0/kewilayahan/get-provinces`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2251,7 +2251,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_42:
+    interop_satu-sehat_42:
       rule: "PathPrefix(`/v1.0/kewilayahan/get-cities`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2259,7 +2259,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_43:
+    interop_satu-sehat_43:
       rule: "PathPrefix(`/v1.0/kewilayahan/get-districts`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2267,7 +2267,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_44:
+    interop_satu-sehat_44:
       rule: "PathPrefix(`/v1.0/kewilayahan/get-subdistricts`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2275,7 +2275,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_45:
+    interop_satu-sehat_45:
       rule: "PathPrefix(`/v1.0/condition/create-diagnosis`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2283,7 +2283,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_46:
+    interop_satu-sehat_46:
       rule: "PathPrefix(`/v1.0/condition/create-meninggalkan-faskes`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2291,7 +2291,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_47:
+    interop_satu-sehat_47:
       rule: "PathPrefix(`/v1.0/condition/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2299,7 +2299,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_48:
+    interop_satu-sehat_48:
       rule: "PathPrefix(`/v1.0/condition/search-by-subject-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2307,7 +2307,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_49:
+    interop_satu-sehat_49:
       rule: "PathPrefix(`/v1.0/condition/search-by-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2315,7 +2315,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_50:
+    interop_satu-sehat_50:
       rule: "PathPrefix(`/v1.0/condition/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2323,7 +2323,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_51:
+    interop_satu-sehat_51:
       rule: "PathPrefix(`/v1.0/condition/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2331,7 +2331,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_52:
+    interop_satu-sehat_52:
       rule: "PathPrefix(`/v1.0/observation/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2339,7 +2339,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_53:
+    interop_satu-sehat_53:
       rule: "PathPrefix(`/v1.0/observation/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2347,7 +2347,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_54:
+    interop_satu-sehat_54:
       rule: "PathPrefix(`/v1.0/observation/search-by-subject-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2355,7 +2355,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_55:
+    interop_satu-sehat_55:
       rule: "PathPrefix(`/v1.0/observation/search-by-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2363,7 +2363,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_56:
+    interop_satu-sehat_56:
       rule: "PathPrefix(`/v1.0/observation/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2371,7 +2371,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_57:
+    interop_satu-sehat_57:
       rule: "PathPrefix(`/v1.0/observation/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2379,7 +2379,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_58:
+    interop_satu-sehat_58:
       rule: "PathPrefix(`/v1.0/composition/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2387,7 +2387,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_59:
+    interop_satu-sehat_59:
       rule: "PathPrefix(`/v1.0/composition/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2395,7 +2395,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_60:
+    interop_satu-sehat_60:
       rule: "PathPrefix(`/v1.0/composition/search-by-subject-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2403,7 +2403,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_61:
+    interop_satu-sehat_61:
       rule: "PathPrefix(`/v1.0/composition/search-by-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2411,7 +2411,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_62:
+    interop_satu-sehat_62:
       rule: "PathPrefix(`/v1.0/composition/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2419,7 +2419,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_63:
+    interop_satu-sehat_63:
       rule: "PathPrefix(`/v1.0/composition/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2427,7 +2427,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_64:
+    interop_satu-sehat_64:
       rule: "PathPrefix(`/v1.0/procedure/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2435,7 +2435,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_65:
+    interop_satu-sehat_65:
       rule: "PathPrefix(`/v1.0/procedure/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2443,7 +2443,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_66:
+    interop_satu-sehat_66:
       rule: "PathPrefix(`/v1.0/procedure/search-by-subject-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2451,7 +2451,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_67:
+    interop_satu-sehat_67:
       rule: "PathPrefix(`/v1.0/procedure/search-by-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2459,7 +2459,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_68:
+    interop_satu-sehat_68:
       rule: "PathPrefix(`/v1.0/procedure/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2467,7 +2467,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_69:
+    interop_satu-sehat_69:
       rule: "PathPrefix(`/v1.0/procedure/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2475,7 +2475,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_70:
+    interop_satu-sehat_70:
       rule: "PathPrefix(`/v1.0/medication/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2483,7 +2483,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_71:
+    interop_satu-sehat_71:
       rule: "PathPrefix(`/v1.0/medication/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2491,7 +2491,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_72:
+    interop_satu-sehat_72:
       rule: "PathPrefix(`/v1.0/medication/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2499,7 +2499,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_73:
+    interop_satu-sehat_73:
       rule: "PathPrefix(`/v1.0/medication-request/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2507,7 +2507,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_74:
+    interop_satu-sehat_74:
       rule: "PathPrefix(`/v1.0/medication-request/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2515,7 +2515,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_75:
+    interop_satu-sehat_75:
       rule: "PathPrefix(`/v1.0/medication-request/search-by-subject-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2523,7 +2523,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_76:
+    interop_satu-sehat_76:
       rule: "PathPrefix(`/v1.0/medication-request/search-by-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2531,7 +2531,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_77:
+    interop_satu-sehat_77:
       rule: "PathPrefix(`/v1.0/medication-request/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2539,7 +2539,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_78:
+    interop_satu-sehat_78:
       rule: "PathPrefix(`/v1.0/medication-request/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2547,7 +2547,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_79:
+    interop_satu-sehat_79:
       rule: "PathPrefix(`/v1.0/medication-dispense/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2555,7 +2555,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_80:
+    interop_satu-sehat_80:
       rule: "PathPrefix(`/v1.0/medication-dispense/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2563,7 +2563,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_81:
+    interop_satu-sehat_81:
       rule: "PathPrefix(`/v1.0/medication-dispense/search-by-subject-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2571,7 +2571,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_82:
+    interop_satu-sehat_82:
       rule: "PathPrefix(`/v1.0/medication-dispense/search-by-subject-prescription`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2579,7 +2579,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_83:
+    interop_satu-sehat_83:
       rule: "PathPrefix(`/v1.0/medication-dispense/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2587,7 +2587,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_84:
+    interop_satu-sehat_84:
       rule: "PathPrefix(`/v1.0/medication-dispense/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2595,7 +2595,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_85:
+    interop_satu-sehat_85:
       rule: "PathPrefix(`/v1.0/healthcare-service/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2603,7 +2603,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_86:
+    interop_satu-sehat_86:
       rule: "PathPrefix(`/v1.0/healthcare-service/search-by-specialty`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2611,7 +2611,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_87:
+    interop_satu-sehat_87:
       rule: "PathPrefix(`/v1.0/healthcare-service/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2619,7 +2619,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_88:
+    interop_satu-sehat_88:
       rule: "PathPrefix(`/v1.0/healthcare-service/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2627,7 +2627,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_89:
+    interop_satu-sehat_89:
       rule: "PathPrefix(`/v1.0/diagnostic-report/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2635,7 +2635,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_90:
+    interop_satu-sehat_90:
       rule: "PathPrefix(`/v1.0/diagnostic-report/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2643,7 +2643,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_91:
+    interop_satu-sehat_91:
       rule: "PathPrefix(`/v1.0/diagnostic-report/search-by-subject-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2651,7 +2651,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_92:
+    interop_satu-sehat_92:
       rule: "PathPrefix(`/v1.0/diagnostic-report/search-by-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2659,7 +2659,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_93:
+    interop_satu-sehat_93:
       rule: "PathPrefix(`/v1.0/diagnostic-report/search-by-specimen-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2667,7 +2667,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_94:
+    interop_satu-sehat_94:
       rule: "PathPrefix(`/v1.0/diagnostic-report/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2675,7 +2675,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_95:
+    interop_satu-sehat_95:
       rule: "PathPrefix(`/v1.0/diagnostic-report/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2683,7 +2683,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_96:
+    interop_satu-sehat_96:
       rule: "PathPrefix(`/v1.0/appointment-response/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2691,7 +2691,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_97:
+    interop_satu-sehat_97:
       rule: "PathPrefix(`/v1.0/appointment-response/search-by-appointment`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2699,7 +2699,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_98:
+    interop_satu-sehat_98:
       rule: "PathPrefix(`/v1.0/appointment-response/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2707,7 +2707,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_99:
+    interop_satu-sehat_99:
       rule: "PathPrefix(`/v1.0/appointment-response/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2715,7 +2715,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_100:
+    interop_satu-sehat_100:
       rule: "PathPrefix(`/v1.0/appointment/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2723,7 +2723,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_101:
+    interop_satu-sehat_101:
       rule: "PathPrefix(`/v1.0/appointment/search-by-appointment`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2731,7 +2731,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_102:
+    interop_satu-sehat_102:
       rule: "PathPrefix(`/v1.0/appointment/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2739,7 +2739,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_103:
+    interop_satu-sehat_103:
       rule: "PathPrefix(`/v1.0/appointment/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2747,7 +2747,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_104:
+    interop_satu-sehat_104:
       rule: "PathPrefix(`/v1.0/allergy-intolerance/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2755,7 +2755,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_105:
+    interop_satu-sehat_105:
       rule: "PathPrefix(`/v1.0/allergy-intolerance/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2763,7 +2763,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_106:
+    interop_satu-sehat_106:
       rule: "PathPrefix(`/v1.0/allergy-intolerance/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2771,7 +2771,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_107:
+    interop_satu-sehat_107:
       rule: "PathPrefix(`/v1.0/allergy-intolerance/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2779,7 +2779,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_108:
+    interop_satu-sehat_108:
       rule: "PathPrefix(`/v1.0/clinical-impression/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2787,7 +2787,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_109:
+    interop_satu-sehat_109:
       rule: "PathPrefix(`/v1.0/clinical-impression/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2795,7 +2795,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_110:
+    interop_satu-sehat_110:
       rule: "PathPrefix(`/v1.0/clinical-impression/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2803,7 +2803,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_111:
+    interop_satu-sehat_111:
       rule: "PathPrefix(`/v1.0/clinical-impression/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2811,7 +2811,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_112:
+    interop_satu-sehat_112:
       rule: "PathPrefix(`/v1.0/service-request/create-lab-non-rujukan-eksternal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2819,7 +2819,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_113:
+    interop_satu-sehat_113:
       rule: "PathPrefix(`/v1.0/service-request/create-rujukan-kontrol-internal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2827,7 +2827,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_114:
+    interop_satu-sehat_114:
       rule: "PathPrefix(`/v1.0/service-request/create-rujukan-radiologi-eksternal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2835,7 +2835,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_115:
+    interop_satu-sehat_115:
       rule: "PathPrefix(`/v1.0/service-request/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2843,7 +2843,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_116:
+    interop_satu-sehat_116:
       rule: "PathPrefix(`/v1.0/service-request/search-by-subject-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2851,7 +2851,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_117:
+    interop_satu-sehat_117:
       rule: "PathPrefix(`/v1.0/service-request/search-by-encounter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2859,7 +2859,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_118:
+    interop_satu-sehat_118:
       rule: "PathPrefix(`/v1.0/service-request/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2867,7 +2867,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_119:
+    interop_satu-sehat_119:
       rule: "PathPrefix(`/v1.0/service-request/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2875,7 +2875,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_120:
+    interop_satu-sehat_120:
       rule: "PathPrefix(`/v1.0/immunization/create-by-nakes`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2883,7 +2883,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_121:
+    interop_satu-sehat_121:
       rule: "PathPrefix(`/v1.0/immunization/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2891,7 +2891,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_122:
+    interop_satu-sehat_122:
       rule: "PathPrefix(`/v1.0/immunization/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2899,7 +2899,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_123:
+    interop_satu-sehat_123:
       rule: "PathPrefix(`/v1.0/imaging-study/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2907,7 +2907,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_124:
+    interop_satu-sehat_124:
       rule: "PathPrefix(`/v1.0/imaging-study/search-by-identifier`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2915,7 +2915,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_125:
+    interop_satu-sehat_125:
       rule: "PathPrefix(`/v1.0/imaging-study/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2923,7 +2923,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_126:
+    interop_satu-sehat_126:
       rule: "PathPrefix(`/v1.0/family-member-history/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2931,7 +2931,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_127:
+    interop_satu-sehat_127:
       rule: "PathPrefix(`/v1.0/family-member-history/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2939,7 +2939,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_128:
+    interop_satu-sehat_128:
       rule: "PathPrefix(`/v1.0/family-member-history/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2947,7 +2947,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_129:
+    interop_satu-sehat_129:
       rule: "PathPrefix(`/v1.0/questionnaire-response/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2955,7 +2955,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_130:
+    interop_satu-sehat_130:
       rule: "PathPrefix(`/v1.0/questionnaire-response/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2963,7 +2963,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_131:
+    interop_satu-sehat_131:
       rule: "PathPrefix(`/v1.0/questionnaire-response/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2971,7 +2971,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_132:
+    interop_satu-sehat_132:
       rule: "PathPrefix(`/v1.0/related-person/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2979,7 +2979,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_133:
+    interop_satu-sehat_133:
       rule: "PathPrefix(`/v1.0/related-person/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2987,7 +2987,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_134:
+    interop_satu-sehat_134:
       rule: "PathPrefix(`/v1.0/related-person/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -2995,7 +2995,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_135:
+    interop_satu-sehat_135:
       rule: "PathPrefix(`/v1.0/specimen/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3003,7 +3003,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_136:
+    interop_satu-sehat_136:
       rule: "PathPrefix(`/v1.0/specimen/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3011,7 +3011,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_137:
+    interop_satu-sehat_137:
       rule: "PathPrefix(`/v1.0/specimen/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3019,7 +3019,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_138:
+    interop_satu-sehat_138:
       rule: "PathPrefix(`/v1.0/episode-of-care/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3027,7 +3027,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_139:
+    interop_satu-sehat_139:
       rule: "PathPrefix(`/v1.0/episode-of-care/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3035,7 +3035,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_140:
+    interop_satu-sehat_140:
       rule: "PathPrefix(`/v1.0/episode-of-care/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3043,7 +3043,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_141:
+    interop_satu-sehat_141:
       rule: "PathPrefix(`/v1.0/care-plan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3051,7 +3051,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_142:
+    interop_satu-sehat_142:
       rule: "PathPrefix(`/v1.0/care-plan/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3059,7 +3059,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_143:
+    interop_satu-sehat_143:
       rule: "PathPrefix(`/v1.0/care-plan/update`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3067,7 +3067,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_144:
+    interop_satu-sehat_144:
       rule: "PathPrefix(`/v1.0/oauth2/generate-token`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3075,7 +3075,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-satu-sehat_145:
+    interop_satu-sehat_145:
       rule: "PathPrefix(`/v1.0/kfa/get-all-products`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
@@ -3347,7 +3347,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    diagnostic-report_1:
+    diagnostic_report_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/diagnostic-report/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -3355,7 +3355,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    diagnostic-report_2:
+    diagnostic_report_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/diagnostic-report/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -3363,7 +3363,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    diagnostic-report_3:
+    diagnostic_report_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/diagnostic-report/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -3371,7 +3371,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    diagnostic-report_4:
+    diagnostic_report_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/diagnostic-report/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -4411,7 +4411,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_1:
+    interop_message_1:
       rule: "PathPrefix(`/v1.0/sender-email/mailtrap/send`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4419,7 +4419,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_2:
+    interop_message_2:
       rule: "PathPrefix(`/v1.0/sender-wa/send-chat`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4427,7 +4427,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_3:
+    interop_message_3:
       rule: "PathPrefix(`/v1.0/sender-wa/send-image`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4435,7 +4435,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_4:
+    interop_message_4:
       rule: "PathPrefix(`/v1.0/sender-wa/send-sticker`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4443,7 +4443,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_5:
+    interop_message_5:
       rule: "PathPrefix(`/v1.0/sender-wa/send-document`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4451,7 +4451,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_6:
+    interop_message_6:
       rule: "PathPrefix(`/v1.0/sender-wa/send-audio`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4459,7 +4459,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_7:
+    interop_message_7:
       rule: "PathPrefix(`/v1.0/sender-wa/send-voice`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4467,7 +4467,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_8:
+    interop_message_8:
       rule: "PathPrefix(`/v1.0/sender-wa/send-video`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4475,7 +4475,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-message_9:
+    interop_message_9:
       rule: "PathPrefix(`/v1.0/sender-wa/send-location`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -4515,7 +4515,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_1:
+    interop_inacbgv2_1:
       rule: "PathPrefix(`/v2.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4523,7 +4523,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_2:
+    interop_inacbgv2_2:
       rule: "PathPrefix(`/v2.0/inacbg/update-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4531,7 +4531,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_3:
+    interop_inacbgv2_3:
       rule: "PathPrefix(`/v2.0/inacbg/delete-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4539,7 +4539,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_4:
+    interop_inacbgv2_4:
       rule: "PathPrefix(`/v2.0/inacbg/set-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4547,7 +4547,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_5:
+    interop_inacbgv2_5:
       rule: "PathPrefix(`/v2.0/inacbg/grouper-stage-1`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4555,7 +4555,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_6:
+    interop_inacbgv2_6:
       rule: "PathPrefix(`/v2.0/inacbg/grouper-stage-2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4563,7 +4563,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_7:
+    interop_inacbgv2_7:
       rule: "PathPrefix(`/v2.0/inacbg/finalisasi-klaim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4571,7 +4571,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_8:
+    interop_inacbgv2_8:
       rule: "PathPrefix(`/v2.0/inacbg/reedit-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4579,7 +4579,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_9:
+    interop_inacbgv2_9:
       rule: "PathPrefix(`/v2.0/inacbg/send-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4587,7 +4587,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_10:
+    interop_inacbgv2_10:
       rule: "PathPrefix(`/v2.0/inacbg/send-claim-individual`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4595,7 +4595,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_11:
+    interop_inacbgv2_11:
       rule: "PathPrefix(`/v2.0/inacbg/pull-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4603,7 +4603,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_12:
+    interop_inacbgv2_12:
       rule: "PathPrefix(`/v2.0/inacbg/get-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4611,7 +4611,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_13:
+    interop_inacbgv2_13:
       rule: "PathPrefix(`/v2.0/inacbg/get-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4619,7 +4619,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_14:
+    interop_inacbgv2_14:
       rule: "PathPrefix(`/v2.0/inacbg/delete-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4627,7 +4627,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_15:
+    interop_inacbgv2_15:
       rule: "PathPrefix(`/v2.0/inacbg/claim-print`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4635,7 +4635,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_16:
+    interop_inacbgv2_16:
       rule: "PathPrefix(`/v2.0/inacbg/search-diagnosis`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4643,7 +4643,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_17:
+    interop_inacbgv2_17:
       rule: "PathPrefix(`/v2.0/inacbg/search-procedures`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4651,7 +4651,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_18:
+    interop_inacbgv2_18:
       rule: "PathPrefix(`/v2.0/inacbg/generate-claim-number`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4659,7 +4659,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_19:
+    interop_inacbgv2_19:
       rule: "PathPrefix(`/v2.0/inacbg/file-upload`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4667,7 +4667,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_20:
+    interop_inacbgv2_20:
       rule: "PathPrefix(`/v2.0/inacbg/file-delete`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4675,7 +4675,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_21:
+    interop_inacbgv2_21:
       rule: "PathPrefix(`/v2.0/inacbg/file-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4683,7 +4683,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_22:
+    interop_inacbgv2_22:
       rule: "PathPrefix(`/v2.0/inacbg/retrieve-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4691,7 +4691,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_23:
+    interop_inacbgv2_23:
       rule: "PathPrefix(`/v2.0/inacbg/cari-diagnosa-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4699,7 +4699,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_24:
+    interop_inacbgv2_24:
       rule: "PathPrefix(`/v2.0/inacbg/cari-procedures-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4707,7 +4707,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_25:
+    interop_inacbgv2_25:
       rule: "PathPrefix(`/v2.0/inacbg/sitb-validate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4715,7 +4715,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_26:
+    interop_inacbgv2_26:
       rule: "PathPrefix(`/v2.0/inacbg/sitb-invalidate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4723,7 +4723,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_27:
+    interop_inacbgv2_27:
       rule: "PathPrefix(`/v2.0/idrg/diagnosa-set`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4731,7 +4731,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_28:
+    interop_inacbgv2_28:
       rule: "PathPrefix(`/v2.0/idrg/diagnosa-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4739,7 +4739,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_29:
+    interop_inacbgv2_29:
       rule: "PathPrefix(`/v2.0/idrg/procedure-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4747,7 +4747,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_30:
+    interop_inacbgv2_30:
       rule: "PathPrefix(`/v2.0/idrg/procedure-set`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4755,7 +4755,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_31:
+    interop_inacbgv2_31:
       rule: "PathPrefix(`/v2.0/idrg/grouper-1`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4763,7 +4763,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_32:
+    interop_inacbgv2_32:
       rule: "PathPrefix(`/v2.0/idrg/grouper-final`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4771,7 +4771,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_33:
+    interop_inacbgv2_33:
       rule: "PathPrefix(`/v2.0/idrg/grouper-reedit`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4779,7 +4779,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_34:
+    interop_inacbgv2_34:
       rule: "PathPrefix(`/v2.0/idrg/to-inacbg-import`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4787,7 +4787,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_35:
+    interop_inacbgv2_35:
       rule: "PathPrefix(`/v2.0/inacbg/diagnosa-set`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4795,7 +4795,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_36:
+    interop_inacbgv2_36:
       rule: "PathPrefix(`/v2.0/inacbg/diagnosa-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4803,7 +4803,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_37:
+    interop_inacbgv2_37:
       rule: "PathPrefix(`/v2.0/inacbg/procedure-set`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -4811,7 +4811,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    interop-inacbgv2_38:
+    interop_inacbgv2_38:
       rule: "PathPrefix(`/v2.0/inacbg/procedure-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
