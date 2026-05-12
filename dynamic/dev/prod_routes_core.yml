@@ -1,0 +1,2304 @@
+http:
+  routers:
+    #AKSES PENGGUNA
+    aplikasi_1:
+      rule: PathPrefix(`/v1.0/aplikasi/getlist`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    aplikasi_2:
+      rule: PathPrefix(`/v1.0/aplikasi/getbykd/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    aplikasi_3:
+      rule: PathPrefix(`/v1.0/aplikasi/create`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    aplikasi_4:
+      rule: PathPrefix(`/v1.0/aplikasi/update`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    aplikasi_5:
+      rule: PathPrefix(`/v1.0/aplikasi/deletebykd/`) && Method(`DELETE`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    aplikasi_6:
+      rule: PathPrefix(`/v1.0/aplikasi/updateshowhomepage/`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    fitur_1:
+      rule: PathPrefix(`/v1.0/modul/fitur/getlist`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    fitur_2:
+      rule: PathPrefix(`/v1.0/modul/fitur/getbykd/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    fitur_3:
+      rule: PathPrefix(`/v1.0/modul/fitur/create`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    fitur_4:
+      rule: PathPrefix(`/v1.0/modul/fitur/update`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    fitur_5:
+      rule: PathPrefix(`/v1.0/modul/fitur/deletebykd/`) && Method(`DELETE`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    fitur_6:
+      rule: PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.aplikasi_1:
+      rule: PathPrefix(`/v1.0/group/aplikasi/getlist`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.aplikasi_2:
+      rule: PathPrefix(`/v1.0/group/aplikasi/getlistbykdgroup/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.aplikasi_3:
+      rule: PathPrefix(`/v1.0/group/aplikasi/create`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.aplikasi_4:
+      rule: PathPrefix(`/v1.0/group/aplikasi/deletebyid/`) && Method(`DELETE`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.aplikasi_5:
+      rule: PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.aplikasi_6:
+      rule: PathPrefix(`/v1.0/group/aplikasi/aktivasibyid/`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.aplikasi_7:
+      rule: PathPrefix(`/v1.0/group/aplikasi/getallbykdgroup/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.fitur_1:
+      rule: PathPrefix(`/v1.0/group/fitur/getlist`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.fitur_2:
+      rule: PathPrefix(`/v1.0/group/fitur/getlistbykdgroup/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.fitur_3:
+      rule: PathPrefix(`/v1.0/group/fitur/create`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.fitur_4:
+      rule: PathPrefix(`/v1.0/group/fitur/deletebyid/`) && Method(`DELETE`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.fitur_5:
+      rule: PathPrefix(`/v1.0/group/fitur/aktivasibyid/`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.fitur_6:
+      rule: PathPrefix(`/v1.0/group/fitur/getallbykdgroupandkdmodul/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.fitur_7:
+      rule: PathPrefix(`/v1.0/group/fitur/getlistbykdgroupandkdmodul/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group_1:
+      rule: PathPrefix(`/v1.0/group/getlist`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group_2:
+      rule: PathPrefix(`/v1.0/group/getbykd/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group_3:
+      rule: PathPrefix(`/v1.0/group/create`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group_4:
+      rule: PathPrefix(`/v1.0/group/update`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group_5:
+      rule: PathPrefix(`/v1.0/group/deletebykd/`) && Method(`DELETE`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.modul_1:
+      rule: PathPrefix(`/v1.0/group/modul/getlist`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.modul_2:
+      rule: PathPrefix(`/v1.0/group/modul/getlistbykdgroup/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.modul_3:
+      rule: PathPrefix(`/v1.0/group/modul/create`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.modul_4:
+      rule: PathPrefix(`/v1.0/group/modul/deletebyid/`) && Method(`DELETE`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.modul_5:
+      rule: PathPrefix(`/v1.0/group/modul/aktivasibyid/`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.modul_6:
+      rule: PathPrefix(`/v1.0/group/modul/getlistbykdgroupandkdaplikasi/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    group.modul_7:
+      rule: PathPrefix(`/v1.0/group/modul/getallbykdgroupandkdaplikasi/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    modul_1:
+      rule: PathPrefix(`/v1.0/aplikasi/modul/getlist`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    modul_2:
+      rule: PathPrefix(`/v1.0/aplikasi/modul/getbykd/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    modul_3:
+      rule: PathPrefix(`/v1.0/aplikasi/modul/getbykdaplikasi/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    modul_4:
+      rule: PathPrefix(`/v1.0/aplikasi/modul/create`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    modul_5:
+      rule: PathPrefix(`/v1.0/aplikasi/modul/update`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    modul_6:
+      rule: PathPrefix(`/v1.0/aplikasi/modul/deletebykd/`) && Method(`DELETE`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_1:
+      rule: PathPrefix(`/v1.0/pengguna/getlist`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_2:
+      rule: PathPrefix(`/v1.0/pengguna/getlistbykdgroup/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_3:
+      rule: PathPrefix(`/v1.0/pengguna/getbykd/`) && Method(`GET`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_4:
+      rule: PathPrefix(`/v1.0/pengguna/create`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_5:
+      rule: PathPrefix(`/v1.0/pengguna/update`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_6:
+      rule: PathPrefix(`/v1.0/pengguna/updatepassword`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_7:
+      rule: PathPrefix(`/v1.0/pengguna/aktivasibyid/`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_8:
+      rule: PathPrefix(`/v1.0/pengguna/login`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_9:
+      rule: PathPrefix(`/v1.0/pengguna/resetbyemail`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_10:
+      rule: PathPrefix(`/v1.0/pengguna/resetpassword`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_11:
+      rule: PathPrefix(`/v1.0/pengguna/logout`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_12:
+      rule: PathPrefix(`/v1.0/pengguna-root/login`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_13:
+      rule: PathPrefix(`/v1.0/pengguna/validate-password`) && Method(`POST`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_14:
+      rule: PathPrefix(`/v1.0/pengguna/deletebykd/`) && Method(`DELETE`)
+      service: service-aksespengguna
+      entryPoints:
+      - web
+
+    pengguna_15:
+      rule: PathPrefix(`/v1.0/pengguna/updatefoto`) && Method(`PUT`)
+      service: service-aksespengguna
+      entryPoints:
+
+        #JASA PELAYANAN
+
+    jenis-pelayanan-kris_1:
+      rule: PathPrefix(`/v1.0/jenispelayanan/kris/getlist`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+    jenis-pelayanan-kris_2:
+      rule: PathPrefix(`/v1.0/jenispelayanan/kris/getall`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-kris_3:
+      rule: PathPrefix(`/v1.0/jenispelayanan/kris/getbynama/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-kris_4:
+      rule: PathPrefix(`/v1.0/jenispelayanan/kris/getbykd/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-kris_5:
+      rule: PathPrefix(`/v1.0/jenispelayanan/kris/getbykdkategoripelayanan/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-kris_6:
+      rule: PathPrefix(`/v1.0/jenispelayanan/kris/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-kris_7:
+      rule: PathPrefix(`/v1.0/jenispelayanan/kris/update`) && Method(`PUT`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-kris_8:
+      rule: PathPrefix(`/v1.0/jenispelayanan/kris/deletebykd/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-nonkris_1:
+      rule: PathPrefix(`/v1.0/jenispelayanan/nonkris/getlist`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-nonkris_2:
+      rule: PathPrefix(`/v1.0/jenispelayanan/nonkris/getall`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-nonkris_3:
+      rule: PathPrefix(`/v1.0/jenispelayanan/nonkris/getbynama/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-nonkris_4:
+      rule: PathPrefix(`/v1.0/jenispelayanan/nonkris/getbykd/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-nonkris_5:
+      rule: PathPrefix(`/v1.0/jenispelayanan/nonkris/getbykdkategoripelayanan/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-nonkris_6:
+      rule: PathPrefix(`/v1.0/jenispelayanan/nonkris/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-nonkris_7:
+      rule: PathPrefix(`/v1.0/jenispelayanan/nonkris/update`) && Method(`PUT`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    jenis-pelayanan-nonkris_8:
+      rule: PathPrefix(`/v1.0/jenispelayanan/nonkris/deletebykd/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    kategori-pelayanan_1:
+      rule: PathPrefix(`/v1.0/kategoripelayanan/getlist`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    kategori-pelayanan_2:
+      rule: PathPrefix(`/v1.0/kategoripelayanan/getbykd/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    kategori-pelayanan_3:
+      rule: PathPrefix(`/v1.0/kategoripelayanan/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    kategori-pelayanan_4:
+      rule: PathPrefix(`/v1.0/kategoripelayanan/update`) && Method(`PUT`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    kategori-pelayanan_5:
+      rule: PathPrefix(`/v1.0/kategoripelayanan/deletebykd/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    kategori-pelayanan_6:
+      rule: PathPrefix(`/v1.0/kategoripelayanan/getall`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    kategori-pelayanan_7:
+      rule: PathPrefix(`/v1.0/kategoripelayanan/getbystandarlayanan/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_1:
+      rule: PathPrefix(`/v1.0/paketmcu/getlist`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_2:
+      rule: PathPrefix(`/v1.0/paketmcu/getbykd/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_3:
+      rule: PathPrefix(`/v1.0/paketmcu/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_4:
+      rule: PathPrefix(`/v1.0/paketmcu/update`) && Method(`PUT`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_5:
+      rule: PathPrefix(`/v1.0/paketmcu/deletebykd/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_6:
+      rule: PathPrefix(`/v1.0/paketmcu/getall`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_7:
+      rule: PathPrefix(`/v1.0/paketmcu/getbynama/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_8:
+      rule: PathPrefix(`/v1.0/paketmcu/items/get-list`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_9:
+      rule: PathPrefix(`/v1.0/paketmcu/items/get-by-kd/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_10:
+      rule: PathPrefix(`/v1.0/paketmcu/items/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_11:
+      rule: PathPrefix(`/v1.0/paketmcu/items/update`) && Method(`PUT`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paket-mcu_12:
+      rule: PathPrefix(`/v1.0/paketmcu/items/delete-by-kd/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paketmcu-pelayanan_1:
+      rule: PathPrefix(`/v1.0/paketmcu/pelayanan/getlist`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paketmcu-pelayanan_2:
+      rule: PathPrefix(`/v1.0/paketmcu/pelayanan/getlistbykdpaketmcu/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paketmcu-pelayanan_3:
+      rule: PathPrefix(`/v1.0/paketmcu/pelayanan/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    paketmcu-pelayanan_4:
+      rule: PathPrefix(`/v1.0/paketmcu/pelayanan/deletebykd/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan-parent_1:
+      rule: PathPrefix(`/v1.0/unitlayananparent/getlist`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan-parent_2:
+      rule: PathPrefix(`/v1.0/unitlayananparent/getbykd/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan-parent_3:
+      rule: PathPrefix(`/v1.0/unitlayananparent/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan-parent_4:
+      rule: PathPrefix(`/v1.0/unitlayananparent/update`) && Method(`PUT`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan-parent_5:
+      rule: PathPrefix(`/v1.0/unitlayananparent/deletebykd/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan-parent_6:
+      rule: PathPrefix(`/v1.0/unitlayananparent/getall`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan-parent_7:
+      rule: PathPrefix(`/v1.0/unitlayananparent/getbynama/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_1:
+      rule: PathPrefix(`/v1.0/unitlayanan/getlist`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_2:
+      rule: PathPrefix(`/v1.0/unitlayanan/getbykd/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_3:
+      rule: PathPrefix(`/v1.0/unitlayanan/getbykdparent/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_4:
+      rule: PathPrefix(`/v1.0/unitlayanan/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_5:
+      rule: PathPrefix(`/v1.0/unitlayanan/update`) && Method(`PUT`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_6:
+      rule: PathPrefix(`/v1.0/unitlayanan/deletebykd/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_7:
+      rule: PathPrefix(`/v1.0/unitlayanan/getall`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_8:
+      rule: PathPrefix(`/v1.0/unitlayanan/getbynama/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_9:
+      rule: PathPrefix(`/v1.0/unit-layanan/get-kd-unit-bpjs/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layanan_10:
+      rule: PathPrefix(`/v1.0/unitlayanan/getlistwithfarmasi`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layananlayanan_1:
+      rule: PathPrefix(`/v1.0/unitlayanan/layanan/getlistbykdunitlayanan/`) && Method(`GET`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layananlayanan_2:
+      rule: PathPrefix(`/v1.0/unitlayanan/layanan/create`) && Method(`POST`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+
+    unit-layananlayanan_3:
+      rule: PathPrefix(`/v1.0/unitlayanan/layanan/deletebyidlayananlayanan/`) && Method(`DELETE`)
+      service: service-jasa-pelayanan
+      entryPoints:
+      - web
+      # MASTER
+    alat-cssd_1:
+      rule: PathPrefix(`/v1.0/master/alat-cssd/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    alat-cssd_2:
+      rule: PathPrefix(`/v1.0/master/alat-cssd/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    alat-cssd_3:
+      rule: PathPrefix(`/v1.0/master/alat-cssd/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    alat-cssd_4:
+      rule: PathPrefix(`/v1.0/master/alat-cssd/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    alat-cssd_5:
+      rule: PathPrefix(`/v1.0/master/alat-cssd/delete/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    bentuk-makanan_1:
+      rule: PathPrefix(`/v1.0/master/bentuk-makanan/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    bentuk-makanan_2:
+      rule: PathPrefix(`/v1.0/master/bentuk-makanan/get-all`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    bentuk-makanan_3:
+      rule: PathPrefix(`/v1.0/master/bentuk-makanan/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    bentuk-makanan_4:
+      rule: PathPrefix(`/v1.0/master/bentuk-makanan/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    bentuk-makanan_5:
+      rule: PathPrefix(`/v1.0/master/bentuk-makanan/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    bentuk-makanan_6:
+      rule: PathPrefix(`/v1.0/master/bentuk-makanan/delete/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    dasar-hukum_1:
+      rule: PathPrefix(`/v1.0/dasarhukum/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    dasar-hukum_2:
+      rule: PathPrefix(`/v1.0/dasarhukum/getbykd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    dasar-hukum_3:
+      rule: PathPrefix(`/v1.0/dasarhukum/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    dasar-hukum_4:
+      rule: PathPrefix(`/v1.0/dasarhukum/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    dasar-hukum_5:
+      rule: PathPrefix(`/v1.0/dasarhukum/deletebykd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    dasar-hukum_6:
+      rule: PathPrefix(`/v1.0/dasarhukum/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    dasar-hukum_7:
+      rule: PathPrefix(`/v1.0/dasarhukum/getbynama/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    encpt_1:
+      rule: PathPrefix(`/v1.0/encpt/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    encpt_2:
+      rule: PathPrefix(`/v1.0/encpt/get-all`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    encpt_3:
+      rule: PathPrefix(`/v1.0/encpt/get-by-kategori-hierarchical/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    encpt_4:
+      rule: PathPrefix(`/v1.0/encpt/get-by-kategori`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    gas-medis_1:
+      rule: PathPrefix(`/v1.0/master/gas-medis/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    gas-medis_2:
+      rule: PathPrefix(`/v1.0/master/gas-medis/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    gas-medis_3:
+      rule: PathPrefix(`/v1.0/master/gas-medis/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    gas-medis_4:
+      rule: PathPrefix(`/v1.0/master/gas-medis/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    gas-medis_5:
+      rule: PathPrefix(`/v1.0/master/gas-medis/delete-by-kd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    golongan-obat_1:
+      rule: PathPrefix(`/v1.0/golongan-obat/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    golongan-obat_2:
+      rule: PathPrefix(`/v1.0/golongan-obat/getbykd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    golongan-obat_3:
+      rule: PathPrefix(`/v1.0/golongan-obat/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    golongan-obat_4:
+      rule: PathPrefix(`/v1.0/golongan-obat/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    golongan-obat_5:
+      rule: PathPrefix(`/v1.0/golongan-obat/deletebykd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    golongan-obat_6:
+      rule: PathPrefix(`/v1.0/golongan-obat/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    golongan-obat_7:
+      rule: PathPrefix(`/v1.0/golongan-obat/getbynama/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    icd10_1:
+      rule: PathPrefix(`/v1.0/icd10/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    icd10_2:
+      rule: PathPrefix(`/v1.0/icd10/getbydiagnosa/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    icd10_3:
+      rule: PathPrefix(`/v1.0/icd10/getbysubdiagnosa/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    icd10_4:
+      rule: PathPrefix(`/v1.0/icd10/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    icd9_1:
+      rule: PathPrefix(`/v1.0/icd9/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    icd9_2:
+      rule: PathPrefix(`/v1.0/icd9/getbydiagnosa/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    icd9_3:
+      rule: PathPrefix(`/v1.0/icd9/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    instalasi_1:
+      rule: PathPrefix(`/v1.0/instalasi/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    instalasi_2:
+      rule: PathPrefix(`/v1.0/instalasi/getbykd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    instalasi_3:
+      rule: PathPrefix(`/v1.0/instalasi/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    instalasi_4:
+      rule: PathPrefix(`/v1.0/instalasi/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    instalasi_5:
+      rule: PathPrefix(`/v1.0/instalasi/deletebykd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    instalasi_6:
+      rule: PathPrefix(`/v1.0/instalasi/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    instalasi_7:
+      rule: PathPrefix(`/v1.0/instalasi/getbynama/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    item-rehabilitasi-medis_1:
+      rule: PathPrefix(`/v1.0/master/item-rehabilitasi-medis/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    item-rehabilitasi-medis_2:
+      rule: PathPrefix(`/v1.0/master/item-rehabilitasi-medis/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    item-rehabilitasi-medis_3:
+      rule: PathPrefix(`/v1.0/master/item-rehabilitasi-medis/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    item-rehabilitasi-medis_4:
+      rule: PathPrefix(`/v1.0/master/item-rehabilitasi-medis/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    item-rehabilitasi-medis_5:
+      rule: PathPrefix(`/v1.0/master/item-rehabilitasi-medis/delete/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-diet_1:
+      rule: PathPrefix(`/v1.0/master/jenis-diet/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-diet_2:
+      rule: PathPrefix(`/v1.0/master/jenis-diet/get-all`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-diet_3:
+      rule: PathPrefix(`/v1.0/master/jenis-diet/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-diet_4:
+      rule: PathPrefix(`/v1.0/master/jenis-diet/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-diet_5:
+      rule: PathPrefix(`/v1.0/master/jenis-diet/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-diet_6:
+      rule: PathPrefix(`/v1.0/master/jenis-diet/delete/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-makanan_1:
+      rule: PathPrefix(`/v1.0/master/jenis-makanan/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-makanan_2:
+      rule: PathPrefix(`/v1.0/master/jenis-makanan/get-all`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-makanan_3:
+      rule: PathPrefix(`/v1.0/master/jenis-makanan/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-makanan_4:
+      rule: PathPrefix(`/v1.0/master/jenis-makanan/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-makanan_5:
+      rule: PathPrefix(`/v1.0/master/jenis-makanan/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    jenis-makanan_6:
+      rule: PathPrefix(`/v1.0/master/jenis-makanan/delete/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    kelompok-barang_1:
+      rule: PathPrefix(`/v1.0/kelompok-barang/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    kelompok-barang_2:
+      rule: PathPrefix(`/v1.0/kelompok-barang/getbykd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    kelompok-barang_3:
+      rule: PathPrefix(`/v1.0/kelompok-barang/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    kelompok-barang_4:
+      rule: PathPrefix(`/v1.0/kelompok-barang/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    kelompok-barang_5:
+      rule: PathPrefix(`/v1.0/kelompok-barang/deletebykd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    kelompok-barang_6:
+      rule: PathPrefix(`/v1.0/kelompok-barang/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    kelompok-barang_7:
+      rule: PathPrefix(`/v1.0/kelompok-barang/getbynama/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    keterangan-kartu-stock_1:
+      rule: PathPrefix(`/v1.0/master/keterangan-kartu-stock/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    keterangan-kartu-stock_2:
+      rule: PathPrefix(`/v1.0/master/keterangan-kartu-stock/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    keterangan-kartu-stock_3:
+      rule: PathPrefix(`/v1.0/master/keterangan-kartu-stock/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    keterangan-kartu-stock_4:
+      rule: PathPrefix(`/v1.0/master/keterangan-kartu-stock/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    keterangan-kartu-stock_5:
+      rule: PathPrefix(`/v1.0/master/keterangan-kartu-stock/delete-by-kd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    pabrik_1:
+      rule: PathPrefix(`/v1.0/master/pabrik/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    pabrik_2:
+      rule: PathPrefix(`/v1.0/master/pabrik/getbykd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    pabrik_3:
+      rule: PathPrefix(`/v1.0/master/pabrik/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    pabrik_4:
+      rule: PathPrefix(`/v1.0/master/pabrik/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    pabrik_5:
+      rule: PathPrefix(`/v1.0/master/pabrik/deletebykd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    pabrik_6:
+      rule: PathPrefix(`/v1.0/master/pabrik/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    pabrik_7:
+      rule: PathPrefix(`/v1.0/master/pabrik/getbynama/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-lab_1:
+      rule: PathPrefix(`/v1.0/master/paket-lab/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-lab_2:
+      rule: PathPrefix(`/v1.0/master/paket-lab/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-lab_3:
+      rule: PathPrefix(`/v1.0/master/paket-lab/get-by-id/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-lab_4:
+      rule: PathPrefix(`/v1.0/master/paket-lab/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-lab_5:
+      rule: PathPrefix(`/v1.0/master/paket-lab/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-lab_6:
+      rule: PathPrefix(`/v1.0/master/paket-lab/delete-by-id/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-obat_1:
+      rule: PathPrefix(`/v1.0/master/paket-obat/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-obat_2:
+      rule: PathPrefix(`/v1.0/master/paket-obat/get-by-id/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-obat_3:
+      rule: PathPrefix(`/v1.0/master/paket-obat/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-obat_4:
+      rule: PathPrefix(`/v1.0/master/paket-obat/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    paket-obat_5:
+      rule: PathPrefix(`/v1.0/master/paket-obat/delete-by-id/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    petugas-farmasi_1:
+      rule: PathPrefix(`/v1.0/master/petugas-farmasi/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    petugas-farmasi_2:
+      rule: PathPrefix(`/v1.0/master/petugas-farmasi/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    petugas-farmasi_3:
+      rule: PathPrefix(`/v1.0/master/petugas-farmasi/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    petugas-farmasi_4:
+      rule: PathPrefix(`/v1.0/master/petugas-farmasi/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    petugas-farmasi_5:
+      rule: PathPrefix(`/v1.0/master/petugas-farmasi/delete-by-kd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    sdki_1:
+      rule: PathPrefix(`/v1.0/sdki/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    set-cssd_1:
+      rule: PathPrefix(`/v1.0/master/set-cssd/get-list`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    set-cssd_2:
+      rule: PathPrefix(`/v1.0/master/set-cssd/get-by-kd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    set-cssd_3:
+      rule: PathPrefix(`/v1.0/master/set-cssd/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    set-cssd_4:
+      rule: PathPrefix(`/v1.0/master/set-cssd/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    set-cssd_5:
+      rule: PathPrefix(`/v1.0/master/set-cssd/delete/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    siki_1:
+      rule: PathPrefix(`/v1.0/siki/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    supplier_1:
+      rule: PathPrefix(`/v1.0/supplier/getlist`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    supplier_2:
+      rule: PathPrefix(`/v1.0/supplier/getbykd/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    supplier_3:
+      rule: PathPrefix(`/v1.0/supplier/create`) && Method(`POST`)
+      service: service-master
+      entryPoints:
+      - web
+
+    supplier_4:
+      rule: PathPrefix(`/v1.0/supplier/update`) && Method(`PUT`)
+      service: service-master
+      entryPoints:
+      - web
+
+    supplier_5:
+      rule: PathPrefix(`/v1.0/supplier/deletebykd/`) && Method(`DELETE`)
+      service: service-master
+      entryPoints:
+      - web
+
+    supplier_6:
+      rule: PathPrefix(`/v1.0/supplier/getall`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+
+    supplier_7:
+      rule: PathPrefix(`/v1.0/supplier/getbynama/`) && Method(`GET`)
+      service: service-master
+      entryPoints:
+      - web
+    agama_1:
+      rule: PathPrefix(`/v1.0/agama/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+    agama_2:
+      rule: PathPrefix(`/v1.0/agama/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    agama_3:
+      rule: PathPrefix(`/v1.0/agama/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    agama_4:
+      rule: PathPrefix(`/v1.0/agama/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    agama_5:
+      rule: PathPrefix(`/v1.0/agama/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    alergi_1:
+      rule: PathPrefix(`/v1.0/alergi/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    alergi_2:
+      rule: PathPrefix(`/v1.0/alergi/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    alergi_3:
+      rule: PathPrefix(`/v1.0/alergi/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    alergi_4:
+      rule: PathPrefix(`/v1.0/alergi/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    alergi_5:
+      rule: PathPrefix(`/v1.0/alergi/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    aturan-pakai-obat_1:
+      rule: PathPrefix(`/v1.0/aturanpakaiobat/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    aturan-pakai-obat_2:
+      rule: PathPrefix(`/v1.0/aturanpakaiobat/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    aturan-pakai-obat_3:
+      rule: PathPrefix(`/v1.0/aturanpakaiobat/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    aturan-pakai-obat_4:
+      rule: PathPrefix(`/v1.0/aturanpakaiobat/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    aturan-pakai-obat_5:
+      rule: PathPrefix(`/v1.0/aturanpakaiobat/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    cara-bayar_1:
+      rule: PathPrefix(`/v1.0/carabayar/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    cara-bayar_2:
+      rule: PathPrefix(`/v1.0/carabayar/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    cara-bayar_3:
+      rule: PathPrefix(`/v1.0/carabayar/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    cara-bayar_4:
+      rule: PathPrefix(`/v1.0/carabayar/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    cara-bayar_5:
+      rule: PathPrefix(`/v1.0/carabayar/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    desa_1:
+      rule: PathPrefix(`/v1.0/desa/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    desa_2:
+      rule: PathPrefix(`/v1.0/desa/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    desa_3:
+      rule: PathPrefix(`/v1.0/desa/getbykdkec/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    desa_4:
+      rule: PathPrefix(`/v1.0/desa/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    desa_5:
+      rule: PathPrefix(`/v1.0/desa/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    desa_6:
+      rule: PathPrefix(`/v1.0/desa/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    golongan-pegawai_1:
+      rule: PathPrefix(`/v1.0/golonganpegawai/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    golongan-pegawai_2:
+      rule: PathPrefix(`/v1.0/golonganpegawai/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    golongan-pegawai_3:
+      rule: PathPrefix(`/v1.0/golonganpegawai/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    golongan-pegawai_4:
+      rule: PathPrefix(`/v1.0/golonganpegawai/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    golongan-pegawai_5:
+      rule: PathPrefix(`/v1.0/golonganpegawai/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jabatan-pegawai_1:
+      rule: PathPrefix(`/v1.0/jabatanpegawai/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jabatan-pegawai_2:
+      rule: PathPrefix(`/v1.0/jabatanpegawai/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jabatan-pegawai_3:
+      rule: PathPrefix(`/v1.0/jabatanpegawai/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jabatan-pegawai_4:
+      rule: PathPrefix(`/v1.0/jabatanpegawai/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jabatan-pegawai_5:
+      rule: PathPrefix(`/v1.0/jabatanpegawai/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jenis-kelamin_1:
+      rule: PathPrefix(`/v1.0/jeniskelamin/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jenis-kelamin_2:
+      rule: PathPrefix(`/v1.0/jeniskelamin/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jenis-kelamin_3:
+      rule: PathPrefix(`/v1.0/jeniskelamin/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jenis-kelamin_4:
+      rule: PathPrefix(`/v1.0/jeniskelamin/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    jenis-kelamin_5:
+      rule: PathPrefix(`/v1.0/jeniskelamin/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kabkota_1:
+      rule: PathPrefix(`/v1.0/kabkota/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kabkota_2:
+      rule: PathPrefix(`/v1.0/kabkota/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kabkota_3:
+      rule: PathPrefix(`/v1.0/kabkota/getbykdprov/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kabkota_4:
+      rule: PathPrefix(`/v1.0/kabkota/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kabkota_5:
+      rule: PathPrefix(`/v1.0/kabkota/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kabkota_6:
+      rule: PathPrefix(`/v1.0/kabkota/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kategori-kamar_1:
+      rule: PathPrefix(`/v1.0/kategorikamar/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kategori-kamar_2:
+      rule: PathPrefix(`/v1.0/kategorikamar/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kategori-kamar_3:
+      rule: PathPrefix(`/v1.0/kategorikamar/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kategori-kamar_4:
+      rule: PathPrefix(`/v1.0/kategorikamar/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kategori-kamar_5:
+      rule: PathPrefix(`/v1.0/kategorikamar/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kecamatan_1:
+      rule: PathPrefix(`/v1.0/kecamatan/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kecamatan_2:
+      rule: PathPrefix(`/v1.0/kecamatan/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kecamatan_3:
+      rule: PathPrefix(`/v1.0/kecamatan/getbykdkabkot/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kecamatan_4:
+      rule: PathPrefix(`/v1.0/kecamatan/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kecamatan_5:
+      rule: PathPrefix(`/v1.0/kecamatan/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kecamatan_6:
+      rule: PathPrefix(`/v1.0/kecamatan/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kelas_1:
+      rule: PathPrefix(`/v1.0/kelas/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kelas_2:
+      rule: PathPrefix(`/v1.0/kelas/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kelas_3:
+      rule: PathPrefix(`/v1.0/kelas/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kelas_4:
+      rule: PathPrefix(`/v1.0/kelas/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kelas_5:
+      rule: PathPrefix(`/v1.0/kelas/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kemasan-obat_1:
+      rule: PathPrefix(`/v1.0/kemasanobat/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kemasan-obat_2:
+      rule: PathPrefix(`/v1.0/kemasanobat/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kemasan-obat_3:
+      rule: PathPrefix(`/v1.0/kemasanobat/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kemasan-obat_4:
+      rule: PathPrefix(`/v1.0/kemasanobat/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    kemasan-obat_5:
+      rule: PathPrefix(`/v1.0/kemasanobat/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    keterangan-aset_1:
+      rule: PathPrefix(`/v1.0/referensi/keterangan-aset/get-list`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    keterangan-aset_2:
+      rule: PathPrefix(`/v1.0/referensi/keterangan-aset/get-by-kd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    keterangan-aset_3:
+      rule: PathPrefix(`/v1.0/referensi/keterangan-aset/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    keterangan-aset_4:
+      rule: PathPrefix(`/v1.0/referensi/keterangan-aset/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    keterangan-aset_5:
+      rule: PathPrefix(`/v1.0/referensi/keterangan-aset/delete-by-kd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    konfigurasi_1:
+      rule: PathPrefix(`/v1.0/konfigurasi/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    konfigurasi_2:
+      rule: PathPrefix(`/v1.0/konfigurasi/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    konfigurasi_3:
+      rule: PathPrefix(`/v1.0/konfigurasi/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    konfigurasi_4:
+      rule: PathPrefix(`/v1.0/konfigurasi/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    konfigurasi_5:
+      rule: PathPrefix(`/v1.0/konfigurasi/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    license_1:
+      rule: PathPrefix(`/v1.0/referensi/license/status`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    license_2:
+      rule: PathPrefix(`/v1.0/referensi/license/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    linen_1:
+      rule: PathPrefix(`/v1.0/referensi/linen/get-list`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    linen_2:
+      rule: PathPrefix(`/v1.0/referensi/linen/get-by-kd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    linen_3:
+      rule: PathPrefix(`/v1.0/referensi/linen/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    linen_4:
+      rule: PathPrefix(`/v1.0/referensi/linen/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    linen_5:
+      rule: PathPrefix(`/v1.0/referensi/linen/delete-by-kd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    maintenance_1:
+      rule: PathPrefix(`/v1.0/referensi/maintenance/status`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    maintenance_2:
+      rule: PathPrefix(`/v1.0/referensi/maintenance/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    negara_1:
+      rule: PathPrefix(`/v1.0/negara/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    negara_2:
+      rule: PathPrefix(`/v1.0/negara/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    negara_3:
+      rule: PathPrefix(`/v1.0/negara/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    negara_4:
+      rule: PathPrefix(`/v1.0/negara/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    negara_5:
+      rule: PathPrefix(`/v1.0/negara/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    organisasi_1:
+      rule: PathPrefix(`/v1.0/referensi/organisasi/get-list`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    organisasi_2:
+      rule: PathPrefix(`/v1.0/referensi/organisasi/get-by-kd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    organisasi_3:
+      rule: PathPrefix(`/v1.0/referensi/organisasi/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    organisasi_4:
+      rule: PathPrefix(`/v1.0/referensi/organisasi/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    organisasi_5:
+      rule: PathPrefix(`/v1.0/referensi/organisasi/delete-by-kd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pekerjaan_1:
+      rule: PathPrefix(`/v1.0/pekerjaan/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pekerjaan_2:
+      rule: PathPrefix(`/v1.0/pekerjaan/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pekerjaan_3:
+      rule: PathPrefix(`/v1.0/pekerjaan/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pekerjaan_4:
+      rule: PathPrefix(`/v1.0/pekerjaan/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pekerjaan_5:
+      rule: PathPrefix(`/v1.0/pekerjaan/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pendidikan_1:
+      rule: PathPrefix(`/v1.0/pendidikan/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pendidikan_2:
+      rule: PathPrefix(`/v1.0/pendidikan/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pendidikan_3:
+      rule: PathPrefix(`/v1.0/pendidikan/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pendidikan_4:
+      rule: PathPrefix(`/v1.0/pendidikan/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    pendidikan_5:
+      rule: PathPrefix(`/v1.0/pendidikan/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    provinsi_1:
+      rule: PathPrefix(`/v1.0/provinsi/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    provinsi_2:
+      rule: PathPrefix(`/v1.0/provinsi/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    provinsi_3:
+      rule: PathPrefix(`/v1.0/provinsi/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    provinsi_4:
+      rule: PathPrefix(`/v1.0/provinsi/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    provinsi_5:
+      rule: PathPrefix(`/v1.0/provinsi/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    rumah-sakit_1:
+      rule: PathPrefix(`/v1.0/rumah-sakit/get-list`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    rumah-sakit_2:
+      rule: PathPrefix(`/v1.0/rumah-sakit/get-by-rs-code/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    rumah-sakit_3:
+      rule: PathPrefix(`/v1.0/rumah-sakit/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    rumah-sakit_4:
+      rule: PathPrefix(`/v1.0/rumah-sakit/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    rumah-sakit_5:
+      rule: PathPrefix(`/v1.0/rumah-sakit/delete/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    rumah-sakit_6:
+      rule: PathPrefix(`/v1.0/rumah-sakit/activate`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    rumah-sakit_7:
+      rule: PathPrefix(`/v1.0/rumah-sakit/get-active`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    satuan-obat_1:
+      rule: PathPrefix(`/v1.0/satuanobat/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    satuan-obat_2:
+      rule: PathPrefix(`/v1.0/satuanobat/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    satuan-obat_3:
+      rule: PathPrefix(`/v1.0/satuanobat/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    satuan-obat_4:
+      rule: PathPrefix(`/v1.0/satuanobat/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    satuan-obat_5:
+      rule: PathPrefix(`/v1.0/satuanobat/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-bed_1:
+      rule: PathPrefix(`/v1.0/statusbed/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-bed_2:
+      rule: PathPrefix(`/v1.0/statusbed/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-bed_3:
+      rule: PathPrefix(`/v1.0/statusbed/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-bed_4:
+      rule: PathPrefix(`/v1.0/statusbed/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-bed_5:
+      rule: PathPrefix(`/v1.0/statusbed/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-obat_1:
+      rule: PathPrefix(`/v1.0/statusobat/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-obat_2:
+      rule: PathPrefix(`/v1.0/statusobat/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-obat_3:
+      rule: PathPrefix(`/v1.0/statusobat/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-obat_4:
+      rule: PathPrefix(`/v1.0/statusobat/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-obat_5:
+      rule: PathPrefix(`/v1.0/statusobat/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-pernikahan_1:
+      rule: PathPrefix(`/v1.0/statuspernikahan/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-pernikahan_2:
+      rule: PathPrefix(`/v1.0/statuspernikahan/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-pernikahan_3:
+      rule: PathPrefix(`/v1.0/statuspernikahan/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-pernikahan_4:
+      rule: PathPrefix(`/v1.0/statuspernikahan/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    status-pernikahan_5:
+      rule: PathPrefix(`/v1.0/statuspernikahan/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    struktur-organisasi_1:
+      rule: PathPrefix(`/v1.0/strukturorganisasi/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    struktur-organisasi_2:
+      rule: PathPrefix(`/v1.0/strukturorganisasi/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    struktur-organisasi_3:
+      rule: PathPrefix(`/v1.0/strukturorganisasi/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    struktur-organisasi_4:
+      rule: PathPrefix(`/v1.0/strukturorganisasi/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    struktur-organisasi_5:
+      rule: PathPrefix(`/v1.0/strukturorganisasi/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    suku_1:
+      rule: PathPrefix(`/v1.0/suku/getlist`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    suku_2:
+      rule: PathPrefix(`/v1.0/suku/getbykd/`) && Method(`GET`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    suku_3:
+      rule: PathPrefix(`/v1.0/suku/create`) && Method(`POST`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    suku_4:
+      rule: PathPrefix(`/v1.0/suku/update`) && Method(`PUT`)
+      service: service-referensi
+      entryPoints:
+      - web
+
+    suku_5:
+      rule: PathPrefix(`/v1.0/suku/deletebykd/`) && Method(`DELETE`)
+      service: service-referensi
+      entryPoints:
+
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+        - url: "http://22.22.22.57:8085" # IP Server Prod
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+        - url: "http://22.22.22.57:8091" # IP Server Prod
+    service-master:
+      loadBalancer:
+        servers:
+        - url: "http://22.22.22.57:8090" # IP Server Prod
+    service-referensi:
+      loadBalancer:
+        servers:
+        - url: "http://22.22.22.57:8081"
