@@ -1,3245 +1,3906 @@
 http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowOriginList:
+        - "*" # Mengizinkan semua domain
+        accessControlAllowMethods:
+        - "GET"
+        - "POST"
+        - "PUT"
+        - "DELETE"
+        - "OPTIONS"
+        accessControlAllowHeaders:
+        - "*"
   routers:
     adime_1:
       rule: PathPrefix(`/v1.0/adime/get-list-all`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     adime_2:
       rule: PathPrefix(`/v1.0/adime/get-list-by/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     adime_3:
       rule: PathPrefix(`/v1.0/adime/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     adime_4:
       rule: PathPrefix(`/v1.0/adime/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     adime_5:
       rule: PathPrefix(`/v1.0/adime/deletebyid/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     adime_6:
       rule: PathPrefix(`/v1.0/adime/sendtormbyid/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     adime_7:
       rule: PathPrefix(`/v1.0/adime/sendtorimbyid/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     all-pasien_1:
       rule: PathPrefix(`/v1.0/all-pasien/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     all-pasien_2:
       rule: PathPrefix(`/v1.0/all-pasien/getlist/selesai-layanan`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     all-pasien_3:
       rule: PathPrefix(`/v1.0/all-pasien/count`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-inap-jantung_1:
       rule: PathPrefix(`/v1.0/erm/asesmen-awal-keperawatan-rawat-inap-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-inap-jantung_2:
       rule: PathPrefix(`/v1.0/erm/asesmen-awal-keperawatan-rawat-inap-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-inap-jantung_3:
       rule: PathPrefix(`/v1.0/erm/asesmen-awal-keperawatan-rawat-inap-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-inap-jantung_4:
       rule: PathPrefix(`/v1.0/erm/asesmen-awal-keperawatan-rawat-inap-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-inap-jantung_5:
       rule: PathPrefix(`/v1.0/erm/asesmen-awal-keperawatan-rawat-inap-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-jalan_1:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-rawat-jalan/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-jalan_2:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-rawat-jalan/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-jalan_3:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-rawat-jalan/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-jalan_4:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-rawat-jalan/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-awal-keperawatan-rawat-jalan_5:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-rawat-jalan/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-dokter-poli-tht_1:
       rule: PathPrefix(`/v1.0/asesmen-dokter-poli-tht/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-dokter-poli-tht_2:
       rule: PathPrefix(`/v1.0/asesmen-dokter-poli-tht/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-dokter-poli-tht_3:
       rule: PathPrefix(`/v1.0/asesmen-dokter-poli-tht/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-dokter-poli-tht_4:
       rule: PathPrefix(`/v1.0/asesmen-dokter-poli-tht/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-dokter-poli-tht_5:
       rule: PathPrefix(`/v1.0/asesmen-dokter-poli-tht/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-kefarmasian_1:
       rule: PathPrefix(`/v1.0/erm/asesmen-kefarmasian/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-kefarmasian_2:
       rule: PathPrefix(`/v1.0/erm/asesmen-kefarmasian/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-kefarmasian_3:
       rule: PathPrefix(`/v1.0/erm/asesmen-kefarmasian/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-kefarmasian_4:
       rule: PathPrefix(`/v1.0/erm/asesmen-kefarmasian/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-kefarmasian_5:
       rule: PathPrefix(`/v1.0/erm/asesmen-kefarmasian/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-kefarmasian_6:
       rule: PathPrefix(`/v1.0/erm/asesmen-kefarmasian/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-keperawatan-instalasi-gawat-darurat_1:
       rule: PathPrefix(`/v1.0/asesmen-keperawatan-instalasi-gawat-darurat/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-keperawatan-instalasi-gawat-darurat_2:
       rule: PathPrefix(`/v1.0/asesmen-keperawatan-instalasi-gawat-darurat/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-keperawatan-instalasi-gawat-darurat_3:
       rule: PathPrefix(`/v1.0/asesmen-keperawatan-instalasi-gawat-darurat/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-keperawatan-instalasi-gawat-darurat_4:
       rule: PathPrefix(`/v1.0/asesmen-keperawatan-instalasi-gawat-darurat/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-keperawatan-instalasi-gawat-darurat_5:
       rule: PathPrefix(`/v1.0/asesmen-keperawatan-instalasi-gawat-darurat/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-dokter_1:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-dokter_2:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-dokter_3:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-dokter_4:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-dokter_5:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-dokter_6:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-dokter_7:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-perawat_1:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-perawat/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-perawat_2:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-perawat/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-perawat_3:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-perawat/get-by-id-asesmen-lanjutan-dokter/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-perawat_4:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-perawat/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-perawat_5:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-perawat/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-perawat_6:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-perawat/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-perawat_7:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-perawat/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rawat-jalan-perawat_8:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-perawat/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rj-psikologi_1:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rj-psikologi/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rj-psikologi_2:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rj-psikologi/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rj-psikologi_3:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rj-psikologi/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rj-psikologi_4:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rj-psikologi/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rj-psikologi_5:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rj-psikologi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rj-psikologi_6:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rj-psikologi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-lanjutan-rj-psikologi_7:
       rule: PathPrefix(`/v1.0/erm/asesmen-lanjutan-rj-psikologi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-populasi-khusus-gangguan-emosional_1:
       rule: PathPrefix(`/v1.0/asesmen-populasi-khusus-gangguan-emosional/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-populasi-khusus-gangguan-emosional_2:
       rule: PathPrefix(`/v1.0/asesmen-populasi-khusus-gangguan-emosional/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-populasi-khusus-gangguan-emosional_3:
       rule: PathPrefix(`/v1.0/asesmen-populasi-khusus-gangguan-emosional/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-populasi-khusus-gangguan-emosional_4:
       rule: PathPrefix(`/v1.0/asesmen-populasi-khusus-gangguan-emosional/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-populasi-khusus-gangguan-emosional_5:
       rule: PathPrefix(`/v1.0/asesmen-populasi-khusus-gangguan-emosional/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-ulang-penatalaksanaan-nyeri_1:
       rule: PathPrefix(`/v1.0/asesmen-ulang-penatalaksanaan-nyeri/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-ulang-penatalaksanaan-nyeri_2:
       rule: PathPrefix(`/v1.0/asesmen-ulang-penatalaksanaan-nyeri/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-ulang-penatalaksanaan-nyeri_3:
       rule: PathPrefix(`/v1.0/asesmen-ulang-penatalaksanaan-nyeri/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-ulang-penatalaksanaan-nyeri_4:
       rule: PathPrefix(`/v1.0/asesmen-ulang-penatalaksanaan-nyeri/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen-ulang-penatalaksanaan-nyeri_5:
       rule: PathPrefix(`/v1.0/asesmen-ulang-penatalaksanaan-nyeri/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen_populasi_tertentu_1:
       rule: PathPrefix(`/v1.0/asesmen-populasi-tertentu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen_populasi_tertentu_2:
       rule: PathPrefix(`/v1.0/asesmen-populasi-tertentu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen_populasi_tertentu_3:
       rule: PathPrefix(`/v1.0/asesmen-populasi-tertentu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen_populasi_tertentu_4:
       rule: PathPrefix(`/v1.0/asesmen-populasi-tertentu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     asesmen_populasi_tertentu_5:
       rule: PathPrefix(`/v1.0/asesmen-populasi-tertentu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     barthel-indeks-mcu_1:
       rule: PathPrefix(`/v1.0/barthel-indeks-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     barthel-indeks-mcu_2:
       rule: PathPrefix(`/v1.0/barthel-indeks-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     barthel-indeks-mcu_3:
       rule: PathPrefix(`/v1.0/barthel-indeks-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     barthel-indeks-mcu_4:
       rule: PathPrefix(`/v1.0/barthel-indeks-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     barthel-indeks-mcu_5:
       rule: PathPrefix(`/v1.0/barthel-indeks-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-barang_1:
       rule: PathPrefix(`/v1.0/billing-barang/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-barang_2:
       rule: PathPrefix(`/v1.0/billing-barang/getlist-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-barang_3:
       rule: PathPrefix(`/v1.0/billing-barang/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-barang_4:
       rule: PathPrefix(`/v1.0/billing-barang/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-barang_5:
       rule: PathPrefix(`/v1.0/billing-barang/delete-by-id/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-sarana_1:
       rule: PathPrefix(`/v1.0/billing-sarana/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-sarana_2:
       rule: PathPrefix(`/v1.0/billing-sarana/getlist-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-sarana_3:
       rule: PathPrefix(`/v1.0/billing-sarana/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-sarana_4:
       rule: PathPrefix(`/v1.0/billing-sarana/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-sarana_5:
       rule: PathPrefix(`/v1.0/billing-sarana/delete-by-id/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     billing-sarana_6:
       rule: PathPrefix(`/v1.0/billing-sarana/getlist-by-id-billing/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     blanko-rujukan-rs-lain-jantung_1:
       rule: PathPrefix(`/v1.0/blanko-rujukan-rs-lain-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     blanko-rujukan-rs-lain-jantung_2:
       rule: PathPrefix(`/v1.0/blanko-rujukan-rs-lain-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     blanko-rujukan-rs-lain-jantung_3:
       rule: PathPrefix(`/v1.0/blanko-rujukan-rs-lain-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     blanko-rujukan-rs-lain-jantung_4:
       rule: PathPrefix(`/v1.0/blanko-rujukan-rs-lain-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     blanko-rujukan-rs-lain-jantung_5:
       rule: PathPrefix(`/v1.0/blanko-rujukan-rs-lain-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien-keluarga_1:
       rule: PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien-keluarga_2:
       rule: PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien-keluarga_3:
       rule: PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien-keluarga_4:
       rule: PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien-keluarga_5:
       rule: PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_1:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_2:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_3:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_4:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_5:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_6:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/topik-edukasi/create-topik`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_7:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/topik-edukasi/update-topik`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_8:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/topik-edukasi/delete-topik/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi-terintegrasi-pasien_9:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/topik-edukasi/get-with-topik`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi_1:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi_2:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi_3:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi_4:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi_5:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi/get-by-edukasi-pasien-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi_6:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi_7:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-edukasi_8:
       rule: PathPrefix(`/v1.0/erm/catatan-edukasi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-kegiatan-pasien-instalasi-radioterapi_1:
       rule: PathPrefix(`/v1.0/catatan-kegiatan-pasien-instalasi-radioterapi/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-kegiatan-pasien-instalasi-radioterapi_2:
       rule: PathPrefix(`/v1.0/catatan-kegiatan-pasien-instalasi-radioterapi/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-kegiatan-pasien-instalasi-radioterapi_3:
       rule: PathPrefix(`/v1.0/catatan-kegiatan-pasien-instalasi-radioterapi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-kegiatan-pasien-instalasi-radioterapi_4:
       rule: PathPrefix(`/v1.0/catatan-kegiatan-pasien-instalasi-radioterapi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-kegiatan-pasien-instalasi-radioterapi_5:
       rule: PathPrefix(`/v1.0/catatan-kegiatan-pasien-instalasi-radioterapi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-keperawatan-peri-operatif_1:
       rule: PathPrefix(`/v1.0/catatan-keperawatan-peri-operatif/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-keperawatan-peri-operatif_2:
       rule: PathPrefix(`/v1.0/catatan-keperawatan-peri-operatif/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-keperawatan-peri-operatif_3:
       rule: PathPrefix(`/v1.0/catatan-keperawatan-peri-operatif/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-keperawatan-peri-operatif_4:
       rule: PathPrefix(`/v1.0/catatan-keperawatan-peri-operatif/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-keperawatan-peri-operatif_5:
       rule: PathPrefix(`/v1.0/catatan-keperawatan-peri-operatif/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-pemindahan-pasien-antar-ruangan_1:
       rule: PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-pemindahan-pasien-antar-ruangan_2:
       rule: PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-pemindahan-pasien-antar-ruangan_3:
       rule: PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-pemindahan-pasien-antar-ruangan_4:
       rule: PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-pemindahan-pasien-antar-ruangan_5:
       rule: PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-perkembangan-pasien-terintegrasi_1:
       rule: PathPrefix(`/v1.0/catatan-perkembangan-pasien-terintegrasi/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-perkembangan-pasien-terintegrasi_2:
       rule: PathPrefix(`/v1.0/catatan-perkembangan-pasien-terintegrasi/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-perkembangan-pasien-terintegrasi_3:
       rule: PathPrefix(`/v1.0/catatan-perkembangan-pasien-terintegrasi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-perkembangan-pasien-terintegrasi_4:
       rule: PathPrefix(`/v1.0/catatan-perkembangan-pasien-terintegrasi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     catatan-perkembangan-pasien-terintegrasi_5:
       rule: PathPrefix(`/v1.0/catatan-perkembangan-pasien-terintegrasi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     ceklist-keselamatan-pasien-jantung_1:
       rule: PathPrefix(`/v1.0/ceklist-keselamatan-pasien-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     ceklist-keselamatan-pasien-jantung_2:
       rule: PathPrefix(`/v1.0/ceklist-keselamatan-pasien-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     ceklist-keselamatan-pasien-jantung_3:
       rule: PathPrefix(`/v1.0/ceklist-keselamatan-pasien-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     ceklist-keselamatan-pasien-jantung_4:
       rule: PathPrefix(`/v1.0/ceklist-keselamatan-pasien-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     ceklist-keselamatan-pasien-jantung_5:
       rule: PathPrefix(`/v1.0/ceklist-keselamatan-pasien-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-keselamatan-pasien_1:
       rule: PathPrefix(`/v1.0/cheklist-keselamatan-pasien/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-keselamatan-pasien_2:
       rule: PathPrefix(`/v1.0/cheklist-keselamatan-pasien/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-keselamatan-pasien_3:
       rule: PathPrefix(`/v1.0/cheklist-keselamatan-pasien/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-keselamatan-pasien_4:
       rule: PathPrefix(`/v1.0/cheklist-keselamatan-pasien/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-keselamatan-pasien_5:
       rule: PathPrefix(`/v1.0/cheklist-keselamatan-pasien/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-planning-brakhiterapi_1:
       rule: PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-planning-brakhiterapi_2:
       rule: PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-planning-brakhiterapi_3:
       rule: PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-planning-brakhiterapi_4:
       rule: PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cheklist-planning-brakhiterapi_5:
       rule: PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     count-medis_1:
       rule: PathPrefix(`/v1.0/count-catatan-medis/by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     count-medis_2:
       rule: PathPrefix(`/v1.0/count-catatan-medis/by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_1:
       rule: PathPrefix(`/v1.0/cppt/get-list-all`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_2:
       rule: PathPrefix(`/v1.0/cppt/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_3:
       rule: PathPrefix(`/v1.0/cppt/get-list-by`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_4:
       rule: PathPrefix(`/v1.0/cppt/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_5:
       rule: PathPrefix(`/v1.0/cppt/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_6:
       rule: PathPrefix(`/v1.0/cppt/deletebyid/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_7:
       rule: PathPrefix(`/v1.0/cppt/sendtormbyid/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_8:
       rule: PathPrefix(`/v1.0/cppt/riwayat-cppt/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_9:
       rule: PathPrefix(`/v1.0/cppt/update-evaluasi`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_10:
       rule: PathPrefix(`/v1.0/cppt/update-diagnosa-primer`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_11:
       rule: PathPrefix(`/v1.0/cppt/create-diagnosa-sekunder`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_12:
       rule: PathPrefix(`/v1.0/cppt/create-diagnosa-sekunder-perawat`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_13:
       rule: PathPrefix(`/v1.0/cppt/create-tindakan-dokter`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_14:
       rule: PathPrefix(`/v1.0/cppt/create-tindakan-perawat`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_15:
       rule: PathPrefix(`/v1.0/cppt/delete-diagnosa-sekunder/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_16:
       rule: PathPrefix(`/v1.0/cppt/delete-diagnosa-sekunder-perawat/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_17:
       rule: PathPrefix(`/v1.0/cppt/delete-tindakan-dokter/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_18:
       rule: PathPrefix(`/v1.0/cppt/delete-tindakan-perawat/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_19:
       rule: PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-perawat/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_20:
       rule: PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-dokter/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_21:
       rule: PathPrefix(`/v1.0/cppt/update-tindakan-dokter`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_22:
       rule: PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-perawat-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_23:
       rule: PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-dokter-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_24:
       rule: PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-dokter-rekam-medik-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_25:
       rule: PathPrefix(`/v1.0/cppt/update-tindakan-perawat`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_26:
       rule: PathPrefix(`/v1.0/cppt/update-diagnosa-sekunder-perawat`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_27:
       rule: PathPrefix(`/v1.0/cppt/update-diagnosa-sekunder`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_28:
       rule: PathPrefix(`/v1.0/cppt/create-diagnosa-sekunder-rekam-medik`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_29:
       rule: PathPrefix(`/v1.0/cppt/create-tindakan-dokter-rekam-medik`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_30:
       rule: PathPrefix(`/v1.0/cppt/update-tindakan-dokter-rekam-medik`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_31:
       rule: PathPrefix(`/v1.0/cppt/update-diagnosa-sekunder-rekam-medik`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_32:
       rule: PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-dokter-rekam-medik/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_33:
       rule: PathPrefix(`/v1.0/cppt/delete-tindakan-dokter-rekam-medik/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_34:
       rule: PathPrefix(`/v1.0/cppt/delete-diagnosa-sekunder-rekam-medik/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_35:
       rule: PathPrefix(`/v1.0/cppt/update-by-no-order-operasi`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_36:
       rule: PathPrefix(`/v1.0/erm/laporan-kematian-penyakit/10-besar`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_37:
       rule: PathPrefix(`/v1.0/laporan-kemenkes/get`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_38:
       rule: PathPrefix(`/v1.0/erm/laporan-icd-10/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_39:
       rule: PathPrefix(`/v1.0/erm/laporan-igd-sirs/rl33`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_40:
       rule: PathPrefix(`/v1.0/erm/laporan-pelayanan-khusus/rl314`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_41:
       rule: PathPrefix(`/v1.0/cppt/deskripsi-tindakan/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_42:
       rule: PathPrefix(`/v1.0/cppt/deskripsi-tindakan/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_43:
       rule: PathPrefix(`/v1.0/cppt/deskripsi-tindakan/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_44:
       rule: PathPrefix(`/v1.0/cppt/deskripsi-tindakan/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_45:
       rule: PathPrefix(`/v1.0/cppt/deskripsi-tindakan/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_46:
       rule: PathPrefix(`/v1.0/cppt/deskripsi-tindakan/get-by-id-tindakan/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_47:
       rule: PathPrefix(`/v1.0/erm/laporan-bayi/rl37`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_48:
       rule: PathPrefix(`/v1.0/erm/laporan-kebidanan/rl36`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     cppt_49:
       rule: PathPrefix(`/v1.0/erm/laporan-ranap-sirs/rl32`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dnr_1:
       rule: PathPrefix(`/v1.0/erm/dnr/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dnr_2:
       rule: PathPrefix(`/v1.0/erm/dnr/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dnr_3:
       rule: PathPrefix(`/v1.0/erm/dnr/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dnr_4:
       rule: PathPrefix(`/v1.0/erm/dnr/update/`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dnr_5:
       rule: PathPrefix(`/v1.0/erm/dnr/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dokter-penanggung-jawab-pelayanan-dpjp-jantung_1:
       rule: PathPrefix(`/v1.0/erm/dokter-penanggung-jawab-pelayanan-dpjp-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dokter-penanggung-jawab-pelayanan-dpjp-jantung_2:
       rule: PathPrefix(`/v1.0/erm/dokter-penanggung-jawab-pelayanan-dpjp-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dokter-penanggung-jawab-pelayanan-dpjp-jantung_3:
       rule: PathPrefix(`/v1.0/erm/dokter-penanggung-jawab-pelayanan-dpjp-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dokter-penanggung-jawab-pelayanan-dpjp-jantung_4:
       rule: PathPrefix(`/v1.0/erm/dokter-penanggung-jawab-pelayanan-dpjp-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     dokter-penanggung-jawab-pelayanan-dpjp-jantung_5:
       rule: PathPrefix(`/v1.0/erm/dokter-penanggung-jawab-pelayanan-dpjp-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     edukasi-pasien_1:
       rule: PathPrefix(`/v1.0/erm/edukasi-pasien/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     edukasi-pasien_2:
       rule: PathPrefix(`/v1.0/erm/edukasi-pasien/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     edukasi-pasien_3:
       rule: PathPrefix(`/v1.0/erm/edukasi-pasien/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     edukasi-pasien_4:
       rule: PathPrefix(`/v1.0/erm/edukasi-pasien/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     edukasi-pasien_5:
       rule: PathPrefix(`/v1.0/erm/edukasi-pasien/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     edukasi-pasien_6:
       rule: PathPrefix(`/v1.0/erm/edukasi-pasien/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     edukasi-pasien_7:
       rule: PathPrefix(`/v1.0/erm/edukasi-pasien/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-askep-hd_1:
       rule: PathPrefix(`/v1.0/askep-hd/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-askep-hd_2:
       rule: PathPrefix(`/v1.0/askep-hd/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-askep-hd_3:
       rule: PathPrefix(`/v1.0/askep-hd/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-askep-hd_4:
       rule: PathPrefix(`/v1.0/askep-hd/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-askep-hd_5:
       rule: PathPrefix(`/v1.0/askep-hd/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-igd_1:
       rule: PathPrefix(`/v1.0/asesmen-awal-igd/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-igd_2:
       rule: PathPrefix(`/v1.0/asesmen-awal-igd/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-igd_3:
       rule: PathPrefix(`/v1.0/asesmen-awal-igd/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-igd_4:
       rule: PathPrefix(`/v1.0/asesmen-awal-igd/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-keperawatan-gawat-darurat_1:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-gawat-darurat/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-keperawatan-gawat-darurat_2:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-gawat-darurat/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-keperawatan-gawat-darurat_3:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-gawat-darurat/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-keperawatan-gawat-darurat_4:
       rule: PathPrefix(`/v1.0/asesmen-awal-keperawatan-gawat-darurat/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-dpjp_1:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-dpjp/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-dpjp_2:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-dpjp/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-dpjp_3:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-dpjp/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-dpjp_4:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-dpjp/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-dpjp_5:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-dpjp/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-kebidanan_1:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-kebidanan_2:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-kebidanan_3:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-kebidanan_4:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis-kebidanan_5:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis_1:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis_2:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis_3:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis_4:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis_5:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis/update-photos/`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis_6:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis_7:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis/update-step-dua`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-medis_8:
       rule: PathPrefix(`/v1.0/asesmen-awal-medis/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_1:
       rule: PathPrefix(`/v1.0/rehab-medis/get-asesmen-awal-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_2:
       rule: PathPrefix(`/v1.0/rehab-medis/create-asesmen-awal`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_3:
       rule: PathPrefix(`/v1.0/rehab-medis/update-asesmen-awal`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_4:
       rule: PathPrefix(`/v1.0/rehab-medis/update-status-program-terapi/`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_5:
       rule: PathPrefix(`/v1.0/rehab-medis/delete-asesmen-awal/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_6:
       rule: PathPrefix(`/v1.0/rehab-medis/get-terapi-pasien-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_7:
       rule: PathPrefix(`/v1.0/rehab-medis/create-terapi-pasien`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_8:
       rule: PathPrefix(`/v1.0/rehab-medis/update-terapi-pasien`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_9:
       rule: PathPrefix(`/v1.0/rehab-medis/update-hasil-terapi-pasien`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_10:
       rule: PathPrefix(`/v1.0/rehab-medis/delete-terapi-pasien/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_11:
       rule: PathPrefix(`/v1.0/rehab-medis/getlist-asesmen-awal`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_12:
       rule: PathPrefix(`/v1.0/rehab-medis/update-rekomendasi`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_13:
       rule: PathPrefix(`/v1.0/rehab-medis/create-terapi-fisioterapi`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_14:
       rule: PathPrefix(`/v1.0/rehab-medis/create-jadwal-terapi-fisioterapi`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_15:
       rule: PathPrefix(`/v1.0/rehab-medis/update-jadwal-terapi-fisioterapi`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_16:
       rule: PathPrefix(`/v1.0/rehab-medis/get-list-jadwal-terapi-fisioterapi`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_17:
       rule: PathPrefix(`/v1.0/rehab-medis/get-jadwal-terapi-fisioterapi-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_18:
       rule: PathPrefix(`/v1.0/rehab-medis/get-terapi-by-id-jadwal/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_19:
       rule: PathPrefix(`/v1.0/rehab-medis/get-jadwal-terapi-fisioterapi-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_20:
       rule: PathPrefix(`/v1.0/rehab-medis/delete-jadwal-terapi-fisioterapi/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_21:
       rule: PathPrefix(`/v1.0/rehab-medis/update-terapi-fisioterapi`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_22:
       rule: PathPrefix(`/v1.0/rehab-medis/update-status-terapi-fisioterapi`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_23:
       rule: PathPrefix(`/v1.0/rehab-medis/getlist-terapi-fisioterapi`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_24:
       rule: PathPrefix(`/v1.0/rehab-medis/get-terapi-fisioterapi-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_25:
       rule: PathPrefix(`/v1.0/rehab-medis/get-terapi-fisioterapi-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-assesment-awal-rehab-medis_26:
       rule: PathPrefix(`/v1.0/rehab-medis/delete-terapi-fisioterapi/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-berkas-digital_1:
       rule: PathPrefix(`/v1.0/berkas-digital/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-berkas-digital_2:
       rule: PathPrefix(`/v1.0/berkas-digital/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-berkas-digital_3:
       rule: PathPrefix(`/v1.0/berkas-digital/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-berkas-digital_4:
       rule: PathPrefix(`/v1.0/berkas-digital/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-berkas-digital_5:
       rule: PathPrefix(`/v1.0/berkas-digital/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-berkas-digital_6:
       rule: PathPrefix(`/v1.0/berkas-digital/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-billing-rekam-medik_1:
       rule: PathPrefix(`/v1.0/billing-rekam-medik/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-billing-rekam-medik_2:
       rule: PathPrefix(`/v1.0/billing-rekam-medik/getlist-by-id-billing/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-billing-rekam-medik_3:
       rule: PathPrefix(`/v1.0/billing-rekam-medik/getlist-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-billing-rekam-medik_4:
       rule: PathPrefix(`/v1.0/billing-rekam-medik/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-billing-rekam-medik_5:
       rule: PathPrefix(`/v1.0/billing-rekam-medik/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-billing-rekam-medik_6:
       rule: PathPrefix(`/v1.0/billing-rekam-medik/delete-by-id/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-laporan-kemenkes_1:
       rule: PathPrefix(`/v1.0/laporan-kemenkes/get`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-peresepan-hd_1:
       rule: PathPrefix(`/v1.0/peresepan-hd/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-peresepan-hd_2:
       rule: PathPrefix(`/v1.0/peresepan-hd/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-peresepan-hd_3:
       rule: PathPrefix(`/v1.0/peresepan-hd/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-peresepan-hd_4:
       rule: PathPrefix(`/v1.0/peresepan-hd/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-peresepan-hd_5:
       rule: PathPrefix(`/v1.0/peresepan-hd/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-rencana-kontrol_1:
       rule: PathPrefix(`/v1.0/rencana-kontrol/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-rencana-kontrol_2:
       rule: PathPrefix(`/v1.0/rencana-kontrol/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-rencana-kontrol_3:
       rule: PathPrefix(`/v1.0/rencana-kontrol/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-rencana-kontrol_4:
       rule: PathPrefix(`/v1.0/rencana-kontrol/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-rencana-kontrol_5:
       rule: PathPrefix(`/v1.0/rencana-kontrol/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-rencana-kontrol_6:
       rule: PathPrefix(`/v1.0/rencana-kontrol/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-hemodialisa_1:
       rule: PathPrefix(`/v1.0/erm/resume-medis-hemodialisa/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-hemodialisa_2:
       rule: PathPrefix(`/v1.0/erm/resume-medis-hemodialisa/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-hemodialisa_3:
       rule: PathPrefix(`/v1.0/erm/resume-medis-hemodialisa/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-hemodialisa_4:
       rule: PathPrefix(`/v1.0/erm/resume-medis-hemodialisa/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-hemodialisa_5:
       rule: PathPrefix(`/v1.0/erm/resume-medis-hemodialisa/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-hemodialisa_6:
       rule: PathPrefix(`/v1.0/erm/resume-medis-hemodialisa/get-by-no-registrasi-verifikator/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_1:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_2:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_3:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_4:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_5:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_6:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/get-by-no-registrasi-verifikator/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_7:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/update-status-verifikator/`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_8:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/pasien/cek-verifikator/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_9:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/pasien/update-selesai-verifikator/`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_10:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/pasien/update-khusus-status-verifikator/`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-resume-medis-rawat-inap_11:
       rule: PathPrefix(`/v1.0/resume-medis-rawat-inap/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-riwayat-kunjungan_1:
       rule: PathPrefix(`/v1.0/erm/riwayat-kunjungan/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-riwayat-kunjungan_2:
       rule: PathPrefix(`/v1.0/erm/riwayat-kunjungan/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-riwayat-kunjungan_3:
       rule: PathPrefix(`/v1.0/erm/riwayat-kunjungan/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-riwayat-kunjungan_4:
       rule: PathPrefix(`/v1.0/erm/riwayat-kunjungan/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-riwayat-kunjungan_5:
       rule: PathPrefix(`/v1.0/erm/riwayat-kunjungan/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-riwayat-kunjungan_6:
       rule: PathPrefix(`/v1.0/erm/riwayat-kunjungan/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-riwayat-kunjungan_7:
       rule: PathPrefix(`/v1.0/erm/riwayat-kunjungan/get-by-no-registrasi-satu/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-riwayat-kunjungan_8:
       rule: PathPrefix(`/v1.0/erm/riwayat-kunjungan/get-by-no-registrasi-dua/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-verifikasi-claim-bpjs_1:
       rule: PathPrefix(`/v1.0/verifikasi-claim-bpjs/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-verifikasi-claim-bpjs_2:
       rule: PathPrefix(`/v1.0/verifikasi-claim-bpjs/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-verifikasi-claim-bpjs_3:
       rule: PathPrefix(`/v1.0/verifikasi-claim-bpjs/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     erm-verifikasi-claim-bpjs_4:
       rule: PathPrefix(`/v1.0/verifikasi-claim-bpjs/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     evaluasi-pra-anestesi-jantung_1:
       rule: PathPrefix(`/v1.0/erm/evaluasi-pra-anestesi-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     evaluasi-pra-anestesi-jantung_2:
       rule: PathPrefix(`/v1.0/erm/evaluasi-pra-anestesi-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     evaluasi-pra-anestesi-jantung_3:
       rule: PathPrefix(`/v1.0/erm/evaluasi-pra-anestesi-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     evaluasi-pra-anestesi-jantung_4:
       rule: PathPrefix(`/v1.0/erm/evaluasi-pra-anestesi-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     evaluasi-pra-anestesi-jantung_5:
       rule: PathPrefix(`/v1.0/erm/evaluasi-pra-anestesi-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-alergi_1:
       rule: PathPrefix(`/v1.0/erm/form-alergi/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-alergi_2:
       rule: PathPrefix(`/v1.0/erm/form-alergi/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-alergi_3:
       rule: PathPrefix(`/v1.0/erm/form-alergi/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-alergi_4:
       rule: PathPrefix(`/v1.0/erm/form-alergi/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-alergi_5:
       rule: PathPrefix(`/v1.0/erm/form-alergi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-alergi_6:
       rule: PathPrefix(`/v1.0/erm/form-alergi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-alergi_7:
       rule: PathPrefix(`/v1.0/erm/form-alergi/update-status`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-alergi_8:
       rule: PathPrefix(`/v1.0/erm/form-alergi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-penanda-lokasi-operasi-pria_1:
       rule: PathPrefix(`/v1.0/form-penanda-lokasi-operasi-pria/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-penanda-lokasi-operasi-pria_2:
       rule: PathPrefix(`/v1.0/form-penanda-lokasi-operasi-pria/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-penanda-lokasi-operasi-pria_3:
       rule: PathPrefix(`/v1.0/form-penanda-lokasi-operasi-pria/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-penanda-lokasi-operasi-pria_4:
       rule: PathPrefix(`/v1.0/form-penanda-lokasi-operasi-pria/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-penanda-lokasi-operasi-pria_5:
       rule: PathPrefix(`/v1.0/form-penanda-lokasi-operasi-pria/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_1:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_2:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_3:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_4:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_5:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_6:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/rekonsiliasi-obat-transfer/get-with`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_7:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/rekonsiliasi-obat-transfer/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_8:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/rekonsiliasi-obat-transfer/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     form-rekonsiliasi-obat-jantung_9:
       rule: PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/rekonsiliasi-obat-transfer/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-general-consent_1:
       rule: PathPrefix(`/v1.0/formulir-general-consent/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-general-consent_2:
       rule: PathPrefix(`/v1.0/formulir-general-consent/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-general-consent_3:
       rule: PathPrefix(`/v1.0/formulir-general-consent/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-general-consent_4:
       rule: PathPrefix(`/v1.0/formulir-general-consent/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-general-consent_5:
       rule: PathPrefix(`/v1.0/formulir-general-consent/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-operasi-instalasi-bedah-sentral-jantung_1:
       rule: PathPrefix(`/v1.0/formulir-operasi-instalasi-bedah-sentral-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-operasi-instalasi-bedah-sentral-jantung_2:
       rule: PathPrefix(`/v1.0/formulir-operasi-instalasi-bedah-sentral-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-operasi-instalasi-bedah-sentral-jantung_3:
       rule: PathPrefix(`/v1.0/formulir-operasi-instalasi-bedah-sentral-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-operasi-instalasi-bedah-sentral-jantung_4:
       rule: PathPrefix(`/v1.0/formulir-operasi-instalasi-bedah-sentral-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-operasi-instalasi-bedah-sentral-jantung_5:
       rule: PathPrefix(`/v1.0/formulir-operasi-instalasi-bedah-sentral-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-pembatalan-operasi_1:
       rule: PathPrefix(`/v1.0/formulir-pembatalan-operasi/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-pembatalan-operasi_2:
       rule: PathPrefix(`/v1.0/formulir-pembatalan-operasi/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-pembatalan-operasi_3:
       rule: PathPrefix(`/v1.0/formulir-pembatalan-operasi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-pembatalan-operasi_4:
       rule: PathPrefix(`/v1.0/formulir-pembatalan-operasi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-pembatalan-operasi_5:
       rule: PathPrefix(`/v1.0/formulir-pembatalan-operasi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rawat-jalan-layanan-kedokteran-fisik-mcu_1:
       rule: PathPrefix(`/v1.0/formulir-rawat-jalan-layanan-kedokteran-fisik-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rawat-jalan-layanan-kedokteran-fisik-mcu_2:
       rule: PathPrefix(`/v1.0/formulir-rawat-jalan-layanan-kedokteran-fisik-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rawat-jalan-layanan-kedokteran-fisik-mcu_3:
       rule: PathPrefix(`/v1.0/formulir-rawat-jalan-layanan-kedokteran-fisik-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rawat-jalan-layanan-kedokteran-fisik-mcu_4:
       rule: PathPrefix(`/v1.0/formulir-rawat-jalan-layanan-kedokteran-fisik-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rawat-jalan-layanan-kedokteran-fisik-mcu_5:
       rule: PathPrefix(`/v1.0/formulir-rawat-jalan-layanan-kedokteran-fisik-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rujukan-pindah-penderitaan-tb_1:
       rule: PathPrefix(`/v1.0/erm/formulir-rujukan-pindah-penderitaan-tb/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rujukan-pindah-penderitaan-tb_2:
       rule: PathPrefix(`/v1.0/erm/formulir-rujukan-pindah-penderitaan-tb/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rujukan-pindah-penderitaan-tb_3:
       rule: PathPrefix(`/v1.0/erm/formulir-rujukan-pindah-penderitaan-tb/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rujukan-pindah-penderitaan-tb_4:
       rule: PathPrefix(`/v1.0/erm/formulir-rujukan-pindah-penderitaan-tb/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rujukan-pindah-penderitaan-tb_5:
       rule: PathPrefix(`/v1.0/erm/formulir-rujukan-pindah-penderitaan-tb/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rujukan-pindah-penderitaan-tb_6:
       rule: PathPrefix(`/v1.0/erm/formulir-rujukan-pindah-penderitaan-tb/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-rujukan-pindah-penderitaan-tb_7:
       rule: PathPrefix(`/v1.0/erm/formulir-rujukan-pindah-penderitaan-tb/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-tanda-terima-leaflet_1:
       rule: PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-tanda-terima-leaflet_2:
       rule: PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-tanda-terima-leaflet_3:
       rule: PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-tanda-terima-leaflet_4:
       rule: PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     formulir-tanda-terima-leaflet_5:
       rule: PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-bedah-mcu_1:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-bedah-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-bedah-mcu_2:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-bedah-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-bedah-mcu_3:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-bedah-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-bedah-mcu_4:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-bedah-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-bedah-mcu_5:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-bedah-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-ekg-mcu_1:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-ekg-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-ekg-mcu_2:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-ekg-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-ekg-mcu_3:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-ekg-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-ekg-mcu_4:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-ekg-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-ekg-mcu_5:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-ekg-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-gigi-mcu_1:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-gigi-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-gigi-mcu_2:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-gigi-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-gigi-mcu_3:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-gigi-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-gigi-mcu_4:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-gigi-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-gigi-mcu_5:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-gigi-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-kulit-kelamin-mcu_1:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-kulit-kelamin-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-kulit-kelamin-mcu_2:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-kulit-kelamin-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-kulit-kelamin-mcu_3:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-kulit-kelamin-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-kulit-kelamin-mcu_4:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-kulit-kelamin-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-kulit-kelamin-mcu_5:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-kulit-kelamin-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-laboratorium_1:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-laboratorium/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-laboratorium_2:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-laboratorium/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-laboratorium_3:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-laboratorium/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-laboratorium_4:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-laboratorium/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-laboratorium_5:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-laboratorium/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-laboratorium_6:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-laboratorium/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-laboratorium_7:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-laboratorium/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mantoux-test-mcu_1:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-mantoux-test-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mantoux-test-mcu_2:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-mantoux-test-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mantoux-test-mcu_3:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-mantoux-test-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mantoux-test-mcu_4:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-mantoux-test-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mantoux-test-mcu_5:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-mantoux-test-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mcu_1:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-mcu/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mcu_2:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mcu_3:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mcu_4:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-mcu_5:
       rule: PathPrefix(`/v1.0/erm/hasil-pemeriksaan-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-obgyn-mcu_1:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-obgyn-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-obgyn-mcu_2:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-obgyn-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-obgyn-mcu_3:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-obgyn-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-obgyn-mcu_4:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-obgyn-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-obgyn-mcu_5:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-obgyn-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-spirometri-mcu_1:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-spirometri-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-spirometri-mcu_2:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-spirometri-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-spirometri-mcu_3:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-spirometri-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-spirometri-mcu_4:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-spirometri-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     hasil-pemeriksaan-spirometri-mcu_5:
       rule: PathPrefix(`/v1.0/hasil-pemeriksaan-spirometri-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent-donor-darah_1:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent-donor-darah_2:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent-donor-darah_3:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent-donor-darah_4:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent-donor-darah_5:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent-donor-darah_6:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent-donor-darah_7:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_1:
       rule: PathPrefix(`/v1.0/erm/informed-consent/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_2:
       rule: PathPrefix(`/v1.0/erm/informed-consent/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_3:
       rule: PathPrefix(`/v1.0/erm/informed-consent/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_4:
       rule: PathPrefix(`/v1.0/erm/informed-consent/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_5:
       rule: PathPrefix(`/v1.0/erm/informed-consent/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_6:
       rule: PathPrefix(`/v1.0/erm/informed-consent/get-with-detail`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_7:
       rule: PathPrefix(`/v1.0/erm/informed-consent/create-jenis-informasi`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_8:
       rule: PathPrefix(`/v1.0/erm/informed-consent/update-jenis-informasi`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     informed-consent_9:
       rule: PathPrefix(`/v1.0/erm/informed-consent/delete-jenis-informasi/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     keterangan-dokter-tht-mcu_1:
       rule: PathPrefix(`/v1.0/keterangan-dokter-tht-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     keterangan-dokter-tht-mcu_2:
       rule: PathPrefix(`/v1.0/keterangan-dokter-tht-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     keterangan-dokter-tht-mcu_3:
       rule: PathPrefix(`/v1.0/keterangan-dokter-tht-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     keterangan-dokter-tht-mcu_4:
       rule: PathPrefix(`/v1.0/keterangan-dokter-tht-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     keterangan-dokter-tht-mcu_5:
       rule: PathPrefix(`/v1.0/keterangan-dokter-tht-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     kuesioner-donor-darah_1:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     kuesioner-donor-darah_2:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     kuesioner-donor-darah_3:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     kuesioner-donor-darah_4:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     kuesioner-donor-darah_5:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     kuesioner-donor-darah_6:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     kuesioner-donor-darah_7:
       rule: PathPrefix(`/v1.0/erm/kuesioner-donor-darah/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-brakhiterapi-ovoid_1:
       rule: PathPrefix(`/v1.0/laporan-brakhiterapi-ovoid/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-brakhiterapi-ovoid_2:
       rule: PathPrefix(`/v1.0/laporan-brakhiterapi-ovoid/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-brakhiterapi-ovoid_3:
       rule: PathPrefix(`/v1.0/laporan-brakhiterapi-ovoid/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-brakhiterapi-ovoid_4:
       rule: PathPrefix(`/v1.0/laporan-brakhiterapi-ovoid/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-brakhiterapi-ovoid_5:
       rule: PathPrefix(`/v1.0/laporan-brakhiterapi-ovoid/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-indeks-penyakit_1:
       rule: PathPrefix(`/v1.0/erm/laporan-indeks-penyakit/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-indeks-penyakit_2:
       rule: PathPrefix(`/v1.0/erm/laporan-indeks-penyakit/get-all`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-jantung_1:
       rule: PathPrefix(`/v1.0/laporan-operasi-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-jantung_2:
       rule: PathPrefix(`/v1.0/laporan-operasi-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-jantung_3:
       rule: PathPrefix(`/v1.0/laporan-operasi-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-jantung_4:
       rule: PathPrefix(`/v1.0/laporan-operasi-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-jantung_5:
       rule: PathPrefix(`/v1.0/laporan-operasi-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-lokal-anestesi-jantung_1:
       rule: PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-lokal-anestesi-jantung_2:
       rule: PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-lokal-anestesi-jantung_3:
       rule: PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-lokal-anestesi-jantung_4:
       rule: PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-operasi-lokal-anestesi-jantung_5:
       rule: PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-pengujian-kesehatan-mcu_1:
       rule: PathPrefix(`/v1.0/laporan-pengujian-kesehatan-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-pengujian-kesehatan-mcu_2:
       rule: PathPrefix(`/v1.0/laporan-pengujian-kesehatan-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-pengujian-kesehatan-mcu_3:
       rule: PathPrefix(`/v1.0/laporan-pengujian-kesehatan-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-pengujian-kesehatan-mcu_4:
       rule: PathPrefix(`/v1.0/laporan-pengujian-kesehatan-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-pengujian-kesehatan-mcu_5:
       rule: PathPrefix(`/v1.0/laporan-pengujian-kesehatan-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     laporan-ruangan_1:
       rule: PathPrefix(`/v1.0/erm/laporan-ruangan/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     layanan-kedokteran-fisik-dan-rehabilitasi-mcu_1:
       rule: PathPrefix(`/v1.0/layanan-kedokteran-fisik-dan-rehabilitasi-mcu/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     layanan-kedokteran-fisik-dan-rehabilitasi-mcu_2:
       rule: PathPrefix(`/v1.0/layanan-kedokteran-fisik-dan-rehabilitasi-mcu/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     layanan-kedokteran-fisik-dan-rehabilitasi-mcu_3:
       rule: PathPrefix(`/v1.0/layanan-kedokteran-fisik-dan-rehabilitasi-mcu/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     layanan-kedokteran-fisik-dan-rehabilitasi-mcu_4:
       rule: PathPrefix(`/v1.0/layanan-kedokteran-fisik-dan-rehabilitasi-mcu/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     layanan-kedokteran-fisik-dan-rehabilitasi-mcu_5:
       rule: PathPrefix(`/v1.0/layanan-kedokteran-fisik-dan-rehabilitasi-mcu/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-konsultasi_1:
       rule: PathPrefix(`/v1.0/lembar-konsultasi/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-konsultasi_2:
       rule: PathPrefix(`/v1.0/lembar-konsultasi/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-konsultasi_3:
       rule: PathPrefix(`/v1.0/lembar-konsultasi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-konsultasi_4:
       rule: PathPrefix(`/v1.0/lembar-konsultasi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-konsultasi_5:
       rule: PathPrefix(`/v1.0/lembar-konsultasi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-observasi-jantung_1:
       rule: PathPrefix(`/v1.0/lembar-observasi-jantung/get-list`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-observasi-jantung_2:
       rule: PathPrefix(`/v1.0/lembar-observasi-jantung/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-observasi-jantung_3:
       rule: PathPrefix(`/v1.0/lembar-observasi-jantung/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-observasi-jantung_4:
       rule: PathPrefix(`/v1.0/lembar-observasi-jantung/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     lembar-observasi-jantung_5:
       rule: PathPrefix(`/v1.0/lembar-observasi-jantung/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     mini-nutritional-assessment_1:
       rule: PathPrefix(`/v1.0/erm/mini-nutritional-assessment/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     mini-nutritional-assessment_2:
       rule: PathPrefix(`/v1.0/erm/mini-nutritional-assessment/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     mini-nutritional-assessment_3:
       rule: PathPrefix(`/v1.0/erm/mini-nutritional-assessment/get-by-no-rm/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     mini-nutritional-assessment_4:
       rule: PathPrefix(`/v1.0/erm/mini-nutritional-assessment/get-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     mini-nutritional-assessment_5:
       rule: PathPrefix(`/v1.0/erm/mini-nutritional-assessment/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     mini-nutritional-assessment_6:
       rule: PathPrefix(`/v1.0/erm/mini-nutritional-assessment/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     mini-nutritional-assessment_7:
       rule: PathPrefix(`/v1.0/erm/mini-nutritional-assessment/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_1:
       rule: PathPrefix(`/v1.0/order-ambulance/getlist-order-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_2:
       rule: PathPrefix(`/v1.0/order-ambulance/create-order`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_3:
       rule: PathPrefix(`/v1.0/order-ambulance/send-order/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_4:
       rule: PathPrefix(`/v1.0/order-ambulance/update-order`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_5:
       rule: PathPrefix(`/v1.0/order-ambulance/delete-order/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_6:
       rule: PathPrefix(`/v1.0/order-ambulance/get-order-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_7:
       rule: PathPrefix(`/v1.0/order-ambulance/create-item`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_8:
       rule: PathPrefix(`/v1.0/order-ambulance/update-item`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_9:
       rule: PathPrefix(`/v1.0/order-ambulance/delete-item/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_10:
       rule: PathPrefix(`/v1.0/order-ambulance/getlist-item-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_11:
       rule: PathPrefix(`/v1.0/order-ambulance/get-item-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_12:
       rule: PathPrefix(`/v1.0/order-ambulance/delete-petugas-medis-ambulance/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_13:
       rule: PathPrefix(`/v1.0/order-ambulance/getlist-petugas-medis-ambulance-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_14:
       rule: PathPrefix(`/v1.0/order-ambulance/create-petugas-medis-ambulance`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-ambulance_15:
       rule: PathPrefix(`/v1.0/order-ambulance/get-petugas-medis-ambulance-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_1:
       rule: PathPrefix(`/v1.0/erm/order-amhp/getlist-order-amhp-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_2:
       rule: PathPrefix(`/v1.0/erm/order-amhp/getlist-order-barang-amhp-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_3:
       rule: PathPrefix(`/v1.0/erm/order-amhp/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_4:
       rule: PathPrefix(`/v1.0/erm/order-amhp/create-order-barang-amhp`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_5:
       rule: PathPrefix(`/v1.0/erm/order-amhp/send-order-amhp/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_6:
       rule: PathPrefix(`/v1.0/erm/order-amhp/delete-order-amhp-by-id/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_7:
       rule: PathPrefix(`/v1.0/erm/order-amhp/send-billing-amhp/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_8:
       rule: PathPrefix(`/v1.0/erm/order-amhp/delete-order-amhp/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_9:
       rule: PathPrefix(`/v1.0/erm/order-amhp/update-order-barang-amhp`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-amhp_10:
       rule: PathPrefix(`/v1.0/erm/order-amhp/getlist-order-amhp-barang-amhp/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_1:
       rule: PathPrefix(`/v1.0/erm/order-bhp/getlist-order-bhp-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_2:
       rule: PathPrefix(`/v1.0/erm/order-bhp/getlist-order-barang-bhp-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_3:
       rule: PathPrefix(`/v1.0/erm/order-bhp/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_4:
       rule: PathPrefix(`/v1.0/erm/order-bhp/create-order-barang-bhp`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_5:
       rule: PathPrefix(`/v1.0/erm/order-bhp/send-order-bhp/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_6:
       rule: PathPrefix(`/v1.0/erm/order-bhp/delete-order-bhp-by-id/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_7:
       rule: PathPrefix(`/v1.0/erm/order-bhp/send-billing-bhp/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_8:
       rule: PathPrefix(`/v1.0/erm/order-bhp/delete-order-bhp/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_9:
       rule: PathPrefix(`/v1.0/erm/order-bhp/update-order-barang-bhp`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-bhp_10:
       rule: PathPrefix(`/v1.0/erm/order-bhp/getlist-order-bhp-barang-bhp/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-cathlab_1:
       rule: PathPrefix(`/v1.0/order-cathlab/getlist-order-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-cathlab_2:
       rule: PathPrefix(`/v1.0/order-cathlab/create-order`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-cathlab_3:
       rule: PathPrefix(`/v1.0/order-cathlab/send-order/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-cathlab_4:
       rule: PathPrefix(`/v1.0/order-cathlab/update-order`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-forensik_1:
       rule: PathPrefix(`/v1.0/erm/order-forensik/getlist-order-items-forensik-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-forensik_2:
       rule: PathPrefix(`/v1.0/erm/order-forensik/getlist-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-forensik_3:
       rule: PathPrefix(`/v1.0/erm/order-forensik/create-order`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-forensik_4:
       rule: PathPrefix(`/v1.0/erm/order-forensik/create-order-forensik-items`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-forensik_5:
       rule: PathPrefix(`/v1.0/erm/order-forensik/send/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-forensik_6:
       rule: PathPrefix(`/v1.0/erm/order-forensik/delete-order-forensik-items/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-forensik_7:
       rule: PathPrefix(`/v1.0/erm/order-forensik/delete-order/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-mi_1:
       rule: PathPrefix(`/v1.0/order-lab-mi/create-order-lab-items`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-mi_2:
       rule: PathPrefix(`/v1.0/order-lab-mi/create-order`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-mi_3:
       rule: PathPrefix(`/v1.0/order-lab-mi/create-tindakan-lab`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-mi_4:
       rule: PathPrefix(`/v1.0/order-lab-mi/send/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-mi_5:
       rule: PathPrefix(`/v1.0/order-lab-mi/getlist-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-mi_6:
       rule: PathPrefix(`/v1.0/order-lab-mi/getlist-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-mi_7:
       rule: PathPrefix(`/v1.0/order-lab-mi/update-order`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-mi_8:
       rule: PathPrefix(`/v1.0/order-lab-mi/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pa_1:
       rule: PathPrefix(`/v1.0/order-lab-pa/create-order-lab-items`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pa_2:
       rule: PathPrefix(`/v1.0/order-lab-pa/create-order`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pa_3:
       rule: PathPrefix(`/v1.0/order-lab-pa/create-tindakan-lab`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pa_4:
       rule: PathPrefix(`/v1.0/order-lab-pa/send/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pa_5:
       rule: PathPrefix(`/v1.0/order-lab-pa/getlist-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pa_6:
       rule: PathPrefix(`/v1.0/order-lab-pa/getlist-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pa_7:
       rule: PathPrefix(`/v1.0/order-lab-pa/update-order`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pa_8:
       rule: PathPrefix(`/v1.0/order-lab-pa/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_1:
       rule: PathPrefix(`/v1.0/order-lab-pk/create-order-lab-items`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_2:
       rule: PathPrefix(`/v1.0/order-lab-pk/create-order`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_3:
       rule: PathPrefix(`/v1.0/order-lab-pk/create-tindakan-lab`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_4:
       rule: PathPrefix(`/v1.0/order-lab-pk/send/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_5:
       rule: PathPrefix(`/v1.0/order-lab-pk/getlist-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_6:
       rule: PathPrefix(`/v1.0/order-lab-pk/getlist-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_7:
       rule: PathPrefix(`/v1.0/order-lab-pk/update-order`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_8:
       rule: PathPrefix(`/v1.0/order-lab-pk/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_9:
       rule: PathPrefix(`/v1.0/order-lab-pk/create-sub-items`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_10:
       rule: PathPrefix(`/v1.0/order-lab-pk/delete-sub-items/`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab-pk_11:
       rule: PathPrefix(`/v1.0/order-lab-pk/get-list-sub-items/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_1:
       rule: PathPrefix(`/v1.0/order-lab/create-order-lab-items`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_2:
       rule: PathPrefix(`/v1.0/order-lab/create-order`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_3:
       rule: PathPrefix(`/v1.0/order-lab/send/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_4:
       rule: PathPrefix(`/v1.0/order-lab/getlist-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_5:
       rule: PathPrefix(`/v1.0/order-lab/getlist-by-nomor-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_6:
       rule: PathPrefix(`/v1.0/order-lab/update-order`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_7:
       rule: PathPrefix(`/v1.0/order-lab/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_8:
       rule: PathPrefix(`/v1.0/order-lab/get-items-by-id/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_9:
       rule: PathPrefix(`/v1.0/order-lab/create-tindakan-lab`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_10:
       rule: PathPrefix(`/v1.0/order-lab/get-list-tindakan-lab/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_11:
       rule: PathPrefix(`/v1.0/order-lab/send-billing-lab/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_12:
       rule: PathPrefix(`/v1.0/order-lab/delete-tindakan-lab/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_13:
       rule: PathPrefix(`/v1.0/order-lab/delete-order/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_14:
       rule: PathPrefix(`/v1.0/order-lab/get-list-sample/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_15:
       rule: PathPrefix(`/v1.0/order-lab/create-sample`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_16:
       rule: PathPrefix(`/v1.0/order-lab/delete-sample/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_17:
       rule: PathPrefix(`/v1.0/order-lab/create-tindakan-bersama-lab`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_18:
       rule: PathPrefix(`/v1.0/order-lab/get-list-tindakan-bersama-lab/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-lab_19:
       rule: PathPrefix(`/v1.0/order-lab/delete-tindakan-bersama-lab/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-farmasi_1:
       rule: PathPrefix(`/v1.0/erm/order-obat-farmasi/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-farmasi_2:
       rule: PathPrefix(`/v1.0/erm/order-obat-farmasi/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-farmasi_3:
       rule: PathPrefix(`/v1.0/erm/order-obat-farmasi/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-farmasi_4:
       rule: PathPrefix(`/v1.0/erm/order-obat-farmasi/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-farmasi_5:
       rule: PathPrefix(`/v1.0/erm/order-obat-farmasi/delete-by-id/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-farmasi_6:
       rule: PathPrefix(`/v1.0/erm/order-obat-farmasi/get-by-nomor-resep/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-farmasi_7:
       rule: PathPrefix(`/v1.0/erm/order-obat-farmasi/sendto/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonlist_1:
       rule: PathPrefix(`/v1.0/orderobat/nonlist/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonlist_2:
       rule: PathPrefix(`/v1.0/orderobat/nonlist/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonlist_3:
       rule: PathPrefix(`/v1.0/orderobat/nonlist/send/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonlist_4:
       rule: PathPrefix(`/v1.0/orderobata/nonlist/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonlist_5:
       rule: PathPrefix(`/v1.0/orderobat/nonlist/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonlist_6:
       rule: PathPrefix(`/v1.0/orderobat/nonlist/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonracikan_1:
       rule: PathPrefix(`/v1.0/orderobat/nonracikan/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonracikan_2:
       rule: PathPrefix(`/v1.0/orderobat/nonracikan/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonracikan_3:
       rule: PathPrefix(`/v1.0/orderobat/nonracikan/send/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonracikan_4:
       rule: PathPrefix(`/v1.0/orderobata/nonracikan/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonracikan_5:
       rule: PathPrefix(`/v1.0/orderobat/nonracikan/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-nonracikan_6:
       rule: PathPrefix(`/v1.0/orderobat/nonracikan/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-racikan_1:
       rule: PathPrefix(`/v1.0/orderobat/racikan/getlist`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-racikan_2:
       rule: PathPrefix(`/v1.0/orderobat/racikan/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-racikan_3:
       rule: PathPrefix(`/v1.0/orderobat/racikan/send/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-racikan_4:
       rule: PathPrefix(`/v1.0/orderobata/racikan/update`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-racikan_5:
       rule: PathPrefix(`/v1.0/orderobat/racikan/delete/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat-racikan_6:
       rule: PathPrefix(`/v1.0/orderobat/racikan/get-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_1:
       rule: PathPrefix(`/v1.0/order-obat/create`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_2:
       rule: PathPrefix(`/v1.0/order-obat/create-order-obat-non-racikan`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_3:
       rule: PathPrefix(`/v1.0/order-obat/create-order-obat-non-list`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_4:
       rule: PathPrefix(`/v1.0/order-obat/create-order-obat-racikan`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_5:
       rule: PathPrefix(`/v1.0/order-obat/create-tindakan-lab-racikan`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_6:
       rule: PathPrefix(`/v1.0/order-obat/getlist-order-obat-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_7:
       rule: PathPrefix(`/v1.0/order-obat/getlist-non-racikan-by-nomor-resep/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_8:
       rule: PathPrefix(`/v1.0/order-obat/getlist-non-list-by-nomor-resep/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_9:
       rule: PathPrefix(`/v1.0/order-obat/getlist-racikan-by-nomor-resep/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_10:
       rule: PathPrefix(`/v1.0/order-obat/getlist-tindakan-lab-racikan-by-id-racikan/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_11:
       rule: PathPrefix(`/v1.0/order-obat/update-racikan-by-id-racikan`) && Method(`PUT`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_12:
       rule: PathPrefix(`/v1.0/order-obat/delete-tindakan-lab-racikan-by-id-lab-racikan/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_13:
       rule: PathPrefix(`/v1.0/order-obat/delete-order-non-racikan-by-id-non-racikan/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_14:
       rule: PathPrefix(`/v1.0/order-obat/delete-order-non-list-by-id-non-list/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_15:
       rule: PathPrefix(`/v1.0/order-obat/delete-order-racikan-by-id-racikan/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_16:
       rule: PathPrefix(`/v1.0/order-obat/send-order-obat-by-nomor-resep/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_17:
       rule: PathPrefix(`/v1.0/order-obat/send-order-obat-billing-by-nomor-resep/`) && Method(`POST`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_18:
       rule: PathPrefix(`/v1.0/order-obat/getlist-detail/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_19:
       rule: PathPrefix(`/v1.0/order-obat/delete-order-obat/`) && Method(`DELETE`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_20:
       rule: PathPrefix(`/v1.0/order-obat/getlist-resep-racikan-favorite/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-obat_21:
       rule: PathPrefix(`/v1.0/order-obat/getlist-by-booking/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-operasi_1:
       rule: PathPrefix(`/v1.0/order-operasi/getlist-order-by-no-registrasi/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-operasi_2:
       rule: PathPrefix(`/v1.0/order-operasi/getlist-tindakan-by-no-order/`) && Method(`GET`)
       service: service-erm
       entryPoints:
       - web
+      middlewares: simrs-cors
     order-operasi_3:
       rule: PathPrefix(`/v1.0/order-operasi/create-order`) && Method(`POST`)
       service: service-erm
