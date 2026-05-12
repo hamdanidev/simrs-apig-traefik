@@ -1,0 +1,650 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    case_mix_1:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_2:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_3:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_4:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/send-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_5:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_6:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-idrg`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_7:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-idrg-final`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_8:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-inacbg-final`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_9:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-idrg-diagnosa-tindakan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_10:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_11:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-status-case-mix`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_12:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-diagnosa-tindakan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_13:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-diagnosa-tindakan-bpjs`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_14:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-status-approved`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_15:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-pasien-grouper`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_16:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-status-remun`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_17:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-kirim-kemenkes/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_18:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-kirim-casemix/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_19:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-data-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_20:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-no-claim`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_21:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-waktu-selesai-layanan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_22:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/get-all-pasien-casemix`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_23:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/getlist-all-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_24:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-sitb`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_25:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-umbal`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_26:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-inacbg`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_27:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/tarif-per-bulan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_28:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-kelas`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_29:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-jenis-kelamin`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_30:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-cara-pulang`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_31:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-los`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_32:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-umur`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_33:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/total-klaim-tarif`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_34:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/top-ten-icd10`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_35:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/get-ungrouping-pasien-casemix`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_36:
+      rule: "PathPrefix(`/v1.0/upload-umbal/csv`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_37:
+      rule: "PathPrefix(`/v1.0/upload-umbal/merge`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_38:
+      rule: "PathPrefix(`/v1.0/upload-umbal/failed-records`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_39:
+      rule: "PathPrefix(`/v1.0/data-umbal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_40:
+      rule: "PathPrefix(`/v1.0/data-umbal/rekap/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_41:
+      rule: "PathPrefix(`/v1.0/master-remunerasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_42:
+      rule: "PathPrefix(`/v1.0/upload-umbal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_43:
+      rule: "PathPrefix(`/v1.0/data-umbal/status-hitung`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    case_mix_44:
+      rule: "PathPrefix(`/v1.0/data-umbal/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    generate_csv_1:
+      rule: "PathPrefix(`/v1.0/casemix/generate-csv-belum-grouping/pasien-casemix`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    generate_txt_1:
+      rule: "PathPrefix(`/v1.0/generate-txt/pasien-jamkesda-dari-casemix`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    generate_txt_2:
+      rule: "PathPrefix(`/v1.0/generate-txt/pasien-jamkesda-dari-casemix-encrypted`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    generate_txt_3:
+      rule: "PathPrefix(`/v1.0/generate-txt/get-pasien-jamkesda/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    get-billing-case_mix_1:
+      rule: "PathPrefix(`/v1.0/billing-casemix/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    merge_file_1:
+      rule: "PathPrefix(`/v1.0/merge-file/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    merge_file_2:
+      rule: "PathPrefix(`/v1.0/merge-file/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    merge_file_3:
+      rule: "PathPrefix(`/v1.0/merge-file/berkas-digital`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_1:
+      rule: "PathPrefix(`/v1.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_2:
+      rule: "PathPrefix(`/v1.0/inacbg/update-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_3:
+      rule: "PathPrefix(`/v1.0/inacbg/delete-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_4:
+      rule: "PathPrefix(`/v1.0/inacbg/set-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_5:
+      rule: "PathPrefix(`/v1.0/inacbg/grouper-stage-1`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_6:
+      rule: "PathPrefix(`/v1.0/inacbg/grouper-stage-2`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_7:
+      rule: "PathPrefix(`/v1.0/inacbg/finalisasi-klaim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_8:
+      rule: "PathPrefix(`/v1.0/inacbg/reedit-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_9:
+      rule: "PathPrefix(`/v1.0/inacbg/send-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_10:
+      rule: "PathPrefix(`/v1.0/inacbg/send-claim-individual`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_11:
+      rule: "PathPrefix(`/v1.0/inacbg/pull-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_12:
+      rule: "PathPrefix(`/v1.0/inacbg/get-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_13:
+      rule: "PathPrefix(`/v1.0/inacbg/get-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_14:
+      rule: "PathPrefix(`/v1.0/inacbg/delete-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_15:
+      rule: "PathPrefix(`/v1.0/inacbg/claim-print`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_16:
+      rule: "PathPrefix(`/v1.0/inacbg/search-diagnosis`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_17:
+      rule: "PathPrefix(`/v1.0/inacbg/search-procedures`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_18:
+      rule: "PathPrefix(`/v1.0/inacbg/generate-claim-number`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_19:
+      rule: "PathPrefix(`/v1.0/inacbg/file-upload`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_20:
+      rule: "PathPrefix(`/v1.0/inacbg/file-delete`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_21:
+      rule: "PathPrefix(`/v1.0/inacbg/file-get`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_22:
+      rule: "PathPrefix(`/v1.0/inacbg/retrieve-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_23:
+      rule: "PathPrefix(`/v1.0/inacbg/cari-diagnosa-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_24:
+      rule: "PathPrefix(`/v1.0/inacbg/cari-procedures-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_25:
+      rule: "PathPrefix(`/v1.0/inacbg/sitb-validate`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbg_26:
+      rule: "PathPrefix(`/v1.0/inacbg/sitb-invalidate`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.23:9083"
