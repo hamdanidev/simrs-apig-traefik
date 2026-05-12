@@ -1,0 +1,680 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    farmasi_1:
+      rule: "PathPrefix(`/v1.0/farmasi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    farmasi_2:
+      rule: "PathPrefix(`/v1.0/farmasi/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    farmasi_3:
+      rule: "PathPrefix(`/v1.0/farmasi/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    farmasi_4:
+      rule: "PathPrefix(`/v1.0/farmasi/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    farmasi_5:
+      rule: "PathPrefix(`/v1.0/farmasi/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    farmasi_6:
+      rule: "PathPrefix(`/v1.0/farmasi/get-antrian-ws/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    hemodialisa_1:
+      rule: "PathPrefix(`/v1.0/hemodialisa/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    hemodialisa_2:
+      rule: "PathPrefix(`/v1.0/hemodialisa/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    hemodialisa_3:
+      rule: "PathPrefix(`/v1.0/hemodialisa/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    hemodialisa_4:
+      rule: "PathPrefix(`/v1.0/hemodialisa/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    hemodialisa_5:
+      rule: "PathPrefix(`/v1.0/hemodialisa/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    kemoterapi_1:
+      rule: "PathPrefix(`/v1.0/kemoterapi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    kemoterapi_2:
+      rule: "PathPrefix(`/v1.0/kemoterapi/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    kemoterapi_3:
+      rule: "PathPrefix(`/v1.0/kemoterapi/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    kemoterapi_4:
+      rule: "PathPrefix(`/v1.0/kemoterapi/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    kemoterapi_5:
+      rule: "PathPrefix(`/v1.0/kemoterapi/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    lab_1:
+      rule: "PathPrefix(`/v1.0/lab/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    lab_2:
+      rule: "PathPrefix(`/v1.0/lab/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    lab_3:
+      rule: "PathPrefix(`/v1.0/lab/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    lab_4:
+      rule: "PathPrefix(`/v1.0/lab/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    lab_5:
+      rule: "PathPrefix(`/v1.0/lab/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_selesai_1:
+      rule: "PathPrefix(`/v1.0/mcu-selesai/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_selesai_2:
+      rule: "PathPrefix(`/v1.0/mcu-selesai/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_selesai_3:
+      rule: "PathPrefix(`/v1.0/mcu-selesai/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_selesai_4:
+      rule: "PathPrefix(`/v1.0/mcu-selesai/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_selesai_5:
+      rule: "PathPrefix(`/v1.0/mcu-selesai/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_1:
+      rule: "PathPrefix(`/v1.0/mcu/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_2:
+      rule: "PathPrefix(`/v1.0/mcu/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_3:
+      rule: "PathPrefix(`/v1.0/mcu/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_4:
+      rule: "PathPrefix(`/v1.0/mcu/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mcu_5:
+      rule: "PathPrefix(`/v1.0/mcu/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_1:
+      rule: "PathPrefix(`/v1.0/monitoring/getlist/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_2:
+      rule: "PathPrefix(`/v1.0/monitoring/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_3:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-ranap`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_4:
+      rule: "PathPrefix(`/v1.0/monitoring/buka-tutup-loket`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_5:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-radiologi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_6:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-lab-pa`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_7:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-lab-pk`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_8:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_9:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-utdrs`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_10:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    monitoring_11:
+      rule: "PathPrefix(`/v1.0/loket/delete/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    poli_1:
+      rule: "PathPrefix(`/v1.0/poli/getbyparam//:param4`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    poli_2:
+      rule: "PathPrefix(`/v1.0/poli/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    poli_3:
+      rule: "PathPrefix(`/v1.0/poli/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    poli_4:
+      rule: "PathPrefix(`/v1.0/poli/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    poli_5:
+      rule: "PathPrefix(`/v1.0/poli/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    poli_6:
+      rule: "PathPrefix(`/v1.0/poli/get-antrian-ws`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    poli_7:
+      rule: "PathPrefix(`/v1.0/poli/get-antrian-by-booking/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radiologi_1:
+      rule: "PathPrefix(`/v1.0/radiologi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radiologi_2:
+      rule: "PathPrefix(`/v1.0/radiologi/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radiologi_3:
+      rule: "PathPrefix(`/v1.0/radiologi/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radiologi_4:
+      rule: "PathPrefix(`/v1.0/radiologi/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radiologi_5:
+      rule: "PathPrefix(`/v1.0/radiologi/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radioterapi_1:
+      rule: "PathPrefix(`/v1.0/radioterapi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radioterapi_2:
+      rule: "PathPrefix(`/v1.0/radioterapi/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radioterapi_3:
+      rule: "PathPrefix(`/v1.0/radioterapi/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radioterapi_4:
+      rule: "PathPrefix(`/v1.0/radioterapi/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    radioterapi_5:
+      rule: "PathPrefix(`/v1.0/radioterapi/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_inap_1:
+      rule: "PathPrefix(`/v1.0/rawatinap/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_inap_2:
+      rule: "PathPrefix(`/v1.0/rawatinap/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_inap_3:
+      rule: "PathPrefix(`/v1.0/rawatinap/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_inap_4:
+      rule: "PathPrefix(`/v1.0/rawatinap/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_inap_5:
+      rule: "PathPrefix(`/v1.0/rawatinap/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_jalan_1:
+      rule: "PathPrefix(`/v1.0/rawatjalan/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_jalan_2:
+      rule: "PathPrefix(`/v1.0/rawatjalan/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_jalan_3:
+      rule: "PathPrefix(`/v1.0/rawatjalan/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_jalan_4:
+      rule: "PathPrefix(`/v1.0/rawatjalan/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rawat_jalan_5:
+      rule: "PathPrefix(`/v1.0/rawatjalan/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rehabilitasi_1:
+      rule: "PathPrefix(`/v1.0/rehabilitasi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rehabilitasi_2:
+      rule: "PathPrefix(`/v1.0/rehabilitasi/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rehabilitasi_3:
+      rule: "PathPrefix(`/v1.0/rehabilitasi/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rehabilitasi_4:
+      rule: "PathPrefix(`/v1.0/rehabilitasi/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    rehabilitasi_5:
+      rule: "PathPrefix(`/v1.0/rehabilitasi/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    single_sound_1:
+      rule: "PathPrefix(`/v1.0/single-sound/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    single_sound_2:
+      rule: "PathPrefix(`/v1.0/single-sound/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    single_sound_3:
+      rule: "PathPrefix(`/v1.0/single-sound/list-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    utdrs_1:
+      rule: "PathPrefix(`/v1.0/utdrs/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    utdrs_2:
+      rule: "PathPrefix(`/v1.0/utdrs/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    utdrs_3:
+      rule: "PathPrefix(`/v1.0/utdrs/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    utdrs_4:
+      rule: "PathPrefix(`/v1.0/utdrs/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    utdrs_5:
+      rule: "PathPrefix(`/v1.0/utdrs/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-antrian:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.24:8089" # IP Server Prod
