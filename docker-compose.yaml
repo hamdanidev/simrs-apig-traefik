@@ -1,0 +1,21 @@
+services:
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    restart: always
+    ports:
+      - "9090:9080"     # Port trafik utama (pengganti APISIX)
+      - "8080:8080"     # Port Dashboard Traefik
+    volumes:
+      # Agar Traefik bisa membaca container Docker lain
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # File konfigurasi utama
+      - ./traefik.yml:/etc/traefik/traefik.yml:ro
+      # Folder untuk file routing (perawat, dokter, dev, prod)
+      - ./dynamic:/etc/traefik/dynamic:ro
+    networks:
+      - traefik-net
+
+networks:
+  traefik-net:
+    driver: bridge # Docker akan otomatis membuat network ini jika belum ada
