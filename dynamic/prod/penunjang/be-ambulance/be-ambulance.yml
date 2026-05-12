@@ -1,0 +1,345 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    ambulance_items_1:
+      rule: "PathPrefix(`/v1.0/ambulance/ambulance-items/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_items_2:
+      rule: "PathPrefix(`/v1.0/ambulance/ambulance-items/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_items_3:
+      rule: "PathPrefix(`/v1.0/ambulance/ambulance-items/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_items_4:
+      rule: "PathPrefix(`/v1.0/ambulance/ambulance-items/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_items_5:
+      rule: "PathPrefix(`/v1.0/ambulance/ambulance-items/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_1:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-list-order-ambulance`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_2:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-noregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_3:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_4:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/send-to-kasir-by-nomor-order/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_5:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/update-order-ambulance/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_6:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-list-order-ambulance-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_7:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-list-tindakan-ambulance`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_8:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-list-petugas-medis-ambulance`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_9:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-id-tindakan-ambulance/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_10:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-id-order-ambulance-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_11:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-id-petugas-medis-ambulance/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_12:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/update-order-ambulance-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_13:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/update-petugas-medis-ambulance/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_14:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/delete-order-ambulance-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_15:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/delete-order-ambulance/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_16:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/delete-petugas-medis-ambulance/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_17:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/create-order-ambulance`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_18:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/create-order-ambulance-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_19:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/create-tindakan-ambulance`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    ambulance_20:
+      rule: "PathPrefix(`/v1.0/ambulance/order-ambulance/create-petugas-medis-ambulance`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mobil_ambulance_1:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mobil_ambulance_2:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mobil_ambulance_3:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mobil_ambulance_4:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    mobil_ambulance_5:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    riwayat_mobil_1:
+      rule: "PathPrefix(`/v1.0/ambulance/riwayat-mobil/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    riwayat_mobil_2:
+      rule: "PathPrefix(`/v1.0/ambulance/riwayat-mobil/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    riwayat_mobil_3:
+      rule: "PathPrefix(`/v1.0/ambulance/riwayat-mobil/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    riwayat_mobil_4:
+      rule: "PathPrefix(`/v1.0/ambulance/riwayat-mobil/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    riwayat_mobil_5:
+      rule: "PathPrefix(`/v1.0/ambulance/riwayat-mobil/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    supir_1:
+      rule: "PathPrefix(`/v1.0/ambulance/supir/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    supir_2:
+      rule: "PathPrefix(`/v1.0/ambulance/supir/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    supir_3:
+      rule: "PathPrefix(`/v1.0/ambulance/supir/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    supir_4:
+      rule: "PathPrefix(`/v1.0/ambulance/supir/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    supir_5:
+      rule: "PathPrefix(`/v1.0/ambulance/supir/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-ambulance:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.61:9092"
