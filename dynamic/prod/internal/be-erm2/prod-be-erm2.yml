@@ -8860,7 +8860,7 @@ http:
         - "simrs-cors"
 
   services:
-    service-darah:
+    service-erm:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:9081"
+          - url: "http://22.22.22.59:8094"

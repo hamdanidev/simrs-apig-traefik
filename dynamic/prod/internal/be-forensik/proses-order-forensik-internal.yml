@@ -90,7 +90,7 @@ http:
       middlewares:
         - "simrs-cors"
   services:
-    service-cssd:
+    service-forensik:
       loadBalancer:
         servers:
           - url: "http://22.22.22.59:9085"
