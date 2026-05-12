@@ -11,7 +11,7 @@
 
 http:
   routers:
-    diklat-bagian:
+    diklat_bagian:
       rule: "PathPrefix(`/v1.0/bagian/`)"
       service: service-diklat
       entryPoints:
@@ -19,7 +19,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-kaji-etik:
+    diklat_kaji_etik:
       rule: "PathPrefix(`/v1.0/kaji-etik/`)"
       service: service-diklat
       entryPoints:
@@ -27,7 +27,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-komite-etik:
+    diklat_komite_etik:
       rule: "PathPrefix(`/v1.0/komite-etik/`)"
       service: service-diklat
       entryPoints:
@@ -35,7 +35,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-magang:
+    diklat_magang:
       rule: "PathPrefix(`/v1.0/magang/`)"
       service: service-diklat
       entryPoints:
@@ -43,7 +43,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-narasumber-orientasi:
+    diklat_narasumber_orientasi:
       rule: "PathPrefix(`/v1.0/narasumber-orientasi/`)"
       service: service-diklat
       entryPoints:
@@ -51,7 +51,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-pelatihan:
+    diklat_pelatihan:
       rule: "PathPrefix(`/v1.0/pelatihan/`)"
       service: service-diklat
       entryPoints:
@@ -59,7 +59,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-penelitian:
+    diklat_penelitian:
       rule: "PathPrefix(`/v1.0/penelitian/`)"
       service: service-diklat
       entryPoints:
@@ -67,7 +67,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-peningkatan-kompetensi:
+    diklat_peningkatan_kompetensi:
       rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/`)"
       service: service-diklat
       entryPoints:
@@ -75,7 +75,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-peserta-diklat:
+    diklat_peserta_diklat:
       rule: "PathPrefix(`/v1.0/peserta-diklat/`)"
       service: service-diklat
       entryPoints:
@@ -83,7 +83,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-petugas-kaji-etik:
+    diklat_petugas_kaji_etik:
       rule: "PathPrefix(`/v1.0/petugas-kaji-etik/`)"
       service: service-diklat
       entryPoints:
@@ -91,7 +91,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-petugas-pre-survey:
+    diklat_petugas_pre_survey:
       rule: "PathPrefix(`/v1.0/petugas-pre-survey/`)"
       service: service-diklat
       entryPoints:
@@ -99,7 +99,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-pkl:
+    diklat_pkl:
       rule: "PathPrefix(`/v1.0/pkl/`)"
       service: service-diklat
       entryPoints:
@@ -107,7 +107,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-ppd:
+    diklat_ppd:
       rule: "PathPrefix(`/v1.0/ppd/`)"
       service: service-diklat
       entryPoints:
@@ -115,7 +115,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-ppds:
+    diklat_ppds:
       rule: "PathPrefix(`/v1.0/ppds/`)"
       service: service-diklat
       entryPoints:
@@ -123,7 +123,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-pre-survey:
+    diklat_pre_survey:
       rule: "PathPrefix(`/v1.0/pre-survey/`)"
       service: service-diklat
       entryPoints:
@@ -131,7 +131,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-referensi-petugas:
+    diklat_referensi_petugas:
       rule: "PathPrefix(`/v1.0/referensi-petugas/`)"
       service: service-diklat
       entryPoints:
@@ -139,7 +139,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-rekap-diklat:
+    diklat_rekap_diklat:
       rule: "PathPrefix(`/v1.0/rekap-diklat/`)"
       service: service-diklat
       entryPoints:
@@ -147,7 +147,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-sewa-aula:
+    diklat_sewa_aula:
       rule: "PathPrefix(`/v1.0/sewa-aula/`)"
       service: service-diklat
       entryPoints:
@@ -155,7 +155,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-studi-banding:
+    diklat_studi_banding:
       rule: "PathPrefix(`/v1.0/studi-banding/`)"
       service: service-diklat
       entryPoints:
@@ -163,7 +163,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-universitas:
+    diklat_universitas:
       rule: "PathPrefix(`/v1.0/universitas/`)"
       service: service-diklat
       entryPoints:
@@ -174,7 +174,7 @@ http:
     # Sub-path diklat yang share prefix /v1.0/diklat/ dan /v1.0/master/
     # CATATAN: /v1.0/master/ juga dipakai oleh service-master di core.
     # Routes ini lebih spesifik, harus ditempatkan SEBELUM route master yang lebih broad
-    diklat-master-bagian:
+    diklat_master_bagian:
       rule: "PathPrefix(`/v1.0/master/bagian`)"
       service: service-diklat
       entryPoints:
@@ -182,7 +182,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-stase:
+    diklat_master_stase:
       rule: "PathPrefix(`/v1.0/master/stase/`)"
       service: service-diklat
       entryPoints:
@@ -190,7 +190,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-ruangan:
+    diklat_master_ruangan:
       rule: "PathPrefix(`/v1.0/master/ruangan`)"
       service: service-diklat
       entryPoints:
@@ -198,7 +198,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-universitas:
+    diklat_master_universitas:
       rule: "PathPrefix(`/v1.0/master/pelatihan/`)"
       service: service-diklat
       entryPoints:
@@ -206,7 +206,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-peserta-pendidikan:
+    diklat_master_peserta_pendidikan:
       rule: "PathPrefix(`/v1.0/master/peserta-pendidikan/`)"
       service: service-diklat
       entryPoints:
@@ -214,7 +214,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-pembelajaran:
+    diklat_master_pembelajaran:
       rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran`)"
       service: service-diklat
       entryPoints:
@@ -222,7 +222,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-jaspel-diklat:
+    diklat_master_jaspel_diklat:
       rule: "PathPrefix(`/v1.0/master/jaspel-diklat/`)"
       service: service-diklat
       entryPoints:
@@ -230,7 +230,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-petugas-bagian:
+    diklat_master_petugas_bagian:
       rule: "PathPrefix(`/v1.0/master/petugas-bagian/`)"
       service: service-diklat
       entryPoints:
@@ -238,7 +238,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-petugas-penelitian:
+    diklat_master_petugas_penelitian:
       rule: "PathPrefix(`/v1.0/master/petugas-penelitian/`)"
       service: service-diklat
       entryPoints:
@@ -246,7 +246,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-petugas-perseptor:
+    diklat_master_petugas_perseptor:
       rule: "PathPrefix(`/v1.0/master/petugas-perseptor/`)"
       service: service-diklat
       entryPoints:
@@ -254,7 +254,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-master-petugas-ruangan:
+    diklat_master_petugas_ruangan:
       rule: "PathPrefix(`/v1.0/master/petugas-ruangan/`)"
       service: service-diklat
       entryPoints:
@@ -262,7 +262,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    diklat-route:
+    diklat_route:
       rule: "PathPrefix(`/v1.0/diklat/`)"
       service: service-diklat
       entryPoints:
@@ -274,4 +274,4 @@ http:
     service-diklat:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.:9086"
+          - url: "http://22.22.22.59:9086"
