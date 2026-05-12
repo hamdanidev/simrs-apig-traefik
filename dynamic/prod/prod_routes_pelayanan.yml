@@ -1122,7 +1122,7 @@ http:
       - "simrs-cors"
 
     rawatinap_1:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
       - web
@@ -1130,7 +1130,7 @@ http:
       - "simrs-cors"
 
     rawatinap_2:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
       - web
@@ -1138,7 +1138,7 @@ http:
       - "simrs-cors"
 
     rawatinap_3:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
       - web
@@ -1146,7 +1146,7 @@ http:
       - "simrs-cors"
 
     rawatinap_4:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
       - web
@@ -1154,7 +1154,7 @@ http:
       - "simrs-cors"
 
     rawatinap_5:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
       - web
