@@ -1,0 +1,53 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        addVaryHeader: true
+  routers:
+    internal_peminjaman_1:
+      rule: "PathPrefix(`/v1.0/cssd/peminjaman/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_peminjaman_2:
+      rule: "PathPrefix(`/v1.0/cssd/peminjaman/get-by-id-peminjaman/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_peminjaman_3:
+      rule: "PathPrefix(`/v1.0/cssd/peminjaman/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_peminjaman_4:
+      rule: "PathPrefix(`/v1.0/cssd/peminjaman/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-cssd:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.59:9081"

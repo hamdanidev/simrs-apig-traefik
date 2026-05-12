@@ -19,9 +19,16 @@ http:
         # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
         addVaryHeader: true
   routers:
+    forensik_item_1:
+      rule: "PathPrefix(`/v1.0/forensik/item-forensik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
 
   services:
-    service-darah:
+    service-forensik:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:9081"
+          - url: "http://22.22.22.59:9085"

@@ -16,12 +16,17 @@ http:
         accessControlAllowOriginList:
           - "*"
         accessControlMaxAge: 100
-        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
         addVaryHeader: true
   routers:
-
+    internal_remun_hitung_1:
+      rule: "PathPrefix(`/v1.0/remun/proses-remunerasi-bpjs`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remun-hitung
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
   services:
-    service-remun_hitung:
+    service-remun-hitung:
       loadBalancer:
         servers:
           - url: "http://22.22.22.59:9150"
