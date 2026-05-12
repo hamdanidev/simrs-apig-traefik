@@ -11,7 +11,7 @@
 
 http:
   middlewares:
-    simrs-cors:
+    simrs_cors:
       headers:
         accessControlAllowMethods:
           - "GET"
@@ -31,264 +31,4428 @@ http:
         # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
         addVaryHeader: true
   routers:
-    diklat_bagian:
-      rule: "PathPrefix(`/v1.0/bagian/`)"
+    bagian_bed_side_theaching_1:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_kaji_etik:
-      rule: "PathPrefix(`/v1.0/kaji-etik/`)"
+  
+    bagian_bed_side_theaching_2:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_komite_etik:
-      rule: "PathPrefix(`/v1.0/komite-etik/`)"
+  
+    bagian_bed_side_theaching_3:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_magang:
-      rule: "PathPrefix(`/v1.0/magang/`)"
+  
+    bagian_bed_side_theaching_4:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_narasumber_orientasi:
-      rule: "PathPrefix(`/v1.0/narasumber-orientasi/`)"
+  
+    bagian_bed_side_theaching_5:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_pelatihan:
-      rule: "PathPrefix(`/v1.0/pelatihan/`)"
+  
+    bagian_case_base_disscussion_1:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_penelitian:
-      rule: "PathPrefix(`/v1.0/penelitian/`)"
+  
+    bagian_case_base_disscussion_2:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_peningkatan_kompetensi:
-      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/`)"
+  
+    bagian_case_base_disscussion_3:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_peserta_diklat:
-      rule: "PathPrefix(`/v1.0/peserta-diklat/`)"
+  
+    bagian_case_base_disscussion_4:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_petugas_kaji_etik:
-      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/`)"
+  
+    bagian_case_base_disscussion_5:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_petugas_pre_survey:
-      rule: "PathPrefix(`/v1.0/petugas-pre-survey/`)"
+  
+    bagian_case_report_1:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_pkl:
-      rule: "PathPrefix(`/v1.0/pkl/`)"
+  
+    bagian_case_report_2:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_ppd:
-      rule: "PathPrefix(`/v1.0/ppd/`)"
+  
+    bagian_case_report_3:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_ppds:
-      rule: "PathPrefix(`/v1.0/ppds/`)"
+  
+    bagian_case_report_4:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_pre_survey:
-      rule: "PathPrefix(`/v1.0/pre-survey/`)"
+  
+    bagian_case_report_5:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_referensi_petugas:
-      rule: "PathPrefix(`/v1.0/referensi-petugas/`)"
+  
+    bagia_cbd_1:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_rekap_diklat:
-      rule: "PathPrefix(`/v1.0/rekap-diklat/`)"
+  
+    bagia_cbd_2:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_sewa_aula:
-      rule: "PathPrefix(`/v1.0/sewa-aula/`)"
+  
+    bagia_cbd_3:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_studi_banding:
-      rule: "PathPrefix(`/v1.0/studi-banding/`)"
+  
+    bagia_cbd_4:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_universitas:
-      rule: "PathPrefix(`/v1.0/universitas/`)"
+  
+    bagia_cbd_5:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    # Sub-path diklat yang share prefix /v1.0/diklat/ dan /v1.0/master/
-    # CATATAN: /v1.0/master/ juga dipakai oleh service-master di core.
-    # Routes ini lebih spesifik, harus ditempatkan SEBELUM route master yang lebih broad
-    diklat_master_bagian:
-      rule: "PathPrefix(`/v1.0/master/bagian`)"
+  
+    bagia_cbt_1:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_stase:
-      rule: "PathPrefix(`/v1.0/master/stase/`)"
+  
+    bagia_cbt_2:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_ruangan:
-      rule: "PathPrefix(`/v1.0/master/ruangan`)"
+  
+    bagia_cbt_3:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_universitas:
-      rule: "PathPrefix(`/v1.0/master/pelatihan/`)"
+  
+    bagia_cbt_4:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_peserta_pendidikan:
-      rule: "PathPrefix(`/v1.0/master/peserta-pendidikan/`)"
+  
+    bagia_cbt_5:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_pembelajaran:
-      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran`)"
+  
+    bagia_clinical_skill_1:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_jaspel_diklat:
-      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/`)"
+  
+    bagia_clinical_skill_2:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_petugas_bagian:
-      rule: "PathPrefix(`/v1.0/master/petugas-bagian/`)"
+  
+    bagia_clinical_skill_3:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_petugas_penelitian:
-      rule: "PathPrefix(`/v1.0/master/petugas-penelitian/`)"
+  
+    bagia_clinical_skill_4:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_petugas_perseptor:
-      rule: "PathPrefix(`/v1.0/master/petugas-perseptor/`)"
+  
+    bagia_clinical_skill_5:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_master_petugas_ruangan:
-      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/`)"
+  
+    bagia_clinical_theacing_1:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
-
-    diklat_route:
-      rule: "PathPrefix(`/v1.0/diklat/`)"
+  
+    bagia_clinical_theacing_2:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
-      middlewares:
-        - "simrs-cors"
+  
+    bagia_clinical_theacing_3:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_clinical_theacing_4:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_clinical_theacing_5:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_dops_1:
+      rule: "PathPrefix(`/v1.0/bagian/dops/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_dops_2:
+      rule: "PathPrefix(`/v1.0/bagian/dops/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_dops_3:
+      rule: "PathPrefix(`/v1.0/bagian/dops/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_dops_4:
+      rule: "PathPrefix(`/v1.0/bagian/dops/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_dops_5:
+      rule: "PathPrefix(`/v1.0/bagian/dops/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_etika_1:
+      rule: "PathPrefix(`/v1.0/bagian/etika/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_etika_2:
+      rule: "PathPrefix(`/v1.0/bagian/etika/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_etika_3:
+      rule: "PathPrefix(`/v1.0/bagian/etika/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_etika_4:
+      rule: "PathPrefix(`/v1.0/bagian/etika/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_etika_5:
+      rule: "PathPrefix(`/v1.0/bagian/etika/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_journal_reading_1:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_journal_reading_2:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_journal_reading_3:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_journal_reading_4:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_journal_reading_5:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_jaga_1:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_jaga_2:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_jaga_3:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_jaga_4:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_jaga_5:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_kegiatan_poliklinik_1:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_kegiatan_poliklinik_2:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_kegiatan_poliklinik_3:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_kegiatan_poliklinik_4:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_laporan_kegiatan_poliklinik_5:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_manajemen_kasus_1:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_manajemen_kasus_2:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_manajemen_kasus_3:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_manajemen_kasus_4:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_manajemen_kasus_5:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_mini_cex_1:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_mini_cex_2:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_mini_cex_3:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_mini_cex_4:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_mini_cex_5:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_osce_1:
+      rule: "PathPrefix(`/v1.0/bagian/osce/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_osce_2:
+      rule: "PathPrefix(`/v1.0/bagian/osce/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_osce_3:
+      rule: "PathPrefix(`/v1.0/bagian/osce/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_osce_4:
+      rule: "PathPrefix(`/v1.0/bagian/osce/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_osce_5:
+      rule: "PathPrefix(`/v1.0/bagian/osce/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_post_test_1:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_post_test_2:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_post_test_3:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_post_test_4:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_post_test_5:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_7:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_8:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/getlist-bagian-ppd`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_9:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/detail-input-ujian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_10:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_11:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppd_12:
+      rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/update-status-claim`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_7:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_8:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_9:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/getlist-bagian-ppds`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_10:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/detail-input-ujian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_11:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/getlist-bagian-ppds`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_12:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ppds_13:
+      rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/update-status-claim`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_pre_test_1:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_pre_test_2:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_pre_test_3:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_pre_test_4:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_pre_test_5:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_refleksi_kasus_1:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_refleksi_kasus_2:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_refleksi_kasus_3:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_refleksi_kasus_4:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_refleksi_kasus_5:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ronde_1:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ronde_2:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ronde_3:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ronde_4:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_ronde_5:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_akhir_1:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_akhir_2:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_akhir_3:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_akhir_4:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_akhir_5:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_ruangan_1:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_ruangan_2:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_ruangan_3:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_ruangan_4:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tugas_ruangan_5:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tutorial_klinik_1:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tutorial_klinik_2:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tutorial_klinik_3:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tutorial_klinik_4:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    bagia_tutorial_klinik_5:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_1:
+      rule: "PathPrefix(`/v1.0/kaji-etik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_2:
+      rule: "PathPrefix(`/v1.0/kaji-etik/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_3:
+      rule: "PathPrefix(`/v1.0/kaji-etik/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_4:
+      rule: "PathPrefix(`/v1.0/kaji-etik/get-by-nomor-surat/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_5:
+      rule: "PathPrefix(`/v1.0/kaji-etik/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_6:
+      rule: "PathPrefix(`/v1.0/kaji-etik/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_7:
+      rule: "PathPrefix(`/v1.0/kaji-etik/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_8:
+      rule: "PathPrefix(`/v1.0/kaji-etik/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_9:
+      rule: "PathPrefix(`/v1.0/kaji-etik/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_10:
+      rule: "PathPrefix(`/v1.0/kaji-etik/cek-backdate/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_etik_11:
+      rule: "PathPrefix(`/v1.0/kaji-etik/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_1:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_2:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_3:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_4:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/get-by-nomor-surat/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_5:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_6:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_7:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_8:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_9:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_10:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/cek-backdate/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kaji_proposal_11:
+      rule: "PathPrefix(`/v1.0/diklat/kaji-proposal/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_magang_1:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_magang_2:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_magang_3:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_magang_4:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_magang_5:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_magang_6:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_magang_7:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_magang_8:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_pelatihan_1:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_pelatihan_2:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_pelatihan_3:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_pelatihan_4:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_pelatihan_5:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_pelatihan_6:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_pelatihan_7:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_pelatihan_8:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_peningkatan_kompetensi_1:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_peningkatan_kompetensi_2:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_peningkatan_kompetensi_3:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_peningkatan_kompetensi_4:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_peningkatan_kompetensi_5:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_peningkatan_kompetensi_6:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_peningkatan_kompetensi_7:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_studi_banding_1:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_studi_banding_2:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_studi_banding_3:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_studi_banding_4:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_studi_banding_5:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_studi_banding_6:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_studi_banding_7:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    kegiatan_studi_banding_8:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    komite_etik_1:
+      rule: "PathPrefix(`/v1.0/komite-etik/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    komite_etik_2:
+      rule: "PathPrefix(`/v1.0/komite-etik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    komite_etik_3:
+      rule: "PathPrefix(`/v1.0/komite-etik/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    komite_etik_4:
+      rule: "PathPrefix(`/v1.0/komite-etik/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    komite_etik_5:
+      rule: "PathPrefix(`/v1.0/komite-etik/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-kegiatan-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-kegiatan-ppd/get-by-id-bagian-ppd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-kegiatan-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-kegiatan-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-kegiatan-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-kegiatan-ppd/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppd_7:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-kegiatan-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-kegiatan-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-kegiatan-ppds/get-by-id-bagian-ppds/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-kegiatan-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-kegiatan-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-kegiatan-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-kegiatan-ppds/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_kegiatan_ppds_7:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-kegiatan-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-ujian-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-ujian-ppd/get-by-id-bagian-ppd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-ujian-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-ujian-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-ujian-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-ujian-ppd/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppd_7:
+      rule: "PathPrefix(`/v1.0/ppd/laporan-ujian-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-id-bagian-ppds/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    laporan_ujian_ppds_7:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    magang_1:
+      rule: "PathPrefix(`/v1.0/magang/magang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    magang_2:
+      rule: "PathPrefix(`/v1.0/magang/magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    magang_3:
+      rule: "PathPrefix(`/v1.0/magang/magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    magang_4:
+      rule: "PathPrefix(`/v1.0/magang/magang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    magang_5:
+      rule: "PathPrefix(`/v1.0/magang/magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pelatihan_1:
+      rule: "PathPrefix(`/v1.0/master/pelatihan/get-by-no-ktp/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pelatihan_2:
+      rule: "PathPrefix(`/v1.0/master/pelatihan/get-by-no-identitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pelatihan_3:
+      rule: "PathPrefix(`/v1.0/master/pelatihan/get-by-nim/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pelatihan_4:
+      rule: "PathPrefix(`/v1.0/master/pelatihan/get-by-nama-tanggal-lahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pelatihan_5:
+      rule: "PathPrefix(`/v1.0/master/pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pelatihan_6:
+      rule: "PathPrefix(`/v1.0/master/pelatihan/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pendidikan_1:
+      rule: "PathPrefix(`/v1.0/master/peserta-pendidikan/get-by-no-ktp/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pendidikan_2:
+      rule: "PathPrefix(`/v1.0/master/peserta-pendidikan/get-by-nim/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pendidikan_3:
+      rule: "PathPrefix(`/v1.0/master/peserta-pendidikan/get-by-nama-tanggal-lahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pendidikan_4:
+      rule: "PathPrefix(`/v1.0/master/peserta-pendidikan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    master_pendidikan_5:
+      rule: "PathPrefix(`/v1.0/master/peserta-pendidikan/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    narasumber_orientasi_1:
+      rule: "PathPrefix(`/v1.0/narasumber-orientasi/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    narasumber_orientasi_2:
+      rule: "PathPrefix(`/v1.0/narasumber-orientasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    narasumber_orientasi_3:
+      rule: "PathPrefix(`/v1.0/narasumber-orientasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    narasumber_orientasi_4:
+      rule: "PathPrefix(`/v1.0/narasumber-orientasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    narasumber_orientasi_5:
+      rule: "PathPrefix(`/v1.0/narasumber-orientasi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_pkl_1:
+      rule: "PathPrefix(`/v1.0/pkl/orientasi-pkl/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_pkl_2:
+      rule: "PathPrefix(`/v1.0/pkl/orientasi-pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_pkl_3:
+      rule: "PathPrefix(`/v1.0/pkl/orientasi-pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_pkl_4:
+      rule: "PathPrefix(`/v1.0/pkl/orientasi-pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_pkl_5:
+      rule: "PathPrefix(`/v1.0/pkl/orientasi-pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_pkl_6:
+      rule: "PathPrefix(`/v1.0/pkl/orientasi-pkl/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_pkl_7:
+      rule: "PathPrefix(`/v1.0/pkl/orientasi-pkl/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_pkl_8:
+      rule: "PathPrefix(`/v1.0/pkl/orientasi-pkl/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/orientasi-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/orientasi-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/orientasi-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/orientasi-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/orientasi-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/orientasi-ppd/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppd_7:
+      rule: "PathPrefix(`/v1.0/ppd/orientasi-ppd/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppd_8:
+      rule: "PathPrefix(`/v1.0/ppd/orientasi-ppd/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/orientasi-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/orientasi-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/orientasi-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/orientasi-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/orientasi-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/orientasi-ppds/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppds_7:
+      rule: "PathPrefix(`/v1.0/ppds/orientasi-ppds/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    orientasi_ppds_8:
+      rule: "PathPrefix(`/v1.0/ppds/orientasi-ppds/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pelatihan_1:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pelatihan_2:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pelatihan_3:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pelatihan_4:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pelatihan_5:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_pkl_1:
+      rule: "PathPrefix(`/v1.0/pkl/pendidikan-pkl/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_pkl_2:
+      rule: "PathPrefix(`/v1.0/pkl/pendidikan-pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_pkl_3:
+      rule: "PathPrefix(`/v1.0/pkl/pendidikan-pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_pkl_4:
+      rule: "PathPrefix(`/v1.0/pkl/pendidikan-pkl/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_pkl_5:
+      rule: "PathPrefix(`/v1.0/pkl/pendidikan-pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/pendidikan-ppd/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/pendidikan-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/pendidikan-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/pendidikan-ppd/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/pendidikan-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/pendidikan-ppds/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/pendidikan-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/pendidikan-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/pendidikan-ppds/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pendidikan_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/pendidikan-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_1:
+      rule: "PathPrefix(`/v1.0/penelitian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_2:
+      rule: "PathPrefix(`/v1.0/penelitian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_3:
+      rule: "PathPrefix(`/v1.0/penelitian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_4:
+      rule: "PathPrefix(`/v1.0/penelitian/get-by-nomor-surat/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_5:
+      rule: "PathPrefix(`/v1.0/penelitian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_6:
+      rule: "PathPrefix(`/v1.0/penelitian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_7:
+      rule: "PathPrefix(`/v1.0/penelitian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_8:
+      rule: "PathPrefix(`/v1.0/penelitian/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_9:
+      rule: "PathPrefix(`/v1.0/penelitian/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_10:
+      rule: "PathPrefix(`/v1.0/penelitian/cek-backdate/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    penelitian_11:
+      rule: "PathPrefix(`/v1.0/penelitian/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peningkatan_kompetensi_1:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peningkatan-kompetensi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peningkatan_kompetensi_2:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peningkatan-kompetensi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peningkatan_kompetensi_3:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peningkatan-kompetensi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peningkatan_kompetensi_4:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peningkatan-kompetensi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peningkatan_kompetensi_5:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peningkatan-kompetensi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_1:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_2:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/get-by-no-ktp/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_3:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/get-by-nim/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_4:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/get-by-nama-tanggal-lahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_5:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_6:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_7:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_8:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_9:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_diklat_10:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_magang_1:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_magang_2:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_magang_3:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_magang_4:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_magang_5:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pelatihan_1:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pelatihan_2:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pelatihan_3:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pelatihan_4:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pelatihan_5:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pelatihan_6:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pelatihan_7:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pelatihan_8:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-orientasi-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-orientasi-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-orientasi-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-orientasi-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-orientasi-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-orientasi-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-orientasi-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-orientasi-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-orientasi-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-orientasi-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_orientasi_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-orientasi-ppds/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_1:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/get-by-no-ktp/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_2:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/get-by-nim/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_3:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/get-by-nama-tanggal-lahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_4:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_5:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_6:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_7:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_8:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_pkl_9:
+      rule: "PathPrefix(`/v1.0/pkl/peserta-pendidikan-pkl/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/get-by-no-ktp/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/get-by-nim/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/get-by-nama-tanggal-lahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/get-by-id-referensi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_7:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_8:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_9:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppd_10:
+      rule: "PathPrefix(`/v1.0/ppd/peserta-pendidikan-ppd/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-no-ktp/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-nim/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-nama-tanggal-lahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_7:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_8:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_9:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_pendidikan_ppds_10:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-id-referensi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_peningkatan_kompetensi_1:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peserta-peningkatan-kompetensi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_peningkatan_kompetensi_2:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peserta-peningkatan-kompetensi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_peningkatan_kompetensi_3:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peserta-peningkatan-kompetensi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_peningkatan_kompetensi_4:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peserta-peningkatan-kompetensi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_peningkatan_kompetensi_5:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peserta-peningkatan-kompetensi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_peningkatan_kompetensi_6:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peserta-peningkatan-kompetensi/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_peningkatan_kompetensi_7:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peserta-peningkatan-kompetensi/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_peningkatan_kompetensi_8:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/peserta-peningkatan-kompetensi/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_studi_banding_1:
+      rule: "PathPrefix(`/v1.0/studi-banding/peserta-studi-banding/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_studi_banding_2:
+      rule: "PathPrefix(`/v1.0/studi-banding/peserta-studi-banding/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_studi_banding_3:
+      rule: "PathPrefix(`/v1.0/studi-banding/peserta-studi-banding/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_studi_banding_4:
+      rule: "PathPrefix(`/v1.0/studi-banding/peserta-studi-banding/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    peserta_studi_banding_5:
+      rule: "PathPrefix(`/v1.0/studi-banding/peserta-studi-banding/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_etik_1:
+      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_etik_2:
+      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_etik_3:
+      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_etik_4:
+      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/get-by-id-kaji-etik/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_etik_5:
+      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_etik_6:
+      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_etik_7:
+      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_proposal_1:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-kaji-proposal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_proposal_2:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-kaji-proposal/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_proposal_3:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-kaji-proposal/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_proposal_4:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-kaji-proposal/get-by-id-kaji-proposal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_proposal_5:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-kaji-proposal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_proposal_6:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-kaji-proposal/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_kaji_proposal_7:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-kaji-proposal/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_magang_1:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_magang_2:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_magang_3:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_magang_4:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/get-by-id-kegiatan-magang/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_magang_5:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_magang_6:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_magang_7:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_pkl_1:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_pkl_2:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_pkl_3:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/get-by-id-orientasi-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_pkl_4:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_pkl_5:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_pkl_6:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-orientasi-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-orientasi-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-orientasi-ppd/get-by-id-orientasi-ppd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-orientasi-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-orientasi-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-orientasi-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-orientasi-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-orientasi-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-orientasi-ppds/get-by-id-orientasi-ppds/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-orientasi-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-orientasi-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_orientasi_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-orientasi-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pelatihan_1:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pelatihan_2:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pelatihan_3:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pelatihan_4:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/get-by-id-kegiatan-pelatihan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pelatihan_5:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pelatihan_6:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pelatihan_7:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_penelitian_1:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-penelitian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_penelitian_2:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-penelitian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_penelitian_3:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-penelitian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_penelitian_4:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-penelitian/get-by-id-penelitian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_penelitian_5:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-penelitian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_penelitian_6:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-penelitian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_penelitian_7:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-penelitian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_peningkatan_kompetensi_1:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_peningkatan_kompetensi_2:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_peningkatan_kompetensi_3:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_peningkatan_kompetensi_4:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/get-by-id-kegiatan-peningkatan-kompetensi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_peningkatan_kompetensi_5:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_peningkatan_kompetensi_6:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_peningkatan_kompetensi_7:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pkl_1:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-pkl/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pkl_2:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pkl_3:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-pkl/get-by-id-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pkl_4:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pkl_5:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pkl_6:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-ppd/get-by-id-bagian-ppd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/petugas-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/get-by-id-bagian-ppds/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_survey_1:
+      rule: "PathPrefix(`/v1.0/petugas-pre-survey/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_survey_2:
+      rule: "PathPrefix(`/v1.0/petugas-pre-survey/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_survey_3:
+      rule: "PathPrefix(`/v1.0/petugas-pre-survey/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_survey_4:
+      rule: "PathPrefix(`/v1.0/petugas-pre-survey/get-by-id-pre-survey/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_survey_5:
+      rule: "PathPrefix(`/v1.0/petugas-pre-survey/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_survey_6:
+      rule: "PathPrefix(`/v1.0/petugas-pre-survey/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_survey_7:
+      rule: "PathPrefix(`/v1.0/petugas-pre-survey/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_terap_1:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-pre-terap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_terap_2:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-pre-terap/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_terap_3:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-pre-terap/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_terap_4:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-pre-terap/get-by-id-pre-terap/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_terap_5:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-pre-terap/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_terap_6:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-pre-terap/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_pre_terap_7:
+      rule: "PathPrefix(`/v1.0/diklat/petugas-pre-terap/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_sewa_aula_1:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_sewa_aula_2:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_sewa_aula_3:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_sewa_aula_4:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_sewa_aula_5:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_1:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_2:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_3:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_4:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/get-by-id-kegiatan-studi-banding/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_5:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_6:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_7:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_8:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_9:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_studi_banding_10:
+      rule: "PathPrefix(`/v1.0/studi-banding/petugas-studi-banding/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ujian_1:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ujian_2:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ujian_3:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/get-by-id-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ujian_4:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ujian_5:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    petugas_ujian_6:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pkl_1:
+      rule: "PathPrefix(`/v1.0/pkl/pkl/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pkl_2:
+      rule: "PathPrefix(`/v1.0/pkl/pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pkl_3:
+      rule: "PathPrefix(`/v1.0/pkl/pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pkl_4:
+      rule: "PathPrefix(`/v1.0/pkl/pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pkl_5:
+      rule: "PathPrefix(`/v1.0/pkl/pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pkl_6:
+      rule: "PathPrefix(`/v1.0/pkl/pkl/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pkl_7:
+      rule: "PathPrefix(`/v1.0/pkl/pkl/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pkl_8:
+      rule: "PathPrefix(`/v1.0/pkl/pkl/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/ppd/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppd_7:
+      rule: "PathPrefix(`/v1.0/ppd/ppd/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/ppds/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ppds_7:
+      rule: "PathPrefix(`/v1.0/ppds/ppds/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_1:
+      rule: "PathPrefix(`/v1.0/pre-survey/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_2:
+      rule: "PathPrefix(`/v1.0/pre-survey/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_3:
+      rule: "PathPrefix(`/v1.0/pre-survey/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_4:
+      rule: "PathPrefix(`/v1.0/pre-survey/get-by-nomor-surat/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_5:
+      rule: "PathPrefix(`/v1.0/pre-survey/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_6:
+      rule: "PathPrefix(`/v1.0/pre-survey/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_7:
+      rule: "PathPrefix(`/v1.0/pre-survey/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_8:
+      rule: "PathPrefix(`/v1.0/pre-survey/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_9:
+      rule: "PathPrefix(`/v1.0/pre-survey/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_10:
+      rule: "PathPrefix(`/v1.0/pre-survey/cek-backdate/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_survey_11:
+      rule: "PathPrefix(`/v1.0/pre-survey/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_1:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_2:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_3:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_4:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/get-by-nomor-surat/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_5:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_6:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_7:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_8:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_9:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_10:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/cek-backdate/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    pre_terap_11:
+      rule: "PathPrefix(`/v1.0/diklat/pre-terap/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_pembelajaran_1:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_pembelajaran_2:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_pembelajaran_3:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_pembelajaran_4:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_pembelajaran_5:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppd_1:
+      rule: "PathPrefix(`/v1.0/master/bagian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppd_2:
+      rule: "PathPrefix(`/v1.0/master/bagian/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppd_3:
+      rule: "PathPrefix(`/v1.0/master/bagian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppd_4:
+      rule: "PathPrefix(`/v1.0/master/bagian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppd_5:
+      rule: "PathPrefix(`/v1.0/master/bagian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppds_1:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppds_2:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppds_3:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppds_4:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ppds_5:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_referensi_ujian_1:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran-ujian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_referensi_ujian_2:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran-ujian/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_referensi_ujian_3:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran-ujian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_referensi_ujian_4:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran-ujian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_referensi_ujian_5:
+      rule: "PathPrefix(`/v1.0/master/bagian-pembelajaran-ujian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ujian_1:
+      rule: "PathPrefix(`/v1.0/master/bagian-ujian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ujian_2:
+      rule: "PathPrefix(`/v1.0/master/bagian-ujian/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ujian_3:
+      rule: "PathPrefix(`/v1.0/master/bagian-ujian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ujian_4:
+      rule: "PathPrefix(`/v1.0/master/bagian-ujian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_bagian_ujian_5:
+      rule: "PathPrefix(`/v1.0/master/bagian-ujian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_jaspel_penelitian_1:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_jaspel_penelitian_2:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_jaspel_penelitian_3:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_jaspel_penelitian_4:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_jaspel_penelitian_5:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_pembelajaran_ujian_1:
+      rule: "PathPrefix(`/v1.0/master/pembelajaran-ujian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_pembelajaran_ujian_2:
+      rule: "PathPrefix(`/v1.0/master/pembelajaran-ujian/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_pembelajaran_ujian_3:
+      rule: "PathPrefix(`/v1.0/master/pembelajaran-ujian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_pembelajaran_ujian_4:
+      rule: "PathPrefix(`/v1.0/master/pembelajaran-ujian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_pembelajaran_ujian_5:
+      rule: "PathPrefix(`/v1.0/master/pembelajaran-ujian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_bagian_1:
+      rule: "PathPrefix(`/v1.0/master/petugas-bagian/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_bagian_2:
+      rule: "PathPrefix(`/v1.0/master/petugas-bagian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_bagian_3:
+      rule: "PathPrefix(`/v1.0/master/petugas-bagian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_bagian_4:
+      rule: "PathPrefix(`/v1.0/master/petugas-bagian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_bagian_5:
+      rule: "PathPrefix(`/v1.0/master/petugas-bagian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_penelitian_1:
+      rule: "PathPrefix(`/v1.0/master/petugas-penelitian/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_penelitian_2:
+      rule: "PathPrefix(`/v1.0/master/petugas-penelitian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_penelitian_3:
+      rule: "PathPrefix(`/v1.0/master/petugas-penelitian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_penelitian_4:
+      rule: "PathPrefix(`/v1.0/master/petugas-penelitian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_penelitian_5:
+      rule: "PathPrefix(`/v1.0/master/petugas-penelitian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_preseptor_1:
+      rule: "PathPrefix(`/v1.0/master/petugas-perseptor/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_preseptor_2:
+      rule: "PathPrefix(`/v1.0/master/petugas-perseptor/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_preseptor_3:
+      rule: "PathPrefix(`/v1.0/master/petugas-perseptor/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_preseptor_4:
+      rule: "PathPrefix(`/v1.0/master/petugas-perseptor/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_preseptor_5:
+      rule: "PathPrefix(`/v1.0/master/petugas-perseptor/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_penelitian_1:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_penelitian_2:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/getlist-by-kd-ruangan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_penelitian_3:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_penelitian_4:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_penelitian_5:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_preseptor_1:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/perseptor/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_preseptor_2:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/perseptor/getlist-by-kd-ruangan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_preseptor_3:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/perseptor/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_preseptor_4:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/perseptor/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_ruangan_preseptor_5:
+      rule: "PathPrefix(`/v1.0/master/petugas-ruangan/perseptor/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_1:
+      rule: "PathPrefix(`/v1.0/referensi-petugas/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_2:
+      rule: "PathPrefix(`/v1.0/referensi-petugas/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_3:
+      rule: "PathPrefix(`/v1.0/referensi-petugas/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_4:
+      rule: "PathPrefix(`/v1.0/referensi-petugas/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_petugas_5:
+      rule: "PathPrefix(`/v1.0/referensi-petugas/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_rs_1:
+      rule: "PathPrefix(`/v1.0/master/ruangan-rs/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_rs_2:
+      rule: "PathPrefix(`/v1.0/master/ruangan-rs/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_rs_3:
+      rule: "PathPrefix(`/v1.0/master/ruangan-rs/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_rs_4:
+      rule: "PathPrefix(`/v1.0/master/ruangan-rs/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_rs_5:
+      rule: "PathPrefix(`/v1.0/master/ruangan-rs/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_1:
+      rule: "PathPrefix(`/v1.0/master/ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_2:
+      rule: "PathPrefix(`/v1.0/master/ruangan/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_3:
+      rule: "PathPrefix(`/v1.0/master/ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_4:
+      rule: "PathPrefix(`/v1.0/master/ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_ruangan_5:
+      rule: "PathPrefix(`/v1.0/master/ruangan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_stase_1:
+      rule: "PathPrefix(`/v1.0/master/stase/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_stase_2:
+      rule: "PathPrefix(`/v1.0/master/stase/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_stase_3:
+      rule: "PathPrefix(`/v1.0/master/stase/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_stase_4:
+      rule: "PathPrefix(`/v1.0/master/stase/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_stase_5:
+      rule: "PathPrefix(`/v1.0/master/stase/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_universitas_1:
+      rule: "PathPrefix(`/v1.0/universitas/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_universitas_2:
+      rule: "PathPrefix(`/v1.0/universitas/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_universitas_3:
+      rule: "PathPrefix(`/v1.0/universitas/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_universitas_4:
+      rule: "PathPrefix(`/v1.0/universitas/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    referensi_universitas_5:
+      rule: "PathPrefix(`/v1.0/universitas/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    rekap_diklat_1:
+      rule: "PathPrefix(`/v1.0/rekap-diklat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    sewa_aula_1:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    sewa_aula_2:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    sewa_aula_3:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    sewa_aula_4:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    sewa_aula_5:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    sewa_aula_6:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    sewa_aula_7:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    sewa_aula_8:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    studi_banding_1:
+      rule: "PathPrefix(`/v1.0/studi-banding/studi-banding/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    studi_banding_2:
+      rule: "PathPrefix(`/v1.0/studi-banding/studi-banding/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    studi_banding_3:
+      rule: "PathPrefix(`/v1.0/studi-banding/studi-banding/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    studi_banding_4:
+      rule: "PathPrefix(`/v1.0/studi-banding/studi-banding/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    studi_banding_5:
+      rule: "PathPrefix(`/v1.0/studi-banding/studi-banding/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_magang_1:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_magang_2:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_magang_3:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_magang_4:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/get-by-id-kegiatan-magang/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_magang_5:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_magang_6:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_magang_7:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_pkl_1:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-orientasi-pkl/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_pkl_2:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-orientasi-pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_pkl_3:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-orientasi-pkl/get-by-id-orientasi-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_pkl_4:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-orientasi-pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_pkl_5:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-orientasi-pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_pkl_6:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-orientasi-pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-orientasi-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-orientasi-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-orientasi-ppd/get-by-id-orientasi-ppd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-orientasi-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-orientasi-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-orientasi-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-orientasi-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-orientasi-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-orientasi-ppds/get-by-id-orientasi-ppds/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-orientasi-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-orientasi-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_orientasi_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-orientasi-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_1:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_2:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_3:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_4:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id-kegiatan-pelatihan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_5:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_6:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_7:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_8:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id-peserta/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pelatihan_9:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id-peserta/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_penelitian_1:
+      rule: "PathPrefix(`/v1.0/diklat/tindakan-penelitian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_penelitian_2:
+      rule: "PathPrefix(`/v1.0/diklat/tindakan-penelitian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_penelitian_3:
+      rule: "PathPrefix(`/v1.0/diklat/tindakan-penelitian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_penelitian_4:
+      rule: "PathPrefix(`/v1.0/diklat/tindakan-penelitian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_penelitian_5:
+      rule: "PathPrefix(`/v1.0/diklat/tindakan-penelitian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_penelitian_6:
+      rule: "PathPrefix(`/v1.0/diklat/tindakan-penelitian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_penelitian_7:
+      rule: "PathPrefix(`/v1.0/diklat/tindakan-penelitian/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_peningkatan_kompetensi_1:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/tindakan-peningkatan-kompetensi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_peningkatan_kompetensi_2:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/tindakan-peningkatan-kompetensi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_peningkatan_kompetensi_3:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/tindakan-peningkatan-kompetensi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_peningkatan_kompetensi_4:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/tindakan-peningkatan-kompetensi/get-by-id-kegiatan-peningkatan-kompetensi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_peningkatan_kompetensi_5:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/tindakan-peningkatan-kompetensi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_peningkatan_kompetensi_6:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/tindakan-peningkatan-kompetensi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_peningkatan_kompetensi_7:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/tindakan-peningkatan-kompetensi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_peningkatan_kompetensi_8:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/tindakan-peningkatan-kompetensi/get-by-id-peserta/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pkl_1:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-pkl/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pkl_2:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pkl_3:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-pkl/get-by-id-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pkl_4:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pkl_5:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_pkl_6:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppd_1:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppd_2:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-ppd/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppd_3:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-ppd/get-by-id-bagian-ppd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppd_4:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-ppd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppd_5:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-ppd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppd_6:
+      rule: "PathPrefix(`/v1.0/ppd/tindakan-ppd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppds_1:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppds_2:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppds_3:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-ppds/get-by-id-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppds_4:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppds_5:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppds_6:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ppds_7:
+      rule: "PathPrefix(`/v1.0/ppds/tindakan-ppds/get-by-id-bagian-ppds/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_sewa_aula_1:
+      rule: "PathPrefix(`/v1.0/sewa-aula/tindakan-sewa-aula/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_sewa_aula_2:
+      rule: "PathPrefix(`/v1.0/sewa-aula/tindakan-sewa-aula/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_sewa_aula_3:
+      rule: "PathPrefix(`/v1.0/sewa-aula/tindakan-sewa-aula/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_sewa_aula_4:
+      rule: "PathPrefix(`/v1.0/sewa-aula/tindakan-sewa-aula/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_sewa_aula_5:
+      rule: "PathPrefix(`/v1.0/sewa-aula/tindakan-sewa-aula/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_1:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_2:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_3:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_4:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/get-by-id-kegiatan-studi-banding/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_5:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/get-by-id-petugas/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_6:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_7:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_8:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_9:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_10:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_studi_banding_11:
+      rule: "PathPrefix(`/v1.0/studi-banding/tindakan-studi-banding/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ujian_1:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-ujian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ujian_2:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-ujian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ujian_3:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-ujian/get-by-id-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ujian_4:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-ujian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ujian_5:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-ujian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tindakan_ujian_6:
+      rule: "PathPrefix(`/v1.0/pkl/tindakan-ujian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tinjauan_pustaka_1:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tinjauan_pustaka_2:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tinjauan_pustaka_3:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tinjauan_pustaka_4:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    tinjauan_pustaka_5:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ujian_1:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ujian_2:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ujian_3:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ujian_4:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ujian_5:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ujian_6:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ujian_7:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+  
+    ujian_8:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+    
 
   services:
     service-diklat:
