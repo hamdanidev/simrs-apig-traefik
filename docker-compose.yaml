@@ -4,8 +4,8 @@ services:
     container_name: traefik
     restart: always
     ports:
-      - "9090:9080"     # Port trafik utama (pengganti APISIX)
-      - "8080:8080"     # Port Dashboard Traefik
+      - "9090:9080" # Port trafik utama (pengganti APISIX)
+      - "18080:8080" # Port Dashboard Traefik
     volumes:
       # Agar Traefik bisa membaca container Docker lain
       - /var/run/docker.sock:/var/run/docker.sock:ro
