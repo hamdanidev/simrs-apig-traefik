@@ -618,7 +618,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-pelayanan_1:
+    kategori_pelayanan_1:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -626,7 +626,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-pelayanan_2:
+    kategori_pelayanan_2:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -634,7 +634,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-pelayanan_3:
+    kategori_pelayanan_3:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -642,7 +642,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-pelayanan_4:
+    kategori_pelayanan_4:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -650,7 +650,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-pelayanan_5:
+    kategori_pelayanan_5:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -658,7 +658,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-pelayanan_6:
+    kategori_pelayanan_6:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -666,7 +666,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-pelayanan_7:
+    kategori_pelayanan_7:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getbystandarlayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -2250,7 +2250,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-kamar_1:
+    kategori_kamar_1:
       rule: "PathPrefix(`/v1.0/kategorikamar/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2258,7 +2258,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-kamar_2:
+    kategori_kamar_2:
       rule: "PathPrefix(`/v1.0/kategorikamar/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2266,7 +2266,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-kamar_3:
+    kategori_kamar_3:
       rule: "PathPrefix(`/v1.0/kategorikamar/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2274,7 +2274,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-kamar_4:
+    kategori_kamar_4:
       rule: "PathPrefix(`/v1.0/kategorikamar/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2282,7 +2282,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    kategori-kamar_5:
+    kategori_kamar_5:
       rule: "PathPrefix(`/v1.0/kategorikamar/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
