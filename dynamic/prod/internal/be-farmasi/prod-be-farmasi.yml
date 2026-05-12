@@ -1384,35 +1384,35 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-    paket_obat_1:
+    paket_obat_1_copy:
       rule: "PathPrefix(`/v1.0/farmasi/paket-obat/get-list-paket-obat`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
         - web
       middlewares:
         - "simrs-cors"
-    paket_obat_2:
+    paket_obat_2_copy:
       rule: "PathPrefix(`/v1.0/farmasi/paket-obat/get-list-paket-obat-barang`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
         - web
       middlewares:
         - "simrs-cors"
-    paket_obat_3:
+    paket_obat_3_copy:
       rule: "PathPrefix(`/v1.0/farmasi/paket-obat/get-by-id-paket-obat/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
         - web
       middlewares:
         - "simrs-cors"
-    paket_obat_4:
+    paket_obat_4_copy:
       rule: "PathPrefix(`/v1.0/farmasi/paket-obat/get-by-id-paket-obat-barang/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
         - web
       middlewares:
         - "simrs-cors"
-    paket_obat_5:
+    paket_obat_5_copy:
       rule: "PathPrefix(`/v1.0/farmasi/paket-obat/create-paket-obat`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:

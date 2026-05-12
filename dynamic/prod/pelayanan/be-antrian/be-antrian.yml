@@ -226,7 +226,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    mcu_1:
+    mcu_1_copy:
       rule: "PathPrefix(`/v1.0/mcu/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-antrian
       entryPoints:
@@ -234,7 +234,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    mcu_2:
+    mcu_2_copy:
       rule: "PathPrefix(`/v1.0/mcu/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-antrian
       entryPoints:
@@ -242,7 +242,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    mcu_3:
+    mcu_3_copy:
       rule: "PathPrefix(`/v1.0/mcu/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-antrian
       entryPoints:
@@ -250,7 +250,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    mcu_4:
+    mcu_4_copy:
       rule: "PathPrefix(`/v1.0/mcu/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-antrian
       entryPoints:
@@ -258,7 +258,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    mcu_5:
+    mcu_5_copy:
       rule: "PathPrefix(`/v1.0/mcu/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-antrian
       entryPoints:
