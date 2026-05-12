@@ -37,6 +37,7 @@ http:
         accessControlAllowHeaders:
           - "Authorization"
           - "Content-Type"
+          - "X-Rs-Code"
           - "X-Requested-With"
         accessControlAllowOriginList:
           - "*"
