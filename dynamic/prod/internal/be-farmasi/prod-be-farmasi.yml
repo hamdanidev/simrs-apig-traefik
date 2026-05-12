@@ -2755,3 +2755,4 @@ http:
       loadBalancer:
         servers:
           - url: "http://22.22.22.59:8097"
+          - url: "http://22.22.22.125:8097"

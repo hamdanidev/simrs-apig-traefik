@@ -3241,3 +3241,4 @@ http:
       loadBalancer:
         servers:
           - url: "http://22.22.22.24:8092"
+          - url: "http://22.22.22.126:8092"

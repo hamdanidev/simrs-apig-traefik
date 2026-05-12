@@ -1371,3 +1371,4 @@ http:
       loadBalancer:
         servers:
           - url: "http://22.22.22.24:8093" # IP Server Prod
+          - url: "http://22.22.22.129:8093" # IP Server Prod cadangan
