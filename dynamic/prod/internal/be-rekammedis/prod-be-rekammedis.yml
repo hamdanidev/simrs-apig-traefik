@@ -1,0 +1,2001 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    assesment_awal_kebidanan_obstetri_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_kebidanan_obstetri_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_kebidanan_obstetri_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_kebidanan_obstetri_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_kebidanan_penyakit_kandungan_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_kebidanan_penyakit_kandungan_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_kebidanan_penyakit_kandungan_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_kebidanan_penyakit_kandungan_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_anak_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanAnak/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_anak_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanAnak/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_anak_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanAnak/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_anak_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanAnak/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_dewasa_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanDewasa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_dewasa_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanDewasa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_dewasa_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanDewasa/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_dewasa_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanDewasa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_gangguan_jiwa_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGangguanJiwa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_gangguan_jiwa_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGangguanJiwa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_gangguan_jiwa_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGangguanJiwa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_gangguan_jiwa_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGangguanJiwa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_gawat_darurat_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGawatDarurat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_gawat_darurat_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGawatDarurat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_gawat_darurat_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGawatDarurat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_gawat_darurat_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGawatDarurat/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_geriatri_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGeriatri/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_geriatri_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGeriatri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_geriatri_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGeriatri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_geriatri_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGeriatri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_jalan_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanJalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_jalan_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanJalan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_jalan_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanJalan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_jalan_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanJalan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_obygn_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanObygn/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_obygn_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanObygn/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_obygn_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanObygn/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_obygn_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanObygn/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_keperawatan_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_medis_anak_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalMedisAnak/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_medis_anak_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalMedisAnak/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_medis_anak_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalMedisAnak/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_medis_anak_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalMedisAnak/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_medis_rawat_jalan_1:
+      rule: "PathPrefix(`/v1.0/assessmentAwalMedisRawatJalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_medis_rawat_jalan_2:
+      rule: "PathPrefix(`/v1.0/assessmentAwalMedisRawatJalan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_medis_rawat_jalan_3:
+      rule: "PathPrefix(`/v1.0/assessmentAwalMedisRawatJalan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_medis_rawat_jalan_4:
+      rule: "PathPrefix(`/v1.0/assessmentAwalMedisRawatJalan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_rehabilitasi_medis_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/assessmentAwalRehabilitasiMedis/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_rehabilitasi_medis_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/assessmentAwalRehabilitasiMedis/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_rehabilitasi_medis_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/assessmentAwalRehabilitasiMedis/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_awal_rehabilitasi_medis_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/assessmentAwalRehabilitasiMedis/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_gizi_1:
+      rule: "PathPrefix(`/v1.0/assessmentGizi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_gizi_2:
+      rule: "PathPrefix(`/v1.0/assessmentGizi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_gizi_3:
+      rule: "PathPrefix(`/v1.0/assessmentGizi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_gizi_4:
+      rule: "PathPrefix(`/v1.0/assessmentGizi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_jatuh_dewasa_1:
+      rule: "PathPrefix(`/v1.0/assessmentJatuhDewasa/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_jatuh_dewasa_2:
+      rule: "PathPrefix(`/v1.0/assessmentJatuhDewasa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_jatuh_dewasa_3:
+      rule: "PathPrefix(`/v1.0/assessmentJatuhDewasa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_jatuh_dewasa_4:
+      rule: "PathPrefix(`/v1.0/assessmentJatuhDewasa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_jatuh_geriatri_1:
+      rule: "PathPrefix(`/v1.0/assessmentJatuhGeriatri/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_jatuh_geriatri_2:
+      rule: "PathPrefix(`/v1.0/assessmentJatuhGeriatri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_jatuh_geriatri_3:
+      rule: "PathPrefix(`/v1.0/assessmentJatuhGeriatri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_jatuh_geriatri_4:
+      rule: "PathPrefix(`/v1.0/assessmentJatuhGeriatri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_kebidanan_baru_lahir_1:
+      rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_kebidanan_baru_lahir_2:
+      rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_kebidanan_baru_lahir_3:
+      rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_kebidanan_baru_lahir_4:
+      rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_kemoterapi_pasien_1:
+      rule: "PathPrefix(`/v1.0/assessmentKemoterapiPasien/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_kemoterapi_pasien_2:
+      rule: "PathPrefix(`/v1.0/assessmentKemoterapiPasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_kemoterapi_pasien_3:
+      rule: "PathPrefix(`/v1.0/assessmentKemoterapiPasien/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_kemoterapi_pasien_4:
+      rule: "PathPrefix(`/v1.0/assessmentKemoterapiPasien/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_keperawatan_neonatologi_1:
+      rule: "PathPrefix(`/v1.0/assessmentKeperawatanNeonatologi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_keperawatan_neonatologi_2:
+      rule: "PathPrefix(`/v1.0/assessmentKeperawatanNeonatologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_keperawatan_neonatologi_3:
+      rule: "PathPrefix(`/v1.0/assessmentKeperawatanNeonatologi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_keperawatan_neonatologi_4:
+      rule: "PathPrefix(`/v1.0/assessmentKeperawatanNeonatologi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_keperawatan_internal_pasien_hemodialisa_1:
+      rule: "PathPrefix(`/v1.0/assessmentKeperawatanPasienHemodialisa/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_keperawatan_internal_pasien_hemodialisa_2:
+      rule: "PathPrefix(`/v1.0/assessmentKeperawatanPasienHemodialisa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_keperawatan_internal_pasien_hemodialisa_3:
+      rule: "PathPrefix(`/v1.0/assessmentKeperawatanPasienHemodialisa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_keperawatan_internal_pasien_hemodialisa_4:
+      rule: "PathPrefix(`/v1.0/assessmentKeperawatanPasienHemodialisa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_dewasa_1:
+      rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_dewasa_2:
+      rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_dewasa_3:
+      rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_dewasa_4:
+      rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_geriatri_1:
+      rule: "PathPrefix(`/v1.0/assessmentMedisGeriatri/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_geriatri_2:
+      rule: "PathPrefix(`/v1.0/assessmentMedisGeriatri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_geriatri_3:
+      rule: "PathPrefix(`/v1.0/assessmentMedisGeriatri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_geriatri_4:
+      rule: "PathPrefix(`/v1.0/assessmentMedisGeriatri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_neonatologi_1:
+      rule: "PathPrefix(`/v1.0/assessmentMedisNeonatologi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_neonatologi_2:
+      rule: "PathPrefix(`/v1.0/assessmentMedisNeonatologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_neonatologi_3:
+      rule: "PathPrefix(`/v1.0/assessmentMedisNeonatologi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_neonatologi_4:
+      rule: "PathPrefix(`/v1.0/assessmentMedisNeonatologi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_internal_pasien_hemodialisa_1:
+      rule: "PathPrefix(`/v1.0/assessmentMedisPasienHemodialisa/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_internal_pasien_hemodialisa_2:
+      rule: "PathPrefix(`/v1.0/assessmentMedisPasienHemodialisa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_internal_pasien_hemodialisa_3:
+      rule: "PathPrefix(`/v1.0/assessmentMedisPasienHemodialisa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_medis_internal_pasien_hemodialisa_4:
+      rule: "PathPrefix(`/v1.0/assessmentMedisPasienHemodialisa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_critical_cpot_1:
+      rule: "PathPrefix(`/v1.0/assessmentNyeriCriticalCpot/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_critical_cpot_2:
+      rule: "PathPrefix(`/v1.0/assessmentNyeriCriticalCpot/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_critical_cpot_3:
+      rule: "PathPrefix(`/v1.0/assessmentNyeriCriticalCpot/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_critical_cpot_4:
+      rule: "PathPrefix(`/v1.0/assessmentNyeriCriticalCpot/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_neonatologi_1:
+      rule: "PathPrefix(`/v1.0/assessmentNyeriNeonatologi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_neonatologi_2:
+      rule: "PathPrefix(`/v1.0/assessmentNyeriNeonatologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_neonatologi_3:
+      rule: "PathPrefix(`/v1.0/assessmentNyeriNeonatologi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_neonatologi_4:
+      rule: "PathPrefix(`/v1.0/assessmentNyeriNeonatologi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_1:
+      rule: "PathPrefix(`/v1.0/assessmentNyeri/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_2:
+      rule: "PathPrefix(`/v1.0/assessmentNyeri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_3:
+      rule: "PathPrefix(`/v1.0/assessmentNyeri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_nyeri_4:
+      rule: "PathPrefix(`/v1.0/assessmentNyeri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pasien_jatuh_khusus_anak_1:
+      rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususAnak/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pasien_jatuh_khusus_anak_2:
+      rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususAnak/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pasien_jatuh_khusus_anak_3:
+      rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususAnak/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pasien_jatuh_khusus_anak_4:
+      rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususAnak/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pasien_jatuh_khusus_psikiatri_1:
+      rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususPsikiatri/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pasien_jatuh_khusus_psikiatri_2:
+      rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususPsikiatri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pasien_jatuh_khusus_psikiatri_3:
+      rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususPsikiatri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pasien_jatuh_khusus_psikiatri_4:
+      rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususPsikiatri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pra_operasi_1:
+      rule: "PathPrefix(`/v1.0/assessmentPraOperasi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pra_operasi_2:
+      rule: "PathPrefix(`/v1.0/assessmentPraOperasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pra_operasi_3:
+      rule: "PathPrefix(`/v1.0/assessmentPraOperasi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_pra_operasi_4:
+      rule: "PathPrefix(`/v1.0/assessmentPraOperasi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_terapi_dan_gawat_darurat_1:
+      rule: "PathPrefix(`/v1.0/assessmentTerapiDanGawatDarurat/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_terapi_dan_gawat_darurat_2:
+      rule: "PathPrefix(`/v1.0/assessmentTerapiDanGawatDarurat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_terapi_dan_gawat_darurat_3:
+      rule: "PathPrefix(`/v1.0/assessmentTerapiDanGawatDarurat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_terapi_dan_gawat_darurat_4:
+      rule: "PathPrefix(`/v1.0/assessmentTerapiDanGawatDarurat/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_triage_1:
+      rule: "PathPrefix(`/v1.0/assessmentTriage/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_triage_2:
+      rule: "PathPrefix(`/v1.0/assessmentTriage/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_triage_3:
+      rule: "PathPrefix(`/v1.0/assessmentTriage/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    assesment_triage_4:
+      rule: "PathPrefix(`/v1.0/assessmentTriage/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    checklist_pulang_1:
+      rule: "PathPrefix(`/v1.0/checklistPulang/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    checklist_pulang_2:
+      rule: "PathPrefix(`/v1.0/checklistPulang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    checklist_pulang_3:
+      rule: "PathPrefix(`/v1.0/checklistPulang/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    checklist_pulang_4:
+      rule: "PathPrefix(`/v1.0/checklistPulang/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    consent_pelayanan_vaksin_covid19_1:
+      rule: "PathPrefix(`/v1.0/consentPelayananVaksinCovid19/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    consent_pelayanan_vaksin_covid19_2:
+      rule: "PathPrefix(`/v1.0/consentPelayananVaksinCovid19/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    consent_pelayanan_vaksin_covid19_3:
+      rule: "PathPrefix(`/v1.0/consentPelayananVaksinCovid19/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    consent_pelayanan_vaksin_covid19_4:
+      rule: "PathPrefix(`/v1.0/consentPelayananVaksinCovid19/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    daftar_pemeriksaan_penunjang_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/daftar_pemeriksaan_penunjang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    daftar_pemeriksaan_penunjang_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/daftar_pemeriksaan_penunjang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    daftar_pemeriksaan_penunjang_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/daftar_pemeriksaan_penunjang/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    daftar_pemeriksaan_penunjang_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/daftar_pemeriksaan_penunjang/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ews_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/ews/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ews_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/ews/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ews_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/ews/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ews_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/ews/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    hasil_tindakan_uji_fungsi_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/hasil_tindakan_uji_fungsi_prosedur_kfr/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    hasil_tindakan_uji_fungsi_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/hasil_tindakan_uji_fungsi_prosedur_kfr/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    hasil_tindakan_uji_fungsi_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/hasil_tindakan_uji_fungsi_prosedur_kfr/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    hasil_tindakan_uji_fungsi_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/hasil_tindakan_uji_fungsi_prosedur_kfr/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    intake_output_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/intake_output/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    intake_output_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/intake_output/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    intake_output_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/intake_output/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    intake_output_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/intake_output/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    konsultasi_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/konsultasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    konsultasi_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/konsultasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    konsultasi_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/konsultasi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    konsultasi_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/konsultasi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    laboratorium_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/laboratorium/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    laboratorium_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/laboratorium/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    laboratorium_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/laboratorium/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    laboratorium_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/laboratorium/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    laporan_operasi_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/laporan_operasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    laporan_operasi_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/laporan_operasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    laporan_operasi_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/laporan_operasi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    laporan_operasi_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/laporan_operasi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    meows_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/meows/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    meows_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/meows/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    meows_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/meows/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    meows_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/meows/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    monitoring_kemoterapi_1:
+      rule: "PathPrefix(`/v1.0/monitoringKemoterapi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    monitoring_kemoterapi_2:
+      rule: "PathPrefix(`/v1.0/monitoringKemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    monitoring_kemoterapi_3:
+      rule: "PathPrefix(`/v1.0/monitoringKemoterapi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    monitoring_kemoterapi_4:
+      rule: "PathPrefix(`/v1.0/monitoringKemoterapi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    monitoring_pasien_kemoterapi_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/monitoringPasienKemoterapi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    monitoring_pasien_kemoterapi_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/monitoringPasienKemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    monitoring_pasien_kemoterapi_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/monitoringPasienKemoterapi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    monitoring_pasien_kemoterapi_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/monitoringPasienKemoterapi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    news_1:
+      rule: "PathPrefix(`/v1.0/news/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    news_2:
+      rule: "PathPrefix(`/v1.0/news/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    news_3:
+      rule: "PathPrefix(`/v1.0/news/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    news_4:
+      rule: "PathPrefix(`/v1.0/news/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    observasi_gawat_darurat_1:
+      rule: "PathPrefix(`/v1.0/observasiGawatDarurat/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    observasi_gawat_darurat_2:
+      rule: "PathPrefix(`/v1.0/observasiGawatDarurat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    observasi_gawat_darurat_3:
+      rule: "PathPrefix(`/v1.0/observasiGawatDarurat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    observasi_gawat_darurat_4:
+      rule: "PathPrefix(`/v1.0/observasiGawatDarurat/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    patologi_anatomi_1:
+      rule: "PathPrefix(`/v1.0/patologiAnatomi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    patologi_anatomi_2:
+      rule: "PathPrefix(`/v1.0/patologiAnatomi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    patologi_anatomi_3:
+      rule: "PathPrefix(`/v1.0/patologiAnatomi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    patologi_anatomi_4:
+      rule: "PathPrefix(`/v1.0/patologiAnatomi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    pemberian_kemoterapi_1:
+      rule: "PathPrefix(`/v1.0/pemberianKemoterapi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    pemberian_kemoterapi_2:
+      rule: "PathPrefix(`/v1.0/pemberianKemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    pemberian_kemoterapi_3:
+      rule: "PathPrefix(`/v1.0/pemberianKemoterapi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    pemberian_kemoterapi_4:
+      rule: "PathPrefix(`/v1.0/pemberianKemoterapi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    pews_1:
+      rule: "PathPrefix(`/v1.0/pews/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    pews_2:
+      rule: "PathPrefix(`/v1.0/pews/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    pews_3:
+      rule: "PathPrefix(`/v1.0/pews/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    pews_4:
+      rule: "PathPrefix(`/v1.0/pews/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    plan_of_care_dokter_1:
+      rule: "PathPrefix(`/v1.0/planOfCareDokter/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    plan_of_care_dokter_2:
+      rule: "PathPrefix(`/v1.0/planOfCareDokter/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    plan_of_care_dokter_3:
+      rule: "PathPrefix(`/v1.0/planOfCareDokter/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    plan_of_care_dokter_4:
+      rule: "PathPrefix(`/v1.0/planOfCareDokter/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    plan_of_care_perawat_1:
+      rule: "PathPrefix(`/v1.0/planOfCarePerawat/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    plan_of_care_perawat_2:
+      rule: "PathPrefix(`/v1.0/planOfCarePerawat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    plan_of_care_perawat_3:
+      rule: "PathPrefix(`/v1.0/planOfCarePerawat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    plan_of_care_perawat_4:
+      rule: "PathPrefix(`/v1.0/planOfCarePerawat/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resep_obat_pasien_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/resepObatPasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resep_obat_pasien_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/resepObatPasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resep_obat_pasien_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/resepObatPasien/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resep_obat_pasien_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/resepObatPasien/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resume_medis_rawat_jalan_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/resumeMedisRawatJalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resume_medis_rawat_jalan_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/resumeMedisRawatJalan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resume_medis_rawat_jalan_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/resumeMedisRawatJalan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resume_medis_rawat_jalan_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/resumeMedisRawatJalan/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resume_obat_rawat_inap_1:
+      rule: "PathPrefix(`/v1.0/resumeObatRawatInap/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resume_obat_rawat_inap_2:
+      rule: "PathPrefix(`/v1.0/resumeObatRawatInap/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resume_obat_rawat_inap_3:
+      rule: "PathPrefix(`/v1.0/resumeObatRawatInap/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    resume_obat_rawat_inap_4:
+      rule: "PathPrefix(`/v1.0/resumeObatRawatInap/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ringkasan_pasien_pulang_igd_1:
+      rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ringkasan_pasien_pulang_igd_2:
+      rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ringkasan_pasien_pulang_igd_3:
+      rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ringkasan_pasien_pulang_igd_4:
+      rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ringkasan_penyebab_kematian_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ringkasan_penyebab_kematian_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ringkasan_penyebab_kematian_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    ringkasan_penyebab_kematian_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    riwayat_obat_pasien_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/riwayatObatPasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    riwayat_obat_pasien_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/riwayatObatPasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    riwayat_obat_pasien_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/riwayatObatPasien/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    riwayat_obat_pasien_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/riwayatObatPasien/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_catatan_rekam_medis_1:
+      rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_catatan_rekam_medis_2:
+      rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_catatan_rekam_medis_3:
+      rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_catatan_rekam_medis_4:
+      rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_catatan_rekam_medis_5:
+      rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/get-by-no-rekam-medis/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_cppt_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/cppt/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_cppt_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/cppt/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_cppt_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/cppt/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_cppt_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/cppt/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/getbynorm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/uploadfotopasien/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/uploadidentitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_5:
+      rule: "PathPrefix(`/v1.0/rmpasien/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_6:
+      rule: "PathPrefix(`/v1.0/rmpasien/getbynopesertabpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_7:
+      rule: "PathPrefix(`/v1.0/rmpasien/getbynoidentitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_8:
+      rule: "PathPrefix(`/v1.0/rmpasien/getbynamapasiendantanggallahir/[a-z][A-Z]+/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_9:
+      rule: "PathPrefix(`/v1.0/rmpasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_10:
+      rule: "PathPrefix(`/v1.0/rmpasien/get-by-no-rm-dan-no-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_11:
+      rule: "PathPrefix(`/v1.0/rmpasien/create-pasien-baru`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_12:
+      rule: "PathPrefix(`/v1.0/rmpasien/getbynorm-translator/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_pasien_13:
+      rule: "PathPrefix(`/v1.0/rmpasien/update-status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_radiologi_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/radiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_radiologi_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/radiologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_radiologi_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/radiologi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_radiologi_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/radiologi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_riwayat_rekam_medis_1:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_riwayat_rekam_medis_2:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynorm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_riwayat_rekam_medis_3:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/get-by-no-rm-dan-no-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_riwayat_rekam_medis_4:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynoidentitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_riwayat_rekam_medis_5:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynopesertabpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_riwayat_rekam_medis_6:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynamapasiendantanggallahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_riwayat_rekam_medis_7:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rm_riwayat_rekam_medis_8:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    skrining_pelayanan_vaksin_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/skrining_pelayanan_vaksin_covid19/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    skrining_pelayanan_vaksin_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/skrining_pelayanan_vaksin_covid19/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    skrining_pelayanan_vaksin_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/skrining_pelayanan_vaksin_covid19/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    skrining_pelayanan_vaksin_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/skrining_pelayanan_vaksin_covid19/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    surat_kematian_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/surat_kematian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    surat_kematian_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/surat_kematian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    surat_kematian_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/surat_kematian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    surat_kematian_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/surat_kematian/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    surat_masuk_rumah_sakit_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/surat_masuk_rumah_sakit/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    surat_masuk_rumah_sakit_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/surat_masuk_rumah_sakit/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    surat_masuk_rumah_sakit_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/surat_masuk_rumah_sakit/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    surat_masuk_rumah_sakit_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/surat_masuk_rumah_sakit/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    titik_keselamatan_pembedahan_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/titikKeselamatanPembedahan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    titik_keselamatan_pembedahan_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/titikKeselamatanPembedahan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    titik_keselamatan_pembedahan_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/titikKeselamatanPembedahan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    titik_keselamatan_pembedahan_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/titikKeselamatanPembedahan/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    transfer_pasien_internal_1:
+      rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    transfer_pasien_internal_2:
+      rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    transfer_pasien_internal_3:
+      rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    transfer_pasien_internal_4:
+      rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.59:8086"

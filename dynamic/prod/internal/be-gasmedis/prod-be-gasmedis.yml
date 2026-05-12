@@ -21,3 +21,7 @@ http:
   routers:
 
   services:
+    service-gasmedis:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.59:9108"

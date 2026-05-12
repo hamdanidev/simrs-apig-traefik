@@ -21,3 +21,7 @@ http:
   routers:
 
   services:
+    service-darah:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.59:9081"

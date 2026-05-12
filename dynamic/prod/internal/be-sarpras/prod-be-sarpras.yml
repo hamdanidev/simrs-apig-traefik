@@ -21,3 +21,7 @@ http:
   routers:
 
   services:
+    service-sarpas:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.59:9111"
