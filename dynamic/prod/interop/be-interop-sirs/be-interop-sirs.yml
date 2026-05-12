@@ -1,0 +1,153 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    sirs_1:
+      rule: "PathPrefix(`/v1.0/sirs-online/radiologi/laporan-kategori-item`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_2:
+      rule: "PathPrefix(`/v1.0/sirs-online/laboratorium/laporan-kunjungan-pasien-by-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_3:
+      rule: "PathPrefix(`/v1.0/sirs-online/pengunjung/jumlah-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_4:
+      rule: "PathPrefix(`/v1.0/sirs-online/tindakan/laporan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_5:
+      rule: "PathPrefix(`/v1.0/sirs-online/laporan-icd-10/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_6:
+      rule: "PathPrefix(`/v1.0/sirs-online/farmasi/order-obat/laporan-farmasi-resep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_7:
+      rule: "PathPrefix(`/v1.0/sirs-online/instalasi/farmasi/laporan-pengadaan-obat`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_8:
+      rule: "PathPrefix(`/v1.0/sirs-online/pasien-operasi/laporan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_9:
+      rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-igd-sirs/rl33`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_10:
+      rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-ranap-sirs/rl32`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_11:
+      rule: "PathPrefix(`/v1.0/sirs-online/adm-layanan/laporan-cara-bayar-sirs/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_12:
+      rule: "PathPrefix(`/v1.0/sirs-online/pendaftaran/kunjungan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_13:
+      rule: "PathPrefix(`/v1.0/sirs-online/pendaftaran/sep/laporan-rl310`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_14:
+      rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-kebidanan/rl36`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_15:
+      rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-bayi/rl37`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sirs_16:
+      rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-pelayanan-khusus/rl314`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-sirs:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.23:9101"
