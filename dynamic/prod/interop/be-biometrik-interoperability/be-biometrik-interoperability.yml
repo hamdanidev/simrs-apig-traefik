@@ -20,4 +20,26 @@ http:
         addVaryHeader: true
   routers:
 
+    interop_biometrik_1:
+      rule: "PathPrefix(`/v1.0/biometrik-face/compare/base64`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-biometrik-interoperability
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    interop_biometrik_2:
+      rule: "PathPrefix(`/v1.0/verification/verify`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-biometrik-interoperability
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    interop_biometrik_3:
+      rule: "PathPrefix(`/v1.0/biometrik-face/compare/filepath`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-biometrik-interoperability
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
   services:

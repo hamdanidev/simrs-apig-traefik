@@ -1329,6 +1329,42 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+    rawatinap_ref_1:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rawatinap_ref_2:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rawatinap_ref_3:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rawatinap_ref_4:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/update/status-kedatangan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    rawatinap_ref_5:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
   services:
     service-admlayanan:
       loadBalancer:

@@ -673,6 +673,14 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+    poli_ref_1:
+      rule: "PathPrefix(`/v1.0/poli/getbyparam/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
   services:
     service-antrian:
       loadBalancer:
