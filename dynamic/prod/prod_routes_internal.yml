@@ -1,6 +1,6 @@
 http:
   middlewares:
-    simrs_cors:
+    simrs-cors:
       headers:
         accessControlAllowMethods:
         - "GET"
