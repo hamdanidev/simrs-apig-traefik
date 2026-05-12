@@ -2359,6 +2359,11 @@ http:
         servers:
           - url: "http://22.22.22.57:9104"
 
+    service-operasi:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.61:8099"
+
     service-mcu:
       loadBalancer:
         servers:
