@@ -24,6 +24,7 @@ http:
           - "Content-Type"
           - "X-Requested-With"
           - "X-Rs-Code"
+          - "Req-Id"
         accessControlAllowOriginList:
           - "*"
         accessControlMaxAge: 100
