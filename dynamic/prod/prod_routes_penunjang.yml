@@ -17,6 +17,7 @@ http:
         accessControlMaxAge: 100
         # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
         addVaryHeader: true
+
   routers:
     kasir_billing_1:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -194,7 +195,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-hemodialisa_1:
+    kasir_pasien_hemodialisa_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -202,7 +203,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-hemodialisa_2:
+    kasir_pasien_hemodialisa_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -210,7 +211,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-hemodialisa_3:
+    kasir_pasien_hemodialisa_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -218,7 +219,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-hemodialisa_4:
+    kasir_pasien_hemodialisa_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-hemodialisa/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -226,7 +227,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-igd_1:
+    kasir_pasien_igd_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-igd/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -234,7 +235,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-igd_2:
+    kasir_pasien_igd_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-igd/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -242,7 +243,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-igd_3:
+    kasir_pasien_igd_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-igd/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -250,7 +251,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-igd_4:
+    kasir_pasien_igd_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-igd/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -258,7 +259,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-kemoterapi_1:
+    kasir_pasien_kemoterapi_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -266,7 +267,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-kemoterapi_2:
+    kasir_pasien_kemoterapi_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -274,7 +275,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-kemoterapi_3:
+    kasir_pasien_kemoterapi_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -282,7 +283,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-kemoterapi_4:
+    kasir_pasien_kemoterapi_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-kemoterapi/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -290,7 +291,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-mcu_1:
+    kasir_pasien_mcu_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-mcu/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -298,7 +299,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-mcu_2:
+    kasir_pasien_mcu_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-mcu/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -306,7 +307,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-mcu_3:
+    kasir_pasien_mcu_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-mcu/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -314,7 +315,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-mcu_4:
+    kasir_pasien_mcu_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-mcu/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -322,7 +323,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-radiologi_1:
+    kasir_pasien_radiologi_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -330,7 +331,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-radiologi_2:
+    kasir_pasien_radiologi_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -338,7 +339,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-radiologi_3:
+    kasir_pasien_radiologi_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -346,7 +347,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-radiologi_4:
+    kasir_pasien_radiologi_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radiologi/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -354,7 +355,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-radioterapi_1:
+    kasir_pasien_radioterapi_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -362,7 +363,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-radioterapi_2:
+    kasir_pasien_radioterapi_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -370,7 +371,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-radioterapi_3:
+    kasir_pasien_radioterapi_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -378,7 +379,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-radioterapi_4:
+    kasir_pasien_radioterapi_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radioterapi/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -386,7 +387,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rawat-inap_1:
+    kasir_pasien_rawat_inap_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -394,7 +395,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rawat-inap_2:
+    kasir_pasien_rawat_inap_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -402,7 +403,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rawat-inap_3:
+    kasir_pasien_rawat_inap_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -410,7 +411,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rawat-inap_4:
+    kasir_pasien_rawat_inap_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-inap/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -418,7 +419,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rawat-jalan_1:
+    kasir_pasien_rawat_jalan_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -426,7 +427,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rawat-jalan_2:
+    kasir_pasien_rawat_jalan_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -434,7 +435,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rawat-jalan_3:
+    kasir_pasien_rawat_jalan_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -442,7 +443,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rawat-jalan_4:
+    kasir_pasien_rawat_jalan_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -450,7 +451,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rehabilitasi-medis_1:
+    kasir_pasien_rehabilitasi_medis_1:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -458,7 +459,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rehabilitasi-medis_2:
+    kasir_pasien_rehabilitasi_medis_2:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -466,7 +467,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rehabilitasi-medis_3:
+    kasir_pasien_rehabilitasi_medis_3:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -474,7 +475,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    kasir_pasien-rehabilitasi-medis_4:
+    kasir_pasien_rehabilitasi_medis_4:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -546,7 +547,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    riwayat_bed-pasien_1:
+    riwayat_bed_pasien_1:
       rule: "PathPrefix(`/v1.0/bedpasien/riwayat/getlistbyidbedpasien/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-bed
       entryPoints:
@@ -554,7 +555,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    riwayat_bed-pasien_2:
+    riwayat_bed_pasien_2:
       rule: "PathPrefix(`/v1.0/bedpasien/riwayat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bed
       entryPoints:
@@ -4106,7 +4107,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_1:
+    lab_order_lab_mi_1:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4114,7 +4115,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_2:
+    lab_order_lab_mi_2:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-tindakan-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4122,7 +4123,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_3:
+    lab_order_lab_mi_3:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-tindakan-bersama-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4130,7 +4131,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_4:
+    lab_order_lab_mi_4:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi-items`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4138,7 +4139,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_5:
+    lab_order_lab_mi_5:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4146,7 +4147,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_6:
+    lab_order_lab_mi_6:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4154,7 +4155,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_7:
+    lab_order_lab_mi_7:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-tindakan-bersama/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4162,7 +4163,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_8:
+    lab_order_lab_mi_8:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-order-lab-mi-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4170,7 +4171,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_9:
+    lab_order_lab_mi_9:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-noregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4178,7 +4179,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_10:
+    lab_order_lab_mi_10:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4186,7 +4187,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_11:
+    lab_order_lab_mi_11:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-order-lab-mi-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4194,7 +4195,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_12:
+    lab_order_lab_mi_12:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-order-lab-mi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4202,7 +4203,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_13:
+    lab_order_lab_mi_13:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4210,7 +4211,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_14:
+    lab_order_lab_mi_14:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-tindakan-lab-mi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4218,7 +4219,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_15:
+    lab_order_lab_mi_15:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-tindakan-bersama-lab-mi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4226,7 +4227,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_16:
+    lab_order_lab_mi_16:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/send-to-kasir-by-nomor-order/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4234,7 +4235,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_17:
+    lab_order_lab_mi_17:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-tindakan-lab-mi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4242,7 +4243,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_18:
+    lab_order_lab_mi_18:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-tindakan-bersama-lab-mi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4250,7 +4251,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_19:
+    lab_order_lab_mi_19:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-sample-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4258,7 +4259,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_20:
+    lab_order_lab_mi_20:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-sample-lab-mi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4266,7 +4267,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_21:
+    lab_order_lab_mi_21:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4274,7 +4275,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_22:
+    lab_order_lab_mi_22:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi-items`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4282,7 +4283,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_23:
+    lab_order_lab_mi_23:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi-sample`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4290,7 +4291,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_24:
+    lab_order_lab_mi_24:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4298,7 +4299,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_25:
+    lab_order_lab_mi_25:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4306,7 +4307,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_26:
+    lab_order_lab_mi_26:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi-sample/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4314,7 +4315,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_27:
+    lab_order_lab_mi_27:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-laporan-kunjungan-pasien-by-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -4322,7 +4323,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    lab_order_ab_mi_28:
+    lab_order_lab_mi_28:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-laporan-kunjungan-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -5266,7 +5267,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laboratorium_tems_1:
+    laboratorium_items_1:
       rule: "PathPrefix(`/v1.0/laboratorium-items/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -5274,7 +5275,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laboratorium_tems_2:
+    laboratorium_items_2:
       rule: "PathPrefix(`/v1.0/laboratorium-items/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -5282,7 +5283,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laboratorium_tems_3:
+    laboratorium_items_3:
       rule: "PathPrefix(`/v1.0/laboratorium-items/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -5290,7 +5291,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laboratorium_tems_4:
+    laboratorium_items_4:
       rule: "PathPrefix(`/v1.0/laboratorium-items/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
@@ -5298,7 +5299,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laboratorium_tems_5:
+    laboratorium_items_5:
       rule: "PathPrefix(`/v1.0/laboratorium-items/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-lab
       entryPoints:
