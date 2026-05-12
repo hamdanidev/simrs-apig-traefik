@@ -3,21 +3,21 @@
 # Dibuat berdasarkan perbandingan dengan APISIX config sebelumnya
 #
 # Services yang DITAMBAHKAN:
-#   1. cssd          → 192.168.18.152:9107  (server internal)
-#   2. diklat        → 192.168.18.152:9086  (server internal)
-#   3. forensik      → 192.168.18.152:9085  (server internal)
-#   4. gas-medis     → 192.168.18.152:9108  (server internal)
-#   5. inacbg        → 192.168.18.155:9082  (server interop)
-#   6. interop-biometrik → (perlu konfirmasi IP/port, placeholder 192.168.18.155:XXXX)
-#   7. log-monitoring → 192.168.18.153:9104 (server core)
+#   1. cssd          → 22.22.22.59:9107  (server internal)
+#   2. diklat        → 22.22.22.59:9086  (server internal)
+#   3. forensik      → 22.22.22.59:9085  (server internal)
+#   4. gas-medis     → 22.22.22.59:9108  (server internal)
+#   5. inacbg        → 22.22.22.23:9082  (server interop)
+#   6. interop-biometrik → (perlu konfirmasi IP/port, placeholder 22.22.22.23:XXXX)
+#   7. log-monitoring → 22.22.22.57:9104 (server core)
 #   8. manajemen-bed (routes tambahan) → 192.168.18.154:8087 (service sudah ada di penunjang)
-#   9. mcu           → 192.168.18.152:9103  (server internal)
+#   9. mcu           → 22.22.22.59:9103  (server internal)
 #  10. operasi (routes tambahan) → 192.168.18.154:8099 (service sudah ada di penunjang)
-#  11. remun-hitung  → 192.168.18.152:9150  (server internal)
-#  12. remunerasi    → 192.168.18.152:9089  (server internal)
-#  13. sarpras       → 192.168.18.152:9111  (server internal)
-#  14. sirs          → 192.168.18.155:9101  (server interop)
-#  15. transfusi-darah → 192.168.18.152:9081 (server internal)
+#  11. remun-hitung  → 22.22.22.59:9150  (server internal)
+#  12. remunerasi    → 22.22.22.59:9089  (server internal)
+#  13. sarpras       → 22.22.22.59:9111  (server internal)
+#  14. sirs          → 22.22.22.23:9101  (server interop)
+#  15. transfusi-darah → 22.22.22.59:9081 (server internal)
 #
 # CATATAN:
 # - manajemen-bed & operasi sudah punya service di penunjang tapi belum ada routes
@@ -1058,29 +1058,29 @@ http:
 
     # ==================== INTEROP BIOMETRIK ====================
     # PERHATIAN: IP/port belum ada di .env APISIX, ganti sesuai server aktual
-    interop-biometrik_1:
-      rule: "PathPrefix(`/v1.0/biometrik-face/compare/base64`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-interop-biometrik
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
+    # interop-biometrik_1:
+    #   rule: "PathPrefix(`/v1.0/biometrik-face/compare/base64`) && (Method(`POST`) || Method(`OPTIONS`))"
+    #   service: service-interop-biometrik
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
 
-    interop-biometrik_2:
-      rule: "PathPrefix(`/v1.0/verification/verify`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-interop-biometrik
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
+    # interop-biometrik_2:
+    #   rule: "PathPrefix(`/v1.0/verification/verify`) && (Method(`POST`) || Method(`OPTIONS`))"
+    #   service: service-interop-biometrik
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
 
-    interop-biometrik_3:
-      rule: "PathPrefix(`/v1.0/biometrik-face/compare/filepath`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-interop-biometrik
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
+    # interop-biometrik_3:
+    #   rule: "PathPrefix(`/v1.0/biometrik-face/compare/filepath`) && (Method(`POST`) || Method(`OPTIONS`))"
+    #   service: service-interop-biometrik
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
 
     # ==================== LOG MONITORING ====================
     log-monitoring_1:
@@ -2330,68 +2330,68 @@ http:
     service-cssd:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9107"
+          - url: "http://22.22.22.59:9107"
 
     service-forensik:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9085"
+          - url: "http://22.22.22.59:9085"
 
     service-gas-medis:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9108"
+          - url: "http://22.22.22.59:9108"
 
     service-inacbg:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9082"
+          - url: "http://22.22.22.23:9082"
 
     # PERHATIAN: IP/port interop-biometrik tidak ditemukan di config APISIX
     # Ganti URL di bawah sesuai server aktual
-    service-interop-biometrik:
-      loadBalancer:
-        servers:
-          - url: "http://GANTI_IP_SERVER:GANTI_PORT"
+    # service-interop-biometrik:
+    #   loadBalancer:
+    #     servers:
+    #       - url: "http://GANTI_IP_SERVER:GANTI_PORT"
 
     service-log-monitoring:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.153:9104"
+          - url: "http://22.22.22.57:9104"
 
     service-mcu:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9103"
+          - url: "http://22.22.22.59:9103"
 
     service-remun-hitung:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9150"
+          - url: "http://22.22.22.59:9150"
 
     service-remunerasi:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9089"
+          - url: "http://22.22.22.59:9089"
 
     service-sarpras:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9111"
+          - url: "http://22.22.22.59:9111"
 
     service-sirs:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9101"
+          - url: "http://22.22.22.23:9101"
 
     service-transfusi-darah:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9081"
+          - url: "http://22.22.22.59:9081"
 
     # NOTE: service-diklat memerlukan konfirmasi IP karena diklat (port 9086)
-    # ada di server 22.22.22.59 yang mapped ke 192.168.18.152
+    # ada di server 22.22.22.59 yang mapped ke 22.22.22.59
     service-diklat:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9086"
+          - url: "http://22.22.22.59:9086"
