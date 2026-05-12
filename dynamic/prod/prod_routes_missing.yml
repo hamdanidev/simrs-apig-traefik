@@ -37,8 +37,8 @@ http:
         accessControlAllowHeaders:
           - "Authorization"
           - "Content-Type"
-          - "X-Rs-Code"
           - "X-Requested-With"
+          - "X-Rs-Code"
         accessControlAllowOriginList:
           - "*"
         accessControlMaxAge: 100

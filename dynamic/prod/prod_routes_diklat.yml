@@ -23,6 +23,7 @@ http:
           - "Authorization"
           - "Content-Type"
           - "X-Requested-With"
+          - "X-Rs-Code"
         accessControlAllowOriginList:
           - "*"
         accessControlMaxAge: 100
