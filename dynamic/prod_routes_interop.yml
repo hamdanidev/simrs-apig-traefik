@@ -1,0 +1,3656 @@
+http:
+  routers:
+
+    antrean-rs-bpjs_1:
+      rule: PathPrefix(`/v1.0/vclaim/antrean/pendaftaran/kode-booking`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    fep_1:
+      rule: PathPrefix(`/v1.0/fep/getbynofep/`) && Method(`GET`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    fep_2:
+      rule: PathPrefix(`/v1.0/sep/getbynosep/`) && Method(`GET`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    icare-fkrtl_1:
+      rule: PathPrefix(`/v1.0/icare/fkrtl`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    jkn_1:
+      rule: PathPrefix(`/v1.0/jkn/getbynoreservasi/`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    lpk-bpjs_1:
+      rule: PathPrefix(`/v1.0/vclaim/lpk/insert-lpk`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    monitoring-bpjs_1:
+      rule: PathPrefix(`/v1.0/vclaim/monitoring/data-kunjungan`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    monitoring-bpjs_2:
+      rule: PathPrefix(`/v1.0/vclaim/monitoring/data-histori-layananan-peserta`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    peserta-bpjs_1:
+      rule: PathPrefix(`/v1.0/vclaim/peserta/no-kartu-bpjs`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    peserta-bpjs_2:
+      rule: PathPrefix(`/v1.0/vclaim/peserta/nik`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_1:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/diagnosa`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_2:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/poli`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_3:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/faskes`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_4:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/dokter-dpjp`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_5:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/propinsi`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_6:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/kabupaten`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_7:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/kecamatan`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_8:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/diagnosa-prb`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_9:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/obat-prb`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_10:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/tindakan-procedure`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_11:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/kelas-rawat`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_12:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/dokter`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_13:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/spesialistik`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_14:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/ruang-rawat`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_15:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/cara-keluar`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    referensi-bpjs_16:
+      rule: PathPrefix(`/v1.0/vclaim/referensi/pasca-pulang`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_1:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/insert-rencana-kontrol`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_2:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/update-rencana-kontrol`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_3:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/delete-rencana-kontrol`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_4:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/insert-spri`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_5:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/update-spri`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_6:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/cari-sep`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_7:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/cari-nokontrol`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_8:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/data-nokontrol-by-no-kartu`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_9:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/data-nokontrol`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_10:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/data-polispesilistik`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rencana-kontrol-bpjs_11:
+      rule: PathPrefix(`/v1.0/vclaim/rencanakontrol/data-dokter`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_1:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan2`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_2:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan-khusus`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_3:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/update-rujukan2`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_4:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/list-spesialistik-rujukan`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_5:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/list-sarana-rujukan`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_6:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/list-rujukan-keluar-rs`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_7:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/data-rujukan-keluar-rs`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_8:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/cari-rujukan-by-nomor`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_9:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/delete-rujukan`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_10:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan-khusus`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_11:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/delete-rujukan-khusus`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_12:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/data-rujukan-khusus`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_13:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/cari-single-rujukan-by-kartu`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan-bpjs_14:
+      rule: PathPrefix(`/v1.0/vclaim/rujukan/cari-rujukan-by-kartu`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    rujukan_1:
+      rule: PathPrefix(`/v1.0/rujukan/getbynorujukan/`) && Method(`GET`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_1:
+      rule: PathPrefix(`/v1.0/vclaim/sep/insert-sep2`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_2:
+      rule: PathPrefix(`/v1.0/vclaim/sep/update-sep2`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_3:
+      rule: PathPrefix(`/v1.0/vclaim/sep/cari-sep`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_4:
+      rule: PathPrefix(`/v1.0/vclaim/sep/delete-sep`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_5:
+      rule: PathPrefix(`/v1.0/vclaim/sep/data-sep-internal`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_6:
+      rule: PathPrefix(`/v1.0/vclaim/sep/delete-sep-internal`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_7:
+      rule: PathPrefix(`/v1.0/vclaim/sep/pengajuan-sep`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_8:
+      rule: PathPrefix(`/v1.0/vclaim/sep/approval-sep`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep-bpjs_9:
+      rule: PathPrefix(`/v1.0/vclaim/sep/update-pulang`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    sep_1:
+      rule: PathPrefix(`/v1.0/sep/generatenosep/`) && Method(`POST`)
+      service: service-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_1:
+      rule: PathPrefix(`/v1.0/wsbpjs/referensi-jadwal-dokter`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_2:
+      rule: PathPrefix(`/v1.0/wsbpjs/referensi-poli`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_3:
+      rule: PathPrefix(`/v1.0/wsbpjs/referensi-poli-fingerprint`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_4:
+      rule: PathPrefix(`/v1.0/wsbpjs/referensi-pasien-fingerprint`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_5:
+      rule: PathPrefix(`/v1.0/wsbpjs/update-jawal-dokter`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_6:
+      rule: PathPrefix(`/v1.0/wsbpjs/tambah-antrian`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_7:
+      rule: PathPrefix(`/v1.0/wsbpjs/tambah-antrian-farmasi`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_8:
+      rule: PathPrefix(`/v1.0/wsbpjs/update-waktu-antrian`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_9:
+      rule: PathPrefix(`/v1.0/wsbpjs/batal-antrian`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_10:
+      rule: PathPrefix(`/v1.0/wsbpjs/list-waktu-task-id`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_11:
+      rule: PathPrefix(`/v1.0/wsbpjs/dashboard-per-tanggal`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_12:
+      rule: PathPrefix(`/v1.0/wsbpjs/dashboard-per-bulan`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_13:
+      rule: PathPrefix(`/v1.0/wsbpjs/antrean-per-tanggal`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_14:
+      rule: PathPrefix(`/v1.0/wsbpjs/antrean-per-kode-booking`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_15:
+      rule: PathPrefix(`/v1.0/wsbpjs/antrean-belum-dilayanai`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-wsbpjs_16:
+      rule: PathPrefix(`/v1.0/wsbpjs/antrean-per-parameters`) && Method(`POST`)
+      service: service-ws-bpjs
+      entryPoints:
+      - web
+
+    interop-tambah-antrian_1:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/get-list`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-tambah-antrian_2:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/get-by-id/`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-tambah-antrian_3:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/create`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-tambah-antrian_4:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/send/`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-tambah-antrian_5:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/update/`) && Method(`PUT`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-tambah-antrian_6:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/delete/`) && Method(`DELETE`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-task-id_1:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/get-list`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-task-id_2:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/get-by-id/`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-task-id_3:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/create`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-task-id_4:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/update/`) && Method(`PUT`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-task-id_5:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/delete/`) && Method(`DELETE`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-task-id_6:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/send/`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-task-id_7:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/update-by-booking-taskid/`) && Method(`PUT`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-task-id_8:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn-harian-parshing-waktu`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_1:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/token`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_2:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/status-antrian`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_3:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_4:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian/v02`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_5:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/batal-antrian`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_6:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/batal-antrian/v02`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_7:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/sisa-antrian`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_8:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/sisa-antrian/v02`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_9:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/check-in`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_10:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/check-in/v02`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_11:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/pasien-baru`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_12:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-rs`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_13:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-rs/v02`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_14:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-pasien`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_15:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-pasien/v02`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_16:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian-farmasi`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_17:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/status-antrian-farmasi`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_18:
+      rule: PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian/v02/get-list`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_19:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_20:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn-harian`) && Method(`GET`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    interop-ws-antrian_21:
+      rule: PathPrefix(`/v1.0/interop-wsantrian/task-id/update-parsing-waktu`) && Method(`POST`)
+      service: service-ws-antrian
+      entryPoints:
+      - web
+
+    case-mix_1:
+      rule: PathPrefix(`/v1.0/pasien-casemix/getlist`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_2:
+      rule: PathPrefix(`/v1.0/pasien-casemix/get-by-no-registrasi/`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_3:
+      rule: PathPrefix(`/v1.0/pasien-casemix/create`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_4:
+      rule: PathPrefix(`/v1.0/pasien-casemix/send-data`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_5:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_6:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-idrg`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_7:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-idrg-final`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_8:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-inacbg-final`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_9:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-idrg-diagnosa-tindakan`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_10:
+      rule: PathPrefix(`/v1.0/pasien-casemix/delete/`) && Method(`DELETE`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_11:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-status-case-mix`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_12:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-diagnosa-tindakan`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_13:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-diagnosa-tindakan-bpjs`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_14:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-status-approved`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_15:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-pasien-grouper`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_16:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-status-remun`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_17:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-kirim-kemenkes/`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_18:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-kirim-casemix/`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_19:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-data-billing`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_20:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-no-claim`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_21:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-waktu-selesai-layanan`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_22:
+      rule: PathPrefix(`/v1.0/pasien-casemix/get-all-pasien-casemix`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_23:
+      rule: PathPrefix(`/v1.0/pasien-casemix/getlist-all-pasien`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_24:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-sitb`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_25:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-umbal`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_26:
+      rule: PathPrefix(`/v1.0/pasien-casemix/update-inacbg`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_27:
+      rule: PathPrefix(`/v1.0/pasien-casemix/analytics/tarif-per-bulan`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_28:
+      rule: PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-kelas`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_29:
+      rule: PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-jenis-kelamin`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_30:
+      rule: PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-cara-pulang`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_31:
+      rule: PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-los`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_32:
+      rule: PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-umur`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_33:
+      rule: PathPrefix(`/v1.0/pasien-casemix/analytics/total-klaim-tarif`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_34:
+      rule: PathPrefix(`/v1.0/pasien-casemix/analytics/top-ten-icd10`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_35:
+      rule: PathPrefix(`/v1.0/pasien-casemix/get-ungrouping-pasien-casemix`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_36:
+      rule: PathPrefix(`/v1.0/upload-umbal/csv`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_37:
+      rule: PathPrefix(`/v1.0/upload-umbal/merge`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_38:
+      rule: PathPrefix(`/v1.0/upload-umbal/failed-records`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_39:
+      rule: PathPrefix(`/v1.0/data-umbal/getlist`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_40:
+      rule: PathPrefix(`/v1.0/data-umbal/rekap/`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_41:
+      rule: PathPrefix(`/v1.0/master-remunerasi/getlist`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_42:
+      rule: PathPrefix(`/v1.0/upload-umbal/update`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_43:
+      rule: PathPrefix(`/v1.0/data-umbal/status-hitung`) && Method(`PUT`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    case-mix_44:
+      rule: PathPrefix(`/v1.0/data-umbal/delete/`) && Method(`DELETE`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    generate-csv_1:
+      rule: PathPrefix(`/v1.0/casemix/generate-csv-belum-grouping/pasien-casemix`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    generate-txt_1:
+      rule: PathPrefix(`/v1.0/generate-txt/pasien-jamkesda-dari-casemix`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    generate-txt_2:
+      rule: PathPrefix(`/v1.0/generate-txt/pasien-jamkesda-dari-casemix-encrypted`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    generate-txt_3:
+      rule: PathPrefix(`/v1.0/generate-txt/get-pasien-jamkesda/`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    get-billing-case-mix_1:
+      rule: PathPrefix(`/v1.0/billing-casemix/get-by-no-registrasi/`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    merge-file_1:
+      rule: PathPrefix(`/v1.0/merge-file/get-by-no-rm/`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    merge-file_2:
+      rule: PathPrefix(`/v1.0/merge-file/get-by-no-registrasi/`) && Method(`GET`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    merge-file_3:
+      rule: PathPrefix(`/v1.0/merge-file/berkas-digital`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_1:
+      rule: PathPrefix(`/v1.0/inacbg/new-claim`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_2:
+      rule: PathPrefix(`/v1.0/inacbg/update-pasien`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_3:
+      rule: PathPrefix(`/v1.0/inacbg/delete-pasien`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_4:
+      rule: PathPrefix(`/v1.0/inacbg/set-claim-data`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_5:
+      rule: PathPrefix(`/v1.0/inacbg/grouper-stage-1`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_6:
+      rule: PathPrefix(`/v1.0/inacbg/grouper-stage-2`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_7:
+      rule: PathPrefix(`/v1.0/inacbg/finalisasi-klaim`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_8:
+      rule: PathPrefix(`/v1.0/inacbg/reedit-claim`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_9:
+      rule: PathPrefix(`/v1.0/inacbg/send-claim`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_10:
+      rule: PathPrefix(`/v1.0/inacbg/send-claim-individual`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_11:
+      rule: PathPrefix(`/v1.0/inacbg/pull-claim`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_12:
+      rule: PathPrefix(`/v1.0/inacbg/get-claim-data`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_13:
+      rule: PathPrefix(`/v1.0/inacbg/get-claim-status`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_14:
+      rule: PathPrefix(`/v1.0/inacbg/delete-claim`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_15:
+      rule: PathPrefix(`/v1.0/inacbg/claim-print`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_16:
+      rule: PathPrefix(`/v1.0/inacbg/search-diagnosis`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_17:
+      rule: PathPrefix(`/v1.0/inacbg/search-procedures`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_18:
+      rule: PathPrefix(`/v1.0/inacbg/generate-claim-number`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_19:
+      rule: PathPrefix(`/v1.0/inacbg/file-upload`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_20:
+      rule: PathPrefix(`/v1.0/inacbg/file-delete`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_21:
+      rule: PathPrefix(`/v1.0/inacbg/file-get`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_22:
+      rule: PathPrefix(`/v1.0/inacbg/retrieve-claim-status`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_23:
+      rule: PathPrefix(`/v1.0/inacbg/cari-diagnosa-ina-grouper`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_24:
+      rule: PathPrefix(`/v1.0/inacbg/cari-procedures-ina-grouper`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_25:
+      rule: PathPrefix(`/v1.0/inacbg/sitb-validate`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-inacbg_26:
+      rule: PathPrefix(`/v1.0/inacbg/sitb-invalidate`) && Method(`POST`)
+      service: service-casemix
+      entryPoints:
+      - web
+
+    interop-pacs_1:
+      rule: PathPrefix(`/v1.0/pacs/order/get-list-order`) && Method(`GET`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_2:
+      rule: PathPrefix(`/v1.0/pacs/report/get-list-report`) && Method(`GET`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_3:
+      rule: PathPrefix(`/v1.0/pacs/order/get-by-accession-num/`) && Method(`GET`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_4:
+      rule: PathPrefix(`/v1.0/pacs/report/get-by-accession-num/`) && Method(`GET`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_5:
+      rule: PathPrefix(`/v1.0/pacs/order/create-order`) && Method(`POST`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_6:
+      rule: PathPrefix(`/v1.0/pacs/report/create-report`) && Method(`POST`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_7:
+      rule: PathPrefix(`/v1.0/pacs/order/delete-order/`) && Method(`DELETE`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_8:
+      rule: PathPrefix(`/v1.0/pacs/report/delete-report/`) && Method(`DELETE`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_9:
+      rule: PathPrefix(`/v1.0/pacs/get-by-patient-id/`) && Method(`GET`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-pacs_10:
+      rule: PathPrefix(`/v1.0/pacs/update-patient-id/`) && Method(`PUT`)
+      service: service-pacs
+      entryPoints:
+      - web
+
+    interop-lis_1:
+      rule: PathPrefix(`/v1.0/lis/demographics/get-list-demographics`) && Method(`GET`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_2:
+      rule: PathPrefix(`/v1.0/lis/ordered-items/get-list-ordered-items`) && Method(`GET`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_3:
+      rule: PathPrefix(`/v1.0/lis/registration/get-list-registration`) && Method(`GET`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_4:
+      rule: PathPrefix(`/v1.0/lis/lab-results/get-list-lab-results`) && Method(`GET`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_5:
+      rule: PathPrefix(`/v1.0/lis/demographics/get-by-patient-id-mr/`) && Method(`GET`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_6:
+      rule: PathPrefix(`/v1.0/lis/ordered-items/get-by-order-number-and-item-id/`) && Method(`GET`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_7:
+      rule: PathPrefix(`/v1.0/lis/registration/get-by-patient-id-mr-and-order-number/`) && Method(`GET`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_8:
+      rule: PathPrefix(`/v1.0/lis/lab-results/get-by-lis-reg-no-lis-test-id/`) && Method(`GET`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_9:
+      rule: PathPrefix(`/v1.0/lis/demographics/create-demographics`) && Method(`POST`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_10:
+      rule: PathPrefix(`/v1.0/lis/ordered-items/create-ordered-items`) && Method(`POST`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_11:
+      rule: PathPrefix(`/v1.0/lis/registration/create-registration`) && Method(`POST`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_12:
+      rule: PathPrefix(`/v1.0/lis/lab-results/create-lab-results`) && Method(`POST`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_13:
+      rule: PathPrefix(`/v1.0/lis/demographics/delete-demographics/`) && Method(`DELETE`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_14:
+      rule: PathPrefix(`/v1.0/lis/ordered-items/delete-ordered-items/`) && Method(`DELETE`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_15:
+      rule: PathPrefix(`/v1.0/lis/registration/delete-registration/`) && Method(`DELETE`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_16:
+      rule: PathPrefix(`/v1.0/lis/lab-results/delete-lab-results/`) && Method(`DELETE`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_17:
+      rule: PathPrefix(`/v1.0/lis/demographics/update-demographics/`) && Method(`PUT`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_18:
+      rule: PathPrefix(`/v1.0/lis/ordered-items/update-ordered-items/`) && Method(`PUT`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_19:
+      rule: PathPrefix(`/v1.0/lis/registration/update-registration/`) && Method(`PUT`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_20:
+      rule: PathPrefix(`/v1.0/lis/lab-results/update-lab-results/`) && Method(`PUT`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-lis_21:
+      rule: PathPrefix(`/v1.0/lis/lab-results/update-lab-results2/`) && Method(`PUT`)
+      service: service-lis
+      entryPoints:
+      - web
+
+    interop-sirs-online_1:
+      rule: PathPrefix(`/v1.0/sirs-online/radiologi/laporan-kategori-item`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_2:
+      rule: PathPrefix(`/v1.0/sirs-online/laboratorium/laporan-kunjungan-pasien-by-tindakan`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_3:
+      rule: PathPrefix(`/v1.0/sirs-online/pengunjung/jumlah-pasien`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_4:
+      rule: PathPrefix(`/v1.0/sirs-online/tindakan/laporan`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_5:
+      rule: PathPrefix(`/v1.0/sirs-online/laporan-icd-10/get-list`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_6:
+      rule: PathPrefix(`/v1.0/sirs-online/farmasi/order-obat/laporan-farmasi-resep`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_7:
+      rule: PathPrefix(`/v1.0/sirs-online/instalasi/farmasi/laporan-pengadaan-obat`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_8:
+      rule: PathPrefix(`/v1.0/sirs-online/pasien-operasi/laporan`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_9:
+      rule: PathPrefix(`/v1.0/sirs-online/erm/laporan-igd-sirs/rl33`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_10:
+      rule: PathPrefix(`/v1.0/sirs-online/erm/laporan-ranap-sirs/rl32`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_11:
+      rule: PathPrefix(`/v1.0/sirs-online/adm-layanan/laporan-cara-bayar-sirs/get-list`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_12:
+      rule: PathPrefix(`/v1.0/sirs-online/pendaftaran/kunjungan`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_13:
+      rule: PathPrefix(`/v1.0/sirs-online/pendaftaran/sep/laporan-rl310`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_14:
+      rule: PathPrefix(`/v1.0/sirs-online/erm/laporan-kebidanan/rl36`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_15:
+      rule: PathPrefix(`/v1.0/sirs-online/erm/laporan-bayi/rl37`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-sirs-online_16:
+      rule: PathPrefix(`/v1.0/sirs-online/erm/laporan-pelayanan-khusus/rl314`) && Method(`GET`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_1:
+      rule: PathPrefix(`/v1.0/schedule/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_2:
+      rule: PathPrefix(`/v1.0/schedule/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_3:
+      rule: PathPrefix(`/v1.0/schedule/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_4:
+      rule: PathPrefix(`/v1.0/location/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_5:
+      rule: PathPrefix(`/v1.0/location/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_6:
+      rule: PathPrefix(`/v1.0/location/search-by-identifier`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_7:
+      rule: PathPrefix(`/v1.0/location/search-by-name`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_8:
+      rule: PathPrefix(`/v1.0/location/search-by-org`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_9:
+      rule: PathPrefix(`/v1.0/location/search-by-ide`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_10:
+      rule: PathPrefix(`/v1.0/organization/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_11:
+      rule: PathPrefix(`/v1.0/organization/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_12:
+      rule: PathPrefix(`/v1.0/organization/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_13:
+      rule: PathPrefix(`/v1.0/organization/search-by-name`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_14:
+      rule: PathPrefix(`/v1.0/organization/search-by-partof`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_15:
+      rule: PathPrefix(`/v1.0/slot/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_16:
+      rule: PathPrefix(`/v1.0/slot/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_17:
+      rule: PathPrefix(`/v1.0/slot/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_18:
+      rule: PathPrefix(`/v1.0/encounter/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_19:
+      rule: PathPrefix(`/v1.0/encounter/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_20:
+      rule: PathPrefix(`/v1.0/encounter/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_21:
+      rule: PathPrefix(`/v1.0/encounter/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_22:
+      rule: PathPrefix(`/v1.0/encounter/update-inprogress`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_23:
+      rule: PathPrefix(`/v1.0/encounter/update-discharge-disposition`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_24:
+      rule: PathPrefix(`/v1.0/encounter/update-finished`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_25:
+      rule: PathPrefix(`/v1.0/patient/create-by-nik`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_26:
+      rule: PathPrefix(`/v1.0/patient/create-by-nik-ibu`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_27:
+      rule: PathPrefix(`/v1.0/patient/search-by-nik`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_28:
+      rule: PathPrefix(`/v1.0/patient/search-by-nik-ibu`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_29:
+      rule: PathPrefix(`/v1.0/patient/search-by-name-birthdate-gender`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_30:
+      rule: PathPrefix(`/v1.0/patient/search-by-name-birthdate-nik`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_31:
+      rule: PathPrefix(`/v1.0/patient/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_32:
+      rule: PathPrefix(`/v1.0/practitioner_role/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_33:
+      rule: PathPrefix(`/v1.0/practitioner_role/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_34:
+      rule: PathPrefix(`/v1.0/practitioner_role/search-by-reference`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_35:
+      rule: PathPrefix(`/v1.0/practitioner_role/search-by-reference-org`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_36:
+      rule: PathPrefix(`/v1.0/practitioner/search-by-nik`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_37:
+      rule: PathPrefix(`/v1.0/practitioner/search-by-name-birthdate-gender`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_38:
+      rule: PathPrefix(`/v1.0/practitioner/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_39:
+      rule: PathPrefix(`/v1.0/organization/search-by-partof`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_40:
+      rule: PathPrefix(`/v1.0/practitioner_role/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_41:
+      rule: PathPrefix(`/v1.0/kewilayahan/get-provinces`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_42:
+      rule: PathPrefix(`/v1.0/kewilayahan/get-cities`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_43:
+      rule: PathPrefix(`/v1.0/kewilayahan/get-districts`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_44:
+      rule: PathPrefix(`/v1.0/kewilayahan/get-subdistricts`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_45:
+      rule: PathPrefix(`/v1.0/condition/create-diagnosis`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_46:
+      rule: PathPrefix(`/v1.0/condition/create-meninggalkan-faskes`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_47:
+      rule: PathPrefix(`/v1.0/condition/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_48:
+      rule: PathPrefix(`/v1.0/condition/search-by-subject-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_49:
+      rule: PathPrefix(`/v1.0/condition/search-by-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_50:
+      rule: PathPrefix(`/v1.0/condition/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_51:
+      rule: PathPrefix(`/v1.0/condition/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_52:
+      rule: PathPrefix(`/v1.0/observation/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_53:
+      rule: PathPrefix(`/v1.0/observation/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_54:
+      rule: PathPrefix(`/v1.0/observation/search-by-subject-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_55:
+      rule: PathPrefix(`/v1.0/observation/search-by-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_56:
+      rule: PathPrefix(`/v1.0/observation/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_57:
+      rule: PathPrefix(`/v1.0/observation/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_58:
+      rule: PathPrefix(`/v1.0/composition/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_59:
+      rule: PathPrefix(`/v1.0/composition/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_60:
+      rule: PathPrefix(`/v1.0/composition/search-by-subject-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_61:
+      rule: PathPrefix(`/v1.0/composition/search-by-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_62:
+      rule: PathPrefix(`/v1.0/composition/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_63:
+      rule: PathPrefix(`/v1.0/composition/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_64:
+      rule: PathPrefix(`/v1.0/procedure/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_65:
+      rule: PathPrefix(`/v1.0/procedure/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_66:
+      rule: PathPrefix(`/v1.0/procedure/search-by-subject-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_67:
+      rule: PathPrefix(`/v1.0/procedure/search-by-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_68:
+      rule: PathPrefix(`/v1.0/procedure/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_69:
+      rule: PathPrefix(`/v1.0/procedure/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_70:
+      rule: PathPrefix(`/v1.0/medication/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_71:
+      rule: PathPrefix(`/v1.0/medication/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_72:
+      rule: PathPrefix(`/v1.0/medication/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_73:
+      rule: PathPrefix(`/v1.0/medication-request/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_74:
+      rule: PathPrefix(`/v1.0/medication-request/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_75:
+      rule: PathPrefix(`/v1.0/medication-request/search-by-subject-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_76:
+      rule: PathPrefix(`/v1.0/medication-request/search-by-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_77:
+      rule: PathPrefix(`/v1.0/medication-request/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_78:
+      rule: PathPrefix(`/v1.0/medication-request/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_79:
+      rule: PathPrefix(`/v1.0/medication-dispense/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_80:
+      rule: PathPrefix(`/v1.0/medication-dispense/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_81:
+      rule: PathPrefix(`/v1.0/medication-dispense/search-by-subject-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_82:
+      rule: PathPrefix(`/v1.0/medication-dispense/search-by-subject-prescription`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_83:
+      rule: PathPrefix(`/v1.0/medication-dispense/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_84:
+      rule: PathPrefix(`/v1.0/medication-dispense/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_85:
+      rule: PathPrefix(`/v1.0/healthcare-service/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_86:
+      rule: PathPrefix(`/v1.0/healthcare-service/search-by-specialty`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_87:
+      rule: PathPrefix(`/v1.0/healthcare-service/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_88:
+      rule: PathPrefix(`/v1.0/healthcare-service/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_89:
+      rule: PathPrefix(`/v1.0/diagnostic-report/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_90:
+      rule: PathPrefix(`/v1.0/diagnostic-report/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_91:
+      rule: PathPrefix(`/v1.0/diagnostic-report/search-by-subject-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_92:
+      rule: PathPrefix(`/v1.0/diagnostic-report/search-by-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_93:
+      rule: PathPrefix(`/v1.0/diagnostic-report/search-by-specimen-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_94:
+      rule: PathPrefix(`/v1.0/diagnostic-report/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_95:
+      rule: PathPrefix(`/v1.0/diagnostic-report/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_96:
+      rule: PathPrefix(`/v1.0/appointment-response/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_97:
+      rule: PathPrefix(`/v1.0/appointment-response/search-by-appointment`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_98:
+      rule: PathPrefix(`/v1.0/appointment-response/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_99:
+      rule: PathPrefix(`/v1.0/appointment-response/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_100:
+      rule: PathPrefix(`/v1.0/appointment/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_101:
+      rule: PathPrefix(`/v1.0/appointment/search-by-appointment`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_102:
+      rule: PathPrefix(`/v1.0/appointment/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_103:
+      rule: PathPrefix(`/v1.0/appointment/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_104:
+      rule: PathPrefix(`/v1.0/allergy-intolerance/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_105:
+      rule: PathPrefix(`/v1.0/allergy-intolerance/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_106:
+      rule: PathPrefix(`/v1.0/allergy-intolerance/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_107:
+      rule: PathPrefix(`/v1.0/allergy-intolerance/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_108:
+      rule: PathPrefix(`/v1.0/clinical-impression/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_109:
+      rule: PathPrefix(`/v1.0/clinical-impression/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_110:
+      rule: PathPrefix(`/v1.0/clinical-impression/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_111:
+      rule: PathPrefix(`/v1.0/clinical-impression/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_112:
+      rule: PathPrefix(`/v1.0/service-request/create-lab-non-rujukan-eksternal`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_113:
+      rule: PathPrefix(`/v1.0/service-request/create-rujukan-kontrol-internal`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_114:
+      rule: PathPrefix(`/v1.0/service-request/create-rujukan-radiologi-eksternal`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_115:
+      rule: PathPrefix(`/v1.0/service-request/search-by-subject`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_116:
+      rule: PathPrefix(`/v1.0/service-request/search-by-subject-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_117:
+      rule: PathPrefix(`/v1.0/service-request/search-by-encounter`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_118:
+      rule: PathPrefix(`/v1.0/service-request/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_119:
+      rule: PathPrefix(`/v1.0/service-request/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_120:
+      rule: PathPrefix(`/v1.0/immunization/create-by-nakes`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_121:
+      rule: PathPrefix(`/v1.0/immunization/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_122:
+      rule: PathPrefix(`/v1.0/immunization/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_123:
+      rule: PathPrefix(`/v1.0/imaging-study/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_124:
+      rule: PathPrefix(`/v1.0/imaging-study/search-by-identifier`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_125:
+      rule: PathPrefix(`/v1.0/imaging-study/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_126:
+      rule: PathPrefix(`/v1.0/family-member-history/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_127:
+      rule: PathPrefix(`/v1.0/family-member-history/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_128:
+      rule: PathPrefix(`/v1.0/family-member-history/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_129:
+      rule: PathPrefix(`/v1.0/questionnaire-response/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_130:
+      rule: PathPrefix(`/v1.0/questionnaire-response/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_131:
+      rule: PathPrefix(`/v1.0/questionnaire-response/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_132:
+      rule: PathPrefix(`/v1.0/related-person/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_133:
+      rule: PathPrefix(`/v1.0/related-person/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_134:
+      rule: PathPrefix(`/v1.0/related-person/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_135:
+      rule: PathPrefix(`/v1.0/specimen/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_136:
+      rule: PathPrefix(`/v1.0/specimen/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_137:
+      rule: PathPrefix(`/v1.0/specimen/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_138:
+      rule: PathPrefix(`/v1.0/episode-of-care/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_139:
+      rule: PathPrefix(`/v1.0/episode-of-care/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_140:
+      rule: PathPrefix(`/v1.0/episode-of-care/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_141:
+      rule: PathPrefix(`/v1.0/care-plan/create`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_142:
+      rule: PathPrefix(`/v1.0/care-plan/search-by-id`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_143:
+      rule: PathPrefix(`/v1.0/care-plan/update`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_144:
+      rule: PathPrefix(`/v1.0/oauth2/generate-token`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    interop-satu-sehat_145:
+      rule: PathPrefix(`/v1.0/kfa/get-all-products`) && Method(`POST`)
+      service: service-satu-sehat-interop
+      entryPoints:
+      - web
+
+    allergy-intolerance_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    allergy-intolerance_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    allergy-intolerance_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    allergy-intolerance_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    allergy-intolerance_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment-response_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment-response/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment-response_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment-response/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment-response_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment-response/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment-response_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment-response/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    appointment_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/appointment/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    care-plan_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/care-plan/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    care-plan_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/care-plan/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    care-plan_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/care-plan/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    care-plan_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/care-plan/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    clinical-impression_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/clinical-impression/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    clinical-impression_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/clinical-impression/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    clinical-impression_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/clinical-impression/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    clinical-impression_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/clinical-impression/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    clinical-impression_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/clinical-impression/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    composition_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/composition/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    composition_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/composition/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    composition_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/composition/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    composition_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/composition/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    composition_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/composition/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    condition_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/condition/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    condition_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/condition/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    condition_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/condition/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    condition_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/condition/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    condition_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/condition/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    diagnostic-report_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/diagnostic-report/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    diagnostic-report_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/diagnostic-report/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    diagnostic-report_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/diagnostic-report/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    diagnostic-report_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/diagnostic-report/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    encounter_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/encounter/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    encounter_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/encounter/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    encounter_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/encounter/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    encounter_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/encounter/get-by-no-registrasi/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    encounter_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/encounter/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    episode-of-care_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/episode-of-care/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    episode-of-care_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/episode-of-care/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    episode-of-care_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/episode-of-care/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    episode-of-care_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/episode-of-care/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    family-member-history_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/family-member-history/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    family-member-history_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/family-member-history/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    family-member-history_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/family-member-history/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    family-member-history_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/family-member-history/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    healthcare-service_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/healthcare-service/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    healthcare-service_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/healthcare-service/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    healthcare-service_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/healthcare-service/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    healthcare-service_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/healthcare-service/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    imaging-study_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/imaging-study/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    imaging-study_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/imaging-study/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    imaging-study_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/imaging-study/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    imaging-study_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/imaging-study/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    immunization_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/immunization/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    immunization_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/immunization/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    immunization_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/immunization/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    immunization_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/immunization/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/delete/`) && Method(`DELETE`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_6:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_7:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_8:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_9:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/delete/`) && Method(`DELETE`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_10:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_11:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_12:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_13:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_14:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/delete/`) && Method(`DELETE`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_15:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_16:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_17:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_18:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_19:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/delete/`) && Method(`DELETE`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    kewilayahan_20:
+      rule: PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    location_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/location/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    location_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/location/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    location_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/location/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    location_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/location/get-by-kd/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    location_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/location/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication-dispense_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication-dispense/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication-dispense_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication-dispense/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication-dispense_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication-dispense/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication-dispense_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication-dispense/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication-request_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication-request/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication-request_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication-request/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication-request_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication-request/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication-request_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication-request/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    medication_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/medication/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    observation_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/observation/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    observation_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/observation/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    observation_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/observation/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    observation_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/observation/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    observation_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/observation/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    organization_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/organization/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    organization_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/organization/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    organization_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/organization/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    organization_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/organization/update-khusus`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    organization_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/organization/get-by-kd/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    organization_6:
+      rule: PathPrefix(`/v1.0/satu-sehat/organization/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    patient_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/patient/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    patient_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/patient/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    patient_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/patient/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    patient_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/patient/get-list-by-nik-ibu`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    patient_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/patient/get-by-id-by-nik-ibu/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    patient_6:
+      rule: PathPrefix(`/v1.0/satu-sehat/patient/update-by-nik-ibu`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    patient_7:
+      rule: PathPrefix(`/v1.0/satu-sehat/patient/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    practitioner-role_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/practitioner-role/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    practitioner-role_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/practitioner-role/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    practitioner-role_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/practitioner-role/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    practitioner-role_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/practitioner-role/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    practitioner_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/practitioner/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    practitioner_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/practitioner/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    practitioner_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/practitioner/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    practitioner_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/practitioner/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    procedure_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/procedure/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    procedure_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/procedure/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    procedure_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/procedure/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    procedure_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/procedure/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    procedure_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/procedure/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    questionnaire-response_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/questionnaire-response/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    questionnaire-response_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/questionnaire-response/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    questionnaire-response_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/questionnaire-response/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    questionnaire-response_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/questionnaire-response/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    related-person_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/related-person/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    related-person_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/related-person/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    related-person_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/related-person/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    related-person_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/related-person/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    schedule_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/schedule/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    schedule_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/schedule/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    schedule_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/schedule/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    schedule_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/schedule/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_6:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_7:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_8:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_9:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_10:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_11:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/getlist`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_12:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_13:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_14:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/get-by-id-interop/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    service-request_15:
+      rule: PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    slot_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/slot/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    slot_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/slot/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    slot_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/slot/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    slot_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/slot/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    specimen_1:
+      rule: PathPrefix(`/v1.0/satu-sehat/specimen/get-list`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    specimen_2:
+      rule: PathPrefix(`/v1.0/satu-sehat/specimen/get-by-id/`) && Method(`GET`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    specimen_3:
+      rule: PathPrefix(`/v1.0/satu-sehat/specimen/update`) && Method(`PUT`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    specimen_4:
+      rule: PathPrefix(`/v1.0/satu-sehat/specimen/create`) && Method(`POST`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    specimen_5:
+      rule: PathPrefix(`/v1.0/satu-sehat/specimen/delete/`) && Method(`DELETE`)
+      service: service-satu-sehat
+      entryPoints:
+      - web
+
+    interop-message_1:
+      rule: PathPrefix(`/v1.0/sender-email/mailtrap/send`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    interop-message_2:
+      rule: PathPrefix(`/v1.0/sender-wa/send-chat`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    interop-message_3:
+      rule: PathPrefix(`/v1.0/sender-wa/send-image`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    interop-message_4:
+      rule: PathPrefix(`/v1.0/sender-wa/send-sticker`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    interop-message_5:
+      rule: PathPrefix(`/v1.0/sender-wa/send-document`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    interop-message_6:
+      rule: PathPrefix(`/v1.0/sender-wa/send-audio`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    interop-message_7:
+      rule: PathPrefix(`/v1.0/sender-wa/send-voice`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    interop-message_8:
+      rule: PathPrefix(`/v1.0/sender-wa/send-video`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    interop-message_9:
+      rule: PathPrefix(`/v1.0/sender-wa/send-location`) && Method(`POST`)
+      service: service-interop-message
+      entryPoints:
+      - web
+
+    mesage_1:
+      rule: PathPrefix(`/v1.0/message/upload`) && Method(`POST`)
+      service: service-message
+      entryPoints:
+      - web
+
+    mesage_2:
+      rule: PathPrefix(`/v1.0/message/send-message`) && Method(`POST`)
+      service: service-message
+      entryPoints:
+      - web
+
+    mesage_3:
+      rule: PathPrefix(`/v1.0/message/send-image`) && Method(`POST`)
+      service: service-message
+      entryPoints:
+      - web
+
+    mesage_4:
+      rule: PathPrefix(`/v1.0/message/getlist`) && Method(`GET`)
+      service: service-message
+      entryPoints:
+      - web
+
+    interop-inacbgv2_1:
+      rule: PathPrefix(`/v2.0/inacbg/new-claim`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_2:
+      rule: PathPrefix(`/v2.0/inacbg/update-pasien`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_3:
+      rule: PathPrefix(`/v2.0/inacbg/delete-pasien`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_4:
+      rule: PathPrefix(`/v2.0/inacbg/set-claim-data`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_5:
+      rule: PathPrefix(`/v2.0/inacbg/grouper-stage-1`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_6:
+      rule: PathPrefix(`/v2.0/inacbg/grouper-stage-2`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_7:
+      rule: PathPrefix(`/v2.0/inacbg/finalisasi-klaim`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_8:
+      rule: PathPrefix(`/v2.0/inacbg/reedit-claim`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_9:
+      rule: PathPrefix(`/v2.0/inacbg/send-claim`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_10:
+      rule: PathPrefix(`/v2.0/inacbg/send-claim-individual`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_11:
+      rule: PathPrefix(`/v2.0/inacbg/pull-claim`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_12:
+      rule: PathPrefix(`/v2.0/inacbg/get-claim-data`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_13:
+      rule: PathPrefix(`/v2.0/inacbg/get-claim-status`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_14:
+      rule: PathPrefix(`/v2.0/inacbg/delete-claim`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_15:
+      rule: PathPrefix(`/v2.0/inacbg/claim-print`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_16:
+      rule: PathPrefix(`/v2.0/inacbg/search-diagnosis`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_17:
+      rule: PathPrefix(`/v2.0/inacbg/search-procedures`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_18:
+      rule: PathPrefix(`/v2.0/inacbg/generate-claim-number`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_19:
+      rule: PathPrefix(`/v2.0/inacbg/file-upload`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_20:
+      rule: PathPrefix(`/v2.0/inacbg/file-delete`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_21:
+      rule: PathPrefix(`/v2.0/inacbg/file-get`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_22:
+      rule: PathPrefix(`/v2.0/inacbg/retrieve-claim-status`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_23:
+      rule: PathPrefix(`/v2.0/inacbg/cari-diagnosa-ina-grouper`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_24:
+      rule: PathPrefix(`/v2.0/inacbg/cari-procedures-ina-grouper`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_25:
+      rule: PathPrefix(`/v2.0/inacbg/sitb-validate`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_26:
+      rule: PathPrefix(`/v2.0/inacbg/sitb-invalidate`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_27:
+      rule: PathPrefix(`/v2.0/idrg/diagnosa-set`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_28:
+      rule: PathPrefix(`/v2.0/idrg/diagnosa-get`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_29:
+      rule: PathPrefix(`/v2.0/idrg/procedure-get`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_30:
+      rule: PathPrefix(`/v2.0/idrg/procedure-set`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_31:
+      rule: PathPrefix(`/v2.0/idrg/grouper-1`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_32:
+      rule: PathPrefix(`/v2.0/idrg/grouper-final`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_33:
+      rule: PathPrefix(`/v2.0/idrg/grouper-reedit`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_34:
+      rule: PathPrefix(`/v2.0/idrg/to-inacbg-import`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_35:
+      rule: PathPrefix(`/v2.0/inacbg/diagnosa-set`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_36:
+      rule: PathPrefix(`/v2.0/inacbg/diagnosa-get`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_37:
+      rule: PathPrefix(`/v2.0/inacbg/procedure-set`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+    interop-inacbgv2_38:
+      rule: PathPrefix(`/v2.0/inacbg/procedure-get`) && Method(`POST`)
+      service: service-inacbgv2
+      entryPoints:
+      - web
+
+  services:
+    service-bpjs:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:8088'
+    service-ws-bpjs:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:8088'
+    service-ws-antrian:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9080'
+    service-casemix:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9083'
+    service-inacbg:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9082'
+    service-pacs:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9084'
+    service-lis:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9088'
+    service-sirs:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9101'
+    service-satu-sehat-interop:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9096'
+    service-satu-sehat:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9102'
+    service-interop-message:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9105'
+    service-message:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9113'
+    service-inacbgv2:
+      loadBalancer:
+        servers:
+        - url: 'http://22.22.22.23:9082'
