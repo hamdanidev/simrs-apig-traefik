@@ -466,7 +466,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    pasien_konsul_1:
+    adm_pasien_konsul_1:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-konsul/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
