@@ -12,7 +12,9 @@ services:
       # File konfigurasi utama
       - ./traefik.yml:/etc/traefik/traefik.yml:ro
       # Folder untuk file routing (perawat, dokter, dev, prod)
-      - ./dynamic:/etc/traefik/dynamic:ro
+      - ./dynamic/${ENV_TYPE}:/etc/traefik/dynamic:ro
+    environment:
+      - ENV_TYPE=${ENV_TYPE:-dev}
     networks:
       - traefik-net
 
