@@ -2770,7 +2770,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    rumah-sakit_1:
+    rumah_sakit_1:
       rule: "PathPrefix(`/v1.0/rumah-sakit/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2778,7 +2778,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    rumah-sakit_2:
+    rumah_sakit_2:
       rule: "PathPrefix(`/v1.0/rumah-sakit/get-by-rs-code/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2786,7 +2786,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    rumah-sakit_3:
+    rumah_sakit_3:
       rule: "PathPrefix(`/v1.0/rumah-sakit/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2794,7 +2794,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    rumah-sakit_4:
+    rumah_sakit_4:
       rule: "PathPrefix(`/v1.0/rumah-sakit/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2802,7 +2802,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    rumah-sakit_5:
+    rumah_sakit_5:
       rule: "PathPrefix(`/v1.0/rumah-sakit/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2810,7 +2810,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    rumah-sakit_6:
+    rumah_sakit_6:
       rule: "PathPrefix(`/v1.0/rumah-sakit/activate`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -2818,7 +2818,7 @@ http:
       middlewares:
       - "simrs-cors"
 
-    rumah-sakit_7:
+    rumah_sakit_7:
       rule: "PathPrefix(`/v1.0/rumah-sakit/get-active`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
