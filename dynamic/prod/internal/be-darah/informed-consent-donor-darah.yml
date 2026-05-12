@@ -1,0 +1,75 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    internal_consent_donor_darah_1:
+      rule: "PathPrefix(`/v1.0/erm/kuesioner-donor-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_consent_donor_darah_2:
+      rule: "PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_consent_donor_darah_3:
+      rule: "PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_consent_donor_darah_4:
+      rule: "PathPrefix(`/v1.0/erm/kuesioner-donor-darah/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_consent_donor_darah_5:
+      rule: "PathPrefix(`/v1.0/erm/kuesioner-donor-darah/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_consent_donor_darah_6:
+      rule: "PathPrefix(`/v1.0/erm/kuesioner-donor-darah/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_consent_donor_darah_7:
+      rule: "PathPrefix(`/v1.0/erm/kuesioner-donor-darah/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-darah:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.59:9081"

@@ -19,15 +19,9 @@ http:
         # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
         addVaryHeader: true
   routers:
-    core_log_monitoring_router:
-      rule: "PathPrefix(`/v1.0/log-monitoring/log/get-list/`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-log-monitoring
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
+
   services:
-    service-log-monitoring:
+    service-darah:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.57:9104"
+          - url: "http://22.22.22.59:9081"
