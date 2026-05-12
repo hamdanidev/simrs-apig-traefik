@@ -355,7 +355,7 @@ http:
         - "simrs-cors"
 
     poli_1:
-      rule: "PathPrefix(`/v1.0/poli/getbyparam//:param4`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/poli/getbyparam/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-antrian
       entryPoints:
         - web
