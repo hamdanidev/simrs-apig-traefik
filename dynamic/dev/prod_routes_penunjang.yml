@@ -1,4210 +1,4209 @@
 http:
   routers:
-
     kasir-billing_1:
       rule: PathPrefix(`/v1.0/kasir-billing/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_2:
       rule: PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_3:
       rule: PathPrefix(`/v1.0/kasir-billing/send-data-billing`) && Method(`POST`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_4:
       rule: PathPrefix(`/v1.0/kasir-billing/getlist-detail-kwitansi-by-no-kwitansi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_5:
       rule: PathPrefix(`/v1.0/kasir-billing/getlist-edit-kwitansi-billing-by-no-kwitansi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_6:
       rule: PathPrefix(`/v1.0/kasir-billing/getlist-billing-by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_7:
       rule: PathPrefix(`/v1.0/kasir-billing/getlist-billing-by-no-registrasi-rekap/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_8:
       rule: PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi-by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_9:
       rule: PathPrefix(`/v1.0/kasir-billing/perbandingan-billing-total/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_10:
       rule: PathPrefix(`/v1.0/kasir-billing/kwitansi/create`) && Method(`POST`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_11:
       rule: PathPrefix(`/v1.0/kasir-billing/create`) && Method(`POST`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_12:
       rule: PathPrefix(`/v1.0/kasir-billing/update-kwitansi`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_13:
       rule: PathPrefix(`/v1.0/kasir-billing/update-item`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_14:
       rule: PathPrefix(`/v1.0/kasir-billing/update-bukti-bayar/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_15:
       rule: PathPrefix(`/v1.0/kasir-billing/update-tgl-kwitansi`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_16:
       rule: PathPrefix(`/v1.0/kasir-billing/delete-kwitansi/`) && Method(`DELETE`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_17:
       rule: PathPrefix(`/v1.0/kasir-billing/perbaiki-data-billing/`) && Method(`DELETE`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_18:
       rule: PathPrefix(`/v1.0/kasir-billing/generate-no-kwitansi`) && Method(`POST`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_19:
       rule: PathPrefix(`/v1.0/kasir-billing/next-no-kwitansi-by-kasa/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_20:
       rule: PathPrefix(`/v1.0/kasir-billing/getlist-no-kwitansi-by-kasa/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_21:
       rule: PathPrefix(`/v1.0/kasir-billing/status-pembayaran-umum`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-billing_22:
       rule: PathPrefix(`/v1.0/kasir-billing/rekap-pendapatan-kasir`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-hemodialisa_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-hemodialisa_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-hemodialisa_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-hemodialisa_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-hemodialisa/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-igd_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-igd/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-igd_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-igd/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-igd_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-igd/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-igd_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-igd/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-kemoterapi_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-kemoterapi_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-kemoterapi_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-kemoterapi_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-kemoterapi/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-mcu_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-mcu/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-mcu_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-mcu/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-mcu_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-mcu/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-mcu_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-mcu/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-radiologi_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-radiologi_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-radiologi_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-radiologi_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-radiologi/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-radioterapi_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-radioterapi_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-radioterapi_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-radioterapi_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-radioterapi/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rawat-inap_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rawat-inap_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rawat-inap_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rawat-inap_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-rawat-inap/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rawat-jalan_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rawat-jalan_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rawat-jalan_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rawat-jalan_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rehabilitasi-medis_1:
       rule: PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rehabilitasi-medis_2:
       rule: PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist/selesai-layanan`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rehabilitasi-medis_3:
       rule: PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist/by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir-pasien-rehabilitasi-medis_4:
       rule: PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/update/status/`) && Method(`PUT`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir_1:
       rule: PathPrefix(`/v1.0/kasir/getlist`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     kasir_2:
       rule: PathPrefix(`/v1.0/kasir/get-by-no-registrasi/`) && Method(`GET`)
       service: service-kasir
       entryPoints:
-      - web
+        - web
 
     bed-pasien_1:
       rule: PathPrefix(`/v1.0/bedpasien/getlist`) && Method(`GET`)
       service: service-bed
       entryPoints:
-      - web
+        - web
 
     bed-pasien_2:
       rule: PathPrefix(`/v1.0/bedpasien/getbyid/`) && Method(`GET`)
       service: service-bed
       entryPoints:
-      - web
+        - web
 
     bed-pasien_3:
       rule: PathPrefix(`/v1.0/bedpasien/create`) && Method(`POST`)
       service: service-bed
       entryPoints:
-      - web
+        - web
 
     bed-pasien_4:
       rule: PathPrefix(`/v1.0/bedpasien/status/update`) && Method(`PUT`)
       service: service-bed
       entryPoints:
-      - web
+        - web
 
     bed-pasien_5:
       rule: PathPrefix(`/v1.0/bedpasien/deletebyid/`) && Method(`DELETE`)
       service: service-bed
       entryPoints:
-      - web
+        - web
 
     laporan-bed_1:
       rule: PathPrefix(`/v1.0/manajemen-bed/monitoring-bed-rawat-inap`) && Method(`GET`)
       service: service-bed
       entryPoints:
-      - web
+        - web
 
     riwayat-bed-pasien_1:
       rule: PathPrefix(`/v1.0/bedpasien/riwayat/getlistbyidbedpasien/`) && Method(`GET`)
       service: service-bed
       entryPoints:
-      - web
+        - web
 
     riwayat-bed-pasien_2:
       rule: PathPrefix(`/v1.0/bedpasien/riwayat/create`) && Method(`POST`)
       service: service-bed
       entryPoints:
-      - web
+        - web
 
     bed_1:
       rule: PathPrefix(`/v1.0/kamar/bed/getlist`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     bed_2:
       rule: PathPrefix(`/v1.0/kamar/bed/getlistbykdkamar/`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     bed_3:
       rule: PathPrefix(`/v1.0/kamar/bed/create`) && Method(`POST`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     bed_4:
       rule: PathPrefix(`/v1.0/kamar/bed/update`) && Method(`PUT`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     bed_5:
       rule: PathPrefix(`/v1.0/kamar/bed/deletebykd/`) && Method(`DELETE`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     gedung_1:
       rule: PathPrefix(`/v1.0/gedung/getlist`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     gedung_2:
       rule: PathPrefix(`/v1.0/gedung/getbykd/`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     gedung_3:
       rule: PathPrefix(`/v1.0/gedung/create`) && Method(`POST`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     gedung_4:
       rule: PathPrefix(`/v1.0/gedung/update`) && Method(`PUT`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     gedung_5:
       rule: PathPrefix(`/v1.0/gedung/deletebykd/`) && Method(`DELETE`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     inventaris_1:
       rule: PathPrefix(`/v1.0/inventaris/getlist`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     inventaris_2:
       rule: PathPrefix(`/v1.0/inventaris/get-by-kd/`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     inventaris_3:
       rule: PathPrefix(`/v1.0/inventaris/generate-kode/`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     inventaris_4:
       rule: PathPrefix(`/v1.0/inventaris/create`) && Method(`POST`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     inventaris_5:
       rule: PathPrefix(`/v1.0/inventaris/update`) && Method(`PUT`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     inventaris_6:
       rule: PathPrefix(`/v1.0/inventaris/update-terinventaris`) && Method(`PUT`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     inventaris_7:
       rule: PathPrefix(`/v1.0/inventaris/delete/`) && Method(`DELETE`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     kamar_1:
       rule: PathPrefix(`/v1.0/ruangan/kamar/getlist`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     kamar_2:
       rule: PathPrefix(`/v1.0/ruangan/kamar/getlistbykdruangan/`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     kamar_3:
       rule: PathPrefix(`/v1.0/ruangan/kamar/create`) && Method(`POST`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     kamar_4:
       rule: PathPrefix(`/v1.0/ruangan/kamar/update`) && Method(`PUT`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     kamar_5:
       rule: PathPrefix(`/v1.0/ruangan/kamar/deletebykd/`) && Method(`DELETE`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     ruangan_1:
       rule: PathPrefix(`/v1.0/gedung/ruangan/getlist`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     ruangan_2:
       rule: PathPrefix(`/v1.0/gedung/ruangan/getlistbykdgedung/`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     ruangan_3:
       rule: PathPrefix(`/v1.0/gedung/ruangan/create`) && Method(`POST`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     ruangan_4:
       rule: PathPrefix(`/v1.0/gedung/ruangan/update`) && Method(`PUT`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     ruangan_5:
       rule: PathPrefix(`/v1.0/gedung/ruangan/deletebykd/`) && Method(`DELETE`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     ruangan_6:
       rule: PathPrefix(`/v1.0/gedung/ruangan/getlist-by-farmasi-ruangan`) && Method(`GET`)
       service: service-aset
       entryPoints:
-      - web
+        - web
 
     absensi_1:
       rule: PathPrefix(`/v1.0/absensi/getabsensibyidjadwal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     absensi_2:
       rule: PathPrefix(`/v1.0/absensi/getpegawaibynik/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     absensi_3:
       rule: PathPrefix(`/v1.0/absensi/getjadwalbytanggalnik/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     absensi_4:
       rule: PathPrefix(`/v1.0/remun/get-pegawai-by-nip/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_1:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/getbykdapoteker/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_2:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/getbytanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_3:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/getjadwalbytahunbulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_4:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_5:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_6:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_7:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_8:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/absendatang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_9:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/absenpulang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_10:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/getjadwalbykdapotekertanggaldanabsendatang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_11:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/update-keterangan`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-jadwal_12:
       rule: PathPrefix(`/v1.0/apoteker/jadwal/update-waktu-absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-pendidikan_1:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/getbykdapoteker/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-pendidikan_2:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-pendidikan_3:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-pendidikan_4:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-pendidikan_5:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-pendidikan_6:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-renumerasi_1:
       rule: PathPrefix(`/v1.0/apoteker/renumerasi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-renumerasi_2:
       rule: PathPrefix(`/v1.0/apoteker/renumerasi/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-renumerasi_3:
       rule: PathPrefix(`/v1.0/apoteker/renumerasi/get-by-kd-apoteker/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-renumerasi_4:
       rule: PathPrefix(`/v1.0/apoteker/renumerasi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-renumerasi_5:
       rule: PathPrefix(`/v1.0/apoteker/renumerasi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker-renumerasi_6:
       rule: PathPrefix(`/v1.0/apoteker/renumerasi/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker_1:
       rule: PathPrefix(`/v1.0/apoteker/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker_2:
       rule: PathPrefix(`/v1.0/apoteker/getbykd/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker_3:
       rule: PathPrefix(`/v1.0/apoteker/count`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker_4:
       rule: PathPrefix(`/v1.0/apoteker/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker_5:
       rule: PathPrefix(`/v1.0/apoteker/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     apoteker_6:
       rule: PathPrefix(`/v1.0/apoteker/deletebykd/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_1:
       rule: PathPrefix(`/v1.0/bidan/jadwal/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_2:
       rule: PathPrefix(`/v1.0/bidan/jadwal/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_3:
       rule: PathPrefix(`/v1.0/bidan/jadwal/create/*`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_4:
       rule: PathPrefix(`/v1.0/bidan/jadwal/update/*`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_5:
       rule: PathPrefix(`/v1.0/bidan/jadwal/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_6:
       rule: PathPrefix(`/v1.0/bidan/jadwal/absendatang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_7:
       rule: PathPrefix(`/v1.0/bidan/jadwal/absenpulang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_8:
       rule: PathPrefix(`/v1.0/bidan/jadwal/getbykdbidan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_9:
       rule: PathPrefix(`/v1.0/bidan/jadwal/getbykdinstalasi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_10:
       rule: PathPrefix(`/v1.0/bidan/jadwal/getbytanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_11:
       rule: PathPrefix(`/v1.0/bidan/jadwal/getjadwalbytahunbulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_12:
       rule: PathPrefix(`/v1.0/bidan/jadwal/getjadwalbykdbidantanggaldanabsendatang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_13:
       rule: PathPrefix(`/v1.0/bidan/jadwal/update-keterangan`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-jadwal_14:
       rule: PathPrefix(`/v1.0/bidan/jadwal/update-waktu-absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-pendidikan_1:
       rule: PathPrefix(`/v1.0/bidan/pendidikan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-pendidikan_2:
       rule: PathPrefix(`/v1.0/bidan/pendidikan/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-pendidikan_3:
       rule: PathPrefix(`/v1.0/bidan/pendidikan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-pendidikan_4:
       rule: PathPrefix(`/v1.0/bidan/pendidikan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-pendidikan_5:
       rule: PathPrefix(`/v1.0/bidan/pendidikan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-pendidikan_6:
       rule: PathPrefix(`/v1.0/bidan/pendidikan/getbykdbidan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-renumerasi_1:
       rule: PathPrefix(`/v1.0/bidan/renumerasi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-renumerasi_2:
       rule: PathPrefix(`/v1.0/bidan/renumerasi/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-renumerasi_3:
       rule: PathPrefix(`/v1.0/bidan/renumerasi/get-by-kd-bidan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-renumerasi_4:
       rule: PathPrefix(`/v1.0/bidan/renumerasi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-renumerasi_5:
       rule: PathPrefix(`/v1.0/bidan/renumerasi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan-renumerasi_6:
       rule: PathPrefix(`/v1.0/bidan/renumerasi/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan_1:
       rule: PathPrefix(`/v1.0/bidan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan_2:
       rule: PathPrefix(`/v1.0/bidan/getbykd/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan_3:
       rule: PathPrefix(`/v1.0/bidan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan_4:
       rule: PathPrefix(`/v1.0/bidan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan_5:
       rule: PathPrefix(`/v1.0/bidan/deletebykd/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     bidan_6:
       rule: PathPrefix(`/v1.0/bidan/count`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_1:
       rule: PathPrefix(`/v1.0/gigi/jadwal/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_2:
       rule: PathPrefix(`/v1.0/gigi/jadwal/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_3:
       rule: PathPrefix(`/v1.0/gigi/jadwal/update-keterangan`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_4:
       rule: PathPrefix(`/v1.0/gigi/jadwal/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_5:
       rule: PathPrefix(`/v1.0/gigi/jadwal/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_6:
       rule: PathPrefix(`/v1.0/gigi/jadwal/absendatang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_7:
       rule: PathPrefix(`/v1.0/gigi/jadwal/absenpulang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_8:
       rule: PathPrefix(`/v1.0/gigi/jadwal/getbykdgigi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_9:
       rule: PathPrefix(`/v1.0/gigi/jadwal/getbytanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_10:
       rule: PathPrefix(`/v1.0/gigi/jadwal/getjadwalbytahunbulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_11:
       rule: PathPrefix(`/v1.0/gigi/jadwal/getjadwalbykdgigitanggaldanabsendatang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-jadwal_12:
       rule: PathPrefix(`/v1.0/gigi/jadwal/update-waktu-absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-pendidikan_1:
       rule: PathPrefix(`/v1.0/gigi/pendidikan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-pendidikan_2:
       rule: PathPrefix(`/v1.0/gigi/pendidikan/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-pendidikan_3:
       rule: PathPrefix(`/v1.0/gigi/pendidikan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-pendidikan_4:
       rule: PathPrefix(`/v1.0/gigi/pendidikan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-pendidikan_5:
       rule: PathPrefix(`/v1.0/gigi/pendidikan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-pendidikan_6:
       rule: PathPrefix(`/v1.0/gigi/pendidikan/getbykdgigi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-renumerasi_1:
       rule: PathPrefix(`/v1.0/gigi/renumerasi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-renumerasi_2:
       rule: PathPrefix(`/v1.0/gigi/renumerasi/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-renumerasi_3:
       rule: PathPrefix(`/v1.0/gigi/renumerasi/get-by-kd-gigi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-renumerasi_4:
       rule: PathPrefix(`/v1.0/gigi/renumerasi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-renumerasi_5:
       rule: PathPrefix(`/v1.0/gigi/renumerasi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-renumerasi_6:
       rule: PathPrefix(`/v1.0/gigi/renumerasi/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-unitlayanan_1:
       rule: PathPrefix(`/v1.0/gigi/unitlayanan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-unitlayanan_2:
       rule: PathPrefix(`/v1.0/gigi/unitlayanan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-unitlayanan_3:
       rule: PathPrefix(`/v1.0/gigi/unitlayanan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi-unitlayanan_4:
       rule: PathPrefix(`/v1.0/gigi/unitlayanan/getbykdgigi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi_1:
       rule: PathPrefix(`/v1.0/gigi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi_2:
       rule: PathPrefix(`/v1.0/gigi/getbykd/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi_3:
       rule: PathPrefix(`/v1.0/gigi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi_4:
       rule: PathPrefix(`/v1.0/gigi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi_5:
       rule: PathPrefix(`/v1.0/gigi/deletebykd/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     gigi_6:
       rule: PathPrefix(`/v1.0/gigi/count`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     nik-khusus_1:
       rule: PathPrefix(`/v1.0/kepegawaian/nik-khusus/get-list`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     nik-khusus_2:
       rule: PathPrefix(`/v1.0/kepegawaian/nik-khusus/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     nik-khusus_3:
       rule: PathPrefix(`/v1.0/kepegawaian/nik-khusus/delete/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_1:
       rule: PathPrefix(`/v1.0/perawat/jadwal/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_2:
       rule: PathPrefix(`/v1.0/perawat/jadwal/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_3:
       rule: PathPrefix(`/v1.0/perawat/jadwal/create/*`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_4:
       rule: PathPrefix(`/v1.0/perawat/jadwal/update/*`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_5:
       rule: PathPrefix(`/v1.0/perawat/jadwal/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_6:
       rule: PathPrefix(`/v1.0/perawat/jadwal/absendatang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_7:
       rule: PathPrefix(`/v1.0/perawat/jadwal/absenpulang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_8:
       rule: PathPrefix(`/v1.0/perawat/jadwal/getbykdperawat/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_9:
       rule: PathPrefix(`/v1.0/perawat/jadwal/getbykdinstalasi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_10:
       rule: PathPrefix(`/v1.0/perawat/jadwal/getbytanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_11:
       rule: PathPrefix(`/v1.0/perawat/jadwal/getjadwalbytahunbulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_12:
       rule: PathPrefix(`/v1.0/perawat/jadwal/getjadwalbykdperawattanggaldanabsendatang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_13:
       rule: PathPrefix(`/v1.0/perawat/jadwal/update-keterangan`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-jadwal_14:
       rule: PathPrefix(`/v1.0/perawat/jadwal/update-waktu-absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-pendidikan_1:
       rule: PathPrefix(`/v1.0/perawat/pendidikan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-pendidikan_2:
       rule: PathPrefix(`/v1.0/perawat/pendidikan/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-pendidikan_3:
       rule: PathPrefix(`/v1.0/perawat/pendidikan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-pendidikan_4:
       rule: PathPrefix(`/v1.0/perawat/pendidikan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-pendidikan_5:
       rule: PathPrefix(`/v1.0/perawat/pendidikan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-pendidikan_6:
       rule: PathPrefix(`/v1.0/perawat/pendidikan/getbykdperawat/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-renumerasi_1:
       rule: PathPrefix(`/v1.0/perawat/renumerasi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-renumerasi_2:
       rule: PathPrefix(`/v1.0/perawat/renumerasi/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-renumerasi_3:
       rule: PathPrefix(`/v1.0/perawat/renumerasi/get-by-kd-perawat/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-renumerasi_4:
       rule: PathPrefix(`/v1.0/perawat/renumerasi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-renumerasi_5:
       rule: PathPrefix(`/v1.0/perawat/renumerasi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat-renumerasi_6:
       rule: PathPrefix(`/v1.0/perawat/renumerasi/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat_1:
       rule: PathPrefix(`/v1.0/perawat/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat_2:
       rule: PathPrefix(`/v1.0/perawat/getbykd/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat_3:
       rule: PathPrefix(`/v1.0/perawat/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat_4:
       rule: PathPrefix(`/v1.0/perawat/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat_5:
       rule: PathPrefix(`/v1.0/perawat/deletebykd/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     perawat_6:
       rule: PathPrefix(`/v1.0/perawat/count`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_1:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/get-list`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_2:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/get-by-kd-petugas-medis-lainnya/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_3:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/get-by-tanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_4:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/get-by-kd-instalasi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_5:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/get-jadwal-by-tahun-bulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_6:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/get-absensi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_7:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/get-jadwal-by-kd-petugas-lainnya-tanggal-dan-absen-datang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_8:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/get-jadwal-by-nik-tanggal-dan-absen-datang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_9:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/create/*`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_10:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/update/*`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_11:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_12:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/absen-pulang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_13:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/update-keterangan`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_14:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-jadwal_15:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/update-waktu-absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-pendidikan_1:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/pendidikan/get-list`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-pendidikan_2:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/pendidikan/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-pendidikan_3:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/pendidikan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-pendidikan_4:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/pendidikan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-pendidikan_5:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/pendidikan/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-pendidikan_6:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/pendidikan/get-by-kd-petugas-lainnya/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-renumerasi_1:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/renumerasi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-renumerasi_2:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/renumerasi/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-renumerasi_3:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/renumerasi/get-by-kd-petugas-medis-lainnya/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-renumerasi_4:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/renumerasi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-renumerasi_5:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/renumerasi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya-renumerasi_6:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/renumerasi/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya_1:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya_2:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/getbykd/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya_3:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya_4:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya_5:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/deletebykd/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya_6:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/count`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     petugas-medis-lainnya_7:
       rule: PathPrefix(`/v1.0/petugas-medis-lainnya/getbynik`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     polygon_1:
       rule: PathPrefix(`/v1.0/kepegawaian/polygon/get-list`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     polygon_2:
       rule: PathPrefix(`/v1.0/kepegawaian/polygon/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     polygon_3:
       rule: PathPrefix(`/v1.0/kepegawaian/polygon/delete/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_1:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_2:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_3:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_4:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_5:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/getbykdspesialis/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_6:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/getbytanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_7:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/getjadwalbytahunbulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_8:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/getjadwalbykdlayanandantanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_9:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/update-kuota`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_10:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/get-jadwal-by-kd-unit-bpjs-and-kd-bpjs/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_11:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/create-bulanan/`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_12:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/update-bulanan/`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_13:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/replicate-bulanan/`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal-hfis_14:
       rule: PathPrefix(`/v1.0/spesialis/jadwal-hfis/get-dokter-without-jadwal`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_1:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_2:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_3:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/update-keterangan`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_4:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_5:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_6:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/absendatang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_7:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/absenpulang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_8:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/getbykdspesialis/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_9:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/getbytanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_10:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/getjadwalbytahunbulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_11:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/getjadwalbykdlayanandantanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_12:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/getjadwalbykdspesialistanggaldanabsendatang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_13:
       rule: PathPrefix(`/v1.0/get-jadwal-pegawai-lengkap/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_14:
       rule: PathPrefix(`/v1.0/get-jadwal-pegawai-lengkap-hfis/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_15:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/update-kuota`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_16:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/update-hafis`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_17:
       rule: PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_18:
       rule: PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn-hfis/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_19:
       rule: PathPrefix(`/v1.0/absensi/polygon`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_20:
       rule: PathPrefix(`/v1.0/absensi/rekap`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_21:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/update-waktu-absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_22:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/getlist-belum-absen-pulang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-jadwal_23:
       rule: PathPrefix(`/v1.0/spesialis/jadwal/getlist-dokter`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-pendidikan_1:
       rule: PathPrefix(`/v1.0/spesialis/pendidikan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-pendidikan_2:
       rule: PathPrefix(`/v1.0/spesialis/pendidikan/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-pendidikan_3:
       rule: PathPrefix(`/v1.0/spesialis/pendidikan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-pendidikan_4:
       rule: PathPrefix(`/v1.0/spesialis/pendidikan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-pendidikan_5:
       rule: PathPrefix(`/v1.0/spesialis/pendidikan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-pendidikan_6:
       rule: PathPrefix(`/v1.0/spesialis/pendidikan/getbykdspesialis/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-renumerasi_1:
       rule: PathPrefix(`/v1.0/spesialis/renumerasi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-renumerasi_2:
       rule: PathPrefix(`/v1.0/spesialis/renumerasi/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-renumerasi_3:
       rule: PathPrefix(`/v1.0/spesialis/renumerasi/get-by-kd-spesialis/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-renumerasi_4:
       rule: PathPrefix(`/v1.0/spesialis/renumerasi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-renumerasi_5:
       rule: PathPrefix(`/v1.0/spesialis/renumerasi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-renumerasi_6:
       rule: PathPrefix(`/v1.0/spesialis/renumerasi/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-unitlayanan_1:
       rule: PathPrefix(`/v1.0/spesialis/unitlayanan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-unitlayanan_2:
       rule: PathPrefix(`/v1.0/spesialis/unitlayanan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-unitlayanan_3:
       rule: PathPrefix(`/v1.0/spesialis/unitlayanan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-unitlayanan_4:
       rule: PathPrefix(`/v1.0/spesialis/unitlayanan/getbykdspesialis/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis-unitlayanan_5:
       rule: PathPrefix(`/v1.0/spesialis/unitlayanan/getspesialisbykdlayanan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis_1:
       rule: PathPrefix(`/v1.0/spesialis/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis_2:
       rule: PathPrefix(`/v1.0/spesialis/getbykd/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis_3:
       rule: PathPrefix(`/v1.0/spesialis/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis_4:
       rule: PathPrefix(`/v1.0/spesialis/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis_5:
       rule: PathPrefix(`/v1.0/spesialis/deletebykd/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis_6:
       rule: PathPrefix(`/v1.0/spesialis/count`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     spesialis_7:
       rule: PathPrefix(`/v1.0/spesialis/getbykdbpjs/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_1:
       rule: PathPrefix(`/v1.0/staff/jadwal/getbykdstaff/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_2:
       rule: PathPrefix(`/v1.0/staff/jadwal/getbytanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_3:
       rule: PathPrefix(`/v1.0/staff/jadwal/getjadwalbytahunbulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_4:
       rule: PathPrefix(`/v1.0/staff/jadwal/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_5:
       rule: PathPrefix(`/v1.0/staff/jadwal/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_6:
       rule: PathPrefix(`/v1.0/staff/jadwal/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_7:
       rule: PathPrefix(`/v1.0/staff/jadwal/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_8:
       rule: PathPrefix(`/v1.0/staff/jadwal/absendatang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_9:
       rule: PathPrefix(`/v1.0/staff/jadwal/absenpulang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_10:
       rule: PathPrefix(`/v1.0/staff/jadwal/getjadwalbykdstafftanggaldanabsendatang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_11:
       rule: PathPrefix(`/v1.0/staff/jadwal/update-keterangan`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-jadwal_12:
       rule: PathPrefix(`/v1.0/staff/jadwal/update-waktu-absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-pendidikan_1:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/getbykdstaff/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-pendidikan_2:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-pendidikan_3:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-pendidikan_4:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-pendidikan_5:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-pendidikan_6:
       rule: PathPrefix(`/v1.0/apoteker/pendidikan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-renumerasi_1:
       rule: PathPrefix(`/v1.0/staff/renumerasi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-renumerasi_2:
       rule: PathPrefix(`/v1.0/staff/renumerasi/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-renumerasi_3:
       rule: PathPrefix(`/v1.0/staff/renumerasi/get-by-kd-staff/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-renumerasi_4:
       rule: PathPrefix(`/v1.0/staff/renumerasi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-renumerasi_5:
       rule: PathPrefix(`/v1.0/staff/renumerasi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff-renumerasi_6:
       rule: PathPrefix(`/v1.0/staff/renumerasi/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff_1:
       rule: PathPrefix(`/v1.0/staff/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff_2:
       rule: PathPrefix(`/v1.0/staff/getbykd/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff_3:
       rule: PathPrefix(`/v1.0/staff/count`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff_4:
       rule: PathPrefix(`/v1.0/staff/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff_5:
       rule: PathPrefix(`/v1.0/staff/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     staff_6:
       rule: PathPrefix(`/v1.0/staff/deletebykd/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_1:
       rule: PathPrefix(`/v1.0/umum/jadwal/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_2:
       rule: PathPrefix(`/v1.0/umum/jadwal/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_3:
       rule: PathPrefix(`/v1.0/umum/jadwal/create/*`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_4:
       rule: PathPrefix(`/v1.0/umum/jadwal/update/*`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_5:
       rule: PathPrefix(`/v1.0/umum/jadwal/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_6:
       rule: PathPrefix(`/v1.0/umum/jadwal/absendatang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_7:
       rule: PathPrefix(`/v1.0/umum/jadwal/absenpulang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_8:
       rule: PathPrefix(`/v1.0/umum/jadwal/getbykdumum/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_9:
       rule: PathPrefix(`/v1.0/umum/jadwal/getbykdinstalasi/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_10:
       rule: PathPrefix(`/v1.0/umum/jadwal/getbytanggal/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_11:
       rule: PathPrefix(`/v1.0/umum/jadwal/getjadwalbytahunbulan/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_12:
       rule: PathPrefix(`/v1.0/umum/jadwal/getjadwalbykdumumtanggaldanabsendatang/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_13:
       rule: PathPrefix(`/v1.0/umum/jadwal/update-keterangan`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_14:
       rule: PathPrefix(`/v1.0/umum/jadwal/update-waktu-absen-datang`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-jadwal_15:
       rule: PathPrefix(`/v1.0/umum/jadwal/getlist-belum-absen-pulang`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-pendidikan_1:
       rule: PathPrefix(`/v1.0/umum/pendidikan/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-pendidikan_2:
       rule: PathPrefix(`/v1.0/umum/pendidikan/getbyid/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-pendidikan_3:
       rule: PathPrefix(`/v1.0/umum/pendidikan/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-pendidikan_4:
       rule: PathPrefix(`/v1.0/umum/pendidikan/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-pendidikan_5:
       rule: PathPrefix(`/v1.0/umum/pendidikan/deletebyid/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-pendidikan_6:
       rule: PathPrefix(`/v1.0/umum/pendidikan/getbykdumum/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-renumerasi_1:
       rule: PathPrefix(`/v1.0/umum/renumerasi/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-renumerasi_2:
       rule: PathPrefix(`/v1.0/umum/renumerasi/get-by-id/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-renumerasi_3:
       rule: PathPrefix(`/v1.0/umum/renumerasi/get-by-kd-umum/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-renumerasi_4:
       rule: PathPrefix(`/v1.0/umum/renumerasi/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-renumerasi_5:
       rule: PathPrefix(`/v1.0/umum/renumerasi/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum-renumerasi_6:
       rule: PathPrefix(`/v1.0/umum/renumerasi/delete-by-id/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum_1:
       rule: PathPrefix(`/v1.0/umum/getlist`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum_2:
       rule: PathPrefix(`/v1.0/umum/getbykd/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum_3:
       rule: PathPrefix(`/v1.0/umum/create`) && Method(`POST`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum_4:
       rule: PathPrefix(`/v1.0/umum/update`) && Method(`PUT`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum_5:
       rule: PathPrefix(`/v1.0/umum/deletebykd/`) && Method(`DELETE`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum_6:
       rule: PathPrefix(`/v1.0/umum/count`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     umum_7:
       rule: PathPrefix(`/v1.0/umum/getbykdbpjs/`) && Method(`GET`)
       service: service-kepegawaian
       entryPoints:
-      - web
+        - web
 
     instalasi-radiologi_1:
       rule: PathPrefix(`/v1.0/instalasi/radiologi/get-by-no-rm/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     instalasi-radiologi_2:
       rule: PathPrefix(`/v1.0/instalasi/radiologi/update-no-rm/`) && Method(`PUT`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-items_1:
       rule: PathPrefix(`/v1.0/radiologi-items/getlist`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-items_2:
       rule: PathPrefix(`/v1.0/radiologi-items/getall`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-items_3:
       rule: PathPrefix(`/v1.0/radiologi-items/get-by-id/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-items_4:
       rule: PathPrefix(`/v1.0/radiologi-items/create`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-items_5:
       rule: PathPrefix(`/v1.0/radiologi-items/update`) && Method(`PUT`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-items_6:
       rule: PathPrefix(`/v1.0/radiologi-items/delete-by-id/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_1:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-list-order-radiologi`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_2:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-list-order-radiologi-items`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_3:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-by-id-order-radiologi-items`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_4:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-by-noregistrasi/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_5:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-by-no-rm/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_6:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-list-tindakan-radiologi`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_7:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-list-tindakan-bersama`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_8:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-by-nomor-order/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_9:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/get-by-id-tindakan/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_10:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/update-order-radiologi/`) && Method(`PUT`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_11:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/update-order-radiologi-items/`) && Method(`PUT`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_12:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_13:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/create-order-radiologi`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_14:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/create-order-radiologi-items`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_15:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/create-tindakan-radiologi`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_16:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/create-tindakan-bersama`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_17:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/delete-order-radiologi/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_18:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/delete-order-radiologi-items/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_19:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/delete-tindakan-radiologi/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_20:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/delete-tindakan-bersama/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi-eksternal_21:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi-eksternal/update-items/`) && Method(`PUT`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_1:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-list-order-radiologi`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_2:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-list-order-radiologi-items`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_3:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-by-id-order-radiologi-items/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_4:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-by-noregistrasi/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_5:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-by-no-rm/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_6:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-list-tindakan-radiologi`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_7:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-list-tindakan-bersama-radiologi`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_8:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-by-nomor-order/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_9:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-by-id-tindakan/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_10:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/get-by-id-tindakan-bersama/`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_11:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/update-order-radiologi/`) && Method(`PUT`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_12:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/update-order-radiologi-items/`) && Method(`PUT`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_13:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_14:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/create-order-radiologi`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_15:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/create-order-radiologi-items`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_16:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/create-tindakan-radiologi`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_17:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/create-tindakan-bersama-radiologi`) && Method(`POST`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_18:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/delete-tindakan-radiologi/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_19:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/delete-order-radiologi/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_20:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/delete-order-radiologi-items/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_21:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/delete-tindakan-bersama-radiologi/`) && Method(`DELETE`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_22:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/update-items/`) && Method(`PUT`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     radiologi-order-radiologi_23:
       rule: PathPrefix(`/v1.0/radiologi/order-radiologi/laporan-kategori-item`) && Method(`GET`)
       service: service-radiologi
       entryPoints:
-      - web
+        - web
 
     ambulance-items_1:
       rule: PathPrefix(`/v1.0/ambulance/ambulance-items/getlist`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance-items_2:
       rule: PathPrefix(`/v1.0/ambulance/ambulance-items/get-by-id/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance-items_3:
       rule: PathPrefix(`/v1.0/ambulance/ambulance-items/create`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance-items_4:
       rule: PathPrefix(`/v1.0/ambulance/ambulance-items/update`) && Method(`PUT`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance-items_5:
       rule: PathPrefix(`/v1.0/ambulance/ambulance-items/delete-by-id/`) && Method(`DELETE`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_1:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-list-order-ambulance`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_2:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-noregistrasi/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_3:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-nomor-order/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_4:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_5:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/update-order-ambulance/`) && Method(`PUT`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_6:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-list-order-ambulance-items`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_7:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-list-tindakan-ambulance`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_8:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-list-petugas-medis-ambulance`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_9:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-id-tindakan-ambulance/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_10:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-id-order-ambulance-items/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_11:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/get-by-id-petugas-medis-ambulance/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_12:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/update-order-ambulance-items/`) && Method(`PUT`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_13:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/update-petugas-medis-ambulance/`) && Method(`PUT`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_14:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/delete-order-ambulance-items/`) && Method(`DELETE`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_15:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/delete-order-ambulance/`) && Method(`DELETE`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_16:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/delete-petugas-medis-ambulance/`) && Method(`DELETE`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_17:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/create-order-ambulance`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_18:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/create-order-ambulance-items`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_19:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/create-tindakan-ambulance`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     ambulance_20:
       rule: PathPrefix(`/v1.0/ambulance/order-ambulance/create-petugas-medis-ambulance`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     mobil_ambulance_1:
       rule: PathPrefix(`/v1.0/ambulance/mobil-ambulance/getlist`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     mobil_ambulance_2:
       rule: PathPrefix(`/v1.0/ambulance/mobil-ambulance/get-by-kd/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     mobil_ambulance_3:
       rule: PathPrefix(`/v1.0/ambulance/mobil-ambulance/create`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     mobil_ambulance_4:
       rule: PathPrefix(`/v1.0/ambulance/mobil-ambulance/update`) && Method(`PUT`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     mobil_ambulance_5:
       rule: PathPrefix(`/v1.0/ambulance/mobil-ambulance/delete-by-kd/`) && Method(`DELETE`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     riwayat_mobil_1:
       rule: PathPrefix(`/v1.0/ambulance/riwayat-mobil/getlist`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     riwayat_mobil_2:
       rule: PathPrefix(`/v1.0/ambulance/riwayat-mobil/get-by-id/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     riwayat_mobil_3:
       rule: PathPrefix(`/v1.0/ambulance/riwayat-mobil/create`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     riwayat_mobil_4:
       rule: PathPrefix(`/v1.0/ambulance/riwayat-mobil/update`) && Method(`PUT`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     riwayat_mobil_5:
       rule: PathPrefix(`/v1.0/ambulance/riwayat-mobil/delete-by-id/`) && Method(`DELETE`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     supir_1:
       rule: PathPrefix(`/v1.0/ambulance/supir/getlist`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     supir_2:
       rule: PathPrefix(`/v1.0/ambulance/supir/get-by-kd/`) && Method(`GET`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     supir_3:
       rule: PathPrefix(`/v1.0/ambulance/supir/create`) && Method(`POST`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     supir_4:
       rule: PathPrefix(`/v1.0/ambulance/supir/update`) && Method(`PUT`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     supir_5:
       rule: PathPrefix(`/v1.0/ambulance/supir/delete-by-kd/`) && Method(`DELETE`)
       service: service-ambulance
       entryPoints:
-      - web
+        - web
 
     instalasi-lab_1:
       rule: PathPrefix(`/v1.0/instalasi/lab/get-by-no-rm/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     instalasi-lab_2:
       rule: PathPrefix(`/v1.0/instalasi/lab/update-no-rm/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     instalasi-lab_3:
       rule: PathPrefix(`/v1.0/instalasi/lab/laporan-kunjungan-lab-pa/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     instalasi-lab_4:
       rule: PathPrefix(`/v1.0/instalasi/lab/laporan-kunjungan-lab-pa-eksternal/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_1:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-order-lab-mi`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_2:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-tindakan-lab-mi`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_3:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-tindakan-bersama-lab-mi`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_4:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-order-lab-mi-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_5:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-nomor-order/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_6:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-tindakan/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_7:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-tindakan-bersama/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_8:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-order-lab-mi-items/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_9:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-noregistrasi/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_10:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-no-rm/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_11:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/update-order-lab-mi/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_12:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/update-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_13:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/create-tindakan-lab-mi`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_14:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/create-tindakan-bersama-lab-mi`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_15:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_16:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/delete-tindakan-lab-mi/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_17:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/delete-tindakan-bersama-lab-mi/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_18:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/update-order-lab-mi-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_19:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-sample-lab-mi`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_20:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-sample-lab-mi/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_21:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/create-order-lab-mi-sample`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi-eksternal_22:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/delete-order-lab-mi-sample/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_1:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_2:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-list-tindakan-lab-mi`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_3:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-list-tindakan-bersama-lab-mi`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_4:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_5:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-by-nomor-order/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_6:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-tindakan/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_7:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-tindakan-bersama/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_8:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-order-lab-mi-items/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_9:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-by-noregistrasi/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_10:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-by-no-rm/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_11:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/update-order-lab-mi-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_12:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/update-order-lab-mi/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_13:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/update-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_14:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/create-tindakan-lab-mi`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_15:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/create-tindakan-bersama-lab-mi`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_16:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_17:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/delete-tindakan-lab-mi/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_18:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/delete-tindakan-bersama-lab-mi/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_19:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-list-sample-lab-mi`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_20:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-sample-lab-mi/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_21:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_22:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi-items`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_23:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi-sample`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_24:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi-items/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_25:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_26:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi-sample/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_27:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-laporan-kunjungan-pasien-by-tindakan`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-mi_28:
       rule: PathPrefix(`/v1.0/lab/order-lab-mi/get-laporan-kunjungan-pasien`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_1:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-list-order-lab-pa`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_2:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-list-tindakan-lab-pa`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_3:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-list-tindakan-bersama-lab-pa`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_4:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-list-order-lab-pa-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_5:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-nomor-order/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_6:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-id-tindakan/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_7:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-id-tindakan-bersama/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_8:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-id-order-lab-pa-items/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_9:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-noregistrasi/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_10:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-no-rm/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_11:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/update-order-lab-pa/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_12:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/update-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_13:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/create-tindakan-lab-pa`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_14:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/create-tindakan-bersama-lab-pa`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_15:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_16:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/delete-tindakan-lab-pa/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_17:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/delete-tindakan-bersama-lab-pa/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa-eksternal_18:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/update-order-lab-pa-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_1:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-list-order-lab-pa`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_2:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-list-tindakan-lab-pa`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_3:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-list-tindakan-bersama-lab-pa`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_4:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-list-order-lab-pa-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_5:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-by-nomor-order/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_6:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-by-id-order-lab-pa-items/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_7:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-by-id-tindakan/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_8:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-by-id-tindakan-bersama/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_9:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-by-noregistrasi/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_10:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-by-no-rm/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_11:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/update-order-lab-pa/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_12:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/update-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_13:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_14:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/create-tindakan-lab-pa`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_15:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/create-tindakan-bersama-lab-pa`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_16:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/delete-tindakan-lab-pa/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_17:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/delete-tindakan-bersama-lab-pa/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_18:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/create-order-lab-pa`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_19:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/create-order-lab-pa-items`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_20:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/delete-order-lab-pa-items/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_21:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/delete-order-lab-pa/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_22:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-laporan-kunjungan-pasien-by-tindakan`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_23:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/get-laporan-kunjungan-pasien`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pa_24:
       rule: PathPrefix(`/v1.0/lab/order-lab-pa/update-order-lab-pa-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_1:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-order-lab-pk`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_2:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-tindakan-lab-pk`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_3:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-tindakan-bersama-lab-pk`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_4:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-order-lab-pk-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_5:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-order-lab-pk-sub-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_6:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-nomor-order/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_7:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-id-tindakan/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_8:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-id-tindakan-bersama/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_9:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-id-order-lab-pk-items/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_10:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-id-order-lab-pk-sub-items/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_11:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-noregistrasi/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_12:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-no-rm/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_13:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/update-order-lab-pk/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_14:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/update-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_15:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/update-order-lab-pk-sub-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_16:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/create-order-lab-pk-sub-items`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_17:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/create-tindakan-lab-pk`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_18:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/create-tindakan-bersama-lab-pk`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_19:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_20:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/delete-tindakan-lab-pk/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_21:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/delete-tindakan-bersama-lab-pk/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_22:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/delete-order-lab-pk-sub-items/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk-eksternal_23:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/update-order-lab-pk-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_1:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-list-order-lab-pk`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_2:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-list-tindakan-lab-pk`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_3:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-list-tindakan-bersama-lab-pk`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_4:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-list-order-lab-pk-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_5:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-list-order-lab-pk-sub-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_6:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-by-nomor-order/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_7:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-by-id-tindakan/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_8:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-by-id-tindakan-bersama/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_9:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-by-id-order-lab-pk-items/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_10:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-by-id-order-lab-pk-sub-items/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_11:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-by-noregistrasi/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_12:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-by-no-rm/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_13:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/update-order-lab-pk/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_14:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/update-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_15:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/update-order-lab-pk-sub-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_16:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/create-tindakan-lab-pk`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_17:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/create-tindakan-bersama-lab-pk`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_18:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/send-to-kasir-by-nomor-order/`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_19:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/delete-tindakan-lab-pk/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_20:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-bulanan-by-tindakan`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_21:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-bulanan-by-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_22:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-kunjungan-pasien`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_23:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-hiv-viral-load-by-items`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_24:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-hiv-viral-load-sederhana`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_25:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-waktu-tunggu`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_26:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/delete-tindakan-bersama-lab-pk/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_27:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/create-order-lab-pk`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_28:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/create-order-lab-pk-items`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_29:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/create-order-lab-pk-sub-items`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_30:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/delete-order-lab-pk-items/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_31:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/delete-order-lab-pk-sub-items/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_32:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/delete-order-lab-pk/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_33:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-kunjungan-pasien-by-tindakan`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     lab-order-lab-pk_34:
       rule: PathPrefix(`/v1.0/lab/order-lab-pk/update-order-lab-pk-items/`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-mi_1:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-mi/getlist`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-mi_2:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-mi/get-by-id/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-mi_3:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-mi/create`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-mi_4:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-mi/update`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-mi_5:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-mi/delete-by-id/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-mi_6:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-mi/getall`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pa_1:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pa/getlist`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pa_2:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pa/get-by-id/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pa_3:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pa/create`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pa_4:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pa/update`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pa_5:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pa/delete-by-id/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pa_6:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pa/getall`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pk_1:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pk/getlist`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pk_2:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pk/get-by-id/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pk_3:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pk/create`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pk_4:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pk/update`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pk_5:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pk/delete-by-id/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items-lab-pk_6:
       rule: PathPrefix(`/v1.0/laboratorium-items-lab-pk/getall`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items_1:
       rule: PathPrefix(`/v1.0/laboratorium-items/getlist`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items_2:
       rule: PathPrefix(`/v1.0/laboratorium-items/get-by-id/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items_3:
       rule: PathPrefix(`/v1.0/laboratorium-items/create`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items_4:
       rule: PathPrefix(`/v1.0/laboratorium-items/update`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     laboratorium-items_5:
       rule: PathPrefix(`/v1.0/laboratorium-items/delete-by-id/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     referensi-sample-lab-mk_1:
       rule: PathPrefix(`/v1.0/laboratorium/sample-lab-mk/getlist`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     referensi-sample-lab-mk_2:
       rule: PathPrefix(`/v1.0/laboratorium/sample-lab-mk/get-by-id/`) && Method(`GET`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     referensi-sample-lab-mk_3:
       rule: PathPrefix(`/v1.0/laboratorium/sample-lab-mk/create`) && Method(`POST`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     referensi-sample-lab-mk_4:
       rule: PathPrefix(`/v1.0/laboratorium/sample-lab-mk/update`) && Method(`PUT`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     referensi-sample-lab-mk_5:
       rule: PathPrefix(`/v1.0/laboratorium/sample-lab-mk/delete-by-id/`) && Method(`DELETE`)
       service: service-lab
       entryPoints:
-      - web
+        - web
 
     notifikasi_1:
       rule: PathPrefix(`/v1.0/websocket/notifikasi-log/get-by-kd-user/`) && Method(`GET`)
       service: service-notifikasi
       entryPoints:
-      - web
+        - web
 
     notifikasi_2:
       rule: PathPrefix(`/v1.0/websocket/notifikasi-log/update-status`) && Method(`PUT`)
       service: service-notifikasi
       entryPoints:
-      - web
+        - web
 
     gizi_1:
       rule: PathPrefix(`/v1.0/gizi/proses-makanan/getlist`) && Method(`GET`)
       service: service-gizi
       entryPoints:
-      - web
+        - web
 
     gizi_2:
       rule: PathPrefix(`/v1.0/gizi/proses-makanan/get-by-nomor-order/`) && Method(`GET`)
       service: service-gizi
       entryPoints:
-      - web
+        - web
 
     gizi_3:
       rule: PathPrefix(`/v1.0/gizi/proses-makanan/get-by-no-registrasi/`) && Method(`GET`)
       service: service-gizi
       entryPoints:
-      - web
+        - web
 
     gizi_4:
       rule: PathPrefix(`/v1.0/gizi/proses-makanan/update-status-diterima`) && Method(`PUT`)
       service: service-gizi
       entryPoints:
-      - web
+        - web
 
     gizi_5:
       rule: PathPrefix(`/v1.0/gizi/proses-makanan/update-status-selesai`) && Method(`PUT`)
       service: service-gizi
       entryPoints:
-      - web
+        - web
 
     gizi_6:
       rule: PathPrefix(`/v1.0/gizi/proses-makanan/update-ceklis`) && Method(`PUT`)
       service: service-gizi
       entryPoints:
-      - web
+        - web
 
     gizi_7:
       rule: PathPrefix(`/v1.0/gizi/proses-makanan/update-ceklis-alat-makan`) && Method(`PUT`)
       service: service-gizi
       entryPoints:
-      - web
+        - web
 
     gizi_8:
       rule: PathPrefix(`/v1.0/gizi/proses-makanan/update-status-pengembalian-alat`) && Method(`PUT`)
       service: service-gizi
       entryPoints:
-      - web
+        - web
 
     order-laundry_1:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/get-list-order-laundry`) && Method(`GET`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_2:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/get-list-order-laundry-with-barang-laundry`) && Method(`GET`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_3:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/get-list-barang-laundry`) && Method(`GET`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_4:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/get-by-nomor-order/`) && Method(`GET`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_5:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/get-by-id-barang-laundry/`) && Method(`GET`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_6:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/create-order-laundry`) && Method(`POST`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_7:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/create-barang-laundry`) && Method(`POST`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_8:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/update-order-laundry/`) && Method(`PUT`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_9:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/update-barang-laundry/`) && Method(`PUT`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_10:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/delete-order-laundry/`) && Method(`DELETE`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-laundry_11:
       rule: PathPrefix(`/v1.0/laundry/order-laundry/delete-barang-laundry/`) && Method(`DELETE`)
       service: service-laundry
       entryPoints:
-      - web
+        - web
 
     order-kesling_1:
       rule: PathPrefix(`/v1.0/kesling/order-kesling/get-list-order-kesling`) && Method(`GET`)
       service: service-kesling
       entryPoints:
-      - web
+        - web
 
     order-kesling_2:
       rule: PathPrefix(`/v1.0/kesling/order-kesling/get-list-order-kesling-multi-level`) && Method(`GET`)
       service: service-kesling
       entryPoints:
-      - web
+        - web
 
     order-kesling_3:
       rule: PathPrefix(`/v1.0/kesling/order-kesling/get-by-nomor-order/`) && Method(`GET`)
       service: service-kesling
       entryPoints:
-      - web
+        - web
 
     order-kesling_4:
       rule: PathPrefix(`/v1.0/kesling/order-kesling/create-order-kesling`) && Method(`POST`)
       service: service-kesling
       entryPoints:
-      - web
+        - web
 
     order-kesling_5:
       rule: PathPrefix(`/v1.0/kesling/order-kesling/update-order-kesling/`) && Method(`PUT`)
       service: service-kesling
       entryPoints:
-      - web
+        - web
 
     order-kesling_6:
       rule: PathPrefix(`/v1.0/kesling/order-kesling/delete-order-kesling/`) && Method(`DELETE`)
       service: service-kesling
       entryPoints:
-      - web
+        - web
 
   services:
     service-kasir:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:8097" # IP Server Prod
+          - url: "http://192.168.18.154:8097" # IP Server Prod
     service-bed:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:8087" # IP Server Prod
+          - url: "http://192.168.18.154:8087" # IP Server Prod
     service-aset:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:8083" # IP Server Prod
+          - url: "http://192.168.18.154:8083" # IP Server Prod
     service-kepegawaian:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:8084"
+          - url: "http://192.168.18.154:8084"
     service-radiologi:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:8098"
+          - url: "http://192.168.18.154:8098"
     service-ambulance:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:9092"
+          - url: "http://192.168.18.154:9092"
     service-operasi:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:8099"
+          - url: "http://192.168.18.154:8099"
     service-lab:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:9091"
+          - url: "http://192.168.18.154:9091"
     service-notifikasi:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:9099"
+          - url: "http://192.168.18.154:9099"
     service-gizi:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:9106"
+          - url: "http://192.168.18.154:9106"
     service-laundry:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:9110"
+          - url: "http://192.168.18.154:9110"
     service-kesling:
       loadBalancer:
         servers:
-        - url: "http://22.22.22.61:9109"
+          - url: "http://192.168.18.154:9109"
