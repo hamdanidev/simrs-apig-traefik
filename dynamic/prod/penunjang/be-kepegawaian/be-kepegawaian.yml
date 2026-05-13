@@ -1,5 +1,4 @@
 http:
- 
   routers:
     absensi_1:
       rule: "PathPrefix(`/v1.0/absensi/getabsensibyidjadwal/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -290,7 +289,7 @@ http:
         - "simrs-cors"
 
     bidan_jadwal_3:
-      rule: "PathPrefix(`/v1.0/bidan/jadwal/create/*`) && (Method(`POST`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/bidan/jadwal/create/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
         - web
@@ -842,7 +841,7 @@ http:
         - "simrs-cors"
 
     perawat_jadwal_3:
-      rule: "PathPrefix(`/v1.0/perawat/jadwal/create/*`) && (Method(`POST`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/perawat/jadwal/create/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
         - web
@@ -1146,7 +1145,7 @@ http:
         - "simrs-cors"
 
     petugas_medis_lainnya_jadwal_9:
-      rule: "PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/create/*`) && (Method(`POST`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/create/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
         - web
@@ -2122,7 +2121,7 @@ http:
         - "simrs-cors"
 
     umum_jadwal_3:
-      rule: "PathPrefix(`/v1.0/umum/jadwal/create/*`) && (Method(`POST`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/umum/jadwal/create/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
         - web
