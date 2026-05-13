@@ -774,7 +774,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     maintenance_2:
       rule: "PathPrefix(`/v1.0/referensi/maintenance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -1071,7 +1070,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     satuan_obat_1:
       rule: "PathPrefix(`/v1.0/satuanobat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
