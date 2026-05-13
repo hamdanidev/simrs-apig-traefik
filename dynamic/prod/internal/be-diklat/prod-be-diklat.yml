@@ -1,35 +1,4 @@
-# ============================================================
-# DIKLAT ROUTES
-# Service: service-diklat → 192.168.18.152:9086
-#
-# Diklat memiliki 700+ individual endpoint. File ini menggunakan
-# broad PathPrefix per prefix top-level agar lebih manageable.
-# Jika ada konflik routing dengan service lain (terutama /v1.0/master/
-# karena master service juga pakai prefix ini), gunakan file
-# dev_routes_diklat_granular.yml yang berisi route per endpoint.
-# ============================================================
-
-http:
-  middlewares:
-    simrs_cors:
-      headers:
-        accessControlAllowMethods:
-          - "GET"
-          - "POST"
-          - "PUT"
-          - "DELETE"
-          - "OPTIONS"
-        accessControlAllowHeaders:
-          - "Authorization"
-          - "Content-Type"
-          - "X-Requested-With"
-          - "X-Rs-Code"
-          - "Req-Id"
-        accessControlAllowOriginList:
-          - "*"
-        accessControlMaxAge: 100
-        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
-        addVaryHeader: true
+http: 
   routers:
     bagian_bed_side_theaching_1:
       rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"

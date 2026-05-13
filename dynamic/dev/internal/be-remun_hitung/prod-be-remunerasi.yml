@@ -1,24 +1,5 @@
 http:
-  middlewares:
-    simrs-cors:
-      headers:
-        accessControlAllowMethods:
-          - "GET"
-          - "POST"
-          - "PUT"
-          - "DELETE"
-          - "OPTIONS"
-        accessControlAllowHeaders:
-          - "Authorization"
-          - "Content-Type"
-          - "X-Requested-With"
-          - "X-Rs-Code"
-          - "Req-Id"
-        accessControlAllowOriginList:
-          - "*"
-        accessControlMaxAge: 100
-        addVaryHeader: true
-  routers:
+   routers:
     internal_remun_hitung_1:
       rule: "PathPrefix(`/v1.0/remun/proses-remunerasi-bpjs`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-remun-hitung
