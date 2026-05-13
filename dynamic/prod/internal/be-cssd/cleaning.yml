@@ -1,0 +1,54 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        addVaryHeader: true
+  routers:
+    internal_cleaning_1:
+      rule: "PathPrefix(`/v1.0/cssd/cleaning/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_cleaning_2:
+      rule: "PathPrefix(`/v1.0/cssd/cleaning/get-by-id-cleaning/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_cleaning_3:
+      rule: "PathPrefix(`/v1.0/cssd/cleaning/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+    internal_cleaning_4:
+      rule: "PathPrefix(`/v1.0/cssd/cleaning/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-cssd:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.59:9107"

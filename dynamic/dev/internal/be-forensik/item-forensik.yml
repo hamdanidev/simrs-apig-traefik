@@ -1,0 +1,35 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    forensik_item_1:
+      rule: "PathPrefix(`/v1.0/forensik/item-forensik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-forensik:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.18.152:9085"

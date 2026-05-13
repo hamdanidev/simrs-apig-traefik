@@ -1,0 +1,34 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    core_log_monitoring_router:
+      rule: "PathPrefix(`/v1.0/log-monitoring/log/get-list/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-log-monitoring
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-log-monitoring:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.18.153:9104"

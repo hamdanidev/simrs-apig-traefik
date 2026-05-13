@@ -1,0 +1,202 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    sarpras_monitoring_1:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_monitoring_2:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_monitoring_3:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_monitoring_4:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_monitoring_5:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/aktifkan-monitoring-rutin/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_monitoring_6:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/selesai-pemeliharaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_monitoring_7:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/update-pemeliharaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_monitoring_8:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_pelaporan_1:
+      rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_pelaporan_2:
+      rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/kirim-keluhan/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_pelaporan_3:
+      rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_pelaporan_4:
+      rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/get-riwayat-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_pelaporan_5:
+      rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_pelaporan_6:
+      rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_pelaporan_7:
+      rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/verifikasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_pelaporan_8:
+      rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_proses_1:
+      rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/keluhan-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_proses_2:
+      rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/update-inspeksi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_proses_3:
+      rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/update-penanganan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_proses_4:
+      rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/update-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_proses_5:
+      rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    sarpras_proses_6:
+      rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-sarpras:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.18.152:9111"

@@ -1,0 +1,98 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    interop_message_1:
+      rule: "PathPrefix(`/v1.0/sender-email/mailtrap/send`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_message_2:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-chat`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_message_3:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-image`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_message_4:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-sticker`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_message_5:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-document`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_message_6:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-audio`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_message_7:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-voice`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_message_8:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-video`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_message_9:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-location`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-interop-message:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.18.155:9105"

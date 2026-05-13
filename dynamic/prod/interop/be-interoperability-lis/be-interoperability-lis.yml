@@ -1,0 +1,194 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    interop_lis_1:
+      rule: "PathPrefix(`/v1.0/lis/demographics/get-list-demographics`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_2:
+      rule: "PathPrefix(`/v1.0/lis/ordered-items/get-list-ordered-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_3:
+      rule: "PathPrefix(`/v1.0/lis/registration/get-list-registration`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_4:
+      rule: "PathPrefix(`/v1.0/lis/lab-results/get-list-lab-results`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_5:
+      rule: "PathPrefix(`/v1.0/lis/demographics/get-by-patient-id-mr/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_6:
+      rule: "PathPrefix(`/v1.0/lis/ordered-items/get-by-order-number-and-item-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_7:
+      rule: "PathPrefix(`/v1.0/lis/registration/get-by-patient-id-mr-and-order-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_8:
+      rule: "PathPrefix(`/v1.0/lis/lab-results/get-by-lis-reg-no-lis-test-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_9:
+      rule: "PathPrefix(`/v1.0/lis/demographics/create-demographics`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_10:
+      rule: "PathPrefix(`/v1.0/lis/ordered-items/create-ordered-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_11:
+      rule: "PathPrefix(`/v1.0/lis/registration/create-registration`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_12:
+      rule: "PathPrefix(`/v1.0/lis/lab-results/create-lab-results`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_13:
+      rule: "PathPrefix(`/v1.0/lis/demographics/delete-demographics/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_14:
+      rule: "PathPrefix(`/v1.0/lis/ordered-items/delete-ordered-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_15:
+      rule: "PathPrefix(`/v1.0/lis/registration/delete-registration/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_16:
+      rule: "PathPrefix(`/v1.0/lis/lab-results/delete-lab-results/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_17:
+      rule: "PathPrefix(`/v1.0/lis/demographics/update-demographics/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_18:
+      rule: "PathPrefix(`/v1.0/lis/ordered-items/update-ordered-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_19:
+      rule: "PathPrefix(`/v1.0/lis/registration/update-registration/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_20:
+      rule: "PathPrefix(`/v1.0/lis/lab-results/update-lab-results/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_lis_21:
+      rule: "PathPrefix(`/v1.0/lis/lab-results/update-lab-results2/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-lis:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.23:9088"

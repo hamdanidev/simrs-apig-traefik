@@ -1,0 +1,334 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    interop_inacbgv2_1:
+      rule: "PathPrefix(`/v2.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_2:
+      rule: "PathPrefix(`/v2.0/inacbg/update-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_3:
+      rule: "PathPrefix(`/v2.0/inacbg/delete-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_4:
+      rule: "PathPrefix(`/v2.0/inacbg/set-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_5:
+      rule: "PathPrefix(`/v2.0/inacbg/grouper-stage-1`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_6:
+      rule: "PathPrefix(`/v2.0/inacbg/grouper-stage-2`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_7:
+      rule: "PathPrefix(`/v2.0/inacbg/finalisasi-klaim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_8:
+      rule: "PathPrefix(`/v2.0/inacbg/reedit-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_9:
+      rule: "PathPrefix(`/v2.0/inacbg/send-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_10:
+      rule: "PathPrefix(`/v2.0/inacbg/send-claim-individual`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_11:
+      rule: "PathPrefix(`/v2.0/inacbg/pull-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_12:
+      rule: "PathPrefix(`/v2.0/inacbg/get-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_13:
+      rule: "PathPrefix(`/v2.0/inacbg/get-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_14:
+      rule: "PathPrefix(`/v2.0/inacbg/delete-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_15:
+      rule: "PathPrefix(`/v2.0/inacbg/claim-print`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_16:
+      rule: "PathPrefix(`/v2.0/inacbg/search-diagnosis`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_17:
+      rule: "PathPrefix(`/v2.0/inacbg/search-procedures`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_18:
+      rule: "PathPrefix(`/v2.0/inacbg/generate-claim-number`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_19:
+      rule: "PathPrefix(`/v2.0/inacbg/file-upload`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_20:
+      rule: "PathPrefix(`/v2.0/inacbg/file-delete`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_21:
+      rule: "PathPrefix(`/v2.0/inacbg/file-get`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_22:
+      rule: "PathPrefix(`/v2.0/inacbg/retrieve-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_23:
+      rule: "PathPrefix(`/v2.0/inacbg/cari-diagnosa-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_24:
+      rule: "PathPrefix(`/v2.0/inacbg/cari-procedures-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_25:
+      rule: "PathPrefix(`/v2.0/inacbg/sitb-validate`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_26:
+      rule: "PathPrefix(`/v2.0/inacbg/sitb-invalidate`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_27:
+      rule: "PathPrefix(`/v2.0/idrg/diagnosa-set`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_28:
+      rule: "PathPrefix(`/v2.0/idrg/diagnosa-get`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_29:
+      rule: "PathPrefix(`/v2.0/idrg/procedure-get`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_30:
+      rule: "PathPrefix(`/v2.0/idrg/procedure-set`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_31:
+      rule: "PathPrefix(`/v2.0/idrg/grouper-1`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_32:
+      rule: "PathPrefix(`/v2.0/idrg/grouper-final`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_33:
+      rule: "PathPrefix(`/v2.0/idrg/grouper-reedit`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_34:
+      rule: "PathPrefix(`/v2.0/idrg/to-inacbg-import`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_35:
+      rule: "PathPrefix(`/v2.0/inacbg/diagnosa-set`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_36:
+      rule: "PathPrefix(`/v2.0/inacbg/diagnosa-get`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_37:
+      rule: "PathPrefix(`/v2.0/inacbg/procedure-set`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_inacbgv2_38:
+      rule: "PathPrefix(`/v2.0/inacbg/procedure-get`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-inacbg:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.23:9082"
+    service-inacbgv2:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.23:9082"

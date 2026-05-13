@@ -1,0 +1,137 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        addVaryHeader: true
+  routers:
+    forensik_order_internal_1:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_2:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist-order-forensik-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_3:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist-tindakan-order-forensik-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_4:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/update-status-order-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_5:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/update-status-order-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_6:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/update-order-items-forensik`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_7:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/create-tindakan-order-forensik`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_8:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/delete-tindakan-order-forensik/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_9:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/get-item-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_10:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_11:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/create-order`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_12:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/create-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_13:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/delete-order/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    forensik_order_internal_14:
+      rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/delete-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-forensik
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-forensik:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.59:9085"

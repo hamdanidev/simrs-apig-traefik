@@ -1,0 +1,90 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    bed_pasien_1:
+      rule: "PathPrefix(`/v1.0/bedpasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    bed_pasien_2:
+      rule: "PathPrefix(`/v1.0/bedpasien/getbyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    bed_pasien_3:
+      rule: "PathPrefix(`/v1.0/bedpasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    bed_pasien_4:
+      rule: "PathPrefix(`/v1.0/bedpasien/status/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    bed_pasien_5:
+      rule: "PathPrefix(`/v1.0/bedpasien/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    laporan_bed_1:
+      rule: "PathPrefix(`/v1.0/manajemen-bed/monitoring-bed-rawat-inap`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    riwayat_bed_pasien_1:
+      rule: "PathPrefix(`/v1.0/bedpasien/riwayat/getlistbyidbedpasien/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    riwayat_bed_pasien_2:
+      rule: "PathPrefix(`/v1.0/bedpasien/riwayat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-bed:
+      loadBalancer:
+        servers:
+          - url: "http://22.22.22.61:8087" # IP Server Prod
