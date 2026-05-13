@@ -1,6 +1,4 @@
 http:
-
-
   routers:
     # JASA PELAYANAN
     jenis_pelayanan_kris_1:
@@ -10,6 +8,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_kris_2:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -18,6 +17,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_kris_3:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -26,6 +26,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_kris_4:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -34,6 +35,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_kris_5:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getbykdkategoripelayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -42,6 +44,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_kris_6:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -50,6 +53,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_kris_7:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -58,6 +62,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_kris_8:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -66,6 +71,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_non_kris_1:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -74,6 +80,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_non_kris_2:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -82,6 +89,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_non_kris_3:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -90,6 +98,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_non_kris_4:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -98,6 +107,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_non_kris_5:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getbykdkategoripelayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -106,6 +116,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_non_kris_6:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -114,6 +125,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_non_kris_7:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -122,6 +134,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     jenis_pelayanan_non_kris_8:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -130,6 +143,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     kategori_pelayanan_1:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -138,6 +152,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     kategori_pelayanan_2:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -146,6 +161,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     kategori_pelayanan_3:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -154,6 +170,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     kategori_pelayanan_4:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -162,6 +179,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     kategori_pelayanan_5:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -170,6 +188,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     kategori_pelayanan_6:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -178,6 +197,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     kategori_pelayanan_7:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getbystandarlayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -186,6 +206,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_1:
       rule: "PathPrefix(`/v1.0/paketmcu/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -194,6 +215,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_2:
       rule: "PathPrefix(`/v1.0/paketmcu/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -202,6 +224,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_3:
       rule: "PathPrefix(`/v1.0/paketmcu/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -210,6 +233,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_4:
       rule: "PathPrefix(`/v1.0/paketmcu/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -218,6 +242,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_5:
       rule: "PathPrefix(`/v1.0/paketmcu/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -226,6 +251,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_6:
       rule: "PathPrefix(`/v1.0/paketmcu/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -234,6 +260,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_7:
       rule: "PathPrefix(`/v1.0/paketmcu/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -242,6 +269,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_8:
       rule: "PathPrefix(`/v1.0/paketmcu/items/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -250,6 +278,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_9:
       rule: "PathPrefix(`/v1.0/paketmcu/items/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -258,6 +287,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_10:
       rule: "PathPrefix(`/v1.0/paketmcu/items/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -266,6 +296,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_11:
       rule: "PathPrefix(`/v1.0/paketmcu/items/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -274,6 +305,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paket_mcu_12:
       rule: "PathPrefix(`/v1.0/paketmcu/items/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -282,6 +314,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paketmcu_pelayanan_1:
       rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -290,6 +323,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paketmcu_pelayanan_2:
       rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/getlistbykdpaketmcu/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -298,6 +332,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paketmcu_pelayanan_3:
       rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -306,6 +341,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     paketmcu_pelayanan_4:
       rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -314,6 +350,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_parent_1:
       rule: "PathPrefix(`/v1.0/unitlayananparent/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -322,6 +359,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_parent_2:
       rule: "PathPrefix(`/v1.0/unitlayananparent/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -330,6 +368,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_parent_3:
       rule: "PathPrefix(`/v1.0/unitlayananparent/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -338,6 +377,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_parent_4:
       rule: "PathPrefix(`/v1.0/unitlayananparent/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -346,6 +386,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_parent_5:
       rule: "PathPrefix(`/v1.0/unitlayananparent/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -354,6 +395,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_parent_6:
       rule: "PathPrefix(`/v1.0/unitlayananparent/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -362,6 +404,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_parent_7:
       rule: "PathPrefix(`/v1.0/unitlayananparent/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -370,6 +413,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_1:
       rule: "PathPrefix(`/v1.0/unitlayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -378,6 +422,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_2:
       rule: "PathPrefix(`/v1.0/unitlayanan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -386,6 +431,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_3:
       rule: "PathPrefix(`/v1.0/unitlayanan/getbykdparent/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -394,6 +440,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_4:
       rule: "PathPrefix(`/v1.0/unitlayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -402,6 +449,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_5:
       rule: "PathPrefix(`/v1.0/unitlayanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -410,6 +458,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_6:
       rule: "PathPrefix(`/v1.0/unitlayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -418,6 +467,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_7:
       rule: "PathPrefix(`/v1.0/unitlayanan/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -426,6 +476,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_8:
       rule: "PathPrefix(`/v1.0/unitlayanan/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -434,6 +485,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_9:
       rule: "PathPrefix(`/v1.0/unit-layanan/get-kd-unit-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -442,6 +494,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_10:
       rule: "PathPrefix(`/v1.0/unitlayanan/getlistwithfarmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -450,6 +503,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_layanan_1:
       rule: "PathPrefix(`/v1.0/unitlayanan/layanan/getlistbykdunitlayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -458,6 +512,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_layanan_2:
       rule: "PathPrefix(`/v1.0/unitlayanan/layanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -466,6 +521,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     unit_layanan_layanan_3:
       rule: "PathPrefix(`/v1.0/unitlayanan/layanan/deletebyidlayananlayanan/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -474,6 +530,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-jasa-pelayanan:

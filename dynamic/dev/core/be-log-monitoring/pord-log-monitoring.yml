@@ -1,5 +1,4 @@
 http:
-
   routers:
     core_log_monitoring_router:
       rule: "PathPrefix(`/v1.0/log-monitoring/log/get-list/`) && (Method(`GET`) || Method(`OPTIONS`))"

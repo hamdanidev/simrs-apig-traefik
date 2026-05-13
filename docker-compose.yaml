@@ -1,42 +1,23 @@
 services:
-  config-renderer:
-    image: node:22-alpine
-    container_name: traefik-config-renderer
-    env_file:
-      - .env
-    volumes:
-      - ./dynamic:/src:ro
-      - ./render-dynamic.mjs:/render-dynamic.mjs:ro
-      - traefik-dynamic-rendered:/out
-    command:
-      - node
-      - /render-dynamic.mjs
-      - /src/${ENV_TYPE:-dev}
-      - /out
-
   traefik:
     image: traefik:v3.7
     container_name: traefik
     restart: always
-    depends_on:
-      config-renderer:
-        condition: service_completed_successfully
     ports:
-      - "${TRAEFIK_WEB_PORT:-9090}:9080" # Port trafik utama (pengganti APISIX)
-      - "${TRAEFIK_DASHBOARD_PORT:-18080}:8080" # Port Dashboard Traefik
+      - "9090:9080" # Port trafik utama (pengganti APISIX)
+      - "18080:8080" # Port Dashboard Traefik
     volumes:
       # Agar Traefik bisa membaca container Docker lain
       - /var/run/docker.sock:/var/run/docker.sock:ro
       # File konfigurasi utama
       - ./traefik.yml:/etc/traefik/traefik.yml:ro
-      # Folder routing hasil render dari .env
-      - traefik-dynamic-rendered:/etc/traefik/dynamic:ro
+      # Folder untuk file routing (perawat, dokter, dev, prod)
+      - ./dynamic/${ENV_TYPE}:/etc/traefik/dynamic:ro
+    environment:
+      - ENV_TYPE=${ENV_TYPE:-dev}
     networks:
       - traefik-net
 
 networks:
   traefik-net:
     driver: bridge # Docker akan otomatis membuat network ini jika belum ada
-
-volumes:
-  traefik-dynamic-rendered:
