@@ -10,7 +10,6 @@
 # ============================================================
 
 http:
- 
   routers:
     bagian_bed_side_theaching_1:
       rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"

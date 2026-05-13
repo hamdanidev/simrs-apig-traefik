@@ -1,5 +1,5 @@
 http:
-   routers:
+  routers:
     internal_peminjaman_1:
       rule: "PathPrefix(`/v1.0/cssd/peminjaman/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
@@ -28,8 +28,8 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-  services:
-    service-cssd:
-      loadBalancer:
-        servers:
-          - url: "http://192.168.18.152:9107"
+    services:
+      service-cssd:
+        loadBalancer:
+          servers:
+            - url: "http://192.168.18.152:9107"

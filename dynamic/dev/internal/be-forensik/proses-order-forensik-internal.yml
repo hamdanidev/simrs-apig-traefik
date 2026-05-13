@@ -1,5 +1,5 @@
 http:
-   routers:
+  routers:
     forensik_order_1:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-forensik
@@ -71,8 +71,8 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-  services:
-    service-forensik:
-      loadBalancer:
-        servers:
-          - url: "http://192.168.18.152:9085"
+    services:
+      service-forensik:
+        loadBalancer:
+          servers:
+            - url: "http://192.168.18.152:9085"

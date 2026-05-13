@@ -1,5 +1,5 @@
 http:
-   routers:
+  routers:
     transfusi-darah-item_1:
       rule: "PathPrefix(`/v1.0/td/item-transfusi-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
@@ -336,8 +336,8 @@ http:
       middlewares:
         - "simrs-cors"
 
-  services:
-    service-transfusi-darah:
-      loadBalancer:
-        servers:
-          - url: "http://192.168.18.152:9081"
+    services:
+      service-transfusi-darah:
+        loadBalancer:
+          servers:
+            - url: "http://192.168.18.152:9081"
