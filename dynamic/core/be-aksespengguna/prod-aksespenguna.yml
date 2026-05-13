@@ -1,0 +1,535 @@
+http:
+  routers:
+    # AKSES PENGGUNA
+    aplikasi_1:
+      rule: "PathPrefix(`/v1.0/aplikasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    aplikasi_2:
+      rule: "PathPrefix(`/v1.0/aplikasi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    aplikasi_3:
+      rule: "PathPrefix(`/v1.0/aplikasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    aplikasi_4:
+      rule: "PathPrefix(`/v1.0/aplikasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    aplikasi_5:
+      rule: "PathPrefix(`/v1.0/aplikasi/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    aplikasi_6:
+      rule: "PathPrefix(`/v1.0/aplikasi/updateshowhomepage/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    fitur_1:
+      rule: "PathPrefix(`/v1.0/modul/fitur/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    fitur_2:
+      rule: "PathPrefix(`/v1.0/modul/fitur/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    fitur_3:
+      rule: "PathPrefix(`/v1.0/modul/fitur/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    fitur_4:
+      rule: "PathPrefix(`/v1.0/modul/fitur/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    fitur_5:
+      rule: "PathPrefix(`/v1.0/modul/fitur/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    fitur_6:
+      rule: "PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_aplikasi_1:
+      rule: "PathPrefix(`/v1.0/group/aplikasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_aplikasi_2:
+      rule: "PathPrefix(`/v1.0/group/aplikasi/getlistbykdgroup/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_aplikasi_3:
+      rule: "PathPrefix(`/v1.0/group/aplikasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_aplikasi_4:
+      rule: "PathPrefix(`/v1.0/group/aplikasi/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_aplikasi_5:
+      rule: "PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_aplikasi_6:
+      rule: "PathPrefix(`/v1.0/group/aplikasi/aktivasibyid/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_aplikasi_7:
+      rule: "PathPrefix(`/v1.0/group/aplikasi/getallbykdgroup/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_fitur_1:
+      rule: "PathPrefix(`/v1.0/group/fitur/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_fitur_2:
+      rule: "PathPrefix(`/v1.0/group/fitur/getlistbykdgroup/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_fitur_3:
+      rule: "PathPrefix(`/v1.0/group/fitur/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_fitur_4:
+      rule: "PathPrefix(`/v1.0/group/fitur/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_fitur_5:
+      rule: "PathPrefix(`/v1.0/group/fitur/aktivasibyid/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_fitur_6:
+      rule: "PathPrefix(`/v1.0/group/fitur/getallbykdgroupandkdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_fitur_7:
+      rule: "PathPrefix(`/v1.0/group/fitur/getlistbykdgroupandkdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_1:
+      rule: "PathPrefix(`/v1.0/group/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_2:
+      rule: "PathPrefix(`/v1.0/group/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_3:
+      rule: "PathPrefix(`/v1.0/group/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_4:
+      rule: "PathPrefix(`/v1.0/group/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_5:
+      rule: "PathPrefix(`/v1.0/group/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_modul_1:
+      rule: "PathPrefix(`/v1.0/group/modul/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_modul_2:
+      rule: "PathPrefix(`/v1.0/group/modul/getlistbykdgroup/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_modul_3:
+      rule: "PathPrefix(`/v1.0/group/modul/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_modul_4:
+      rule: "PathPrefix(`/v1.0/group/modul/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_modul_5:
+      rule: "PathPrefix(`/v1.0/group/modul/aktivasibyid/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_modul_6:
+      rule: "PathPrefix(`/v1.0/group/modul/getlistbykdgroupandkdaplikasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    group_modul_7:
+      rule: "PathPrefix(`/v1.0/group/modul/getallbykdgroupandkdaplikasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    modul_1:
+      rule: "PathPrefix(`/v1.0/aplikasi/modul/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    modul_2:
+      rule: "PathPrefix(`/v1.0/aplikasi/modul/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    modul_3:
+      rule: "PathPrefix(`/v1.0/aplikasi/modul/getbykdaplikasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    modul_4:
+      rule: "PathPrefix(`/v1.0/aplikasi/modul/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    modul_5:
+      rule: "PathPrefix(`/v1.0/aplikasi/modul/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    modul_6:
+      rule: "PathPrefix(`/v1.0/aplikasi/modul/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_1:
+      rule: "PathPrefix(`/v1.0/pengguna/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_2:
+      rule: "PathPrefix(`/v1.0/pengguna/getlistbykdgroup/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_3:
+      rule: "PathPrefix(`/v1.0/pengguna/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_4:
+      rule: "PathPrefix(`/v1.0/pengguna/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_5:
+      rule: "PathPrefix(`/v1.0/pengguna/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_6:
+      rule: "PathPrefix(`/v1.0/pengguna/updatepassword`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_7:
+      rule: "PathPrefix(`/v1.0/pengguna/aktivasibyid/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_8:
+      rule: "PathPrefix(`/v1.0/pengguna/login`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    pengguna_9:
+      rule: "PathPrefix(`/v1.0/pengguna/resetbyemail`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    pengguna_10:
+      rule: "PathPrefix(`/v1.0/pengguna/resetpassword`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_11:
+      rule: "PathPrefix(`/v1.0/pengguna/logout`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_12:
+      rule: "PathPrefix(`/v1.0/pengguna-root/login`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    pengguna_13:
+      rule: "PathPrefix(`/v1.0/pengguna/validate-password`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_14:
+      rule: "PathPrefix(`/v1.0/pengguna/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pengguna_15:
+      rule: "PathPrefix(`/v1.0/pengguna/updatefoto`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'

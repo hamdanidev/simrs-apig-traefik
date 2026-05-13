@@ -1,0 +1,80 @@
+http:
+
+  routers:
+    mcu_1:
+      rule: "PathPrefix(`/v1.0/mcu/order-mcu/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mcu_2:
+      rule: "PathPrefix(`/v1.0/mcu/order-mcu/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mcu_3:
+      rule: "PathPrefix(`/v1.0/mcu/order-mcu/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mcu_4:
+      rule: "PathPrefix(`/v1.0/mcu/order-mcu/update-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mcu_5:
+      rule: "PathPrefix(`/v1.0/mcu/order-mcu/update-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mcu_6:
+      rule: "PathPrefix(`/v1.0/mcu/order-mcu/update-hasil-pemeriksaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mcu_7:
+      rule: "PathPrefix(`/v1.0/mcu/order-mcu/update-kesimpulan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mcu_8:
+      rule: "PathPrefix(`/v1.0/mcu/order-mcu/send-antrian-selesai/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-mcu:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MCU_URL" }}'

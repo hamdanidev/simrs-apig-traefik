@@ -1,0 +1,16 @@
+http:
+
+  routers:
+    internal_remun_hitung_1:
+      rule: "PathPrefix(`/v1.0/remun/proses-remunerasi-bpjs`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remun-hitung
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+  services:
+    service-remun-hitung:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REMUN_HITUNG_URL" }}'

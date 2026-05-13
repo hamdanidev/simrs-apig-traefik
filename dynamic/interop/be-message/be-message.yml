@@ -1,0 +1,44 @@
+http:
+
+  routers:
+    mesage_1:
+      rule: "PathPrefix(`/v1.0/message/upload`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mesage_2:
+      rule: "PathPrefix(`/v1.0/message/send-message`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mesage_3:
+      rule: "PathPrefix(`/v1.0/message/send-image`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    mesage_4:
+      rule: "PathPrefix(`/v1.0/message/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-message:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MESSAGE_URL" }}'

@@ -1,0 +1,152 @@
+http:
+
+  routers:
+    interop_wsbpjs_1:
+      rule: "PathPrefix(`/v1.0/wsbpjs/referensi-jadwal-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_2:
+      rule: "PathPrefix(`/v1.0/wsbpjs/referensi-poli`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_3:
+      rule: "PathPrefix(`/v1.0/wsbpjs/referensi-poli-fingerprint`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_4:
+      rule: "PathPrefix(`/v1.0/wsbpjs/referensi-pasien-fingerprint`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_5:
+      rule: "PathPrefix(`/v1.0/wsbpjs/update-jawal-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_6:
+      rule: "PathPrefix(`/v1.0/wsbpjs/tambah-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_7:
+      rule: "PathPrefix(`/v1.0/wsbpjs/tambah-antrian-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_8:
+      rule: "PathPrefix(`/v1.0/wsbpjs/update-waktu-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_9:
+      rule: "PathPrefix(`/v1.0/wsbpjs/batal-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_10:
+      rule: "PathPrefix(`/v1.0/wsbpjs/list-waktu-task-id`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_11:
+      rule: "PathPrefix(`/v1.0/wsbpjs/dashboard-per-tanggal`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_12:
+      rule: "PathPrefix(`/v1.0/wsbpjs/dashboard-per-bulan`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_13:
+      rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-tanggal`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_14:
+      rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-kode-booking`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_15:
+      rule: "PathPrefix(`/v1.0/wsbpjs/antrean-belum-dilayanai`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_wsbpjs_16:
+      rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-parameters`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-ws-bpjs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_WS_BPJS_URL" }}'
