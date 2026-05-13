@@ -1,4 +1,5 @@
 http:
+
   routers:
     sirs_1:
       rule: "PathPrefix(`/v1.0/sirs-online/radiologi/laporan-kategori-item`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -131,4 +132,4 @@ http:
     service-sirs:
       loadBalancer:
         servers:
-          - url: "${SERVICE_SIRS_URL}"
+          - url: "${DEV_SERVICE_SIRS_URL}"

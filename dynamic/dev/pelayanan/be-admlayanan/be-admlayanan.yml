@@ -1,4 +1,5 @@
 http:
+
   routers:
     admlayanan_1:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
@@ -1350,4 +1351,4 @@ http:
     service-admlayanan:
       loadBalancer:
         servers:
-          - url: "${SERVICE_ADMLAYANAN_URL}" # IP Server Prod
+          - url: "${DEV_SERVICE_ADMLAYANAN_URL}" # IP Server Prod

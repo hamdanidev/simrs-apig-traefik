@@ -156,4 +156,4 @@ http:
     service-apm:
       loadBalancer:
         servers:
-          - url: "${SERVICE_APM_URL}" # IP Server Prod
+          - url: "${PROD_SERVICE_APM_URL}" # IP Server Prod

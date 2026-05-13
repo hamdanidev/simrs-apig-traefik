@@ -1197,4 +1197,4 @@ http:
     service-referensi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_REFERENSI_URL}"
+          - url: "${DEV_SERVICE_REFERENSI_URL}"

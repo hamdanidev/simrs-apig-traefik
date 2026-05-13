@@ -341,4 +341,4 @@ http:
     service-transfusi-darah:
       loadBalancer:
         servers:
-          - url: "${SERVICE_TRANSFUSI_DARAH_URL}"
+          - url: "${PROD_SERVICE_TRANSFUSI_DARAH_URL}"

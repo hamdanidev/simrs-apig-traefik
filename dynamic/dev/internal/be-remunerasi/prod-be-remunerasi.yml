@@ -1,4 +1,5 @@
 http:
+
   routers:
     # ==================== REMUNERASI ====================
     remunerasi_billing_rs_1:
@@ -389,4 +390,4 @@ http:
     service-remunerasi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_REMUNERASI_URL}"
+          - url: "${DEV_SERVICE_REMUNERASI_URL}"

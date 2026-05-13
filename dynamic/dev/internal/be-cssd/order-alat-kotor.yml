@@ -1,4 +1,5 @@
 http:
+
   routers:
     internal_order_alat_kotor_1:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/get-list-order-alat-kotor`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -109,4 +110,4 @@ http:
     service-cssd:
       loadBalancer:
         servers:
-          - url: "${SERVICE_CSSD_URL}"
+          - url: "${DEV_SERVICE_CSSD_URL}"

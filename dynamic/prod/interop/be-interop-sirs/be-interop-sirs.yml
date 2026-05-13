@@ -132,4 +132,4 @@ http:
     service-sirs:
       loadBalancer:
         servers:
-          - url: "${SERVICE_SIRS_URL}"
+          - url: "${PROD_SERVICE_SIRS_URL}"

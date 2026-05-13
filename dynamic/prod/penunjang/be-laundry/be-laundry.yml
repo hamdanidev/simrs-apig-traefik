@@ -92,4 +92,4 @@ http:
     service-laundry:
       loadBalancer:
         servers:
-          - url: "${SERVICE_LAUNDRY_URL}"
+          - url: "${PROD_SERVICE_LAUNDRY_URL}"

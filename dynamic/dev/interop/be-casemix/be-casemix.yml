@@ -1,4 +1,5 @@
 http:
+
   routers:
     case_mix_1:
       rule: "PathPrefix(`/v1.0/pasien-casemix/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -628,4 +629,4 @@ http:
     service-casemix:
       loadBalancer:
         servers:
-          - url: "${SERVICE_CASEMIX_URL}"
+          - url: "${DEV_SERVICE_CASEMIX_URL}"

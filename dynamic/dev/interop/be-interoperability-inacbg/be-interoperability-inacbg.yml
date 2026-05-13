@@ -1,4 +1,5 @@
 http:
+
   routers:
     interop_inacbgv2_1:
       rule: "PathPrefix(`/v2.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -307,8 +308,8 @@ http:
     service-inacbg:
       loadBalancer:
         servers:
-          - url: "${SERVICE_INACBG_URL}"
+          - url: "${DEV_SERVICE_INACBG_URL}"
     service-inacbgv2:
       loadBalancer:
         servers:
-          - url: "${SERVICE_INACBGV2_URL}"
+          - url: "${DEV_SERVICE_INACBGV2_URL}"

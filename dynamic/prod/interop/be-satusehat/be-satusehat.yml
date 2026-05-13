@@ -1332,4 +1332,4 @@ http:
     service-satu-sehat:
       loadBalancer:
         servers:
-          - url: "${SERVICE_SATU_SEHAT_URL}"
+          - url: "${PROD_SERVICE_SATU_SEHAT_URL}"

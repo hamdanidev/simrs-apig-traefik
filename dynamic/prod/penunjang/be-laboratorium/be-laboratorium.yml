@@ -1452,4 +1452,4 @@ http:
     service-lab:
       loadBalancer:
         servers:
-          - url: "${SERVICE_LAB_URL}"
+          - url: "${PROD_SERVICE_LAB_URL}"

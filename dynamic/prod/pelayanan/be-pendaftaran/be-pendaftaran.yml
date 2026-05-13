@@ -3221,5 +3221,5 @@ http:
     service-pendaftaran:
       loadBalancer:
         servers:
-          - url: "${SERVICE_PENDAFTARAN_URL}"
-          - url: "${SERVICE_PENDAFTARAN_BACKUP_URL}"
+          - url: "${PROD_SERVICE_PENDAFTARAN_URL}"
+          - url: "${PROD_SERVICE_PENDAFTARAN_URL_2}"

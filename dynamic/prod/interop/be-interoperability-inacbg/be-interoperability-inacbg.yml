@@ -308,8 +308,8 @@ http:
     service-inacbg:
       loadBalancer:
         servers:
-          - url: "${SERVICE_INACBG_URL}"
+          - url: "${PROD_SERVICE_INACBG_URL}"
     service-inacbgv2:
       loadBalancer:
         servers:
-          - url: "${SERVICE_INACBGV2_URL}"
+          - url: "${PROD_SERVICE_INACBGV2_URL}"

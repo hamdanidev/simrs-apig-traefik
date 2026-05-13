@@ -76,4 +76,4 @@ http:
     service-operasi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_OPERASI_URL}"
+          - url: "${PROD_SERVICE_OPERASI_URL}"

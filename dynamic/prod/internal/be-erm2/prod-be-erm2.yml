@@ -8845,5 +8845,5 @@ http:
     service-erm:
       loadBalancer:
         servers:
-          - url: "${SERVICE_ERM_URL}"
-          - url: "${SERVICE_ERM_BACKUP_URL}"
+          - url: "${PROD_SERVICE_ERM_URL}"
+          - url: "${PROD_SERVICE_ERM_URL_2}"

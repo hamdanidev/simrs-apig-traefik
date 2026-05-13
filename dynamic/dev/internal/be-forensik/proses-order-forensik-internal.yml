@@ -1,4 +1,5 @@
 http:
+
   routers:
     forensik_order_1:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -75,4 +76,4 @@ http:
     service-forensik:
       loadBalancer:
         servers:
-          - url: "${SERVICE_FORENSIK_URL}"
+          - url: "${DEV_SERVICE_FORENSIK_URL}"

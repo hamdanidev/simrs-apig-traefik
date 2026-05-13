@@ -285,4 +285,4 @@ http:
     service-ws-antrian:
       loadBalancer:
         servers:
-          - url: "${SERVICE_WS_ANTRIAN_URL}"
+          - url: "${PROD_SERVICE_WS_ANTRIAN_URL}"

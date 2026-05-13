@@ -1292,4 +1292,4 @@ http:
     service-satu-sehat-interop:
       loadBalancer:
         servers:
-          - url: "${SERVICE_SATU_SEHAT_INTEROP_URL}"
+          - url: "${PROD_SERVICE_SATU_SEHAT_INTEROP_URL}"

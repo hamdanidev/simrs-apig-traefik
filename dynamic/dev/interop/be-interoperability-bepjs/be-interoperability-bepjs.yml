@@ -1,4 +1,5 @@
 http:
+
   routers:
     antrean_rs_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/antrean/pendaftaran/kode-booking`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -499,4 +500,4 @@ http:
     service-bpjs:
       loadBalancer:
         servers:
-          - url: "${SERVICE_BPJS_URL}"
+          - url: "${DEV_SERVICE_BPJS_URL}"

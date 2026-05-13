@@ -324,4 +324,4 @@ http:
     service-ambulance:
       loadBalancer:
         servers:
-          - url: "${SERVICE_AMBULANCE_URL}"
+          - url: "${PROD_SERVICE_AMBULANCE_URL}"

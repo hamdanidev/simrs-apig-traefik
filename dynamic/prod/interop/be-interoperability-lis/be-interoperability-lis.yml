@@ -172,4 +172,4 @@ http:
     service-lis:
       loadBalancer:
         servers:
-          - url: "${SERVICE_LIS_URL}"
+          - url: "${PROD_SERVICE_LIS_URL}"

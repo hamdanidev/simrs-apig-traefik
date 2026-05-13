@@ -20,4 +20,4 @@ http:
     service-notifikasi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_NOTIFIKASI_URL}"
+          - url: "${DEV_SERVICE_NOTIFIKASI_URL}"

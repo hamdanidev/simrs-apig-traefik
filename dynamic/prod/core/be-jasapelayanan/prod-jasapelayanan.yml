@@ -479,12 +479,12 @@ http:
     service-jasa-pelayanan:
       loadBalancer:
         servers:
-          - url: "${SERVICE_JASA_PELAYANAN_URL}"
+          - url: "${PROD_SERVICE_JASA_PELAYANAN_URL}"
     service-master:
       loadBalancer:
         servers:
-          - url: "${SERVICE_MASTER_URL}"
+          - url: "${PROD_SERVICE_MASTER_URL}"
     service-referensi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_REFERENSI_URL}"
+          - url: "${PROD_SERVICE_REFERENSI_URL}"

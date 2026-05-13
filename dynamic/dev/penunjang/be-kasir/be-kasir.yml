@@ -1,4 +1,5 @@
 http:
+
   routers:
     kasir_billing_1:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -483,4 +484,4 @@ http:
     service-kasir:
       loadBalancer:
         servers:
-          - url: "${SERVICE_KASIR_URL}" # IP Server Prod
+          - url: "${DEV_SERVICE_KASIR_URL}" # IP Server Prod

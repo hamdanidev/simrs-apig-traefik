@@ -229,4 +229,4 @@ http:
     service-aset:
       loadBalancer:
         servers:
-          - url: "${SERVICE_ASET_URL}" # IP Server Prod
+          - url: "${PROD_SERVICE_ASET_URL}" # IP Server Prod

@@ -667,4 +667,4 @@ http:
     service-antrian:
       loadBalancer:
         servers:
-          - url: "${SERVICE_ANTRIAN_URL}" # IP Server Prod
+          - url: "${PROD_SERVICE_ANTRIAN_URL}" # IP Server Prod

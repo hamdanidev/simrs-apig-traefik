@@ -76,4 +76,4 @@ http:
     service-interop-message:
       loadBalancer:
         servers:
-          - url: "${SERVICE_INTEROP_MESSAGE_URL}"
+          - url: "${PROD_SERVICE_INTEROP_MESSAGE_URL}"

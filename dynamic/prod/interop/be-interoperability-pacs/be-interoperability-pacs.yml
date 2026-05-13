@@ -84,4 +84,4 @@ http:
     service-pacs:
       loadBalancer:
         servers:
-          - url: "${SERVICE_PACS_URL}"
+          - url: "${PROD_SERVICE_PACS_URL}"

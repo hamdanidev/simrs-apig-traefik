@@ -1,4 +1,5 @@
 http:
+
   routers:
     interop_lis_1:
       rule: "PathPrefix(`/v1.0/lis/demographics/get-list-demographics`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -171,4 +172,4 @@ http:
     service-lis:
       loadBalancer:
         servers:
-          - url: "${SERVICE_LIS_URL}"
+          - url: "${DEV_SERVICE_LIS_URL}"

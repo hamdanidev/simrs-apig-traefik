@@ -629,4 +629,4 @@ http:
     service-casemix:
       loadBalancer:
         servers:
-          - url: "${SERVICE_CASEMIX_URL}"
+          - url: "${PROD_SERVICE_CASEMIX_URL}"

@@ -33,4 +33,4 @@ http:
     service-cssd:
       loadBalancer:
         servers:
-          - url: "${SERVICE_CSSD_URL}"
+          - url: "${PROD_SERVICE_CSSD_URL}"

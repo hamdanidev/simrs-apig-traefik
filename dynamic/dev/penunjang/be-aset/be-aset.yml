@@ -1,4 +1,5 @@
 http:
+
   routers:
     bed_1:
       rule: "PathPrefix(`/v1.0/kamar/bed/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -228,4 +229,4 @@ http:
     service-aset:
       loadBalancer:
         servers:
-          - url: "${SERVICE_ASET_URL}" # IP Server Prod
+          - url: "${DEV_SERVICE_ASET_URL}" # IP Server Prod

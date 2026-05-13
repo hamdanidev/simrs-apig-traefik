@@ -12,4 +12,4 @@ http:
     service-remun-hitung:
       loadBalancer:
         servers:
-          - url: "${SERVICE_REMUN_HITUNG_URL}"
+          - url: "${PROD_SERVICE_REMUN_HITUNG_URL}"

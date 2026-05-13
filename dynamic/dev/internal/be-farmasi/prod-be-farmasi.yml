@@ -1,4 +1,5 @@
 http:
+
   routers:
     barang_farmasi_bebas_1:
       rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -2734,4 +2735,4 @@ http:
     service-farmasi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_FARMASI_URL}"
+          - url: "${DEV_SERVICE_FARMASI_URL}"

@@ -68,4 +68,4 @@ http:
     service-gizi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_GIZI_URL}"
+          - url: "${DEV_SERVICE_GIZI_URL}"

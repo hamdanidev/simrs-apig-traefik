@@ -420,4 +420,4 @@ http:
     service-radiologi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_RADIOLOGI_URL}"
+          - url: "${PROD_SERVICE_RADIOLOGI_URL}"

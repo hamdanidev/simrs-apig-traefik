@@ -1,4 +1,6 @@
 http:
+
+
   routers:
     # JASA PELAYANAN
     jenis_pelayanan_kris_1:
@@ -477,12 +479,12 @@ http:
     service-jasa-pelayanan:
       loadBalancer:
         servers:
-          - url: "${SERVICE_JASA_PELAYANAN_URL}"
+          - url: "${DEV_SERVICE_JASA_PELAYANAN_URL}"
     service-master:
       loadBalancer:
         servers:
-          - url: "${SERVICE_MASTER_URL}"
+          - url: "${DEV_SERVICE_MASTER_URL}"
     service-referensi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_REFERENSI_URL}"
+          - url: "${DEV_SERVICE_REFERENSI_URL}"

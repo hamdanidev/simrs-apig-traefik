@@ -69,4 +69,4 @@ http:
     service-mcu:
       loadBalancer:
         servers:
-          - url: "${SERVICE_MCU_URL}"
+          - url: "${PROD_SERVICE_MCU_URL}"

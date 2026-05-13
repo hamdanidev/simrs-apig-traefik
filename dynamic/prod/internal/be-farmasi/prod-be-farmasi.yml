@@ -2735,5 +2735,5 @@ http:
     service-farmasi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_FARMASI_URL}"
-          - url: "${SERVICE_FARMASI_BACKUP_URL}"
+          - url: "${PROD_SERVICE_FARMASI_URL}"
+          - url: "${PROD_SERVICE_FARMASI_URL_2}"

@@ -500,4 +500,4 @@ http:
     service-bpjs:
       loadBalancer:
         servers:
-          - url: "${SERVICE_BPJS_URL}"
+          - url: "${PROD_SERVICE_BPJS_URL}"

@@ -133,4 +133,4 @@ http:
     service-ws-bpjs:
       loadBalancer:
         servers:
-          - url: "${SERVICE_WS_BPJS_URL}"
+          - url: "${PROD_SERVICE_WS_BPJS_URL}"

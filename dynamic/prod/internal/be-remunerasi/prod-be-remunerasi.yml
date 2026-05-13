@@ -390,4 +390,4 @@ http:
     service-remunerasi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_REMUNERASI_URL}"
+          - url: "${PROD_SERVICE_REMUNERASI_URL}"

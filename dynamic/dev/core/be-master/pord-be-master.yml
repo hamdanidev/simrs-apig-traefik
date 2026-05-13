@@ -1,4 +1,6 @@
 http:
+
+
   routers:
     # MASTER
     alat_cssd_1:
@@ -917,4 +919,4 @@ http:
     service-master:
       loadBalancer:
         servers:
-          - url: "${SERVICE_MASTER_URL}"
+          - url: "${DEV_SERVICE_MASTER_URL}"

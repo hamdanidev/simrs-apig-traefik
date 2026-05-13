@@ -479,4 +479,4 @@ http:
     service-aksespengguna:
       loadBalancer:
         servers:
-          - url: "${SERVICE_AKSESPENGGUNA_URL}"
+          - url: "${PROD_SERVICE_AKSESPENGGUNA_URL}"

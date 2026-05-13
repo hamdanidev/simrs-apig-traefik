@@ -919,4 +919,4 @@ http:
     service-master:
       loadBalancer:
         servers:
-          - url: "${SERVICE_MASTER_URL}"
+          - url: "${PROD_SERVICE_MASTER_URL}"

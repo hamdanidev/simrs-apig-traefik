@@ -180,4 +180,4 @@ http:
     service-sarpras:
       loadBalancer:
         servers:
-          - url: "${SERVICE_SARPRAS_URL}"
+          - url: "${PROD_SERVICE_SARPRAS_URL}"

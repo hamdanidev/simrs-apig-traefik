@@ -2380,4 +2380,4 @@ http:
     service-kepegawaian:
       loadBalancer:
         servers:
-          - url: "${SERVICE_KEPEGAWAIAN_URL}"
+          - url: "${DEV_SERVICE_KEPEGAWAIAN_URL}"

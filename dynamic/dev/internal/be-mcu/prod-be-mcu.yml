@@ -1,4 +1,5 @@
 http:
+
   routers:
     mcu_1:
       rule: "PathPrefix(`/v1.0/mcu/order-mcu/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -68,4 +69,4 @@ http:
     service-mcu:
       loadBalancer:
         servers:
-          - url: "${SERVICE_MCU_URL}"
+          - url: "${DEV_SERVICE_MCU_URL}"

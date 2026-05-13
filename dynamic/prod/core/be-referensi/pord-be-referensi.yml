@@ -1198,4 +1198,4 @@ http:
     service-referensi:
       loadBalancer:
         servers:
-          - url: "${SERVICE_REFERENSI_URL}"
+          - url: "${PROD_SERVICE_REFERENSI_URL}"

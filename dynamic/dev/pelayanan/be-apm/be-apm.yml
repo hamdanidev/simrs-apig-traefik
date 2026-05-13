@@ -1,4 +1,5 @@
 http:
+
   routers:
     antrian_loket_1:
       rule: "PathPrefix(`/v1.0/antrianloket/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
@@ -155,4 +156,4 @@ http:
     service-apm:
       loadBalancer:
         servers:
-          - url: "${SERVICE_APM_URL}" # IP Server Prod
+          - url: "${DEV_SERVICE_APM_URL}" # IP Server Prod

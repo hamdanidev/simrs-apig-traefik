@@ -37,4 +37,4 @@ http:
     service-message:
       loadBalancer:
         servers:
-          - url: "${SERVICE_MESSAGE_URL}"
+          - url: "${PROD_SERVICE_MESSAGE_URL}"

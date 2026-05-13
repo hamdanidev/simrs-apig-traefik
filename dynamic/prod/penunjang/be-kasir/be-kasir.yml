@@ -484,4 +484,4 @@ http:
     service-kasir:
       loadBalancer:
         servers:
-          - url: "${SERVICE_KASIR_URL}" # IP Server Prod
+          - url: "${PROD_SERVICE_KASIR_URL}" # IP Server Prod

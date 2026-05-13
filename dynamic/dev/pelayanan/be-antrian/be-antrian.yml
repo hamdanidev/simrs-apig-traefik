@@ -1,4 +1,5 @@
 http:
+
   routers:
     farmasi_1:
       rule: "PathPrefix(`/v1.0/farmasi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -666,4 +667,4 @@ http:
     service-antrian:
       loadBalancer:
         servers:
-          - url: "${SERVICE_ANTRIAN_URL}" # IP Server Prod
+          - url: "${DEV_SERVICE_ANTRIAN_URL}" # IP Server Prod

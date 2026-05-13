@@ -1,4 +1,5 @@
 http:
+
   routers:
     allergy_intolerance_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -1331,4 +1332,4 @@ http:
     service-satu-sehat:
       loadBalancer:
         servers:
-          - url: "${SERVICE_SATU_SEHAT_URL}"
+          - url: "${DEV_SERVICE_SATU_SEHAT_URL}"

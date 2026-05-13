@@ -12,4 +12,4 @@ http:
     service-log-monitoring:
       loadBalancer:
         servers:
-          - url: "${SERVICE_LOG_MONITORING_URL}"
+          - url: "${PROD_SERVICE_LOG_MONITORING_URL}"

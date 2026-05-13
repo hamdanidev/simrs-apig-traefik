@@ -1,4 +1,5 @@
 http:
+
   routers:
     transfusi-darah-item_1:
       rule: "PathPrefix(`/v1.0/td/item-transfusi-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -340,4 +341,4 @@ http:
     service-transfusi-darah:
       loadBalancer:
         servers:
-          - url: "${SERVICE_TRANSFUSI_DARAH_URL}"
+          - url: "${DEV_SERVICE_TRANSFUSI_DARAH_URL}"
