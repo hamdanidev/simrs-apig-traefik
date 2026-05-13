@@ -1517,7 +1517,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     polygon_2:
       rule: "PathPrefix(`/v1.0/kepegawaian/polygon/create`) && (Method(`POST`) || Method(`OPTIONS`))"
