@@ -68,4 +68,4 @@ http:
     service-bed:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.61:8087" # IP Server Prod
+          - url: "${SERVICE_BED_URL}" # IP Server Prod

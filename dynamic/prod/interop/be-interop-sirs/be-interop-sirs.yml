@@ -132,4 +132,4 @@ http:
     service-sirs:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9101"
+          - url: "${SERVICE_SIRS_URL}"

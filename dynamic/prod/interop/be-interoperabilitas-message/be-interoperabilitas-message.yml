@@ -76,4 +76,4 @@ http:
     service-interop-message:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9105"
+          - url: "${SERVICE_INTEROP_MESSAGE_URL}"

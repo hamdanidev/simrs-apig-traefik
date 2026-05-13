@@ -1332,4 +1332,4 @@ http:
     service-satu-sehat:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9102"
+          - url: "${SERVICE_SATU_SEHAT_URL}"

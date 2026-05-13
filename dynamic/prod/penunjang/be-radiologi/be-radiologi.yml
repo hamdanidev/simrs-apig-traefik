@@ -420,4 +420,4 @@ http:
     service-radiologi:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.61:8098"
+          - url: "${SERVICE_RADIOLOGI_URL}"

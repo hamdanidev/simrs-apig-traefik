@@ -76,4 +76,4 @@ http:
     service-operasi:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.61:8099"
+          - url: "${SERVICE_OPERASI_URL}"

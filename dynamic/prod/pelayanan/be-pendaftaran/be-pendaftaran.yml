@@ -3221,5 +3221,5 @@ http:
     service-pendaftaran:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.24:8092"
-          - url: "http://22.22.22.126:8092"
+          - url: "${SERVICE_PENDAFTARAN_URL}"
+          - url: "${SERVICE_PENDAFTARAN_BACKUP_URL}"

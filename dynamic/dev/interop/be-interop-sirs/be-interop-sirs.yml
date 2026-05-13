@@ -131,4 +131,4 @@ http:
     service-sirs:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9101"
+          - url: "${SERVICE_SIRS_URL}"

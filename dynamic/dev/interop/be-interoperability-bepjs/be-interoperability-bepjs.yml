@@ -499,4 +499,4 @@ http:
     service-bpjs:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:8088"
+          - url: "${SERVICE_BPJS_URL}"

@@ -2380,4 +2380,4 @@ http:
     service-kepegawaian:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.154:8084"
+          - url: "${SERVICE_KEPEGAWAIAN_URL}"

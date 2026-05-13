@@ -1979,4 +1979,4 @@ http:
     service-rekam-medis:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:8086"
+          - url: "${SERVICE_REKAM_MEDIS_URL}"

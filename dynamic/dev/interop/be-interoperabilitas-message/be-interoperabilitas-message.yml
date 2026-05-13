@@ -75,4 +75,4 @@ http:
     service-interop-message:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9105"
+          - url: "${SERVICE_INTEROP_MESSAGE_URL}"

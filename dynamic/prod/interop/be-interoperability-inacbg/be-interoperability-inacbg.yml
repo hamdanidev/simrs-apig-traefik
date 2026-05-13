@@ -308,8 +308,8 @@ http:
     service-inacbg:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9082"
+          - url: "${SERVICE_INACBG_URL}"
     service-inacbgv2:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9082"
+          - url: "${SERVICE_INACBGV2_URL}"

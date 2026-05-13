@@ -1331,4 +1331,4 @@ http:
     service-satu-sehat:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9102"
+          - url: "${SERVICE_SATU_SEHAT_URL}"

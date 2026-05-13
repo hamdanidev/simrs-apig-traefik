@@ -172,4 +172,4 @@ http:
     service-lis:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9088"
+          - url: "${SERVICE_LIS_URL}"

@@ -116,4 +116,4 @@ http:
     service-forensik:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:9085"
+          - url: "${SERVICE_FORENSIK_URL}"

@@ -919,4 +919,4 @@ http:
     service-master:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.57:8090"
+          - url: "${SERVICE_MASTER_URL}"

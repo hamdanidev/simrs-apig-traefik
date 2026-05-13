@@ -479,4 +479,4 @@ http:
     service-aksespengguna:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.57:8085"
+          - url: "${SERVICE_AKSESPENGGUNA_URL}"

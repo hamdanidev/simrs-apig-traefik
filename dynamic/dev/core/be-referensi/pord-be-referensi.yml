@@ -1197,4 +1197,4 @@ http:
     service-referensi:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.153:8081"
+          - url: "${SERVICE_REFERENSI_URL}"

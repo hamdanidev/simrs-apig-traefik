@@ -132,4 +132,4 @@ http:
     service-ws-bpjs:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:8088"
+          - url: "${SERVICE_WS_BPJS_URL}"

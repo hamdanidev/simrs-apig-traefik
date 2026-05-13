@@ -92,4 +92,4 @@ http:
     service-laundry:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.61:9110"
+          - url: "${SERVICE_LAUNDRY_URL}"

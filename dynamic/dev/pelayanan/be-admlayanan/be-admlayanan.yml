@@ -1350,4 +1350,4 @@ http:
     service-admlayanan:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.151:8093" # IP Server Prod
+          - url: "${SERVICE_ADMLAYANAN_URL}" # IP Server Prod

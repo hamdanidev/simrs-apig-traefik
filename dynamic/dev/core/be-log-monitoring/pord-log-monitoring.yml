@@ -11,4 +11,4 @@ http:
     service-log-monitoring:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.153:9104"
+          - url: "${SERVICE_LOG_MONITORING_URL}"

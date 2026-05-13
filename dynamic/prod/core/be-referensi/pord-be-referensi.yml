@@ -1198,4 +1198,4 @@ http:
     service-referensi:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.57:8081"
+          - url: "${SERVICE_REFERENSI_URL}"

@@ -20,4 +20,4 @@ http:
     service-notifikasi:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.154:9099"
+          - url: "${SERVICE_NOTIFIKASI_URL}"

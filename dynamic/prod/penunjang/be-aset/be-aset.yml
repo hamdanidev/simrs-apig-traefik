@@ -229,4 +229,4 @@ http:
     service-aset:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.61:8083" # IP Server Prod
+          - url: "${SERVICE_ASET_URL}" # IP Server Prod

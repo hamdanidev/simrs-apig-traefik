@@ -54,4 +54,4 @@ http:
     service-kesling:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.61:9109"
+          - url: "${SERVICE_KESLING_URL}"

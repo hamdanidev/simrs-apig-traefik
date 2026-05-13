@@ -8844,4 +8844,4 @@ http:
     service-erm:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:8094"
+          - url: "${SERVICE_ERM_URL}"

@@ -8845,5 +8845,5 @@ http:
     service-erm:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:8094"
-          - url: "http://22.22.22.127:8094"
+          - url: "${SERVICE_ERM_URL}"
+          - url: "${SERVICE_ERM_BACKUP_URL}"

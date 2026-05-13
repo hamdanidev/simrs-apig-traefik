@@ -69,4 +69,4 @@ http:
     service-mcu:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:9103"
+          - url: "${SERVICE_MCU_URL}"

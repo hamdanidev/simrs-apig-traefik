@@ -25,4 +25,4 @@ http:
     service-cssd:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9107"
+          - url: "${SERVICE_CSSD_URL}"

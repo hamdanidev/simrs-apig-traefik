@@ -1,0 +1,6 @@
+FROM alpine:3.20
+
+RUN apk add --no-cache gettext
+
+COPY scripts/render-dynamic.sh /usr/local/bin/render-dynamic.sh
+RUN chmod +x /usr/local/bin/render-dynamic.sh

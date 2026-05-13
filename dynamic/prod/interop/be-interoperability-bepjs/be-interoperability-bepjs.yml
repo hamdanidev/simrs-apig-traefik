@@ -500,4 +500,4 @@ http:
     service-bpjs:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:8088"
+          - url: "${SERVICE_BPJS_URL}"

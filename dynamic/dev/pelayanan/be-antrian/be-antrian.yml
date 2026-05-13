@@ -666,4 +666,4 @@ http:
     service-antrian:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.151:8089" # IP Server Prod
+          - url: "${SERVICE_ANTRIAN_URL}" # IP Server Prod

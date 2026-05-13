@@ -1291,4 +1291,4 @@ http:
     service-satu-sehat-interop:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9096"
+          - url: "${SERVICE_SATU_SEHAT_INTEROP_URL}"

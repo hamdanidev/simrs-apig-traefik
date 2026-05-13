@@ -4458,4 +4458,4 @@ http:
     service-diklat:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:9086"
+          - url: "${SERVICE_DIKLAT_URL}"

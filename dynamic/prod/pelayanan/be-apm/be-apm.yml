@@ -156,4 +156,4 @@ http:
     service-apm:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.24:8082" # IP Server Prod
+          - url: "${SERVICE_APM_URL}" # IP Server Prod

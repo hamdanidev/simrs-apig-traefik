@@ -628,4 +628,4 @@ http:
     service-casemix:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9083"
+          - url: "${SERVICE_CASEMIX_URL}"

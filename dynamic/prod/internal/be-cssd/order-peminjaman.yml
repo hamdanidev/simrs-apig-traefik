@@ -110,4 +110,4 @@ http:
     service-cssd:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:9107"
+          - url: "${SERVICE_CSSD_URL}"

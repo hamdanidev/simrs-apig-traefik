@@ -307,8 +307,8 @@ http:
     service-inacbg:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9082"
+          - url: "${SERVICE_INACBG_URL}"
     service-inacbgv2:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.155:9082"
+          - url: "${SERVICE_INACBGV2_URL}"

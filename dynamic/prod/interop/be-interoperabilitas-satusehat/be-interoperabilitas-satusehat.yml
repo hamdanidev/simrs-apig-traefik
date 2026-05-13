@@ -1292,4 +1292,4 @@ http:
     service-satu-sehat-interop:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9096"
+          - url: "${SERVICE_SATU_SEHAT_INTEROP_URL}"

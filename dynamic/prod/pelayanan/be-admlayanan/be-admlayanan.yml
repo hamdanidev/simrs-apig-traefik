@@ -1351,5 +1351,5 @@ http:
     service-admlayanan:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.24:8093" # IP Server Prod
-          - url: "http://22.22.22.129:8093" # IP Server Prod cadangan
+          - url: "${SERVICE_ADMLAYANAN_URL}" # IP Server Prod
+          - url: "${SERVICE_ADMLAYANAN_BACKUP_URL}" # IP Server Prod cadangan

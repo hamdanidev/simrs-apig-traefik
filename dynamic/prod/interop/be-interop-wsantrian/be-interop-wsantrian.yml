@@ -285,4 +285,4 @@ http:
     service-ws-antrian:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9080"
+          - url: "${SERVICE_WS_ANTRIAN_URL}"

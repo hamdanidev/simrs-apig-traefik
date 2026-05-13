@@ -389,4 +389,4 @@ http:
     service-remunerasi:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9089"
+          - url: "${SERVICE_REMUNERASI_URL}"

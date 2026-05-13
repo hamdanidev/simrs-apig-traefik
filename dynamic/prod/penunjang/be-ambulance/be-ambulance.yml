@@ -324,4 +324,4 @@ http:
     service-ambulance:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.61:9092"
+          - url: "${SERVICE_AMBULANCE_URL}"

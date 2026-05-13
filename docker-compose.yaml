@@ -1,8 +1,27 @@
 services:
+  render-dynamic:
+    build:
+      context: .
+      dockerfile: Dockerfile.renderer
+    container_name: traefik-config-renderer
+    env_file:
+      - .env
+    environment:
+      - ENV_TYPE=${ENV_TYPE:-dev}
+    volumes:
+      - ./dynamic/${ENV_TYPE:-dev}:/templates:ro
+      - ./dynamic/rendered:/rendered
+    command: ["/usr/local/bin/render-dynamic.sh"]
+    networks:
+      - traefik-net
+
   traefik:
     image: traefik:v3.7
     container_name: traefik
     restart: always
+    depends_on:
+      render-dynamic:
+        condition: service_completed_successfully
     ports:
       - "9090:9080" # Port trafik utama (pengganti APISIX)
       - "18080:8080" # Port Dashboard Traefik
@@ -11,10 +30,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       # File konfigurasi utama
       - ./traefik.yml:/etc/traefik/traefik.yml:ro
-      # Folder untuk file routing (perawat, dokter, dev, prod)
-      - ./dynamic/${ENV_TYPE}:/etc/traefik/dynamic:ro
-    environment:
-      - ENV_TYPE=${ENV_TYPE:-dev}
+      # Hasil render dari dynamic/${ENV_TYPE}; flat agar Traefik file provider tidak error di subfolder.
+      - ./dynamic/rendered:/etc/traefik/dynamic:ro
     networks:
       - traefik-net
 

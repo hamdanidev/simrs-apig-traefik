@@ -477,4 +477,4 @@ http:
     service-aksespengguna:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.153:8085"
+          - url: "${SERVICE_AKSESPENGGUNA_URL}"

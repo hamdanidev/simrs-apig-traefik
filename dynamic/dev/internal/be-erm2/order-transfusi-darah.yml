@@ -340,4 +340,4 @@ http:
     service-transfusi-darah:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.152:9081"
+          - url: "${SERVICE_TRANSFUSI_DARAH_URL}"

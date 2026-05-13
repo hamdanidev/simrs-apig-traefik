@@ -180,4 +180,4 @@ http:
     service-sarpras:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:9111"
+          - url: "${SERVICE_SARPRAS_URL}"

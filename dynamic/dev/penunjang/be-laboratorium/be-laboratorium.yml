@@ -1452,4 +1452,4 @@ http:
     service-lab:
       loadBalancer:
         servers:
-          - url: "http://192.168.18.154:9091"
+          - url: "${SERVICE_LAB_URL}"

@@ -2735,5 +2735,5 @@ http:
     service-farmasi:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:8097"
-          - url: "http://22.22.22.125:8097"
+          - url: "${SERVICE_FARMASI_URL}"
+          - url: "${SERVICE_FARMASI_BACKUP_URL}"

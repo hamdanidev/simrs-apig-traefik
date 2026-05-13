@@ -220,4 +220,4 @@ http:
     service-gas-medis:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.59:9108"
+          - url: "${SERVICE_GAS_MEDIS_URL}"

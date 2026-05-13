@@ -37,4 +37,4 @@ http:
     service-message:
       loadBalancer:
         servers:
-          - url: "http://22.22.22.23:9113"
+          - url: "${SERVICE_MESSAGE_URL}"
