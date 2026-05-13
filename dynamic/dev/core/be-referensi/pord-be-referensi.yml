@@ -18,7 +18,12 @@ http:
           - "*"
         accessControlMaxAge: 100
         addVaryHeader: true
-
+    simrs-auth:
+      plugin:
+        jwt:
+          secret: "5abdc4fe9a6229eb589fcb3d35f6fe3844e3ed8f33ef88b3328c23962534252c"
+          authHeaderName: "Authorization"
+          authHeaderValuePrefix: ""
   routers:
     agama_1:
       rule: "PathPrefix(`/v1.0/agama/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -403,6 +408,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        - "simrs-auth"
 
     kategori_kamar_2:
       rule: "PathPrefix(`/v1.0/kategorikamar/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
