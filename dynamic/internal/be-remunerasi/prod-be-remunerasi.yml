@@ -1,0 +1,441 @@
+http:
+
+  routers:
+    # ==================== REMUNERASI ====================
+    remunerasi_billing_rs_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_2:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_3:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_4:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_5:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/delete-by-no-registrasi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_6:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/item/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_7:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/item/get-by-id-item/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_8:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/item/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_9:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/item/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_10:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/item/delete-by-id-item/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing_rs_11:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-rs/import-data-billing`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_index_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/index-remun/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_index_2:
+      rule: "PathPrefix(`/v1.0/remunerasi/index-remun/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_index_3:
+      rule: "PathPrefix(`/v1.0/remunerasi/index-remun/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_index_4:
+      rule: "PathPrefix(`/v1.0/remunerasi/index-remun/replikasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_index_5:
+      rule: "PathPrefix(`/v1.0/remunerasi/index-remun/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_index_6:
+      rule: "PathPrefix(`/v1.0/remunerasi/index-remun/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_bpjs_tindakan_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/remun-bpjs-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umum_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/remun-umum`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_remunerasi_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/remunerasi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_remunerasi_2:
+      rule: "PathPrefix(`/v1.0/remunerasi/remunerasi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_remunerasi_3:
+      rule: "PathPrefix(`/v1.0/remunerasi/remunerasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_remunerasi_4:
+      rule: "PathPrefix(`/v1.0/remunerasi/remunerasi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_remunerasi_5:
+      rule: "PathPrefix(`/v1.0/remunerasi/remunerasi/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_spj_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/spj/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_spj_2:
+      rule: "PathPrefix(`/v1.0/remunerasi/spj/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_spj_3:
+      rule: "PathPrefix(`/v1.0/remunerasi/spj/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_spj_4:
+      rule: "PathPrefix(`/v1.0/remunerasi/spj/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_spj_5:
+      rule: "PathPrefix(`/v1.0/remunerasi/spj/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_spj_6:
+      rule: "PathPrefix(`/v1.0/remunerasi/spj/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_spj_7:
+      rule: "PathPrefix(`/v1.0/remunerasi/spj/hitung-perhitungan-remun`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_transfer_billing_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/transfer-billing`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_transfer_farmasi_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/remun-farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_2:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_3:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_4:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_5:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/delete-by-no-registrasi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_6:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/import-data-umbal`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_7:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/update-remun`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_8:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/batal-remun/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_umbal_bpjs_9:
+      rule: "PathPrefix(`/v1.0/remunerasi/umbal-bpjs/batal-remun-select`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_data_umbal_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/data-umbal/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_data_umbal_2:
+      rule: "PathPrefix(`/v1.0/remunerasi/data-umbal/finalisasi-hitungan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_upload_billing_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-billing/upload-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_upload_billing_2:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-billing/get-by-nosep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_upload_potongan_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-potongan-bpjs/upload-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_upload_potongan_2:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-potongan-bpjs/get-by-nip/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-remunerasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REMUNERASI_URL" }}'

@@ -1,0 +1,16 @@
+http:
+
+  routers:
+    core_log_monitoring_router:
+      rule: "PathPrefix(`/v1.0/log-monitoring/log/get-list/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-log-monitoring
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+  services:
+    service-log-monitoring:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_LOG_MONITORING_URL" }}'
