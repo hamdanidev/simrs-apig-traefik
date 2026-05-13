@@ -13,3 +13,9 @@ providers:
   file:
     directory: /etc/traefik/dynamic
     watch: true # <--- Kunci agar perubahan otomatis muncul di dashboard
+  
+experimental:
+  plugins:
+    jwt:
+      moduleName: github.com/tpaulus/jwt-middleware
+      version: v1.1.10
