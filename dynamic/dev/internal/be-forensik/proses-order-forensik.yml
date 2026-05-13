@@ -1,23 +1,4 @@
 http:
-  middlewares:
-    simrs-cors:
-      headers:
-        accessControlAllowMethods:
-          - "GET"
-          - "POST"
-          - "PUT"
-          - "DELETE"
-          - "OPTIONS"
-        accessControlAllowHeaders:
-          - "Authorization"
-          - "Content-Type"
-          - "X-Requested-With"
-          - "X-Rs-Code"
-          - "Req-Id"
-        accessControlAllowOriginList:
-          - "*"
-        accessControlMaxAge: 100
-        addVaryHeader: true
   routers:
     forensik_order_internal_1:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -130,8 +111,8 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-  services:
-    service-forensik:
-      loadBalancer:
-        servers:
-          - url: "http://192.168.18.152:9085"
+    services:
+      service-forensik:
+        loadBalancer:
+          servers:
+            - url: "http://192.168.18.152:9085"

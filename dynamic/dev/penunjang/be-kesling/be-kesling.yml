@@ -1,25 +1,4 @@
 http:
-  middlewares:
-    simrs-cors:
-      headers:
-        accessControlAllowMethods:
-          - "GET"
-          - "POST"
-          - "PUT"
-          - "DELETE"
-          - "OPTIONS"
-        accessControlAllowHeaders:
-          - "Authorization"
-          - "Content-Type"
-          - "X-Requested-With"
-          - "X-Rs-Code"
-          - "Req-Id"
-        accessControlAllowOriginList:
-          - "*"
-        accessControlMaxAge: 100
-        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
-        addVaryHeader: true
-
   routers:
     order_kesling_1:
       rule: "PathPrefix(`/v1.0/kesling/order-kesling/get-list-order-kesling`) && (Method(`GET`) || Method(`OPTIONS`))"
