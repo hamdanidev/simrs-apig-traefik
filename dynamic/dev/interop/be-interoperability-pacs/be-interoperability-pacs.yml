@@ -1,0 +1,106 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    interop_pacs_1:
+      rule: "PathPrefix(`/v1.0/pacs/order/get-list-order`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_2:
+      rule: "PathPrefix(`/v1.0/pacs/report/get-list-report`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_3:
+      rule: "PathPrefix(`/v1.0/pacs/order/get-by-accession-num/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_4:
+      rule: "PathPrefix(`/v1.0/pacs/report/get-by-accession-num/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_5:
+      rule: "PathPrefix(`/v1.0/pacs/order/create-order`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_6:
+      rule: "PathPrefix(`/v1.0/pacs/report/create-report`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_7:
+      rule: "PathPrefix(`/v1.0/pacs/order/delete-order/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_8:
+      rule: "PathPrefix(`/v1.0/pacs/report/delete-report/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_9:
+      rule: "PathPrefix(`/v1.0/pacs/get-by-patient-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    interop_pacs_10:
+      rule: "PathPrefix(`/v1.0/pacs/update-patient-id/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-pacs:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.18.155:9084"

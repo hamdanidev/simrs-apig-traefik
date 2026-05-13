@@ -1,0 +1,90 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
+        addVaryHeader: true
+  routers:
+    gizi_1:
+      rule: "PathPrefix(`/v1.0/gizi/proses-makanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-gizi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    gizi_2:
+      rule: "PathPrefix(`/v1.0/gizi/proses-makanan/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-gizi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    gizi_3:
+      rule: "PathPrefix(`/v1.0/gizi/proses-makanan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-gizi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    gizi_4:
+      rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-status-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-gizi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    gizi_5:
+      rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-status-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-gizi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    gizi_6:
+      rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-ceklis`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-gizi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    gizi_7:
+      rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-ceklis-alat-makan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-gizi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    gizi_8:
+      rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-status-pengembalian-alat`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-gizi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+  services:
+    service-gizi:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.18.154:9106"
