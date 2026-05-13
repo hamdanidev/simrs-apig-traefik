@@ -1,0 +1,7 @@
+http:
+  simrs-auth:
+    plugin:
+      jwt:
+        Secret: "5abdc4fe9a6229eb589fcb3d35f6fe3844e3ed8f33ef88b3328c23962534252c"
+        AuthorizationHeader: "Authorization"
+        HeaderPrefix: ""
