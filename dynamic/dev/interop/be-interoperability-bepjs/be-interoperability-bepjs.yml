@@ -1,24 +1,5 @@
 http:
-  middlewares:
-    simrs-cors:
-      headers:
-        accessControlAllowMethods:
-          - "GET"
-          - "POST"
-          - "PUT"
-          - "DELETE"
-          - "OPTIONS"
-        accessControlAllowHeaders:
-          - "Authorization"
-          - "Content-Type"
-          - "X-Requested-With"
-          - "X-Rs-Code"
-          - "Req-Id"
-        accessControlAllowOriginList:
-          - "*"
-        accessControlMaxAge: 100
-        # Tambahkan baris di bawah ini untuk memastikan header Auth diizinkan
-        addVaryHeader: true
+
   routers:
     antrean_rs_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/antrean/pendaftaran/kode-booking`) && (Method(`POST`) || Method(`OPTIONS`))"
