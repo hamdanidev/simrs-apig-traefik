@@ -666,7 +666,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     konfigurasi_2:
       rule: "PathPrefix(`/v1.0/konfigurasi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -675,7 +674,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     konfigurasi_3:
       rule: "PathPrefix(`/v1.0/konfigurasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -684,7 +682,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     konfigurasi_4:
       rule: "PathPrefix(`/v1.0/konfigurasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -693,7 +690,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     konfigurasi_5:
       rule: "PathPrefix(`/v1.0/konfigurasi/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -702,7 +698,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     license_1:
       rule: "PathPrefix(`/v1.0/referensi/license/status`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -711,7 +706,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     license_2:
       rule: "PathPrefix(`/v1.0/referensi/license/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
