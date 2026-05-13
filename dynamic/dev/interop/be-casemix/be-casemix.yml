@@ -1,5 +1,4 @@
 http:
-
   routers:
     case_mix_1:
       rule: "PathPrefix(`/v1.0/pasien-casemix/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"

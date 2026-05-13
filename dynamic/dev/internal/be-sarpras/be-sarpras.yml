@@ -1,5 +1,4 @@
 http:
-
   routers:
     sarpras_monitoring_1:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/create`) && (Method(`POST`) || Method(`OPTIONS`))"

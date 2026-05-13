@@ -1,5 +1,4 @@
 http:
-
   routers:
     adime_1:
       rule: "PathPrefix(`/v1.0/adime/get-list-all`) && (Method(`GET`) || Method(`OPTIONS`))"

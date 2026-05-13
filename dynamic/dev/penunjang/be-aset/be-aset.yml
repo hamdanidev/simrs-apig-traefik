@@ -1,5 +1,4 @@
 http:
-
   routers:
     bed_1:
       rule: "PathPrefix(`/v1.0/kamar/bed/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"

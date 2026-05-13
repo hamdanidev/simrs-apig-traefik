@@ -1,5 +1,4 @@
 http:
-
   routers:
     admlayanan_1:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"

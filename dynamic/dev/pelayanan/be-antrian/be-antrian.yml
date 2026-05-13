@@ -1,5 +1,4 @@
 http:
-
   routers:
     farmasi_1:
       rule: "PathPrefix(`/v1.0/farmasi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"

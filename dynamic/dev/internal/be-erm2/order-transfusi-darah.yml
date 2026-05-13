@@ -1,5 +1,4 @@
 http:
-
   routers:
     transfusi-darah-item_1:
       rule: "PathPrefix(`/v1.0/td/item-transfusi-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"

@@ -1,5 +1,4 @@
 http:
-
   routers:
     allergy_intolerance_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"

@@ -1,5 +1,4 @@
 http:
-
   routers:
     assesment_awal_kebidanan_obstetri_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"

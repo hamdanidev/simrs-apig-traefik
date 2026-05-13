@@ -1,5 +1,4 @@
 http:
-
   routers:
     gas_medis_detail_1:
       rule: "PathPrefix(`/v1.0/gas-medis/detail-order/create`) && (Method(`POST`) || Method(`OPTIONS`))"

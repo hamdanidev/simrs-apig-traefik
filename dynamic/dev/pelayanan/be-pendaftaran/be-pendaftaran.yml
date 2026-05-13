@@ -1,5 +1,4 @@
 http:
-
   routers:
     pendaftaran_antrian_poli_1:
       rule: "PathPrefix(`/v1.0/pendaftaran/antrian-poli/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"

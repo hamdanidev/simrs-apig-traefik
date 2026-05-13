@@ -1,5 +1,4 @@
 http:
-
   routers:
     interop_message_1:
       rule: "PathPrefix(`/v1.0/sender-email/mailtrap/send`) && (Method(`POST`) || Method(`OPTIONS`))"

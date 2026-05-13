@@ -1,5 +1,4 @@
 http:
-
   routers:
     barang_farmasi_bebas_1:
       rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"

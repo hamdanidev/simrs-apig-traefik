@@ -1,5 +1,4 @@
 http:
-
   routers:
     antrian_loket_1:
       rule: "PathPrefix(`/v1.0/antrianloket/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"

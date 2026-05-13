@@ -1,5 +1,4 @@
 http:
-
   routers:
     internal_riwayat_cssd_1:
       rule: "PathPrefix(`/v1.0/cssd/riwayat-cssd/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"

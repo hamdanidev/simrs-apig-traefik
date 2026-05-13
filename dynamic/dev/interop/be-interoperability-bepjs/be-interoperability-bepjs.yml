@@ -1,5 +1,4 @@
 http:
-
   routers:
     antrean_rs_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/antrean/pendaftaran/kode-booking`) && (Method(`POST`) || Method(`OPTIONS`))"

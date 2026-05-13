@@ -1,5 +1,4 @@
 http:
-
   routers:
     internal_cleaning_1:
       rule: "PathPrefix(`/v1.0/cssd/cleaning/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"

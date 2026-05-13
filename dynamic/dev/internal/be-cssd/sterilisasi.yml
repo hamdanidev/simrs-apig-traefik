@@ -1,5 +1,4 @@
 http:
-
   routers:
     internal_sterilisasi_1:
       rule: "PathPrefix(`/v1.0/cssd/sterilisasi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"

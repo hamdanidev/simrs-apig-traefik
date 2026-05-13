@@ -1,5 +1,4 @@
 http:
-
   routers:
     mesage_1:
       rule: "PathPrefix(`/v1.0/message/upload`) && (Method(`POST`) || Method(`OPTIONS`))"

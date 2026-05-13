@@ -1,5 +1,4 @@
 http:
-
   routers:
     interop_lis_1:
       rule: "PathPrefix(`/v1.0/lis/demographics/get-list-demographics`) && (Method(`GET`) || Method(`OPTIONS`))"

@@ -1,5 +1,4 @@
 http:
-
   routers:
     sirs_1:
       rule: "PathPrefix(`/v1.0/sirs-online/radiologi/laporan-kategori-item`) && (Method(`GET`) || Method(`OPTIONS`))"

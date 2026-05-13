@@ -1,5 +1,4 @@
 http:
-
   routers:
     interop_tambah_antrian_1:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"

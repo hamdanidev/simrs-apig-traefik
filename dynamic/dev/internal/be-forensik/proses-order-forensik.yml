@@ -1,5 +1,4 @@
 http:
-
   routers:
     forensik_order_internal_1:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"

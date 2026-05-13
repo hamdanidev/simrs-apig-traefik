@@ -1,5 +1,4 @@
 http:
-
   routers:
     interop_inacbgv2_1:
       rule: "PathPrefix(`/v2.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"

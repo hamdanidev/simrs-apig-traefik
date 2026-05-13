@@ -1,5 +1,4 @@
 http:
-
   routers:
     mcu_1:
       rule: "PathPrefix(`/v1.0/mcu/order-mcu/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"

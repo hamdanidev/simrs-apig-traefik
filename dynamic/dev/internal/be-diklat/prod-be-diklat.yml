@@ -1,14 +1,3 @@
-# ============================================================
-# DIKLAT ROUTES
-# Service: service-diklat → 192.168.18.152:9086
-#
-# Diklat memiliki 700+ individual endpoint. File ini menggunakan
-# broad PathPrefix per prefix top-level agar lebih manageable.
-# Jika ada konflik routing dengan service lain (terutama /v1.0/master/
-# karena master service juga pakai prefix ini), gunakan file
-# dev_routes_diklat_granular.yml yang berisi route per endpoint.
-# ============================================================
-
 http:
   middlewares:
     simrs_cors:

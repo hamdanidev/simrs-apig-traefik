@@ -1,5 +1,4 @@
 http:
-
   routers:
     internal_order_peminjaman_1:
       rule: "PathPrefix(`/v1.0/cssd/order-peminjaman/get-list-order-peminjaman`) && (Method(`GET`) || Method(`OPTIONS`))"
