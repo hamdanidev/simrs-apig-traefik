@@ -3,6 +3,8 @@ api:
   insecure: true
 
 entryPoints:
+  traefik:
+    address: ":8080"
   web:
     address: ":9080"
 
@@ -24,6 +26,12 @@ accessLog:
       - "400-599"                       # Log semua request kecuali mungkin yang tidak penting
     retryAttempts: true
     minDuration: "10ms"
+
+metrics:
+  prometheus:
+    entryPoint: traefik # Menggunakan port 8080 (dashboard)
+    addEntryPointsLabels: true
+    addServicesLabels: true
   
 experimental:
   plugins:

@@ -18,6 +18,19 @@ services:
       - .env
     networks:
       - traefik-net
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: prometheus
+    networks:
+      - traefik-net
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    ports:
+      - "9092:9090"
+    restart: unless-stopped
   promtail:
     image: grafana/promtail:latest
     volumes:
@@ -33,6 +46,8 @@ services:
     image: grafana/grafana:latest
     ports:
       - "3000:3000"
+    networks:
+      - traefik-net
     environment:
       - GF_SERVER_ROOT_URL=${GRAFANA_URL}
     volumes:
