@@ -13,6 +13,17 @@ providers:
   file:
     directory: /etc/traefik/dynamic
     watch: true # <--- Kunci agar perubahan otomatis muncul di dashboard
+    
+accessLog:
+  filePath: "/var/log/traefik/access.log" # Path di dalam container
+  format: json                          # Sangat disarankan JSON agar mudah diparsing ke ELK/Loki
+  bufferingSize: 100                    # Menahan log di memori sebelum ditulis (opsional, untuk performa)
+  filters:
+    statusCodes:
+      - "200-299"
+      - "400-599"                       # Log semua request kecuali mungkin yang tidak penting
+    retryAttempts: true
+    minDuration: "10ms"
   
 experimental:
   plugins:

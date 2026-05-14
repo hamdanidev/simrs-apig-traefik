@@ -13,6 +13,7 @@ services:
       - ./traefik.yml:/etc/traefik/traefik.yml:ro
       # Folder untuk file routing (perawat, dokter, dev, prod)
       - ./dynamic:/etc/traefik/dynamic:ro
+      - ./access_logs:/var/log/traefik
     env_file:
       - .env
     networks:
