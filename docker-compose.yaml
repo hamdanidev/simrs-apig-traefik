@@ -49,7 +49,9 @@ services:
       - ./data/loki:/loki
     networks:
       - traefik-net
-    command: -config.file=/etc/loki/local-config.yaml
+    command: 
+      - "-config.file=/etc/loki/local-config.yaml"
+      - "-validation.allow-structured-metadata=false"
   grafana:
     image: grafana/grafana:latest
     ports:
