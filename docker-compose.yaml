@@ -18,6 +18,12 @@ services:
       - .env
     networks:
       - traefik-net
+  promtail:
+    image: grafana/promtail:latest
+    volumes:
+      - ./access_logs:/var/log/traefik
+      - ./promtail-config.yml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
 
 networks:
   traefik-net:
