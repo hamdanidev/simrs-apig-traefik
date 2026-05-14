@@ -33,6 +33,8 @@ services:
     restart: unless-stopped
   promtail:
     image: grafana/promtail:latest
+    networks:
+      - traefik-net
     volumes:
       - ./access_logs:/var/log/traefik
       - ./promtail-config.yml:/etc/promtail/config.yml
@@ -41,6 +43,8 @@ services:
     image: grafana/loki:latest
     ports:
       - "3200:3100"
+    networks:
+      - traefik-net
     command: -config.file=/etc/loki/local-config.yaml
   grafana:
     image: grafana/grafana:latest
