@@ -33,8 +33,10 @@ services:
     image: grafana/grafana:latest
     ports:
       - "3000:3000"
+    environment:
+      - GF_SERVER_ROOT_URL=${GRAFANA_URL}
     volumes:
-    - ./data/grafana:/var/lib/grafana
+      - ./data/grafana:/var/lib/grafana
 networks:
   traefik-net:
     driver: bridge # Docker akan otomatis membuat network ini jika belum ada
