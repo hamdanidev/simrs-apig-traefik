@@ -1,8 +1,8 @@
 server:
   http_listen_port: 9080
-  
 clients:
-  - url: http://loki:3100/loki/api/v1/push
+  - url: http://loki:3100/loki/api/v1/push # ← Loki lokal .157 (tetap)
+  - url: http://192.168.18.120:3100/loki/api/v1/push # ← Loki .120 (tambahan)
 
 scrape_configs:
   - job_name: traefik
@@ -11,6 +11,8 @@ scrape_configs:
           - localhost
         labels:
           job: traefik-access
+          host: "18.157-dev-rs" # ← tambah ini supaya bisa difilter di Grafana .120
+          env: dev
           __path__: /var/log/traefik/*.log # Membaca file log dari volume
     pipeline_stages:
       - json:

@@ -43,6 +43,10 @@ services:
     image: grafana/loki:latest
     ports:
       - "3200:3100"
+      - "9095:9095" # Expose gRPC port
+    volumes:
+      - ./loki-config.yml:/etc/loki/local-config.yaml
+      - ./data/loki:/loki
     networks:
       - traefik-net
     command: -config.file=/etc/loki/local-config.yaml
