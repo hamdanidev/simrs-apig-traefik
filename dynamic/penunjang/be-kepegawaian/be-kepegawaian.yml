@@ -898,7 +898,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     nik_khusus_2:
       rule: "PathPrefix(`/v1.0/kepegawaian/nik-khusus/create`) && (Method(`POST`) || Method(`OPTIONS`))"
