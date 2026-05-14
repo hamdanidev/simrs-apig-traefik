@@ -1,1 +1,4 @@
 .env
+/access_logs
+/grafana-storage
+/data

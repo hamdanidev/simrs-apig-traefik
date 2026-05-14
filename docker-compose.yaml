@@ -13,11 +13,45 @@ services:
       - ./traefik.yml:/etc/traefik/traefik.yml:ro
       # Folder untuk file routing (perawat, dokter, dev, prod)
       - ./dynamic:/etc/traefik/dynamic:ro
+      - ./access_logs:/var/log/traefik
     env_file:
       - .env
     networks:
       - traefik-net
-
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: prometheus
+    networks:
+      - traefik-net
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    ports:
+      - "9092:9090"
+    restart: unless-stopped
+  promtail:
+    image: grafana/promtail:latest
+    volumes:
+      - ./access_logs:/var/log/traefik
+      - ./promtail-config.yml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3200:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - traefik-net
+    environment:
+      - GF_SERVER_ROOT_URL=${GRAFANA_URL}
+    volumes:
+      - ./data/grafana:/var/lib/grafana
 networks:
   traefik-net:
     driver: bridge # Docker akan otomatis membuat network ini jika belum ada
