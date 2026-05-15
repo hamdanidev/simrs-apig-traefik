@@ -737,7 +737,7 @@ http:
     get_stats_claim:
       rule: "Path(`/v1.0/pasien-casemix/stats_claim`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
-      priority: 123
+      priority: 5000
       entryPoints:
         - web
       middlewares:
