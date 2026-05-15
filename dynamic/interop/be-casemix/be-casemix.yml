@@ -734,6 +734,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth" 
+    get_stats_claim:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/stats_claim`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-casemix:
