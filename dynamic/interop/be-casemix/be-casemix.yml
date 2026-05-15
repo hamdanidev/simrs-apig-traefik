@@ -702,6 +702,46 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    doc_claim_create:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    doc_claim_get_bynorm:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    doc_claim_get_bynoreg:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth" 
+    doc_claim_delete_byid:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth" 
+    get_stats_claim:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/stats_claim`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-casemix:
