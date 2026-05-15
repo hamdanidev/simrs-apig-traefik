@@ -735,7 +735,7 @@ http:
         - "simrs-cors"
         - "simrs-auth" 
     get_stats_claim:
-      rule: "PathPrefix(`/v1.0/pasien-casemix/stats_claim`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "Path(`/v1.0/pasien-casemix/stats_claim`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       priority: 123
       entryPoints:
