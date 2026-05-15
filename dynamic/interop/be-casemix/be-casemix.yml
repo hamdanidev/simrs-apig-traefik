@@ -703,7 +703,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
     doc_claim_create:
-      rule: "Path(`/v1.0/casemix/dokumen/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/casemix/dokumen/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
         - web
@@ -711,7 +711,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
     doc_claim_get_bynorm:
-      rule: "Path(`/v1.0/casemix/dokumen/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/casemix/dokumen/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
         - web
@@ -719,7 +719,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
     doc_claim_get_bynoreg:
-      rule: "Path(`/v1.0/casemix/dokumen/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/casemix/dokumen/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
         - web
@@ -727,7 +727,7 @@ http:
         - "simrs-cors"
         - "simrs-auth" 
     doc_claim_delete_byid:
-      rule: "Path(`/v1.0/casemix/dokumen/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/casemix/dokumen/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
         - web
