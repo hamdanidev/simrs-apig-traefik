@@ -4,7 +4,8 @@ clients:
   - url: http://192.168.18.120:3100/loki/api/v1/push # ← Loki .120 (tambahan)
 
 scrape_configs:
-  - job_name: docker_logs
+  - job_name: traefik-access
+    host: "18.157-dev-rs"
     docker_sd_configs:
       - host: unix:///var/run/docker.sock
         refresh_interval: 5s
