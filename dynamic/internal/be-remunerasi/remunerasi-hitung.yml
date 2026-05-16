@@ -1,0 +1,52 @@
+http:
+  routers:
+    remunerasi_hitung_proses_looping_1:
+      rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/proses-looping`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_hitung_sync_index_remun:
+      rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/sync-index-remun`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_hitung_get_list_index:
+      rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/get-list-index`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_hitung_get_list_jasa_jtl:
+      rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/get-list-jasa-jtl`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_hitung_get_list_jasa_jl:
+      rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/get-list-jasa-jl`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-remunerasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REMUNERASI_URL" }}'
