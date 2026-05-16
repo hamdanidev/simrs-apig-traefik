@@ -7,6 +7,9 @@ entryPoints:
     address: ":8080"
   web:
     address: ":9080"
+    forwardedHeaders:
+      trustedIPs:
+        - "22.22.22.11/32"
 
 providers:
   docker:
@@ -15,7 +18,7 @@ providers:
   file:
     directory: /etc/traefik/dynamic
     watch: true # <--- Kunci agar perubahan otomatis muncul di dashboard
-    
+
 accessLog:
   format: json # Sangat disarankan pakai JSON agar mudah dibaca Loki
   bufferingSize: 100 # Opsional, untuk performa
@@ -25,7 +28,7 @@ metrics:
     entryPoint: traefik # Menggunakan port 8080 (dashboard)
     addEntryPointsLabels: true
     addServicesLabels: true
-  
+
 experimental:
   plugins:
     jwt:
