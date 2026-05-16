@@ -10010,6 +10010,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    pasien_all_by_no_rm:
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-erm:
