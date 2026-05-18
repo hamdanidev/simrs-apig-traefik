@@ -1,5 +1,4 @@
 http:
-
   routers:
     absensi_1:
       rule: "PathPrefix(`/v1.0/absensi/getabsensibyidjadwal/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -1309,7 +1308,6 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
 
     petugas_medis_lainnya_jadwal_13:
       rule: "PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/update-keterangan`) && (Method(`PUT`) || Method(`OPTIONS`))"
