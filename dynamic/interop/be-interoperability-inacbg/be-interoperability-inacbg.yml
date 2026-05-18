@@ -1,5 +1,4 @@
 http:
-
   routers:
     interop_inacbgv2_1:
       rule: "PathPrefix(`/v2.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -342,6 +341,16 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    interop_inacbg_v2_29:
+      rule: "PathPrefix(`/v2.0/inacbg/grouper-final`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-inacbg:
       loadBalancer:
