@@ -351,6 +351,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    interop_inacbg_v2_30:
+      rule: "PathPrefix(`/v2.0/inacbg/grouper-reedit`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-inacbg:
       loadBalancer:
