@@ -344,7 +344,7 @@ http:
 
     interop_inacbg_v2_29:
       rule: "PathPrefix(`/v2.0/inacbg/grouper-final`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-casemix
+      service: service-inacbgv2
       entryPoints:
         - web
       middlewares:
