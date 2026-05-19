@@ -1,5 +1,4 @@
 http:
-
   routers:
     adime_1:
       rule: "PathPrefix(`/v1.0/adime/get-list-all`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -5808,6 +5807,15 @@ http:
 
     order_obat_21:
       rule: "PathPrefix(`/v1.0/order-obat/getlist-by-booking/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    order_obat_22:
+      rule: "PathPrefix(`/v1.0/order-obat/update-non-racikan-by-id-non-racikan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
         - web

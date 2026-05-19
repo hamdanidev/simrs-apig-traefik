@@ -145,7 +145,7 @@ http:
         - "simrs-auth"
 
     interop_wsbpjs_17:
-      rule: "PathPrefix(`/v1.0/wsbpjs/update-jadwal-dokter`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/wsbpjs/update-jadwal-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
         - web
