@@ -1,7 +1,7 @@
 http:
   routers:
     pasien-konsul_update_status_pelaksanaan_1:
-      rule: "PathPrefix(`v1.0/pasien-erm-all/update-status-kedatangan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/update-status-kedatangan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
         - web
