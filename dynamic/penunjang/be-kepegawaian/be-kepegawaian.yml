@@ -1299,7 +1299,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
+        # - "simrs-auth"
 
     petugas_medis_lainnya_jadwal_12:
       rule: "PathPrefix(`/v1.0/petugas-medis-lainnya/jadwal/absen-pulang`) && (Method(`PUT`) || Method(`OPTIONS`))"
