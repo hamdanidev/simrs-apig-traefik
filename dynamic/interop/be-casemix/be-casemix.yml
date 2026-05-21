@@ -516,6 +516,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    update_no_peserta_bpjs_by_nik:
+      rule: "Path(`/v1.0/pasien-casemix/update-no-peserta-bpjs-by-nik`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-casemix:

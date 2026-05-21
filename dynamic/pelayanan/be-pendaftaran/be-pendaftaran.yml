@@ -3618,6 +3618,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_utdrs_15:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rajal/update-status-selesai-bulk`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
