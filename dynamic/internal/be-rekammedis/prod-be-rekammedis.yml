@@ -1,5 +1,4 @@
 http:
-
   routers:
     assesment_awal_kebidanan_obstetri_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -2251,6 +2250,14 @@ http:
         - "simrs-auth"
     transfer_pasien_internal_4:
       rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    update_no_peserta_bpjs_by_no_identitas:
+      rule: "PathPrefix(`/v1.0/rmpasien/update-no-peserta-bpjs-by-no-identitas/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
         - web
