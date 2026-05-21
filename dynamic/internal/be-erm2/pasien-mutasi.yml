@@ -1,0 +1,65 @@
+http:
+  routers:
+    pasien_mutasi_create:
+      rule: "PathPrefix(`/v1.0/pasien-mutasi/create-mutasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_mutasi_update_sender:
+      rule: "PathPrefix(`/v1.0/pasien-mutasi/update-data-mutasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_mutasi_activation:
+      rule: "PathPrefix(`/v1.0/pasien-mutasi/aktifkan-mutasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_mutasi_getlist_sender:
+      rule: "PathPrefix(`/v1.0/pasien-mutasi/getlist-dokter-pengirim`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_mutasi_getlist_recv:
+      rule: "PathPrefix(`/v1.0/pasien-mutasi/getlist-dokter-penerima`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_mutasi_getbyid:
+      rule: "PathPrefix(`/v1.0/pasien-mutasi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_mutasi_delbyid:
+      rule: "PathPrefix(`/v1.0/pasien-mutasi/delete-pasien-mutasi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
+          - url: '{{ env "SERVICE_ERM_URL_2" }}'

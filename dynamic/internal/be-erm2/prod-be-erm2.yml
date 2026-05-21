@@ -10026,6 +10026,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    berkas_lama: #ini akan dihapus nantinya
+      rule: "PathPrefix(`/v1.0/berkas-lama/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-erm:
