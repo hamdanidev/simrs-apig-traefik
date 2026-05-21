@@ -1,5 +1,4 @@
 http:
-
   routers:
     pendaftaran_antrian_poli_1:
       rule: "PathPrefix(`/v1.0/pendaftaran/antrian-poli/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -3624,4 +3623,4 @@ http:
       loadBalancer:
         servers:
           - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'
-          - url: '{{ env "SERVICE_PENDAFTARAN_URL_2" }}'
+#          - url: '{{ env "SERVICE_PENDAFTARAN_URL_2" }}'
