@@ -8,6 +8,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    pasien_update_status_koding:
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/update-status-koding`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-erm:
