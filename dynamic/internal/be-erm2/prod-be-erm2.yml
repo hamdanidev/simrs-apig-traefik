@@ -10034,6 +10034,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    update_kirim_casemix_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/pasien/update-kirim-casemix-by-no-registrasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-erm:
