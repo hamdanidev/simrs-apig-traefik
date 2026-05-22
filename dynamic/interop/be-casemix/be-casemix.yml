@@ -524,6 +524,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    update_status_koding:
+      rule: "Path(`/v1.0/pasien-casemix/update-status-koding`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-casemix:
