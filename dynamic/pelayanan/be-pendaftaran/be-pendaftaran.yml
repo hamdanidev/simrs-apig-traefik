@@ -3627,6 +3627,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_count_pendaftaran_user:
+      rule: "PathPrefix(`/v1.0/pendaftaran/count-pendaftaran-user`) &&  (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_ranap_update_status_selesai_bulk:
+      rule: "PathPrefix(`/v1.0/pendaftaran/ranap/update-status-selesai-bulk`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
