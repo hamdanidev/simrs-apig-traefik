@@ -16,6 +16,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    pasien_erm_all_count_status_koding:
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/count-status-koding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-erm:
