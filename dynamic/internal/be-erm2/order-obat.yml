@@ -1,0 +1,17 @@
+http:
+  routers:
+    order-obat_update_tindakan_lab_racikan:
+      rule: "PathPrefix(`/v1.0/order-obat/update-tindakan-lab-racikan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
+          - url: '{{ env "SERVICE_ERM_URL_2" }}'
