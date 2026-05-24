@@ -1,5 +1,4 @@
 http:
-
   routers:
     instalasi_radiologi_1:
       rule: "PathPrefix(`/v1.0/instalasi/radiologi/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -462,6 +461,15 @@ http:
 
     radiologi_order_radiologi_23:
       rule: "PathPrefix(`/v1.0/radiologi/order-radiologi/laporan-kategori-item`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    radiologi_order_radiologi_update_status_selesai_bulk:
+      rule: "PathPrefix(`/v1.0/radiologi/order-radiologi/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-radiologi
       entryPoints:
         - web
