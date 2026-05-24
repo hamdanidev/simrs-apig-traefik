@@ -1,5 +1,4 @@
 http:
-
   routers:
     # ==================== REMUNERASI ====================
     remunerasi_billing_rs_1:
@@ -427,6 +426,15 @@ http:
 
     remunerasi_upload_potongan_2:
       rule: "PathPrefix(`/v1.0/remunerasi/upload-potongan-bpjs/get-by-nip/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_upload_billing_edit:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-billing/edit/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-remunerasi
       entryPoints:
         - web
