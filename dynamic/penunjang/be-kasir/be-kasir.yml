@@ -1,5 +1,4 @@
 http:
-
   routers:
     kasir_billing_1:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -540,6 +539,16 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    kasir_billing_perbaiki_data_billing_khusus_backdate:
+      rule: "PathPrefix(`/v1.0/kasir-billing/perbaiki-data-billing-khusus-backdate/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-kasir:
       loadBalancer:
