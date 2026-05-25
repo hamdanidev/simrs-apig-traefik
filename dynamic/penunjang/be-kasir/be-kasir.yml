@@ -549,6 +549,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    kasir_billing_update_sub_billing_item:
+      rule: "PathPrefix(`/v1.0/kasir-billing/update-sub-billing-item`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-kasir:
       loadBalancer:
