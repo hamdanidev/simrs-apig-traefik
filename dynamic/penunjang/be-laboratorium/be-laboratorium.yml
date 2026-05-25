@@ -1,5 +1,4 @@
 http:
-
   routers:
     instalasi_lab_1:
       rule: "PathPrefix(`/v1.0/instalasi/lab/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -1629,6 +1628,16 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    lab_order_lab_pk_update_status_selesai_bulk:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-lab:
       loadBalancer:
