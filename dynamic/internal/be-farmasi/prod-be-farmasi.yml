@@ -1,5 +1,4 @@
 http:
-
   routers:
     barang_farmasi_bebas_1:
       rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -3115,6 +3114,22 @@ http:
         - "simrs-auth"
     unit_farmasi_11:
       rule: "PathPrefix(`/v1.0/unit-farmasi/get-list-with-pelayanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    farmasi_order_barang_farmasi_bebas_buka_order_barang_farmasi_bebas:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/buka-order-barang-farmasi-bebas`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    farmasi_order_barang_farmasi_bebas_batalkan_order_barang_farmasi_bebas:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/batalkan-order-barang-farmasi-bebas`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
         - web
