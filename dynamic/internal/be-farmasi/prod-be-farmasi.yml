@@ -3141,4 +3141,4 @@ http:
       loadBalancer:
         servers:
           - url: '{{ env "SERVICE_FARMASI_URL" }}'
-          - url: '{{ env "SERVICE_FARMASI_URL_2" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'
