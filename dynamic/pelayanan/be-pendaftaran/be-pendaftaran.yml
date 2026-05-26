@@ -3645,6 +3645,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_igd_update_status_selesai_bulk:
+      rule: "PathPrefix(`/v1.0/pendaftaran/igd/update-status-selesai-bulk`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
