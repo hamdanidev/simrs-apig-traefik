@@ -14,4 +14,3 @@ http:
       loadBalancer:
         servers:
           - url: '{{ env "SERVICE_ERM_URL" }}'
-          - url: '{{ env "SERVICE_ERM_URL_2" }}'
