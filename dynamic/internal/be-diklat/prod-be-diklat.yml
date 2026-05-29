@@ -11,6 +11,26 @@
 
 http:
   routers:
+
+   kompetensi_getlist-by-no-registrasi_:
+      rule: "PathPrefix(`v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+      - "simrs-cors"
+
+
+magang_kegiatan-magang_getlist-by-no-registrasi:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+      - "simrs-cors"
+
+
+
     bagian_bed_side_theaching_1:
       rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
