@@ -12,7 +12,7 @@
 http:
   routers:
     kompetensi_getlist-by-no-registrasi:
-      rule: "PathPrefix(`v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/kegiatan-peningkatan-kompetensi/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
