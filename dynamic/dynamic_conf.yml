@@ -24,7 +24,3 @@ http:
           Secret: '{{ env "JWT_SCREET" }}'
           AuthorizationHeader: "Authorization"
           HeaderPrefix: ""
-          PayloadFields:
-            - "token" # token
-            - "nama_lengkap" # nama
-            - "username" # username
