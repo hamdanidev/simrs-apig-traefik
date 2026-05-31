@@ -23,11 +23,9 @@ accessLog:
   format: json # Sangat disarankan pakai JSON agar mudah dibaca Loki
   bufferingSize: 100 # Opsional, untuk performa
   fields:
-    defaultMode: keep # keep semua field default
-    names:
-      StartUTC: keep # contoh jika ingin drop field tertentu
+    defaultMode: keep # Tampilkan semua field default
     headers:
-      defaultMode: keep # drop semua header by default
+      defaultMode: keep # Tampilkan SEMUA request headers
 
 metrics:
   prometheus:
