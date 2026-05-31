@@ -528,6 +528,22 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    pengguna_rsudam_aplikasi_new_create:
+      rule: "PathPrefix(`/v1.0/rsudam/aplikasi/new/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pengguna_rsudam_aplikasi_new_edit:
+      rule: "PathPrefix(`/v1.0/rsudam/aplikasi/new/edit`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-aksespengguna:
       loadBalancer:

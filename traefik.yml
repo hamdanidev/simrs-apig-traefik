@@ -22,6 +22,10 @@ providers:
 accessLog:
   format: json # Sangat disarankan pakai JSON agar mudah dibaca Loki
   bufferingSize: 100 # Opsional, untuk performa
+  fields:
+    defaultMode: keep # Tampilkan semua field default
+    headers:
+      defaultMode: keep # Tampilkan SEMUA request headers
 
 metrics:
   prometheus:
