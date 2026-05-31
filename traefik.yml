@@ -25,7 +25,9 @@ accessLog:
   fields:
     defaultMode: keep # Tampilkan semua field default
     headers:
-      defaultMode: keep # Tampilkan SEMUA request headers
+      defaultMode: keep # Tampilkan SEMUA request headers umum
+      names:
+        Authorization: keep # <--- TAMBAHKAN INI (Paksa Traefik untuk tidak men-drop header ini)
 
 metrics:
   prometheus:
