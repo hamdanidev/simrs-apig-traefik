@@ -3654,6 +3654,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_all_unit_get_by_no_sep_lengkap:
+      rule: "PathPrefix(`/v1.0/pendaftaran/all-unit/get-by-no-sep-lengkap/`) &&  (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
