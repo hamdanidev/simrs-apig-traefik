@@ -2651,6 +2651,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    spesialis_jadwal_hfis_delete_bulanan:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-hfis/delete-bulanan/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-kepegawaian:
       loadBalancer:
