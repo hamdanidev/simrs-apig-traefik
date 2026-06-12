@@ -24,6 +24,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    pasien_erm_all_update_no_sep:
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/update-no-sep`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-erm:

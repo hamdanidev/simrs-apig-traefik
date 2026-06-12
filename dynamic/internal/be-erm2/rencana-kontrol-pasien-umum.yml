@@ -1,0 +1,51 @@
+http:
+  routers:
+    rencana-kontrol-pasien-umum_get_by_no_rm:
+      rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    rencana-kontrol-pasien-umum_create:
+      rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rencana-kontrol-pasien-umum_update:
+      rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rencana-kontrol-pasien-umum_getlist:
+      rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rencana-kontrol-pasien-umum_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
