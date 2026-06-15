@@ -28,3 +28,7 @@ http:
             - "token" # token
             - "nama_lengkap" # nama
             - "username" # username
+    simrs-basic-auth:
+      basicAuth:
+        users:
+          - "monitoring:$2a$12$0hwjqtifjArd7BG6O.ql9O..KixYCC8sMMkKINEKH.BFlwsbgGghu"
