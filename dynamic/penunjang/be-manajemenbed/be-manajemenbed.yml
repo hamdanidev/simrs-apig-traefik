@@ -1,5 +1,4 @@
 http:
-
   routers:
     bed_pasien_1:
       rule: "PathPrefix(`/v1.0/bedpasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -53,6 +52,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
+        # - "simrs-basic-auth"
         - "simrs-basic-auth"
 
     riwayat_bed_pasien_1:
