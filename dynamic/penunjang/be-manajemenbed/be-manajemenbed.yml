@@ -53,7 +53,7 @@ http:
       middlewares:
         - "simrs-cors"
         # - "simrs-basic-auth"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     riwayat_bed_pasien_1:
       rule: "PathPrefix(`/v1.0/bedpasien/riwayat/getlistbyidbedpasien/`) && (Method(`GET`) || Method(`OPTIONS`))"
