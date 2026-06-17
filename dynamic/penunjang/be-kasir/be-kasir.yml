@@ -558,8 +558,8 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_update_status_potangan:
-      rule: "PathPrefix(`/v1.0/kasir-billing/update-status-potangan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+    kasir_billing_update_potongan_item:
+      rule: "PathPrefix(`/v1.0/kasir-billing/update-potongan-item`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
         - web
@@ -567,8 +567,8 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_update_potongan_item:
-      rule: "PathPrefix(`/v1.0/kasir-billing/update-potongan-item`) && (Method(`PUT`) || Method(`OPTIONS`))"
+    kasir_billing_update_status_potongan:
+      rule: "PathPrefix(`/v1.0/kasir-billing/update-status-potongan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
         - web
