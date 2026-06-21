@@ -1,5 +1,4 @@
 http:
-
   routers:
     sirs_1:
       rule: "PathPrefix(`/v1.0/sirs-online/radiologi/laporan-kategori-item`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -144,6 +143,34 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    sirs_online_erm_laporan_ranap_sirs_rl32_total:
+      rule: "PathPrefix(`/v1.0/sirs-online/erm/laporan-ranap-sirs/rl32/total`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    sirs_online_laporan_icd_10_rawat_inap_get_list:
+      rule: "PathPrefix(`/v1.0/sirs-online/laporan-icd-10/rawat-inap/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    sirs_online_laporan_icd_10_rawat_jalan_get_list:
+      rule: "PathPrefix(`/v1.0/sirs-online/laporan-icd-10/rawat-jalan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-sirs:
       loadBalancer:
