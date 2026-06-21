@@ -1,0 +1,16 @@
+http:
+  routers:
+    erm_laporan_icd_10_rawat_inap_getlist:
+      rule: "PathPrefix(`/v1.0/erm/laporan-icd-10/rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
