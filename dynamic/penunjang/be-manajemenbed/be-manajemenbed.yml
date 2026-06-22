@@ -74,7 +74,7 @@ http:
         - "simrs-auth"
 
     bed_ketersediaan_kamar_1:
-      rule: "PathPrefix(`/v1.0/ketersediaan-kamar/getlist`) && (Method(`POST`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/ketersediaan-kamar/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-bed
       entryPoints:
         - web
