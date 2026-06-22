@@ -532,6 +532,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    unit_layanan_get_list_lampung_in:
+      rule: "PathPrefix(`/v1.0/unit-layanan/get-list/lampung-in`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-jasa-pelayanan:
       loadBalancer:

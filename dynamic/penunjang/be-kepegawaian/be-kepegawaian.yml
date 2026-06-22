@@ -2660,6 +2660,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    spesialis_jadwal_hfis_get_list_lampung_in:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-hfis/get-list-lampung-in`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-kepegawaian:
       loadBalancer:
