@@ -1,5 +1,4 @@
 http:
-
   routers:
     transfusi-darah-item_1:
       rule: "PathPrefix(`/v1.0/td/item-transfusi-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -372,6 +371,15 @@ http:
 
     transfusi-darah-order_16:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/delete-order-items-transfusi-darah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    order_transfusi_darah_stok_darah_getlist:
+      rule: "PathPrefix(`/v1.0/stok-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
         - web

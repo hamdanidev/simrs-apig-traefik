@@ -3120,6 +3120,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
     farmasi_order_barang_farmasi_bebas_buka_order_barang_farmasi_bebas:
       rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/buka-order-barang-farmasi-bebas`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-farmasi
@@ -3128,8 +3129,18 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
     farmasi_order_barang_farmasi_bebas_batalkan_order_barang_farmasi_bebas:
       rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/batalkan-order-barang-farmasi-bebas`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    farmasi_instalasi_farmasi_get_antivenom_lampung_in:
+      rule: "PathPrefix(`/v1.0/instalasi/farmasi/get-antivenom/lampung-in`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
         - web
