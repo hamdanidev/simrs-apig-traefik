@@ -541,6 +541,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    unit_layanan_daftar_poli_get_list:
+      rule: "PathPrefix(`/v1.0/daftar-poli/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-jasa-pelayanan:
       loadBalancer:

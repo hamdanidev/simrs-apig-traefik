@@ -3147,6 +3147,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    farmasi_ketersediaan_antivenom_get_list:
+      rule: "PathPrefix(`/v1.0/ketersediaan-antivenom/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-farmasi:
       loadBalancer:
