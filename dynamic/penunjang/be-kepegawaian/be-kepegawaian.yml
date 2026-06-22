@@ -2669,6 +2669,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    jadwal_dokter_get_list:
+      rule: "PathPrefix(`/v1.0/jadwal-dokter/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-kepegawaian:
       loadBalancer:

@@ -1,0 +1,16 @@
+http:
+  routers:
+    erm_penyakit_trending_getlist:
+      rule: "PathPrefix(`/v1.0/penyakit-trending/getlist/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
