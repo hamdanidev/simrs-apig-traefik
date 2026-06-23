@@ -80,7 +80,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth"
+        - "simrs-basic-auth"
   services:
     service-bed:
       loadBalancer:
