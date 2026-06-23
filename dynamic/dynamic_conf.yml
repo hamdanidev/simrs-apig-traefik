@@ -32,4 +32,4 @@ http:
       basicAuth:
         users:
           - "monitoring:$2a$12$0hwjqtifjArd7BG6O.ql9O..KixYCC8sMMkKINEKH.BFlwsbgGghu"
-          - "simrs_data:$2a$12$xxO9tFqAZmSbsHcS.u9F.u29HyS8AG11pNqrsIFwHNHDhrWHZszRG"
+          - "simrs_data:$2a$12$HjIZSTQBbJ4MNsa5TBbyJOhD/h4RINpoImmz3PORwTaguSHMzPyaq"
