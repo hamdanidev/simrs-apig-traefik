@@ -1,0 +1,44 @@
+name: Trigger Jenkins Build
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  build:
+    name: Trigger Jenkins
+    runs-on: ubuntu-latest
+
+    # =====================
+    # JALAN HANYA JIKA PR DI-MERGE
+    # =====================
+    if: github.event.pull_request.merged == true
+
+    env:
+      JENKINS_BASE_URL: http://103.129.95.108:8008
+      JENKINS_JOB_PATH: Traefik/job/Prod/job/rsudam_traefik1
+      JENKINS_USER: softlab
+      JENKINS_API_TOKEN: 11da9da6406e0679cadeaea70e81c681fe
+
+    steps:
+      - name: Trigger Jenkins build
+        run: |
+          JENKINS_URL="${JENKINS_BASE_URL}/job/${JENKINS_JOB_PATH}/build"
+
+          echo "Triggering Jenkins job:"
+          echo "$JENKINS_URL"
+
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X POST \
+            -u "${JENKINS_USER}:${JENKINS_API_TOKEN}" \
+            "$JENKINS_URL")
+
+          if [ "$HTTP_STATUS" -ne 201 ] && [ "$HTTP_STATUS" -ne 200 ]; then
+            echo "❌ Jenkins trigger failed (HTTP $HTTP_STATUS)"
+            exit 1
+          fi
+
+          echo "✅ Jenkins job triggered successfully (HTTP $HTTP_STATUS)"
