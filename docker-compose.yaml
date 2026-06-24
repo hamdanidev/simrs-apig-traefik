@@ -18,6 +18,11 @@ services:
       - .env
     networks:
       - traefik-net
+    logging: # ← tambah ini
+      driver: json-file
+      options:
+        max-size: "20m" # Traefik bisa lebih besar, banyak request
+        max-file: "5"
   promtail:
     image: grafana/promtail:latest
     networks:
@@ -26,6 +31,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./promtail-config.yml:/etc/promtail/config.yml
     command: -config.file=/etc/promtail/config.yml
+    logging: # ← tambah ini juga
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
 networks:
   traefik-net:
     driver: bridge # Docker akan otomatis membuat network ini jika belum ada
