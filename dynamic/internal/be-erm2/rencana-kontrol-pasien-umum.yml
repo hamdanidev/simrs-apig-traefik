@@ -44,6 +44,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    rencana_kontrol_pasien_umum_delete_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
