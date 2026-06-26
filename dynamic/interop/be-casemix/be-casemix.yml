@@ -552,6 +552,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pasien_casemix_update_info_pasien:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-info-pasien`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-casemix:
       loadBalancer:
