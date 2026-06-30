@@ -624,6 +624,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    casemix_merge_document_batch:
+      rule: "PathPrefix(`/v1.0/merge/document-batch`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-casemix:
       loadBalancer:
