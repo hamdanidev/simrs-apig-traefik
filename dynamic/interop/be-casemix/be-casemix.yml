@@ -570,6 +570,60 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    casemix_dokumen_periode_create:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    casemix_dokumen_periode_update:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    casemix_dokumen_periode_delete:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    casemix_dokumen_periode_getlist:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    casemix_dokumen_periode_get_by_id:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    casemix_dokumen_periode_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-casemix:
       loadBalancer:
