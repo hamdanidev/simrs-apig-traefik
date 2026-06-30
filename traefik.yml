@@ -12,8 +12,8 @@ entryPoints:
         - "22.22.22.11/32"
     transport:
       respondingTimeouts:
-        readTimeout: 300s
-        idleTimeout: 300s
+        readTimeout: 0s
+        idleTimeout: 0s
 
 providers:
   docker:
