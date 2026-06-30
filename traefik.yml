@@ -10,6 +10,10 @@ entryPoints:
     forwardedHeaders:
       trustedIPs:
         - "22.22.22.11/32"
+    transport:
+      respondingTimeouts:
+        readTimeout: 300s
+        idleTimeout: 300s
 
 providers:
   docker:
