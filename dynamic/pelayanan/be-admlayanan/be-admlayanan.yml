@@ -1514,6 +1514,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+    admlayanan_pasien_all_update_no_sep:
+      rule: "PathPrefix(`/v1.0/admlayanan/pasien-all/update-no-sep`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-admlayanan:
