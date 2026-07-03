@@ -1,0 +1,70 @@
+http:
+  routers:
+    erm_surat_keterangan_kematian_create:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_surat_keterangan_kematian_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_surat_keterangan_kematian_get_by_no_rm:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_surat_keterangan_kematian_getlist:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_surat_keterangan_kematian_update:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_surat_keterangan_kematian_update_status_final:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/update-status-final`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_surat_keterangan_kematian_delete:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
