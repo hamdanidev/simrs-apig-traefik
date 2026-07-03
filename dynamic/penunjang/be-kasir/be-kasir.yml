@@ -576,6 +576,33 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    kasir_billing_generate_no_kwitansi_eksekutif:
+      rule: "PathPrefix(`/v1.0/kasir-billing/generate-no-kwitansi-eksekutif`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_list_no_kwitansi_eksekutif:
+      rule: "PathPrefix(`/v1.0/kasir-billing/list-no-kwitansi-eksekutif`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_update_status_no_kwitansi_eksekutif:
+      rule: "PathPrefix(`/v1.0/kasir-billing/update-status-no-kwitansi-eksekutif`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-kasir:
       loadBalancer:
