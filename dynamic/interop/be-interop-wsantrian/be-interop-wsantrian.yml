@@ -1,5 +1,4 @@
 http:
-
   routers:
     interop_tambah_antrian_1:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -309,6 +308,15 @@ http:
 
     interop_ws_antrian_21:
       rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/update-parsing-waktu`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    interop_ws_antrian_ambil_kode_booking:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-kode-booking/new`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-antrian
       entryPoints:
         - web
