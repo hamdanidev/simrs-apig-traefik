@@ -550,6 +550,96 @@ http:
         - "simrs-cors"
         - "simrs-basic-auth"
 
+    unit_layanan_harga_ruangan_get_list:
+      rule: "PathPrefix(`/v1.0/harga-ruangan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ruangan_get_by_kd:
+      rule: "PathPrefix(`/v1.0/harga-ruangan/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ruangan_create:
+      rule: "PathPrefix(`/v1.0/harga-ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ruangan_update:
+      rule: "PathPrefix(`/v1.0/harga-ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ruangan_delete_by_kd:
+      rule: "PathPrefix(`/v1.0/harga-ruangan/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ambulance_get_list:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ambulance_get_by_kd:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ambulance_create:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ambulance_update:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    unit_layanan_harga_ambulance_delete_by_kd:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
   services:
     service-jasa-pelayanan:
       loadBalancer:
