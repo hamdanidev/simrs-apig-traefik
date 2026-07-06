@@ -10051,6 +10051,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_laporan_bor_los_toi_getlist:
+      rule: "PathPrefix(`/v1.0/erm/laporan-bor-los-toi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
