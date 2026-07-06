@@ -557,7 +557,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     unit_layanan_harga_ruangan_get_by_kd:
       rule: "PathPrefix(`/v1.0/harga-ruangan/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
