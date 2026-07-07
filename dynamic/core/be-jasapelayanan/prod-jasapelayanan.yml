@@ -566,7 +566,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     unit_layanan_harga_ruangan_create:
       rule: "PathPrefix(`/v1.0/harga-ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -575,7 +575,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     unit_layanan_harga_ruangan_update:
       rule: "PathPrefix(`/v1.0/harga-ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -584,7 +584,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     unit_layanan_harga_ruangan_delete_by_kd:
       rule: "PathPrefix(`/v1.0/harga-ruangan/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -593,7 +593,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     unit_layanan_harga_ambulance_get_list:
       rule: "PathPrefix(`/v1.0/harga-ambulance/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -602,7 +602,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     unit_layanan_harga_ambulance_get_by_kd:
       rule: "PathPrefix(`/v1.0/harga-ambulance/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -620,7 +620,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     unit_layanan_harga_ambulance_update:
       rule: "PathPrefix(`/v1.0/harga-ambulance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -629,7 +629,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     unit_layanan_harga_ambulance_delete_by_kd:
       rule: "PathPrefix(`/v1.0/harga-ambulance/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -638,7 +638,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
   services:
     service-jasa-pelayanan:
