@@ -3663,6 +3663,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_radioterapi_update_step_3_v2:
+      rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/update-step-3-v2/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
