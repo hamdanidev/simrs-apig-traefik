@@ -3672,6 +3672,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_radioterapi_create_by_mjkn:
+      rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/create-by-mjkn`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_radioterapi_update_sep:
+      rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
