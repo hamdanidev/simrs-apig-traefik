@@ -476,6 +476,16 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    radiologi_order_radiologi_laporan_radiologi_tindakan:
+      rule: "PathPrefix(`/v1.0/radiologi/order-radiologi/laporan-radiologi-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-radiologi:
       loadBalancer:
