@@ -10078,6 +10078,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_order_obat_update_status_to_draft:
+      rule: "PathPrefix(`/v1.0/order-obat/update-status-to-draft/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
