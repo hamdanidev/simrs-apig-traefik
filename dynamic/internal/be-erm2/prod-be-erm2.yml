@@ -10087,6 +10087,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_validasi_billing_rekam_medik_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/validasi-billing-rekam-medik/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
