@@ -10096,6 +10096,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_cppt_create_khusus:
+      rule: "PathPrefix(`/v1.0/cppt/create-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
