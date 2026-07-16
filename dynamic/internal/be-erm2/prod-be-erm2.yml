@@ -10115,7 +10115,7 @@ http:
         - "simrs-auth"
 
     erm_pasien_all_buka_layanan:
-      rule: "PathPrefix(`/v1.0/pasien-all//buka-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/pasien-all/buka-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
         - web
