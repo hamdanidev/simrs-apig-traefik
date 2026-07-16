@@ -10123,6 +10123,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_ranap_belum_ada_aktivitas_get_list:
+      rule: "PathPrefix(`/v1.0/ranap-belum-ada-aktivitas/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
