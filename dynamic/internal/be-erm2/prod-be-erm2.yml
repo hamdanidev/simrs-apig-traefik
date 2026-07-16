@@ -10105,6 +10105,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_cppt_get_list_by_khusus:
+      rule: "PathPrefix(`/v1.0/cppt/get-list-by-khusus`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
