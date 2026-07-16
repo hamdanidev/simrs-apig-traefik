@@ -10114,6 +10114,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_pasien_all_buka_layanan:
+      rule: "PathPrefix(`/v1.0/pasien-all//buka-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
