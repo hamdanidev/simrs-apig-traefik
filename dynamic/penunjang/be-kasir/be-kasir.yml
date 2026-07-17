@@ -634,6 +634,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    kasir_biling_next_kwintasi_all:
+      rule: "PathPrefix(`/v1.0/kasir-billing/next-kwintasi-all/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-kasir:
       loadBalancer:
