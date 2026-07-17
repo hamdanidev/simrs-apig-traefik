@@ -3690,6 +3690,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_antrian_poli_getlist_booking_pending:
+      rule: "PathPrefix(`/v1.0/pendaftaran/antrian-poli/getlist-booking-pending`) &&  (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
