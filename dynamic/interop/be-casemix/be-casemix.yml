@@ -647,3 +647,7 @@ http:
       loadBalancer:
         servers:
           - url: '{{ env "SERVICE_CASEMIX_URL" }}'
+    service-casemix_2:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL_2" }}'
