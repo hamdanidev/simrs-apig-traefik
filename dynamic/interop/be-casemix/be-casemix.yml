@@ -563,7 +563,7 @@ http:
 
     casemix_merge_document:
       rule: "PathPrefix(`/v1.0/merge/document`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-casemix
+      service: service-casemix-2
       entryPoints:
         - web
       middlewares:
@@ -626,7 +626,7 @@ http:
 
     casemix_merge_document_batch:
       rule: "PathPrefix(`/v1.0/merge/document-batch`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-casemix
+      service: service-casemix-2
       entryPoints:
         - web
       middlewares:
@@ -647,3 +647,7 @@ http:
       loadBalancer:
         servers:
           - url: '{{ env "SERVICE_CASEMIX_URL" }}'
+    service-casemix-2:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL_2" }}'
