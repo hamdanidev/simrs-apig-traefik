@@ -2220,7 +2220,7 @@ http:
         - "simrs-cors"
 
     diklat_pendidikan_pkl_4:
-      rule: "PathPrefix(`/v1.0/pkl/pendidikan-pkl/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/pkl/pendidikan-pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
         - web
