@@ -561,15 +561,6 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    casemix_merge_document:
-      rule: "PathPrefix(`/v1.0/merge/document`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-casemix-2
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
     casemix_dokumen_periode_create:
       rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
@@ -624,15 +615,6 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    casemix_merge_document_batch:
-      rule: "PathPrefix(`/v1.0/merge/document-batch`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-casemix-2
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
     casemix_pasien_casemix_update_tanggal_grouper:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-tanggal-grouper`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
@@ -647,7 +629,3 @@ http:
       loadBalancer:
         servers:
           - url: '{{ env "SERVICE_CASEMIX_URL" }}'
-    service-casemix-2:
-      loadBalancer:
-        servers:
-          - url: '{{ env "SERVICE_CASEMIX_URL_2" }}'
