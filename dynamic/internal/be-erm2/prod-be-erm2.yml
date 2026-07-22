@@ -10132,6 +10132,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_order_lab_resend_order_lab_billing_by_no_registrasi_14_digit:
+      rule: "PathPrefix(`/v1.0/order-lab/resend-order-lab-billing-by-no-registrasi-14-digit`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
