@@ -153,6 +153,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    ws_bpjs_antrean_belum_dilayani:
+      rule: "PathPrefix(`/v1.0/wsbpjs/antrean-belum-dilayani`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-ws-bpjs:
       loadBalancer:
