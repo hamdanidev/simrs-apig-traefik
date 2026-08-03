@@ -10141,6 +10141,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_laporan_10_besar_penyakit_rehab_medis_get_list:
+      rule: "PathPrefix(`/v1.0/erm/laporan-10-besar-penyakit-rehab-medis/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
