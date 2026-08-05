@@ -19,6 +19,42 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+
+    casemix_bundling_request_update:
+      rule: "PathPrefix(`/v1.0/bundling/request`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix-2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    casemix_bundling_request_check:
+      rule: "PathPrefix(`/v1.0/bundling/check`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix-2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    casemix_bundling_get_by_id:
+      rule: "PathPrefix(`/v1.0/bundling/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix-2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    casemix_bundling_proses:
+      rule: "PathPrefix(`/v1.0/bundling/proses/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix-2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-casemix-2:
       loadBalancer:
