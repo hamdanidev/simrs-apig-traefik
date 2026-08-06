@@ -1496,7 +1496,7 @@ http:
         - "simrs-auth"
 
     satusehat_condition:
-      rule: "PathPrefix(`/v1.0/condition`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/condition`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
         - web
