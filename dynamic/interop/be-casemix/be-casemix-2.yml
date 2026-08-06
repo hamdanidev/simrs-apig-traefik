@@ -55,6 +55,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    casemix_bundling_zip_getlist:
+      rule: "PathPrefix(`/v1.0/bundling/zip/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix-2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-casemix-2:
       loadBalancer:
