@@ -3156,6 +3156,34 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-basic-auth"
+
+    farmasi_order_obat_fix_status_diterima_selesai_terisi:
+      rule: "PathPrefix(`/v1.0/farmasi/order-obat/fix-status-diterima-selesai-terisi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    farmasi_order_lab_pa_update_status_selesai_bulk:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    farmasi_order_lab_mi_update_status_selesai_bulk:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
   services:
     service-farmasi:
       loadBalancer:
