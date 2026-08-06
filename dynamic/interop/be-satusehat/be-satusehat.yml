@@ -1495,14 +1495,6 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    satusehat_condition:
-      rule: "PathPrefix(`/v1.0/condition`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-satu-sehat
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
   services:
     service-satu-sehat:
       loadBalancer:
