@@ -1494,6 +1494,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
   services:
     service-satu-sehat:
       loadBalancer:
