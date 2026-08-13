@@ -10150,6 +10150,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_laporan_kunjungan_spesialis_registrasi_rekap:
+      rule: "PathPrefix(`/v1.0/erm/laporan-kunjungan-spesialis-registrasi/rekap`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
