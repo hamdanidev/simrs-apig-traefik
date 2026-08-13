@@ -3164,7 +3164,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     farmasi_order_lab_pa_update_status_selesai_bulk:
       rule: "PathPrefix(`/v1.0/lab/order-lab-pa/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -3173,7 +3173,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     farmasi_order_lab_mi_update_status_selesai_bulk:
       rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -3182,7 +3182,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
   services:
     service-farmasi:
