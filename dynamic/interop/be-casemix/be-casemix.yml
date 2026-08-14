@@ -624,6 +624,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    casemix_pasien_casemix_getlist_group_by_no_sep:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/getlist-group-by-no-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-casemix:
       loadBalancer:
