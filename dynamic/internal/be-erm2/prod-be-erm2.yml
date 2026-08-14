@@ -10159,6 +10159,51 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_pasien_hemodialisa_getlist_all_group_by_sep:
+      rule: "PathPrefix(`/v1.0/pasien-hemodialisa/getlist-all-group-by-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_rawat_jalan_getlist_all_group_by_sep:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/getlist-all-group-by-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_kemoterapi_getlist_all_group_by_sep:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/getlist-all-group-by-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_radioterapi_getlist_all_group_by_sep:
+      rule: "PathPrefix(`/v1.0/pasien-radioterapi/getlist-all-group-by-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_rehabilitasi_medis_getlist_all_group_by_sep:
+      rule: "PathPrefix(`/v1.0/pasien-rehabilitasi-medis/getlist-all-group-by-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
