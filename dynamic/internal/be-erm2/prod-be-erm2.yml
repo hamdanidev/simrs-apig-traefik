@@ -10222,6 +10222,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_rencana_kontrol_pasien_umum_get_by_no_kontrol:
+      rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/get-by-no-kontrol/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
