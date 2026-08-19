@@ -10240,6 +10240,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_pasien_rawat_inap_get_by_no_rm_last:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-inap/get-by-no-rm-last/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
