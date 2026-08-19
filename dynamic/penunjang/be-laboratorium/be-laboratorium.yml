@@ -1655,6 +1655,115 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    laboratorium_jenis_hasil_lab_getall:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_jenis_hasil_lab_getlist:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_jenis_hasil_lab_get_by_kd:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_jenis_hasil_lab_create:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_jenis_hasil_lab_update:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_jenis_hasil_lab_delete_by_kd:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_pemeriksaan_lab_getall:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_pemeriksaan_lab_getlist:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_pemeriksaan_lab_get_by_kd:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_pemeriksaan_lab_create:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_pemeriksaan_lab_update:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    laboratorium_pemeriksaan_lab_delete_by_kd:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-lab:
       loadBalancer:
