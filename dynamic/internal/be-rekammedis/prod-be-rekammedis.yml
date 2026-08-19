@@ -1953,7 +1953,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
     rm_pasien_8:
-      rule: "PathPrefix(`/v1.0/rmpasien/getbynamapasiendantanggallahir/[a-z][A-Z]+/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/rmpasien/getbynamapasiendantanggallahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
         - web
