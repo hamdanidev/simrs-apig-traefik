@@ -10231,6 +10231,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_pasien_konsul_get_by_no_registrasi_konsul_beda_episode:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/get-by-no-registrasi-konsul-beda-episode/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
