@@ -180,6 +180,16 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    apm_pasien_publish_to_pendaftaran:
+      rule: "PathPrefix(`/v1.0/apm-pasien/publish-to-pendaftaran`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-apm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-apm:
       loadBalancer:
