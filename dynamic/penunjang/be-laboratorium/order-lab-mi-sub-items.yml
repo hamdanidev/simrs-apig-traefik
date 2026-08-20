@@ -1,0 +1,52 @@
+http:
+  routers:
+    lab_order_lab_mi_get_list_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_order_lab_mi_get_by_id_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-order-lab-mi-sub-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_order_lab_mi_update_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-order-lab-mi-sub-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_order_lab_mi_create_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi-sub-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_order_lab_mi_delete_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi-sub-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-lab:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_LAB_URL" }}'
