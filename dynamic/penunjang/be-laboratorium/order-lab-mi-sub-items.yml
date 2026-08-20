@@ -45,6 +45,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    lab_order_lab_mi_get_list_order_lab_mi_with_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi-with-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-lab:
       loadBalancer:
