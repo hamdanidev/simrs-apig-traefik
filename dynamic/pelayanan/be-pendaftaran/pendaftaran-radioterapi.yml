@@ -1,0 +1,16 @@
+http:
+  routers:
+    pendaftaran_radioterapi_create_by_apm:
+      rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/create-by-apm`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'
