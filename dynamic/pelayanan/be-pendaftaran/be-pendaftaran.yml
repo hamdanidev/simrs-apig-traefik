@@ -3699,6 +3699,60 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_rehabilitasi_medis_create_by_apm:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rehabilitasi-medis/create-by-apm`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_rehabilitasi_medis_update_sep:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rehabilitasi-medis/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_rehabilitasi_medis_update_step_3_v2:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rehabilitasi-medis/update-step-3-v2/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_hemodialisa_create_by_apm:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/create-by-apm`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_hemodialisa_update_sep:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_hemodialisa_update_step_3_v2:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-step-3-v2/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:

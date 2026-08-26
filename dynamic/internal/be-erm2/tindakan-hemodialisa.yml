@@ -1,0 +1,62 @@
+http:
+  routers:
+    erm_tindakan_hemodialisa_create:
+      rule: "PathPrefix(`/v1.0/erm/tindakan-hemodialisa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_tindakan_hemodialisa_update:
+      rule: "PathPrefix(`/v1.0/erm/tindakan-hemodialisa/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_tindakan_hemodialisa_getlist:
+      rule: "PathPrefix(`/v1.0/erm/tindakan-hemodialisa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_tindakan_hemodialisa_getbyid:
+      rule: "PathPrefix(`/v1.0/erm/tindakan-hemodialisa/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_tindakan_hemodialisa_getbynoregistrasi:
+      rule: "PathPrefix(`/v1.0/erm/tindakan-hemodialisa/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_tindakan_hemodialisa_delete:
+      rule: "PathPrefix(`/v1.0/erm/tindakan-hemodialisa/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
