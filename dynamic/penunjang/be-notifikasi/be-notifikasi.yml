@@ -7,8 +7,8 @@ http:
       entryPoints:
         - web
       middlewares:
-        - "simrs-cors"
         - "simrs-auth"
+        - "simrs-cors"
 
     notifikasi_2:
       rule: "PathPrefix(`/v1.0/websocket/notifikasi-log/update-status`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -16,8 +16,8 @@ http:
       entryPoints:
         - web
       middlewares:
-        - "simrs-cors"
         - "simrs-auth"
+        - "simrs-cors"
   services:
     service-notifikasi:
       loadBalancer:
