@@ -10267,6 +10267,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_spri_update_status_registrasi:
+      rule: "PathPrefix(`/v1.0/spri/update-status-registrasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_spri_get_by_use_reg:
+      rule: "PathPrefix(`/v1.0/spri/get-by-use-reg/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
