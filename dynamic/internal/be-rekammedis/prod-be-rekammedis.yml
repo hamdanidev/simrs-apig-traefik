@@ -2265,6 +2265,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    rekammedis_get_status_verifikasi:
+      rule: "PathPrefix(`/v1.0/rmpasien/get-status-verifikasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rekammedis_verifikasi:
+      rule: "PathPrefix(`/v1.0/rmpasien/verifikasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-rekam-medis:
       loadBalancer:
