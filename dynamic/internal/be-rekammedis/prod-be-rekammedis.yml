@@ -2275,7 +2275,7 @@ http:
         - "simrs-auth"
 
     rekammedis_verifikasi:
-      rule: "PathPrefix(`/v1.0/rmpasien/verifikasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/rmpasien/status-verifikasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
         - web
