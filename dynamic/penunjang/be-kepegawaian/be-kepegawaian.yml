@@ -2686,7 +2686,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     kepegawaian_spesialis_item_radiologi_getbykdspesialis:
       rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/getbykdspesialis/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -2695,7 +2695,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     kepegawaian_spesialis_item_radiologi_getspesialisbykditem:
       rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/getspesialisbykditem/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -2704,7 +2704,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     kepegawaian_spesialis_item_radiologi_getspesialisbykodemodalitas_CT:
       rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/getspesialisbykodemodalitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -2713,7 +2713,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     kepegawaian_spesialis_item_radiologi_create:
       rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -2722,7 +2722,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     kepegawaian_spesialis_item_radiologi_deletebyid:
       rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
@@ -2731,7 +2731,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
     kepegawaian_spesialis_unit_layanan_getspesialisbykdunitbpjs:
       rule: "PathPrefix(`/v1.0/spesialis/unitlayanan/getspesialisbykdunitbpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -2740,7 +2740,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-basic-auth"
+        - "simrs-auth"
 
   services:
     service-kepegawaian:
