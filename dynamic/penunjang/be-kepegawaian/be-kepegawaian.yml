@@ -2678,6 +2678,70 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-basic-auth"
+
+    kepegawaian_spesialis_item_radiologi_getlist:
+      rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    kepegawaian_spesialis_item_radiologi_getbykdspesialis:
+      rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/getbykdspesialis/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    kepegawaian_spesialis_item_radiologi_getspesialisbykditem:
+      rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/getspesialisbykditem/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    kepegawaian_spesialis_item_radiologi_getspesialisbykodemodalitas_CT:
+      rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/getspesialisbykodemodalitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    kepegawaian_spesialis_item_radiologi_create:
+      rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    kepegawaian_spesialis_item_radiologi_deletebyid:
+      rule: "PathPrefix(`/v1.0/spesialis/itemradiologi/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    kepegawaian_spesialis_unit_layanan_getspesialisbykdunitbpjs:
+      rule: "PathPrefix(`/v1.0/spesialis/unitlayanan/getspesialisbykdunitbpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
   services:
     service-kepegawaian:
       loadBalancer:
