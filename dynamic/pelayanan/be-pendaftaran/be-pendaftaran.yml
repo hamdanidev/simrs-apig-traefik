@@ -3753,6 +3753,60 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_pengajuan_batal_getlist:
+      rule: "PathPrefix(`/v1.0/pendaftaran/pengajuan-batal/getlist`) &&  (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_pengajuan_batal_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/pendaftaran/pengajuan-batal/get-by-no-registrasi/`) &&  (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_pengajuan_batal_create:
+      rule: "PathPrefix(`/v1.0/pendaftaran/pengajuan-batal/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_pengajuan_batal_update_status:
+      rule: "PathPrefix(`/v1.0/pendaftaran/pengajuan-batal/update-status-pengajuan-batal/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_pengajuan_batal_update:
+      rule: "PathPrefix(`/v1.0/pendaftaran/pengajuan-batal/update/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    pendaftaran_pengajuan_batal_delete:
+      rule: "PathPrefix(`/v1.0/pendaftaran/pengajuan-batal/delete/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:

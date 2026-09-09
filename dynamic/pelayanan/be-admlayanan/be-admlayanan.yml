@@ -1524,8 +1524,8 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_validasi_pre_pelayanan_by_no_sep:
-      rule: "PathPrefix(`/v1.0/admlayanan/validasi-pre-pelayanan/by-no-sep/`) && (Method(`POST`) || Method(`OPTIONS`))"
+    admlayanan_validasi_pre_pelayanan:
+      rule: "PathPrefix(`/v1.0/admlayanan/validasi-pre-pelayanan/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
         - web
