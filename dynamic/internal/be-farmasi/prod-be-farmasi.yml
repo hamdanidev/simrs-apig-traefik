@@ -3166,6 +3166,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    farmasi_order_obat_fix_status_diterima_selesai_terisi_bulk:
+      rule: "PathPrefix(`/v1.0/farmasi/order-obat/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    farmasi_order_obat_update_alamat_bulk:
+      rule: "PathPrefix(`/v1.0/farmasi/order-obat/update-alamat-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-farmasi:
       loadBalancer:
