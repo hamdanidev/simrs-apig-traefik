@@ -1533,6 +1533,42 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    admlayanan_igd_update_status_kedatangan_rest:
+      rule: "PathPrefix(`/v1.0/admlayanan/igd/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    admlayanan_rawatjalan_update_status_kedatangan_rest:
+      rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    admlayanan_rawatinap_update_status_kedatangan_rest:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    admlayanan_pasienkemoterapi_update_status_kedatangan_rest:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-kemoterapi/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-admlayanan:
       loadBalancer:
