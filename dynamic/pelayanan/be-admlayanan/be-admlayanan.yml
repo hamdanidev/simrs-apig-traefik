@@ -1578,6 +1578,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    admlayanan_pasienhemodialisa_update_status_kedatangan_rest:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-hemodialisa/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    admlayanan_pasienrehabilitasi_update_status_kedatangan_rest:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rehabilitasi-medis/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-admlayanan:
       loadBalancer:
