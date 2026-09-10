@@ -1495,6 +1495,60 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    satusehat_medicationingredient_getlist:
+      rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    satusehat_medicationingredient_getbyid:
+      rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    satusehat_medication_getlistmedicationwithingredient:
+      rule: "PathPrefix(`/v1.0/satu-sehat/medication/get-list-medication-with-ingredient`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    satusehat_medicationingredient_update:
+      rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    satusehat_medicationingredient_create:
+      rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    satusehat_medicationingredient_delete:
+      rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-satu-sehat:
       loadBalancer:
