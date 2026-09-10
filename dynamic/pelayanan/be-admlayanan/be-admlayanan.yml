@@ -1569,6 +1569,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    admlayanan_pasienradioterapi_update_status_kedatangan_rest:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radioterapi/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-admlayanan:
       loadBalancer:
