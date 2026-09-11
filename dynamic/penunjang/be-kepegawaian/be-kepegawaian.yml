@@ -2742,6 +2742,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    kepegawaian_spesialis_jadwal_radiologi_getlist:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-kepegawaian:
       loadBalancer:
