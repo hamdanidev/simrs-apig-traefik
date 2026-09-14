@@ -10285,6 +10285,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_permintaan_makanan_gizi_get_by_ruang_rawat:
+      rule: "PathPrefix(`/v1.0/erm/permintaan-makanan-gizi/get-by-ruang-rawat/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_permintaan_gizi_get_by_nomor_order:
+      rule: "PathPrefix(`/v1.0/erm/pasien-permintaan-gizi/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
