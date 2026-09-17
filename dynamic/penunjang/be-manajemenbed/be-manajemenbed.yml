@@ -81,6 +81,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-basic-auth"
+
+    bedpasien_status_update_khusus:
+      rule: "PathPrefix(`/v1.0/bedpasien/status/update-khusus`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-bed:
       loadBalancer:
