@@ -81,6 +81,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    be_kepegawaian_master_mjkn_referensi_jadwal_dokter_sync:
+      rule: "PathPrefix(`/v1.0/master-mjkn/referensi-jadwal-dokter/sync`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-kepegawaian:
       loadBalancer:
