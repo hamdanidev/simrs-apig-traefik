@@ -1,0 +1,52 @@
+http:
+  routers:
+    erm_imunisasi_create:
+      rule: "PathPrefix(`/v1.0/imunisasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_imunisasi_update:
+      rule: "PathPrefix(`/v1.0/imunisasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_imunisasi_delete:
+      rule: "PathPrefix(`/v1.0/imunisasi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_imunisasi_getlist:
+      rule: "PathPrefix(`/v1.0/imunisasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_imunisasi_get_by_id:
+      rule: "PathPrefix(`/v1.0/imunisasi/get-by-id`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
