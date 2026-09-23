@@ -1,0 +1,52 @@
+http:
+  routers:
+    erm_suratketeranganpasienpulang_create:
+      rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_suratketeranganpasienpulang_update:
+      rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_suratketeranganpasienpulang_delete:
+      rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_suratketeranganpasienpulang_getlist:
+      rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_suratketeranganpasienpulang_get_by_id:
+      rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/get-by-id`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
