@@ -442,6 +442,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    remunerasi_hitung_remun_proses_nats:
+      rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/proses-nats`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-remunerasi:
       loadBalancer:
