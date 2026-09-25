@@ -10312,6 +10312,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_surat_keterangan_sakit_create:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-sakit/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
