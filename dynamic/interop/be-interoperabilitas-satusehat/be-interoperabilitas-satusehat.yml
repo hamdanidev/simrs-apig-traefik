@@ -1305,6 +1305,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    medicationstatement_create:
+      rule: "PathPrefix(`/v1.0/medication-statement/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-satu-sehat-interop:
       loadBalancer:
