@@ -10321,6 +10321,33 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_surat_keterangan_sakit_update:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-sakit/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_surat_keterangan_sakit_delete:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-sakit/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_surat_keterangan_sakit_getlist:
+      rule: "PathPrefix(`/v1.0/erm/surat-keterangan-sakit/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
