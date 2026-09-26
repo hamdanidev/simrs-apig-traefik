@@ -10348,6 +10348,69 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_pasien_rawat_jalan_update_status_billing:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasienigd_update_status_billing:
+      rule: "PathPrefix(`/v1.0/pasienigd/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_rawat_inap_update_status_billing:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-inap/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_hemodialisa_update_status_billing:
+      rule: "PathPrefix(`/v1.0/pasien-hemodialisa/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_kemoterapi_update_status_billing:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_radioterapi_update_status_billing:
+      rule: "PathPrefix(`/v1.0/pasien-radioterapi/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_rehabilitasi_medis_update_status_billing:
+      rule: "PathPrefix(`/v1.0/pasien-rehabilitasi-medis/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
