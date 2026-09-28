@@ -10411,6 +10411,69 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_pasien_rawat_jalan_count_coding:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasienigd_count_coding:
+      rule: "PathPrefix(`/v1.0/pasienigd/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_rawat_inap_count_coding:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-inap/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_hemodialisa_count_coding:
+      rule: "PathPrefix(`/v1.0/pasien-hemodialisa/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_kemoterapi_count_coding:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_radioterapi_count_coding:
+      rule: "PathPrefix(`/v1.0/pasien-radioterapi/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_pasien_rehabilitasi_medis_count_coding:
+      rule: "PathPrefix(`/v1.0/pasien-rehabilitasi-medis/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
