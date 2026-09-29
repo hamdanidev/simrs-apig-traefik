@@ -90,6 +90,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    bedpasien_status_aktif_update:
+      rule: "PathPrefix(`/v1.0/bedpasien/status-aktif/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-bed:
       loadBalancer:
