@@ -3807,6 +3807,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_all_unit_update_kelas_standar_pelayanan:
+      rule: "PathPrefix(`/v1.0/pendaftaran/all-unit/update-kelas-standar-pelayanan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
