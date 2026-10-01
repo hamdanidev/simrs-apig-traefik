@@ -13,6 +13,7 @@ http:
           - "Content-Type"
           - "X-Requested-With"
           - "X-Rs-Code"
+          - "x-mode-tx"
           - "Req-Id"
         accessControlAllowOriginList:
           - "*"
