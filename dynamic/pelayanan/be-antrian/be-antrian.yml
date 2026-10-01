@@ -782,6 +782,42 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    be_antrian_iterasi_get_by_tgl_antrian:
+      rule: "PathPrefix(`/v1.0/iterasi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be_antrian_iterasi_next_number:
+      rule: "PathPrefix(`/v1.0/iterasi/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be_antrian_iterasi_panggil_ke:
+      rule: "PathPrefix(`/v1.0/iterasi/panggilanke/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be_antrian_iterasi_status:
+      rule: "PathPrefix(`/v1.0/iterasi/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-antrian:
       loadBalancer:
