@@ -10510,6 +10510,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_order_obat_getlist_order_obat_by_no_rm:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-order-obat-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
