@@ -99,6 +99,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    bed_getdatabed:
+      rule: "PathPrefix(`/v1.0/bed/getdatabed`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-bed:
       loadBalancer:
