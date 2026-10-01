@@ -10502,7 +10502,7 @@ http:
         - "simrs-auth"
 
     erm_rencana_kontrol_get_by_no_kontrol:
-      rule: "PathPrefix(`/v1.0/rencana-kontrol/get-by-no-kontrol/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/rencana-kontrol/get-by-no-kontrol/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
         - web
