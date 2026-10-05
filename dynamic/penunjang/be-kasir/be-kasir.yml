@@ -643,6 +643,105 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_create:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_getlist_kwitansi:
+      rule: "PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_getlist:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_kwitansi_create:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_kwitansi_getlist:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_kwitansi_getlist_by_nomor_order:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/getlist-kwitansi-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_kwitansi_update_bukti_bayar:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/update-bukti-bayar/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_kwitansi_update_tgl_kwitansi:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/update-tgl-kwitansi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_item_getlist_item_by_no_kwitansi:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/item/getlist-item-by-no-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_item_item:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/item/item/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_item_update_no_kwitansi:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/item/update-no-kwitansi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-kasir:
       loadBalancer:
