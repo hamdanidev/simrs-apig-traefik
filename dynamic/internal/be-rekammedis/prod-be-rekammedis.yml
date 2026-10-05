@@ -2283,6 +2283,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    rekammedis_bulk_update_no_identitas_by_no_rm:
+      rule: "PathPrefix(`/v1.0/rmpasien/bulk-update-no-identitas-by-no-rm`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-rekam-medis:
       loadBalancer:
