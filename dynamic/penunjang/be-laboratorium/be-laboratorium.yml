@@ -1764,6 +1764,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    order_lab_pk_update_no_identitas_bulk_by_tanggal_order:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/update-no-identitas-bulk-by-tanggal-order`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-lab:
       loadBalancer:
