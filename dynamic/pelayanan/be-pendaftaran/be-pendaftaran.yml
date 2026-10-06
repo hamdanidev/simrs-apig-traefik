@@ -3816,6 +3816,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_rajal_create_registrasi_by_mobile:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rajal/create-registrasi-by-mobile`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
