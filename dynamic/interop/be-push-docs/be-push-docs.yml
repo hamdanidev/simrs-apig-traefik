@@ -2,7 +2,7 @@ http:
 
   routers:
     be-push-docs_health:
-      rule: "PathPrefix(`/v1.0/health`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/pushdocs/health`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-push-docs
       entryPoints:
         - web
