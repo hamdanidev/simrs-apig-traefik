@@ -1,0 +1,54 @@
+http:
+
+  routers:
+    be-push-docs_health:
+      rule: "PathPrefix(`/v1.0/health`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-push-docs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be-push-docs_pushdocs_jobs:
+      rule: "PathPrefix(`/v1.0/pushdocs/jobs`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-push-docs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be-push-docs_pushdocs_jobs_2:
+      rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-push-docs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be-push-docs_pushdocs_jobs_3:
+      rule: "PathPrefix(`/v1.0/pushdocs/jobs`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-push-docs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be-push-docs_pushdocs_jobs_4:
+      rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-push-docs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+  services:
+    service-be-push-docs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BE_PUSH_DOCS_URL" }}'
