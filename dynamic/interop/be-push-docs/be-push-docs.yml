@@ -2,7 +2,7 @@ http:
 
   routers:
     be-push-docs_health:
-      rule: "PathPrefix(`/v1.0/health`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/pushdocs/health`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-push-docs
       entryPoints:
         - web
@@ -50,5 +50,10 @@ http:
   services:
     service-be-push-docs:
       loadBalancer:
+        healthCheck:
+          path: /v1.0/pushdocs/health
+          interval: 10s
+          timeout: 3s
+
         servers:
           - url: '{{ env "SERVICE_BE_PUSH_DOCS_URL" }}'
