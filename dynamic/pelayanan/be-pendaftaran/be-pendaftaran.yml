@@ -3825,6 +3825,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    pendaftaran_antrian_poli_cek_sinkronisasi_ws_antrian:
+      rule: "PathPrefix(`/v1.0/pendaftaran/antrian-poli/cek-sinkronisasi-ws-antrian`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-pendaftaran:
       loadBalancer:
