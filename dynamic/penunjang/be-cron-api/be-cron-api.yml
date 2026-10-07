@@ -1,0 +1,34 @@
+http:
+  routers:
+    be_cron_api_bed:
+      rule: "PathPrefix(`/v1.0/cron-api/bed`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be_cron_api_bed_pending:
+      rule: "PathPrefix(`/v1.0/cron-api/bed/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    be_cron_api_bed_pending_status:
+      rule: "PathPrefix(`/v1.0/cron-api/bed/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-be-cron-api:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BE_CRON_API_URL" }}' # IP Server Prod
