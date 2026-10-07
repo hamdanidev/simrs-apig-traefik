@@ -742,6 +742,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_billing_getlist_billing_by_nomor_order:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/getlist-billing-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-kasir:
       loadBalancer:
