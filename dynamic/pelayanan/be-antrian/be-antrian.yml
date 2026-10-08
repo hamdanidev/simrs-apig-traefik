@@ -37,7 +37,7 @@ http:
         - "simrs-auth"
 
     farmasi_5:
-      rule: "PathPrefix(`/v1.0/farmasi/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/farmasi/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-antrian
       entryPoints:
         - web
