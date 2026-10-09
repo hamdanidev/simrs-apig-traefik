@@ -1773,6 +1773,60 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    lab_orlder_lab_mi_ekternal_get_list_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-order-lab-mi-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_orlder_lab_mi_ekternal_get_list_order_lab_mi_with_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-order-lab-mi-with-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_orlder_lab_mi_ekternal_get_by_id_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-order-lab-mi-sub-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_orlder_lab_mi_ekternal_udpate_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/update-order-lab-mi-sub-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_orlder_lab_mi_ekternal_create_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/create-order-lab-mi-sub-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    lab_orlder_lab_mi_ekternal_delete_order_lab_mi_sub_items:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/delete-order-lab-mi-sub-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-lab:
       loadBalancer:
