@@ -1827,6 +1827,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    lab_order_lab_pk_get_laporan_lengkap_item:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-lengkap-item`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-lab:
       loadBalancer:
