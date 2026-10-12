@@ -5923,6 +5923,14 @@ http:
       middlewares:
         - "simrs-cors"
 
+    diklat_studi_banding_kegiatan_studi_banding_getlist_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/studi-banding/kegiatan-studi-banding/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
   services:
     service-diklat:
       loadBalancer:
