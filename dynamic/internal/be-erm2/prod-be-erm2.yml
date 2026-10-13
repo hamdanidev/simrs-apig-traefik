@@ -10528,6 +10528,42 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_laporan_bor_los_toi_getlist_per_ruangan:
+      rule: "PathPrefix(`/v1.0/erm/laporan-bor-los-toi/getlist/per-ruangan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_laporan_bor_los_toi_get_all_per_ruangan:
+      rule: "PathPrefix(`/v1.0/erm/laporan-bor-los-toi/get-all/per-ruangan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_laporan_bor_los_toi_getlist_per_ruangan_pertahun:
+      rule: "PathPrefix(`/v1.0/erm/laporan-bor-los-toi/getlist/per-ruangan/pertahun`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_laporan_bor_los_toi_get_all_per_ruangan_pertahun:
+      rule: "PathPrefix(`/v1.0/erm/laporan-bor-los-toi/get-all/per-ruangan/pertahun`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
