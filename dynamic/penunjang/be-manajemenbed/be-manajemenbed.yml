@@ -110,7 +110,7 @@ http:
         - "simrs-auth"
 
     bed_getdatabed_updated:
-      rule: "PathPrefix(`/v1.0/bed/getdatabed-updated`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/bed/getdatabed-updated`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-bed
       entryPoints:
         - web
