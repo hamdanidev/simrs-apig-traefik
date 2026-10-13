@@ -819,7 +819,7 @@ http:
         - "simrs-auth"
 
     be_iterasi_total_antrian:
-      rule: "PathPrefix(`/v1.0/iterasi/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/iterasi/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-antrian
       entryPoints:
         - web
