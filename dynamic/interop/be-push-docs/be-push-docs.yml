@@ -47,13 +47,9 @@ http:
         - "simrs-auth"
 
 
+
   services:
     service-be-push-docs:
       loadBalancer:
-        healthCheck:
-          path: /v1.0/pushdocs/health
-          interval: 10s
-          timeout: 3s
-
         servers:
           - url: '{{ env "SERVICE_BE_PUSH_DOCS_URL" }}'
