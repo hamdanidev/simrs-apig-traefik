@@ -3211,6 +3211,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    farmasi_order_barang_farmasi_bebas_update_info_kasir:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/update-info-kasir/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-farmasi:
       loadBalancer:
