@@ -708,7 +708,7 @@ http:
         - "simrs-auth"
 
     kasir_billing_penjualan_barang_bebas_kwitansi_update_tgl_kwitansi:
-      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/update-tgl-kwitansi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/update-tgl-kwitansi`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
         - web
