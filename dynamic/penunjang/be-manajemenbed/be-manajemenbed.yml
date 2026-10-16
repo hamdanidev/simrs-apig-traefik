@@ -126,6 +126,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    bedpasien_update_by_kdbed:
+      rule: "PathPrefix(`/v1.0/bedpasien/update-by-kdbed/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-bed:
       loadBalancer:
