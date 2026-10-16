@@ -751,6 +751,15 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    kasir_biling_pendapatan:
+      rule: "PathPrefix(`/v1.0/kasir-billing/pendapatan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-kasir:
       loadBalancer:
