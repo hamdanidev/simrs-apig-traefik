@@ -760,6 +760,33 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    kasir_biling_penjualan_barang_bebas_pendapatan:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/pendapatan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_status_pembayaran_umum:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/status-pembayaran-umum`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    kasir_billing_penjualan_barang_bebas_rekap_pendapatan_kasir:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/rekap-pendapatan-kasir`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-kasir:
       loadBalancer:
