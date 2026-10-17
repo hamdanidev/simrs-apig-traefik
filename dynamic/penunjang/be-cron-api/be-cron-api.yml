@@ -81,6 +81,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    be_coron_api_bed_getlist:
+      rule: "PathPrefix(`/v1.0/cron-api/bed/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-be-cron-api:
       loadBalancer:
