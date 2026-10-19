@@ -10564,6 +10564,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_order_lab_sync_from_lab:
+      rule: "PathPrefix(`/v1.0/order-lab/sync-from-lab`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
   services:
     service-erm:
       loadBalancer:
