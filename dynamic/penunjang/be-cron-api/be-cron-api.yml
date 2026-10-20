@@ -16,7 +16,7 @@ http:
         - web
       middlewares:
         - "simrs-cors"
-        - "simrs-auth
+        - "simrs-auth"
 
     be_cron_api_bed_pending:
       rule: "PathPrefix(`/v1.0/cron-api/bed/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
