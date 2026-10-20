@@ -10572,6 +10572,25 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    erm_order_lab_updte_items:
+      rule: "PathPrefix(`/v1.0/order-lab/update-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_order_lab_update_sub_items:
+      rule: "PathPrefix(`/v1.0/order-lab/update-sub-items`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
