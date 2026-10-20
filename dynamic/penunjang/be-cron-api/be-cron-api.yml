@@ -1,13 +1,22 @@
 http:
   routers:
     be_cron_api_bed:
-      rule: "PathPrefix(`/v1.0/cron-api/bed`) && (Method(`GET`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/cron-api/bed`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
         - web
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    be_cron_api_bed_bulk:
+      rule: "PathPrefix(`/v1.0/cron-api/bed/bulk`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth
 
     be_cron_api_bed_pending:
       rule: "PathPrefix(`/v1.0/cron-api/bed/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
