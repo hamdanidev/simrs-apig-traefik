@@ -486,6 +486,60 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    radiologi_jadwal_periksa_radiologi_getall:
+      rule: "PathPrefix(`/v1.0/jadwal-periksa-radiologi/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    radiologi_jadwal_periksa_radiologi_create:
+      rule: "PathPrefix(`/v1.0/jadwal-periksa-radiologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    radiologi_jadwal_periksa_radiologi_update:
+      rule: "PathPrefix(`/v1.0/jadwal-periksa-radiologi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    radiologi_jadwal_periksa_radiologi_get_by_id:
+      rule: "PathPrefix(`/v1.0/jadwal-periksa-radiologi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    radiologi_jadwal_periksa_radiologi_getlist:
+      rule: "PathPrefix(`/v1.0/jadwal-periksa-radiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    radiologi_jadwal_periksa_radiologi_delete_by_id:
+      rule: "PathPrefix(`/v1.0/jadwal-periksa-radiologi/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-radiologi:
       loadBalancer:
