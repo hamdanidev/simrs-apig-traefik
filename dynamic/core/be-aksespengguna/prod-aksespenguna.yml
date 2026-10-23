@@ -544,6 +544,17 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
+    pengguna_me:
+      rule: "PathPrefix(`/v1.0/aksespengguna/me`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
   services:
     service-aksespengguna:
       loadBalancer:
