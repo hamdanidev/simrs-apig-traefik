@@ -827,6 +827,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    be_antrian_farmasi_getlist:
+      rule: "PathPrefix(`/v1.0/farmasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-antrian:
       loadBalancer:
