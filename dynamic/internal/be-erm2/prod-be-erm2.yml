@@ -10591,6 +10591,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    erm_billing_remun:
+      rule: "PathPrefix(`/v1.0/billing/remun/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
