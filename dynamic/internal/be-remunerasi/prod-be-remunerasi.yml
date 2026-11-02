@@ -461,7 +461,7 @@ http:
         - "simrs-auth"
 
     remunerasi_billing-internalimport-data-billing-v2:
-      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal-import-data-billing-v2`) && (Method(`POST`) || Method(`OPTIONS`))"
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal/import-data-billing-v2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-remunerasi
       entryPoints:
         - web
