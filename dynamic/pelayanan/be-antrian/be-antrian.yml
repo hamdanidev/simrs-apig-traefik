@@ -737,14 +737,14 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    poli_ref_1:
-      rule: "PathPrefix(`/v1.0/poli/getbyparam/`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-antrian
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
+    # poli_ref_1:
+    #   rule: "PathPrefix(`/v1.0/poli/getbyparam/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-antrian
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
 
     be_antrian_poli_get_by_no_registrasi:
       rule: "PathPrefix(`/v1.0/poli/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
