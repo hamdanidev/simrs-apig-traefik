@@ -451,6 +451,42 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    remunerasi_billing-internal_import-data-billing:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal/import-data-billing`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing-internalimport-data-billing-v2:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internalimport-data-billing-v2`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing-internal_proses-nats:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal/proses-nats`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    remunerasi_billing-internal_get-by-nosep:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal/get-by-nosep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-remunerasi:
       loadBalancer:
