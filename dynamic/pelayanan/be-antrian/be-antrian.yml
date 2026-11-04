@@ -845,6 +845,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    be_antrian_monitoring_farmasi:
+      rule: "PathPrefix(`/v1.0/monitoring/farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-antrian:
       loadBalancer:
