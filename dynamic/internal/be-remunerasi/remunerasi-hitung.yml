@@ -45,7 +45,6 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-
     remunerasi_hitung-remun_response-hitung:
       rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/response-hitung`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-remunerasi
