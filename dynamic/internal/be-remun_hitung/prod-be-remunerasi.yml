@@ -1,16 +1,6 @@
 http:
 
   routers:
-
-
-    internal_remun_hitung_2:
-      rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/response-hitung`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-remun-hitung
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
     internal_remun_hitung_1:
       rule: "PathPrefix(`/v1.0/remun/proses-remunerasi-bpjs`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-remun-hitung
