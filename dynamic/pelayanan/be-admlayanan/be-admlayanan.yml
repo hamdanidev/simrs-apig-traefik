@@ -1614,6 +1614,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    adm-layanan_kirim-kasir_payload:
+      rule: "PathPrefix(`/v1.0/adm-layanan/kirim-kasir/payload/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    adm-layanan_kirim-kasir_create:
+      rule: "PathPrefix(`/v1.0/adm-layanan/kirim-kasir/create/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-admlayanan:
       loadBalancer:
