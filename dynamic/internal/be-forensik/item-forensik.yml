@@ -1,7 +1,7 @@
 http:
 
   routers:
-    forensik_item_1:
+    v1_forensik_item-forensik_getlist_GET:
       rule: "PathPrefix(`/v1.0/forensik/item-forensik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:

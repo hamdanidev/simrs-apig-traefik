@@ -1,7 +1,7 @@
 http:
   routers:
     # JASA PELAYANAN
-    jenis_pelayanan_kris_1:
+    v1_jenispelayanan_kris_getlist_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_kris_2:
+    v1_jenispelayanan_kris_getall_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_kris_3:
+    v1_jenispelayanan_kris_getbynama_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_kris_4:
+    v1_jenispelayanan_kris_getbykd_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_kris_5:
+    v1_jenispelayanan_kris_getbykdkategoripelayanan_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/getbykdkategoripelayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_kris_6:
+    v1_jenispelayanan_kris_create_POST:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_kris_7:
+    v1_jenispelayanan_kris_update_PUT:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_kris_8:
+    v1_jenispelayanan_kris_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/jenispelayanan/kris/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_non_kris_1:
+    v1_jenispelayanan_nonkris_getlist_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -82,7 +82,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_non_kris_2:
+    v1_jenispelayanan_nonkris_getall_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -91,7 +91,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_non_kris_3:
+    v1_jenispelayanan_nonkris_getbynama_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -100,7 +100,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_non_kris_4:
+    v1_jenispelayanan_nonkris_getbykd_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -109,7 +109,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_non_kris_5:
+    v1_jenispelayanan_nonkris_getbykdkategoripelayanan_GET:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/getbykdkategoripelayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -118,7 +118,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_non_kris_6:
+    v1_jenispelayanan_nonkris_create_POST:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -127,7 +127,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_non_kris_7:
+    v1_jenispelayanan_nonkris_update_PUT:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -136,7 +136,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jenis_pelayanan_non_kris_8:
+    v1_jenispelayanan_nonkris_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/jenispelayanan/nonkris/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -145,7 +145,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kategori_pelayanan_1:
+    v1_kategoripelayanan_getlist_GET:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -154,7 +154,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kategori_pelayanan_2:
+    v1_kategoripelayanan_getbykd_GET:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -163,7 +163,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kategori_pelayanan_3:
+    v1_kategoripelayanan_create_POST:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -172,7 +172,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kategori_pelayanan_4:
+    v1_kategoripelayanan_update_PUT:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -181,7 +181,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kategori_pelayanan_5:
+    v1_kategoripelayanan_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -190,7 +190,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kategori_pelayanan_6:
+    v1_kategoripelayanan_getall_GET:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -199,7 +199,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kategori_pelayanan_7:
+    v1_kategoripelayanan_getbystandarlayanan_GET:
       rule: "PathPrefix(`/v1.0/kategoripelayanan/getbystandarlayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -208,7 +208,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_1:
+    v1_paketmcu_getlist_GET:
       rule: "PathPrefix(`/v1.0/paketmcu/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -217,7 +217,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_2:
+    v1_paketmcu_getbykd_GET:
       rule: "PathPrefix(`/v1.0/paketmcu/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -226,7 +226,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_3:
+    v1_paketmcu_create_POST:
       rule: "PathPrefix(`/v1.0/paketmcu/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -235,7 +235,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_4:
+    v1_paketmcu_update_PUT:
       rule: "PathPrefix(`/v1.0/paketmcu/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -244,7 +244,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_5:
+    v1_paketmcu_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/paketmcu/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -253,7 +253,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_6:
+    v1_paketmcu_getall_GET:
       rule: "PathPrefix(`/v1.0/paketmcu/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -262,7 +262,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_7:
+    v1_paketmcu_getbynama_GET:
       rule: "PathPrefix(`/v1.0/paketmcu/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -271,7 +271,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_8:
+    v1_paketmcu_items_get-list_GET:
       rule: "PathPrefix(`/v1.0/paketmcu/items/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -280,7 +280,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_9:
+    v1_paketmcu_items_get-by-kd_GET:
       rule: "PathPrefix(`/v1.0/paketmcu/items/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -289,7 +289,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_10:
+    v1_paketmcu_items_create_POST:
       rule: "PathPrefix(`/v1.0/paketmcu/items/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -298,7 +298,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_11:
+    v1_paketmcu_items_update_PUT:
       rule: "PathPrefix(`/v1.0/paketmcu/items/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -307,7 +307,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paket_mcu_12:
+    v1_paketmcu_items_delete-by-kd_DELETE:
       rule: "PathPrefix(`/v1.0/paketmcu/items/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -316,7 +316,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paketmcu_pelayanan_1:
+    v1_paketmcu_pelayanan_getlist_GET:
       rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -325,7 +325,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paketmcu_pelayanan_2:
+    v1_paketmcu_pelayanan_getlistbykdpaketmcu_GET:
       rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/getlistbykdpaketmcu/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -334,7 +334,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paketmcu_pelayanan_3:
+    v1_paketmcu_pelayanan_create_POST:
       rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -343,7 +343,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    paketmcu_pelayanan_4:
+    v1_paketmcu_pelayanan_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -352,7 +352,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_parent_1:
+    v1_unitlayananparent_getlist_GET:
       rule: "PathPrefix(`/v1.0/unitlayananparent/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -361,7 +361,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_parent_2:
+    v1_unitlayananparent_getbykd_GET:
       rule: "PathPrefix(`/v1.0/unitlayananparent/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -370,7 +370,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_parent_3:
+    v1_unitlayananparent_create_POST:
       rule: "PathPrefix(`/v1.0/unitlayananparent/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -379,7 +379,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_parent_4:
+    v1_unitlayananparent_update_PUT:
       rule: "PathPrefix(`/v1.0/unitlayananparent/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -388,7 +388,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_parent_5:
+    v1_unitlayananparent_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/unitlayananparent/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -397,7 +397,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_parent_6:
+    v1_unitlayananparent_getall_GET:
       rule: "PathPrefix(`/v1.0/unitlayananparent/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -406,7 +406,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_parent_7:
+    v1_unitlayananparent_getbynama_GET:
       rule: "PathPrefix(`/v1.0/unitlayananparent/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -415,7 +415,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_1:
+    v1_unitlayanan_getlist_GET:
       rule: "PathPrefix(`/v1.0/unitlayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -424,7 +424,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_2:
+    v1_unitlayanan_getbykd_GET:
       rule: "PathPrefix(`/v1.0/unitlayanan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -433,7 +433,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_3:
+    v1_unitlayanan_getbykdparent_GET:
       rule: "PathPrefix(`/v1.0/unitlayanan/getbykdparent/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -442,7 +442,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_4:
+    v1_unitlayanan_create_POST:
       rule: "PathPrefix(`/v1.0/unitlayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -451,7 +451,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_5:
+    v1_unitlayanan_update_PUT:
       rule: "PathPrefix(`/v1.0/unitlayanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -460,7 +460,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_6:
+    v1_unitlayanan_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/unitlayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -469,7 +469,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_7:
+    v1_unitlayanan_getall_GET:
       rule: "PathPrefix(`/v1.0/unitlayanan/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -478,7 +478,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_8:
+    v1_unitlayanan_getbynama_GET:
       rule: "PathPrefix(`/v1.0/unitlayanan/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -487,7 +487,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_9:
+    v1_unit-layanan_get-kd-unit-bpjs_GET:
       rule: "PathPrefix(`/v1.0/unit-layanan/get-kd-unit-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -496,7 +496,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_10:
+    v1_unitlayanan_getlistwithfarmasi_GET:
       rule: "PathPrefix(`/v1.0/unitlayanan/getlistwithfarmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -505,7 +505,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_layanan_1:
+    v1_unitlayanan_layanan_getlistbykdunitlayanan_GET:
       rule: "PathPrefix(`/v1.0/unitlayanan/layanan/getlistbykdunitlayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -514,7 +514,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_layanan_2:
+    v1_unitlayanan_layanan_create_POST:
       rule: "PathPrefix(`/v1.0/unitlayanan/layanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -523,7 +523,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_layanan_3:
+    v1_unitlayanan_layanan_deletebyidlayananlayanan_DELETE:
       rule: "PathPrefix(`/v1.0/unitlayanan/layanan/deletebyidlayananlayanan/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -532,7 +532,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_get_list_lampung_in:
+    v1_unit-layanan_get-list_lampung-in_GET:
       rule: "PathPrefix(`/v1.0/unit-layanan/get-list/lampung-in`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -541,7 +541,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_daftar_poli_get_list:
+    v1_daftar-poli_get-list_GET:
       rule: "PathPrefix(`/v1.0/daftar-poli/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -550,7 +550,7 @@ http:
         - "simrs-cors"
         - "simrs-basic-auth"
 
-    unit_layanan_harga_ruangan_get_list:
+    v1_harga-ruangan_get-list_GET:
       rule: "PathPrefix(`/v1.0/harga-ruangan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -559,7 +559,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_harga_ruangan_get_by_kd:
+    v1_harga-ruangan_get-by-kd_GET:
       rule: "PathPrefix(`/v1.0/harga-ruangan/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -568,7 +568,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_harga_ruangan_create:
+    v1_harga-ruangan_create_POST:
       rule: "PathPrefix(`/v1.0/harga-ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -577,7 +577,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_harga_ruangan_update:
+    v1_harga-ruangan_update_PUT:
       rule: "PathPrefix(`/v1.0/harga-ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -586,7 +586,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_harga_ruangan_delete_by_kd:
+    v1_harga-ruangan_delete-by-kd_DELETE:
       rule: "PathPrefix(`/v1.0/harga-ruangan/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -595,7 +595,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_harga_ambulance_get_list:
+    v1_harga-ambulance_get-list_GET:
       rule: "PathPrefix(`/v1.0/harga-ambulance/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -604,7 +604,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_harga_ambulance_get_by_kd:
+    v1_harga-ambulance_get-by-kd_GET:
       rule: "PathPrefix(`/v1.0/harga-ambulance/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -613,7 +613,7 @@ http:
         - "simrs-cors"
         - "simrs-basic-auth"
 
-    unit_layanan_harga_ambulance_create:
+    v1_harga-ambulance_create_POST:
       rule: "PathPrefix(`/v1.0/harga-ambulance/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -622,7 +622,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_harga_ambulance_update:
+    v1_harga-ambulance_update_PUT:
       rule: "PathPrefix(`/v1.0/harga-ambulance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:
@@ -631,7 +631,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_layanan_harga_ambulance_delete_by_kd:
+    v1_harga-ambulance_delete-by-kd_DELETE:
       rule: "PathPrefix(`/v1.0/harga-ambulance/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-jasa-pelayanan
       entryPoints:

@@ -1,7 +1,7 @@
 http:
 
   routers:
-    doc_generate_pdf:
+    v1_doc_generate-pdf_POST:
       rule: "PathPrefix(`/v1.0/doc/generate-pdf`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-doc-generate
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    doc_generate:
+    v1_doc_generate_POST:
       rule: "PathPrefix(`/v1.0/doc/generate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-doc-generate
       entryPoints:
