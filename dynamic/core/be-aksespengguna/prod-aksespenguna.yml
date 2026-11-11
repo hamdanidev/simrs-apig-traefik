@@ -109,6 +109,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    duplicat_v1_modul_fitur_getbykdmodul_GET:
+      rule: "PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
     v1_group_aplikasi_getlist_GET:
       rule: "PathPrefix(`/v1.0/group/aplikasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aksespengguna
@@ -138,15 +147,6 @@ http:
 
     v1_group_aplikasi_deletebyid_DELETE:
       rule: "PathPrefix(`/v1.0/group/aplikasi/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
-      service: service-aksespengguna
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    duplicat_v1_modul_fitur_getbykdmodul_GET:
-      rule: "PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aksespengguna
       entryPoints:
         - web
@@ -528,6 +528,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
     v1_rsudam_aplikasi_new_create_POST:
       rule: "PathPrefix(`/v1.0/rsudam/aplikasi/new/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-aksespengguna
@@ -536,6 +537,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
+
     v1_rsudam_aplikasi_new_edit_PUT:
       rule: "PathPrefix(`/v1.0/rsudam/aplikasi/new/edit`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-aksespengguna
