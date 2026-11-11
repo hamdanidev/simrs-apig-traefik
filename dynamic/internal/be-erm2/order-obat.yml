@@ -1,6 +1,6 @@
 http:
   routers:
-    order-obat_update_tindakan_lab_racikan:
+    v1_order-obat_update-tindakan-lab-racikan_PUT:
       rule: "PathPrefix(`/v1.0/order-obat/update-tindakan-lab-racikan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
