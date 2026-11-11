@@ -1,6 +1,6 @@
 http:
   routers:
-    erm_surat_keterangan_kematian_create:
+    v1_erm_surat-keterangan-kematian_create_POST:
       rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_surat_keterangan_kematian_get_by_no_registrasi:
+    v1_erm_surat-keterangan-kematian_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_surat_keterangan_kematian_get_by_no_rm:
+    v1_erm_surat-keterangan-kematian_get-by-no-rm_GET:
       rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_surat_keterangan_kematian_getlist:
+    v1_erm_surat-keterangan-kematian_getlist_GET:
       rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_surat_keterangan_kematian_update:
+    v1_erm_surat-keterangan-kematian_update_PUT:
       rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_surat_keterangan_kematian_update_status_final:
+    v1_erm_surat-keterangan-kematian_update-status-final_PUT:
       rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/update-status-final`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_surat_keterangan_kematian_delete:
+    v1_erm_surat-keterangan-kematian_delete_DELETE:
       rule: "PathPrefix(`/v1.0/erm/surat-keterangan-kematian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

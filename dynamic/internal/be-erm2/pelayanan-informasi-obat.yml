@@ -1,6 +1,6 @@
 http:
   routers:
-    erm_pelayanan_informasi_obat_create:
+    v1_erm_pelayanan-informasi-obat_create_POST:
       rule: "PathPrefix(`/v1.0/erm/pelayanan-informasi-obat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_pelayanan_informasi_obat_update:
+    v1_erm_pelayanan-informasi-obat_update_PUT:
       rule: "PathPrefix(`/v1.0/erm/pelayanan-informasi-obat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_pelayanan_informasi_obat_get_by_id:
+    v1_erm_pelayanan-informasi-obat_get-by-id_GET:
       rule: "PathPrefix(`/v1.0/erm/pelayanan-informasi-obat/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_pelayanan_informasi_obat_get-list:
+    v1_erm_pelayanan-informasi-obat_get-list_GET:
       rule: "PathPrefix(`/v1.0/erm/pelayanan-informasi-obat/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_pelayanan_informasi_obat_delete:
+    v1_erm_pelayanan-informasi-obat_delete_DELETE:
       rule: "PathPrefix(`/v1.0/erm/pelayanan-informasi-obat/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

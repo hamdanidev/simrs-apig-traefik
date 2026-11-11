@@ -1,6 +1,6 @@
 http:
   routers:
-    erm_laporan_pemasangan_pdt_get_list:
+    v1_laporan-pemasangan-pdt_get-list_GET:
       rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_laporan_pemasangan_pdt_get_by_id:
+    v1_laporan-pemasangan-pdt_get-by-id_GET:
       rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_laporan_pemasangan_pdt_create:
+    v1_laporan-pemasangan-pdt_create_POST:
       rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_laporan_pemasangan_pdt_update:
+    v1_laporan-pemasangan-pdt_update_PUT:
       rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_laporan_pemasangan_pdt_delete:
+    v1_laporan-pemasangan-pdt_delete_DELETE:
       rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

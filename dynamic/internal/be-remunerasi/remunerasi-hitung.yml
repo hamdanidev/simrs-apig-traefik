@@ -1,6 +1,6 @@
 http:
   routers:
-    remunerasi_hitung_proses_looping_1:
+    v1_remunerasi_hitung-remun_proses-looping_POST:
       rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/proses-looping`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-remunerasi
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    remunerasi_hitung_sync_index_remun:
+    v1_remunerasi_hitung-remun_sync-index-remun_PUT:
       rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/sync-index-remun`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-remunerasi
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    remunerasi_hitung_get_list_index:
+    v1_remunerasi_hitung-remun_get-list-index_GET:
       rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/get-list-index`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-remunerasi
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    remunerasi_hitung_get_list_jasa_jtl:
+    v1_remunerasi_hitung-remun_get-list-jasa-jtl_GET:
       rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/get-list-jasa-jtl`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-remunerasi
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    remunerasi_hitung_get_list_jasa_jl:
+    v1_remunerasi_hitung-remun_get-list-jasa-jl_GET:
       rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/get-list-jasa-jl`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-remunerasi
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    remunerasi_hitung-remun_response-hitung:
+    v1_remunerasi_hitung-remun_response-hitung_GET:
       rule: "PathPrefix(`/v1.0/remunerasi/hitung-remun/response-hitung`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-remunerasi
       entryPoints:
