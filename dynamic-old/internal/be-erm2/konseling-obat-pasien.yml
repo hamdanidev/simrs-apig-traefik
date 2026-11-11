@@ -1,0 +1,52 @@
+http:
+  routers:
+    erm_konseling_obat_pasien_create:
+      rule: "PathPrefix(`/v1.0/erm/konseling-obat-pasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_konseling_obat_pasien_update:
+      rule: "PathPrefix(`/v1.0/erm/konseling-obat-pasien/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_konseling_obat_pasien_get_by_id:
+      rule: "PathPrefix(`/v1.0/erm/konseling-obat-pasien/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_konseling_obat_pasien_get-list:
+      rule: "PathPrefix(`/v1.0/erm/konseling-obat-pasien/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_konseling_obat_pasien_delete:
+      rule: "PathPrefix(`/v1.0/erm/konseling-obat-pasien/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

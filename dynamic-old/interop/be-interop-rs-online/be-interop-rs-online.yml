@@ -1,0 +1,144 @@
+http:
+
+  routers:
+    rs_online_referensi_tempat_tidur:
+      rule: "PathPrefix(`/v1.0/rs-online/referensi/tempat-tidur`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_tempat_tidur-get:
+      rule: "PathPrefix(`/v1.0/rs-online/tempat-tidur`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_tempat_tidur-post:
+      rule: "PathPrefix(`/v1.0/rs-online/tempat-tidur`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_tempat_tidur-put:
+      rule: "PathPrefix(`/v1.0/rs-online/tempat-tidur`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_tempat_tidur-delete:
+      rule: "PathPrefix(`/v1.0/rs-online/tempat-tidur`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_referensi_sdm:
+      rule: "PathPrefix(`/v1.0/rs-online/referensi/sdm`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_sdm-get:
+      rule: "PathPrefix(`/v1.0/rs-online/sdm`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_sdm-post:
+      rule: "PathPrefix(`/v1.0/rs-online/sdm`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_sdm-put:
+      rule: "PathPrefix(`/v1.0/rs-online/sdm`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_sdm-delete:
+      rule: "PathPrefix(`/v1.0/rs-online/sdm`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_referensi_apd:
+      rule: "PathPrefix(`/v1.0/rs-online/referensi/apd`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_apd-get:
+      rule: "PathPrefix(`/v1.0/rs-online/apd`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_apd-post:
+      rule: "PathPrefix(`/v1.0/rs-online/apd`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_apd-put:
+      rule: "PathPrefix(`/v1.0/rs-online/apd`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rs_online_apd-delete:
+      rule: "PathPrefix(`/v1.0/rs-online/apd`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+  services:
+    service-be-interop-rs-online:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BE_INTEROP_RS_ONLINE_URL" }}'

@@ -1,0 +1,36 @@
+http:
+  middlewares:
+    simrs-cors:
+      headers:
+        accessControlAllowMethods:
+          - "GET"
+          - "POST"
+          - "PUT"
+          - "DELETE"
+          - "OPTIONS"
+        accessControlAllowHeaders:
+          - "Authorization"
+          - "Content-Type"
+          - "X-Requested-With"
+          - "X-Rs-Code"
+          - "X-Mode-Tx"
+          - "Req-Id"
+        accessControlAllowOriginList:
+          - "*"
+        accessControlMaxAge: 100
+        addVaryHeader: true
+    simrs-auth:
+      plugin:
+        jwt:
+          Secret: '{{ env "JWT_SCREET" }}'
+          AuthorizationHeader: "Authorization"
+          HeaderPrefix: ""
+          PayloadFields:
+            - "token" # token
+            - "nama_lengkap" # nama
+            - "username" # username
+    simrs-basic-auth:
+      basicAuth:
+        users:
+          - "monitoring:$2a$12$0hwjqtifjArd7BG6O.ql9O..KixYCC8sMMkKINEKH.BFlwsbgGghu"
+          - "simrs_data:$2a$12$HjIZSTQBbJ4MNsa5TBbyJOhD/h4RINpoImmz3PORwTaguSHMzPyaq"

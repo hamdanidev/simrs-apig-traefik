@@ -1,0 +1,70 @@
+http:
+  routers:
+    erm_form_alergi_create:
+      rule: "PathPrefix(`/v1.0/erm/form-alergi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_form_alergi_update:
+      rule: "PathPrefix(`/v1.0/erm/form-alergi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_form_alergi_update_status:
+      rule: "PathPrefix(`/v1.0/erm/form-alergi/update-status`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_form_alergi_delete:
+      rule: "PathPrefix(`/v1.0/erm/form-alergi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_form_alergi_get_by_no_rm:
+      rule: "PathPrefix(`/v1.0/erm/form-alergi/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_form_alergi_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/erm/form-alergi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_form_alergi_getlist:
+      rule: "PathPrefix(`/v1.0/erm/form-alergi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

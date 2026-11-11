@@ -1,0 +1,40 @@
+http:
+  routers:
+    rekammedis_dokumen_create:
+      rule: "PathPrefix(`/v1.0/rekam-medis/dokumen/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    rekammedis_dokumen_get_by_no_rm:
+      rule: "PathPrefix(`/v1.0/rekam-medis/dokumen/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    rekammedis_dokumen_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/rekam-medis/dokumen/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    rekammedis_dokumen_delete:
+      rule: "PathPrefix(`/v1.0/rekam-medis/dokumen/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

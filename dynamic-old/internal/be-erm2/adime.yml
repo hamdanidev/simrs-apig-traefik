@@ -1,0 +1,43 @@
+http:
+  routers:
+    erm_adime_getlist:
+      rule: "PathPrefix(`/v1.0/adime/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_adime_get_by_id:
+      rule: "PathPrefix(`/v1.0/adime/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_adime_get_by_no_rm:
+      rule: "PathPrefix(`/v1.0/adime/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_adime_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/adime/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

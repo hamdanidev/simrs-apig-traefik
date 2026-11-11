@@ -1,0 +1,52 @@
+http:
+  routers:
+    erm_laporan_pemasangan_pdt_get_list:
+      rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_laporan_pemasangan_pdt_get_by_id:
+      rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_laporan_pemasangan_pdt_create:
+      rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_laporan_pemasangan_pdt_update:
+      rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_laporan_pemasangan_pdt_delete:
+      rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

@@ -1,0 +1,32 @@
+http:
+
+  routers:
+    internal_riwayat_cssd_1:
+      rule: "PathPrefix(`/v1.0/cssd/riwayat-cssd/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    internal_riwayat_cssd_2:
+      rule: "PathPrefix(`/v1.0/cssd/riwayat-cssd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    internal_riwayat_cssd_3:
+      rule: "PathPrefix(`/v1.0/cssd/riwayat-cssd/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+  services:
+    service-cssd:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CSSD_URL" }}'

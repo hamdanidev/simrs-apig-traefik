@@ -1,0 +1,62 @@
+http:
+  routers:
+    erm_rujukan_internal_create:
+      rule: "PathPrefix(`/v1.0/erm/rujukan-internal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_rujukan_internal_update:
+      rule: "PathPrefix(`/v1.0/erm/rujukan-internal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_rujukan_internal_get_by_no_registrasi:
+      rule: "PathPrefix(`/v1.0/erm/rujukan-internal/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_rujukan_internal_get_by_no_rujukan:
+      rule: "PathPrefix(`/v1.0/erm/rujukan-internal/get-by-no-rujukan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_rujukan_internal_get_by_no_rm:
+      rule: "PathPrefix(`/v1.0/erm/rujukan-internal/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    erm_rujukan_internal_delete:
+      rule: "PathPrefix(`/v1.0/erm/rujukan-internal/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

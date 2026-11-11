@@ -1,0 +1,40 @@
+http:
+  routers:
+    pasien-konsul_update_status_pelaksanaan_1:
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/update-status-kedatangan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_update_status_koding:
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/update-status-koding`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_erm_all_count_status_koding:
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/count-status-koding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+    pasien_erm_all_update_no_sep:
+      rule: "PathPrefix(`/v1.0/pasien-erm-all/update-no-sep`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
