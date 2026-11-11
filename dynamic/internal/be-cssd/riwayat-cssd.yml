@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_cssd_riwayat-cssd_get-list_GET:
+    internal_riwayat_cssd_1:
       rule: "PathPrefix(`/v1.0/cssd/riwayat-cssd/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -9,7 +9,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_riwayat-cssd_create_POST:
+    internal_riwayat_cssd_2:
       rule: "PathPrefix(`/v1.0/cssd/riwayat-cssd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -17,7 +17,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_riwayat-cssd_update_PUT:
+    internal_riwayat_cssd_3:
       rule: "PathPrefix(`/v1.0/cssd/riwayat-cssd/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:

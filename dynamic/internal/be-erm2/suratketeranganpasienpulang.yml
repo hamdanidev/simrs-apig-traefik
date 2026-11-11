@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_suratketeranganpasienpulang_create_POST:
+    erm_suratketeranganpasienpulang_create:
       rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suratketeranganpasienpulang_update_PUT:
+    erm_suratketeranganpasienpulang_update:
       rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suratketeranganpasienpulang_delete_DELETE:
+    erm_suratketeranganpasienpulang_delete:
       rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suratketeranganpasienpulang_getlist_GET:
+    erm_suratketeranganpasienpulang_getlist:
       rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suratketeranganpasienpulang_get-by-id_GET:
+    erm_suratketeranganpasienpulang_get_by_id:
       rule: "PathPrefix(`/v1.0/suratketeranganpasienpulang/get-by-id`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

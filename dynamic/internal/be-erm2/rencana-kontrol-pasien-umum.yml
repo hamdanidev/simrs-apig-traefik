@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_rencana-kontrol-pasien-umum_get-by-no-rm_GET:
+    rencana-kontrol-pasien-umum_get_by_no_rm:
       rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -8,7 +8,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rencana-kontrol-pasien-umum_create_POST:
+    rencana-kontrol-pasien-umum_create:
       rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -17,7 +17,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rencana-kontrol-pasien-umum_update_PUT:
+    rencana-kontrol-pasien-umum_update:
       rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -26,7 +26,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rencana-kontrol-pasien-umum_getlist_GET:
+    rencana-kontrol-pasien-umum_getlist:
       rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -35,7 +35,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rencana-kontrol-pasien-umum_get-by-no-registrasi_GET:
+    rencana-kontrol-pasien-umum_get_by_no_registrasi:
       rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -44,7 +44,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rencana-kontrol-pasien-umum_delete_DELETE:
+    rencana_kontrol_pasien_umum_delete_by_no_registrasi:
       rule: "PathPrefix(`/v1.0/rencana-kontrol-pasien-umum/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

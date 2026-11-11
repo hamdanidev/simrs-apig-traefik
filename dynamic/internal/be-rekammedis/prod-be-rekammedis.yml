@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_assessmentAwalKebidananObstetri_getlist_GET:
+    assesment_awal_kebidanan_obstetri_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -8,7 +8,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKebidananObstetri_create_POST:
+    assesment_awal_kebidanan_obstetri_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -16,7 +16,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKebidananObstetri_update_PUT:
+    assesment_awal_kebidanan_obstetri_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -24,7 +24,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKebidananObstetri_delete_GET:
+    assesment_awal_kebidanan_obstetri_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananObstetri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -32,7 +32,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKebidananPenyakitKandungan_getlist_GET:
+    assesment_awal_kebidanan_penyakit_kandungan_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -40,7 +40,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKebidananPenyakitKandungan_create_POST:
+    assesment_awal_kebidanan_penyakit_kandungan_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -48,7 +48,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKebidananPenyakitKandungan_update_PUT:
+    assesment_awal_kebidanan_penyakit_kandungan_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -56,7 +56,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKebidananPenyakitKandungan_delete_GET:
+    assesment_awal_kebidanan_penyakit_kandungan_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -64,7 +64,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanAnak_getlist_GET:
+    assesment_awal_keperawatan_anak_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanAnak/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -72,7 +72,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanAnak_create_POST:
+    assesment_awal_keperawatan_anak_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanAnak/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -80,7 +80,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanAnak_update_PUT:
+    assesment_awal_keperawatan_anak_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanAnak/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -88,7 +88,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanAnak_delete_GET:
+    assesment_awal_keperawatan_anak_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanAnak/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -96,7 +96,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanDewasa_getlist_GET:
+    assesment_awal_keperawatan_dewasa_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanDewasa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -104,7 +104,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanDewasa_create_POST:
+    assesment_awal_keperawatan_dewasa_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanDewasa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -112,7 +112,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanDewasa_update_PUT:
+    assesment_awal_keperawatan_dewasa_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanDewasa/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -120,7 +120,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanDewasa_delete_GET:
+    assesment_awal_keperawatan_dewasa_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanDewasa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -128,7 +128,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGangguanJiwa_getlist_GET:
+    assesment_awal_keperawatan_gangguan_jiwa_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGangguanJiwa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -136,7 +136,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGangguanJiwa_create_POST:
+    assesment_awal_keperawatan_gangguan_jiwa_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGangguanJiwa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -144,7 +144,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGangguanJiwa_update_PUT:
+    assesment_awal_keperawatan_gangguan_jiwa_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGangguanJiwa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -152,7 +152,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGangguanJiwa_delete_GET:
+    assesment_awal_keperawatan_gangguan_jiwa_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGangguanJiwa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -160,7 +160,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGawatDarurat_getlist_GET:
+    assesment_awal_keperawatan_gawat_darurat_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGawatDarurat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -168,7 +168,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGawatDarurat_create_POST:
+    assesment_awal_keperawatan_gawat_darurat_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGawatDarurat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -176,7 +176,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGawatDarurat_update_PUT:
+    assesment_awal_keperawatan_gawat_darurat_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGawatDarurat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -184,7 +184,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGawatDarurat_delete_GET:
+    assesment_awal_keperawatan_gawat_darurat_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGawatDarurat/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -192,7 +192,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGeriatri_getlist_GET:
+    assesment_awal_keperawatan_geriatri_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGeriatri/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -200,7 +200,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGeriatri_create_POST:
+    assesment_awal_keperawatan_geriatri_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGeriatri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -208,7 +208,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGeriatri_update_PUT:
+    assesment_awal_keperawatan_geriatri_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGeriatri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -216,7 +216,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanGeriatri_delete_GET:
+    assesment_awal_keperawatan_geriatri_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanGeriatri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -224,7 +224,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanJalan_getlist_GET:
+    assesment_awal_keperawatan_jalan_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanJalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -232,7 +232,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanJalan_create_POST:
+    assesment_awal_keperawatan_jalan_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanJalan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -240,7 +240,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanJalan_update_PUT:
+    assesment_awal_keperawatan_jalan_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanJalan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -248,7 +248,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanJalan_delete_GET:
+    assesment_awal_keperawatan_jalan_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanJalan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -256,7 +256,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanObygn_getlist_GET:
+    assesment_awal_keperawatan_obygn_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanObygn/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -264,7 +264,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanObygn_create_POST:
+    assesment_awal_keperawatan_obygn_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanObygn/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -272,7 +272,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanObygn_update_PUT:
+    assesment_awal_keperawatan_obygn_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanObygn/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -280,7 +280,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatanObygn_delete_GET:
+    assesment_awal_keperawatan_obygn_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatanObygn/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -288,7 +288,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatan_getlist_GET:
+    assesment_awal_keperawatan_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -296,7 +296,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatan_create_POST:
+    assesment_awal_keperawatan_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -304,7 +304,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatan_update_PUT:
+    assesment_awal_keperawatan_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -312,7 +312,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalKeperawatan_delete_GET:
+    assesment_awal_keperawatan_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalKeperawatan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -320,7 +320,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalMedisAnak_getlist_GET:
+    assesment_awal_medis_anak_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalMedisAnak/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -328,7 +328,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalMedisAnak_create_POST:
+    assesment_awal_medis_anak_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalMedisAnak/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -336,7 +336,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalMedisAnak_update_PUT:
+    assesment_awal_medis_anak_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalMedisAnak/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -344,7 +344,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalMedisAnak_delete_GET:
+    assesment_awal_medis_anak_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalMedisAnak/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -352,7 +352,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalMedisRawatJalan_getlist_GET:
+    assesment_awal_medis_rawat_jalan_1:
       rule: "PathPrefix(`/v1.0/assessmentAwalMedisRawatJalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -360,7 +360,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalMedisRawatJalan_create_POST:
+    assesment_awal_medis_rawat_jalan_2:
       rule: "PathPrefix(`/v1.0/assessmentAwalMedisRawatJalan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -368,7 +368,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalMedisRawatJalan_update_PUT:
+    assesment_awal_medis_rawat_jalan_3:
       rule: "PathPrefix(`/v1.0/assessmentAwalMedisRawatJalan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -376,7 +376,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentAwalMedisRawatJalan_delete_GET:
+    assesment_awal_medis_rawat_jalan_4:
       rule: "PathPrefix(`/v1.0/assessmentAwalMedisRawatJalan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -384,7 +384,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_assessmentAwalRehabilitasiMedis_getlist_GET:
+    assesment_awal_rehabilitasi_medis_1:
       rule: "PathPrefix(`/v1.0/rmpasien/assessmentAwalRehabilitasiMedis/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -392,7 +392,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_assessmentAwalRehabilitasiMedis_create_POST:
+    assesment_awal_rehabilitasi_medis_2:
       rule: "PathPrefix(`/v1.0/rmpasien/assessmentAwalRehabilitasiMedis/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -400,7 +400,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_assessmentAwalRehabilitasiMedis_update_PUT:
+    assesment_awal_rehabilitasi_medis_3:
       rule: "PathPrefix(`/v1.0/rmpasien/assessmentAwalRehabilitasiMedis/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -408,7 +408,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_assessmentAwalRehabilitasiMedis_delete_GET:
+    assesment_awal_rehabilitasi_medis_4:
       rule: "PathPrefix(`/v1.0/rmpasien/assessmentAwalRehabilitasiMedis/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -416,7 +416,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentGizi_getList_GET:
+    assesment_gizi_1:
       rule: "PathPrefix(`/v1.0/assessmentGizi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -424,7 +424,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentGizi_create_POST:
+    assesment_gizi_2:
       rule: "PathPrefix(`/v1.0/assessmentGizi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -432,7 +432,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentGizi_update_PUT:
+    assesment_gizi_3:
       rule: "PathPrefix(`/v1.0/assessmentGizi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -440,7 +440,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentGizi_delete_GET:
+    assesment_gizi_4:
       rule: "PathPrefix(`/v1.0/assessmentGizi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -448,7 +448,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentJatuhDewasa_getList_GET:
+    assesment_jatuh_dewasa_1:
       rule: "PathPrefix(`/v1.0/assessmentJatuhDewasa/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -456,7 +456,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentJatuhDewasa_create_POST:
+    assesment_jatuh_dewasa_2:
       rule: "PathPrefix(`/v1.0/assessmentJatuhDewasa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -464,7 +464,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentJatuhDewasa_update_PUT:
+    assesment_jatuh_dewasa_3:
       rule: "PathPrefix(`/v1.0/assessmentJatuhDewasa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -472,7 +472,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentJatuhDewasa_delete_GET:
+    assesment_jatuh_dewasa_4:
       rule: "PathPrefix(`/v1.0/assessmentJatuhDewasa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -480,7 +480,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentJatuhGeriatri_getList_GET:
+    assesment_jatuh_geriatri_1:
       rule: "PathPrefix(`/v1.0/assessmentJatuhGeriatri/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -488,7 +488,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentJatuhGeriatri_create_POST:
+    assesment_jatuh_geriatri_2:
       rule: "PathPrefix(`/v1.0/assessmentJatuhGeriatri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -496,7 +496,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentJatuhGeriatri_update_PUT:
+    assesment_jatuh_geriatri_3:
       rule: "PathPrefix(`/v1.0/assessmentJatuhGeriatri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -504,7 +504,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentJatuhGeriatri_delete_GET:
+    assesment_jatuh_geriatri_4:
       rule: "PathPrefix(`/v1.0/assessmentJatuhGeriatri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -512,7 +512,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKebidananBaruLahir_getList_GET:
+    assesment_kebidanan_baru_lahir_1:
       rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -520,7 +520,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKebidananBaruLahir_create_POST:
+    assesment_kebidanan_baru_lahir_2:
       rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -528,7 +528,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKebidananBaruLahir_update_PUT:
+    assesment_kebidanan_baru_lahir_3:
       rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -536,7 +536,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKebidananBaruLahir_delete_GET:
+    assesment_kebidanan_baru_lahir_4:
       rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -544,7 +544,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKemoterapiPasien_getList_GET:
+    assesment_kemoterapi_pasien_1:
       rule: "PathPrefix(`/v1.0/assessmentKemoterapiPasien/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -552,7 +552,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKemoterapiPasien_create_POST:
+    assesment_kemoterapi_pasien_2:
       rule: "PathPrefix(`/v1.0/assessmentKemoterapiPasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -560,7 +560,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKemoterapiPasien_update_PUT:
+    assesment_kemoterapi_pasien_3:
       rule: "PathPrefix(`/v1.0/assessmentKemoterapiPasien/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -568,7 +568,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKemoterapiPasien_delete_GET:
+    assesment_kemoterapi_pasien_4:
       rule: "PathPrefix(`/v1.0/assessmentKemoterapiPasien/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -576,7 +576,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKeperawatanNeonatologi_getList_GET:
+    assesment_keperawatan_neonatologi_1:
       rule: "PathPrefix(`/v1.0/assessmentKeperawatanNeonatologi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -584,7 +584,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKeperawatanNeonatologi_create_POST:
+    assesment_keperawatan_neonatologi_2:
       rule: "PathPrefix(`/v1.0/assessmentKeperawatanNeonatologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -592,7 +592,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKeperawatanNeonatologi_update_PUT:
+    assesment_keperawatan_neonatologi_3:
       rule: "PathPrefix(`/v1.0/assessmentKeperawatanNeonatologi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -600,7 +600,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKeperawatanNeonatologi_delete_GET:
+    assesment_keperawatan_neonatologi_4:
       rule: "PathPrefix(`/v1.0/assessmentKeperawatanNeonatologi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -608,7 +608,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKeperawatanPasienHemodialisa_getList_GET:
+    assesment_keperawatan_internal_pasien_hemodialisa_1:
       rule: "PathPrefix(`/v1.0/assessmentKeperawatanPasienHemodialisa/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -616,7 +616,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKeperawatanPasienHemodialisa_create_POST:
+    assesment_keperawatan_internal_pasien_hemodialisa_2:
       rule: "PathPrefix(`/v1.0/assessmentKeperawatanPasienHemodialisa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -624,7 +624,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKeperawatanPasienHemodialisa_update_PUT:
+    assesment_keperawatan_internal_pasien_hemodialisa_3:
       rule: "PathPrefix(`/v1.0/assessmentKeperawatanPasienHemodialisa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -632,7 +632,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentKeperawatanPasienHemodialisa_delete_GET:
+    assesment_keperawatan_internal_pasien_hemodialisa_4:
       rule: "PathPrefix(`/v1.0/assessmentKeperawatanPasienHemodialisa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -640,7 +640,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisDewasa_getList_GET:
+    assesment_medis_dewasa_1:
       rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -648,7 +648,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisDewasa_create_POST:
+    assesment_medis_dewasa_2:
       rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -656,7 +656,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisDewasa_update_PUT:
+    assesment_medis_dewasa_3:
       rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -664,7 +664,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisDewasa_delete_GET:
+    assesment_medis_dewasa_4:
       rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -672,7 +672,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisGeriatri_getList_GET:
+    assesment_medis_geriatri_1:
       rule: "PathPrefix(`/v1.0/assessmentMedisGeriatri/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -680,7 +680,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisGeriatri_create_POST:
+    assesment_medis_geriatri_2:
       rule: "PathPrefix(`/v1.0/assessmentMedisGeriatri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -688,7 +688,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisGeriatri_update_PUT:
+    assesment_medis_geriatri_3:
       rule: "PathPrefix(`/v1.0/assessmentMedisGeriatri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -696,7 +696,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisGeriatri_delete_GET:
+    assesment_medis_geriatri_4:
       rule: "PathPrefix(`/v1.0/assessmentMedisGeriatri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -704,7 +704,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisNeonatologi_getList_GET:
+    assesment_medis_neonatologi_1:
       rule: "PathPrefix(`/v1.0/assessmentMedisNeonatologi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -712,7 +712,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisNeonatologi_create_POST:
+    assesment_medis_neonatologi_2:
       rule: "PathPrefix(`/v1.0/assessmentMedisNeonatologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -720,7 +720,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisNeonatologi_update_PUT:
+    assesment_medis_neonatologi_3:
       rule: "PathPrefix(`/v1.0/assessmentMedisNeonatologi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -728,7 +728,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisNeonatologi_delete_GET:
+    assesment_medis_neonatologi_4:
       rule: "PathPrefix(`/v1.0/assessmentMedisNeonatologi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -736,7 +736,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisPasienHemodialisa_getList_GET:
+    assesment_medis_internal_pasien_hemodialisa_1:
       rule: "PathPrefix(`/v1.0/assessmentMedisPasienHemodialisa/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -744,7 +744,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisPasienHemodialisa_create_POST:
+    assesment_medis_internal_pasien_hemodialisa_2:
       rule: "PathPrefix(`/v1.0/assessmentMedisPasienHemodialisa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -752,7 +752,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisPasienHemodialisa_update_PUT:
+    assesment_medis_internal_pasien_hemodialisa_3:
       rule: "PathPrefix(`/v1.0/assessmentMedisPasienHemodialisa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -760,7 +760,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentMedisPasienHemodialisa_delete_GET:
+    assesment_medis_internal_pasien_hemodialisa_4:
       rule: "PathPrefix(`/v1.0/assessmentMedisPasienHemodialisa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -768,7 +768,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeriCriticalCpot_getList_GET:
+    assesment_nyeri_critical_cpot_1:
       rule: "PathPrefix(`/v1.0/assessmentNyeriCriticalCpot/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -776,7 +776,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeriCriticalCpot_create_POST:
+    assesment_nyeri_critical_cpot_2:
       rule: "PathPrefix(`/v1.0/assessmentNyeriCriticalCpot/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -784,7 +784,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeriCriticalCpot_update_PUT:
+    assesment_nyeri_critical_cpot_3:
       rule: "PathPrefix(`/v1.0/assessmentNyeriCriticalCpot/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -792,7 +792,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeriCriticalCpot_delete_GET:
+    assesment_nyeri_critical_cpot_4:
       rule: "PathPrefix(`/v1.0/assessmentNyeriCriticalCpot/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -800,7 +800,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeriNeonatologi_getList_GET:
+    assesment_nyeri_neonatologi_1:
       rule: "PathPrefix(`/v1.0/assessmentNyeriNeonatologi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -808,7 +808,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeriNeonatologi_create_POST:
+    assesment_nyeri_neonatologi_2:
       rule: "PathPrefix(`/v1.0/assessmentNyeriNeonatologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -816,7 +816,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeriNeonatologi_update_PUT:
+    assesment_nyeri_neonatologi_3:
       rule: "PathPrefix(`/v1.0/assessmentNyeriNeonatologi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -824,7 +824,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeriNeonatologi_delete_GET:
+    assesment_nyeri_neonatologi_4:
       rule: "PathPrefix(`/v1.0/assessmentNyeriNeonatologi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -832,7 +832,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeri_getList_GET:
+    assesment_nyeri_1:
       rule: "PathPrefix(`/v1.0/assessmentNyeri/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -840,7 +840,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeri_create_POST:
+    assesment_nyeri_2:
       rule: "PathPrefix(`/v1.0/assessmentNyeri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -848,7 +848,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeri_update_PUT:
+    assesment_nyeri_3:
       rule: "PathPrefix(`/v1.0/assessmentNyeri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -856,7 +856,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentNyeri_delete_GET:
+    assesment_nyeri_4:
       rule: "PathPrefix(`/v1.0/assessmentNyeri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -864,7 +864,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPasienJatuhKhususAnak_getList_GET:
+    assesment_pasien_jatuh_khusus_anak_1:
       rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususAnak/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -872,7 +872,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPasienJatuhKhususAnak_create_POST:
+    assesment_pasien_jatuh_khusus_anak_2:
       rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususAnak/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -880,7 +880,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPasienJatuhKhususAnak_update_PUT:
+    assesment_pasien_jatuh_khusus_anak_3:
       rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususAnak/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -888,7 +888,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPasienJatuhKhususAnak_delete_GET:
+    assesment_pasien_jatuh_khusus_anak_4:
       rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususAnak/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -896,7 +896,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPasienJatuhKhususPsikiatri_getList_GET:
+    assesment_pasien_jatuh_khusus_psikiatri_1:
       rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususPsikiatri/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -904,7 +904,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPasienJatuhKhususPsikiatri_create_POST:
+    assesment_pasien_jatuh_khusus_psikiatri_2:
       rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususPsikiatri/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -912,7 +912,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPasienJatuhKhususPsikiatri_update_PUT:
+    assesment_pasien_jatuh_khusus_psikiatri_3:
       rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususPsikiatri/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -920,7 +920,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPasienJatuhKhususPsikiatri_delete_GET:
+    assesment_pasien_jatuh_khusus_psikiatri_4:
       rule: "PathPrefix(`/v1.0/assessmentPasienJatuhKhususPsikiatri/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -928,7 +928,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPraOperasi_getList_GET:
+    assesment_pra_operasi_1:
       rule: "PathPrefix(`/v1.0/assessmentPraOperasi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -936,7 +936,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPraOperasi_create_POST:
+    assesment_pra_operasi_2:
       rule: "PathPrefix(`/v1.0/assessmentPraOperasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -944,7 +944,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPraOperasi_update_PUT:
+    assesment_pra_operasi_3:
       rule: "PathPrefix(`/v1.0/assessmentPraOperasi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -952,7 +952,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentPraOperasi_delete_GET:
+    assesment_pra_operasi_4:
       rule: "PathPrefix(`/v1.0/assessmentPraOperasi/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -960,7 +960,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentTerapiDanGawatDarurat_getList_GET:
+    assesment_terapi_dan_gawat_darurat_1:
       rule: "PathPrefix(`/v1.0/assessmentTerapiDanGawatDarurat/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -968,7 +968,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentTerapiDanGawatDarurat_create_POST:
+    assesment_terapi_dan_gawat_darurat_2:
       rule: "PathPrefix(`/v1.0/assessmentTerapiDanGawatDarurat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -976,7 +976,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentTerapiDanGawatDarurat_update_PUT:
+    assesment_terapi_dan_gawat_darurat_3:
       rule: "PathPrefix(`/v1.0/assessmentTerapiDanGawatDarurat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -984,7 +984,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentTerapiDanGawatDarurat_delete_GET:
+    assesment_terapi_dan_gawat_darurat_4:
       rule: "PathPrefix(`/v1.0/assessmentTerapiDanGawatDarurat/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -992,7 +992,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentTriage_getList_GET:
+    assesment_triage_1:
       rule: "PathPrefix(`/v1.0/assessmentTriage/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1000,7 +1000,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentTriage_create_POST:
+    assesment_triage_2:
       rule: "PathPrefix(`/v1.0/assessmentTriage/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1008,7 +1008,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentTriage_update_PUT:
+    assesment_triage_3:
       rule: "PathPrefix(`/v1.0/assessmentTriage/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1016,7 +1016,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_assessmentTriage_delete_GET:
+    assesment_triage_4:
       rule: "PathPrefix(`/v1.0/assessmentTriage/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1024,7 +1024,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_checklistPulang_getList_GET:
+    checklist_pulang_1:
       rule: "PathPrefix(`/v1.0/checklistPulang/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1032,7 +1032,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_checklistPulang_create_POST:
+    checklist_pulang_2:
       rule: "PathPrefix(`/v1.0/checklistPulang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1040,7 +1040,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_checklistPulang_update_PUT:
+    checklist_pulang_3:
       rule: "PathPrefix(`/v1.0/checklistPulang/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1048,7 +1048,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_checklistPulang_deletebyid_GET:
+    checklist_pulang_4:
       rule: "PathPrefix(`/v1.0/checklistPulang/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1056,7 +1056,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_consentPelayananVaksinCovid19_getList_GET:
+    consent_pelayanan_vaksin_covid19_1:
       rule: "PathPrefix(`/v1.0/consentPelayananVaksinCovid19/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1064,7 +1064,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_consentPelayananVaksinCovid19_create_POST:
+    consent_pelayanan_vaksin_covid19_2:
       rule: "PathPrefix(`/v1.0/consentPelayananVaksinCovid19/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1072,7 +1072,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_consentPelayananVaksinCovid19_update_PUT:
+    consent_pelayanan_vaksin_covid19_3:
       rule: "PathPrefix(`/v1.0/consentPelayananVaksinCovid19/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1080,7 +1080,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_consentPelayananVaksinCovid19_delete_GET:
+    consent_pelayanan_vaksin_covid19_4:
       rule: "PathPrefix(`/v1.0/consentPelayananVaksinCovid19/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1088,7 +1088,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_daftar_pemeriksaan_penunjang_getlist_GET:
+    daftar_pemeriksaan_penunjang_1:
       rule: "PathPrefix(`/v1.0/rmpasien/daftar_pemeriksaan_penunjang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1096,7 +1096,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_daftar_pemeriksaan_penunjang_create_POST:
+    daftar_pemeriksaan_penunjang_2:
       rule: "PathPrefix(`/v1.0/rmpasien/daftar_pemeriksaan_penunjang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1104,7 +1104,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_daftar_pemeriksaan_penunjang_update_PUT:
+    daftar_pemeriksaan_penunjang_3:
       rule: "PathPrefix(`/v1.0/rmpasien/daftar_pemeriksaan_penunjang/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1112,7 +1112,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_daftar_pemeriksaan_penunjang_deletebyid_GET:
+    daftar_pemeriksaan_penunjang_4:
       rule: "PathPrefix(`/v1.0/rmpasien/daftar_pemeriksaan_penunjang/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1120,7 +1120,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_ews_getlist_GET:
+    ews_1:
       rule: "PathPrefix(`/v1.0/rmpasien/ews/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1128,7 +1128,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_ews_create_POST:
+    ews_2:
       rule: "PathPrefix(`/v1.0/rmpasien/ews/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1136,7 +1136,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_ews_update_PUT:
+    ews_3:
       rule: "PathPrefix(`/v1.0/rmpasien/ews/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1144,7 +1144,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_ews_deletebyid_GET:
+    ews_4:
       rule: "PathPrefix(`/v1.0/rmpasien/ews/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1152,7 +1152,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_hasil_tindakan_uji_fungsi_prosedur_kfr_getlist_GET:
+    hasil_tindakan_uji_fungsi_1:
       rule: "PathPrefix(`/v1.0/rmpasien/hasil_tindakan_uji_fungsi_prosedur_kfr/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1160,7 +1160,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_hasil_tindakan_uji_fungsi_prosedur_kfr_create_POST:
+    hasil_tindakan_uji_fungsi_2:
       rule: "PathPrefix(`/v1.0/rmpasien/hasil_tindakan_uji_fungsi_prosedur_kfr/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1168,7 +1168,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_hasil_tindakan_uji_fungsi_prosedur_kfr_update_PUT:
+    hasil_tindakan_uji_fungsi_3:
       rule: "PathPrefix(`/v1.0/rmpasien/hasil_tindakan_uji_fungsi_prosedur_kfr/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1176,7 +1176,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_hasil_tindakan_uji_fungsi_prosedur_kfr_deletebyid_GET:
+    hasil_tindakan_uji_fungsi_4:
       rule: "PathPrefix(`/v1.0/rmpasien/hasil_tindakan_uji_fungsi_prosedur_kfr/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1184,7 +1184,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_intake_output_getlist_GET:
+    intake_output_1:
       rule: "PathPrefix(`/v1.0/rmpasien/intake_output/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1192,7 +1192,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_intake_output_create_POST:
+    intake_output_2:
       rule: "PathPrefix(`/v1.0/rmpasien/intake_output/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1200,7 +1200,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_intake_output_update_PUT:
+    intake_output_3:
       rule: "PathPrefix(`/v1.0/rmpasien/intake_output/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1208,7 +1208,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_intake_output_deletebyid_GET:
+    intake_output_4:
       rule: "PathPrefix(`/v1.0/rmpasien/intake_output/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1216,7 +1216,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_konsultasi_getlist_GET:
+    konsultasi_1:
       rule: "PathPrefix(`/v1.0/rmpasien/konsultasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1224,7 +1224,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_konsultasi_create_POST:
+    konsultasi_2:
       rule: "PathPrefix(`/v1.0/rmpasien/konsultasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1232,7 +1232,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_konsultasi_update_PUT:
+    konsultasi_3:
       rule: "PathPrefix(`/v1.0/rmpasien/konsultasi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1240,7 +1240,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_konsultasi_deletebyid_GET:
+    konsultasi_4:
       rule: "PathPrefix(`/v1.0/rmpasien/konsultasi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1248,7 +1248,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_laboratorium_getlist_GET:
+    laboratorium_1:
       rule: "PathPrefix(`/v1.0/rmpasien/laboratorium/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1256,7 +1256,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_laboratorium_create_POST:
+    laboratorium_2:
       rule: "PathPrefix(`/v1.0/rmpasien/laboratorium/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1264,7 +1264,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_laboratorium_update_PUT:
+    laboratorium_3:
       rule: "PathPrefix(`/v1.0/rmpasien/laboratorium/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1272,7 +1272,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_laboratorium_deletebyid_GET:
+    laboratorium_4:
       rule: "PathPrefix(`/v1.0/rmpasien/laboratorium/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1280,7 +1280,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_laporan_operasi_getlist_GET:
+    laporan_operasi_1:
       rule: "PathPrefix(`/v1.0/rmpasien/laporan_operasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1288,7 +1288,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_laporan_operasi_create_POST:
+    laporan_operasi_2:
       rule: "PathPrefix(`/v1.0/rmpasien/laporan_operasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1296,7 +1296,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_laporan_operasi_update_PUT:
+    laporan_operasi_3:
       rule: "PathPrefix(`/v1.0/rmpasien/laporan_operasi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1304,7 +1304,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_laporan_operasi_deletebyid_GET:
+    laporan_operasi_4:
       rule: "PathPrefix(`/v1.0/rmpasien/laporan_operasi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1312,7 +1312,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_meows_getlist_GET:
+    meows_1:
       rule: "PathPrefix(`/v1.0/rmpasien/meows/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1320,7 +1320,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_meows_create_POST:
+    meows_2:
       rule: "PathPrefix(`/v1.0/rmpasien/meows/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1328,7 +1328,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_meows_update_PUT:
+    meows_3:
       rule: "PathPrefix(`/v1.0/rmpasien/meows/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1336,7 +1336,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_meows_deletebyid_GET:
+    meows_4:
       rule: "PathPrefix(`/v1.0/rmpasien/meows/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1344,7 +1344,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_monitoringKemoterapi_getList_GET:
+    monitoring_kemoterapi_1:
       rule: "PathPrefix(`/v1.0/monitoringKemoterapi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1352,7 +1352,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_monitoringKemoterapi_create_POST:
+    monitoring_kemoterapi_2:
       rule: "PathPrefix(`/v1.0/monitoringKemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1360,7 +1360,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_monitoringKemoterapi_update_PUT:
+    monitoring_kemoterapi_3:
       rule: "PathPrefix(`/v1.0/monitoringKemoterapi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1368,7 +1368,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_monitoringKemoterapi_deletebyid_GET:
+    monitoring_kemoterapi_4:
       rule: "PathPrefix(`/v1.0/monitoringKemoterapi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1376,7 +1376,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_monitoringPasienKemoterapi_getList_GET:
+    monitoring_pasien_kemoterapi_1:
       rule: "PathPrefix(`/v1.0/rmpasien/monitoringPasienKemoterapi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1384,7 +1384,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_monitoringPasienKemoterapi_create_POST:
+    monitoring_pasien_kemoterapi_2:
       rule: "PathPrefix(`/v1.0/rmpasien/monitoringPasienKemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1392,7 +1392,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_monitoringPasienKemoterapi_update_PUT:
+    monitoring_pasien_kemoterapi_3:
       rule: "PathPrefix(`/v1.0/rmpasien/monitoringPasienKemoterapi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1400,7 +1400,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_monitoringPasienKemoterapi_deletebyid_GET:
+    monitoring_pasien_kemoterapi_4:
       rule: "PathPrefix(`/v1.0/rmpasien/monitoringPasienKemoterapi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1408,7 +1408,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_news_getList_GET:
+    news_1:
       rule: "PathPrefix(`/v1.0/news/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1416,7 +1416,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_news_create_POST:
+    news_2:
       rule: "PathPrefix(`/v1.0/news/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1424,7 +1424,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_news_update_PUT:
+    news_3:
       rule: "PathPrefix(`/v1.0/news/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1432,7 +1432,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_news_deletebyid_GET:
+    news_4:
       rule: "PathPrefix(`/v1.0/news/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1440,7 +1440,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_observasiGawatDarurat_getList_GET:
+    observasi_gawat_darurat_1:
       rule: "PathPrefix(`/v1.0/observasiGawatDarurat/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1448,7 +1448,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_observasiGawatDarurat_create_POST:
+    observasi_gawat_darurat_2:
       rule: "PathPrefix(`/v1.0/observasiGawatDarurat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1456,7 +1456,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_observasiGawatDarurat_update_PUT:
+    observasi_gawat_darurat_3:
       rule: "PathPrefix(`/v1.0/observasiGawatDarurat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1464,7 +1464,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_observasiGawatDarurat_deletebyid_GET:
+    observasi_gawat_darurat_4:
       rule: "PathPrefix(`/v1.0/observasiGawatDarurat/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1472,7 +1472,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_patologiAnatomi_getList_GET:
+    patologi_anatomi_1:
       rule: "PathPrefix(`/v1.0/patologiAnatomi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1480,7 +1480,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_patologiAnatomi_create_POST:
+    patologi_anatomi_2:
       rule: "PathPrefix(`/v1.0/patologiAnatomi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1488,7 +1488,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_patologiAnatomi_update_PUT:
+    patologi_anatomi_3:
       rule: "PathPrefix(`/v1.0/patologiAnatomi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1496,7 +1496,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_patologiAnatomi_deletebyid_GET:
+    patologi_anatomi_4:
       rule: "PathPrefix(`/v1.0/patologiAnatomi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1504,7 +1504,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_pemberianKemoterapi_getList_GET:
+    pemberian_kemoterapi_1:
       rule: "PathPrefix(`/v1.0/pemberianKemoterapi/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1512,7 +1512,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_pemberianKemoterapi_create_POST:
+    pemberian_kemoterapi_2:
       rule: "PathPrefix(`/v1.0/pemberianKemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1520,7 +1520,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_pemberianKemoterapi_update_PUT:
+    pemberian_kemoterapi_3:
       rule: "PathPrefix(`/v1.0/pemberianKemoterapi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1528,7 +1528,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_pemberianKemoterapi_deletebyid_GET:
+    pemberian_kemoterapi_4:
       rule: "PathPrefix(`/v1.0/pemberianKemoterapi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1536,7 +1536,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_pews_getList_GET:
+    pews_1:
       rule: "PathPrefix(`/v1.0/pews/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1544,7 +1544,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_pews_create_POST:
+    pews_2:
       rule: "PathPrefix(`/v1.0/pews/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1552,7 +1552,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_pews_update_PUT:
+    pews_3:
       rule: "PathPrefix(`/v1.0/pews/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1560,7 +1560,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_pews_deletebyid_GET:
+    pews_4:
       rule: "PathPrefix(`/v1.0/pews/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1568,7 +1568,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_planOfCareDokter_getList_GET:
+    plan_of_care_dokter_1:
       rule: "PathPrefix(`/v1.0/planOfCareDokter/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1576,7 +1576,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_planOfCareDokter_create_POST:
+    plan_of_care_dokter_2:
       rule: "PathPrefix(`/v1.0/planOfCareDokter/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1584,7 +1584,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_planOfCareDokter_update_PUT:
+    plan_of_care_dokter_3:
       rule: "PathPrefix(`/v1.0/planOfCareDokter/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1592,7 +1592,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_planOfCareDokter_deletebyid_GET:
+    plan_of_care_dokter_4:
       rule: "PathPrefix(`/v1.0/planOfCareDokter/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1600,7 +1600,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_planOfCarePerawat_getList_GET:
+    plan_of_care_perawat_1:
       rule: "PathPrefix(`/v1.0/planOfCarePerawat/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1608,7 +1608,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_planOfCarePerawat_create_POST:
+    plan_of_care_perawat_2:
       rule: "PathPrefix(`/v1.0/planOfCarePerawat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1616,7 +1616,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_planOfCarePerawat_update_PUT:
+    plan_of_care_perawat_3:
       rule: "PathPrefix(`/v1.0/planOfCarePerawat/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1624,7 +1624,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_planOfCarePerawat_deletebyid_GET:
+    plan_of_care_perawat_4:
       rule: "PathPrefix(`/v1.0/planOfCarePerawat/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1632,7 +1632,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_resepObatPasien_getlist_GET:
+    resep_obat_pasien_1:
       rule: "PathPrefix(`/v1.0/rmpasien/resepObatPasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1640,7 +1640,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_resepObatPasien_create_POST:
+    resep_obat_pasien_2:
       rule: "PathPrefix(`/v1.0/rmpasien/resepObatPasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1648,7 +1648,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_resepObatPasien_update_PUT:
+    resep_obat_pasien_3:
       rule: "PathPrefix(`/v1.0/rmpasien/resepObatPasien/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1656,7 +1656,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_resepObatPasien_deletebyid_GET:
+    resep_obat_pasien_4:
       rule: "PathPrefix(`/v1.0/rmpasien/resepObatPasien/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1664,7 +1664,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_resumeMedisRawatJalan_getlist_GET:
+    resume_medis_rawat_jalan_1:
       rule: "PathPrefix(`/v1.0/rmpasien/resumeMedisRawatJalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1672,7 +1672,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_resumeMedisRawatJalan_create_POST:
+    resume_medis_rawat_jalan_2:
       rule: "PathPrefix(`/v1.0/rmpasien/resumeMedisRawatJalan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1680,7 +1680,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_resumeMedisRawatJalan_update_PUT:
+    resume_medis_rawat_jalan_3:
       rule: "PathPrefix(`/v1.0/rmpasien/resumeMedisRawatJalan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1688,7 +1688,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_resumeMedisRawatJalan_deletebyid_GET:
+    resume_medis_rawat_jalan_4:
       rule: "PathPrefix(`/v1.0/rmpasien/resumeMedisRawatJalan/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1696,7 +1696,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_resumeObatRawatInap_getList_GET:
+    resume_obat_rawat_inap_1:
       rule: "PathPrefix(`/v1.0/resumeObatRawatInap/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1704,7 +1704,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_resumeObatRawatInap_create_POST:
+    resume_obat_rawat_inap_2:
       rule: "PathPrefix(`/v1.0/resumeObatRawatInap/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1712,7 +1712,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_resumeObatRawatInap_update_PUT:
+    resume_obat_rawat_inap_3:
       rule: "PathPrefix(`/v1.0/resumeObatRawatInap/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1720,7 +1720,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_resumeObatRawatInap_deletebyid_GET:
+    resume_obat_rawat_inap_4:
       rule: "PathPrefix(`/v1.0/resumeObatRawatInap/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1728,7 +1728,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_ringkasanPasienPulangIgd_getList_GET:
+    ringkasan_pasien_pulang_igd_1:
       rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1736,7 +1736,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_ringkasanPasienPulangIgd_create_POST:
+    ringkasan_pasien_pulang_igd_2:
       rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1744,7 +1744,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_ringkasanPasienPulangIgd_update_PUT:
+    ringkasan_pasien_pulang_igd_3:
       rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1752,7 +1752,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_ringkasanPasienPulangIgd_deletebyid_GET:
+    ringkasan_pasien_pulang_igd_4:
       rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1760,7 +1760,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_ringkasanPenyebabKematian_getlist_GET:
+    ringkasan_penyebab_kematian_1:
       rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1768,7 +1768,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_ringkasanPenyebabKematian_create_POST:
+    ringkasan_penyebab_kematian_2:
       rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1776,7 +1776,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_ringkasanPenyebabKematian_update_PUT:
+    ringkasan_penyebab_kematian_3:
       rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1784,7 +1784,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_ringkasanPenyebabKematian_deletebyid_GET:
+    ringkasan_penyebab_kematian_4:
       rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1792,7 +1792,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_riwayatObatPasien_getlist_GET:
+    riwayat_obat_pasien_1:
       rule: "PathPrefix(`/v1.0/rmpasien/riwayatObatPasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1800,7 +1800,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_riwayatObatPasien_create_POST:
+    riwayat_obat_pasien_2:
       rule: "PathPrefix(`/v1.0/rmpasien/riwayatObatPasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1808,7 +1808,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_riwayatObatPasien_update_PUT:
+    riwayat_obat_pasien_3:
       rule: "PathPrefix(`/v1.0/rmpasien/riwayatObatPasien/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1816,7 +1816,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_riwayatObatPasien_deletebyid_GET:
+    riwayat_obat_pasien_4:
       rule: "PathPrefix(`/v1.0/rmpasien/riwayatObatPasien/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1824,7 +1824,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rekam-medis_riwayat-rekam-medis_getlist_GET:
+    rm_catatan_rekam_medis_1:
       rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1832,7 +1832,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rekam-medis_riwayat-rekam-medis_create_POST:
+    rm_catatan_rekam_medis_2:
       rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1840,7 +1840,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rekam-medis_riwayat-rekam-medis_update_PUT:
+    rm_catatan_rekam_medis_3:
       rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1848,7 +1848,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rekam-medis_riwayat-rekam-medis_delete_DELETE:
+    rm_catatan_rekam_medis_4:
       rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1856,7 +1856,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rekam-medis_riwayat-rekam-medis_get-by-no-rekam-medis_GET:
+    rm_catatan_rekam_medis_5:
       rule: "PathPrefix(`/v1.0/rekam-medis/riwayat-rekam-medis/get-by-no-rekam-medis/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1864,7 +1864,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_cppt_getList_GET:
+    rm_cppt_1:
       rule: "PathPrefix(`/v1.0/rmpasien/cppt/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1872,7 +1872,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_cppt_create_POST:
+    rm_cppt_2:
       rule: "PathPrefix(`/v1.0/rmpasien/cppt/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1880,7 +1880,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_cppt_update_PUT:
+    rm_cppt_3:
       rule: "PathPrefix(`/v1.0/rmpasien/cppt/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1888,7 +1888,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_cppt_deletebyid_GET:
+    rm_cppt_4:
       rule: "PathPrefix(`/v1.0/rmpasien/cppt/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1896,7 +1896,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_getlist_GET:
+    rm_pasien_1:
       rule: "PathPrefix(`/v1.0/rmpasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1904,7 +1904,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_getbynorm_GET:
+    rm_pasien_2:
       rule: "PathPrefix(`/v1.0/rmpasien/getbynorm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1912,7 +1912,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_uploadfotopasien_GET:
+    rm_pasien_3:
       rule: "PathPrefix(`/v1.0/rmpasien/uploadfotopasien/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1920,7 +1920,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_uploadidentitas_GET:
+    rm_pasien_4:
       rule: "PathPrefix(`/v1.0/rmpasien/uploadidentitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1928,7 +1928,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_update_PUT:
+    rm_pasien_5:
       rule: "PathPrefix(`/v1.0/rmpasien/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1936,7 +1936,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_getbynopesertabpjs_GET:
+    rm_pasien_6:
       rule: "PathPrefix(`/v1.0/rmpasien/getbynopesertabpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1944,7 +1944,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_getbynoidentitas_GET:
+    rm_pasien_7:
       rule: "PathPrefix(`/v1.0/rmpasien/getbynoidentitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1952,7 +1952,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_getbynamapasiendantanggallahir_GET:
+    rm_pasien_8:
       rule: "PathPrefix(`/v1.0/rmpasien/getbynamapasiendantanggallahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1960,7 +1960,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_create_POST:
+    rm_pasien_9:
       rule: "PathPrefix(`/v1.0/rmpasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1968,7 +1968,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_get-by-no-rm-dan-no-bpjs_GET:
+    rm_pasien_10:
       rule: "PathPrefix(`/v1.0/rmpasien/get-by-no-rm-dan-no-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1976,7 +1976,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_create-pasien-baru_POST:
+    rm_pasien_11:
       rule: "PathPrefix(`/v1.0/rmpasien/create-pasien-baru`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1984,7 +1984,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_getbynorm-translator_GET:
+    rm_pasien_12:
       rule: "PathPrefix(`/v1.0/rmpasien/getbynorm-translator/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -1992,7 +1992,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_update-status_PUT:
+    rm_pasien_13:
       rule: "PathPrefix(`/v1.0/rmpasien/update-status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2000,7 +2000,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_radiologi_getlist_GET:
+    rm_radiologi_1:
       rule: "PathPrefix(`/v1.0/rmpasien/radiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2008,7 +2008,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_radiologi_create_POST:
+    rm_radiologi_2:
       rule: "PathPrefix(`/v1.0/rmpasien/radiologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2016,7 +2016,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_radiologi_update_PUT:
+    rm_radiologi_3:
       rule: "PathPrefix(`/v1.0/rmpasien/radiologi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2024,7 +2024,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_radiologi_deletebyid_GET:
+    rm_radiologi_4:
       rule: "PathPrefix(`/v1.0/rmpasien/radiologi/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2032,7 +2032,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_riwayat-rm_getlist_GET:
+    rm_riwayat_rekam_medis_1:
       rule: "PathPrefix(`/v1.0/riwayat-rm/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2040,7 +2040,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_riwayat-rm_getbynorm_GET:
+    rm_riwayat_rekam_medis_2:
       rule: "PathPrefix(`/v1.0/riwayat-rm/getbynorm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2048,7 +2048,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_riwayat-rm_get-by-no-rm-dan-no-bpjs_GET:
+    rm_riwayat_rekam_medis_3:
       rule: "PathPrefix(`/v1.0/riwayat-rm/get-by-no-rm-dan-no-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2056,7 +2056,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_riwayat-rm_getbynoidentitas_GET:
+    rm_riwayat_rekam_medis_4:
       rule: "PathPrefix(`/v1.0/riwayat-rm/getbynoidentitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2064,7 +2064,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_riwayat-rm_getbynopesertabpjs_GET:
+    rm_riwayat_rekam_medis_5:
       rule: "PathPrefix(`/v1.0/riwayat-rm/getbynopesertabpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2072,7 +2072,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_riwayat-rm_getbynamapasiendantanggallahir_GET:
+    rm_riwayat_rekam_medis_6:
       rule: "PathPrefix(`/v1.0/riwayat-rm/getbynamapasiendantanggallahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2080,7 +2080,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_riwayat-rm_update_PUT:
+    rm_riwayat_rekam_medis_7:
       rule: "PathPrefix(`/v1.0/riwayat-rm/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2088,7 +2088,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_riwayat-rm_create_POST:
+    rm_riwayat_rekam_medis_8:
       rule: "PathPrefix(`/v1.0/riwayat-rm/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2096,7 +2096,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_skrining_pelayanan_vaksin_covid19_getlist_GET:
+    skrining_pelayanan_vaksin_1:
       rule: "PathPrefix(`/v1.0/rmpasien/skrining_pelayanan_vaksin_covid19/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2104,7 +2104,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_skrining_pelayanan_vaksin_covid19_create_POST:
+    skrining_pelayanan_vaksin_2:
       rule: "PathPrefix(`/v1.0/rmpasien/skrining_pelayanan_vaksin_covid19/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2112,7 +2112,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_skrining_pelayanan_vaksin_covid19_update_PUT:
+    skrining_pelayanan_vaksin_3:
       rule: "PathPrefix(`/v1.0/rmpasien/skrining_pelayanan_vaksin_covid19/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2120,7 +2120,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_skrining_pelayanan_vaksin_covid19_deletebyid_GET:
+    skrining_pelayanan_vaksin_4:
       rule: "PathPrefix(`/v1.0/rmpasien/skrining_pelayanan_vaksin_covid19/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2128,7 +2128,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_surat_kematian_getlist_GET:
+    surat_kematian_1:
       rule: "PathPrefix(`/v1.0/rmpasien/surat_kematian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2136,7 +2136,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_surat_kematian_create_POST:
+    surat_kematian_2:
       rule: "PathPrefix(`/v1.0/rmpasien/surat_kematian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2144,7 +2144,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_surat_kematian_update_PUT:
+    surat_kematian_3:
       rule: "PathPrefix(`/v1.0/rmpasien/surat_kematian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2152,7 +2152,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_surat_kematian_deletebyid_DELETE:
+    surat_kematian_4:
       rule: "PathPrefix(`/v1.0/rmpasien/surat_kematian/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2160,7 +2160,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_surat_masuk_rumah_sakit_getlist_GET:
+    surat_masuk_rumah_sakit_1:
       rule: "PathPrefix(`/v1.0/rmpasien/surat_masuk_rumah_sakit/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2168,7 +2168,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_surat_masuk_rumah_sakit_create_POST:
+    surat_masuk_rumah_sakit_2:
       rule: "PathPrefix(`/v1.0/rmpasien/surat_masuk_rumah_sakit/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2176,7 +2176,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_surat_masuk_rumah_sakit_update_PUT:
+    surat_masuk_rumah_sakit_3:
       rule: "PathPrefix(`/v1.0/rmpasien/surat_masuk_rumah_sakit/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2184,7 +2184,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_surat_masuk_rumah_sakit_deletebyid_DELETE:
+    surat_masuk_rumah_sakit_4:
       rule: "PathPrefix(`/v1.0/rmpasien/surat_masuk_rumah_sakit/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2192,7 +2192,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_titikKeselamatanPembedahan_getlist_GET:
+    titik_keselamatan_pembedahan_1:
       rule: "PathPrefix(`/v1.0/rmpasien/titikKeselamatanPembedahan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2200,7 +2200,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_titikKeselamatanPembedahan_create_POST:
+    titik_keselamatan_pembedahan_2:
       rule: "PathPrefix(`/v1.0/rmpasien/titikKeselamatanPembedahan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2208,7 +2208,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_titikKeselamatanPembedahan_update_PUT:
+    titik_keselamatan_pembedahan_3:
       rule: "PathPrefix(`/v1.0/rmpasien/titikKeselamatanPembedahan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2216,7 +2216,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_titikKeselamatanPembedahan_deletebyid_GET:
+    titik_keselamatan_pembedahan_4:
       rule: "PathPrefix(`/v1.0/rmpasien/titikKeselamatanPembedahan/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2224,7 +2224,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_transferpasieninternal_getlist_GET:
+    transfer_pasien_internal_1:
       rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2232,7 +2232,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_transferpasieninternal_create_POST:
+    transfer_pasien_internal_2:
       rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2240,7 +2240,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_transferpasieninternal_update_PUT:
+    transfer_pasien_internal_3:
       rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2248,7 +2248,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_transferpasieninternal_deletebyid_DELETE:
+    transfer_pasien_internal_4:
       rule: "PathPrefix(`/v1.0/rmpasien/transferpasieninternal/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2256,7 +2256,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_rmpasien_update-no-peserta-bpjs-by-no-identitas_PUT:
+    update_no_peserta_bpjs_by_no_identitas:
       rule: "PathPrefix(`/v1.0/rmpasien/update-no-peserta-bpjs-by-no-identitas/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2265,7 +2265,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rmpasien_get-status-verifikasi_GET:
+    rekammedis_get_status_verifikasi:
       rule: "PathPrefix(`/v1.0/rmpasien/get-status-verifikasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2274,7 +2274,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rmpasien_status-verifikasi_PUT:
+    rekammedis_verifikasi:
       rule: "PathPrefix(`/v1.0/rmpasien/status-verifikasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:
@@ -2283,7 +2283,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rmpasien_bulk-update-no-identitas-by-no-rm_PUT:
+    rekammedis_bulk_update_no_identitas_by_no_rm:
       rule: "PathPrefix(`/v1.0/rmpasien/bulk-update-no-identitas-by-no-rm`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-rekam-medis
       entryPoints:

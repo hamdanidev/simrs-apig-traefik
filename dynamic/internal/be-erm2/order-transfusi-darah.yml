@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_td_item-transfusi-darah_getlist_GET:
+    transfusi-darah-item_1:
       rule: "PathPrefix(`/v1.0/td/item-transfusi-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_permintaan_create_POST:
+    transfusi_darah_permintaan_1:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_permintaan_update_PUT:
+    transfusi_darah_permintaan_2:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_permintaan_delete_DELETE:
+    transfusi_darah_permintaan_3:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_permintaan_getlist_GET:
+    transfusi_darah_permintaan_4:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_permintaan_get-by-no-registrasi_GET:
+    transfusi_darah_permintaan_5:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_permintaan_get-by-no-rm_GET:
+    transfusi_darah_permintaan_6:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -63,7 +63,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_permintaan_getlist-with-distribusi-by-no-registrasi_GET:
+    transfusi_darah_permintaan_7:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/getlist-with-distribusi-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -72,7 +72,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_distribusi_create_POST:
+    transfusi_darah_distribusi_1:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -81,7 +81,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_distribusi_update_PUT:
+    transfusi_darah_distribusi_2:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -90,7 +90,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_distribusi_delete_DELETE:
+    transfusi_darah_distribusi_3:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -99,7 +99,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_distribusi_getlist_GET:
+    transfusi_darah_distribusi_4:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -108,7 +108,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_distribusi_get-by-no-registrasi_GET:
+    transfusi_darah_distribusi_5:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -117,7 +117,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_permintaan-darah_distribusi_get-by-id_GET:
+    transfusi_darah_distribusi_6:
       rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -126,7 +126,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_getlist_GET:
+    transfusi-darah-order-eksternal_1:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -135,7 +135,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_getlist-order-transfusi-darah-by-no-registrasi_GET:
+    transfusi-darah-order-eksternal_2:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/getlist-order-transfusi-darah-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -144,7 +144,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_getlist-order-jasa-transfusi-darah-by-nomor-order_GET:
+    transfusi-darah-order-eksternal_3:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/getlist-order-jasa-transfusi-darah-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -153,7 +153,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_update-status-order-diterima_PUT:
+    transfusi-darah-order-eksternal_4:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/update-status-order-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -162,7 +162,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_update-order-jasa-transfusi-darah_PUT:
+    transfusi-darah-order-eksternal_5:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/update-order-jasa-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -171,7 +171,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_update-status-order-selesai_PUT:
+    transfusi-darah-order-eksternal_6:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/update-status-order-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -180,7 +180,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_get-by-no-registrasi_GET:
+    transfusi-darah-order-eksternal_7:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -189,7 +189,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_create-order-jasa-transfusi-darah_POST:
+    transfusi-darah-order-eksternal_8:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/create-order-jasa-transfusi-darah`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -198,7 +198,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_update-all-order-jasa-transfusi-darah_PUT:
+    transfusi-darah-order-eksternal_9:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/update-all-order-jasa-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -207,7 +207,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_delete-order-jasa-transfusi-darah_DELETE:
+    transfusi-darah-order-eksternal_10:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/delete-order-jasa-transfusi-darah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -216,7 +216,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_get-item-by-nomor-order_GET:
+    transfusi-darah-order-eksternal_11:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/get-item-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -225,7 +225,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah-eksternal_update-order-items-transfusi-darah_PUT:
+    transfusi-darah-order-eksternal_12:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah-eksternal/update-order-items-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -234,7 +234,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_getlist_GET:
+    transfusi-darah-order_1:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -243,7 +243,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_getlist-order-transfusi-darah-by-no-registrasi_GET:
+    transfusi-darah-order_2:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/getlist-order-transfusi-darah-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -252,7 +252,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_getlist-order-jasa-transfusi-darah-by-nomor-order_GET:
+    transfusi-darah-order_3:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/getlist-order-jasa-transfusi-darah-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -261,7 +261,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_update-status-order-diterima_PUT:
+    transfusi-darah-order_4:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-status-order-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -270,7 +270,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_update-order-jasa-transfusi-darah_PUT:
+    transfusi-darah-order_5:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-order-jasa-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -279,7 +279,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_update-status-order-selesai_PUT:
+    transfusi-darah-order_6:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-status-order-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -288,7 +288,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_create-order-jasa-transfusi-darah_POST:
+    transfusi-darah-order_7:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/create-order-jasa-transfusi-darah`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -297,7 +297,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_update-all-order-jasa-transfusi-darah_PUT:
+    transfusi-darah-order_8:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-all-order-jasa-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -306,7 +306,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_delete-order-jasa-transfusi-darah_DELETE:
+    transfusi-darah-order_9:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/delete-order-jasa-transfusi-darah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -315,7 +315,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_get-item-by-nomor-order_GET:
+    transfusi-darah-order_10:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/get-item-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -324,7 +324,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_update-order-items-transfusi-darah_PUT:
+    transfusi-darah-order_11:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-order-items-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -333,7 +333,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_getlist-by-no-rm_GET:
+    transfusi-darah-order_12:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/getlist-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -342,7 +342,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_create-order-darah_POST:
+    transfusi-darah-order_13:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/create-order-darah`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -351,7 +351,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_create-order-items-transfusi-darah_POST:
+    transfusi-darah-order_14:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/create-order-items-transfusi-darah`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -360,7 +360,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_delete-order-darah_DELETE:
+    transfusi-darah-order_15:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/delete-order-darah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -369,7 +369,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_td_proses-order-transfusi-darah_delete-order-items-transfusi-darah_DELETE:
+    transfusi-darah-order_16:
       rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/delete-order-items-transfusi-darah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:
@@ -378,7 +378,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_stok-darah_getlist_GET:
+    order_transfusi_darah_stok_darah_getlist:
       rule: "PathPrefix(`/v1.0/stok-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-transfusi-darah
       entryPoints:

@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_master-mjkn_jadwal_getlist_GET:
+    be_kepegawaian_master_mjkn_get_list:
       rule: "PathPrefix(`/v1.0/master-mjkn/jadwal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_referensi-jadwal-dokter_sync-all_GET:
+    be_kepegawaian_master_mjkn_ref_jadwal_dokter_sync_all:
       rule: "PathPrefix(`/v1.0/master-mjkn/referensi-jadwal-dokter/sync-all`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_referensi-jadwal-dokter_sync_GET:
+    be_kepegawaian_master_mjkn_ref_jadwal_dokter_sync:
       rule: "PathPrefix(`/v1.0/master-mjkn/referensi-jadwal-dokter/sync`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_jadwal-hfis_sync_GET:
+    be_kepegawaian_master_mjkn_jadwal_hfis_sync:
       rule: "PathPrefix(`/v1.0/master-mjkn/jadwal-hfis/sync`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_jadwal-hfis_sync-all_GET:
+    be_kepegawaian_master_mjkn_jadwal_hfis_sync_all:
       rule: "PathPrefix(`/v1.0/master-mjkn/jadwal-hfis/sync-all`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_jadwal-hfis_mismatch-poli_GET:
+    be_kepegawaian_master_mjkn_jadwal_hfis_mismatch_poli:
       rule: "PathPrefix(`/v1.0/master-mjkn/jadwal-hfis/mismatch-poli`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_jadwal_update-kuota-request_PUT:
+    be_kepegawaian_master_mjkn_jadwal_update_kuota_request:
       rule: "PathPrefix(`/v1.0/master-mjkn/jadwal/update-kuota-request`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -63,7 +63,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_jadwal_update-status_PUT:
+    be_kepegawaian_master_mjkn_jadwal_update_status:
       rule: "PathPrefix(`/v1.0/master-mjkn/jadwal/update-status`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -72,7 +72,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_jadwal_update_PUT:
+    be_kepegawaian_master_mjkn_jadwal_update:
       rule: "PathPrefix(`/v1.0/master-mjkn/jadwal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -81,7 +81,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-mjkn_referensi-jadwal-dokter_sync_POST:
+    be_kepegawaian_master_mjkn_referensi_jadwal_dokter_sync:
       rule: "PathPrefix(`/v1.0/master-mjkn/referensi-jadwal-dokter/sync`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:

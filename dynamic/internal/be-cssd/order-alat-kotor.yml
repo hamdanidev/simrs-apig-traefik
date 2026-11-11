@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_cssd_order-alat-kotor_get-list-order-alat-kotor_GET:
+    internal_order_alat_kotor_1:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/get-list-order-alat-kotor`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -9,7 +9,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_get-list-set-alat-kotor_GET:
+    internal_order_alat_kotor_2:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/get-list-set-alat-kotor`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -17,7 +17,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_get-list-alat-kotor_GET:
+    internal_order_alat_kotor_3:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/get-list-alat-kotor`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -25,7 +25,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_get-by-nomor-order_GET:
+    internal_order_alat_kotor_4:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -33,7 +33,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_get-by-id-set-alat-kotor_GET:
+    internal_order_alat_kotor_5:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/get-by-id-set-alat-kotor/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -41,7 +41,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_get-by-id-alat-kotor_GET:
+    internal_order_alat_kotor_6:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/get-by-id-alat-kotor/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -49,7 +49,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_create-order-alat-kotor_POST:
+    internal_order_alat_kotor_7:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/create-order-alat-kotor`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -57,7 +57,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_create-set-alat-kotor_POST:
+    internal_order_alat_kotor_8:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/create-set-alat-kotor`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -65,7 +65,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_create-alat-kotor_POST:
+    internal_order_alat_kotor_9:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/create-alat-kotor`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -73,7 +73,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_delete-order-alat-kotor_DELETE:
+    internal_order_alat_kotor_10:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/delete-order-alat-kotor/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -81,7 +81,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_delete-set-alat-kotor_DELETE:
+    internal_order_alat_kotor_11:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/delete-set-alat-kotor/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -89,7 +89,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_delete-alat-kotor_DELETE:
+    internal_order_alat_kotor_12:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/delete-alat-kotor/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -97,7 +97,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_update-order-alat-kotor_PUT:
+    internal_order_alat_kotor_13:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/update-order-alat-kotor/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -105,7 +105,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_update-set-alat-kotor_PUT:
+    internal_order_alat_kotor_14:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/update-set-alat-kotor/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -113,7 +113,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_order-alat-kotor_update-alat-kotor_PUT:
+    internal_order_alat_kotor_15:
       rule: "PathPrefix(`/v1.0/cssd/order-alat-kotor/update-alat-kotor/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:

@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_erm_rujukan-eksternal_create_POST:
+    erm_rujukan_eksternal_create:
       rule: "PathPrefix(`/v1.0/erm/rujukan-eksternal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_rujukan-eksternal_update_PUT:
+    erm_rujukan_eksternal_update:
       rule: "PathPrefix(`/v1.0/erm/rujukan-eksternal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_rujukan-eksternal_get-by-no-registrasi_GET:
+    erm_rujukan_eksternal_get_by_no_registrasi:
       rule: "PathPrefix(`/v1.0/erm/rujukan-eksternal/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_rujukan-eksternal_get-by-no-rujukan_GET:
+    erm_rujukan_eksternal_get_by_no_rujukan:
       rule: "PathPrefix(`/v1.0/erm/rujukan-eksternal/get-by-no-rujukan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_rujukan-eksternal_get-by-no-rm_GET:
+    erm_rujukan_eksternal_get_by_no_rm:
       rule: "PathPrefix(`/v1.0/erm/rujukan-eksternal/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_rujukan-eksternal_delete_DELETE:
+    erm_rujukan_eksternal_delete:
       rule: "PathPrefix(`/v1.0/erm/rujukan-eksternal/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_pasien-konsul_update-status-pelaksanaan_PUT:
+    pasien-konsul_update_status_pelaksanaan_1:
       rule: "PathPrefix(`/v1.0/pasien-konsul/update-status-pelaksanaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

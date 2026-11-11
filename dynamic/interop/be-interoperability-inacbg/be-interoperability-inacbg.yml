@@ -1,6 +1,6 @@
 http:
   routers:
-    v2_inacbg_new-claim_POST:
+    interop_inacbgv2_1:
       rule: "PathPrefix(`/v2.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_update-pasien_POST:
+    interop_inacbgv2_2:
       rule: "PathPrefix(`/v2.0/inacbg/update-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_delete-pasien_POST:
+    interop_inacbgv2_3:
       rule: "PathPrefix(`/v2.0/inacbg/delete-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_set-claim-data_POST:
+    interop_inacbgv2_4:
       rule: "PathPrefix(`/v2.0/inacbg/set-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_grouper-stage-1_POST:
+    interop_inacbgv2_5:
       rule: "PathPrefix(`/v2.0/inacbg/grouper-stage-1`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_grouper-stage-2_POST:
+    interop_inacbgv2_6:
       rule: "PathPrefix(`/v2.0/inacbg/grouper-stage-2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_finalisasi-klaim_POST:
+    interop_inacbgv2_7:
       rule: "PathPrefix(`/v2.0/inacbg/finalisasi-klaim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -63,7 +63,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_reedit-claim_POST:
+    interop_inacbgv2_8:
       rule: "PathPrefix(`/v2.0/inacbg/reedit-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -72,7 +72,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_send-claim_POST:
+    interop_inacbgv2_9:
       rule: "PathPrefix(`/v2.0/inacbg/send-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -81,7 +81,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_send-claim-individual_POST:
+    interop_inacbgv2_10:
       rule: "PathPrefix(`/v2.0/inacbg/send-claim-individual`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -90,7 +90,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_pull-claim_POST:
+    interop_inacbgv2_11:
       rule: "PathPrefix(`/v2.0/inacbg/pull-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -99,7 +99,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_get-claim-data_POST:
+    interop_inacbgv2_12:
       rule: "PathPrefix(`/v2.0/inacbg/get-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -108,7 +108,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_get-claim-status_POST:
+    interop_inacbgv2_13:
       rule: "PathPrefix(`/v2.0/inacbg/get-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -117,7 +117,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_delete-claim_POST:
+    interop_inacbgv2_14:
       rule: "PathPrefix(`/v2.0/inacbg/delete-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -126,7 +126,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_claim-print_POST:
+    interop_inacbgv2_15:
       rule: "PathPrefix(`/v2.0/inacbg/claim-print`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -135,7 +135,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_search-diagnosis_POST:
+    interop_inacbgv2_16:
       rule: "PathPrefix(`/v2.0/inacbg/search-diagnosis`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -144,7 +144,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_search-procedures_POST:
+    interop_inacbgv2_17:
       rule: "PathPrefix(`/v2.0/inacbg/search-procedures`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -153,7 +153,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_generate-claim-number_POST:
+    interop_inacbgv2_18:
       rule: "PathPrefix(`/v2.0/inacbg/generate-claim-number`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -162,7 +162,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_file-upload_POST:
+    interop_inacbgv2_19:
       rule: "PathPrefix(`/v2.0/inacbg/file-upload`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -171,7 +171,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_file-delete_POST:
+    interop_inacbgv2_20:
       rule: "PathPrefix(`/v2.0/inacbg/file-delete`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -180,7 +180,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_file-get_POST:
+    interop_inacbgv2_21:
       rule: "PathPrefix(`/v2.0/inacbg/file-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -189,7 +189,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_retrieve-claim-status_POST:
+    interop_inacbgv2_22:
       rule: "PathPrefix(`/v2.0/inacbg/retrieve-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -198,7 +198,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_cari-diagnosa-ina-grouper_POST:
+    interop_inacbgv2_23:
       rule: "PathPrefix(`/v2.0/inacbg/cari-diagnosa-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -207,7 +207,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_cari-procedures-ina-grouper_POST:
+    interop_inacbgv2_24:
       rule: "PathPrefix(`/v2.0/inacbg/cari-procedures-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -216,7 +216,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_sitb-validate_POST:
+    interop_inacbgv2_25:
       rule: "PathPrefix(`/v2.0/inacbg/sitb-validate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -225,7 +225,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_sitb-invalidate_POST:
+    interop_inacbgv2_26:
       rule: "PathPrefix(`/v2.0/inacbg/sitb-invalidate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -234,7 +234,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_idrg_diagnosa-set_POST:
+    interop_inacbgv2_27:
       rule: "PathPrefix(`/v2.0/idrg/diagnosa-set`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -243,7 +243,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_idrg_diagnosa-get_POST:
+    interop_inacbgv2_28:
       rule: "PathPrefix(`/v2.0/idrg/diagnosa-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -252,7 +252,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_idrg_procedure-get_POST:
+    interop_inacbgv2_29:
       rule: "PathPrefix(`/v2.0/idrg/procedure-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -261,7 +261,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_idrg_procedure-set_POST:
+    interop_inacbgv2_30:
       rule: "PathPrefix(`/v2.0/idrg/procedure-set`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -270,7 +270,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_idrg_grouper-1_POST:
+    interop_inacbgv2_31:
       rule: "PathPrefix(`/v2.0/idrg/grouper-1`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -279,7 +279,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_idrg_grouper-final_POST:
+    interop_inacbgv2_32:
       rule: "PathPrefix(`/v2.0/idrg/grouper-final`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -288,7 +288,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_idrg_grouper-reedit_POST:
+    interop_inacbgv2_33:
       rule: "PathPrefix(`/v2.0/idrg/grouper-reedit`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -297,7 +297,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_idrg_to-inacbg-import_POST:
+    interop_inacbgv2_34:
       rule: "PathPrefix(`/v2.0/idrg/to-inacbg-import`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -306,7 +306,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_diagnosa-set_POST:
+    interop_inacbgv2_35:
       rule: "PathPrefix(`/v2.0/inacbg/diagnosa-set`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -315,7 +315,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_diagnosa-get_POST:
+    interop_inacbgv2_36:
       rule: "PathPrefix(`/v2.0/inacbg/diagnosa-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -324,7 +324,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_procedure-set_POST:
+    interop_inacbgv2_37:
       rule: "PathPrefix(`/v2.0/inacbg/procedure-set`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -333,7 +333,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_procedure-get_POST:
+    interop_inacbgv2_38:
       rule: "PathPrefix(`/v2.0/inacbg/procedure-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -342,7 +342,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_grouper-final_POST:
+    interop_inacbg_v2_29:
       rule: "PathPrefix(`/v2.0/inacbg/grouper-final`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -351,7 +351,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v2_inacbg_grouper-reedit_POST:
+    interop_inacbg_v2_30:
       rule: "PathPrefix(`/v2.0/inacbg/grouper-reedit`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -360,7 +360,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_new-claim_POST:
+    interop_inacbg_1:
       rule: "PathPrefix(`/v1.0/inacbg/new-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -369,7 +369,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_update-pasien_POST:
+    interop_inacbg_2:
       rule: "PathPrefix(`/v1.0/inacbg/update-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -378,7 +378,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_delete-pasien_POST:
+    interop_inacbg_3:
       rule: "PathPrefix(`/v1.0/inacbg/delete-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -387,7 +387,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_set-claim-data_POST:
+    interop_inacbg_4:
       rule: "PathPrefix(`/v1.0/inacbg/set-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -396,7 +396,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_grouper-stage-1_POST:
+    interop_inacbg_5:
       rule: "PathPrefix(`/v1.0/inacbg/grouper-stage-1`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -405,7 +405,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_grouper-stage-2_POST:
+    interop_inacbg_6:
       rule: "PathPrefix(`/v1.0/inacbg/grouper-stage-2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -414,7 +414,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_finalisasi-klaim_POST:
+    interop_inacbg_7:
       rule: "PathPrefix(`/v1.0/inacbg/finalisasi-klaim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -423,7 +423,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_reedit-claim_POST:
+    interop_inacbg_8:
       rule: "PathPrefix(`/v1.0/inacbg/reedit-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -432,7 +432,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_send-claim_POST:
+    interop_inacbg_9:
       rule: "PathPrefix(`/v1.0/inacbg/send-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -441,7 +441,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_send-claim-individual_POST:
+    interop_inacbg_10:
       rule: "PathPrefix(`/v1.0/inacbg/send-claim-individual`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -450,7 +450,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_pull-claim_POST:
+    interop_inacbg_11:
       rule: "PathPrefix(`/v1.0/inacbg/pull-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -459,7 +459,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_get-claim-data_POST:
+    interop_inacbg_12:
       rule: "PathPrefix(`/v1.0/inacbg/get-claim-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -468,7 +468,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_get-claim-status_POST:
+    interop_inacbg_13:
       rule: "PathPrefix(`/v1.0/inacbg/get-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -477,7 +477,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_delete-claim_POST:
+    interop_inacbg_14:
       rule: "PathPrefix(`/v1.0/inacbg/delete-claim`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -486,7 +486,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_claim-print_POST:
+    interop_inacbg_15:
       rule: "PathPrefix(`/v1.0/inacbg/claim-print`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -495,7 +495,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_search-diagnosis_POST:
+    interop_inacbg_16:
       rule: "PathPrefix(`/v1.0/inacbg/search-diagnosis`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -504,7 +504,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_search-procedures_POST:
+    interop_inacbg_17:
       rule: "PathPrefix(`/v1.0/inacbg/search-procedures`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -513,7 +513,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_generate-claim-number_POST:
+    interop_inacbg_18:
       rule: "PathPrefix(`/v1.0/inacbg/generate-claim-number`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -522,7 +522,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_file-upload_POST:
+    interop_inacbg_19:
       rule: "PathPrefix(`/v1.0/inacbg/file-upload`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -531,7 +531,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_file-delete_POST:
+    interop_inacbg_20:
       rule: "PathPrefix(`/v1.0/inacbg/file-delete`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -540,7 +540,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_file-get_POST:
+    interop_inacbg_21:
       rule: "PathPrefix(`/v1.0/inacbg/file-get`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -549,7 +549,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_retrieve-claim-status_POST:
+    interop_inacbg_22:
       rule: "PathPrefix(`/v1.0/inacbg/retrieve-claim-status`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -558,7 +558,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_cari-diagnosa-ina-grouper_POST:
+    interop_inacbg_23:
       rule: "PathPrefix(`/v1.0/inacbg/cari-diagnosa-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -567,7 +567,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_cari-procedures-ina-grouper_POST:
+    interop_inacbg_24:
       rule: "PathPrefix(`/v1.0/inacbg/cari-procedures-ina-grouper`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:
@@ -576,7 +576,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_sitb-validate_POST:
+    interop_inacbg_25:
       rule: "PathPrefix(`/v1.0/inacbg/sitb-validate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-inacbgv2
       entryPoints:

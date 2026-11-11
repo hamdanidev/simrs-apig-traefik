@@ -2,7 +2,7 @@ http:
 
 
   routers:
-    v1_agama_getlist_GET:
+    agama_1:
       rule: "PathPrefix(`/v1.0/agama/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -11,7 +11,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_agama_getbykd_GET:
+    agama_2:
       rule: "PathPrefix(`/v1.0/agama/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -20,7 +20,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_agama_create_POST:
+    agama_3:
       rule: "PathPrefix(`/v1.0/agama/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -29,7 +29,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_agama_update_PUT:
+    agama_4:
       rule: "PathPrefix(`/v1.0/agama/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -38,7 +38,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_agama_deletebykd_DELETE:
+    agama_5:
       rule: "PathPrefix(`/v1.0/agama/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -47,7 +47,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_alergi_getlist_GET:
+    alergi_1:
       rule: "PathPrefix(`/v1.0/alergi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -56,7 +56,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_alergi_getbykd_GET:
+    alergi_2:
       rule: "PathPrefix(`/v1.0/alergi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -65,7 +65,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_alergi_create_POST:
+    alergi_3:
       rule: "PathPrefix(`/v1.0/alergi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -74,7 +74,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_alergi_update_PUT:
+    alergi_4:
       rule: "PathPrefix(`/v1.0/alergi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -83,7 +83,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_alergi_deletebykd_DELETE:
+    alergi_5:
       rule: "PathPrefix(`/v1.0/alergi/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -92,7 +92,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_aturanpakaiobat_getlist_GET:
+    aturan_pakai_obat_1:
       rule: "PathPrefix(`/v1.0/aturanpakaiobat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -101,7 +101,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_aturanpakaiobat_getbykd_GET:
+    aturan_pakai_obat_2:
       rule: "PathPrefix(`/v1.0/aturanpakaiobat/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -110,7 +110,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_aturanpakaiobat_create_POST:
+    aturan_pakai_obat_3:
       rule: "PathPrefix(`/v1.0/aturanpakaiobat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -119,7 +119,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_aturanpakaiobat_update_PUT:
+    aturan_pakai_obat_4:
       rule: "PathPrefix(`/v1.0/aturanpakaiobat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -128,7 +128,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_aturanpakaiobat_deletebykd_DELETE:
+    aturan_pakai_obat_5:
       rule: "PathPrefix(`/v1.0/aturanpakaiobat/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -137,7 +137,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_carabayar_getlist_GET:
+    cara_bayar_1:
       rule: "PathPrefix(`/v1.0/carabayar/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -146,7 +146,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_carabayar_getbykd_GET:
+    cara_bayar_2:
       rule: "PathPrefix(`/v1.0/carabayar/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -155,7 +155,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_carabayar_create_POST:
+    cara_bayar_3:
       rule: "PathPrefix(`/v1.0/carabayar/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -164,7 +164,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_carabayar_update_PUT:
+    cara_bayar_4:
       rule: "PathPrefix(`/v1.0/carabayar/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -173,7 +173,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_carabayar_deletebykd_DELETE:
+    cara_bayar_5:
       rule: "PathPrefix(`/v1.0/carabayar/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -182,7 +182,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_desa_getlist_GET:
+    desa_1:
       rule: "PathPrefix(`/v1.0/desa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -191,7 +191,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_desa_getbykd_GET:
+    desa_2:
       rule: "PathPrefix(`/v1.0/desa/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -200,7 +200,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_desa_getbykdkec_GET:
+    desa_3:
       rule: "PathPrefix(`/v1.0/desa/getbykdkec/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -209,7 +209,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_desa_create_POST:
+    desa_4:
       rule: "PathPrefix(`/v1.0/desa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -218,7 +218,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_desa_update_PUT:
+    desa_5:
       rule: "PathPrefix(`/v1.0/desa/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -227,7 +227,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_desa_deletebykd_DELETE:
+    desa_6:
       rule: "PathPrefix(`/v1.0/desa/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -236,7 +236,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_golonganpegawai_getlist_GET:
+    golongan_pegawai_1:
       rule: "PathPrefix(`/v1.0/golonganpegawai/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -245,7 +245,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_golonganpegawai_getbykd_GET:
+    golongan_pegawai_2:
       rule: "PathPrefix(`/v1.0/golonganpegawai/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -254,7 +254,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_golonganpegawai_create_POST:
+    golongan_pegawai_3:
       rule: "PathPrefix(`/v1.0/golonganpegawai/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -263,7 +263,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_golonganpegawai_update_PUT:
+    golongan_pegawai_4:
       rule: "PathPrefix(`/v1.0/golonganpegawai/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -272,7 +272,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_golonganpegawai_deletebykd_DELETE:
+    golongan_pegawai_5:
       rule: "PathPrefix(`/v1.0/golonganpegawai/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -281,7 +281,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jabatanpegawai_getlist_GET:
+    jabatan_pegawai_1:
       rule: "PathPrefix(`/v1.0/jabatanpegawai/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -290,7 +290,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jabatanpegawai_getbykd_GET:
+    jabatan_pegawai_2:
       rule: "PathPrefix(`/v1.0/jabatanpegawai/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -299,7 +299,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jabatanpegawai_create_POST:
+    jabatan_pegawai_3:
       rule: "PathPrefix(`/v1.0/jabatanpegawai/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -308,7 +308,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jabatanpegawai_update_PUT:
+    jabatan_pegawai_4:
       rule: "PathPrefix(`/v1.0/jabatanpegawai/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -317,7 +317,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jabatanpegawai_deletebykd_DELETE:
+    jabatan_pegawai_5:
       rule: "PathPrefix(`/v1.0/jabatanpegawai/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -326,7 +326,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jeniskelamin_getlist_GET:
+    jenis_kelamin_1:
       rule: "PathPrefix(`/v1.0/jeniskelamin/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -335,7 +335,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jeniskelamin_getbykd_GET:
+    jenis_kelamin_2:
       rule: "PathPrefix(`/v1.0/jeniskelamin/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -344,7 +344,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jeniskelamin_create_POST:
+    jenis_kelamin_3:
       rule: "PathPrefix(`/v1.0/jeniskelamin/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -353,7 +353,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jeniskelamin_update_PUT:
+    jenis_kelamin_4:
       rule: "PathPrefix(`/v1.0/jeniskelamin/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -362,7 +362,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jeniskelamin_deletebykd_DELETE:
+    jenis_kelamin_5:
       rule: "PathPrefix(`/v1.0/jeniskelamin/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -371,7 +371,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kabkota_getlist_GET:
+    kabkota_1:
       rule: "PathPrefix(`/v1.0/kabkota/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -380,7 +380,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kabkota_getbykd_GET:
+    kabkota_2:
       rule: "PathPrefix(`/v1.0/kabkota/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -389,7 +389,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kabkota_getbykdprov_GET:
+    kabkota_3:
       rule: "PathPrefix(`/v1.0/kabkota/getbykdprov/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -398,7 +398,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kabkota_create_POST:
+    kabkota_4:
       rule: "PathPrefix(`/v1.0/kabkota/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -407,7 +407,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kabkota_update_PUT:
+    kabkota_5:
       rule: "PathPrefix(`/v1.0/kabkota/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -416,7 +416,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kabkota_deletebykd_DELETE:
+    kabkota_6:
       rule: "PathPrefix(`/v1.0/kabkota/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -425,7 +425,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kategorikamar_getlist_GET:
+    kategori_kamar_1:
       rule: "PathPrefix(`/v1.0/kategorikamar/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -434,7 +434,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kategorikamar_getbykd_GET:
+    kategori_kamar_2:
       rule: "PathPrefix(`/v1.0/kategorikamar/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -443,7 +443,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kategorikamar_create_POST:
+    kategori_kamar_3:
       rule: "PathPrefix(`/v1.0/kategorikamar/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -452,7 +452,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kategorikamar_update_PUT:
+    kategori_kamar_4:
       rule: "PathPrefix(`/v1.0/kategorikamar/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -461,7 +461,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kategorikamar_deletebykd_DELETE:
+    kategori_kamar_5:
       rule: "PathPrefix(`/v1.0/kategorikamar/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -470,7 +470,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kecamatan_getlist_GET:
+    kecamatan_1:
       rule: "PathPrefix(`/v1.0/kecamatan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -479,7 +479,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kecamatan_getbykd_GET:
+    kecamatan_2:
       rule: "PathPrefix(`/v1.0/kecamatan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -488,7 +488,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kecamatan_getbykdkabkot_GET:
+    kecamatan_3:
       rule: "PathPrefix(`/v1.0/kecamatan/getbykdkabkot/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -497,7 +497,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kecamatan_create_POST:
+    kecamatan_4:
       rule: "PathPrefix(`/v1.0/kecamatan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -506,7 +506,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kecamatan_update_PUT:
+    kecamatan_5:
       rule: "PathPrefix(`/v1.0/kecamatan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -515,7 +515,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kecamatan_deletebykd_DELETE:
+    kecamatan_6:
       rule: "PathPrefix(`/v1.0/kecamatan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -524,7 +524,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kelas_getlist_GET:
+    kelas_1:
       rule: "PathPrefix(`/v1.0/kelas/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -533,7 +533,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kelas_getbykd_GET:
+    kelas_2:
       rule: "PathPrefix(`/v1.0/kelas/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -542,7 +542,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kelas_create_POST:
+    kelas_3:
       rule: "PathPrefix(`/v1.0/kelas/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -551,7 +551,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kelas_update_PUT:
+    kelas_4:
       rule: "PathPrefix(`/v1.0/kelas/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -560,7 +560,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kelas_deletebykd_DELETE:
+    kelas_5:
       rule: "PathPrefix(`/v1.0/kelas/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -569,7 +569,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kemasanobat_getlist_GET:
+    kemasan_obat_1:
       rule: "PathPrefix(`/v1.0/kemasanobat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -578,7 +578,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kemasanobat_getbykd_GET:
+    kemasan_obat_2:
       rule: "PathPrefix(`/v1.0/kemasanobat/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -587,7 +587,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kemasanobat_create_POST:
+    kemasan_obat_3:
       rule: "PathPrefix(`/v1.0/kemasanobat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -596,7 +596,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kemasanobat_update_PUT:
+    kemasan_obat_4:
       rule: "PathPrefix(`/v1.0/kemasanobat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -605,7 +605,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_kemasanobat_deletebykd_DELETE:
+    kemasan_obat_5:
       rule: "PathPrefix(`/v1.0/kemasanobat/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -614,7 +614,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_keterangan-aset_get-list_GET:
+    keterangan_aset_1:
       rule: "PathPrefix(`/v1.0/referensi/keterangan-aset/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -623,7 +623,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_keterangan-aset_get-by-kd_GET:
+    keterangan_aset_2:
       rule: "PathPrefix(`/v1.0/referensi/keterangan-aset/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -632,7 +632,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_keterangan-aset_create_POST:
+    keterangan_aset_3:
       rule: "PathPrefix(`/v1.0/referensi/keterangan-aset/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -641,7 +641,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_keterangan-aset_update_PUT:
+    keterangan_aset_4:
       rule: "PathPrefix(`/v1.0/referensi/keterangan-aset/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -650,7 +650,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_keterangan-aset_delete-by-kd_DELETE:
+    keterangan_aset_5:
       rule: "PathPrefix(`/v1.0/referensi/keterangan-aset/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -659,7 +659,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_konfigurasi_getlist_GET:
+    konfigurasi_1:
       rule: "PathPrefix(`/v1.0/konfigurasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -667,7 +667,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    v1_konfigurasi_getbykd_GET:
+    konfigurasi_2:
       rule: "PathPrefix(`/v1.0/konfigurasi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -675,7 +675,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    v1_konfigurasi_create_POST:
+    konfigurasi_3:
       rule: "PathPrefix(`/v1.0/konfigurasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -683,7 +683,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    v1_konfigurasi_update_PUT:
+    konfigurasi_4:
       rule: "PathPrefix(`/v1.0/konfigurasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -691,7 +691,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    v1_konfigurasi_deletebykd_DELETE:
+    konfigurasi_5:
       rule: "PathPrefix(`/v1.0/konfigurasi/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -699,7 +699,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    v1_referensi_license_status_GET:
+    license_1:
       rule: "PathPrefix(`/v1.0/referensi/license/status`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -707,7 +707,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    v1_referensi_license_update_PUT:
+    license_2:
       rule: "PathPrefix(`/v1.0/referensi/license/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -716,7 +716,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_linen_get-list_GET:
+    linen_1:
       rule: "PathPrefix(`/v1.0/referensi/linen/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -725,7 +725,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_linen_get-by-kd_GET:
+    linen_2:
       rule: "PathPrefix(`/v1.0/referensi/linen/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -734,7 +734,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_linen_create_POST:
+    linen_3:
       rule: "PathPrefix(`/v1.0/referensi/linen/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -743,7 +743,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_linen_update_PUT:
+    linen_4:
       rule: "PathPrefix(`/v1.0/referensi/linen/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -752,7 +752,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_linen_delete-by-kd_DELETE:
+    linen_5:
       rule: "PathPrefix(`/v1.0/referensi/linen/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -761,7 +761,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_maintenance_status_GET:
+    maintenance_1:
       rule: "PathPrefix(`/v1.0/referensi/maintenance/status`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -769,7 +769,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    v1_referensi_maintenance_update_PUT:
+    maintenance_2:
       rule: "PathPrefix(`/v1.0/referensi/maintenance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -778,7 +778,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_negara_getlist_GET:
+    negara_1:
       rule: "PathPrefix(`/v1.0/negara/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -787,7 +787,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_negara_getbykd_GET:
+    negara_2:
       rule: "PathPrefix(`/v1.0/negara/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -796,7 +796,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_negara_create_POST:
+    negara_3:
       rule: "PathPrefix(`/v1.0/negara/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -805,7 +805,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_negara_update_PUT:
+    negara_4:
       rule: "PathPrefix(`/v1.0/negara/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -814,7 +814,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_negara_deletebykd_DELETE:
+    negara_5:
       rule: "PathPrefix(`/v1.0/negara/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -823,7 +823,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_organisasi_get-list_GET:
+    organisasi_1:
       rule: "PathPrefix(`/v1.0/referensi/organisasi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -832,7 +832,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_organisasi_get-by-kd_GET:
+    organisasi_2:
       rule: "PathPrefix(`/v1.0/referensi/organisasi/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -841,7 +841,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_organisasi_create_POST:
+    organisasi_3:
       rule: "PathPrefix(`/v1.0/referensi/organisasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -850,7 +850,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_organisasi_update_PUT:
+    organisasi_4:
       rule: "PathPrefix(`/v1.0/referensi/organisasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -859,7 +859,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_referensi_organisasi_delete-by-kd_DELETE:
+    organisasi_5:
       rule: "PathPrefix(`/v1.0/referensi/organisasi/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -868,7 +868,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pekerjaan_getlist_GET:
+    pekerjaan_1:
       rule: "PathPrefix(`/v1.0/pekerjaan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -877,7 +877,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pekerjaan_getbykd_GET:
+    pekerjaan_2:
       rule: "PathPrefix(`/v1.0/pekerjaan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -886,7 +886,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pekerjaan_create_POST:
+    pekerjaan_3:
       rule: "PathPrefix(`/v1.0/pekerjaan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -895,7 +895,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pekerjaan_update_PUT:
+    pekerjaan_4:
       rule: "PathPrefix(`/v1.0/pekerjaan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -904,7 +904,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pekerjaan_deletebykd_DELETE:
+    pekerjaan_5:
       rule: "PathPrefix(`/v1.0/pekerjaan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -913,7 +913,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pendidikan_getlist_GET:
+    pendidikan_1:
       rule: "PathPrefix(`/v1.0/pendidikan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -922,7 +922,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pendidikan_getbykd_GET:
+    pendidikan_2:
       rule: "PathPrefix(`/v1.0/pendidikan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -931,7 +931,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pendidikan_create_POST:
+    pendidikan_3:
       rule: "PathPrefix(`/v1.0/pendidikan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -940,7 +940,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pendidikan_update_PUT:
+    pendidikan_4:
       rule: "PathPrefix(`/v1.0/pendidikan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -949,7 +949,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pendidikan_deletebykd_DELETE:
+    pendidikan_5:
       rule: "PathPrefix(`/v1.0/pendidikan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -958,7 +958,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_provinsi_getlist_GET:
+    provinsi_1:
       rule: "PathPrefix(`/v1.0/provinsi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -967,7 +967,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_provinsi_getbykd_GET:
+    provinsi_2:
       rule: "PathPrefix(`/v1.0/provinsi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -976,7 +976,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_provinsi_create_POST:
+    provinsi_3:
       rule: "PathPrefix(`/v1.0/provinsi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -985,7 +985,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_provinsi_update_PUT:
+    provinsi_4:
       rule: "PathPrefix(`/v1.0/provinsi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -994,7 +994,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_provinsi_deletebykd_DELETE:
+    provinsi_5:
       rule: "PathPrefix(`/v1.0/provinsi/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1003,7 +1003,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rumah-sakit_get-list_GET:
+    rumah_sakit_1:
       rule: "PathPrefix(`/v1.0/rumah-sakit/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1012,7 +1012,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rumah-sakit_get-by-rs-code_GET:
+    rumah_sakit_2:
       rule: "PathPrefix(`/v1.0/rumah-sakit/get-by-rs-code/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1021,7 +1021,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rumah-sakit_create_POST:
+    rumah_sakit_3:
       rule: "PathPrefix(`/v1.0/rumah-sakit/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1030,7 +1030,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rumah-sakit_update_PUT:
+    rumah_sakit_4:
       rule: "PathPrefix(`/v1.0/rumah-sakit/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1039,7 +1039,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rumah-sakit_delete_DELETE:
+    rumah_sakit_5:
       rule: "PathPrefix(`/v1.0/rumah-sakit/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1048,7 +1048,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rumah-sakit_activate_PUT:
+    rumah_sakit_6:
       rule: "PathPrefix(`/v1.0/rumah-sakit/activate`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1057,7 +1057,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rumah-sakit_get-active_GET:
+    rumah_sakit_7:
       rule: "PathPrefix(`/v1.0/rumah-sakit/get-active`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1065,7 +1065,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    v1_satuanobat_getlist_GET:
+    satuan_obat_1:
       rule: "PathPrefix(`/v1.0/satuanobat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1074,7 +1074,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satuanobat_getbykd_GET:
+    satuan_obat_2:
       rule: "PathPrefix(`/v1.0/satuanobat/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1083,7 +1083,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satuanobat_create_POST:
+    satuan_obat_3:
       rule: "PathPrefix(`/v1.0/satuanobat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1092,7 +1092,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satuanobat_update_PUT:
+    satuan_obat_4:
       rule: "PathPrefix(`/v1.0/satuanobat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1101,7 +1101,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satuanobat_deletebykd_DELETE:
+    satuan_obat_5:
       rule: "PathPrefix(`/v1.0/satuanobat/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1110,7 +1110,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusbed_getlist_GET:
+    status_bed_1:
       rule: "PathPrefix(`/v1.0/statusbed/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1119,7 +1119,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusbed_getbykd_GET:
+    status_bed_2:
       rule: "PathPrefix(`/v1.0/statusbed/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1128,7 +1128,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusbed_create_POST:
+    status_bed_3:
       rule: "PathPrefix(`/v1.0/statusbed/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1137,7 +1137,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusbed_update_PUT:
+    status_bed_4:
       rule: "PathPrefix(`/v1.0/statusbed/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1146,7 +1146,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusbed_deletebykd_DELETE:
+    status_bed_5:
       rule: "PathPrefix(`/v1.0/statusbed/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1155,7 +1155,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusobat_getlist_GET:
+    status_obat_1:
       rule: "PathPrefix(`/v1.0/statusobat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1164,7 +1164,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusobat_getbykd_GET:
+    status_obat_2:
       rule: "PathPrefix(`/v1.0/statusobat/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1173,7 +1173,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusobat_create_POST:
+    status_obat_3:
       rule: "PathPrefix(`/v1.0/statusobat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1182,7 +1182,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusobat_update_PUT:
+    status_obat_4:
       rule: "PathPrefix(`/v1.0/statusobat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1191,7 +1191,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statusobat_deletebykd_DELETE:
+    status_obat_5:
       rule: "PathPrefix(`/v1.0/statusobat/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1200,7 +1200,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statuspernikahan_getlist_GET:
+    status_pernikahan_1:
       rule: "PathPrefix(`/v1.0/statuspernikahan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1209,7 +1209,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statuspernikahan_getbykd_GET:
+    status_pernikahan_2:
       rule: "PathPrefix(`/v1.0/statuspernikahan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1218,7 +1218,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statuspernikahan_create_POST:
+    status_pernikahan_3:
       rule: "PathPrefix(`/v1.0/statuspernikahan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1227,7 +1227,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statuspernikahan_update_PUT:
+    status_pernikahan_4:
       rule: "PathPrefix(`/v1.0/statuspernikahan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1236,7 +1236,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_statuspernikahan_deletebykd_DELETE:
+    status_pernikahan_5:
       rule: "PathPrefix(`/v1.0/statuspernikahan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1245,7 +1245,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_strukturorganisasi_getlist_GET:
+    struktur_organisasi_1:
       rule: "PathPrefix(`/v1.0/strukturorganisasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1254,7 +1254,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_strukturorganisasi_getbykd_GET:
+    struktur_organisasi_2:
       rule: "PathPrefix(`/v1.0/strukturorganisasi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1263,7 +1263,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_strukturorganisasi_create_POST:
+    struktur_organisasi_3:
       rule: "PathPrefix(`/v1.0/strukturorganisasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1272,7 +1272,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_strukturorganisasi_update_PUT:
+    struktur_organisasi_4:
       rule: "PathPrefix(`/v1.0/strukturorganisasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1281,7 +1281,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_strukturorganisasi_deletebykd_DELETE:
+    struktur_organisasi_5:
       rule: "PathPrefix(`/v1.0/strukturorganisasi/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1290,7 +1290,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suku_getlist_GET:
+    suku_1:
       rule: "PathPrefix(`/v1.0/suku/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1299,7 +1299,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suku_getbykd_GET:
+    suku_2:
       rule: "PathPrefix(`/v1.0/suku/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1308,7 +1308,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suku_create_POST:
+    suku_3:
       rule: "PathPrefix(`/v1.0/suku/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1317,7 +1317,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suku_update_PUT:
+    suku_4:
       rule: "PathPrefix(`/v1.0/suku/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
@@ -1326,7 +1326,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_suku_deletebykd_DELETE:
+    suku_5:
       rule: "PathPrefix(`/v1.0/suku/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-referensi
       entryPoints:
