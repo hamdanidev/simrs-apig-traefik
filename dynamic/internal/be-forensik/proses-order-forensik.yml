@@ -1,7 +1,7 @@
 http:
 
   routers:
-    forensik_order_internal_1:
+    v1_forensik_proses-order-forensik-internal_getlist_GET:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_2:
+    v1_forensik_proses-order-forensik-internal_getlist-order-forensik-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist-order-forensik-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_3:
+    v1_forensik_proses-order-forensik-internal_getlist-tindakan-order-forensik-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist-tindakan-order-forensik-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_4:
+    v1_forensik_proses-order-forensik-internal_update-status-order-diterima_PUT:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/update-status-order-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_5:
+    v1_forensik_proses-order-forensik-internal_update-status-order-selesai_PUT:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/update-status-order-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_6:
+    v1_forensik_proses-order-forensik-internal_update-order-items-forensik_PUT:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/update-order-items-forensik`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_7:
+    v1_forensik_proses-order-forensik-internal_create-tindakan-order-forensik_POST:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/create-tindakan-order-forensik`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_8:
+    v1_forensik_proses-order-forensik-internal_delete-tindakan-order-forensik_DELETE:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/delete-tindakan-order-forensik/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_9:
+    v1_forensik_proses-order-forensik-internal_get-item-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/get-item-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -82,7 +82,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_10:
+    v1_forensik_proses-order-forensik-internal_getlist-by-no-rm_GET:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/getlist-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -91,7 +91,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_11:
+    v1_forensik_proses-order-forensik-internal_create-order_POST:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/create-order`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -100,7 +100,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_12:
+    v1_forensik_proses-order-forensik-internal_create-items_POST:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/create-items`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -109,7 +109,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_13:
+    v1_forensik_proses-order-forensik-internal_delete-order_DELETE:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/delete-order/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:
@@ -118,7 +118,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    forensik_order_internal_14:
+    v1_forensik_proses-order-forensik-internal_delete-items_DELETE:
       rule: "PathPrefix(`/v1.0/forensik/proses-order-forensik-internal/delete-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-forensik
       entryPoints:

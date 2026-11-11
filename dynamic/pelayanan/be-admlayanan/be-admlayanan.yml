@@ -1,6 +1,6 @@
 http:
   routers:
-    admlayanan_1:
+    v1_admlayanan_rawatjalan_create_POST:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -8,7 +8,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    admlayanan_2:
+    v1_admlayanan_rawatjalan_getlist_GET:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -17,7 +17,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_3:
+    v1_admlayanan_rawatjalan_send_POST:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/send/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -26,7 +26,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_4:
+    v1_admlayanan_rawatjalan_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -35,7 +35,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_5:
+    # duplicat_v1_admlayanan_rawatjalan_getlist_selesai-layanan_GET:
+    #   rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-admlayanan
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_admlayanan_rawatjalan_update_status_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -44,7 +53,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_6:
+    # duplicat_v1_admlayanan_rawatjalan_update_status_PUT:
+    #   rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-admlayanan
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_admlayanan_rawatjalan_update_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -53,7 +71,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_7:
+    v1_admlayanan_rawatjalan_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -62,7 +80,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_8:
+    # duplicat_v1_admlayanan_rawatjalan_getlist_by-no-registrasi_GET:
+    #   rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-admlayanan
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_adm-layanan_laporan-cara-bayar-sirs_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/laporan-cara-bayar-sirs/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -71,7 +98,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    igd_1:
+    v1_admlayanan_igd_getlist_GET:
       rule: "PathPrefix(`/v1.0/admlayanan/igd/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -80,7 +107,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    igd_2:
+    v1_admlayanan_igd_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/igd/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -89,7 +116,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    igd_3:
+    v1_admlayanan_igd_update_status_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/igd/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -98,7 +125,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    igd_4:
+    v1_admlayanan_igd_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/admlayanan/igd/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -107,7 +134,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    igd_5:
+    v1_admlayanan_igd_mutasi-layanan_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/igd/mutasi-layanan`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -116,7 +143,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    igd_6:
+    v1_admlayanan_igd_update-dokter-pengganti_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/igd/update-dokter-pengganti`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -125,7 +152,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jasa_layanan_1:
+    v1_adm-layanan_jasa-layanan_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/jasa-layanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -134,7 +161,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jasa_layanan_2:
+    v1_adm-layanan_jasa-layanan_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/jasa-layanan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -143,7 +170,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jasa_layanan_3:
+    v1_adm-layanan_jasa-layanan_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/jasa-layanan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -152,7 +179,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jasa_layanan_4:
+    v1_adm-layanan_jasa-layanan_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/jasa-layanan/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -161,7 +188,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    jasa_layanan_5:
+    v1_adm-layanan_jasa-layanan_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/jasa-layanan/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -170,7 +197,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    order_mcu_1:
+    v1_adm-layanan_order-mcu_get-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/order-mcu/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -179,7 +206,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    order_mcu_2:
+    v1_adm-layanan_order-mcu_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/order-mcu/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -188,7 +215,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    order_mcu_3:
+    v1_adm-layanan_order-mcu_items_get-by-id_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/order-mcu/items/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -197,7 +224,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    order_mcu_4:
+    v1_adm-layanan_order-mcu_items_get-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/order-mcu/items/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -206,7 +233,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    order_mcu_5:
+    v1_adm-layanan_order-mcu_items_update_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/order-mcu/items/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -215,7 +242,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    order_mcu_6:
+    v1_adm-layanan_order-mcu_update_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/order-mcu/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -224,7 +251,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    order_mcu_7:
+    v1_adm-layanan_order-mcu_send-items-to-units_POST:
       rule: "PathPrefix(`/v1.0/adm-layanan/order-mcu/send-items-to-units/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -233,7 +260,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_cathlab_1_copy:
+    v1_adm-layanan_pasien-cathlab_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-cathlab/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -242,7 +269,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_cathlab_2_copy:
+    v1_adm-layanan_pasien-cathlab_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-cathlab/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -251,7 +278,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_cathlab_3_copy:
+    v1_adm-layanan_pasien-cathlab_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-cathlab/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -260,7 +287,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_cathlab_4_copy:
+    v1_adm-layanan_pasien-cathlab_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-cathlab/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -269,7 +296,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_cathlab_5_copy:
+    v1_adm-layanan_pasien-cathlab_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-cathlab/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -278,7 +305,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_forensik_1:
+    v1_adm-layanan_forensik_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/forensik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -287,7 +314,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_forensik_2:
+    v1_adm-layanan_forensik_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/forensik/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -296,7 +323,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_forensik_3:
+    v1_adm-layanan_forensik_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/forensik/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -305,7 +332,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_forensik_4:
+    v1_adm-layanan_forensik_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/forensik/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -314,7 +341,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_forensik_5:
+    v1_adm-layanan_forensik_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/forensik/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -323,7 +350,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_hemodialisa_1:
+    v1_adm-layanan_pasien-hemodialisa_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-hemodialisa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -332,7 +359,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_hemodialisa_2:
+    v1_adm-layanan_pasien-hemodialisa_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-hemodialisa/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -341,7 +368,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_hemodialisa_3:
+    v1_adm-layanan_pasien-hemodialisa_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-hemodialisa/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -350,7 +377,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_hemodialisa_4:
+    v1_adm-layanan_pasien-hemodialisa_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-hemodialisa/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -359,7 +386,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_hemodialisa_5:
+    v1_adm-layanan_pasien-hemodialisa_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-hemodialisa/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -368,7 +395,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_hemodialisa_6:
+    v1_adm-layanan_pasien-hemodialisa_update-dokter-pengganti_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-hemodialisa/update-dokter-pengganti`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -377,7 +404,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_igd_unit_biling_1:
+    v1_adm-layanan_pasien-igd-unit-biling_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -386,7 +413,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_igd_unit_biling_2:
+    v1_adm-layanan_pasien-igd-unit-biling_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -395,7 +422,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_igd_unit_biling_3:
+    v1_adm-layanan_pasien-igd-unit-biling_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -404,7 +431,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_igd_unit_biling_4:
+    v1_adm-layanan_pasien-igd-unit-biling_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -413,7 +440,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_igd_unit_biling_5:
+    v1_adm-layanan_pasien-igd-unit-biling_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -422,7 +449,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_insentive_care_1_copy:
+    v1_adm-layanan_pasien-insentive-care_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-insentive-care/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -431,7 +458,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_insentive_care_2_copy:
+    v1_adm-layanan_pasien-insentive-care_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-insentive-care/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -440,7 +467,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_insentive_care_3_copy:
+    v1_adm-layanan_pasien-insentive-care_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-insentive-care/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -449,7 +476,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_kemoterapi_1_copy:
+    v1_adm-layanan_pasien-kemoterapi_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-kemoterapi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -458,7 +485,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_kemoterapi_2_copy:
+    v1_adm-layanan_pasien-kemoterapi_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-kemoterapi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -467,7 +494,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_kemoterapi_3_copy:
+    v1_adm-layanan_pasien-kemoterapi_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-kemoterapi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -476,7 +503,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_kemoterapi_4_copy:
+    v1_adm-layanan_pasien-kemoterapi_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-kemoterapi/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -485,7 +512,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_kemoterapi_5_copy:
+    v1_adm-layanan_pasien-kemoterapi_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-kemoterapi/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -494,7 +521,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_kemoterapi_6_copy:
+    v1_adm-layanan_pasien-kemoterapi_update-dokter-pengganti_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-kemoterapi/update-dokter-pengganti`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -503,7 +530,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    adm_pasien_konsul_1:
+    v1_adm-layanan_pasien-konsul_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-konsul/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -512,7 +539,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_konsul_2_copy:
+    v1_adm-layanan_pasien-konsul_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-konsul/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -521,7 +548,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_konsul_3_copy:
+    v1_adm-layanan_pasien-konsul_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-konsul/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -530,7 +557,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_konsul_4_copy:
+    v1_adm-layanan_pasien-konsul_update_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-konsul/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -539,7 +566,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_mk_eksternal_1:
+    v1_adm-layanan_lab-mk-eksternal_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-mk-eksternal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -548,7 +575,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_mk_eksternal_2:
+    v1_adm-layanan_lab-mk-eksternal_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-mk-eksternal/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -557,7 +584,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_mk_eksternal_3:
+    v1_adm-layanan_lab-mk-eksternal_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-mk-eksternal/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -566,7 +593,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_mk_eksternal_4:
+    v1_adm-layanan_lab-mk-eksternal_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-mk-eksternal/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -575,7 +602,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_mk_eksternal_5:
+    v1_adm-layanan_lab-mk-eksternal_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-mk-eksternal/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -584,7 +611,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pa_eksternal_1:
+    v1_adm-layanan_lab-pa-eksternal_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pa-eksternal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -593,7 +620,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pa_eksternal_2:
+    v1_adm-layanan_lab-pa-eksternal_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pa-eksternal/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -602,7 +629,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pa_eksternal_3:
+    v1_adm-layanan_lab-pa-eksternal_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pa-eksternal/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -611,7 +638,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pa_eksternal_4:
+    v1_adm-layanan_lab-pa-eksternal_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pa-eksternal/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -620,7 +647,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pa_eksternal_5:
+    v1_adm-layanan_lab-pa-eksternal_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pa-eksternal/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -629,7 +656,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pk_eksternal_1:
+    v1_adm-layanan_lab-pk-eksternal_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pk-eksternal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -638,7 +665,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pk_eksternal_2:
+    v1_adm-layanan_lab-pk-eksternal_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pk-eksternal/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -647,7 +674,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pk_eksternal_3:
+    v1_adm-layanan_lab-pk-eksternal_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pk-eksternal/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -656,7 +683,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pk_eksternal_4:
+    v1_adm-layanan_lab-pk-eksternal_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pk-eksternal/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -665,7 +692,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_lab_pk_eksternal_5:
+    v1_adm-layanan_lab-pk-eksternal_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/lab-pk-eksternal/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -674,7 +701,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_1_copy:
+    v1_adm-layanan_pasien-mcu_get-list-pasien_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/get-list-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -683,7 +710,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_2_copy:
+    v1_adm-layanan_pasien-mcu_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -692,7 +719,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_3_copy:
+    v1_adm-layanan_pasien-mcu_get-list-mcu-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/get-list-mcu-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -701,7 +728,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_4_copy:
+    v1_adm-layanan_pasien-mcu_get-list-pasien-selesai_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/get-list-pasien-selesai`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -710,7 +737,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_5_copy:
+    v1_adm-layanan_pasien-mcu_create-mcu-layanan_POST:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/create-mcu-layanan`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -719,7 +746,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_6_copy:
+    v1_adm-layanan_pasien-mcu_update-order_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/update-order/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -728,7 +755,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_7_copy:
+    v1_adm-layanan_pasien-mcu_update-pasien-selesai_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/update-pasien-selesai/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -737,7 +764,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_8_copy:
+    v1_adm-layanan_pasien-mcu_delete-mcu-layanan_DELETE:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/delete-mcu-layanan/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -746,7 +773,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_mcu_9:
+    v1_adm-layanan_pasien-mcu_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-mcu/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -755,7 +782,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_operasi_1_copy:
+    v1_adm-layanan_pasien-operasi_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-operasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -764,7 +791,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_operasi_2_copy:
+    v1_adm-layanan_pasien-operasi_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-operasi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -773,7 +800,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_operasi_3_copy:
+    v1_adm-layanan_pasien-operasi_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-operasi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -782,7 +809,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_operasi_4_copy:
+    v1_adm-layanan_pasien-operasi_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-operasi/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -791,7 +818,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_operasi_5_copy:
+    v1_adm-layanan_pasien-operasi_send_POST:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-operasi/send/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -800,7 +827,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_operasi_6_copy:
+    v1_adm-layanan_pasien-operasi_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-operasi/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -809,7 +836,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_operasi_7_copy:
+    v1_adm-layanan_pasien-operasi_update_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-operasi/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -818,7 +845,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radiologi_1_copy:
+    v1_adm-layanan_pasien-radiologi_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -827,7 +854,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radiologi_2_copy:
+    v1_adm-layanan_pasien-radiologi_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radiologi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -836,7 +863,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radiologi_3_copy:
+    v1_adm-layanan_pasien-radiologi_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radiologi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -845,7 +872,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radiologi_4_copy:
+    v1_adm-layanan_pasien-radiologi_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radiologi/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -854,7 +881,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radiologi_5:
+    v1_adm-layanan_pasien-radiologi_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radiologi/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -863,7 +890,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radioterapi_1_copy:
+    v1_adm-layanan_pasien-radioterapi_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radioterapi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -872,7 +899,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radioterapi_2_copy:
+    v1_adm-layanan_pasien-radioterapi_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radioterapi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -881,7 +908,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radioterapi_3_copy:
+    v1_adm-layanan_pasien-radioterapi_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radioterapi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -890,7 +917,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radioterapi_4_copy:
+    v1_adm-layanan_pasien-radioterapi_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radioterapi/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -899,7 +926,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radioterapi_5_copy:
+    v1_adm-layanan_pasien-radioterapi_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radioterapi/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -908,7 +935,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_radioterapi_6_copy:
+    v1_adm-layanan_pasien-radioterapi_update-dokter-pengganti_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radioterapi/update-dokter-pengganti`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -917,7 +944,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_unit_biling_1:
+    v1_adm-layanan_pasien-rawat-inap-unit-biling_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-inap-unit-biling/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -926,7 +953,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_unit_biling_2:
+    v1_adm-layanan_pasien-rawat-inap-unit-biling_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-inap-unit-biling/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -935,7 +962,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_unit_biling_3:
+    v1_adm-layanan_pasien-rawat-inap-unit-biling_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-inap-unit-biling/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -944,7 +971,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_unit_biling_4:
+    v1_adm-layanan_pasien-rawat-inap-unit-biling_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-inap-unit-biling/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -953,7 +980,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_unit_biling_5:
+    v1_adm-layanan_pasien-rawat-inap-unit-biling_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-inap-unit-biling/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -962,7 +989,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_1_copy:
+    v1_adm-layanan_rawat-inap_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -971,7 +998,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_2_copy:
+    # duplicat_v1_adm-layanan_rawat-inap_getlist_GET:
+    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-admlayanan
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_adm-layanan_rawat-inap_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -980,7 +1016,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_3_copy:
+    # duplicat_v1_adm-layanan_rawat-inap_getlist_selesai-layanan_GET:
+    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-admlayanan
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_adm-layanan_rawat-inap_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -989,7 +1034,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_4_copy:
+    # duplicat_v1_adm-layanan_rawat-inap_getlist_by-no-registrasi_GET:
+    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-admlayanan
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_adm-layanan_rawat-inap_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -998,7 +1052,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_5_copy:
+    # duplicat_v1_adm-layanan_rawat-inap_update_status-kedatangan_PUT:
+    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-admlayanan
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_adm-layanan_rawat-inap_update_status-kedatangan-khusus-mcu_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan-khusus-mcu/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1007,7 +1070,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_6_copy:
+    v1_adm-layanan_rawat-inap_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1016,7 +1079,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_7_copy:
+    # duplicat_v1_adm-layanan_rawat-inap_update_status_PUT:
+    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-admlayanan
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_adm-layanan_rawat-inap_update_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1025,7 +1097,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_inap_8_copy:
+    v1_adm-layanan_rawat-inap_update-dokter-pengganti_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update-dokter-pengganti`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1034,7 +1106,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_jalan_unit_biling_1:
+    v1_adm-layanan_pasien-rawat-jalan-unit-biling_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-jalan-unit-biling/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1043,7 +1115,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_jalan_unit_biling_2:
+    v1_adm-layanan_pasien-rawat-jalan-unit-biling_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-jalan-unit-biling/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1052,7 +1124,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_jalan_unit_biling_3:
+    v1_adm-layanan_pasien-rawat-jalan-unit-biling_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-jalan-unit-biling/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1061,7 +1133,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_jalan_unit_biling_4:
+    v1_adm-layanan_pasien-rawat-jalan-unit-biling_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-jalan-unit-biling/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1070,7 +1142,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_jalan_unit_biling_5:
+    v1_adm-layanan_pasien-rawat-jalan-unit-biling_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rawat-jalan-unit-biling/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1079,34 +1151,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_jalan_1_copy:
-      rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    pasien_rawat_jalan_2_copy:
-      rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    pasien_rawat_jalan_3_copy:
-      rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    pasien_rawat_jalan_4_copy:
+    v1_admlayanan_rawatjalan_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1115,7 +1160,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_jalan_5_copy:
+    v1_admlayanan_rawatjalan_update_status-kedatangan-khusus-mcu_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status-kedatangan-khusus-mcu/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1124,16 +1169,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rawat_jalan_6_copy:
-      rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    pasien_rawat_jalan_7_copy:
+    v1_admlayanan_rawatjalan_update-dokter-pengganti_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update-dokter-pengganti`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1142,7 +1178,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rehabilitasi_medis_1_copy:
+    v1_adm-layanan_pasien-rehabilitasi-medis_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rehabilitasi-medis/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1151,7 +1187,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rehabilitasi_medis_2_copy:
+    v1_adm-layanan_pasien-rehabilitasi-medis_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rehabilitasi-medis/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1160,7 +1196,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rehabilitasi_medis_3_copy:
+    v1_adm-layanan_pasien-rehabilitasi-medis_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rehabilitasi-medis/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1169,7 +1205,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rehabilitasi_medis_4_copy:
+    v1_adm-layanan_pasien-rehabilitasi-medis_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rehabilitasi-medis/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1178,7 +1214,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rehabilitasi_medis_5_copy:
+    v1_adm-layanan_pasien-rehabilitasi-medis_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rehabilitasi-medis/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1187,7 +1223,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_rehabilitasi_medis_6_copy:
+    v1_adm-layanan_pasien-rehabilitasi-medis_update-dokter-pengganti_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rehabilitasi-medis/update-dokter-pengganti`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1196,7 +1232,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_utdrs_eksternal_1:
+    v1_adm-layanan_utdrs-eksternal_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/utdrs-eksternal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1205,7 +1241,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_utdrs_eksternal_2:
+    v1_adm-layanan_utdrs-eksternal_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/utdrs-eksternal/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1214,7 +1250,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_utdrs_eksternal_3:
+    v1_adm-layanan_utdrs-eksternal_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/utdrs-eksternal/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1223,7 +1259,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_utdrs_eksternal_4:
+    v1_adm-layanan_utdrs-eksternal_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/utdrs-eksternal/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1232,7 +1268,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_utdrs_eksternal_5:
+    v1_adm-layanan_utdrs-eksternal_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/utdrs-eksternal/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1241,52 +1277,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rawatinap_1:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    rawatinap_2:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    rawatinap_3:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    rawatinap_4:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    rawatinap_5:
-      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
-      service: service-admlayanan
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    riwayat_naik_kelas_1:
+    v1_adm-layanan_riwayat-naik-kelas_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-naik-kelas/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1295,7 +1286,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_naik_kelas_2:
+    v1_adm-layanan_riwayat-naik-kelas_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-naik-kelas/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1304,7 +1295,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_naik_kelas_3:
+    v1_adm-layanan_riwayat-naik-kelas_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-naik-kelas/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1313,7 +1304,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_naik_kelas_4:
+    v1_adm-layanan_riwayat-naik-kelas_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-naik-kelas/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1322,7 +1313,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_naik_kelas_5:
+    v1_adm-layanan_riwayat-naik-kelas_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-naik-kelas/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1331,7 +1322,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_ubah_cara_bayar_1:
+    v1_adm-layanan_riwayat-ubah-cara-bayar_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-ubah-cara-bayar/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1340,7 +1331,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_ubah_cara_bayar_2:
+    v1_adm-layanan_riwayat-ubah-cara-bayar_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-ubah-cara-bayar/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1349,7 +1340,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_ubah_cara_bayar_3:
+    v1_adm-layanan_riwayat-ubah-cara-bayar_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-ubah-cara-bayar/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1358,7 +1349,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_ubah_cara_bayar_4:
+    v1_adm-layanan_riwayat-ubah-cara-bayar_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-ubah-cara-bayar/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1367,7 +1358,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    riwayat_ubah_cara_bayar_5:
+    v1_adm-layanan_riwayat-ubah-cara-bayar_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/riwayat-ubah-cara-bayar/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1376,7 +1367,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_1:
+    v1_adm-layanan_unit-biling_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-biling/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1385,7 +1376,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_2:
+    v1_adm-layanan_unit-biling_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-biling/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1394,7 +1385,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_3:
+    v1_adm-layanan_unit-biling_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-biling/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1403,7 +1394,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_4:
+    v1_adm-layanan_unit-billing_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-billing/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1412,7 +1403,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_5:
+    v1_adm-layanan_unit-billing_create_POST:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-billing/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1421,7 +1412,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_6:
+    v1_adm-layanan_unit-biling_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-biling/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1430,7 +1421,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_7:
+    v1_adm-layanan_unit-biling_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-biling/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1439,7 +1430,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_8:
+    v1_adm-layanan_unit-billing_cek-billing-pasien_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-billing/cek-billing-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1448,7 +1439,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_9:
+    v1_adm-layanan_unit-billing_delete_DELETE:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-billing/delete/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1457,7 +1448,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_10:
+    v1_adm-layanan_validasi-billing_all_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/validasi-billing/all/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1466,7 +1457,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    unit_biling_11:
+    v1_adm-layanan_unit-billing_update-kirim-kasir_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/unit-billing/update-kirim-kasir/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1474,7 +1465,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    rawatinap_ref_1:
+    v1_adm-layanan_rawatinap_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1482,7 +1473,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    rawatinap_ref_2:
+    v1_adm-layanan_rawatinap_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1490,7 +1481,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    rawatinap_ref_3:
+    v1_adm-layanan_rawatinap_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1498,7 +1489,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    rawatinap_ref_4:
+    v1_adm-layanan_rawatinap_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/update/status-kedatangan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1506,7 +1497,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    rawatinap_ref_5:
+    v1_adm-layanan_rawatinap_update_status_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawatinap/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1515,7 +1506,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_pasien_all_update_no_sep:
+    v1_admlayanan_pasien-all_update-no-sep_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/pasien-all/update-no-sep`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1524,7 +1515,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_validasi_pre_pelayanan:
+    v1_admlayanan_validasi-pre-pelayanan_POST:
       rule: "PathPrefix(`/v1.0/admlayanan/validasi-pre-pelayanan/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1533,7 +1524,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_igd_update_status_kedatangan_rest:
+    v1_admlayanan_igd_update_status-kedatangan-rest_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/igd/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1542,7 +1533,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_rawatjalan_update_status_kedatangan_rest:
+    v1_admlayanan_rawatjalan_update_status-kedatangan-rest_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1551,7 +1542,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_rawatinap_update_status_kedatangan_rest:
+    v1_adm-layanan_rawat-inap_update_status-kedatangan-rest_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1560,7 +1551,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_pasienkemoterapi_update_status_kedatangan_rest:
+    v1_adm-layanan_pasien-kemoterapi_update_status-kedatangan-rest_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-kemoterapi/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1569,7 +1560,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_pasienradioterapi_update_status_kedatangan_rest:
+    v1_adm-layanan_pasien-radioterapi_update_status-kedatangan-rest_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-radioterapi/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1578,7 +1569,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_pasienhemodialisa_update_status_kedatangan_rest:
+    v1_adm-layanan_pasien-hemodialisa_update_status-kedatangan-rest_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-hemodialisa/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1587,7 +1578,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    admlayanan_pasienrehabilitasi_update_status_kedatangan_rest:
+    v1_adm-layanan_pasien-rehabilitasi-medis_update_status-kedatangan-rest_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/pasien-rehabilitasi-medis/update/status-kedatangan-rest/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1596,7 +1587,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    adm-layanan_billing-sync_get-by-no-registrasi:
+    v1_adm-layanan_billing-sync_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/billing-sync/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1605,7 +1596,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    adm-layanan_billing-sync_sync:
+    v1_adm-layanan_billing-sync_sync_POST:
       rule: "PathPrefix(`/v1.0/adm-layanan/billing-sync/sync/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1614,7 +1605,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    adm-layanan_kirim-kasir_payload:
+    v1_adm-layanan_kirim-kasir_payload_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/kirim-kasir/payload/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:
@@ -1623,7 +1614,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    adm-layanan_kirim-kasir_create:
+    v1_adm-layanan_kirim-kasir_create_POST:
       rule: "PathPrefix(`/v1.0/adm-layanan/kirim-kasir/create/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-admlayanan
       entryPoints:

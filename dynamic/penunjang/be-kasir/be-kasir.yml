@@ -1,6 +1,6 @@
 http:
   routers:
-    kasir_billing_1:
+    v1_kasir-billing_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_2:
+    v1_kasir-billing_getlist-kwitansi_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -18,7 +18,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_3:
+    # duplicat_v1_kasir-billing_getlist-kwitansi_GET:
+    #   rule: "PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-kasir
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_kasir-billing_send-data-billing_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing/send-data-billing`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -27,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_4:
+    v1_kasir-billing_getlist-detail-kwitansi-by-no-kwitansi_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-detail-kwitansi-by-no-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -36,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_5:
+    v1_kasir-billing_getlist-edit-kwitansi-billing-by-no-kwitansi_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-edit-kwitansi-billing-by-no-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -45,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_6:
+    v1_kasir-billing_getlist-billing-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-billing-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -54,7 +63,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_7:
+    v1_kasir-billing_getlist-billing-by-no-registrasi-rekap_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-billing-by-no-registrasi-rekap/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -63,7 +72,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_8:
+    v1_kasir-billing_getlist-kwitansi-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -72,7 +81,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_9:
+    v1_kasir-billing_perbandingan-billing-total_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/perbandingan-billing-total/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -81,7 +90,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_10:
+    v1_kasir-billing_kwitansi_create_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing/kwitansi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -90,7 +99,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_11:
+    v1_kasir-billing_create_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -99,7 +108,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_12:
+    v1_kasir-billing_update-kwitansi_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing/update-kwitansi`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -108,7 +117,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_13:
+    v1_kasir-billing_update-item_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing/update-item`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -117,7 +126,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_14:
+    v1_kasir-billing_update-bukti-bayar_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing/update-bukti-bayar/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -126,7 +135,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_15:
+    v1_kasir-billing_update-tgl-kwitansi_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing/update-tgl-kwitansi`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -135,7 +144,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_16:
+    v1_kasir-billing_delete-kwitansi_DELETE:
       rule: "PathPrefix(`/v1.0/kasir-billing/delete-kwitansi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -144,7 +153,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_17:
+    v1_kasir-billing_perbaiki-data-billing_DELETE:
       rule: "PathPrefix(`/v1.0/kasir-billing/perbaiki-data-billing/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -153,7 +162,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_18:
+    v1_kasir-billing_generate-no-kwitansi_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing/generate-no-kwitansi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -162,7 +171,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_19:
+    v1_kasir-billing_next-no-kwitansi-by-kasa_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/next-no-kwitansi-by-kasa/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -171,7 +180,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_20:
+    v1_kasir-billing_getlist-no-kwitansi-by-kasa_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-no-kwitansi-by-kasa/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -180,7 +189,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_21:
+    v1_kasir-billing_status-pembayaran-umum_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/status-pembayaran-umum`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -189,7 +198,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_22:
+    v1_kasir-billing_rekap-pendapatan-kasir_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/rekap-pendapatan-kasir`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -198,7 +207,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_hemodialisa_1:
+    v1_kasir_pasien-hemodialisa_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -207,7 +216,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_hemodialisa_2:
+    v1_kasir_pasien-hemodialisa_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -216,7 +225,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_hemodialisa_3:
+    v1_kasir_pasien-hemodialisa_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-hemodialisa/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -225,7 +234,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_hemodialisa_4:
+    v1_kasir_pasien-hemodialisa_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-hemodialisa/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -234,7 +243,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_igd_1:
+    v1_kasir_pasien-igd_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-igd/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -243,7 +252,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_igd_2:
+    v1_kasir_pasien-igd_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-igd/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -252,7 +261,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_igd_3:
+    v1_kasir_pasien-igd_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-igd/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -261,7 +270,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_igd_4:
+    v1_kasir_pasien-igd_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-igd/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -270,7 +279,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_kemoterapi_1:
+    v1_kasir_pasien-kemoterapi_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -279,7 +288,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_kemoterapi_2:
+    v1_kasir_pasien-kemoterapi_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -288,7 +297,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_kemoterapi_3:
+    v1_kasir_pasien-kemoterapi_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-kemoterapi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -297,7 +306,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_kemoterapi_4:
+    v1_kasir_pasien-kemoterapi_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-kemoterapi/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -306,7 +315,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_mcu_1:
+    v1_kasir_pasien-mcu_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-mcu/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -315,7 +324,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_mcu_2:
+    v1_kasir_pasien-mcu_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-mcu/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -324,7 +333,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_mcu_3:
+    v1_kasir_pasien-mcu_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-mcu/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -333,7 +342,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_mcu_4:
+    v1_kasir_pasien-mcu_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-mcu/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -342,7 +351,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_radiologi_1:
+    v1_kasir_pasien-radiologi_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -351,7 +360,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_radiologi_2:
+    v1_kasir_pasien-radiologi_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -360,7 +369,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_radiologi_3:
+    v1_kasir_pasien-radiologi_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radiologi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -369,7 +378,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_radiologi_4:
+    v1_kasir_pasien-radiologi_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radiologi/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -378,7 +387,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_radioterapi_1:
+    v1_kasir_pasien-radioterapi_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -387,7 +396,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_radioterapi_2:
+    v1_kasir_pasien-radioterapi_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -396,7 +405,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_radioterapi_3:
+    v1_kasir_pasien-radioterapi_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radioterapi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -405,7 +414,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_radioterapi_4:
+    v1_kasir_pasien-radioterapi_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-radioterapi/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -414,7 +423,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rawat_inap_1:
+    v1_kasir_pasien-rawat-inap_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -423,7 +432,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rawat_inap_2:
+    v1_kasir_pasien-rawat-inap_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -432,7 +441,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rawat_inap_3:
+    v1_kasir_pasien-rawat-inap_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -441,7 +450,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rawat_inap_4:
+    v1_kasir_pasien-rawat-inap_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-inap/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -450,7 +459,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rawat_jalan_1:
+    v1_kasir_pasien-rawat-jalan_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -459,7 +468,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rawat_jalan_2:
+    v1_kasir_pasien-rawat-jalan_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -468,7 +477,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rawat_jalan_3:
+    v1_kasir_pasien-rawat-jalan_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -477,7 +486,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rawat_jalan_4:
+    v1_kasir_pasien-rawat-jalan_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rawat-jalan/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -486,7 +495,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rehabilitasi_medis_1:
+    v1_kasir_pasien-rehabilitasi-medis_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -495,7 +504,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rehabilitasi_medis_2:
+    v1_kasir_pasien-rehabilitasi-medis_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -504,7 +513,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rehabilitasi_medis_3:
+    v1_kasir_pasien-rehabilitasi-medis_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -513,7 +522,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_pasien_rehabilitasi_medis_4:
+    v1_kasir_pasien-rehabilitasi-medis_update_status_PUT:
       rule: "PathPrefix(`/v1.0/kasir/pasien-rehabilitasi-medis/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -522,7 +531,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_1:
+    v1_kasir_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -531,7 +540,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_2:
+    v1_kasir_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/kasir/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -540,7 +549,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_perbaiki_data_billing_khusus_backdate:
+    v1_kasir-billing_perbaiki-data-billing-khusus-backdate_DELETE:
       rule: "PathPrefix(`/v1.0/kasir-billing/perbaiki-data-billing-khusus-backdate/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -549,7 +558,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_update_sub_billing_item:
+    v1_kasir-billing_update-sub-billing-item_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing/update-sub-billing-item`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -558,7 +567,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_update_potongan_item:
+    v1_kasir-billing_update-potongan-item_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing/update-potongan-item`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -567,7 +576,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_update_status_potongan:
+    v1_kasir-billing_update-status-potongan_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing/update-status-potongan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -575,7 +584,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    kasir_generate_kwitansi_eksekutif:
+    v1_kasir-billing_generate-no-kwitansi-eksekutif_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing/generate-no-kwitansi-eksekutif`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -583,7 +592,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    kasir_update_kwitansi_eksekutif:
+    v1_kasir-billing_update-status-no-kwitansi-eksekutif_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing/update-status-no-kwitansi-eksekutif`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -591,7 +600,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    kasir_getall_kwitansi_eksekutif:
+    v1_kasir-billing_list-no-kwitansi-eksekutif_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/list-no-kwitansi-eksekutif`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -599,7 +608,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    kasir_getlist_kwitansi_eksekutif:
+    v1_kasir-billing_getlist-no-kwitansi-eksekutif_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-no-kwitansi-eksekutif`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -608,7 +617,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_biling_generate_no_kwitansi_reguler:
+    v1_kasir-billing_generate-no-kwitansi-reguler_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing/generate-no-kwitansi-reguler`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -617,7 +626,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_biling_list_no_kwitansi_reguler:
+    v1_kasir-billing_list-no-kwitansi-reguler_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/list-no-kwitansi-reguler`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -626,7 +635,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_biling_getlist_no_kwitansi_reguler:
+    v1_kasir-billing_getlist-no-kwitansi-reguler_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-no-kwitansi-reguler`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -635,7 +644,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_biling_next_kwintasi_all:
+    v1_kasir-billing_next-kwintasi-all_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/next-kwintasi-all/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -644,7 +653,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_create:
+    v1_kasir-billing-penjualan-barang-bebas_billing_create_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -653,16 +662,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_getlist_kwitansi:
-      rule: "PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-kasir
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    kasir_billing_penjualan_barang_bebas_getlist:
+    v1_kasir-billing-penjualan-barang-bebas_billing_getlist_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -671,7 +671,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_kwitansi_create:
+    v1_kasir-billing-penjualan-barang-bebas_kwitansi_create_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -680,7 +680,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_kwitansi_getlist:
+    v1_kasir-billing-penjualan-barang-bebas_kwitansi_getlist-kwitansi_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -689,7 +689,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_kwitansi_getlist_by_nomor_order:
+    v1_kasir-billing-penjualan-barang-bebas_kwitansi_getlist-kwitansi-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/getlist-kwitansi-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -698,7 +698,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_kwitansi_update_bukti_bayar:
+    v1_kasir-billing-penjualan-barang-bebas_kwitansi_update-bukti-bayar_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/update-bukti-bayar/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -707,7 +707,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_kwitansi_update_tgl_kwitansi:
+    v1_kasir-billing-penjualan-barang-bebas_kwitansi_update-tgl-kwitansi_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/kwitansi/update-tgl-kwitansi`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -716,7 +716,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_item_getlist_item_by_no_kwitansi:
+    v1_kasir-billing-penjualan-barang-bebas_item_getlist-item-by-no-kwitansi_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/item/getlist-item-by-no-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -725,7 +725,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_item_item:
+    v1_kasir-billing-penjualan-barang-bebas_item_item_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/item/item/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -734,7 +734,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_item_update_no_kwitansi:
+    v1_kasir-billing-penjualan-barang-bebas_item_update-no-kwitansi_PUT:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/item/update-no-kwitansi`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -743,7 +743,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_billing_getlist_billing_by_nomor_order:
+    v1_kasir-billing-penjualan-barang-bebas_billing_getlist-billing-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/getlist-billing-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -752,7 +752,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_biling_pendapatan:
+    v1_kasir-billing_pendapatan_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/pendapatan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -761,7 +761,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_biling_penjualan_barang_bebas_pendapatan:
+    v1_kasir-billing-penjualan-barang-bebas_pendapatan_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/pendapatan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -770,7 +770,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_status_pembayaran_umum:
+    v1_kasir-billing-penjualan-barang-bebas_status-pembayaran-umum_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/status-pembayaran-umum`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
@@ -779,7 +779,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_penjualan_barang_bebas_rekap_pendapatan_kasir:
+    v1_kasir-billing-penjualan-barang-bebas_rekap-pendapatan-kasir_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/rekap-pendapatan-kasir`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:

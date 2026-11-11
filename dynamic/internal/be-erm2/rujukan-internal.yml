@@ -1,6 +1,6 @@
 http:
   routers:
-    erm_rujukan_internal_create:
+    v1_erm_rujukan-internal_create_POST:
       rule: "PathPrefix(`/v1.0/erm/rujukan-internal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_rujukan_internal_update:
+    v1_erm_rujukan-internal_update_PUT:
       rule: "PathPrefix(`/v1.0/erm/rujukan-internal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_rujukan_internal_get_by_no_registrasi:
+    v1_erm_rujukan-internal_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/erm/rujukan-internal/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_rujukan_internal_get_by_no_rujukan:
+    v1_erm_rujukan-internal_get-by-no-rujukan_GET:
       rule: "PathPrefix(`/v1.0/erm/rujukan-internal/get-by-no-rujukan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_rujukan_internal_get_by_no_rm:
+    v1_erm_rujukan-internal_get-by-no-rm_GET:
       rule: "PathPrefix(`/v1.0/erm/rujukan-internal/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_rujukan_internal_delete:
+    v1_erm_rujukan-internal_delete_DELETE:
       rule: "PathPrefix(`/v1.0/erm/rujukan-internal/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

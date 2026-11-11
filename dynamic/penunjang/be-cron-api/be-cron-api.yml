@@ -1,6 +1,6 @@
 http:
   routers:
-    be_cron_api_bed:
+    v1_cron-api_bed_POST:
       rule: "PathPrefix(`/v1.0/cron-api/bed`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_bed_bulk:
+    v1_cron-api_bed_bulk_POST:
       rule: "PathPrefix(`/v1.0/cron-api/bed/bulk`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_bed_pending:
+    v1_cron-api_bed_pending_GET:
       rule: "PathPrefix(`/v1.0/cron-api/bed/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_bed_pending_status:
+    v1_cron-api_bed_status_PUT:
       rule: "PathPrefix(`/v1.0/cron-api/bed/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_encounter:
+    v1_cron-api_encounter_GET:
       rule: "PathPrefix(`/v1.0/cron-api/encounter`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_encounter_pending:
+    v1_cron-api_encounter_pending_GET:
       rule: "PathPrefix(`/v1.0/cron-api/encounter/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_encounter_pending_status:
+    v1_cron-api_encounter_status_PUT:
       rule: "PathPrefix(`/v1.0/cron-api/encounter/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -63,7 +63,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_medication-request:
+    v1_cron-api_medication-request_GET:
       rule: "PathPrefix(`/v1.0/cron-api/medication-request`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -72,7 +72,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_medication-request_pending:
+    v1_cron-api_medication-request_pending_GET:
       rule: "PathPrefix(`/v1.0/cron-api/medication-request/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -81,7 +81,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_cron_api_medication-request_pending_status:
+    v1_cron-api_medication-request_status_PUT:
       rule: "PathPrefix(`/v1.0/cron-api/medication-request/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:
@@ -90,7 +90,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be_coron_api_bed_getlist:
+    v1_cron-api_bed_getlist_GET:
       rule: "PathPrefix(`/v1.0/cron-api/bed/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-cron-api
       entryPoints:

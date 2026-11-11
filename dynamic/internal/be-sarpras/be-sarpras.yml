@@ -1,7 +1,7 @@
 http:
 
   routers:
-    sarpras_monitoring_1:
+    v1_sarpras_monitoring-rutin_create_POST:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_monitoring_2:
+    v1_sarpras_monitoring-rutin_get-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_monitoring_3:
+    v1_sarpras_monitoring-rutin_getlist_GET:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_monitoring_4:
+    v1_sarpras_monitoring-rutin_update_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_monitoring_5:
+    v1_sarpras_monitoring-rutin_aktifkan-monitoring-rutin_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/aktifkan-monitoring-rutin/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_monitoring_6:
+    v1_sarpras_monitoring-rutin_selesai-pemeliharaan_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/selesai-pemeliharaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_monitoring_7:
+    v1_sarpras_monitoring-rutin_update-pemeliharaan_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/update-pemeliharaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_monitoring_8:
+    v1_sarpras_monitoring-rutin_delete_DELETE:
       rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_pelaporan_1:
+    v1_sarpras_pelaporan-kerusakan_create_POST:
       rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -82,7 +82,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_pelaporan_2:
+    v1_sarpras_pelaporan-kerusakan_kirim-keluhan_POST:
       rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/kirim-keluhan/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -91,7 +91,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_pelaporan_3:
+    v1_sarpras_pelaporan-kerusakan_get-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -100,7 +100,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_pelaporan_4:
+    v1_sarpras_pelaporan-kerusakan_get-riwayat-order_GET:
       rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/get-riwayat-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -109,7 +109,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_pelaporan_5:
+    v1_sarpras_pelaporan-kerusakan_getlist_GET:
       rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -118,7 +118,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_pelaporan_6:
+    v1_sarpras_pelaporan-kerusakan_update_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -127,7 +127,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_pelaporan_7:
+    v1_sarpras_pelaporan-kerusakan_verifikasi_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/verifikasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -136,7 +136,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_pelaporan_8:
+    v1_sarpras_pelaporan-kerusakan_delete_DELETE:
       rule: "PathPrefix(`/v1.0/sarpras/pelaporan-kerusakan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -145,7 +145,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_proses_1:
+    v1_sarpras_proses-pelaporan-kerusakan_keluhan-diterima_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/keluhan-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -154,7 +154,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_proses_2:
+    v1_sarpras_proses-pelaporan-kerusakan_update-inspeksi_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/update-inspeksi`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -163,7 +163,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_proses_3:
+    v1_sarpras_proses-pelaporan-kerusakan_update-penanganan_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/update-penanganan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -172,7 +172,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_proses_4:
+    v1_sarpras_proses-pelaporan-kerusakan_update-selesai_PUT:
       rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/update-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -181,7 +181,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_proses_5:
+    v1_sarpras_proses-pelaporan-kerusakan_getlist_GET:
       rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:
@@ -190,7 +190,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    sarpras_proses_6:
+    v1_sarpras_proses-pelaporan-kerusakan_get-by-nomor-order_GET:
       rule: "PathPrefix(`/v1.0/sarpras/proses-pelaporan-kerusakan/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-sarpras
       entryPoints:

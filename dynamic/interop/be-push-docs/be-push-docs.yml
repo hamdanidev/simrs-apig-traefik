@@ -1,7 +1,7 @@
 http:
 
   routers:
-    be-push-docs_health:
+    v1_pushdocs_health_GET:
       rule: "PathPrefix(`/v1.0/pushdocs/health`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-push-docs
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be-push-docs_pushdocs_jobs:
+    v1_pushdocs_jobs_GET:
       rule: "PathPrefix(`/v1.0/pushdocs/jobs`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-push-docs
       entryPoints:
@@ -19,16 +19,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be-push-docs_pushdocs_jobs_2:
-      rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-be-push-docs
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
+    # duplicat_v1_pushdocs_jobs_GET:
+    #   rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-be-push-docs
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
 
-    be-push-docs_pushdocs_jobs_3:
+    v1_pushdocs_jobs_POST:
       rule: "PathPrefix(`/v1.0/pushdocs/jobs`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-be-push-docs
       entryPoints:
@@ -37,14 +37,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be-push-docs_pushdocs_jobs_4:
-      rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-be-push-docs
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
+    # duplicat_v1_pushdocs_jobs_POST:
+    #   rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`POST`) || Method(`OPTIONS`))"
+    #   service: service-be-push-docs
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
 
 
 
