@@ -127,15 +127,6 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_organization_search-by-partof_POST:
-      rule: "PathPrefix(`/v1.0/organization/search-by-partof`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-satu-sehat-interop
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
     v1_slot_create_POST:
       rule: "PathPrefix(`/v1.0/slot/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
@@ -345,6 +336,15 @@ http:
 
     v1_practitioner_search-by-id_POST:
       rule: "PathPrefix(`/v1.0/practitioner/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    duplicat_v1_organization_search-by-partof_POST:
+      rule: "PathPrefix(`/v1.0/organization/search-by-partof`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:
         - web
