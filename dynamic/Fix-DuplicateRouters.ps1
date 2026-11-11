@@ -27,10 +27,20 @@
 
 .EXAMPLE
     .\Fix-DuplicateRouters.ps1 -Path .\dynamic -Hide -Backup
+
+    # 1. Preview dulu (tidak mengubah file)
+    .\Fix-DuplicateRouters.ps1 -Path .\dynamic -DryRun
+
+    # 2. Reorder saja (duplikat dipindah ke bawah router aslinya)
+    .\Fix-DuplicateRouters.ps1 -Path .\dynamic -Backup
+
+    # 3. Reorder + comment duplikat (efek sama dengan "hide")
+    .\Fix-DuplicateRouters.ps1 -Path .\dynamic -Hide -Backup
+
 #>
 [CmdletBinding()]
 param(
-    [string]$Path = ".\dynamic",
+    [string]$Path = $PSScriptRoot,   # <-- default: folder tempat script ini berada
     [switch]$Hide,
     [switch]$DryRun,
     [switch]$Backup
