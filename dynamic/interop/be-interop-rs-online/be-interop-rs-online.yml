@@ -1,7 +1,7 @@
 http:
 
   routers:
-    rs_online_referensi_tempat_tidur:
+    v1_rs-online_referensi_tempat-tidur_GET:
       rule: "PathPrefix(`/v1.0/rs-online/referensi/tempat-tidur`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_tempat_tidur-get:
+    v1_rs-online_tempat-tidur_GET:
       rule: "PathPrefix(`/v1.0/rs-online/tempat-tidur`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_tempat_tidur-post:
+    v1_rs-online_tempat-tidur_POST:
       rule: "PathPrefix(`/v1.0/rs-online/tempat-tidur`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_tempat_tidur-put:
+    v1_rs-online_tempat-tidur_PUT:
       rule: "PathPrefix(`/v1.0/rs-online/tempat-tidur`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_tempat_tidur-delete:
+    v1_rs-online_tempat-tidur_DELETE:
       rule: "PathPrefix(`/v1.0/rs-online/tempat-tidur`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_referensi_sdm:
+    v1_rs-online_referensi_sdm_GET:
       rule: "PathPrefix(`/v1.0/rs-online/referensi/sdm`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_sdm-get:
+    v1_rs-online_sdm_GET:
       rule: "PathPrefix(`/v1.0/rs-online/sdm`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_sdm-post:
+    v1_rs-online_sdm_POST:
       rule: "PathPrefix(`/v1.0/rs-online/sdm`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_sdm-put:
+    v1_rs-online_sdm_PUT:
       rule: "PathPrefix(`/v1.0/rs-online/sdm`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -82,7 +82,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_sdm-delete:
+    v1_rs-online_sdm_DELETE:
       rule: "PathPrefix(`/v1.0/rs-online/sdm`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -91,7 +91,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_referensi_apd:
+    v1_rs-online_referensi_apd_GET:
       rule: "PathPrefix(`/v1.0/rs-online/referensi/apd`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -100,7 +100,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_apd-get:
+    v1_rs-online_apd_GET:
       rule: "PathPrefix(`/v1.0/rs-online/apd`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -109,7 +109,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_apd-post:
+    v1_rs-online_apd_POST:
       rule: "PathPrefix(`/v1.0/rs-online/apd`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -118,7 +118,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_apd-put:
+    v1_rs-online_apd_PUT:
       rule: "PathPrefix(`/v1.0/rs-online/apd`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:
@@ -127,7 +127,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rs_online_apd-delete:
+    v1_rs-online_apd_DELETE:
       rule: "PathPrefix(`/v1.0/rs-online/apd`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-be-interop-rs-online
       entryPoints:

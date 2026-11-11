@@ -1,6 +1,6 @@
 http:
   routers:
-    erm_nihss_create:
+    v1_erm_nihss_create_POST:
       rule: "PathPrefix(`/v1.0/erm/nihss/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_nihss_update:
+    v1_erm_nihss_update_PUT:
       rule: "PathPrefix(`/v1.0/erm/nihss/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_nihss_delete:
+    v1_erm_nihss_delete_DELETE:
       rule: "PathPrefix(`/v1.0/erm/nihss/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_nihss_get_by_no_rm:
+    v1_erm_nihss_get-by-no-rm_GET:
       rule: "PathPrefix(`/v1.0/erm/nihss/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_nihss_get_by_no_registrasi:
+    v1_erm_nihss_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/erm/nihss/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_nihss_getlist:
+    v1_erm_nihss_getlist_GET:
       rule: "PathPrefix(`/v1.0/erm/nihss/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_nihss_get_by_id:
+    v1_erm_nihss_get-by-id_GET:
       rule: "PathPrefix(`/v1.0/erm/nihss/get-by-id`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
