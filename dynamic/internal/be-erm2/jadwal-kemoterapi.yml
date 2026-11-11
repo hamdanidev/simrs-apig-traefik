@@ -9,41 +9,41 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_jadwal-kemoterapi_get-by-id_GET:
-    #   rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-erm
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_jadwal-kemoterapi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
-    # duplicat_v1_jadwal-kemoterapi_create_POST:
-    #   rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
-    #   service: service-erm
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_jadwal-kemoterapi_create_POST:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
-    # duplicat_v1_jadwal-kemoterapi_update_PUT:
-    #   rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
-    #   service: service-erm
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_jadwal-kemoterapi_update_PUT:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
-    # duplicat_v1_jadwal-kemoterapi_delete_DELETE:
-    #   rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
-    #   service: service-erm
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_jadwal-kemoterapi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
   services:
     service-erm:

@@ -35,14 +35,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_admlayanan_rawatjalan_getlist_selesai-layanan_GET:
-    #   rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-admlayanan
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_admlayanan_rawatjalan_getlist_selesai-layanan_GET:
+      rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_admlayanan_rawatjalan_update_status_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
@@ -53,14 +53,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_admlayanan_rawatjalan_update_status_PUT:
-    #   rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
-    #   service: service-admlayanan
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_admlayanan_rawatjalan_update_status_PUT:
+      rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_admlayanan_rawatjalan_update_PUT:
       rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
@@ -80,14 +80,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_admlayanan_rawatjalan_getlist_by-no-registrasi_GET:
-    #   rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-admlayanan
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_admlayanan_rawatjalan_getlist_by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/admlayanan/rawatjalan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_adm-layanan_laporan-cara-bayar-sirs_getlist_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/laporan-cara-bayar-sirs/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -998,14 +998,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_adm-layanan_rawat-inap_getlist_GET:
-    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-admlayanan
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_adm-layanan_rawat-inap_getlist_GET:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_adm-layanan_rawat-inap_getlist_selesai-layanan_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -1016,14 +1016,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_adm-layanan_rawat-inap_getlist_selesai-layanan_GET:
-    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-admlayanan
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_adm-layanan_rawat-inap_getlist_selesai-layanan_GET:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_adm-layanan_rawat-inap_getlist_by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -1034,14 +1034,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_adm-layanan_rawat-inap_getlist_by-no-registrasi_GET:
-    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-admlayanan
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_adm-layanan_rawat-inap_getlist_by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_adm-layanan_rawat-inap_update_status-kedatangan_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
@@ -1052,14 +1052,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_adm-layanan_rawat-inap_update_status-kedatangan_PUT:
-    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
-    #   service: service-admlayanan
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_adm-layanan_rawat-inap_update_status-kedatangan_PUT:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_adm-layanan_rawat-inap_update_status-kedatangan-khusus-mcu_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status-kedatangan-khusus-mcu/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
@@ -1079,14 +1079,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_adm-layanan_rawat-inap_update_status_PUT:
-    #   rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
-    #   service: service-admlayanan
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_adm-layanan_rawat-inap_update_status_PUT:
+      rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_adm-layanan_rawat-inap_update_PUT:
       rule: "PathPrefix(`/v1.0/adm-layanan/rawat-inap/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"

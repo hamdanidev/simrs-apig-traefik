@@ -19,14 +19,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_pushdocs_jobs_GET:
-    #   rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-be-push-docs
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_pushdocs_jobs_GET:
+      rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-push-docs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_pushdocs_jobs_POST:
       rule: "PathPrefix(`/v1.0/pushdocs/jobs`) && (Method(`POST`) || Method(`OPTIONS`))"
@@ -37,14 +37,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_pushdocs_jobs_POST:
-    #   rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`POST`) || Method(`OPTIONS`))"
-    #   service: service-be-push-docs
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_pushdocs_jobs_POST:
+      rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-push-docs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
 
 

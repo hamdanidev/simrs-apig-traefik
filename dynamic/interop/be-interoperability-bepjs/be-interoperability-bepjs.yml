@@ -352,14 +352,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_vclaim_rujukan_insert-rujukan-khusus_POST:
-    #   rule: "PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
-    #   service: service-bpjs
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    duplicat_v1_vclaim_rujukan_insert-rujukan-khusus_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_vclaim_rujukan_update-rujukan2_POST:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/update-rujukan2`) && (Method(`POST`) || Method(`OPTIONS`))"
