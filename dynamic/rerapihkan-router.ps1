@@ -7,13 +7,14 @@
     Setiap router yang punya:
         rule: "PathPrefix(`<path>`) && (Method(`<M>`) ..."
     akan di-rename menjadi:
-        <version>_<segmen-path>..._<method>
+        <version>_<segmen-path>..._<METHOD>
 
     Dimana:
       - <version>     : v1, v2, dst. dari segmen "/v1.0/", "/v2.0/"
       - <segmen-path> : segmen path setelah version, trailing "/" dibuang,
                         segmen param (":id") dan trailing numeric dihilangkan
-      - <method>      : "get" untuk GET (lowercase), selain itu UPPERCASE
+      - <METHOD>      : sesuai method pada rule, SELALU UPPERCASE
+                        (GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS)
 
     Rule, service, entryPoints, middlewares TIDAK diubah - hanya nama router.
     File di-scan rekursif, semua subfolder ikut diproses.
@@ -98,8 +99,9 @@ function Convert-ToRouterName {
 
     if ($kept.Count -eq 0) { return $null }
 
-    # Konvensi: GET -> "get", lainnya UPPERCASE
-    $methodSuffix = if ($Method -ieq 'GET') { 'get' } else { $Method.ToUpperInvariant() }
+    # Method SELALU UPPERCASE
+    # $methodSuffix = $Method.ToUpperInvariant()
+    $methodSuffix = $Method # tidak di uppercse
 
     $parts = @()
     if ($versionPart) { $parts += $versionPart }
