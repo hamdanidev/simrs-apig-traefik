@@ -1,7 +1,7 @@
 http:
 
   routers:
-    bed_1:
+    v1_kamar_bed_getlist_GET:
       rule: "PathPrefix(`/v1.0/kamar/bed/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    bed_2:
+    v1_kamar_bed_getlistbykdkamar_GET:
       rule: "PathPrefix(`/v1.0/kamar/bed/getlistbykdkamar/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    bed_3:
+    v1_kamar_bed_create_POST:
       rule: "PathPrefix(`/v1.0/kamar/bed/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    bed_4:
+    v1_kamar_bed_update_PUT:
       rule: "PathPrefix(`/v1.0/kamar/bed/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    bed_5:
+    v1_kamar_bed_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/kamar/bed/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    gedung_1:
+    v1_gedung_getlist_GET:
       rule: "PathPrefix(`/v1.0/gedung/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    gedung_2:
+    v1_gedung_getbykd_GET:
       rule: "PathPrefix(`/v1.0/gedung/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    gedung_3:
+    v1_gedung_create_POST:
       rule: "PathPrefix(`/v1.0/gedung/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    gedung_4:
+    v1_gedung_update_PUT:
       rule: "PathPrefix(`/v1.0/gedung/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -82,7 +82,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    gedung_5:
+    v1_gedung_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/gedung/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -91,7 +91,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    inventaris_1:
+    v1_inventaris_getlist_GET:
       rule: "PathPrefix(`/v1.0/inventaris/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -100,7 +100,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    inventaris_2:
+    v1_inventaris_get-by-kd_GET:
       rule: "PathPrefix(`/v1.0/inventaris/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -109,7 +109,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    inventaris_3:
+    v1_inventaris_generate-kode_GET:
       rule: "PathPrefix(`/v1.0/inventaris/generate-kode/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -118,7 +118,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    inventaris_4:
+    v1_inventaris_create_POST:
       rule: "PathPrefix(`/v1.0/inventaris/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -127,7 +127,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    inventaris_5:
+    v1_inventaris_update_PUT:
       rule: "PathPrefix(`/v1.0/inventaris/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -136,7 +136,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    inventaris_6:
+    v1_inventaris_update-terinventaris_PUT:
       rule: "PathPrefix(`/v1.0/inventaris/update-terinventaris`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -145,7 +145,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    inventaris_7:
+    v1_inventaris_delete_DELETE:
       rule: "PathPrefix(`/v1.0/inventaris/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -154,7 +154,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kamar_1:
+    v1_ruangan_kamar_getlist_GET:
       rule: "PathPrefix(`/v1.0/ruangan/kamar/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -163,7 +163,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kamar_2:
+    v1_ruangan_kamar_getlistbykdruangan_GET:
       rule: "PathPrefix(`/v1.0/ruangan/kamar/getlistbykdruangan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -172,7 +172,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kamar_3:
+    v1_ruangan_kamar_create_POST:
       rule: "PathPrefix(`/v1.0/ruangan/kamar/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -181,7 +181,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kamar_4:
+    v1_ruangan_kamar_update_PUT:
       rule: "PathPrefix(`/v1.0/ruangan/kamar/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -190,7 +190,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kamar_5:
+    v1_ruangan_kamar_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/ruangan/kamar/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -199,7 +199,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    ruangan_1:
+    v1_gedung_ruangan_getlist_GET:
       rule: "PathPrefix(`/v1.0/gedung/ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -208,7 +208,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    ruangan_2:
+    v1_gedung_ruangan_getlistbykdgedung_GET:
       rule: "PathPrefix(`/v1.0/gedung/ruangan/getlistbykdgedung/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -217,7 +217,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    ruangan_3:
+    v1_gedung_ruangan_create_POST:
       rule: "PathPrefix(`/v1.0/gedung/ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -226,7 +226,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    ruangan_4:
+    v1_gedung_ruangan_update_PUT:
       rule: "PathPrefix(`/v1.0/gedung/ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -235,7 +235,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    ruangan_5:
+    v1_gedung_ruangan_deletebykd_DELETE:
       rule: "PathPrefix(`/v1.0/gedung/ruangan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:
@@ -244,7 +244,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    ruangan_6:
+    v1_gedung_ruangan_getlist-by-farmasi-ruangan_GET:
       rule: "PathPrefix(`/v1.0/gedung/ruangan/getlist-by-farmasi-ruangan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-aset
       entryPoints:

@@ -1,6 +1,6 @@
 http:
   routers:
-    erm_form_alergi_create:
+    v1_erm_form-alergi_create_POST:
       rule: "PathPrefix(`/v1.0/erm/form-alergi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_form_alergi_update:
+    v1_erm_form-alergi_update_PUT:
       rule: "PathPrefix(`/v1.0/erm/form-alergi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_form_alergi_update_status:
+    v1_erm_form-alergi_update-status_PUT:
       rule: "PathPrefix(`/v1.0/erm/form-alergi/update-status`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_form_alergi_delete:
+    v1_erm_form-alergi_delete_DELETE:
       rule: "PathPrefix(`/v1.0/erm/form-alergi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_form_alergi_get_by_no_rm:
+    v1_erm_form-alergi_get-by-no-rm_GET:
       rule: "PathPrefix(`/v1.0/erm/form-alergi/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_form_alergi_get_by_no_registrasi:
+    v1_erm_form-alergi_get-by-no-registrasi_GET:
       rule: "PathPrefix(`/v1.0/erm/form-alergi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    erm_form_alergi_getlist:
+    v1_erm_form-alergi_getlist_GET:
       rule: "PathPrefix(`/v1.0/erm/form-alergi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
