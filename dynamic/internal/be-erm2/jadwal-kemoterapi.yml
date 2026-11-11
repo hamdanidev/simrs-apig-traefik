@@ -1,6 +1,6 @@
 http:
   routers:
-    duplicat_v1_jadwal-kemoterapi_get-list_GET:
+    erm_jadwal_kemoterapi_get_list:
       rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_jadwal-kemoterapi_get-by-id_GET:
+    erm_jadwal_kemoterapi_get_by_id:
       rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_jadwal-kemoterapi_create_POST:
+    erm_jadwal_kemoterapi_create:
       rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_jadwal-kemoterapi_update_PUT:
+    erm_jadwal_kemoterapi_update:
       rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_jadwal-kemoterapi_delete_DELETE:
+    erm_jadwal_kemoterapi_delete:
       rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

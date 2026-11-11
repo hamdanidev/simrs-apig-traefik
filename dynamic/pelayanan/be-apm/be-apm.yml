@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_antrianloket_create_POST:
+    antrian_loket_1:
       rule: "PathPrefix(`/v1.0/antrianloket/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_antrianloket_getbynoantrian_GET:
+    antrian_loket_2:
       rule: "PathPrefix(`/v1.0/antrianloket/getbynoantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_antrianloket_deletebyid_DELETE:
+    antrian_loket_3:
       rule: "PathPrefix(`/v1.0/antrianloket/deletebyid/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_apm-pasien_create-antrian_POST:
+    apm_pasien_1:
       rule: "PathPrefix(`/v1.0/apm-pasien/create-antrian`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_apm-pasien_generate-otp_POST:
+    apm_pasien_2:
       rule: "PathPrefix(`/v1.0/apm-pasien/generate-otp`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_apm-pasien_upload_POST:
+    apm_pasien_3:
       rule: "PathPrefix(`/v1.0/apm-pasien/upload`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_apm-pasien_validate-otp_POST:
+    apm_pasien_4:
       rule: "PathPrefix(`/v1.0/apm-pasien/validate-otp`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_apm-pasien_create-antrian-backdate_POST:
+    apm_pasien_5:
       rule: "PathPrefix(`/v1.0/apm-pasien/create-antrian-backdate`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienbaru_getbyid_GET:
+    pasien_baru_1:
       rule: "PathPrefix(`/v1.0/pasienbaru/getbyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -82,7 +82,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienbaru_create_POST:
+    pasien_baru_2:
       rule: "PathPrefix(`/v1.0/pasienbaru/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -91,7 +91,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienbaru_deletebyid_DELETE:
+    pasien_baru_3:
       rule: "PathPrefix(`/v1.0/pasienbaru/deletebyid/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -100,7 +100,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienbaru_update_GET:
+    pasien_baru_4:
       rule: "PathPrefix(`/v1.0/pasienbaru/update`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -109,7 +109,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienlama_getbynoregistrasi_GET:
+    pasien_lama_1:
       rule: "PathPrefix(`/v1.0/pasienlama/getbynoregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -118,7 +118,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienlama_getbynorm_GET:
+    pasien_lama_2:
       rule: "PathPrefix(`/v1.0/pasienlama/getbynorm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -127,7 +127,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienlama_checkregistrasi_GET:
+    pasien_lama_3:
       rule: "PathPrefix(`/v1.0/pasienlama/checkregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -136,7 +136,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienlama_getbyid_GET:
+    pasien_lama_4:
       rule: "PathPrefix(`/v1.0/pasienlama/getbyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -145,7 +145,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienlama_create_POST:
+    pasien_lama_5:
       rule: "PathPrefix(`/v1.0/pasienlama/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -154,7 +154,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienlama_deletebyid_DELETE:
+    pasien_lama_6:
       rule: "PathPrefix(`/v1.0/pasienlama/deletebyid/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -163,7 +163,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasienlama_update_PUT:
+    pasien_lama_7:
       rule: "PathPrefix(`/v1.0/pasienlama/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -172,7 +172,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_apm-pasien_publish-bulk-to-pendaftaran_POST:
+    apm_pasien_publish_bulk_to_pendaftaran:
       rule: "PathPrefix(`/v1.0/apm-pasien/publish-bulk-to-pendaftaran`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:
@@ -181,7 +181,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_apm-pasien_publish-to-pendaftaran_POST:
+    apm_pasien_publish_to_pendaftaran:
       rule: "PathPrefix(`/v1.0/apm-pasien/publish-to-pendaftaran`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-apm
       entryPoints:

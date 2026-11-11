@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_cssd_cleaning_get-list_GET:
+    internal_cleaning_1:
       rule: "PathPrefix(`/v1.0/cssd/cleaning/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -9,7 +9,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_cleaning_get-by-id-cleaning_GET:
+    internal_cleaning_2:
       rule: "PathPrefix(`/v1.0/cssd/cleaning/get-by-id-cleaning/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -17,7 +17,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_cleaning_create_POST:
+    internal_cleaning_3:
       rule: "PathPrefix(`/v1.0/cssd/cleaning/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:
@@ -25,7 +25,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_cssd_cleaning_update_PUT:
+    internal_cleaning_4:
       rule: "PathPrefix(`/v1.0/cssd/cleaning/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-cssd
       entryPoints:

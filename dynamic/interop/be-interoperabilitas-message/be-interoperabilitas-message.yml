@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_sender-email_mailtrap_send_POST:
+    interop_message_1:
       rule: "PathPrefix(`/v1.0/sender-email/mailtrap/send`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sender-wa_send-chat_POST:
+    interop_message_2:
       rule: "PathPrefix(`/v1.0/sender-wa/send-chat`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sender-wa_send-image_POST:
+    interop_message_3:
       rule: "PathPrefix(`/v1.0/sender-wa/send-image`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sender-wa_send-sticker_POST:
+    interop_message_4:
       rule: "PathPrefix(`/v1.0/sender-wa/send-sticker`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sender-wa_send-document_POST:
+    interop_message_5:
       rule: "PathPrefix(`/v1.0/sender-wa/send-document`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sender-wa_send-audio_POST:
+    interop_message_6:
       rule: "PathPrefix(`/v1.0/sender-wa/send-audio`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sender-wa_send-voice_POST:
+    interop_message_7:
       rule: "PathPrefix(`/v1.0/sender-wa/send-voice`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sender-wa_send-video_POST:
+    interop_message_8:
       rule: "PathPrefix(`/v1.0/sender-wa/send-video`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sender-wa_send-location_POST:
+    interop_message_9:
       rule: "PathPrefix(`/v1.0/sender-wa/send-location`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-interop-message
       entryPoints:

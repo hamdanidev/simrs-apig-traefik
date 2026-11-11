@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_erm_asesmen-gizi-lanjutan_create_POST:
+    erm_asesmen_gizi_lanjutan_create:
       rule: "PathPrefix(`/v1.0/erm/asesmen-gizi-lanjutan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_asesmen-gizi-lanjutan_update_PUT:
+    erm_asesmen_gizi_lanjutan_update:
       rule: "PathPrefix(`/v1.0/erm/asesmen-gizi-lanjutan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_asesmen-gizi-lanjutan_getlist_GET:
+    erm_asesmen_gizi_lanjutan_getlist:
       rule: "PathPrefix(`/v1.0/erm/asesmen-gizi-lanjutan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_asesmen-gizi-lanjutan_get-by-id_GET:
+    erm_asesmen_gizi_lanjutan_get_by_id:
       rule: "PathPrefix(`/v1.0/erm/asesmen-gizi-lanjutan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_asesmen-gizi-lanjutan_get-by-no-registrasi_GET:
+    erm_asesmen_gizi_lanjutan_get_by_no_registrasi:
       rule: "PathPrefix(`/v1.0/erm/asesmen-gizi-lanjutan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_erm_asesmen-gizi-lanjutan_delete_DELETE:
+    erm_asesmen_gizi_lanjutan_delete:
       rule: "PathPrefix(`/v1.0/erm/asesmen-gizi-lanjutan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

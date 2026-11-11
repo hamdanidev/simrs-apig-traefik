@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_imunisasi_create_POST:
+    erm_imunisasi_create:
       rule: "PathPrefix(`/v1.0/imunisasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_imunisasi_update_PUT:
+    erm_imunisasi_update:
       rule: "PathPrefix(`/v1.0/imunisasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_imunisasi_delete_DELETE:
+    erm_imunisasi_delete:
       rule: "PathPrefix(`/v1.0/imunisasi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_imunisasi_getlist_GET:
+    erm_imunisasi_getlist:
       rule: "PathPrefix(`/v1.0/imunisasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_imunisasi_get-by-id_GET:
+    erm_imunisasi_get_by_id:
       rule: "PathPrefix(`/v1.0/imunisasi/get-by-id`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

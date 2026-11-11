@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_pasien-casemix_getlist_GET:
+    case_mix_1:
       rule: "PathPrefix(`/v1.0/pasien-casemix/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_get-by-no-registrasi_GET:
+    case_mix_2:
       rule: "PathPrefix(`/v1.0/pasien-casemix/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_create_POST:
+    case_mix_3:
       rule: "PathPrefix(`/v1.0/pasien-casemix/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_send-data_POST:
+    case_mix_4:
       rule: "PathPrefix(`/v1.0/pasien-casemix/send-data`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update_PUT:
+    case_mix_5:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-idrg_PUT:
+    case_mix_6:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-idrg`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-idrg-final_PUT:
+    case_mix_7:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-idrg-final`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -63,7 +63,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-inacbg-final_PUT:
+    case_mix_8:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-inacbg-final`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -72,7 +72,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-idrg-diagnosa-tindakan_PUT:
+    case_mix_9:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-idrg-diagnosa-tindakan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -81,7 +81,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_delete_DELETE:
+    case_mix_10:
       rule: "PathPrefix(`/v1.0/pasien-casemix/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -90,7 +90,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-status-case-mix_PUT:
+    case_mix_11:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-status-case-mix`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -99,7 +99,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-diagnosa-tindakan_PUT:
+    case_mix_12:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-diagnosa-tindakan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -108,7 +108,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-diagnosa-tindakan-bpjs_PUT:
+    case_mix_13:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-diagnosa-tindakan-bpjs`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -117,7 +117,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-status-approved_PUT:
+    case_mix_14:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-status-approved`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -126,7 +126,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-pasien-grouper_PUT:
+    case_mix_15:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-pasien-grouper`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -135,7 +135,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-status-remun_PUT:
+    case_mix_16:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-status-remun`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -144,7 +144,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-kirim-kemenkes_PUT:
+    case_mix_17:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-kirim-kemenkes/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -153,7 +153,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-kirim-casemix_PUT:
+    case_mix_18:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-kirim-casemix/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -162,7 +162,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-data-billing_PUT:
+    case_mix_19:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-data-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -171,7 +171,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-no-claim_PUT:
+    case_mix_20:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-no-claim`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -180,7 +180,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-waktu-selesai-layanan_PUT:
+    case_mix_21:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-waktu-selesai-layanan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -189,7 +189,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_get-all-pasien-casemix_GET:
+    case_mix_22:
       rule: "PathPrefix(`/v1.0/pasien-casemix/get-all-pasien-casemix`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -198,7 +198,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_getlist-all-pasien_GET:
+    case_mix_23:
       rule: "PathPrefix(`/v1.0/pasien-casemix/getlist-all-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -207,7 +207,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-sitb_PUT:
+    case_mix_24:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-sitb`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -216,7 +216,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-umbal_PUT:
+    case_mix_25:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-umbal`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -225,7 +225,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-inacbg_PUT:
+    case_mix_26:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-inacbg`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -234,7 +234,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_analytics_tarif-per-bulan_GET:
+    case_mix_27:
       rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/tarif-per-bulan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -243,7 +243,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_analytics_pasien-by-kelas_GET:
+    case_mix_28:
       rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-kelas`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -252,7 +252,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_analytics_pasien-by-jenis-kelamin_GET:
+    case_mix_29:
       rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-jenis-kelamin`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -261,7 +261,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_analytics_pasien-by-cara-pulang_GET:
+    case_mix_30:
       rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-cara-pulang`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -270,7 +270,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_analytics_pasien-by-los_GET:
+    case_mix_31:
       rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-los`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -279,7 +279,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_analytics_pasien-by-umur_GET:
+    case_mix_32:
       rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-umur`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -288,7 +288,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_analytics_total-klaim-tarif_GET:
+    case_mix_33:
       rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/total-klaim-tarif`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -297,7 +297,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_analytics_top-ten-icd10_GET:
+    case_mix_34:
       rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/top-ten-icd10`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -306,7 +306,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_get-ungrouping-pasien-casemix_GET:
+    case_mix_35:
       rule: "PathPrefix(`/v1.0/pasien-casemix/get-ungrouping-pasien-casemix`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -315,7 +315,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_upload-umbal_csv_POST:
+    case_mix_36:
       rule: "PathPrefix(`/v1.0/upload-umbal/csv`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -324,7 +324,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_upload-umbal_merge_POST:
+    case_mix_37:
       rule: "PathPrefix(`/v1.0/upload-umbal/merge`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -333,7 +333,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_upload-umbal_failed-records_GET:
+    case_mix_38:
       rule: "PathPrefix(`/v1.0/upload-umbal/failed-records`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -342,7 +342,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_data-umbal_getlist_GET:
+    case_mix_39:
       rule: "PathPrefix(`/v1.0/data-umbal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -351,7 +351,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_data-umbal_rekap_GET:
+    case_mix_40:
       rule: "PathPrefix(`/v1.0/data-umbal/rekap/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -360,7 +360,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_master-remunerasi_getlist_GET:
+    case_mix_41:
       rule: "PathPrefix(`/v1.0/master-remunerasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -369,7 +369,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_upload-umbal_update_PUT:
+    case_mix_42:
       rule: "PathPrefix(`/v1.0/upload-umbal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -378,7 +378,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_data-umbal_status-hitung_PUT:
+    case_mix_43:
       rule: "PathPrefix(`/v1.0/data-umbal/status-hitung`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -387,7 +387,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_data-umbal_delete_DELETE:
+    case_mix_44:
       rule: "PathPrefix(`/v1.0/data-umbal/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -396,7 +396,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_casemix_generate-csv-belum-grouping_pasien-casemix_POST:
+    generate_csv_1:
       rule: "PathPrefix(`/v1.0/casemix/generate-csv-belum-grouping/pasien-casemix`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -405,7 +405,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_generate-txt_pasien-jamkesda-dari-casemix_POST:
+    generate_txt_1:
       rule: "PathPrefix(`/v1.0/generate-txt/pasien-jamkesda-dari-casemix`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -414,7 +414,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_generate-txt_pasien-jamkesda-dari-casemix-encrypted_POST:
+    generate_txt_2:
       rule: "PathPrefix(`/v1.0/generate-txt/pasien-jamkesda-dari-casemix-encrypted`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -423,7 +423,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_generate-txt_get-pasien-jamkesda_GET:
+    generate_txt_3:
       rule: "PathPrefix(`/v1.0/generate-txt/get-pasien-jamkesda/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -432,7 +432,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_billing-casemix_get-by-no-registrasi_GET:
+    get-billing-case_mix_1:
       rule: "PathPrefix(`/v1.0/billing-casemix/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -441,7 +441,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_merge-file_get-by-no-rm_GET:
+    merge_file_1:
       rule: "PathPrefix(`/v1.0/merge-file/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -450,7 +450,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_merge-file_get-by-no-registrasi_GET:
+    merge_file_2:
       rule: "PathPrefix(`/v1.0/merge-file/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -459,7 +459,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_merge-file_berkas-digital_POST:
+    merge_file_3:
       rule: "PathPrefix(`/v1.0/merge-file/berkas-digital`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -468,7 +468,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_inacbg_sitb-invalidate_POST:
+    interop_inacbg_26:
       rule: "PathPrefix(`/v1.0/inacbg/sitb-invalidate`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -476,7 +476,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_casemix_dokumen_create_POST:
+    doc_claim_create:
       rule: "PathPrefix(`/v1.0/casemix/dokumen/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -484,7 +484,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_casemix_dokumen_get-by-no-rm_GET:
+    doc_claim_get_bynorm:
       rule: "PathPrefix(`/v1.0/casemix/dokumen/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -492,7 +492,7 @@ http:
       middlewares:
         - "simrs-cors"
         - "simrs-auth"
-    v1_casemix_dokumen_get-by-no-registrasi_GET:
+    doc_claim_get_bynoreg:
       rule: "PathPrefix(`/v1.0/casemix/dokumen/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -500,7 +500,7 @@ http:
       middlewares:
         - "simrs-cors"
         #- "simrs-auth"
-    v1_casemix_dokumen_delete_DELETE:
+    doc_claim_delete_byid:
       rule: "PathPrefix(`/v1.0/casemix/dokumen/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -552,7 +552,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-info-pasien_PUT:
+    pasien_casemix_update_info_pasien:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-info-pasien`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -561,7 +561,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_casemix_dokumen-periode_create_POST:
+    casemix_dokumen_periode_create:
       rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -570,7 +570,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_casemix_dokumen-periode_update_PUT:
+    casemix_dokumen_periode_update:
       rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -579,7 +579,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_casemix_dokumen-periode_delete_DELETE:
+    casemix_dokumen_periode_delete:
       rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -588,7 +588,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_casemix_dokumen-periode_getlist_GET:
+    casemix_dokumen_periode_getlist:
       rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -597,7 +597,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_casemix_dokumen-periode_get-by-id_GET:
+    casemix_dokumen_periode_get_by_id:
       rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -606,7 +606,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_casemix_dokumen-periode_get-by-no-registrasi_GET:
+    casemix_dokumen_periode_get_by_no_registrasi:
       rule: "PathPrefix(`/v1.0/casemix/dokumen-periode/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -615,7 +615,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-tanggal-grouper_PUT:
+    casemix_pasien_casemix_update_tanggal_grouper:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-tanggal-grouper`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -624,7 +624,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_getlist-group-by-no-sep_GET:
+    casemix_pasien_casemix_getlist_group_by_no_sep:
       rule: "PathPrefix(`/v1.0/pasien-casemix/getlist-group-by-no-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -633,7 +633,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_pasien-casemix_update-petugas-casemix_PUT:
+    casemix_pasien_casemix_update_petugas_casemix:
       rule: "PathPrefix(`/v1.0/pasien-casemix/update-petugas-casemix`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:

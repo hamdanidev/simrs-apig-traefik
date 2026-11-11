@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_merge_document_POST:
+    casemix_merge_document:
       rule: "PathPrefix(`/v1.0/merge/document`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix-2
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-auth"
 
 
-    v1_merge_document-batch_POST:
+    casemix_merge_document_batch:
       rule: "PathPrefix(`/v1.0/merge/document-batch`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix-2
       entryPoints:
@@ -20,7 +20,7 @@ http:
         - "simrs-auth"
 
 
-    v1_bundling_request_POST:
+    casemix_bundling_request_update:
       rule: "PathPrefix(`/v1.0/bundling/request`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix-2
       entryPoints:
@@ -29,7 +29,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_bundling_check_GET:
+    casemix_bundling_request_check:
       rule: "PathPrefix(`/v1.0/bundling/check`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix-2
       entryPoints:
@@ -38,7 +38,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_bundling_get-by-id_GET:
+    casemix_bundling_get_by_id:
       rule: "PathPrefix(`/v1.0/bundling/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix-2
       entryPoints:
@@ -47,7 +47,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_bundling_proses_POST:
+    casemix_bundling_proses:
       rule: "PathPrefix(`/v1.0/bundling/proses/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-casemix-2
       entryPoints:
@@ -56,7 +56,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_bundling_zip_getlist_GET:
+    casemix_bundling_zip_getlist:
       rule: "PathPrefix(`/v1.0/bundling/zip/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix-2
       entryPoints:

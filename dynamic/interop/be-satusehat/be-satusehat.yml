@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_satu-sehat_allergy-intolerance_getlist_GET:
+    allergy_intolerance_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_allergy-intolerance_get-by-id_GET:
+    allergy_intolerance_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_allergy-intolerance_update_PUT:
+    allergy_intolerance_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_allergy-intolerance_get-by-id-interop_GET:
+    allergy_intolerance_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_allergy-intolerance_create_POST:
+    allergy_intolerance_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/allergy-intolerance/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment-response_get-list_GET:
+    appointment_response_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment-response/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment-response_get-by-id_GET:
+    appointment_response_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment-response/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment-response_update_PUT:
+    appointment_response_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment-response/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment-response_create_POST:
+    appointment_response_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment-response/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -82,7 +82,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment_getlist_GET:
+    appointment_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -91,7 +91,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment_get-by-id_GET:
+    appointment_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -100,7 +100,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment_update_PUT:
+    appointment_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -109,7 +109,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment_get-by-id-interop_GET:
+    appointment_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -118,7 +118,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_appointment_create_POST:
+    appointment_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/appointment/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -127,7 +127,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_care-plan_get-list_GET:
+    care_plan_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/care-plan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -136,7 +136,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_care-plan_get-by-id_GET:
+    care_plan_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/care-plan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -145,7 +145,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_care-plan_update_PUT:
+    care_plan_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/care-plan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -154,7 +154,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_care-plan_create_POST:
+    care_plan_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/care-plan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -163,7 +163,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_clinical-impression_getlist_GET:
+    clinical_impression_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/clinical-impression/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -172,7 +172,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_clinical-impression_get-by-id_GET:
+    clinical_impression_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/clinical-impression/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -181,7 +181,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_clinical-impression_update_PUT:
+    clinical_impression_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/clinical-impression/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -190,7 +190,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_clinical-impression_get-by-id-interop_GET:
+    clinical_impression_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/clinical-impression/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -199,7 +199,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_clinical-impression_create_POST:
+    clinical_impression_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/clinical-impression/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -208,7 +208,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_composition_getlist_GET:
+    composition_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/composition/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -217,7 +217,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_composition_get-by-id_GET:
+    composition_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/composition/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -226,7 +226,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_composition_update_PUT:
+    composition_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/composition/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -235,7 +235,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_composition_get-by-id-interop_GET:
+    composition_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/composition/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -244,7 +244,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_composition_create_POST:
+    composition_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/composition/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -253,7 +253,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_condition_getlist_GET:
+    condition_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/condition/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -262,7 +262,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_condition_get-by-id_GET:
+    condition_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/condition/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -271,7 +271,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_condition_update_PUT:
+    condition_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/condition/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -280,7 +280,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_condition_get-by-id-interop_GET:
+    condition_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/condition/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -289,7 +289,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_condition_create_POST:
+    condition_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/condition/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -298,7 +298,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_diagnostic-report_get-list_GET:
+    diagnostic_report_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/diagnostic-report/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -307,7 +307,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_diagnostic-report_get-by-id_GET:
+    diagnostic_report_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/diagnostic-report/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -316,7 +316,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_diagnostic-report_update_PUT:
+    diagnostic_report_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/diagnostic-report/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -325,7 +325,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_diagnostic-report_create_POST:
+    diagnostic_report_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/diagnostic-report/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -334,7 +334,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_encounter_getlist_GET:
+    encounter_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/encounter/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -343,7 +343,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_encounter_get-by-id_GET:
+    encounter_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/encounter/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -352,7 +352,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_encounter_update_PUT:
+    encounter_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/encounter/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -361,7 +361,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_encounter_get-by-no-registrasi_GET:
+    encounter_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/encounter/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -370,7 +370,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_encounter_create_POST:
+    encounter_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/encounter/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -379,7 +379,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_episode-of-care_get-list_GET:
+    episode_of_care_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/episode-of-care/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -388,7 +388,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_episode-of-care_get-by-id_GET:
+    episode_of_care_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/episode-of-care/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -397,7 +397,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_episode-of-care_update_PUT:
+    episode_of_care_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/episode-of-care/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -406,7 +406,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_episode-of-care_create_POST:
+    episode_of_care_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/episode-of-care/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -415,7 +415,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_family-member-history_get-list_GET:
+    family_member_history_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/family-member-history/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -424,7 +424,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_family-member-history_get-by-id_GET:
+    family_member_history_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/family-member-history/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -433,7 +433,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_family-member-history_update_PUT:
+    family_member_history_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/family-member-history/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -442,7 +442,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_family-member-history_create_POST:
+    family_member_history_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/family-member-history/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -451,7 +451,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_healthcare-service_get-list_GET:
+    healthcare_service_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/healthcare-service/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -460,7 +460,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_healthcare-service_get-by-id_GET:
+    healthcare_service_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/healthcare-service/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -469,7 +469,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_healthcare-service_update_PUT:
+    healthcare_service_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/healthcare-service/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -478,7 +478,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_healthcare-service_create_POST:
+    healthcare_service_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/healthcare-service/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -487,7 +487,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_imaging-study_get-list_GET:
+    imaging_study_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/imaging-study/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -496,7 +496,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_imaging-study_get-by-id_GET:
+    imaging_study_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/imaging-study/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -505,7 +505,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_imaging-study_update_PUT:
+    imaging_study_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/imaging-study/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -514,7 +514,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_imaging-study_create_POST:
+    imaging_study_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/imaging-study/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -523,7 +523,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_immunization_get-list_GET:
+    immunization_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/immunization/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -532,7 +532,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_immunization_get-by-id_GET:
+    immunization_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/immunization/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -541,7 +541,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_immunization_update_PUT:
+    immunization_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/immunization/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -550,7 +550,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_immunization_create_POST:
+    immunization_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/immunization/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -559,7 +559,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_provinsi_get-list_GET:
+    kewilayahan_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -568,7 +568,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_provinsi_get-by-id_GET:
+    kewilayahan_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -577,7 +577,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_provinsi_update_PUT:
+    kewilayahan_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -586,7 +586,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_provinsi_delete_DELETE:
+    kewilayahan_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -595,7 +595,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_provinsi_create_POST:
+    kewilayahan_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/provinsi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -604,7 +604,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kabkot_get-list_GET:
+    kewilayahan_6:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -613,7 +613,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kabkot_get-by-id_GET:
+    kewilayahan_7:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -622,7 +622,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kabkot_update_PUT:
+    kewilayahan_8:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -631,7 +631,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kabkot_delete_DELETE:
+    kewilayahan_9:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -640,7 +640,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kabkot_create_POST:
+    kewilayahan_10:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kabkot/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -649,7 +649,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kecamatan_get-list_GET:
+    kewilayahan_11:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -658,7 +658,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kecamatan_get-by-id_GET:
+    kewilayahan_12:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -667,7 +667,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kecamatan_update_PUT:
+    kewilayahan_13:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -676,7 +676,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kecamatan_delete_DELETE:
+    kewilayahan_14:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -685,7 +685,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_kecamatan_create_POST:
+    kewilayahan_15:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/kecamatan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -694,7 +694,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_desa_get-list_GET:
+    kewilayahan_16:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -703,7 +703,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_desa_get-by-id_GET:
+    kewilayahan_17:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -712,7 +712,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_desa_update_PUT:
+    kewilayahan_18:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -721,7 +721,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_desa_delete_DELETE:
+    kewilayahan_19:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -730,7 +730,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_kewilayahan_desa_create_POST:
+    kewilayahan_20:
       rule: "PathPrefix(`/v1.0/satu-sehat/kewilayahan/desa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -739,7 +739,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_location_getlist_GET:
+    location_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/location/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -748,7 +748,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_location_get-by-id_GET:
+    location_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/location/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -757,7 +757,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_location_update_PUT:
+    location_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/location/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -766,7 +766,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_location_get-by-kd_GET:
+    location_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/location/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -775,7 +775,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_location_create_POST:
+    location_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/location/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -784,7 +784,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-dispense_get-list_GET:
+    medication_dispense_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-dispense/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -793,7 +793,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-dispense_get-by-id_GET:
+    medication_dispense_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-dispense/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -802,7 +802,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-dispense_update_PUT:
+    medication_dispense_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-dispense/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -811,7 +811,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-dispense_create_POST:
+    medication_dispense_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-dispense/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -820,7 +820,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-request_get-list_GET:
+    medication_request_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-request/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -829,7 +829,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-request_get-by-id_GET:
+    medication_request_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-request/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -838,7 +838,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-request_update_PUT:
+    medication_request_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-request/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -847,7 +847,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-request_create_POST:
+    medication_request_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-request/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -856,7 +856,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication_get-list_GET:
+    medication_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -865,7 +865,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication_get-by-id_GET:
+    medication_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -874,7 +874,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication_update_PUT:
+    medication_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -883,7 +883,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication_create_POST:
+    medication_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -892,7 +892,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_observation_getlist_GET:
+    observation_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/observation/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -901,7 +901,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_observation_get-by-id_GET:
+    observation_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/observation/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -910,7 +910,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_observation_update_PUT:
+    observation_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/observation/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -919,7 +919,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_observation_get-by-id-interop_GET:
+    observation_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/observation/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -928,7 +928,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_observation_create_POST:
+    observation_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/observation/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -937,7 +937,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_organization_getlist_GET:
+    organization_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/organization/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -946,7 +946,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_organization_get-by-id_GET:
+    organization_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/organization/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -955,7 +955,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_organization_update_PUT:
+    organization_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/organization/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -964,7 +964,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_organization_update-khusus_PUT:
+    organization_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/organization/update-khusus`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -973,7 +973,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_organization_get-by-kd_GET:
+    organization_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/organization/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -982,7 +982,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_organization_create_POST:
+    organization_6:
       rule: "PathPrefix(`/v1.0/satu-sehat/organization/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -991,7 +991,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_patient_get-list_GET:
+    patient_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/patient/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1000,7 +1000,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_patient_get-by-id_GET:
+    patient_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/patient/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1009,7 +1009,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_patient_update_PUT:
+    patient_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/patient/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1018,7 +1018,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_patient_get-list-by-nik-ibu_GET:
+    patient_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/patient/get-list-by-nik-ibu`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1027,7 +1027,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_patient_get-by-id-by-nik-ibu_GET:
+    patient_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/patient/get-by-id-by-nik-ibu/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1036,7 +1036,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_patient_update-by-nik-ibu_PUT:
+    patient_6:
       rule: "PathPrefix(`/v1.0/satu-sehat/patient/update-by-nik-ibu`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1045,7 +1045,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_patient_create_POST:
+    patient_7:
       rule: "PathPrefix(`/v1.0/satu-sehat/patient/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1054,7 +1054,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_practitioner-role_get-list_GET:
+    practitioner_role_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/practitioner-role/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1063,7 +1063,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_practitioner-role_get-by-id_GET:
+    practitioner_role_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/practitioner-role/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1072,7 +1072,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_practitioner-role_update_PUT:
+    practitioner_role_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/practitioner-role/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1081,7 +1081,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_practitioner-role_create_POST:
+    practitioner_role_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/practitioner-role/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1090,7 +1090,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_practitioner_get-list_GET:
+    practitioner_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/practitioner/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1099,7 +1099,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_practitioner_get-by-id_GET:
+    practitioner_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/practitioner/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1108,7 +1108,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_practitioner_update_PUT:
+    practitioner_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/practitioner/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1117,7 +1117,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_practitioner_create_POST:
+    practitioner_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/practitioner/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1126,7 +1126,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_procedure_getlist_GET:
+    procedure_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/procedure/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1135,7 +1135,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_procedure_get-by-id_GET:
+    procedure_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/procedure/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1144,7 +1144,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_procedure_update_PUT:
+    procedure_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/procedure/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1153,7 +1153,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_procedure_get-by-id-interop_GET:
+    procedure_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/procedure/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1162,7 +1162,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_procedure_create_POST:
+    procedure_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/procedure/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1171,7 +1171,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_questionnaire-response_get-list_GET:
+    questionnaire_response_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/questionnaire-response/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1180,7 +1180,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_questionnaire-response_get-by-id_GET:
+    questionnaire_response_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/questionnaire-response/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1189,7 +1189,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_questionnaire-response_update_PUT:
+    questionnaire_response_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/questionnaire-response/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1198,7 +1198,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_questionnaire-response_create_POST:
+    questionnaire_response_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/questionnaire-response/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1207,7 +1207,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_related-person_get-list_GET:
+    related_person_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/related-person/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1216,7 +1216,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_related-person_get-by-id_GET:
+    related_person_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/related-person/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1225,7 +1225,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_related-person_update_PUT:
+    related_person_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/related-person/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1234,7 +1234,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_related-person_create_POST:
+    related_person_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/related-person/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1243,7 +1243,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_schedule_get-list_GET:
+    schedule_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/schedule/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1252,7 +1252,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_schedule_get-by-id_GET:
+    schedule_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/schedule/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1261,7 +1261,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_schedule_update_PUT:
+    schedule_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/schedule/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1270,7 +1270,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_schedule_create_POST:
+    schedule_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/schedule/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1279,7 +1279,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-lab-non-rujukan_getlist_GET:
+    service_request_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1288,7 +1288,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-lab-non-rujukan_get-by-id_GET:
+    service_request_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1297,7 +1297,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-lab-non-rujukan_update_PUT:
+    service_request_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1306,7 +1306,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-lab-non-rujukan_get-by-id-interop_GET:
+    service_request_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1315,7 +1315,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-lab-non-rujukan_create_POST:
+    service_request_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-lab-non-rujukan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1324,7 +1324,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-kontrol-internal_getlist_GET:
+    service_request_6:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1333,7 +1333,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-kontrol-internal_get-by-id_GET:
+    service_request_7:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1342,7 +1342,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-kontrol-internal_update_PUT:
+    service_request_8:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1351,7 +1351,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-kontrol-internal_get-by-id-interop_GET:
+    service_request_9:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1360,7 +1360,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-kontrol-internal_create_POST:
+    service_request_10:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-kontrol-internal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1369,7 +1369,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-radiologi-eksternal_getlist_GET:
+    service_request_11:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1378,7 +1378,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-radiologi-eksternal_get-by-id_GET:
+    service_request_12:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1387,7 +1387,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-radiologi-eksternal_update_PUT:
+    service_request_13:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1396,7 +1396,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-radiologi-eksternal_get-by-id-interop_GET:
+    service_request_14:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/get-by-id-interop/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1405,7 +1405,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_service-request-rujukan-radiologi-eksternal_create_POST:
+    service_request_15:
       rule: "PathPrefix(`/v1.0/satu-sehat/service-request-rujukan-radiologi-eksternal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1414,7 +1414,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_slot_get-list_GET:
+    slot_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/slot/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1423,7 +1423,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_slot_get-by-id_GET:
+    slot_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/slot/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1432,7 +1432,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_slot_update_PUT:
+    slot_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/slot/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1441,7 +1441,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_slot_create_POST:
+    slot_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/slot/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1450,7 +1450,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_specimen_get-list_GET:
+    specimen_1:
       rule: "PathPrefix(`/v1.0/satu-sehat/specimen/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1459,7 +1459,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_specimen_get-by-id_GET:
+    specimen_2:
       rule: "PathPrefix(`/v1.0/satu-sehat/specimen/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1468,7 +1468,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_specimen_update_PUT:
+    specimen_3:
       rule: "PathPrefix(`/v1.0/satu-sehat/specimen/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1477,7 +1477,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_specimen_create_POST:
+    specimen_4:
       rule: "PathPrefix(`/v1.0/satu-sehat/specimen/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1486,7 +1486,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_specimen_delete_DELETE:
+    specimen_5:
       rule: "PathPrefix(`/v1.0/satu-sehat/specimen/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1495,7 +1495,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-ingredient_get-list_GET:
+    satusehat_medicationingredient_getlist:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1504,7 +1504,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-ingredient_get-by-id_GET:
+    satusehat_medicationingredient_getbyid:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1513,7 +1513,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication_get-list-medication-with-ingredient_GET:
+    satusehat_medication_getlistmedicationwithingredient:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication/get-list-medication-with-ingredient`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1522,7 +1522,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-ingredient_update_PUT:
+    satusehat_medicationingredient_update:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1531,7 +1531,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-ingredient_create_POST:
+    satusehat_medicationingredient_create:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:
@@ -1540,7 +1540,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_satu-sehat_medication-ingredient_delete_DELETE:
+    satusehat_medicationingredient_delete:
       rule: "PathPrefix(`/v1.0/satu-sehat/medication-ingredient/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-satu-sehat
       entryPoints:

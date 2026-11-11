@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_adime_getlist_GET:
+    erm_adime_getlist:
       rule: "PathPrefix(`/v1.0/adime/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_adime_get-by-id_GET:
+    erm_adime_get_by_id:
       rule: "PathPrefix(`/v1.0/adime/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_adime_get-by-no-rm_GET:
+    erm_adime_get_by_no_rm:
       rule: "PathPrefix(`/v1.0/adime/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_adime_get-by-no-registrasi_GET:
+    erm_adime_get_by_no_registrasi:
       rule: "PathPrefix(`/v1.0/adime/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:

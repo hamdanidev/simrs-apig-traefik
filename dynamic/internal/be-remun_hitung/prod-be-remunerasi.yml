@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_remun_proses-remunerasi-bpjs_POST:
+    internal_remun_hitung_1:
       rule: "PathPrefix(`/v1.0/remun/proses-remunerasi-bpjs`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-remun-hitung
       entryPoints:

@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_vclaim_antrean_pendaftaran_kode-booking_POST:
+    antrean_rs_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/antrean/pendaftaran/kode-booking`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_fep_getbynofep_GET:
+    fep_1:
       rule: "PathPrefix(`/v1.0/fep/getbynofep/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sep_getbynosep_GET:
+    fep_2:
       rule: "PathPrefix(`/v1.0/sep/getbynosep/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_icare_fkrtl_POST:
+    icare_fkrtl_1:
       rule: "PathPrefix(`/v1.0/icare/fkrtl`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_jkn_getbynoreservasi_POST:
+    jkn_1:
       rule: "PathPrefix(`/v1.0/jkn/getbynoreservasi/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_lpk_insert-lpk_POST:
+    lpk_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/lpk/insert-lpk`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_monitoring_data-kunjungan_POST:
+    monitoring_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/monitoring/data-kunjungan`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_monitoring_data-histori-layananan-peserta_POST:
+    monitoring_bpjs_2:
       rule: "PathPrefix(`/v1.0/vclaim/monitoring/data-histori-layananan-peserta`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -73,7 +73,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_peserta_no-kartu-bpjs_POST:
+    peserta_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/peserta/no-kartu-bpjs`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -82,7 +82,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_peserta_nik_POST:
+    peserta_bpjs_2:
       rule: "PathPrefix(`/v1.0/vclaim/peserta/nik`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -91,7 +91,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_diagnosa_POST:
+    referensi_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/diagnosa`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -100,7 +100,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_poli_POST:
+    referensi_bpjs_2:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/poli`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -109,7 +109,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_faskes_POST:
+    referensi_bpjs_3:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/faskes`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -118,7 +118,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_dokter-dpjp_POST:
+    referensi_bpjs_4:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/dokter-dpjp`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -127,7 +127,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_propinsi_POST:
+    referensi_bpjs_5:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/propinsi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -136,7 +136,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_kabupaten_POST:
+    referensi_bpjs_6:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/kabupaten`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -145,7 +145,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_kecamatan_POST:
+    referensi_bpjs_7:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/kecamatan`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -154,7 +154,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_diagnosa-prb_POST:
+    referensi_bpjs_8:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/diagnosa-prb`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -163,7 +163,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_obat-prb_POST:
+    referensi_bpjs_9:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/obat-prb`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -172,7 +172,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_tindakan-procedure_POST:
+    referensi_bpjs_10:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/tindakan-procedure`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -181,7 +181,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_kelas-rawat_POST:
+    referensi_bpjs_11:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/kelas-rawat`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -190,7 +190,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_dokter_POST:
+    referensi_bpjs_12:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -199,7 +199,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_spesialistik_POST:
+    referensi_bpjs_13:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/spesialistik`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -208,7 +208,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_ruang-rawat_POST:
+    referensi_bpjs_14:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/ruang-rawat`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -217,7 +217,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_cara-keluar_POST:
+    referensi_bpjs_15:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/cara-keluar`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -226,7 +226,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_referensi_pasca-pulang_POST:
+    referensi_bpjs_16:
       rule: "PathPrefix(`/v1.0/vclaim/referensi/pasca-pulang`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -235,7 +235,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_insert-rencana-kontrol_POST:
+    rencana_kontrol_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/insert-rencana-kontrol`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -244,7 +244,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_update-rencana-kontrol_POST:
+    rencana_kontrol_bpjs_2:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/update-rencana-kontrol`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -253,7 +253,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_delete-rencana-kontrol_POST:
+    rencana_kontrol_bpjs_3:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/delete-rencana-kontrol`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -262,7 +262,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_insert-spri_POST:
+    rencana_kontrol_bpjs_4:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/insert-spri`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -271,7 +271,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_update-spri_POST:
+    rencana_kontrol_bpjs_5:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/update-spri`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -280,7 +280,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_cari-sep_POST:
+    rencana_kontrol_bpjs_6:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/cari-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -289,7 +289,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_cari-nokontrol_POST:
+    rencana_kontrol_bpjs_7:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/cari-nokontrol`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -298,7 +298,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_data-nokontrol-by-no-kartu_POST:
+    rencana_kontrol_bpjs_8:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/data-nokontrol-by-no-kartu`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -307,7 +307,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_data-nokontrol_POST:
+    rencana_kontrol_bpjs_9:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/data-nokontrol`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -316,7 +316,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_data-polispesilistik_POST:
+    rencana_kontrol_bpjs_10:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/data-polispesilistik`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -325,7 +325,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rencanakontrol_data-dokter_POST:
+    rencana_kontrol_bpjs_11:
       rule: "PathPrefix(`/v1.0/vclaim/rencanakontrol/data-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -334,7 +334,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_insert-rujukan2_POST:
+    rujukan_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -343,7 +343,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_insert-rujukan-khusus_POST:
+    rujukan_bpjs_2:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -352,16 +352,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_vclaim_rujukan_insert-rujukan-khusus_POST:
-      rule: "PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-bpjs
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    v1_vclaim_rujukan_update-rujukan2_POST:
+    rujukan_bpjs_3:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/update-rujukan2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -370,7 +361,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_list-spesialistik-rujukan_POST:
+    rujukan_bpjs_4:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/list-spesialistik-rujukan`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -379,7 +370,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_list-sarana-rujukan_POST:
+    rujukan_bpjs_5:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/list-sarana-rujukan`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -388,7 +379,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_list-rujukan-keluar-rs_POST:
+    rujukan_bpjs_6:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/list-rujukan-keluar-rs`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -397,7 +388,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_data-rujukan-keluar-rs_POST:
+    rujukan_bpjs_7:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/data-rujukan-keluar-rs`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -406,7 +397,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_cari-rujukan-by-nomor_POST:
+    rujukan_bpjs_8:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/cari-rujukan-by-nomor`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -415,7 +406,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_delete-rujukan_POST:
+    rujukan_bpjs_9:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/delete-rujukan`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -424,7 +415,16 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_delete-rujukan-khusus_POST:
+    rujukan_bpjs_10:
+      rule: "PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    rujukan_bpjs_11:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/delete-rujukan-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -433,7 +433,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_data-rujukan-khusus_POST:
+    rujukan_bpjs_12:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/data-rujukan-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -442,7 +442,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_cari-single-rujukan-by-kartu_POST:
+    rujukan_bpjs_13:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/cari-single-rujukan-by-kartu`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -451,7 +451,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_rujukan_cari-rujukan-by-kartu_POST:
+    rujukan_bpjs_14:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/cari-rujukan-by-kartu`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -460,7 +460,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_rujukan_getbynorujukan_GET:
+    rujukan_1:
       rule: "PathPrefix(`/v1.0/rujukan/getbynorujukan/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -469,7 +469,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_insert-sep2_POST:
+    sep_bpjs_1:
       rule: "PathPrefix(`/v1.0/vclaim/sep/insert-sep2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -478,7 +478,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_update-sep2_POST:
+    sep_bpjs_2:
       rule: "PathPrefix(`/v1.0/vclaim/sep/update-sep2`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -487,7 +487,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_cari-sep_POST:
+    sep_bpjs_3:
       rule: "PathPrefix(`/v1.0/vclaim/sep/cari-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -496,7 +496,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_delete-sep_POST:
+    sep_bpjs_4:
       rule: "PathPrefix(`/v1.0/vclaim/sep/delete-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -505,7 +505,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_data-sep-internal_POST:
+    sep_bpjs_5:
       rule: "PathPrefix(`/v1.0/vclaim/sep/data-sep-internal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -514,7 +514,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_delete-sep-internal_POST:
+    sep_bpjs_6:
       rule: "PathPrefix(`/v1.0/vclaim/sep/delete-sep-internal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -523,7 +523,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_pengajuan-sep_POST:
+    sep_bpjs_7:
       rule: "PathPrefix(`/v1.0/vclaim/sep/pengajuan-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -532,7 +532,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_approval-sep_POST:
+    sep_bpjs_8:
       rule: "PathPrefix(`/v1.0/vclaim/sep/approval-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -541,7 +541,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_vclaim_sep_update-pulang_POST:
+    sep_bpjs_9:
       rule: "PathPrefix(`/v1.0/vclaim/sep/update-pulang`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:
@@ -550,7 +550,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_sep_generatenosep_POST:
+    sep_1:
       rule: "PathPrefix(`/v1.0/sep/generatenosep/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:

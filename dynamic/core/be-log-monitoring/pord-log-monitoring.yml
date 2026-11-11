@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_log-monitoring_log_get-list_GET:
+    core_log_monitoring_router:
       rule: "PathPrefix(`/v1.0/log-monitoring/log/get-list/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-log-monitoring
       entryPoints:

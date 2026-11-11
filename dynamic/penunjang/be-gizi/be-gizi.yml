@@ -1,7 +1,7 @@
 http:
 
   routers:
-    v1_gizi_proses-makanan_getlist_GET:
+    gizi_1:
       rule: "PathPrefix(`/v1.0/gizi/proses-makanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-gizi
       entryPoints:
@@ -10,7 +10,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_gizi_proses-makanan_get-by-nomor-order_GET:
+    gizi_2:
       rule: "PathPrefix(`/v1.0/gizi/proses-makanan/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-gizi
       entryPoints:
@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_gizi_proses-makanan_get-by-no-registrasi_GET:
+    gizi_3:
       rule: "PathPrefix(`/v1.0/gizi/proses-makanan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-gizi
       entryPoints:
@@ -28,7 +28,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_gizi_proses-makanan_update-status-diterima_PUT:
+    gizi_4:
       rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-status-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-gizi
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_gizi_proses-makanan_update-status-selesai_PUT:
+    gizi_5:
       rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-status-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-gizi
       entryPoints:
@@ -46,7 +46,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_gizi_proses-makanan_update-ceklis_PUT:
+    gizi_6:
       rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-ceklis`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-gizi
       entryPoints:
@@ -55,7 +55,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_gizi_proses-makanan_update-ceklis-alat-makan_PUT:
+    gizi_7:
       rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-ceklis-alat-makan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-gizi
       entryPoints:
@@ -64,7 +64,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_gizi_proses-makanan_update-status-pengembalian-alat_PUT:
+    gizi_8:
       rule: "PathPrefix(`/v1.0/gizi/proses-makanan/update-status-pengembalian-alat`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-gizi
       entryPoints:

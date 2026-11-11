@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_wsbpjs_referensi-jadwal-dokter_POST:
+    interop_wsbpjs_1:
       rule: "PathPrefix(`/v1.0/wsbpjs/referensi-jadwal-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -9,7 +9,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_referensi-poli_POST:
+    interop_wsbpjs_2:
       rule: "PathPrefix(`/v1.0/wsbpjs/referensi-poli`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -18,7 +18,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_referensi-poli-fingerprint_POST:
+    interop_wsbpjs_3:
       rule: "PathPrefix(`/v1.0/wsbpjs/referensi-poli-fingerprint`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -27,7 +27,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_referensi-pasien-fingerprint_POST:
+    interop_wsbpjs_4:
       rule: "PathPrefix(`/v1.0/wsbpjs/referensi-pasien-fingerprint`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -36,7 +36,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_update-jawal-dokter_POST:
+    interop_wsbpjs_5:
       rule: "PathPrefix(`/v1.0/wsbpjs/update-jawal-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -45,7 +45,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_tambah-antrian_POST:
+    interop_wsbpjs_6:
       rule: "PathPrefix(`/v1.0/wsbpjs/tambah-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -54,7 +54,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_tambah-antrian-farmasi_POST:
+    interop_wsbpjs_7:
       rule: "PathPrefix(`/v1.0/wsbpjs/tambah-antrian-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -63,7 +63,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_update-waktu-antrian_POST:
+    interop_wsbpjs_8:
       rule: "PathPrefix(`/v1.0/wsbpjs/update-waktu-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -72,7 +72,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_batal-antrian_POST:
+    interop_wsbpjs_9:
       rule: "PathPrefix(`/v1.0/wsbpjs/batal-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -81,7 +81,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_list-waktu-task-id_POST:
+    interop_wsbpjs_10:
       rule: "PathPrefix(`/v1.0/wsbpjs/list-waktu-task-id`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -90,7 +90,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_dashboard-per-tanggal_POST:
+    interop_wsbpjs_11:
       rule: "PathPrefix(`/v1.0/wsbpjs/dashboard-per-tanggal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -99,7 +99,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_dashboard-per-bulan_POST:
+    interop_wsbpjs_12:
       rule: "PathPrefix(`/v1.0/wsbpjs/dashboard-per-bulan`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -108,7 +108,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_antrean-per-tanggal_POST:
+    interop_wsbpjs_13:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-tanggal`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -117,7 +117,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_antrean-per-kode-booking_POST:
+    interop_wsbpjs_14:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-kode-booking`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -126,7 +126,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_antrean-belum-dilayanai_POST:
+    interop_wsbpjs_15:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-belum-dilayanai`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -135,7 +135,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_antrean-per-parameters_POST:
+    interop_wsbpjs_16:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-per-parameters`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -144,7 +144,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_update-jadwal-dokter_POST:
+    interop_wsbpjs_17:
       rule: "PathPrefix(`/v1.0/wsbpjs/update-jadwal-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:
@@ -153,7 +153,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_wsbpjs_antrean-belum-dilayani_POST:
+    ws_bpjs_antrean_belum_dilayani:
       rule: "PathPrefix(`/v1.0/wsbpjs/antrean-belum-dilayani`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-ws-bpjs
       entryPoints:

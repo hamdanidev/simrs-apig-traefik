@@ -1,6 +1,6 @@
 http:
   routers:
-    v1_pendaftaran_radioterapi_create-by-apm_POST:
+    pendaftaran_radioterapi_create_by_apm:
       rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/create-by-apm`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-pendaftaran
       entryPoints:
