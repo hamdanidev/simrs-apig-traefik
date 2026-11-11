@@ -19,7 +19,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be-push-docs_pushdocs_jobs_2:
+    duplicat_v1_pushdocs_jobs_GET:
       rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-be-push-docs
       entryPoints:
@@ -37,7 +37,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    be-push-docs_pushdocs_jobs_4:
+    duplicat_v1_pushdocs_jobs_POST:
       rule: "PathPrefix(`/v1.0/pushdocs/jobs/`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-be-push-docs
       entryPoints:

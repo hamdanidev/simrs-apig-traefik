@@ -653,7 +653,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    kasir_billing_getlist_kwitansi:
+    duplicat_v1_kasir-billing_getlist-kwitansi_GET:
       rule: "PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:

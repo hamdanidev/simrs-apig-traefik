@@ -343,7 +343,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    interop_satu_sehat_39:
+    duplicat_v1_organization_search-by-partof_POST:
       rule: "PathPrefix(`/v1.0/organization/search-by-partof`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-satu-sehat-interop
       entryPoints:

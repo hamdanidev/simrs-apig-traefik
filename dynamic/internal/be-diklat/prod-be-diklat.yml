@@ -747,7 +747,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    bagia_ppd_11:
+    duplicat_v1_ppd_bagian-ppd_update-bukti-bayar_PUT:
       rule: "PathPrefix(`/v1.0/ppd/bagian-ppd/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
@@ -843,7 +843,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    bagia_ppds_11:
+    duplicat_v1_ppds_bagian-ppds_getlist-bagian-ppds_GET:
       rule: "PathPrefix(`/v1.0/ppds/bagian-ppds/getlist-bagian-ppds`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
@@ -1619,7 +1619,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laporan_kegiatan_ppd_7:
+    duplicat_v1_ppd_laporan-kegiatan-ppd_get-by-id_GET:
       rule: "PathPrefix(`/v1.0/ppd/laporan-kegiatan-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
@@ -1675,7 +1675,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laporan_kegiatan_ppds_7:
+    duplicat_v1_ppds_laporan-kegiatan-ppds_get-by-id_GET:
       rule: "PathPrefix(`/v1.0/ppds/laporan-kegiatan-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
@@ -1731,7 +1731,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laporan_ujian_ppd_7:
+    duplicat_v1_ppd_laporan-ujian-ppd_get-by-id_GET:
       rule: "PathPrefix(`/v1.0/ppd/laporan-ujian-ppd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
@@ -1787,7 +1787,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    laporan_ujian_ppds_7:
+    duplicat_v1_ppds_laporan-ujian-ppds_get-by-id_GET:
       rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
@@ -2515,7 +2515,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    peserta_diklat_10:
+    duplicat_v1_peserta-diklat_update_PUT:
       rule: "PathPrefix(`/v1.0/peserta-diklat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:
@@ -5363,7 +5363,7 @@ http:
       middlewares:
         - "simrs-cors"
 
-    tindakan_pelatihan_9:
+    duplicat_v1_pelatihan_tindakan-pelatihan_get-by-id-peserta_GET:
       rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id-peserta/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-diklat
       entryPoints:

@@ -1774,7 +1774,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    spesialis_jadwal_14:
+    duplicat_v1_g_GET:
       rule: "PathPrefix(`/v1.0/get-jadwal-pegawai-lengkap-hfis/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -1801,7 +1801,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    spesialis_jadwal_17:
+    duplicat-2_v1_g_GET:
       rule: "PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -1810,7 +1810,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    spesialis_jadwal_18:
+    duplicat-3_v1_g_GET:
       rule: "PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn-hfis/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -2195,7 +2195,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    staff_pendidikan_2:
+    duplicat_v1_apoteker_pendidikan_getlist_GET:
       rule: "PathPrefix(`/v1.0/apoteker/pendidikan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -2204,7 +2204,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    staff_pendidikan_3:
+    duplicat_v1_apoteker_pendidikan_getbyid_GET:
       rule: "PathPrefix(`/v1.0/apoteker/pendidikan/getbyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -2213,7 +2213,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    staff_pendidikan_4:
+    duplicat_v1_apoteker_pendidikan_create_POST:
       rule: "PathPrefix(`/v1.0/apoteker/pendidikan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -2222,7 +2222,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    staff_pendidikan_5:
+    duplicat_v1_apoteker_pendidikan_update_PUT:
       rule: "PathPrefix(`/v1.0/apoteker/pendidikan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -2231,7 +2231,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    staff_pendidikan_6:
+    duplicat_v1_apoteker_pendidikan_deletebyid_DELETE:
       rule: "PathPrefix(`/v1.0/apoteker/pendidikan/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:

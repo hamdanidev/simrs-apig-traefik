@@ -415,7 +415,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    rujukan_bpjs_10:
+    duplicat_v1_vclaim_rujukan_insert-rujukan-khusus_POST:
       rule: "PathPrefix(`/v1.0/vclaim/rujukan/insert-rujukan-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-bpjs
       entryPoints:

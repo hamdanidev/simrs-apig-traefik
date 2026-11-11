@@ -1,35 +1,21 @@
 <#
 .SYNOPSIS
-    Rapihkan nama router Traefik + beri prefix duplikat untuk rule yang sama.
+    Rapihkan nama router Traefik + tangani tabrakan nama secara otomatis.
 
 .DESCRIPTION
-    Scan semua file .yml di bawah $Root (default: folder skrip ini berada),
-    rekursif termasuk subfolder.
+    Scan semua .yml rekursif dari $Root. Untuk setiap router:
+      1. Hitung nama dasar dari <version>_<segmen-path>..._<METHOD>.
+      2. Kelompokkan berdasarkan nama dasar.
+      3. Untuk grup yang berisi >1 item (baik rule identik maupun rule berbeda
+         yang menghasilkan nama sama), beri prefix:
+            item ke-1 -> nama bersih
+            item ke-2 -> "duplicat_<ver>_<nama>"
+            item ke-3 -> "duplicat-2_<ver>_<nama>"
+            item ke-4 -> "duplicat-3_<ver>_<nama>"
+         Urutan ditentukan oleh (nama file, nomor baris) -> deterministik.
 
-    Untuk setiap router:
-      1. Nama dasar dibangun dari <version>_<segmen-path>..._<METHOD>.
-      2. Jika rule (isi `rule: "..."`) muncul lebih dari sekali di seluruh file:
-           - kemunculan ke-1  -> tanpa prefix
-           - kemunculan ke-2  -> "duplicat_v<X>_"  + nama dasar
-           - kemunculan ke-3+ -> "duplicat-<N>_v<X>_" + nama dasar  (N = kemunculan - 1)
-         <X> adalah versi yang terdeteksi dari path (v1, v2, dst).
-
-    Method TIDAK diubah besar/kecilnya (mengikuti isi rule).
-    Rule, service, entryPoints, middlewares TIDAK diubah.
-    Hanya nama router yang di-rewrite.
-
-.PARAMETER Root
-    Folder akar pencarian .yml. Default: $PSScriptRoot.
-
-.PARAMETER WhatIf
-    Preview tanpa menulis file.
-
-.PARAMETER Backup
-    Buat backup .bak sebelum menulis.
-
-.EXAMPLE
-    PS> .\rerapihkan-router.ps1 -WhatIf
-    PS> .\rerapihkan-router.ps1 -Backup
+    Method TIDAK diubah besar/kecilnya.
+    Rule, service, entryPoints, middlewares tidak disentuh.
 #>
 
 [CmdletBinding()]
@@ -41,17 +27,13 @@ param(
     [switch]$Backup
 )
 
-# ---------- Validasi ----------
 if (-not $Root) { $Root = (Get-Location).Path }
 if (-not (Test-Path -LiteralPath $Root)) {
     throw "Folder tidak ditemukan: $Root"
 }
 $Root = (Resolve-Path -LiteralPath $Root).Path
 
-$files = @(
-    Get-ChildItem -LiteralPath $Root -Recurse -File -Filter '*.yml' |
-    Sort-Object FullName
-)
+$files = @(Get-ChildItem -LiteralPath $Root -Recurse -File -Filter '*.yml' | Sort-Object FullName)
 if ($files.Count -eq 0) {
     Write-Warning "Tidak ada file .yml di bawah: $Root"
     return
@@ -59,78 +41,36 @@ if ($files.Count -eq 0) {
 
 Write-Host "Scan folder : $Root" -ForegroundColor Cyan
 Write-Host "File .yml   : $($files.Count)" -ForegroundColor Cyan
-Write-Host ("Mode        : " + $(if ($WhatIf) { 'WHATIF (preview)' } else { 'APPLY (menulis file)' })) -ForegroundColor Cyan
+Write-Host ("Mode        : " + $(if ($WhatIf) { 'WHATIF' } else { 'APPLY' })) -ForegroundColor Cyan
 Write-Host ''
 
-# ---------- Helper: nama dasar router ----------
+# ---------- Helper: nama dasar ----------
 function Convert-ToRouterName {
-    param(
-        [Parameter(Mandatory)][string]$Path,
-        [Parameter(Mandatory)][string]$Method
-    )
+    param([string]$Path, [string]$Method)
 
     $segments = @($Path -split '/' | Where-Object { $_ -ne '' })
     if ($segments.Count -eq 0) { return $null }
 
-    # Version: /v1.0/ -> v1, /v2.0/ -> v2
-    $versionPart = $null
+    $versionPart = 'v1'
     if ($segments[0] -match '^v(\d+)\.\d+$') {
         $versionPart = "v$($Matches[1])"
         $segments = if ($segments.Count -gt 1) { $segments[1..($segments.Count - 1)] } else { @() }
     }
 
-    # Buang segmen :param & trailing numeric
     $kept = @()
     for ($i = 0; $i -lt $segments.Count; $i++) {
-        $seg               = $segments[$i]
-        $isParam           = $seg -match '^:'
-        $isTrailingNumeric = ($i -eq $segments.Count - 1) -and ($seg -match '^\d+$')
-        if ($isParam -or $isTrailingNumeric) { continue }
+        $seg = $segments[$i]
+        if ($seg -match '^:') { continue }
+        if (($i -eq $segments.Count - 1) -and ($seg -match '^\d+$')) { continue }
         $kept += $seg
     }
     if ($kept.Count -eq 0) { return $null }
 
-    # Method TIDAK diubah (sesuai isi rule)
-    $methodSuffix = $Method
-
-    $parts = @()
-    if ($versionPart) { $parts += $versionPart }
-    $parts += $kept
-    $parts += $methodSuffix
-    return ($parts -join '_')
+    return "$versionPart`_$($kept -join '_')_$Method"
 }
 
-# ---------- Helper: prefix duplikat ----------
-function Add-DuplicatPrefix {
-    param(
-        [Parameter(Mandatory)][string]$BaseName,
-        [Parameter(Mandatory)][string]$Path,
-        [Parameter(Mandatory)][int]$Occurrence
-    )
-
-    # Pisahkan version prefix dari BaseName (v1_xxx_POST -> v1 + xxx_POST)
-    $versionPart = $null
-    $rest        = $BaseName
-    if ($BaseName -match '^(v\d+)_(.+)$') {
-        $versionPart = $Matches[1]
-        $rest        = $Matches[2]
-    }
-    elseif ($Path -match '^/v(\d+)\.\d+') {
-        $versionPart = "v$($Matches[1])"
-    }
-    else {
-        $versionPart = 'v1'
-    }
-
-    if ($Occurrence -eq 2) {
-        return "duplicat_${versionPart}_$rest"
-    }
-    $n = $Occurrence - 1
-    return "duplicat-${n}_${versionPart}_$rest"
-}
-
-# ---------- Baca semua file & kumpulkan router ----------
-$fileContents = @{}   # path -> @{ Lines; Eol; HasBom }
+# ---------- Baca semua file ----------
+$fileContents = @{}
 $items        = [System.Collections.Generic.List[object]]::new()
 
 foreach ($file in $files) {
@@ -142,11 +82,7 @@ foreach ($file in $files) {
     $eol   = if ($text.Contains("`r`n")) { "`r`n" } else { "`n" }
     $lines = [string[]]($text -split "`r?`n")
 
-    $fileContents[$file.FullName] = @{
-        Lines  = $lines
-        Eol    = $eol
-        HasBom = $hasBom
-    }
+    $fileContents[$file.FullName] = @{ Lines = $lines; Eol = $eol; HasBom = $hasBom }
 
     for ($i = 0; $i -lt $lines.Count; $i++) {
         if ($lines[$i] -notmatch '^(\s+)([A-Za-z0-9_\-]+):\s*$') { continue }
@@ -175,117 +111,89 @@ foreach ($file in $files) {
             RuleContent = $ruleContent
             Path        = $path
             Method      = $method
+            BaseName    = $null
             NewName     = $null
-            Skip        = $false
         })
     }
 }
 
-# ---------- Hitung occurrence per rule + tentukan nama baru ----------
-$ruleCount     = @{}
-$finalNameUses = @{}   # newName -> List[ruleContent]
+# ---------- Pass 1: hitung base name ----------
+foreach ($item in $items) {
+    $item.BaseName = Convert-ToRouterName -Path $item.Path -Method $item.Method
+}
+
+# ---------- Pass 2: group by base name & beri prefix duplikat ----------
+$groups = $items | Where-Object { $_.BaseName } | Group-Object -Property BaseName
+
+foreach ($grp in $groups) {
+    # Urutan deterministik: file lalu line
+    $ordered = @($grp.Group | Sort-Object FilePath, LineIndex)
+    for ($k = 0; $k -lt $ordered.Count; $k++) {
+        $it = $ordered[$k]
+        if ($k -eq 0) {
+            $it.NewName = $it.BaseName
+        }
+        else {
+            # Pisahkan version dari base name
+            $ver = 'v1'; $rest = $it.BaseName
+            if ($it.BaseName -match '^(v\d+)_(.+)$') { $ver = $Matches[1]; $rest = $Matches[2] }
+            elseif ($it.Path -match '^/v(\d+)\.\d+') { $ver = "v$($Matches[1])" }
+
+            if ($k -eq 1) {
+                $it.NewName = "duplicat_${ver}_$rest"
+            }
+            else {
+                $it.NewName = "duplicat-$k`_${ver}_$rest"
+            }
+        }
+    }
+}
+
+# ---------- Tampilkan & tulis ----------
+$byFile     = @{}
+$totalFiles = 0
+$totalRen   = 0
 
 foreach ($item in $items) {
-    $baseName = Convert-ToRouterName -Path $item.Path -Method $item.Method
-    if (-not $baseName) {
-        $item.NewName = $item.OldName
-        $item.Skip    = $true
-        continue
-    }
-
-    $key = $item.RuleContent
-    if ($ruleCount.ContainsKey($key)) { $ruleCount[$key]++ } else { $ruleCount[$key] = 1 }
-    $occ = $ruleCount[$key]
-
-    if ($occ -eq 1) {
-        $newName = $baseName
-    }
-    else {
-        $newName = Add-DuplicatPrefix -BaseName $baseName -Path $item.Path -Occurrence $occ
-    }
-
-    $item.NewName = $newName
-
-    if (-not $finalNameUses.ContainsKey($newName)) {
-        $finalNameUses[$newName] = [System.Collections.Generic.List[string]]::new()
-    }
-    $finalNameUses[$newName].Add($item.RuleContent)
-}
-
-# ---------- Deteksi tabrakan nyata (rule berbeda -> nama sama) ----------
-$collisions = @{}
-foreach ($kv in $finalNameUses.GetEnumerator()) {
-    $uniqueRules = @($kv.Value | Select-Object -Unique)
-    if ($uniqueRules.Count -gt 1) {
-        $collisions[$kv.Key] = $uniqueRules
-    }
-}
-
-if ($collisions.Count -gt 0) {
-    Write-Warning "Terdeteksi tabrakan nama (rule berbeda menghasilkan nama sama):"
-    foreach ($kv in $collisions.GetEnumerator()) {
-        Write-Warning "  $($kv.Key)  <-  $($kv.Value -join '  |  ')"
-    }
-    Write-Host ''
-}
-
-# ---------- Terapkan perubahan ----------
-$changesByFile = @{}
-foreach ($item in $items) {
-    if ($item.Skip) { continue }
+    if (-not $item.NewName) { continue }
     if ($item.NewName -eq $item.OldName) { continue }
 
-    if ($collisions.ContainsKey($item.NewName)) {
-        Write-Warning "Skip '$($item.OldName)' -> '$($item.NewName)' (tabrakan)"
-        continue
+    if (-not $byFile.ContainsKey($item.FilePath)) {
+        $byFile[$item.FilePath] = [System.Collections.Generic.List[object]]::new()
     }
-
-    if (-not $changesByFile.ContainsKey($item.FilePath)) {
-        $changesByFile[$item.FilePath] = [System.Collections.Generic.List[object]]::new()
-    }
-    $changesByFile[$item.FilePath].Add($item)
+    $byFile[$item.FilePath].Add($item)
 }
 
-if ($changesByFile.Count -eq 0) {
-    Write-Host "Tidak ada perubahan." -ForegroundColor Green
-    return
-}
-
-$totalFiles   = 0
-$totalRenamed = 0
-
-foreach ($filePath in $changesByFile.Keys) {
-    $fc     = $fileContents[$filePath]
-    $work   = [string[]]::new($fc.Lines.Count)
+foreach ($fp in $byFile.Keys) {
+    $fc   = $fileContents[$fp]
+    $work = [string[]]::new($fc.Lines.Count)
     [Array]::Copy($fc.Lines, $work, $fc.Lines.Count)
 
-    Write-Host "[$filePath]" -ForegroundColor Cyan
-    foreach ($chg in $changesByFile[$filePath]) {
-        Write-Host ("  {0,-45} -> {1}" -f $chg.OldName, $chg.NewName) -ForegroundColor Yellow
+    Write-Host "[$fp]" -ForegroundColor Cyan
+    foreach ($chg in $byFile[$fp]) {
+        Write-Host ("  {0,-50} -> {1}" -f $chg.OldName, $chg.NewName) -ForegroundColor Yellow
         $work[$chg.LineIndex] = "$($chg.Indent)$($chg.NewName):"
     }
 
-    $fileName = [System.IO.Path]::GetFileName($filePath)
-    $count    = $changesByFile[$filePath].Count
+    $fileName = [System.IO.Path]::GetFileName($fp)
+    $count    = $byFile[$fp].Count
 
     if ($WhatIf) {
-        Write-Host "  [WHATIF] tidak menulis $fileName ($count router)" -ForegroundColor DarkYellow
+        Write-Host "  [WHATIF] tidak menulis $fileName ($count)" -ForegroundColor DarkYellow
     }
     else {
         if ($Backup) {
-            $bak = "$filePath.bak"
-            Copy-Item -LiteralPath $filePath -Destination $bak -Force
-            Write-Host "  [BAK] $bak" -ForegroundColor DarkCyan
+            Copy-Item -LiteralPath $fp -Destination "$fp.bak" -Force
+            Write-Host "  [BAK] $fp.bak" -ForegroundColor DarkCyan
         }
         $newText = ($work -join $fc.Eol)
         $enc     = [System.Text.UTF8Encoding]::new([bool]$fc.HasBom)
-        [System.IO.File]::WriteAllText($filePath, $newText, $enc)
-        Write-Host "  [OK] $fileName ($count router)" -ForegroundColor Green
+        [System.IO.File]::WriteAllText($fp, $newText, $enc)
+        Write-Host "  [OK] $fileName ($count)" -ForegroundColor Green
     }
     Write-Host ''
-
     $totalFiles++
-    $totalRenamed += $count
+    $totalRen += $count
 }
 
-Write-Host ("Selesai. File diubah: {0}, total router di-rename: {1}" -f $totalFiles, $totalRenamed) -ForegroundColor Cyan
+Write-Host ("Selesai. File: {0}, router: {1}" -f $totalFiles, $totalRen) -ForegroundColor Cyan

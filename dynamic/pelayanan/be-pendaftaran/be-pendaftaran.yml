@@ -2808,7 +2808,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pendaftaran_rajal_27:
+    duplicat_v1_pendaftaran_kunjungan_GET:
       rule: "PathPrefix(`/v1.0/pendaftaran/kunjungan`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-pendaftaran
       entryPoints:
@@ -3672,7 +3672,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pendaftaran_radioterapi_create_by_mjkn:
+    duplicat_v1_pendaftaran_radioterapi_create-by-mjkn_POST:
       rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/create-by-mjkn`) &&  (Method(`POST`) || Method(`OPTIONS`))"
       service: service-pendaftaran
       entryPoints:
@@ -3681,7 +3681,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pendaftaran_radioterapi_update_sep:
+    duplicat_v1_pendaftaran_radioterapi_update-sep_PUT:
       rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-pendaftaran
       entryPoints:
@@ -3708,7 +3708,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pendaftaran_rehabilitasi_medis_update_sep:
+    duplicat_v1_pendaftaran_rehabilitasi-medis_update-sep_PUT:
       rule: "PathPrefix(`/v1.0/pendaftaran/rehabilitasi-medis/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-pendaftaran
       entryPoints:
