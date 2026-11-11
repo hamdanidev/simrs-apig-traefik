@@ -18,6 +18,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    # duplicat_v1_kasir-billing_getlist-kwitansi_GET:
+    #   rule: "PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-kasir
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
     v1_kasir-billing_send-data-billing_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing/send-data-billing`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-kasir
@@ -646,15 +655,6 @@ http:
 
     v1_kasir-billing-penjualan-barang-bebas_billing_create_POST:
       rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/create`) && (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-kasir
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    duplicat_v1_kasir-billing_getlist-kwitansi_GET:
-      rule: "PathPrefix(`/v1.0/kasir-billing/getlist-kwitansi/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kasir
       entryPoints:
         - web
