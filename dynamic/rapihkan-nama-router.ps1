@@ -16,6 +16,13 @@
 
     Method TIDAK diubah besar/kecilnya.
     Rule, service, entryPoints, middlewares tidak disentuh.
+
+    CATATAN PERBAIKAN:
+      - Slice array segmen dipaksa tetap array dengan @(...), supaya path
+        dengan 1 segmen setelah versi (mis. /v1.0/get-jadwal/) tidak berubah
+        jadi string dan menghasilkan nama salah seperti "v1_g_GET".
+      - Perbandingan nama lama vs baru memakai -ieq (abaikan huruf besar/kecil),
+        sehingga "V1_xxx" tidak dianggap perlu diganti menjadi "v1_xxx".
 #>
 
 [CmdletBinding()]
@@ -45,18 +52,31 @@ Write-Host ("Mode        : " + $(if ($WhatIf) { 'WHATIF' } else { 'APPLY' })) -F
 Write-Host ''
 
 # ---------- Helper: nama dasar ----------
+# Membentuk nama router dari path dan method.
+# Contoh: /v1.0/get-jadwal-pegawai-lengkap/ + GET -> v1_get-jadwal-pegawai-lengkap_GET
 function Convert-ToRouterName {
     param([string]$Path, [string]$Method)
 
+    # Pecah path jadi segmen, buang segmen kosong. @() menjamin hasilnya array.
     $segments = @($Path -split '/' | Where-Object { $_ -ne '' })
     if ($segments.Count -eq 0) { return $null }
 
+    # Jika segmen pertama berupa versi (mis. v1.0), simpan sebagai "v1" lalu buang dari daftar
     $versionPart = 'v1'
     if ($segments[0] -match '^v(\d+)\.\d+$') {
         $versionPart = "v$($Matches[1])"
-        $segments = if ($segments.Count -gt 1) { $segments[1..($segments.Count - 1)] } else { @() }
+
+        # PERBAIKAN: assign DI DALAM blok if/else (bukan assign hasil "if"),
+        # karena hasil "if" otomatis di-unroll: array 1 elemen berubah jadi string.
+        if ($segments.Count -gt 1) {
+            $segments = @($segments[1..($segments.Count - 1)])
+        }
+        else {
+            $segments = @()
+        }
     }
 
+    # Buang segmen parameter (diawali ':') dan segmen terakhir yang berupa angka saja
     $kept = @()
     for ($i = 0; $i -lt $segments.Count; $i++) {
         $seg = $segments[$i]
@@ -70,6 +90,7 @@ function Convert-ToRouterName {
 }
 
 # ---------- Baca semua file ----------
+# Menyimpan isi tiap file (baris, jenis line-ending, BOM) dan mendaftar semua router yang ditemukan.
 $fileContents = @{}
 $items        = [System.Collections.Generic.List[object]]::new()
 
@@ -85,10 +106,12 @@ foreach ($file in $files) {
     $fileContents[$file.FullName] = @{ Lines = $lines; Eol = $eol; HasBom = $hasBom }
 
     for ($i = 0; $i -lt $lines.Count; $i++) {
+        # Cari baris nama router, contoh: "    nama_router:"
         if ($lines[$i] -notmatch '^(\s+)([A-Za-z0-9_\-]+):\s*$') { continue }
         $indent  = $Matches[1]
         $oldName = $Matches[2]
 
+        # Cari baris tidak kosong berikutnya (harus berisi rule)
         $ruleIdx = -1
         for ($j = $i + 1; $j -lt $lines.Count; $j++) {
             if ($lines[$j].Trim() -ne '') { $ruleIdx = $j; break }
@@ -97,6 +120,7 @@ foreach ($file in $files) {
         if ($lines[$ruleIdx] -notmatch 'rule:\s*"(.*)"\s*$') { continue }
         $ruleContent = $Matches[1]
 
+        # Ambil path dan method dari rule
         if ($ruleContent -notmatch 'PathPrefix\(`([^`]+)`\)') { continue }
         $path = $Matches[1]
         if ($ruleContent -notmatch 'Method\(`(\w+)`\)') { continue }
@@ -131,6 +155,7 @@ foreach ($grp in $groups) {
     for ($k = 0; $k -lt $ordered.Count; $k++) {
         $it = $ordered[$k]
         if ($k -eq 0) {
+            # Item pertama memakai nama bersih
             $it.NewName = $it.BaseName
         }
         else {
@@ -156,7 +181,9 @@ $totalRen   = 0
 
 foreach ($item in $items) {
     if (-not $item.NewName) { continue }
-    if ($item.NewName -eq $item.OldName) { continue }
+
+    # PERBAIKAN: -ieq = abaikan beda huruf besar/kecil (V1_xxx dianggap sama dengan v1_xxx)
+    if ($item.NewName -ieq $item.OldName) { continue }
 
     if (-not $byFile.ContainsKey($item.FilePath)) {
         $byFile[$item.FilePath] = [System.Collections.Generic.List[object]]::new()
