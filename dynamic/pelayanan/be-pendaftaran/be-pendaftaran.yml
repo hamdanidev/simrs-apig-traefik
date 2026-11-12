@@ -684,14 +684,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_pendaftaran_kunjungan_GET:
-      rule: "PathPrefix(`/v1.0/pendaftaran/kunjungan`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-pendaftaran
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
+    # duplicat_v1_pendaftaran_kunjungan_GET:
+    #   rule: "PathPrefix(`/v1.0/pendaftaran/kunjungan`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-pendaftaran
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
 
     v1_kemoterapi_jenispelayanan_getlist_GET:
       rule: "PathPrefix(`/v1.0/kemoterapi/jenispelayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
@@ -2565,14 +2565,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_pendaftaran_radioterapi_create-by-mjkn_POST:
-      rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/create-by-mjkn`) &&  (Method(`POST`) || Method(`OPTIONS`))"
-      service: service-pendaftaran
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
+    # duplicat_v1_pendaftaran_radioterapi_create-by-mjkn_POST:
+    #   rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/create-by-mjkn`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+    #   service: service-pendaftaran
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
 
     v1_pendaftaran_radioterapi_update-sep_PUT:
       rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
@@ -2583,14 +2583,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_pendaftaran_radioterapi_update-sep_PUT:
-      rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
-      service: service-pendaftaran
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
+    # duplicat_v1_pendaftaran_radioterapi_update-sep_PUT:
+    #   rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-pendaftaran
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
 
     v1_pendaftaran_radioterapi_update-step-sep_PUT:
       rule: "PathPrefix(`/v1.0/pendaftaran/radioterapi/update-step-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
@@ -3393,14 +3393,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_pendaftaran_rehabilitasi-medis_update-sep_PUT:
-      rule: "PathPrefix(`/v1.0/pendaftaran/rehabilitasi-medis/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
-      service: service-pendaftaran
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
+    # duplicat_v1_pendaftaran_rehabilitasi-medis_update-sep_PUT:
+    #   rule: "PathPrefix(`/v1.0/pendaftaran/rehabilitasi-medis/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-pendaftaran
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
 
     v1_pendaftaran_rehabilitasi-medis_update-step-sep_PUT:
       rule: "PathPrefix(`/v1.0/pendaftaran/rehabilitasi-medis/update-step-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"

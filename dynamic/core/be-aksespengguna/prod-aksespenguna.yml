@@ -109,14 +109,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    duplicat_v1_modul_fitur_getbykdmodul_GET:
-      rule: "PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
-      service: service-aksespengguna
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
+    # duplicat_v1_modul_fitur_getbykdmodul_GET:
+    #   rule: "PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-aksespengguna
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
 
     v1_group_aplikasi_getlist_GET:
       rule: "PathPrefix(`/v1.0/group/aplikasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
