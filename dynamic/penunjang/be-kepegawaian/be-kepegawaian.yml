@@ -1828,7 +1828,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    V1_get-jadwal-spesialis-mjkn_GET:
+    v1_get-jadwal-spesialis-mjkn_GET:
       rule: "PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
