@@ -1,0 +1,72 @@
+http:
+  routers:
+
+    v1_barang-farmasi-konsinyasi_getlist_GET:
+      rule: "PathPrefix(`/v1.0/barang-farmasi-konsinyasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_barang-farmasi-konsinyasi_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/barang-farmasi-konsinyasi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_barang-farmasi-konsinyasi_create_POST:
+      rule: "PathPrefix(`/v1.0/barang-farmasi-konsinyasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_barang-farmasi-konsinyasi_update_PUT:
+      rule: "PathPrefix(`/v1.0/barang-farmasi-konsinyasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_barang-farmasi-konsinyasi_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/barang-farmasi-konsinyasi/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_barang-farmasi-konsinyasi_update-hpp_PUT:
+      rule: "PathPrefix(`/v1.0/barang-farmasi-konsinyasi/update-hpp/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_barang-farmasi-konsinyasi_getlist-hpp-selanjutnya_GET:
+      rule: "PathPrefix(`/v1.0/barang-farmasi-konsinyasi/getlist-hpp-selanjutnya`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

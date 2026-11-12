@@ -1,0 +1,107 @@
+http:
+  routers:
+
+    v1_monitoring_getlist_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getlist/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_getall_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_getall-ranap_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-ranap`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_buka-tutup-loket_POST:
+      rule: "PathPrefix(`/v1.0/monitoring/buka-tutup-loket`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_getall-radiologi_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-radiologi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_getall-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-lab-pa`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_getall-lab-pk_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-lab-pk`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_getall-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_getall-utdrs_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-utdrs`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_getall-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/getall-farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_monitoring_farmasi_GET:
+      rule: "PathPrefix(`/v1.0/monitoring/farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ANTRIAN_URL" }}' # IP Server Prod

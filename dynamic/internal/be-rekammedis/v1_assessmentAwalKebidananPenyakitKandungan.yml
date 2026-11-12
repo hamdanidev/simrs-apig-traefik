@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_assessmentAwalKebidananPenyakitKandungan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_assessmentAwalKebidananPenyakitKandungan_create_POST:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_assessmentAwalKebidananPenyakitKandungan_update_PUT:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_assessmentAwalKebidananPenyakitKandungan_delete_GET:
+      rule: "PathPrefix(`/v1.0/assessmentAwalKebidananPenyakitKandungan/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

@@ -1,0 +1,116 @@
+http:
+  routers:
+
+    v1_unitlayanan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/unitlayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/unitlayanan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_getbykdparent_GET:
+      rule: "PathPrefix(`/v1.0/unitlayanan/getbykdparent/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_create_POST:
+      rule: "PathPrefix(`/v1.0/unitlayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_update_PUT:
+      rule: "PathPrefix(`/v1.0/unitlayanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/unitlayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_getall_GET:
+      rule: "PathPrefix(`/v1.0/unitlayanan/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_getbynama_GET:
+      rule: "PathPrefix(`/v1.0/unitlayanan/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_getlistwithfarmasi_GET:
+      rule: "PathPrefix(`/v1.0/unitlayanan/getlistwithfarmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_layanan_getlistbykdunitlayanan_GET:
+      rule: "PathPrefix(`/v1.0/unitlayanan/layanan/getlistbykdunitlayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_layanan_create_POST:
+      rule: "PathPrefix(`/v1.0/unitlayanan/layanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayanan_layanan_deletebyidlayananlayanan_DELETE:
+      rule: "PathPrefix(`/v1.0/unitlayanan/layanan/deletebyidlayananlayanan/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_JASA_PELAYANAN_URL" }}'

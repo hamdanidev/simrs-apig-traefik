@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_single-sound_create_POST:
+      rule: "PathPrefix(`/v1.0/single-sound/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_single-sound_next-number_GET:
+      rule: "PathPrefix(`/v1.0/single-sound/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_single-sound_list-antrian_GET:
+      rule: "PathPrefix(`/v1.0/single-sound/list-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ANTRIAN_URL" }}' # IP Server Prod

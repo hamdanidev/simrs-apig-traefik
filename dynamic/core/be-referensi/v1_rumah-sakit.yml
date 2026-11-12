@@ -1,0 +1,70 @@
+http:
+  routers:
+
+    v1_rumah-sakit_get-list_GET:
+      rule: "PathPrefix(`/v1.0/rumah-sakit/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rumah-sakit_get-by-rs-code_GET:
+      rule: "PathPrefix(`/v1.0/rumah-sakit/get-by-rs-code/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rumah-sakit_create_POST:
+      rule: "PathPrefix(`/v1.0/rumah-sakit/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rumah-sakit_update_PUT:
+      rule: "PathPrefix(`/v1.0/rumah-sakit/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rumah-sakit_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/rumah-sakit/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rumah-sakit_activate_PUT:
+      rule: "PathPrefix(`/v1.0/rumah-sakit/activate`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rumah-sakit_get-active_GET:
+      rule: "PathPrefix(`/v1.0/rumah-sakit/get-active`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

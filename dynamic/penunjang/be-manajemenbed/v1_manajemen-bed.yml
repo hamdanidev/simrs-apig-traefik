@@ -1,0 +1,18 @@
+http:
+  routers:
+
+    v1_manajemen-bed_monitoring-bed-rawat-inap_GET:
+      rule: "PathPrefix(`/v1.0/manajemen-bed/monitoring-bed-rawat-inap`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+        #- "simrs-auth"
+
+  services:
+    service-bed:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BED_URL" }}' # IP Server Prod

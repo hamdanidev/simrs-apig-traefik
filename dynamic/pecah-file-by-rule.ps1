@@ -1,21 +1,23 @@
 <#
 .SYNOPSIS
-    Pecah file router Traefik (.yml) menjadi beberapa file, satu file per grup path.
+    Pecah file router Traefik (.yml) menjadi beberapa file, satu file per grup path + versi.
 
 .DESCRIPTION
     Scan semua .yml rekursif dari $Root. Untuk setiap file:
       1. Baca semua router (http > routers), termasuk router yang di-comment (#),
          dan service (http > services).
       2. Ambil path dari PathPrefix(`...`) / Path(`...`) lalu tentukan "kunci grup":
-            /v1.0/erm/meso/create                          -> erm_meso
-            /v1.0/erm/meso/obat-meso/get-by-id/            -> erm_meso
-            /v1.0/erm/rekonsiliasi-obat/list-x/create      -> erm_rekonsiliasi-obat
-            /v1.0/get-jadwal-pegawai-lengkap-hfis/         -> get-jadwal-pegawai-lengkap-hfis
+            /v1.0/berkas-digital/create                    -> v1_berkas-digital
+            /v1.0/berkas-digital/get-by-id/                -> v1_berkas-digital
+            /v2.0/berkas-digital/create                    -> v2_berkas-digital
+            /v1.0/erm/meso/obat-meso/create                -> v1_erm
+            /get-jadwal-pegawai-lengkap-hfis/              -> get-jadwal-pegawai-lengkap-hfis
          Aturannya:
-            - buang segmen versi (v1.0)
-            - buang segmen parameter (diawali ':') dan segmen terakhir yang angka saja
-            - buang segmen terakhir jika berupa kata aksi (create, update, delete, ...)
-            - ambil maksimal $GroupDepth segmen pertama, gabung dengan "_"
+            - segmen versi (v1.0 / v2.0) diambil versi mayornya (v1 / v2) dan dipakai
+              sebagai AWALAN nama file
+            - ambil segmen PERTAMA setelah versi sebagai nama grup
+            - ingin lebih rinci? pakai -GroupDepth 2 -> v1_erm_meso, v1_erm_rekonsiliasi-obat, dst.
+            - path tanpa versi tetap tanpa awalan
       3. Tulis satu file per grup di folder yang sama: <kunci-grup>.yml
          Isi file: router grup itu (aktif + yang di-comment) + definisi service yang dipakai.
       4. Router dari file berbeda di folder yang sama yang kuncinya sama DIGABUNG ke satu file.
@@ -42,8 +44,9 @@ param(
     [Parameter(Position = 0)]
     [string]$Root = $PSScriptRoot,
 
-    # Jumlah maksimal segmen path yang dipakai untuk nama file (default 2 -> erm_meso)
-    [int]$GroupDepth = 2,
+    # Jumlah segmen path (setelah versi) yang dipakai untuk nama file.
+    # Default 1 -> hanya segmen pertama (v1_berkas-digital). Pakai 2 untuk v1_erm_meso, dst.
+    [int]$GroupDepth = 1,
 
     # Kata aksi di ujung path yang tidak ikut dipakai untuk nama file
     [string[]]$ActionWords = @('create', 'update', 'delete', 'get-list', 'get-by-id'),
@@ -329,13 +332,18 @@ function Read-RouterFile {
 }
 
 # Menentukan kunci grup (nama file tanpa .yml) dari path sebuah router.
+#   /v1.0/berkas-digital/create  -> v1_berkas-digital
+#   /v2.0/berkas-digital/create  -> v2_berkas-digital
+#   /get-jadwal-xxx/             -> get-jadwal-xxx   (tanpa versi)
 function Get-GroupKey {
     param([string]$Path, [int]$Depth, [string[]]$ActionWords)
 
     $segments = @($Path -split '/' | Where-Object { $_ -ne '' })
 
-    # Buang segmen versi (v1.0). Assign di dalam blok agar array 1 elemen tidak jadi string.
-    if ($segments.Count -gt 0 -and $segments[0] -match '^v\d+\.\d+$') {
+    # Ambil segmen versi (v1.0 -> v1, v2.0 -> v2) dan simpan sebagai awalan nama file
+    $version = $null
+    if ($segments.Count -gt 0 -and $segments[0] -match '^v(\d+)\.\d+$') {
+        $version = "v$($Matches[1])"
         if ($segments.Count -gt 1) { $segments = @($segments[1..($segments.Count - 1)]) }
         else { $segments = @() }
     }
@@ -355,9 +363,12 @@ function Get-GroupKey {
 
     if ($segments.Count -eq 0) { return $null }
 
-    # Ambil maksimal $Depth segmen pertama
+    # Ambil maksimal $Depth segmen pertama setelah versi (default 1 -> berkas-digital)
     $take = [Math]::Min($Depth, $segments.Count)
     $key  = ($segments[0..($take - 1)] -join '_')
+
+    # Tambahkan versi di depan: v1_berkas-digital
+    if ($version) { $key = "${version}_$key" }
 
     # Pastikan aman dipakai sebagai nama file
     return ($key -replace '[^A-Za-z0-9._\-]', '-')

@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_aturanpakaiobat_getlist_GET:
+      rule: "PathPrefix(`/v1.0/aturanpakaiobat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_aturanpakaiobat_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/aturanpakaiobat/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_aturanpakaiobat_create_POST:
+      rule: "PathPrefix(`/v1.0/aturanpakaiobat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_aturanpakaiobat_update_PUT:
+      rule: "PathPrefix(`/v1.0/aturanpakaiobat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_aturanpakaiobat_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/aturanpakaiobat/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

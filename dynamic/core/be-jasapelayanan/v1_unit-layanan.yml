@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_unit-layanan_get-kd-unit-bpjs_GET:
+      rule: "PathPrefix(`/v1.0/unit-layanan/get-kd-unit-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-layanan_get-list_lampung-in_GET:
+      rule: "PathPrefix(`/v1.0/unit-layanan/get-list/lampung-in`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_JASA_PELAYANAN_URL" }}'

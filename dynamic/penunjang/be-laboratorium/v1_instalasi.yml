@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_instalasi_lab_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/instalasi/lab/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_instalasi_lab_update-no-rm_PUT:
+      rule: "PathPrefix(`/v1.0/instalasi/lab/update-no-rm/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_instalasi_lab_laporan-kunjungan-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/instalasi/lab/laporan-kunjungan-lab-pa/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_instalasi_lab_laporan-kunjungan-lab-pa-eksternal_GET:
+      rule: "PathPrefix(`/v1.0/instalasi/lab/laporan-kunjungan-lab-pa-eksternal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-lab:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_LAB_URL" }}'

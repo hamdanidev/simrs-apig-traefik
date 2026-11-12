@@ -1,0 +1,89 @@
+http:
+  routers:
+
+    v1_triase_getall_GET:
+      rule: "PathPrefix(`/v1.0/triase/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_triase_getlist_GET:
+      rule: "PathPrefix(`/v1.0/triase/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_triase_getbynomortriase_GET:
+      rule: "PathPrefix(`/v1.0/triase/getbynomortriase/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_triase_create_POST:
+      rule: "PathPrefix(`/v1.0/triase/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_triase_update_PUT:
+      rule: "PathPrefix(`/v1.0/triase/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_triase_deletebynomor_triase_DELETE:
+      rule: "PathPrefix(`/v1.0/triase/deletebynomor_triase/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_triase_sendto_POST:
+      rule: "PathPrefix(`/v1.0/triase/sendto/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_triase_getbynoregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/triase/getbynoregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_triase_update-bed_PUT:
+      rule: "PathPrefix(`/v1.0/triase/update-bed/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

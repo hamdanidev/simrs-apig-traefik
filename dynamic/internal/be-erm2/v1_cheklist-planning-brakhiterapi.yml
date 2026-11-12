@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_cheklist-planning-brakhiterapi_get-list_GET:
+      rule: "PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cheklist-planning-brakhiterapi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cheklist-planning-brakhiterapi_create_POST:
+      rule: "PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cheklist-planning-brakhiterapi_update_PUT:
+      rule: "PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cheklist-planning-brakhiterapi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/cheklist-planning-brakhiterapi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

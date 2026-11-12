@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_asesmen-awal-medis-kebidanan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_asesmen-awal-medis-kebidanan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_asesmen-awal-medis-kebidanan_create_POST:
+      rule: "PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_asesmen-awal-medis-kebidanan_update_PUT:
+      rule: "PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_asesmen-awal-medis-kebidanan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/asesmen-awal-medis-kebidanan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

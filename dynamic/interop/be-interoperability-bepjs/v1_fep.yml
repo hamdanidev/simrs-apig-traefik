@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_fep_getbynofep_GET:
+      rule: "PathPrefix(`/v1.0/fep/getbynofep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-bpjs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BPJS_URL" }}'

@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_rawatjalan_getbytglantrian_GET:
+      rule: "PathPrefix(`/v1.0/rawatjalan/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rawatjalan_panggilanke_PUT:
+      rule: "PathPrefix(`/v1.0/rawatjalan/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rawatjalan_status_PUT:
+      rule: "PathPrefix(`/v1.0/rawatjalan/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rawatjalan_next-number_GET:
+      rule: "PathPrefix(`/v1.0/rawatjalan/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rawatjalan_total-antrian_GET:
+      rule: "PathPrefix(`/v1.0/rawatjalan/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ANTRIAN_URL" }}' # IP Server Prod

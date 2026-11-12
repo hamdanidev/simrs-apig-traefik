@@ -1,0 +1,71 @@
+http:
+  routers:
+
+    v1_encounter_create_POST:
+      rule: "PathPrefix(`/v1.0/encounter/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encounter_update_POST:
+      rule: "PathPrefix(`/v1.0/encounter/update`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encounter_search-by-id_POST:
+      rule: "PathPrefix(`/v1.0/encounter/search-by-id`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encounter_search-by-subject_POST:
+      rule: "PathPrefix(`/v1.0/encounter/search-by-subject`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encounter_update-inprogress_POST:
+      rule: "PathPrefix(`/v1.0/encounter/update-inprogress`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encounter_update-discharge-disposition_POST:
+      rule: "PathPrefix(`/v1.0/encounter/update-discharge-disposition`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encounter_update-finished_POST:
+      rule: "PathPrefix(`/v1.0/encounter/update-finished`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-satu-sehat-interop:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SATU_SEHAT_INTEROP_URL" }}'

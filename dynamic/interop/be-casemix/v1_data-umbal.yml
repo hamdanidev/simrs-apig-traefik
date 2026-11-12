@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_data-umbal_getlist_GET:
+      rule: "PathPrefix(`/v1.0/data-umbal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_data-umbal_rekap_GET:
+      rule: "PathPrefix(`/v1.0/data-umbal/rekap/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_data-umbal_status-hitung_PUT:
+      rule: "PathPrefix(`/v1.0/data-umbal/status-hitung`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_data-umbal_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/data-umbal/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

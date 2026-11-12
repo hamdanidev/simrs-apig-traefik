@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_daftar-poli_get-list_GET:
+      rule: "PathPrefix(`/v1.0/daftar-poli/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+  services:
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_JASA_PELAYANAN_URL" }}'
