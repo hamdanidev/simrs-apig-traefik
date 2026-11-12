@@ -1810,7 +1810,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    v1_g_GET:
+    v1_get-jadwal-pegawai-lengkap_GET:
       rule: "PathPrefix(`/v1.0/get-jadwal-pegawai-lengkap/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
@@ -1819,32 +1819,14 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    # duplicat_v1_g_GET:
-    #   rule: "PathPrefix(`/v1.0/get-jadwal-pegawai-lengkap-hfis/`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-kepegawaian
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
-
-    # duplicat-2_v1_g_GET:
-    #   rule: "PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn/`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-kepegawaian
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
-
-    # duplicat-3_v1_g_GET:
-    #   rule: "PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn-hfis/`) && (Method(`GET`) || Method(`OPTIONS`))"
-    #   service: service-kepegawaian
-    #   entryPoints:
-    #     - web
-    #   middlewares:
-    #     - "simrs-cors"
-    #     - "simrs-auth"
+    v1_get-jadwal-pegawai-lengkap-hfis_GET:
+      rule: "PathPrefix(`/v1.0/get-jadwal-pegawai-lengkap-hfis/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
 
     v1_spesialis_jadwal_update-kuota_PUT:
       rule: "PathPrefix(`/v1.0/spesialis/jadwal/update-kuota`) && (Method(`PUT`) || Method(`OPTIONS`))"
@@ -1857,6 +1839,24 @@ http:
 
     v1_spesialis_jadwal_update-hafis_PUT:
       rule: "PathPrefix(`/v1.0/spesialis/jadwal/update-hafis`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_get-jadwal-spesialis-mjkn_GET:
+      rule: "PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_get-jadwal-spesialis-mjkn-hfis_GET:
+      rule: "PathPrefix(`/v1.0/get-jadwal-spesialis-mjkn-hfis/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-kepegawaian
       entryPoints:
         - web
