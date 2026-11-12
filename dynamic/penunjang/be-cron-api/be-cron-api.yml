@@ -1,0 +1,106 @@
+http:
+  routers:
+    v1_cron-api_bed_POST:
+      rule: "PathPrefix(`/v1.0/cron-api/bed`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_bed_bulk_POST:
+      rule: "PathPrefix(`/v1.0/cron-api/bed/bulk`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_bed_pending_GET:
+      rule: "PathPrefix(`/v1.0/cron-api/bed/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_bed_status_PUT:
+      rule: "PathPrefix(`/v1.0/cron-api/bed/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_encounter_GET:
+      rule: "PathPrefix(`/v1.0/cron-api/encounter`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_encounter_pending_GET:
+      rule: "PathPrefix(`/v1.0/cron-api/encounter/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_encounter_status_PUT:
+      rule: "PathPrefix(`/v1.0/cron-api/encounter/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_medication-request_GET:
+      rule: "PathPrefix(`/v1.0/cron-api/medication-request`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_medication-request_pending_GET:
+      rule: "PathPrefix(`/v1.0/cron-api/medication-request/pending`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_medication-request_status_PUT:
+      rule: "PathPrefix(`/v1.0/cron-api/medication-request/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cron-api_bed_getlist_GET:
+      rule: "PathPrefix(`/v1.0/cron-api/bed/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-cron-api
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-be-cron-api:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BE_CRON_API_URL" }}' # IP Server Prod

@@ -1,6 +1,5 @@
 http:
   routers:
-
     v1_laporan-pemasangan-pdt_get-list_GET:
       rule: "PathPrefix(`/v1.0/laporan-pemasangan-pdt/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm

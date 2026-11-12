@@ -1,8 +1,7 @@
 http:
   routers:
-
-    v1_order-obat_create_POST:
-      rule: "PathPrefix(`/v1.0/order-obat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+    v1_order-obat_update-tindakan-lab-racikan_PUT:
+      rule: "PathPrefix(`/v1.0/order-obat/update-tindakan-lab-racikan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
         - web

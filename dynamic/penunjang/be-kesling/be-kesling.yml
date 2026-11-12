@@ -1,0 +1,63 @@
+http:
+
+
+  routers:
+    v1_kesling_order-kesling_get-list-order-kesling_GET:
+      rule: "PathPrefix(`/v1.0/kesling/order-kesling/get-list-order-kesling`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kesling
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kesling_order-kesling_get-list-order-kesling-multi-level_GET:
+      rule: "PathPrefix(`/v1.0/kesling/order-kesling/get-list-order-kesling-multi-level`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kesling
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kesling_order-kesling_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/kesling/order-kesling/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kesling
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kesling_order-kesling_create-order-kesling_POST:
+      rule: "PathPrefix(`/v1.0/kesling/order-kesling/create-order-kesling`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kesling
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kesling_order-kesling_update-order-kesling_PUT:
+      rule: "PathPrefix(`/v1.0/kesling/order-kesling/update-order-kesling/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kesling
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kesling_order-kesling_delete-order-kesling_DELETE:
+      rule: "PathPrefix(`/v1.0/kesling/order-kesling/delete-order-kesling/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-kesling
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kesling:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KESLING_URL" }}'

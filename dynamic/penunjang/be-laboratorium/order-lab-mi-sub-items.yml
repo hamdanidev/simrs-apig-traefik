@@ -1,0 +1,61 @@
+http:
+  routers:
+    v1_lab_order-lab-mi_get-list-order-lab-mi-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-by-id-order-lab-mi-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-order-lab-mi-sub-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_update-order-lab-mi-sub-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-order-lab-mi-sub-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_create-order-lab-mi-sub-items_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi-sub-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_delete-order-lab-mi-sub-items_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi-sub-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-list-order-lab-mi-with-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi-with-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-lab:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_LAB_URL" }}'

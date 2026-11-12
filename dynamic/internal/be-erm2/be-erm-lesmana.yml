@@ -1,0 +1,707 @@
+http:
+  routers:
+
+    v1_pengkajian-risiko-jatuh-anak_create_POST:
+      rule: "PathPrefix(`/v1.0/pengkajian-risiko-jatuh-anak/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_pengkajian-risiko-jatuh-anak_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pengkajian-risiko-jatuh-anak/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_pengkajian-risiko-jatuh-anak_get-list_GET:
+      rule: "PathPrefix(`/v1.0/pengkajian-risiko-jatuh-anak/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_pengkajian-risiko-jatuh-anak_update_PUT:
+      rule: "PathPrefix(`/v1.0/pengkajian-risiko-jatuh-anak/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_pengkajian-risiko-jatuh-anak_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pengkajian-risiko-jatuh-anak/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-general-consent_create_POST:
+      rule: "PathPrefix(`/v1.0/formulir-general-consent/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-general-consent_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/formulir-general-consent/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-general-consent_get-list_GET:
+      rule: "PathPrefix(`/v1.0/formulir-general-consent/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-general-consent_update_PUT:
+      rule: "PathPrefix(`/v1.0/formulir-general-consent/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-general-consent_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/formulir-general-consent/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-tanda-terima-leaflet_create_POST:
+      rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-tanda-terima-leaflet_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-tanda-terima-leaflet_get-list_GET:
+      rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-tanda-terima-leaflet_update_PUT:
+      rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-tanda-terima-leaflet_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_jadwal-kemoterapi_create_POST:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_jadwal-kemoterapi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_jadwal-kemoterapi_get-list_GET:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_jadwal-kemoterapi_update_PUT:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_jadwal-kemoterapi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/jadwal-kemoterapi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_protokol-kemoterapi_create_POST:
+      rule: "PathPrefix(`/v1.0/protokol-kemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_protokol-kemoterapi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/protokol-kemoterapi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_protokol-kemoterapi_get-list_GET:
+      rule: "PathPrefix(`/v1.0/protokol-kemoterapi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_protokol-kemoterapi_update_PUT:
+      rule: "PathPrefix(`/v1.0/protokol-kemoterapi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_protokol-kemoterapi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/protokol-kemoterapi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_resume-kemoterapi_create_POST:
+      rule: "PathPrefix(`/v1.0/resume-kemoterapi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_resume-kemoterapi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/resume-kemoterapi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_resume-kemoterapi_get-list_GET:
+      rule: "PathPrefix(`/v1.0/resume-kemoterapi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_resume-kemoterapi_update_PUT:
+      rule: "PathPrefix(`/v1.0/resume-kemoterapi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_resume-kemoterapi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/resume-kemoterapi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-edukasi-terintegrasi-pasien-keluarga_create_POST:
+      rule: "PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-edukasi-terintegrasi-pasien-keluarga_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-edukasi-terintegrasi-pasien-keluarga_get-list_GET:
+      rule: "PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-edukasi-terintegrasi-pasien-keluarga_update_PUT:
+      rule: "PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-edukasi-terintegrasi-pasien-keluarga_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/catatan-edukasi-terintegrasi-pasien-keluarga/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-masa-nifas_create_POST:
+      rule: "PathPrefix(`/v1.0/lembar-masa-nifas/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-masa-nifas_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/lembar-masa-nifas/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-masa-nifas_get-list_GET:
+      rule: "PathPrefix(`/v1.0/lembar-masa-nifas/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-masa-nifas_update_PUT:
+      rule: "PathPrefix(`/v1.0/lembar-masa-nifas/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-masa-nifas_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/lembar-masa-nifas/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-kehamilan_create_POST:
+      rule: "PathPrefix(`/v1.0/lembar-kehamilan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-kehamilan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/lembar-kehamilan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-kehamilan_get-list_GET:
+      rule: "PathPrefix(`/v1.0/lembar-kehamilan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-kehamilan_update_PUT:
+      rule: "PathPrefix(`/v1.0/lembar-kehamilan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-kehamilan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/lembar-kehamilan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-persalinan_create_POST:
+      rule: "PathPrefix(`/v1.0/lembar-persalinan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-persalinan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/lembar-persalinan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-persalinan_get-list_GET:
+      rule: "PathPrefix(`/v1.0/lembar-persalinan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-persalinan_update_PUT:
+      rule: "PathPrefix(`/v1.0/lembar-persalinan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_lembar-persalinan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/lembar-persalinan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_riwayat-pola-makan_create_POST:
+      rule: "PathPrefix(`/v1.0/riwayat-pola-makan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_riwayat-pola-makan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-pola-makan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_riwayat-pola-makan_get-list_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-pola-makan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_riwayat-pola-makan_update_PUT:
+      rule: "PathPrefix(`/v1.0/riwayat-pola-makan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_riwayat-pola-makan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/riwayat-pola-makan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_hidangan-sehari-recall-24jam_create_POST:
+      rule: "PathPrefix(`/v1.0/hidangan-sehari-recall-24jam/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_hidangan-sehari-recall-24jam_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/hidangan-sehari-recall-24jam/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_hidangan-sehari-recall-24jam_get-list_GET:
+      rule: "PathPrefix(`/v1.0/hidangan-sehari-recall-24jam/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_hidangan-sehari-recall-24jam_update_PUT:
+      rule: "PathPrefix(`/v1.0/hidangan-sehari-recall-24jam/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_hidangan-sehari-recall-24jam_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/hidangan-sehari-recall-24jam/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-asuhan-gizi_create_POST:
+      rule: "PathPrefix(`/v1.0/formulir-asuhan-gizi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-asuhan-gizi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/formulir-asuhan-gizi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-asuhan-gizi_get-list_GET:
+      rule: "PathPrefix(`/v1.0/formulir-asuhan-gizi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-asuhan-gizi_update_PUT:
+      rule: "PathPrefix(`/v1.0/formulir-asuhan-gizi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_formulir-asuhan-gizi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/formulir-asuhan-gizi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-asupan-makanan_create_POST:
+      rule: "PathPrefix(`/v1.0/catatan-asupan-makanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-asupan-makanan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/catatan-asupan-makanan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-asupan-makanan_get-list_GET:
+      rule: "PathPrefix(`/v1.0/catatan-asupan-makanan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-asupan-makanan_update_PUT:
+      rule: "PathPrefix(`/v1.0/catatan-asupan-makanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+    v1_catatan-asupan-makanan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/catatan-asupan-makanan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

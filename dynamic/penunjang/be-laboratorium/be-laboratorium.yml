@@ -1,0 +1,1843 @@
+http:
+  routers:
+    v1_instalasi_lab_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/instalasi/lab/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_instalasi_lab_update-no-rm_PUT:
+      rule: "PathPrefix(`/v1.0/instalasi/lab/update-no-rm/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_instalasi_lab_laporan-kunjungan-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/instalasi/lab/laporan-kunjungan-lab-pa/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_instalasi_lab_laporan-kunjungan-lab-pa-eksternal_GET:
+      rule: "PathPrefix(`/v1.0/instalasi/lab/laporan-kunjungan-lab-pa-eksternal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-list-order-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-order-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-list-tindakan-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-tindakan-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-list-tindakan-bersama-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-tindakan-bersama-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-list-order-lab-mi-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-order-lab-mi-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-by-id-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-by-id-tindakan-bersama_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-tindakan-bersama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-by-id-order-lab-mi-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-order-lab-mi-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-by-noregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-noregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_update-order-lab-mi_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/update-order-lab-mi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_update-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/update-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_create-tindakan-lab-mi_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/create-tindakan-lab-mi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_create-tindakan-bersama-lab-mi_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/create-tindakan-bersama-lab-mi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_send-to-kasir-by-nomor-order_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/send-to-kasir-by-nomor-order/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_delete-tindakan-lab-mi_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/delete-tindakan-lab-mi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_delete-tindakan-bersama-lab-mi_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/delete-tindakan-bersama-lab-mi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_update-order-lab-mi-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/update-order-lab-mi-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-list-sample-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-sample-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-by-id-sample-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-sample-lab-mi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_create-order-lab-mi-sample_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/create-order-lab-mi-sample`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_delete-order-lab-mi-sample_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/delete-order-lab-mi-sample/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-list-order-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-list-tindakan-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-tindakan-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-list-tindakan-bersama-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-tindakan-bersama-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-list-order-lab-mi-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-order-lab-mi-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-by-id-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-by-id-tindakan-bersama_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-tindakan-bersama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-by-id-order-lab-mi-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-order-lab-mi-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-by-noregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-noregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_update-order-lab-mi-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-order-lab-mi-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_update-order-lab-mi_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-order-lab-mi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_update-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_create-tindakan-lab-mi_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-tindakan-lab-mi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_create-tindakan-bersama-lab-mi_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-tindakan-bersama-lab-mi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_send-to-kasir-by-nomor-order_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/send-to-kasir-by-nomor-order/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_delete-tindakan-lab-mi_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-tindakan-lab-mi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_delete-tindakan-bersama-lab-mi_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-tindakan-bersama-lab-mi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-list-sample-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-list-sample-lab-mi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-by-id-sample-lab-mi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-by-id-sample-lab-mi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_create-order-lab-mi_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_create-order-lab-mi-items_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_create-order-lab-mi-sample_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/create-order-lab-mi-sample`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_delete-order-lab-mi-items_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_delete-order-lab-mi_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_delete-order-lab-mi-sample_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/delete-order-lab-mi-sample/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-laporan-kunjungan-pasien-by-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-laporan-kunjungan-pasien-by-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_get-laporan-kunjungan-pasien_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/get-laporan-kunjungan-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-list-order-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-list-order-lab-pa`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-list-tindakan-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-list-tindakan-lab-pa`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-list-tindakan-bersama-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-list-tindakan-bersama-lab-pa`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-list-order-lab-pa-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-list-order-lab-pa-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-by-id-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-id-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-by-id-tindakan-bersama_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-id-tindakan-bersama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-by-id-order-lab-pa-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-id-order-lab-pa-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-by-noregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-noregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_update-order-lab-pa_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/update-order-lab-pa/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_update-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/update-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_create-tindakan-lab-pa_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/create-tindakan-lab-pa`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_create-tindakan-bersama-lab-pa_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/create-tindakan-bersama-lab-pa`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_send-to-kasir-by-nomor-order_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/send-to-kasir-by-nomor-order/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_delete-tindakan-lab-pa_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/delete-tindakan-lab-pa/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_delete-tindakan-bersama-lab-pa_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/delete-tindakan-bersama-lab-pa/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa-eksternal_update-order-lab-pa-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa-eksternal/update-order-lab-pa-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-list-order-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-list-order-lab-pa`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-list-tindakan-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-list-tindakan-lab-pa`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-list-tindakan-bersama-lab-pa_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-list-tindakan-bersama-lab-pa`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-list-order-lab-pa-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-list-order-lab-pa-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-by-id-order-lab-pa-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-by-id-order-lab-pa-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-by-id-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-by-id-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-by-id-tindakan-bersama_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-by-id-tindakan-bersama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-by-noregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-by-noregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_update-order-lab-pa_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/update-order-lab-pa/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_update-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/update-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_send-to-kasir-by-nomor-order_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/send-to-kasir-by-nomor-order/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_create-tindakan-lab-pa_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/create-tindakan-lab-pa`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_create-tindakan-bersama-lab-pa_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/create-tindakan-bersama-lab-pa`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_delete-tindakan-lab-pa_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/delete-tindakan-lab-pa/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_delete-tindakan-bersama-lab-pa_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/delete-tindakan-bersama-lab-pa/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_create-order-lab-pa_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/create-order-lab-pa`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_create-order-lab-pa-items_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/create-order-lab-pa-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_delete-order-lab-pa-items_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/delete-order-lab-pa-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_delete-order-lab-pa_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/delete-order-lab-pa/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-laporan-kunjungan-pasien-by-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-laporan-kunjungan-pasien-by-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_get-laporan-kunjungan-pasien_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/get-laporan-kunjungan-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_update-order-lab-pa-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/update-order-lab-pa-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-list-order-lab-pk_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-order-lab-pk`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-list-tindakan-lab-pk_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-tindakan-lab-pk`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-list-tindakan-bersama-lab-pk_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-tindakan-bersama-lab-pk`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-list-order-lab-pk-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-order-lab-pk-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-list-order-lab-pk-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-list-order-lab-pk-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-by-id-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-id-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-by-id-tindakan-bersama_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-id-tindakan-bersama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-by-id-order-lab-pk-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-id-order-lab-pk-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-by-id-order-lab-pk-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-id-order-lab-pk-sub-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-by-noregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-noregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_update-order-lab-pk_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/update-order-lab-pk/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_update-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/update-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_update-order-lab-pk-sub-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/update-order-lab-pk-sub-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_create-order-lab-pk-sub-items_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/create-order-lab-pk-sub-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_create-tindakan-lab-pk_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/create-tindakan-lab-pk`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_create-tindakan-bersama-lab-pk_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/create-tindakan-bersama-lab-pk`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_send-to-kasir-by-nomor-order_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/send-to-kasir-by-nomor-order/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_delete-tindakan-lab-pk_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/delete-tindakan-lab-pk/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_delete-tindakan-bersama-lab-pk_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/delete-tindakan-bersama-lab-pk/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_delete-order-lab-pk-sub-items_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/delete-order-lab-pk-sub-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk-eksternal_update-order-lab-pk-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk-eksternal/update-order-lab-pk-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-list-order-lab-pk_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-list-order-lab-pk`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-list-tindakan-lab-pk_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-list-tindakan-lab-pk`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-list-tindakan-bersama-lab-pk_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-list-tindakan-bersama-lab-pk`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-list-order-lab-pk-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-list-order-lab-pk-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-list-order-lab-pk-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-list-order-lab-pk-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-by-id-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-by-id-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-by-id-tindakan-bersama_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-by-id-tindakan-bersama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-by-id-order-lab-pk-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-by-id-order-lab-pk-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-by-id-order-lab-pk-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-by-id-order-lab-pk-sub-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-by-noregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-by-noregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_update-order-lab-pk_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/update-order-lab-pk/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_update-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/update-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_update-order-lab-pk-sub-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/update-order-lab-pk-sub-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_create-tindakan-lab-pk_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/create-tindakan-lab-pk`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_create-tindakan-bersama-lab-pk_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/create-tindakan-bersama-lab-pk`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_send-to-kasir-by-nomor-order_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/send-to-kasir-by-nomor-order/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_delete-tindakan-lab-pk_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/delete-tindakan-lab-pk/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-laporan-bulanan-by-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-bulanan-by-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-laporan-bulanan-by-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-bulanan-by-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-laporan-kunjungan-pasien_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-kunjungan-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-laporan-hiv-viral-load-by-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-hiv-viral-load-by-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-laporan-hiv-viral-load-sederhana_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-hiv-viral-load-sederhana`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-laporan-waktu-tunggu_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-waktu-tunggu`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_delete-tindakan-bersama-lab-pk_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/delete-tindakan-bersama-lab-pk/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_create-order-lab-pk_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/create-order-lab-pk`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_create-order-lab-pk-items_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/create-order-lab-pk-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_create-order-lab-pk-sub-items_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/create-order-lab-pk-sub-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_delete-order-lab-pk-items_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/delete-order-lab-pk-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_delete-order-lab-pk-sub-items_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/delete-order-lab-pk-sub-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_delete-order-lab-pk_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/delete-order-lab-pk/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-laporan-kunjungan-pasien-by-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-kunjungan-pasien-by-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_update-order-lab-pk-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/update-order-lab-pk-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-mi_getlist_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-mi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-mi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-mi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-mi_create_POST:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-mi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-mi_update_PUT:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-mi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-mi_delete-by-id_DELETE:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-mi/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-mi_getall_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-mi/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pa_getlist_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pa/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pa_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pa/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pa_create_POST:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pa_update_PUT:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pa/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pa_delete-by-id_DELETE:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pa/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pa_getall_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pa/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pk_getlist_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pk/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pk_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pk/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pk_create_POST:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pk/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pk_update_PUT:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pk/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pk_delete-by-id_DELETE:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pk/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items-lab-pk_getall_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pk/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items_getlist_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium-items/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items_create_POST:
+      rule: "PathPrefix(`/v1.0/laboratorium-items/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items_update_PUT:
+      rule: "PathPrefix(`/v1.0/laboratorium-items/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium-items_delete-by-id_DELETE:
+      rule: "PathPrefix(`/v1.0/laboratorium-items/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_sample-lab-mk_getlist_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium/sample-lab-mk/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_sample-lab-mk_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium/sample-lab-mk/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_sample-lab-mk_create_POST:
+      rule: "PathPrefix(`/v1.0/laboratorium/sample-lab-mk/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_sample-lab-mk_update_PUT:
+      rule: "PathPrefix(`/v1.0/laboratorium/sample-lab-mk/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_sample-lab-mk_delete-by-id_DELETE:
+      rule: "PathPrefix(`/v1.0/laboratorium/sample-lab-mk/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_update-status-selesai-bulk_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pa_update-status-selesai-bulk_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pa/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi_update-status-selesai-bulk_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi/update-status-selesai-bulk`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_jenis-hasil-lab_getall_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_jenis-hasil-lab_getlist_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_jenis-hasil-lab_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_jenis-hasil-lab_create_POST:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_jenis-hasil-lab_update_PUT:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_jenis-hasil-lab_delete-by-kd_DELETE:
+      rule: "PathPrefix(`/v1.0/laboratorium/jenis-hasil-lab/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_pemeriksaan-lab_getall_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_pemeriksaan-lab_getlist_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_pemeriksaan-lab_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_pemeriksaan-lab_create_POST:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_pemeriksaan-lab_update_PUT:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laboratorium_pemeriksaan-lab_delete-by-kd_DELETE:
+      rule: "PathPrefix(`/v1.0/laboratorium/pemeriksaan-lab/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_update-no-identitas-bulk-by-tanggal-order_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/update-no-identitas-bulk-by-tanggal-order`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-list-order-lab-mi-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-order-lab-mi-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-list-order-lab-mi-with-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-list-order-lab-mi-with-sub-items`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_get-by-id-order-lab-mi-sub-items_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/get-by-id-order-lab-mi-sub-items/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_update-order-lab-mi-sub-items_PUT:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/update-order-lab-mi-sub-items/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_create-order-lab-mi-sub-items_POST:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/create-order-lab-mi-sub-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-mi-eksternal_delete-order-lab-mi-sub-items_DELETE:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-mi-eksternal/delete-order-lab-mi-sub-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lab_order-lab-pk_get-laporan-lengkap-item_GET:
+      rule: "PathPrefix(`/v1.0/lab/order-lab-pk/get-laporan-lengkap-item`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-lab:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_LAB_URL" }}'

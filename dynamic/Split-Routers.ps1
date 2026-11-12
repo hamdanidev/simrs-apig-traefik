@@ -7,15 +7,14 @@
       1. Baca semua router (http > routers), termasuk router yang di-comment (#),
          dan service (http > services).
       2. Ambil path dari PathPrefix(`...`) / Path(`...`) lalu tentukan "kunci grup":
-            /v1.0/erm/meso/create                          -> erm_meso
-            /v1.0/erm/meso/obat-meso/get-by-id/            -> erm_meso
-            /v1.0/erm/rekonsiliasi-obat/list-x/create      -> erm_rekonsiliasi-obat
+            /v1.0/berkas-digital/create                    -> berkas-digital
+            /v1.0/berkas-digital/get-by-id/                -> berkas-digital
+            /v1.0/erm/meso/obat-meso/create                -> erm
             /v1.0/get-jadwal-pegawai-lengkap-hfis/         -> get-jadwal-pegawai-lengkap-hfis
          Aturannya:
             - buang segmen versi (v1.0)
-            - buang segmen parameter (diawali ':') dan segmen terakhir yang angka saja
-            - buang segmen terakhir jika berupa kata aksi (create, update, delete, ...)
-            - ambil maksimal $GroupDepth segmen pertama, gabung dengan "_"
+            - ambil segmen PERTAMA setelah versi sebagai nama file
+            - ingin lebih rinci? pakai -GroupDepth 2 -> erm_meso, erm_rekonsiliasi-obat, dst.
       3. Tulis satu file per grup di folder yang sama: <kunci-grup>.yml
          Isi file: router grup itu (aktif + yang di-comment) + definisi service yang dipakai.
       4. Router dari file berbeda di folder yang sama yang kuncinya sama DIGABUNG ke satu file.
@@ -42,8 +41,9 @@ param(
     [Parameter(Position = 0)]
     [string]$Root = $PSScriptRoot,
 
-    # Jumlah maksimal segmen path yang dipakai untuk nama file (default 2 -> erm_meso)
-    [int]$GroupDepth = 2,
+    # Jumlah segmen path (setelah versi) yang dipakai untuk nama file.
+    # Default 1 -> hanya segmen pertama (berkas-digital). Pakai 2 untuk erm_meso, dst.
+    [int]$GroupDepth = 1,
 
     # Kata aksi di ujung path yang tidak ikut dipakai untuk nama file
     [string[]]$ActionWords = @('create', 'update', 'delete', 'get-list', 'get-by-id'),

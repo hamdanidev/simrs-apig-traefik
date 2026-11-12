@@ -1,0 +1,188 @@
+http:
+  routers:
+    v1_erm_meso_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/meso/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/meso/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_get-list_GET:
+      rule: "PathPrefix(`/v1.0/erm/meso/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/meso/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/meso/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_obat-meso_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/meso/obat-meso/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_obat-meso_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/meso/obat-meso/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_obat-meso_get-list_GET:
+      rule: "PathPrefix(`/v1.0/erm/meso/obat-meso/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_obat-meso_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/meso/obat-meso/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_meso_obat-meso_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/meso/obat-meso/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_get-list_GET:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/delete`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_list-rekonsiliasi-obat_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/list-rekonsiliasi-obat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_list-rekonsiliasi-obat_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/list-rekonsiliasi-obat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_list-rekonsiliasi-obat_get-list_GET:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/list-rekonsiliasi-obat/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_list-rekonsiliasi-obat_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/list-rekonsiliasi-obat/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_rekonsiliasi-obat_list-rekonsiliasi-obat_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/rekonsiliasi-obat/list-rekonsiliasi-obat/delete`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

@@ -1,8 +1,7 @@
 http:
   routers:
-
-    v1_pasien-konsul_get-by-id_GET:
-      rule: "PathPrefix(`/v1.0/pasien-konsul/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    v1_pasien-konsul_update-status-pelaksanaan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/update-status-pelaksanaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
         - web

@@ -1,0 +1,331 @@
+http:
+  routers:
+    v1_interop-wsantrian_history-tambah-antrian_get-list_GET:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_history-tambah-antrian_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_history-tambah-antrian_create_POST:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_history-tambah-antrian_send_POST:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_history-tambah-antrian_update_PUT:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_history-tambah-antrian_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/history-tambah-antrian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_get-list_GET:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_create_POST:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_update_PUT:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_send_POST:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_update-by-booking-taskid_PUT:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/update-by-booking-taskid/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_capaian-mjkn-harian-parshing-waktu_GET:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn-harian-parshing-waktu`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_token_GET:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/token`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_status-antrian_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/status-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_ambil-antrian_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_ambil-antrian_v02_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_batal-antrian_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/batal-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_batal-antrian_v02_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/batal-antrian/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_sisa-antrian_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/sisa-antrian`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_sisa-antrian_v02_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/sisa-antrian/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_check-in_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/check-in`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_check-in_v02_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/check-in/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_pasien-baru_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/pasien-baru`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_jadwal-operasi-rs_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-rs`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_jadwal-operasi-rs_v02_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-rs/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_jadwal-operasi-pasien_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_jadwal-operasi-pasien_v02_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-pasien/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_ambil-antrian-farmasi_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_status-antrian-farmasi_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/status-antrian-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_ambil-antrian_v02_get-list_GET:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-antrian/v02/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_capaian-mjkn_GET:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_capaian-mjkn-harian_GET:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/capaian-mjkn-harian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-wsantrian_task-id_update-parsing-waktu_POST:
+      rule: "PathPrefix(`/v1.0/interop-wsantrian/task-id/update-parsing-waktu`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_ambil-kode-booking_new_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/ambil-kode-booking/new`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-ws-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_WS_ANTRIAN_URL" }}'
