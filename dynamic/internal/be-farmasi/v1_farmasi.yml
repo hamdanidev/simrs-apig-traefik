@@ -2719,7 +2719,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    stok-gudang.konsinyasi_1:
+    v1_farmasi_gudang-konsinyasi_get-list_GET:
       rule: "PathPrefix(`/v1.0/farmasi/gudang-konsinyasi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
@@ -2728,7 +2728,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    stok-gudang.konsinyasi_2:
+    v1_farmasi_gudang-konsinyasi_get-list-ready-stock_GET:
       rule: "PathPrefix(`/v1.0/farmasi/gudang-konsinyasi/get-list-ready-stock`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
@@ -2737,7 +2737,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    stok-gudang.konsinyasi_3:
+    v1_farmasi_gudang-konsinyasi_get-by-kd_GET:
       rule: "PathPrefix(`/v1.0/farmasi/gudang-konsinyasi/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
@@ -2746,7 +2746,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    stok-gudang.konsinyasi_4:
+    v1_farmasi_gudang-konsinyasi_create_POST:
       rule: "PathPrefix(`/v1.0/farmasi/gudang-konsinyasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
@@ -2755,7 +2755,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    stok-gudang.konsinyasi_5:
+    v1_farmasi_gudang-konsinyasi_update_PUT:
       rule: "PathPrefix(`/v1.0/farmasi/gudang-konsinyasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
@@ -2764,7 +2764,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    stok-gudang.konsinyasi_6:
+    v1_farmasi_gudang-konsinyasi_update-stock_PUT:
       rule: "PathPrefix(`/v1.0/farmasi/gudang-konsinyasi/update-stock/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
@@ -2773,7 +2773,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    stok-gudang.konsinyasi_7:
+    v1_farmasi_gudang-konsinyasi_delete_DELETE:
       rule: "PathPrefix(`/v1.0/farmasi/gudang-konsinyasi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:
@@ -2782,7 +2782,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    stok-gudang.konsinyasi_8:
+    v1_farmasi_gudang-konsinyasi_update-with-induk_PUT:
       rule: "PathPrefix(`/v1.0/farmasi/gudang-konsinyasi/update-with-induk/`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-farmasi
       entryPoints:

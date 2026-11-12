@@ -316,7 +316,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    get_stats_claim:
+    v1_pasien-casemix_stats_claim_GET:
       rule: "Path(`/v1.0/pasien-casemix/stats_claim`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -325,7 +325,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    update_no_peserta_bpjs_by_nik:
+    v1_pasien-casemix_update-no-peserta-bpjs-by-nik_PUT:
       rule: "Path(`/v1.0/pasien-casemix/update-no-peserta-bpjs-by-nik`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -334,7 +334,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    update_status_koding:
+    v1_pasien-casemix_update-status-koding_PUT:
       rule: "Path(`/v1.0/pasien-casemix/update-status-koding`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -343,7 +343,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_casemix_update_bundling:
+    v1_pasien-casemix_update-bundling_PUT:
       rule: "Path(`/v1.0/pasien-casemix/update-bundling`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
@@ -352,7 +352,7 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
-    pasien_casemix_update_no_sep:
+    v1_pasien-casemix_update-no-sep_PUT:
       rule: "Path(`/v1.0/pasien-casemix/update-no-sep`) && (Method(`PUT`) || Method(`OPTIONS`))"
       service: service-casemix
       entryPoints:
