@@ -46,6 +46,51 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    # duplicat_v1_formulir-tanda-terima-leaflet_get-list_GET:
+    #   rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    # duplicat_v1_formulir-tanda-terima-leaflet_get-by-id_GET:
+    #   rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    # duplicat_v1_formulir-tanda-terima-leaflet_create_POST:
+    #   rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    # duplicat_v1_formulir-tanda-terima-leaflet_update_PUT:
+    #   rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    # duplicat_v1_formulir-tanda-terima-leaflet_delete_DELETE:
+    #   rule: "PathPrefix(`/v1.0/formulir-tanda-terima-leaflet/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:

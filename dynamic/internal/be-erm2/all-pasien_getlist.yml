@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_all-pasien_getlist_GET:
+      rule: "PathPrefix(`/v1.0/all-pasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_all-pasien_getlist_selesai-layanan_GET:
+      rule: "PathPrefix(`/v1.0/all-pasien/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_rehab-medis_get-terapi-fisioterapi-by-id_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-terapi-fisioterapi-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

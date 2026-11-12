@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pasien-rehabilitasi-medis_getlist-all-group-by-sep_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rehabilitasi-medis/getlist-all-group-by-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

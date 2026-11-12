@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_orderobat_nonlist_getlist_GET:
+      rule: "PathPrefix(`/v1.0/orderobat/nonlist/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_orderobat_nonlist_create_POST:
+      rule: "PathPrefix(`/v1.0/orderobat/nonlist/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_orderobat_nonlist_send_POST:
+      rule: "PathPrefix(`/v1.0/orderobat/nonlist/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_orderobat_nonlist_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/orderobat/nonlist/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_orderobat_nonlist_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/orderobat/nonlist/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

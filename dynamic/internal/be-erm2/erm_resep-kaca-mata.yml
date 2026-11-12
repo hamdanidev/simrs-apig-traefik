@@ -1,0 +1,71 @@
+http:
+  routers:
+
+    v1_erm_resep-kaca-mata_getlist_GET:
+      rule: "PathPrefix(`/v1.0/erm/resep-kaca-mata/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_resep-kaca-mata_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/resep-kaca-mata/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_resep-kaca-mata_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/erm/resep-kaca-mata/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_resep-kaca-mata_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/erm/resep-kaca-mata/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_resep-kaca-mata_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/resep-kaca-mata/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_resep-kaca-mata_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/resep-kaca-mata/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_resep-kaca-mata_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/resep-kaca-mata/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_rencana-kontrol_sync-no-kontrol_POST:
+      rule: "PathPrefix(`/v1.0/rencana-kontrol/sync-no-kontrol`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

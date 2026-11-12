@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_order-lab_resend-order-lab-billing-by-no-registrasi-14-digit_POST:
+      rule: "PathPrefix(`/v1.0/order-lab/resend-order-lab-billing-by-no-registrasi-14-digit`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

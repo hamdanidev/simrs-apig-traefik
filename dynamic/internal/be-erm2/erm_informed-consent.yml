@@ -1,0 +1,89 @@
+http:
+  routers:
+
+    v1_erm_informed-consent_get-list_GET:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_informed-consent_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_informed-consent_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_informed-consent_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_informed-consent_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_informed-consent_get-with-detail_GET:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/get-with-detail`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_informed-consent_create-jenis-informasi_POST:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/create-jenis-informasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_informed-consent_update-jenis-informasi_PUT:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/update-jenis-informasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_informed-consent_delete-jenis-informasi_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/informed-consent/delete-jenis-informasi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

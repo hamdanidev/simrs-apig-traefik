@@ -1,0 +1,71 @@
+http:
+  routers:
+
+    v1_erm_order-forensik_getlist-order-items-forensik-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/erm/order-forensik/getlist-order-items-forensik-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_order-forensik_getlist-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/erm/order-forensik/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_order-forensik_create-order_POST:
+      rule: "PathPrefix(`/v1.0/erm/order-forensik/create-order`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_order-forensik_create-order-forensik-items_POST:
+      rule: "PathPrefix(`/v1.0/erm/order-forensik/create-order-forensik-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_order-forensik_send_POST:
+      rule: "PathPrefix(`/v1.0/erm/order-forensik/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_order-forensik_delete-order-forensik-items_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/order-forensik/delete-order-forensik-items/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_order-forensik_delete-order_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/order-forensik/delete-order/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

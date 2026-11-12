@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_billing-sarana_getlist-by-id-billing_GET:
+      rule: "PathPrefix(`/v1.0/billing-sarana/getlist-by-id-billing/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

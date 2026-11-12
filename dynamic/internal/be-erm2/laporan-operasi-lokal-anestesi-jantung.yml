@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_laporan-operasi-lokal-anestesi-jantung_get-list_GET:
+      rule: "PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laporan-operasi-lokal-anestesi-jantung_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laporan-operasi-lokal-anestesi-jantung_create_POST:
+      rule: "PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laporan-operasi-lokal-anestesi-jantung_update_PUT:
+      rule: "PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laporan-operasi-lokal-anestesi-jantung_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/laporan-operasi-lokal-anestesi-jantung/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

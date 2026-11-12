@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_resume-medis-rawat-inap_create_POST:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_update_PUT:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

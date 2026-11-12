@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_pasien-rawat-jalan_batch-update-selesai-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/batch-update-selesai-layanan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    # duplicat_v1_pasien-rawat-jalan_batch-update-selesai-layanan_PUT:
+    #   rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/batch-update-selesai-layanan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

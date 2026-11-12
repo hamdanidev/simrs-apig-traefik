@@ -1,0 +1,71 @@
+http:
+  routers:
+
+    v1_erm_asesmen-lanjutan-rawat-jalan-dokter_getlist_GET:
+      rule: "PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_asesmen-lanjutan-rawat-jalan-dokter_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_asesmen-lanjutan-rawat-jalan-dokter_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_asesmen-lanjutan-rawat-jalan-dokter_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_asesmen-lanjutan-rawat-jalan-dokter_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_asesmen-lanjutan-rawat-jalan-dokter_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_asesmen-lanjutan-rawat-jalan-dokter_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/asesmen-lanjutan-rawat-jalan-dokter/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

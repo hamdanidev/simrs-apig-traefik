@@ -74,6 +74,25 @@ Write-Host ''
 # Helper: baris YAML
 # =====================================================================
 
+# Pola baris "nama:" (kunci YAML). Mendukung nama ber-kutip, spasi sebelum ':',
+# dan komentar di akhir baris (mis. "router_x:   # catatan").
+$KeyPattern = '^\s*["'']?([^\s#:''"\-][^:#''"]*?)["'']?\s*:\s*(?:#.*)?$'
+
+# Catatan baris yang tidak dikenali tapi masih bisa diselamatkan (dilaporkan ke layar)
+$script:ParseWarnings = [System.Collections.Generic.List[string]]::new()
+# Detail kegagalan baca terakhir (nomor baris + isi baris)
+$script:ChildError = ''
+# Jumlah baris komentar biasa (bukan router) yang tidak ikut dipindahkan
+$script:DroppedComments = 0
+
+# Memendekkan isi baris untuk pesan error.
+function Get-Snippet {
+    param([string]$Line)
+    $t = $Line.Trim()
+    if ($t.Length -gt 90) { $t = $t.Substring(0, 90) + '...' }
+    return $t
+}
+
 # Menghitung jumlah spasi di awal sebuah baris (indentasi).
 function Get-IndentLength {
     param([string]$Line)
@@ -129,7 +148,7 @@ function Test-CommentedBlockStart {
 
     if (-not (Test-CommentLine $Lines[$Index])) { return $false }
     $u = Get-UncommentedLine $Lines[$Index]
-    if ($u -notmatch '^\s*[A-Za-z0-9_.\-]+:\s*$') { return $false }
+    if ($u -notmatch $KeyPattern) { return $false }
 
     $n = $Index + 1
     if ($n -ge $End) { return $false }
@@ -146,7 +165,6 @@ function Get-ChildBlocks {
     param([string[]]$Lines, [int]$Start, [int]$End, [bool]$AllowCommented = $false)
 
     $blocks   = [System.Collections.Generic.List[object]]::new()
-    $childLen = -1
     $j = $Start
     while ($j -lt $End) {
         $line = $Lines[$j]
@@ -165,23 +183,37 @@ function Get-ChildBlocks {
                 $raw  = [string[]]@($Lines[$j..($k - 1)])
                 $unc  = [string[]]@($raw | ForEach-Object { Get-UncommentedLine $_ })
                 $name = (Get-UncommentedLine $line).Trim().TrimEnd(':')
+                if ((Get-UncommentedLine $line) -match $KeyPattern) { $name = $Matches[1].Trim() }
                 $blocks.Add([PSCustomObject]@{
                     Name = $name; Lines = $raw; ParseLines = $unc; Commented = $true
                 })
                 $j = $k
                 continue
             }
+            if ($AllowCommented) { $script:DroppedComments++ }
             $j++
             continue
         }
         if (Test-SkipLine $line) { $j++; continue }
 
-        # --- Blok biasa ---
-        $len = Get-IndentLength $line
-        if ($childLen -lt 0) { $childLen = $len }
-        if ($len -ne $childLen -or $line -notmatch '^\s*([A-Za-z0-9_.\-]+):\s*$') { return $null }
+        # --- Baris yang bukan "nama:" ---
+        if ($line -notmatch $KeyPattern) {
+            $script:ChildError = "baris $($j + 1): $(Get-Snippet $line)"
+            if ($blocks.Count -eq 0) { return $null }
 
-        $name     = $Matches[1]
+            # Selamatkan: baris ini (beserta anak-anaknya) ikut blok sebelumnya agar tidak hilang
+            $strayEnd = Get-BlockEnd -Lines $Lines -Start $j -Limit $End
+            $last = $blocks[$blocks.Count - 1]
+            $extra = [string[]]@($Lines[$j..($strayEnd - 1)])
+            $last.Lines      = [string[]]@($last.Lines + $extra)
+            $last.ParseLines = [string[]]@($last.ParseLines + $extra)
+            $script:ParseWarnings.Add("baris $($j + 1) tidak dikenali, ikut router '$($last.Name)': $(Get-Snippet $line)")
+            $j = $strayEnd
+            continue
+        }
+
+        # --- Blok biasa ---
+        $name     = $Matches[1].Trim()
         $blockEnd = Get-BlockEnd -Lines $Lines -Start $j -Limit $End
         $raw      = [string[]]@($Lines[$j..($blockEnd - 1)])
         $blocks.Add([PSCustomObject]@{
@@ -198,7 +230,13 @@ function Get-ChildBlocks {
 function Read-RouterFile {
     param([string[]]$Lines)
 
+    $script:ParseWarnings = [System.Collections.Generic.List[string]]::new()
+    $script:ChildError    = ''
+    $script:DroppedComments = 0
+
     $result = @{
+        Warnings      = $script:ParseWarnings
+        DroppedComments = 0
         Ok            = $false
         Reason        = ''
         SectionIndent = '  '
@@ -231,8 +269,8 @@ function Read-RouterFile {
 
         $len = Get-IndentLength $Lines[$i]
         if ($secLen -lt 0) { $secLen = $len; $result.SectionIndent = ' ' * $len }
-        if ($len -ne $secLen -or $Lines[$i] -notmatch '^\s*([A-Za-z0-9_\-]+):\s*$') {
-            $result.Reason = "struktur YAML tidak dikenali di baris $($i + 1)"
+        if ($len -ne $secLen -or $Lines[$i] -notmatch $KeyPattern) {
+            $result.Reason = "struktur YAML tidak dikenali di baris $($i + 1): $(Get-Snippet $Lines[$i])"
             return $result
         }
 
@@ -242,18 +280,23 @@ function Read-RouterFile {
         if ($sectionName -eq 'routers') {
             $blocks = Get-ChildBlocks -Lines $Lines -Start ($i + 1) -End $sectionEnd -AllowCommented $true
             if ($null -eq $blocks) {
-                $result.Reason = "isi 'routers' tidak bisa dibaca"
+                $result.Reason = "isi 'routers' tidak bisa dibaca ($script:ChildError)"
                 return $result
             }
             foreach ($b in $blocks) {
-                # Ambil rule dan nama service (dari versi tanpa # bila router di-comment)
-                $rule = $null; $service = $null
+                # Router wajib punya 'rule:'. Blok komentar tanpa rule = komentar biasa, diabaikan.
+                # Teks seluruh blok dipakai untuk mencari PathPrefix (rule boleh ber-kutip apa pun
+                # atau ditulis beberapa baris).
+                $blockText = $b.ParseLines -join "`n"
+                $hasRule   = $blockText -match '(?m)^\s*rule:'
+                if ($b.Commented -and -not $hasRule) { continue }
+                $rule = $null
+                if ($hasRule) { $rule = $blockText }
+
+                $service = $null
                 foreach ($l in $b.ParseLines) {
-                    if ($null -eq $rule -and $l -match '^\s*rule:\s*["''](.*)["'']\s*$') { $rule = $Matches[1] }
-                    if ($null -eq $service -and $l -match '^\s*service:\s*["'']?([^"''\s]+)["'']?\s*$') { $service = $Matches[1] }
+                    if ($l -match '^\s*service:\s*["'']?([^"''\s#]+)["'']?\s*(?:#.*)?$') { $service = $Matches[1]; break }
                 }
-                # Komentar biasa (bukan router) diabaikan
-                if ($b.Commented -and -not $rule) { continue }
 
                 $result.Routers.Add([PSCustomObject]@{
                     Name      = $b.Name
@@ -267,7 +310,7 @@ function Read-RouterFile {
         elseif ($sectionName -eq 'services') {
             $blocks = Get-ChildBlocks -Lines $Lines -Start ($i + 1) -End $sectionEnd
             if ($null -eq $blocks) {
-                $result.Reason = "isi 'services' tidak bisa dibaca"
+                $result.Reason = "isi 'services' tidak bisa dibaca ($script:ChildError)"
                 return $result
             }
             foreach ($b in $blocks) { $result.Services[$b.Name] = $b.Lines }
@@ -280,6 +323,7 @@ function Read-RouterFile {
         $i = $sectionEnd
     }
 
+    $result.DroppedComments = $script:DroppedComments
     $result.Ok = $true
     return $result
 }
@@ -408,7 +452,17 @@ foreach ($file in $files) {
 
     $eol   = if ($text.Contains("`r`n")) { "`r`n" } else { "`n" }
     $lines = [string[]]($text -split "`r?`n")
+    if ($lines.Count -gt 2000) { Write-Host "  membaca $(Get-RelativePath $file.FullName) ($($lines.Count) baris)..." -ForegroundColor DarkGray }
     $info  = Read-RouterFile -Lines $lines
+
+    if ($info.Ok -and $info.DroppedComments -gt 0) {
+        Write-Warning "[$(Get-RelativePath $file.FullName)] $($info.DroppedComments) baris komentar biasa (bukan router) di antara router tidak ikut dipindahkan."
+    }
+
+    # Baris aneh yang berhasil diselamatkan (maks. 5 per file agar layar tidak penuh)
+    foreach ($w in @($info.Warnings | Select-Object -First 5)) {
+        Write-Warning "[$(Get-RelativePath $file.FullName)] $w"
+    }
 
     $p = [PSCustomObject]@{
         Path      = $file.FullName

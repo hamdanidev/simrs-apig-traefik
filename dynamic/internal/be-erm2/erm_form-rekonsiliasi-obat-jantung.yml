@@ -1,0 +1,89 @@
+http:
+  routers:
+
+    v1_erm_form-rekonsiliasi-obat-jantung_get-list_GET:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_form-rekonsiliasi-obat-jantung_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_form-rekonsiliasi-obat-jantung_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_form-rekonsiliasi-obat-jantung_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_form-rekonsiliasi-obat-jantung_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_form-rekonsiliasi-obat-jantung_rekonsiliasi-obat-transfer_get-with_GET:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/rekonsiliasi-obat-transfer/get-with`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_form-rekonsiliasi-obat-jantung_rekonsiliasi-obat-transfer_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/rekonsiliasi-obat-transfer/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_form-rekonsiliasi-obat-jantung_rekonsiliasi-obat-transfer_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/rekonsiliasi-obat-transfer/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_form-rekonsiliasi-obat-jantung_rekonsiliasi-obat-transfer_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/form-rekonsiliasi-obat-jantung/rekonsiliasi-obat-transfer/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

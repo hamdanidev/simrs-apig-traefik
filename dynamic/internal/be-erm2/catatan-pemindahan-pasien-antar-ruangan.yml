@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_catatan-pemindahan-pasien-antar-ruangan_get-list_GET:
+      rule: "PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_catatan-pemindahan-pasien-antar-ruangan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_catatan-pemindahan-pasien-antar-ruangan_create_POST:
+      rule: "PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_catatan-pemindahan-pasien-antar-ruangan_update_PUT:
+      rule: "PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_catatan-pemindahan-pasien-antar-ruangan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/catatan-pemindahan-pasien-antar-ruangan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

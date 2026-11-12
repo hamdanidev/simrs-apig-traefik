@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_order-obat_getlist-non-racikan-by-nomor-resep_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-non-racikan-by-nomor-resep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

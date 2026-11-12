@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_order-lab-pk_send_POST:
+      rule: "PathPrefix(`/v1.0/order-lab-pk/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

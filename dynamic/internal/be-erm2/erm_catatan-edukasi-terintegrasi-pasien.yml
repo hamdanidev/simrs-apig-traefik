@@ -1,0 +1,89 @@
+http:
+  routers:
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_get-list_GET:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_create_POST:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_update_PUT:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_topik-edukasi_create-topik_POST:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/topik-edukasi/create-topik`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_topik-edukasi_update-topik_PUT:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/topik-edukasi/update-topik`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_topik-edukasi_delete-topik_DELETE:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/topik-edukasi/delete-topik/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_catatan-edukasi-terintegrasi-pasien_topik-edukasi_get-with-topik_GET:
+      rule: "PathPrefix(`/v1.0/erm/catatan-edukasi-terintegrasi-pasien/topik-edukasi/get-with-topik`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

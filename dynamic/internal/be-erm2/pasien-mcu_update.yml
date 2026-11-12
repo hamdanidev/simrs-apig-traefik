@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_pasien-mcu_update_status_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-mcu/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-mcu_update_status-khusus_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-mcu/update/status-khusus/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    # duplicat_v1_pasien-mcu_update_status-khusus_PUT:
+    #   rule: "PathPrefix(`/v1.0/pasien-mcu/update/status-khusus/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

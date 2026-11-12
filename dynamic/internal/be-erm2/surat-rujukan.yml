@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_surat-rujukan_create_POST:
+      rule: "PathPrefix(`/v1.0/surat-rujukan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-rujukan_update_PUT:
+      rule: "PathPrefix(`/v1.0/surat-rujukan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-rujukan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/surat-rujukan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_pengkajiananak_create_POST:
+      rule: "PathPrefix(`/v1.0/pengkajiananak/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengkajiananak_update_PUT:
+      rule: "PathPrefix(`/v1.0/pengkajiananak/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengkajiananak_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pengkajiananak/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

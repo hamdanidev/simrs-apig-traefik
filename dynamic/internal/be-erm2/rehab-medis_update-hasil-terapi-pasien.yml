@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_rehab-medis_update-hasil-terapi-pasien_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-hasil-terapi-pasien`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

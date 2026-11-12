@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_pasien-rawat-inap_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-inap_getlist_selesai-layanan_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-inap/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-inap_getlist_by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-inap/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'
