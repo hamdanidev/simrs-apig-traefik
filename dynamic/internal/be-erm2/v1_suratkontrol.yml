@@ -1,0 +1,62 @@
+http:
+  routers:
+
+    v1_suratkontrol_getlist_GET:
+      rule: "PathPrefix(`/v1.0/suratkontrol/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_suratkontrol_getbynosuratkontrol_GET:
+      rule: "PathPrefix(`/v1.0/suratkontrol/getbynosuratkontrol/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_suratkontrol_create_POST:
+      rule: "PathPrefix(`/v1.0/suratkontrol/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_suratkontrol_update_PUT:
+      rule: "PathPrefix(`/v1.0/suratkontrol/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_suratkontrol_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/suratkontrol/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_suratkontrol_getlist-all_GET:
+      rule: "PathPrefix(`/v1.0/suratkontrol/getlist-all`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

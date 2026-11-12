@@ -1,0 +1,80 @@
+http:
+  routers:
+
+    v1_riwayat-rm_getlist_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_riwayat-rm_getbynorm_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynorm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_riwayat-rm_get-by-no-rm-dan-no-bpjs_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/get-by-no-rm-dan-no-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_riwayat-rm_getbynoidentitas_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynoidentitas/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_riwayat-rm_getbynopesertabpjs_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynopesertabpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_riwayat-rm_getbynamapasiendantanggallahir_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynamapasiendantanggallahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_riwayat-rm_update_PUT:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_riwayat-rm_create_POST:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

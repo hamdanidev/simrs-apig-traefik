@@ -1,0 +1,80 @@
+http:
+  routers:
+
+    v1_order-lab-mi_create-order-lab-items_POST:
+      rule: "PathPrefix(`/v1.0/order-lab-mi/create-order-lab-items`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-lab-mi_create-order_POST:
+      rule: "PathPrefix(`/v1.0/order-lab-mi/create-order`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-lab-mi_create-tindakan-lab_POST:
+      rule: "PathPrefix(`/v1.0/order-lab-mi/create-tindakan-lab`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-lab-mi_send_POST:
+      rule: "PathPrefix(`/v1.0/order-lab-mi/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-lab-mi_getlist-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/order-lab-mi/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-lab-mi_getlist-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/order-lab-mi/getlist-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-lab-mi_update-order_PUT:
+      rule: "PathPrefix(`/v1.0/order-lab-mi/update-order`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-lab-mi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/order-lab-mi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

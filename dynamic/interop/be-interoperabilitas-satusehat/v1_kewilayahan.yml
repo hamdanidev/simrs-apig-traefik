@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_kewilayahan_get-provinces_POST:
+      rule: "PathPrefix(`/v1.0/kewilayahan/get-provinces`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kewilayahan_get-cities_POST:
+      rule: "PathPrefix(`/v1.0/kewilayahan/get-cities`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kewilayahan_get-districts_POST:
+      rule: "PathPrefix(`/v1.0/kewilayahan/get-districts`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kewilayahan_get-subdistricts_POST:
+      rule: "PathPrefix(`/v1.0/kewilayahan/get-subdistricts`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-satu-sehat-interop:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SATU_SEHAT_INTEROP_URL" }}'

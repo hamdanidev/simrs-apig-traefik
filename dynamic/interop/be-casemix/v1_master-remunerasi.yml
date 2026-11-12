@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_master-remunerasi_getlist_GET:
+      rule: "PathPrefix(`/v1.0/master-remunerasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

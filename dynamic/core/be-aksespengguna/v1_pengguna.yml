@@ -1,0 +1,132 @@
+http:
+  routers:
+
+    v1_pengguna_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pengguna/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_getlistbykdgroup_GET:
+      rule: "PathPrefix(`/v1.0/pengguna/getlistbykdgroup/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/pengguna/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_create_POST:
+      rule: "PathPrefix(`/v1.0/pengguna/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_update_PUT:
+      rule: "PathPrefix(`/v1.0/pengguna/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_updatepassword_PUT:
+      rule: "PathPrefix(`/v1.0/pengguna/updatepassword`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_aktivasibyid_PUT:
+      rule: "PathPrefix(`/v1.0/pengguna/aktivasibyid/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_login_POST:
+      rule: "PathPrefix(`/v1.0/pengguna/login`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pengguna_resetbyemail_POST:
+      rule: "PathPrefix(`/v1.0/pengguna/resetbyemail`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pengguna_resetpassword_POST:
+      rule: "PathPrefix(`/v1.0/pengguna/resetpassword`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_logout_POST:
+      rule: "PathPrefix(`/v1.0/pengguna/logout`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_validate-password_POST:
+      rule: "PathPrefix(`/v1.0/pengguna/validate-password`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/pengguna/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pengguna_updatefoto_PUT:
+      rule: "PathPrefix(`/v1.0/pengguna/updatefoto`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'
