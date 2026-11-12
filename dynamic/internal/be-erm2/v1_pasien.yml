@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_pasien_update-kirim-casemix_PUT:
+      rule: "PathPrefix(`/v1.0/pasien/update-kirim-casemix/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien_batal-kirim-casemix_PUT:
+      rule: "PathPrefix(`/v1.0/pasien/batal-kirim-casemix/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien_get-status_GET:
+      rule: "PathPrefix(`/v1.0/pasien/get-status/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien_update-kirim-casemix-by-no-registrasi_PUT:
+      rule: "PathPrefix(`/v1.0/pasien/update-kirim-casemix-by-no-registrasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien_get-by-no-registrasi-all_GET:
+      rule: "PathPrefix(`/v1.0/pasien/get-by-no-registrasi-all/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

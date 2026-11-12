@@ -1,0 +1,116 @@
+http:
+  routers:
+
+    v1_pasien-kemoterapi_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_getlist_selesai-layanan_GET:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_getlist_by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_update_status_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_getlist-all_GET:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/getlist-all`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_buka-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/buka-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_batal-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/batal-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_selesai-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/selesai-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_count_GET:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/count`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_getlist-all-group-by-sep_GET:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/getlist-all-group-by-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_update-status-billing_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-kemoterapi_count-coding_GET:
+      rule: "PathPrefix(`/v1.0/pasien-kemoterapi/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

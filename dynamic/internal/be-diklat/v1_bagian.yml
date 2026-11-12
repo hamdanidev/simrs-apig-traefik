@@ -1,0 +1,928 @@
+http:
+  routers:
+
+    v1_bagian_bed-side-theaching_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_bed-side-theaching_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_bed-side-theaching_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_bed-side-theaching_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_bed-side-theaching_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/bed-side-theaching/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-base-disscussion_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-base-disscussion_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-base-disscussion_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-base-disscussion_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-base-disscussion_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/case-base-disscussion/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-report_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-report_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-report_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-report_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_case-report_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/case-report/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbd_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbd_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbd_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbd_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbd_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/cbd/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbt_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbt_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbt_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbt_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_cbt_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/cbt/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-skill_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-skill_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-skill_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-skill_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-skill_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-skill/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_dops_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/dops/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_dops_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/dops/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_dops_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/dops/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_dops_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/dops/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_dops_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/dops/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/etika/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/etika/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/etika/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/etika/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/etika/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-jaga_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-jaga_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-jaga_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-jaga_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-jaga_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-jaga/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-kegiatan-poliklinik_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-kegiatan-poliklinik_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-kegiatan-poliklinik_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-kegiatan-poliklinik_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_laporan-kegiatan-poliklinik_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/laporan-kegiatan-poliklinik/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_manajemen-kasus_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_manajemen-kasus_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_manajemen-kasus_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_manajemen-kasus_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_manajemen-kasus_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/manajemen-kasus/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_mini-cex_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_mini-cex_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_mini-cex_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_mini-cex_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_mini-cex_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/mini-cex/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_osce_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/osce/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_osce_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/osce/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_osce_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/osce/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_osce_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/osce/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_osce_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/osce/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_post-test_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_post-test_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_post-test_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_post-test_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_post-test_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/post-test/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_pre-test_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_pre-test_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_pre-test_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_pre-test_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_pre-test_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/pre-test/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_refleksi-kasus_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_refleksi-kasus_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_refleksi-kasus_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_refleksi-kasus_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_refleksi-kasus_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/refleksi-kasus/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_ronde_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_ronde_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_ronde_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_ronde_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_ronde_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/ronde/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-akhir_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-akhir_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-akhir_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-akhir_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-akhir_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-akhir/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tutorial-klinik_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tutorial-klinik_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tutorial-klinik_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tutorial-klinik_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tutorial-klinik_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/tutorial-klinik/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

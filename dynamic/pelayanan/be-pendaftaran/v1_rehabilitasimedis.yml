@@ -1,0 +1,62 @@
+http:
+  routers:
+
+    v1_rehabilitasimedis_jenispelayanan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/rehabilitasimedis/jenispelayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehabilitasimedis_jenispelayanan_create_POST:
+      rule: "PathPrefix(`/v1.0/rehabilitasimedis/jenispelayanan/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehabilitasimedis_jenispelayanan_update_PUT:
+      rule: "PathPrefix(`/v1.0/rehabilitasimedis/jenispelayanan/update`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehabilitasimedis_jenispelayanan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/rehabilitasimedis/jenispelayanan/delete/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehabilitasimedis_jenispelayanan_getbyid_GET:
+      rule: "PathPrefix(`/v1.0/rehabilitasimedis/jenispelayanan/getbyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehabilitasimedis_jenispelayanan_getbyrehabilitasimedis_GET:
+      rule: "PathPrefix(`/v1.0/rehabilitasimedis/jenispelayanan/getbyrehabilitasimedis/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

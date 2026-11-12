@@ -1,0 +1,272 @@
+http:
+  routers:
+
+    v1_magang_kegiatan-magang_getlist-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_kegiatan-magang_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_kegiatan-magang_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_kegiatan-magang_create_POST:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_kegiatan-magang_update_PUT:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_kegiatan-magang_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_kegiatan-magang_update-kirim-kasir_PUT:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_kegiatan-magang_update-status-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_kegiatan-magang_update-bukti-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/magang/kegiatan-magang/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_magang_getlist_GET:
+      rule: "PathPrefix(`/v1.0/magang/magang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_magang_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/magang/magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_magang_create_POST:
+      rule: "PathPrefix(`/v1.0/magang/magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_magang_update_PUT:
+      rule: "PathPrefix(`/v1.0/magang/magang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_magang_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/magang/magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_peserta-magang_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_peserta-magang_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_peserta-magang_create_POST:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_peserta-magang_update_PUT:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_peserta-magang_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/magang/peserta-magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_petugas-magang_getlist_GET:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_petugas-magang_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_petugas-magang_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_petugas-magang_get-by-id-kegiatan-magang_GET:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/get-by-id-kegiatan-magang/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_petugas-magang_create_POST:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_petugas-magang_update_PUT:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_petugas-magang_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/magang/petugas-magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_tindakan-magang_getlist_GET:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_tindakan-magang_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_tindakan-magang_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_tindakan-magang_get-by-id-kegiatan-magang_GET:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/get-by-id-kegiatan-magang/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_tindakan-magang_create_POST:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_tindakan-magang_update_PUT:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_magang_tindakan-magang_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/magang/tindakan-magang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

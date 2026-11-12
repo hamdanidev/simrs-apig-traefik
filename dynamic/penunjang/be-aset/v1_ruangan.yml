@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_ruangan_kamar_getlist_GET:
+      rule: "PathPrefix(`/v1.0/ruangan/kamar/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ruangan_kamar_getlistbykdruangan_GET:
+      rule: "PathPrefix(`/v1.0/ruangan/kamar/getlistbykdruangan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ruangan_kamar_create_POST:
+      rule: "PathPrefix(`/v1.0/ruangan/kamar/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ruangan_kamar_update_PUT:
+      rule: "PathPrefix(`/v1.0/ruangan/kamar/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ruangan_kamar_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/ruangan/kamar/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aset:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ASET_URL" }}' # IP Server Prod

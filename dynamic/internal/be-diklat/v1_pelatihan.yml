@@ -1,0 +1,304 @@
+http:
+  routers:
+
+    v1_pelatihan_kegiatan-pelatihan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_kegiatan-pelatihan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_kegiatan-pelatihan_create_POST:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_kegiatan-pelatihan_update_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_kegiatan-pelatihan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_kegiatan-pelatihan_update-kirim-kasir_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_kegiatan-pelatihan_update-status-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_kegiatan-pelatihan_update-bukti-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/kegiatan-pelatihan/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_create_POST:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_update_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_create_POST:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_update_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_update-kirim-kasir_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_update-bukti-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_update-status-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_petugas-pelatihan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_petugas-pelatihan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_petugas-pelatihan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_petugas-pelatihan_get-by-id-kegiatan-pelatihan_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/get-by-id-kegiatan-pelatihan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_petugas-pelatihan_create_POST:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_petugas-pelatihan_update_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_petugas-pelatihan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pelatihan/petugas-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_tindakan-pelatihan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_tindakan-pelatihan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_tindakan-pelatihan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_tindakan-pelatihan_get-by-id-kegiatan-pelatihan_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id-kegiatan-pelatihan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_tindakan-pelatihan_create_POST:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_tindakan-pelatihan_update_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_tindakan-pelatihan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_tindakan-pelatihan_get-by-id-peserta_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id-peserta/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    # duplicat_v1_pelatihan_tindakan-pelatihan_get-by-id-peserta_GET:
+    #   rule: "PathPrefix(`/v1.0/pelatihan/tindakan-pelatihan/get-by-id-peserta/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-diklat
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

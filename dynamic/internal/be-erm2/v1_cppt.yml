@@ -1,0 +1,395 @@
+http:
+  routers:
+
+    v1_cppt_get-list-all_GET:
+      rule: "PathPrefix(`/v1.0/cppt/get-list-all`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/cppt/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_get-list-by_GET:
+      rule: "PathPrefix(`/v1.0/cppt/get-list-by`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_create_POST:
+      rule: "PathPrefix(`/v1.0/cppt/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_deletebyid_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_sendtormbyid_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/sendtormbyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_riwayat-cppt_GET:
+      rule: "PathPrefix(`/v1.0/cppt/riwayat-cppt/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-evaluasi_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-evaluasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-diagnosa-primer_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-diagnosa-primer`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_create-diagnosa-sekunder_POST:
+      rule: "PathPrefix(`/v1.0/cppt/create-diagnosa-sekunder`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_create-diagnosa-sekunder-perawat_POST:
+      rule: "PathPrefix(`/v1.0/cppt/create-diagnosa-sekunder-perawat`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_create-tindakan-dokter_POST:
+      rule: "PathPrefix(`/v1.0/cppt/create-tindakan-dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_create-tindakan-perawat_POST:
+      rule: "PathPrefix(`/v1.0/cppt/create-tindakan-perawat`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_delete-diagnosa-sekunder_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/delete-diagnosa-sekunder/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_delete-diagnosa-sekunder-perawat_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/delete-diagnosa-sekunder-perawat/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_delete-tindakan-dokter_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/delete-tindakan-dokter/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_delete-tindakan-perawat_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/delete-tindakan-perawat/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_list-diagnosa-tindakan-perawat_GET:
+      rule: "PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-perawat/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_list-diagnosa-tindakan-dokter_GET:
+      rule: "PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-dokter/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-tindakan-dokter_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-tindakan-dokter`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_list-diagnosa-tindakan-perawat-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-perawat-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_list-diagnosa-tindakan-dokter-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-dokter-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_list-diagnosa-tindakan-dokter-rekam-medik-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-dokter-rekam-medik-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-tindakan-perawat_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-tindakan-perawat`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-diagnosa-sekunder-perawat_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-diagnosa-sekunder-perawat`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-diagnosa-sekunder_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-diagnosa-sekunder`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_create-diagnosa-sekunder-rekam-medik_POST:
+      rule: "PathPrefix(`/v1.0/cppt/create-diagnosa-sekunder-rekam-medik`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_create-tindakan-dokter-rekam-medik_POST:
+      rule: "PathPrefix(`/v1.0/cppt/create-tindakan-dokter-rekam-medik`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-tindakan-dokter-rekam-medik_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-tindakan-dokter-rekam-medik`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-diagnosa-sekunder-rekam-medik_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-diagnosa-sekunder-rekam-medik`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_list-diagnosa-tindakan-dokter-rekam-medik_GET:
+      rule: "PathPrefix(`/v1.0/cppt/list-diagnosa-tindakan-dokter-rekam-medik/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_delete-tindakan-dokter-rekam-medik_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/delete-tindakan-dokter-rekam-medik/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_delete-diagnosa-sekunder-rekam-medik_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/delete-diagnosa-sekunder-rekam-medik/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_update-by-no-order-operasi_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/update-by-no-order-operasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_deskripsi-tindakan_create_POST:
+      rule: "PathPrefix(`/v1.0/cppt/deskripsi-tindakan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_deskripsi-tindakan_update_PUT:
+      rule: "PathPrefix(`/v1.0/cppt/deskripsi-tindakan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_deskripsi-tindakan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/cppt/deskripsi-tindakan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_deskripsi-tindakan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/cppt/deskripsi-tindakan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_deskripsi-tindakan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/cppt/deskripsi-tindakan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_deskripsi-tindakan_get-by-id-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/cppt/deskripsi-tindakan/get-by-id-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_create-khusus_POST:
+      rule: "PathPrefix(`/v1.0/cppt/create-khusus`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cppt_get-list-by-khusus_GET:
+      rule: "PathPrefix(`/v1.0/cppt/get-list-by-khusus`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

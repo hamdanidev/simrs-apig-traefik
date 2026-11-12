@@ -1,0 +1,107 @@
+http:
+  routers:
+
+    v1_pasien-cathlab_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_getlist-pasien-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/getlist-pasien-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_get-range_POST:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/get-range`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_update-operasi_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/update-operasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_update-selesai_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/update-selesai/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_update-dokter-operator_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/update-dokter-operator`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_update-anestesi_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/update-anestesi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_get-cathlab-by-tanggal_GET:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/get-cathlab-by-tanggal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_get-operasi-by-tahun-bulan_GET:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/get-operasi-by-tahun-bulan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-cathlab_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/pasien-cathlab/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

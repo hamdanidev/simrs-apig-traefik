@@ -1,0 +1,62 @@
+http:
+  routers:
+
+    v1_kecamatan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/kecamatan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kecamatan_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/kecamatan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kecamatan_getbykdkabkot_GET:
+      rule: "PathPrefix(`/v1.0/kecamatan/getbykdkabkot/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kecamatan_create_POST:
+      rule: "PathPrefix(`/v1.0/kecamatan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kecamatan_update_PUT:
+      rule: "PathPrefix(`/v1.0/kecamatan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kecamatan_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/kecamatan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

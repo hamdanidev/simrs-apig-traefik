@@ -1,0 +1,152 @@
+http:
+  routers:
+
+    v1_paketmcu_getlist_GET:
+      rule: "PathPrefix(`/v1.0/paketmcu/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/paketmcu/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_create_POST:
+      rule: "PathPrefix(`/v1.0/paketmcu/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_update_PUT:
+      rule: "PathPrefix(`/v1.0/paketmcu/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/paketmcu/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_getall_GET:
+      rule: "PathPrefix(`/v1.0/paketmcu/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_getbynama_GET:
+      rule: "PathPrefix(`/v1.0/paketmcu/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_items_get-list_GET:
+      rule: "PathPrefix(`/v1.0/paketmcu/items/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_items_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/paketmcu/items/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_items_create_POST:
+      rule: "PathPrefix(`/v1.0/paketmcu/items/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_items_update_PUT:
+      rule: "PathPrefix(`/v1.0/paketmcu/items/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_items_delete-by-kd_DELETE:
+      rule: "PathPrefix(`/v1.0/paketmcu/items/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_pelayanan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_pelayanan_getlistbykdpaketmcu_GET:
+      rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/getlistbykdpaketmcu/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_pelayanan_create_POST:
+      rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_paketmcu_pelayanan_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/paketmcu/pelayanan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_JASA_PELAYANAN_URL" }}'

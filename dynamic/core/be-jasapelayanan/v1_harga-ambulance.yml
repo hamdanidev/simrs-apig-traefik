@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_harga-ambulance_get-list_GET:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_harga-ambulance_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-basic-auth"
+
+    v1_harga-ambulance_create_POST:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_harga-ambulance_update_PUT:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_harga-ambulance_delete-by-kd_DELETE:
+      rule: "PathPrefix(`/v1.0/harga-ambulance/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_JASA_PELAYANAN_URL" }}'

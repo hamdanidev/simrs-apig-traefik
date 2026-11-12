@@ -3,32 +3,48 @@
     Rapihkan nama router Traefik + tangani tabrakan nama secara otomatis.
 
 .DESCRIPTION
-    Scan semua .yml rekursif dari $Root. Untuk setiap router:
-      1. Hitung nama dasar dari <version>_<segmen-path>..._<METHOD>.
-      2. Kelompokkan berdasarkan nama dasar.
-      3. Untuk grup yang berisi >1 item (baik rule identik maupun rule berbeda
-         yang menghasilkan nama sama), beri prefix:
+    Scan semua .yml rekursif dari $Root. Untuk setiap router di dalam "routers:":
+      1. Ambil path dari rule: PathPrefix(`...`) ATAU Path(`...`) (path pertama).
+      2. Ambil method dari Method(`...`) (method pertama selain OPTIONS).
+         Jika rule tidak punya Method, dipakai label -NoMethodLabel (default ANY).
+      3. Nama dasar = <version>_<segmen-path>..._<METHOD>
+            /v1.0/pasien-casemix/stats_claim + GET -> v1_pasien-casemix_stats_claim_GET
+      4. Kelompokkan berdasarkan nama dasar. Untuk grup >1 item:
             item ke-1 -> nama bersih
             item ke-2 -> "duplicat_<ver>_<nama>"
             item ke-3 -> "duplicat-2_<ver>_<nama>"
             item ke-4 -> "duplicat-3_<ver>_<nama>"
-         Urutan ditentukan oleh (nama file, nomor baris) -> deterministik.
+         Urutan: (path file, nomor baris) -> deterministik.
+
+    PERBAIKAN dibanding versi sebelumnya (penyebab router "terlewat"):
+      - Rule dengan Path(`...`) (bukan hanya PathPrefix) sekarang dikenali.
+      - Nama router yang mengandung titik / ber-kutip / ada komentar di ujung
+        (mis. stok-gudang.konsinyasi_1:) sekarang dikenali.
+      - Baris "rule:" tidak harus tepat di bawah nama router; boleh di mana saja
+        di dalam blok router, boleh ber-kutip tunggal/ganda, boleh multi-baris (>- / |).
+      - Hanya blok di dalam "routers:" yang diproses (tidak salah baca section lain).
+      - Rule tanpa Method tidak dilewati lagi (dapat label -NoMethodLabel).
+      - Router yang tetap tidak bisa diproses DILAPORKAN di akhir beserta alasannya.
+      - Backup .bak tidak menimpa backup lama (backup tertua dipertahankan).
 
     Method TIDAK diubah besar/kecilnya.
-    Rule, service, entryPoints, middlewares tidak disentuh.
+    Rule, service, entryPoints, middlewares tidak disentuh (hanya baris nama router).
 
-    CATATAN PERBAIKAN:
-      - Slice array segmen dipaksa tetap array dengan @(...), supaya path
-        dengan 1 segmen setelah versi (mis. /v1.0/get-jadwal/) tidak berubah
-        jadi string dan menghasilkan nama salah seperti "v1_g_GET".
-      - Perbandingan nama lama vs baru memakai -ieq (abaikan huruf besar/kecil),
-        sehingga "V1_xxx" tidak dianggap perlu diganti menjadi "v1_xxx".
+.EXAMPLE
+    .\Rename-Routers.ps1 -WhatIf
+    .\Rename-Routers.ps1 -Backup
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Position = 0)]
     [string]$Root = $PSScriptRoot,
+
+    # Versi yang dipakai jika path tidak diawali v1.0 / v2.0 dst.
+    [string]$DefaultVersion = 'v1',
+
+    # Pengganti METHOD jika rule tidak punya Method(`...`)
+    [string]$NoMethodLabel = 'ANY',
 
     [switch]$WhatIf,
     [switch]$Backup
@@ -51,32 +67,65 @@ Write-Host "File .yml   : $($files.Count)" -ForegroundColor Cyan
 Write-Host ("Mode        : " + $(if ($WhatIf) { 'WHATIF' } else { 'APPLY' })) -ForegroundColor Cyan
 Write-Host ''
 
-# ---------- Helper: nama dasar ----------
+# =====================================================================
+# Helper
+# =====================================================================
+
+# Path relatif terhadap $Root (untuk tampilan).
+function Get-RelativePath {
+    param([string]$Path)
+    if ($Path.StartsWith($Root, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $Path.Substring($Root.Length).TrimStart('\', '/')
+    }
+    return $Path
+}
+
+# Jumlah spasi di awal baris.
+function Get-IndentLength {
+    param([string]$Line)
+    return ($Line.Length - $Line.TrimStart().Length)
+}
+
+# Ambil path pertama dari rule: PathPrefix(`...`) atau Path(`...`)
+function Get-RulePath {
+    param([string]$RuleText)
+    $m = [regex]::Match($RuleText, '\b(?:PathPrefix|Path)\(\s*`([^`]+)`')
+    if ($m.Success) { return $m.Groups[1].Value }
+    return $null
+}
+
+# Ambil method pertama selain OPTIONS (jika hanya OPTIONS, pakai OPTIONS). $null jika tidak ada.
+function Get-RuleMethod {
+    param([string]$RuleText)
+    $methods = [System.Collections.Generic.List[string]]::new()
+    foreach ($m in [regex]::Matches($RuleText, '\bMethod\(([^)]*)\)')) {
+        foreach ($v in [regex]::Matches($m.Groups[1].Value, '`([A-Za-z]+)`')) {
+            $methods.Add($v.Groups[1].Value)
+        }
+    }
+    if ($methods.Count -eq 0) { return $null }
+    foreach ($x in $methods) { if ($x -ine 'OPTIONS') { return $x } }
+    return $methods[0]
+}
+
 # Membentuk nama router dari path dan method.
 # Contoh: /v1.0/get-jadwal-pegawai-lengkap/ + GET -> v1_get-jadwal-pegawai-lengkap_GET
 function Convert-ToRouterName {
     param([string]$Path, [string]$Method)
 
-    # Pecah path jadi segmen, buang segmen kosong. @() menjamin hasilnya array.
+    # @() menjamin hasilnya array walau hanya 1 segmen
     $segments = @($Path -split '/' | Where-Object { $_ -ne '' })
     if ($segments.Count -eq 0) { return $null }
 
-    # Jika segmen pertama berupa versi (mis. v1.0), simpan sebagai "v1" lalu buang dari daftar
-    $versionPart = 'v1'
+    $versionPart = $DefaultVersion
     if ($segments[0] -match '^v(\d+)\.\d+$') {
         $versionPart = "v$($Matches[1])"
-
-        # PERBAIKAN: assign DI DALAM blok if/else (bukan assign hasil "if"),
-        # karena hasil "if" otomatis di-unroll: array 1 elemen berubah jadi string.
-        if ($segments.Count -gt 1) {
-            $segments = @($segments[1..($segments.Count - 1)])
-        }
-        else {
-            $segments = @()
-        }
+        # assign di dalam blok if/else agar array 1 elemen tidak berubah jadi string
+        if ($segments.Count -gt 1) { $segments = @($segments[1..($segments.Count - 1)]) }
+        else { $segments = @() }
     }
 
-    # Buang segmen parameter (diawali ':') dan segmen terakhir yang berupa angka saja
+    # Buang segmen parameter (diawali ':') dan segmen terakhir yang hanya angka
     $kept = @()
     for ($i = 0; $i -lt $segments.Count; $i++) {
         $seg = $segments[$i]
@@ -86,13 +135,21 @@ function Convert-ToRouterName {
     }
     if ($kept.Count -eq 0) { return $null }
 
-    return "$versionPart`_$($kept -join '_')_$Method"
+    $name = "${versionPart}_$($kept -join '_')_$Method"
+    # Karakter di luar huruf/angka/_/-/. diganti '-'
+    return ($name -replace '[^A-Za-z0-9._\-]', '-')
 }
 
-# ---------- Baca semua file ----------
-# Menyimpan isi tiap file (baris, jenis line-ending, BOM) dan mendaftar semua router yang ditemukan.
+# Pola baris nama router: indent, kutip (opsional), nama, komentar (opsional).
+# Mendukung titik di nama (stok-gudang.konsinyasi_1), nama ber-kutip, dan komentar di ujung.
+$NamePattern = '^(\s*)(["'']?)([^\s#:''"][^:#''"]*?)\2\s*:\s*(#.*)?$'
+
+# =====================================================================
+# Baca semua file & daftar router
+# =====================================================================
 $fileContents = @{}
 $items        = [System.Collections.Generic.List[object]]::new()
+$skipped      = [System.Collections.Generic.List[object]]::new()
 
 foreach ($file in $files) {
     $bytes  = [System.IO.File]::ReadAllBytes($file.FullName)
@@ -105,85 +162,155 @@ foreach ($file in $files) {
 
     $fileContents[$file.FullName] = @{ Lines = $lines; Eol = $eol; HasBom = $hasBom }
 
+    $inRouters     = $false
+    $routersIndent = -1
+    $childIndent   = -1
+
     for ($i = 0; $i -lt $lines.Count; $i++) {
-        # Cari baris nama router, contoh: "    nama_router:"
-        if ($lines[$i] -notmatch '^(\s+)([A-Za-z0-9_\-]+):\s*$') { continue }
-        $indent  = $Matches[1]
-        $oldName = $Matches[2]
+        $line = $lines[$i]
+        $t    = $line.Trim()
+        if ($t -eq '' -or $t.StartsWith('#') -or $t -eq '---') { continue }
+        $ind = Get-IndentLength $line
 
-        # Cari baris tidak kosong berikutnya (harus berisi rule)
-        $ruleIdx = -1
-        for ($j = $i + 1; $j -lt $lines.Count; $j++) {
-            if ($lines[$j].Trim() -ne '') { $ruleIdx = $j; break }
+        # Keluar dari section routers jika indentasi kembali ke level routers: atau lebih kiri
+        if ($inRouters) {
+            if ($ind -le $routersIndent) { $inRouters = $false }
+            elseif ($childIndent -lt 0)  { $childIndent = $ind }
         }
-        if ($ruleIdx -lt 0) { continue }
-        if ($lines[$ruleIdx] -notmatch 'rule:\s*"(.*)"\s*$') { continue }
-        $ruleContent = $Matches[1]
 
-        # Ambil path dan method dari rule
-        if ($ruleContent -notmatch 'PathPrefix\(`([^`]+)`\)') { continue }
-        $path = $Matches[1]
-        if ($ruleContent -notmatch 'Method\(`(\w+)`\)') { continue }
-        $method = $Matches[1]
+        if (-not $inRouters) {
+            if ($line -match '^\s*routers:\s*(?:#.*)?$') {
+                $inRouters     = $true
+                $routersIndent = $ind
+                $childIndent   = -1
+            }
+            continue
+        }
+
+        # Hanya baris pada level nama router yang diproses
+        if ($ind -ne $childIndent) { continue }
+
+        if ($line -notmatch $NamePattern) {
+            $skipped.Add([PSCustomObject]@{ File = $file.FullName; Line = $i + 1; Name = $t; Reason = 'baris nama router tidak dikenali' })
+            continue
+        }
+        $indent  = $Matches[1]
+        $oldName = $Matches[3].Trim()
+        $comment = $Matches[4]
+
+        # Cari akhir blok router ini
+        $end = $i + 1
+        while ($end -lt $lines.Count) {
+            $l  = $lines[$end]
+            $lt = $l.Trim()
+            if ($lt -ne '' -and -not $lt.StartsWith('#')) {
+                if ((Get-IndentLength $l) -le $childIndent) { break }
+            }
+            $end++
+        }
+
+        # Cari "rule:" di dalam blok (boleh multi-baris)
+        $ruleText = $null
+        for ($j = $i + 1; $j -lt $end; $j++) {
+            if ($lines[$j] -match '^(\s*)rule:\s*(.*)$') {
+                $rIndent = $Matches[1].Length
+                $sb = [System.Text.StringBuilder]::new()
+                [void]$sb.Append($Matches[2])
+                for ($m = $j + 1; $m -lt $end; $m++) {
+                    $ml = $lines[$m]
+                    $mt = $ml.Trim()
+                    if ($mt -eq '' -or $mt.StartsWith('#')) { continue }
+                    if ((Get-IndentLength $ml) -le $rIndent) { break }
+                    [void]$sb.Append(' ').Append($mt)
+                }
+                $ruleText = $sb.ToString()
+                break
+            }
+        }
+
+        if ($null -eq $ruleText -or $ruleText.Trim() -eq '') {
+            $skipped.Add([PSCustomObject]@{ File = $file.FullName; Line = $i + 1; Name = $oldName; Reason = "tidak ada 'rule:'" })
+            continue
+        }
+
+        $path = Get-RulePath -RuleText $ruleText
+        if (-not $path) {
+            $skipped.Add([PSCustomObject]@{ File = $file.FullName; Line = $i + 1; Name = $oldName; Reason = 'rule tanpa Path/PathPrefix' })
+            continue
+        }
+
+        $method = Get-RuleMethod -RuleText $ruleText
+        if (-not $method) { $method = $NoMethodLabel }
 
         $items.Add([PSCustomObject]@{
-            FilePath    = $file.FullName
-            FileName    = $file.Name
-            LineIndex   = $i
-            Indent      = $indent
-            OldName     = $oldName
-            RuleContent = $ruleContent
-            Path        = $path
-            Method      = $method
-            BaseName    = $null
-            NewName     = $null
+            FilePath  = $file.FullName
+            FileName  = $file.Name
+            LineIndex = $i
+            Indent    = $indent
+            OldName   = $oldName
+            Comment   = $comment
+            Path      = $path
+            Method    = $method
+            BaseName  = $null
+            NewName   = $null
         })
     }
 }
 
-# ---------- Pass 1: hitung base name ----------
+# =====================================================================
+# Pass 1: hitung base name
+# =====================================================================
 foreach ($item in $items) {
     $item.BaseName = Convert-ToRouterName -Path $item.Path -Method $item.Method
+    if (-not $item.BaseName) {
+        $skipped.Add([PSCustomObject]@{ File = $item.FilePath; Line = $item.LineIndex + 1; Name = $item.OldName; Reason = "path '$($item.Path)' tidak menghasilkan nama" })
+    }
 }
 
-# ---------- Pass 2: group by base name & beri prefix duplikat ----------
+# =====================================================================
+# Pass 2: group by base name & beri prefix duplikat
+# =====================================================================
 $groups = $items | Where-Object { $_.BaseName } | Group-Object -Property BaseName
 
 foreach ($grp in $groups) {
-    # Urutan deterministik: file lalu line
     $ordered = @($grp.Group | Sort-Object FilePath, LineIndex)
     for ($k = 0; $k -lt $ordered.Count; $k++) {
         $it = $ordered[$k]
         if ($k -eq 0) {
-            # Item pertama memakai nama bersih
             $it.NewName = $it.BaseName
         }
         else {
-            # Pisahkan version dari base name
-            $ver = 'v1'; $rest = $it.BaseName
+            $ver = $DefaultVersion; $rest = $it.BaseName
             if ($it.BaseName -match '^(v\d+)_(.+)$') { $ver = $Matches[1]; $rest = $Matches[2] }
-            elseif ($it.Path -match '^/v(\d+)\.\d+') { $ver = "v$($Matches[1])" }
 
-            if ($k -eq 1) {
-                $it.NewName = "duplicat_${ver}_$rest"
-            }
-            else {
-                $it.NewName = "duplicat-$k`_${ver}_$rest"
-            }
+            if ($k -eq 1) { $it.NewName = "duplicat_${ver}_$rest" }
+            else          { $it.NewName = "duplicat-${k}_${ver}_$rest" }
         }
     }
 }
 
-# ---------- Tampilkan & tulis ----------
+# Peringatan: nama baru bentrok dengan router yang tidak ikut diproses
+$untouched = @{}
+foreach ($s in $skipped) { $untouched[$s.Name.ToLowerInvariant()] = $s }
+foreach ($it in $items) {
+    if ($it.NewName -and $untouched.ContainsKey($it.NewName.ToLowerInvariant())) {
+        Write-Warning "Nama baru '$($it.NewName)' sama dengan router lain yang tidak diproses (lihat laporan)."
+    }
+}
+
+# =====================================================================
+# Tampilkan & tulis
+# =====================================================================
 $byFile     = @{}
 $totalFiles = 0
 $totalRen   = 0
+$totalSame  = 0
 
 foreach ($item in $items) {
     if (-not $item.NewName) { continue }
 
-    # PERBAIKAN: -ieq = abaikan beda huruf besar/kecil (V1_xxx dianggap sama dengan v1_xxx)
-    if ($item.NewName -ieq $item.OldName) { continue }
+    # -ieq: V1_xxx dianggap sama dengan v1_xxx
+    if ($item.NewName -ieq $item.OldName) { $totalSame++; continue }
 
     if (-not $byFile.ContainsKey($item.FilePath)) {
         $byFile[$item.FilePath] = [System.Collections.Generic.List[object]]::new()
@@ -191,15 +318,16 @@ foreach ($item in $items) {
     $byFile[$item.FilePath].Add($item)
 }
 
-foreach ($fp in $byFile.Keys) {
+foreach ($fp in ($byFile.Keys | Sort-Object)) {
     $fc   = $fileContents[$fp]
     $work = [string[]]::new($fc.Lines.Count)
     [Array]::Copy($fc.Lines, $work, $fc.Lines.Count)
 
-    Write-Host "[$fp]" -ForegroundColor Cyan
+    Write-Host "[$(Get-RelativePath $fp)]" -ForegroundColor Cyan
     foreach ($chg in $byFile[$fp]) {
         Write-Host ("  {0,-50} -> {1}" -f $chg.OldName, $chg.NewName) -ForegroundColor Yellow
-        $work[$chg.LineIndex] = "$($chg.Indent)$($chg.NewName):"
+        $suffix = if ($chg.Comment) { "  $($chg.Comment)" } else { '' }
+        $work[$chg.LineIndex] = "$($chg.Indent)$($chg.NewName):$suffix"
     }
 
     $fileName = [System.IO.Path]::GetFileName($fp)
@@ -209,9 +337,9 @@ foreach ($fp in $byFile.Keys) {
         Write-Host "  [WHATIF] tidak menulis $fileName ($count)" -ForegroundColor DarkYellow
     }
     else {
-        if ($Backup) {
-            Copy-Item -LiteralPath $fp -Destination "$fp.bak" -Force
-            Write-Host "  [BAK] $fp.bak" -ForegroundColor DarkCyan
+        if ($Backup -and -not (Test-Path -LiteralPath "$fp.bak")) {
+            Copy-Item -LiteralPath $fp -Destination "$fp.bak"
+            Write-Host "  [BAK] $(Get-RelativePath "$fp.bak")" -ForegroundColor DarkCyan
         }
         $newText = ($work -join $fc.Eol)
         $enc     = [System.Text.UTF8Encoding]::new([bool]$fc.HasBom)
@@ -221,6 +349,25 @@ foreach ($fp in $byFile.Keys) {
     Write-Host ''
     $totalFiles++
     $totalRen += $count
+}
+
+# =====================================================================
+# Laporan
+# =====================================================================
+Write-Host '==================== LAPORAN ====================' -ForegroundColor Cyan
+Write-Host ("Router terbaca            : {0}" -f $items.Count)
+Write-Host ("Sudah sesuai (dilewati)   : {0}" -f $totalSame)
+Write-Host ("Diganti namanya           : {0} di {1} file" -f $totalRen, $totalFiles)
+Write-Host ("Tidak bisa diproses       : {0}" -f $skipped.Count)
+Write-Host ''
+
+if ($skipped.Count -gt 0) {
+    Write-Host '--- ROUTER YANG TIDAK DIPROSES (cek manual) ---' -ForegroundColor Yellow
+    foreach ($s in ($skipped | Sort-Object File, Line)) {
+        Write-Host ("   - {0}:{1}  {2}" -f (Get-RelativePath $s.File), $s.Line, $s.Name) -ForegroundColor Yellow
+        Write-Host ("       {0}" -f $s.Reason) -ForegroundColor DarkYellow
+    }
+    Write-Host ''
 }
 
 Write-Host ("Selesai. File: {0}, router: {1}" -f $totalFiles, $totalRen) -ForegroundColor Cyan

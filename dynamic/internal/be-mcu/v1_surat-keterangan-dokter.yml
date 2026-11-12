@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_surat-keterangan-dokter_get-list_GET:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-dokter/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-keterangan-dokter_create_POST:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-dokter/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-keterangan-dokter_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-dokter/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-keterangan-dokter_update_PUT:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-dokter/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-keterangan-dokter_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-dokter/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-mcu:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MCU_URL" }}'

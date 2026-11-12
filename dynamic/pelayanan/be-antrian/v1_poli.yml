@@ -1,0 +1,125 @@
+http:
+  routers:
+
+    v1_poli_getbyparam_GET:
+      rule: "PathPrefix(`/v1.0/poli/getbyparam/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_panggilanke_PUT:
+      rule: "PathPrefix(`/v1.0/poli/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_status_PUT:
+      rule: "PathPrefix(`/v1.0/poli/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_next-number_GET:
+      rule: "PathPrefix(`/v1.0/poli/next-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_total-antrian_GET:
+      rule: "PathPrefix(`/v1.0/poli/total-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_get-antrian-ws_GET:
+      rule: "PathPrefix(`/v1.0/poli/get-antrian-ws`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_get-antrian-by-booking_GET:
+      rule: "PathPrefix(`/v1.0/poli/get-antrian-by-booking/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    # poli_ref_1:
+    #   rule: "PathPrefix(`/v1.0/poli/getbyparam/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-antrian
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_poli_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/poli/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_get-status-diambil_GET:
+      rule: "PathPrefix(`/v1.0/poli/get-status-diambil/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_get-belum-dipanggil_GET:
+      rule: "PathPrefix(`/v1.0/poli/get-belum-dipanggil/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_get-status-selesai_GET:
+      rule: "PathPrefix(`/v1.0/poli/get-status-selesai/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_poli_getbytglantrian_GET:
+      rule: "PathPrefix(`/v1.0/poli/getbytglantrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ANTRIAN_URL" }}' # IP Server Prod

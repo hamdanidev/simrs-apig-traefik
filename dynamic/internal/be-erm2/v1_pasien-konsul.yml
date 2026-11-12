@@ -1,0 +1,143 @@
+http:
+  routers:
+
+    v1_pasien-konsul_update-status-pelaksanaan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/update-status-pelaksanaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_create-konsul_POST:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/create-konsul`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_update-data-konsul_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/update-data-konsul`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_update-jawaban-konsul_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/update-jawaban-konsul`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_getlist-dokter-pengirim_GET:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/getlist-dokter-pengirim`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_getlist-dokter-penerima_GET:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/getlist-dokter-penerima`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_delete-pasien-konsul_DELETE:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/delete-pasien-konsul/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_send_POST:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/send/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_update-status-selesai-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/update-status-selesai-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_batalkan-konsul_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/batalkan-konsul`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_get-by-no-konsul_GET:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/get-by-no-konsul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-konsul_get-by-no-registrasi-konsul-beda-episode_GET:
+      rule: "PathPrefix(`/v1.0/pasien-konsul/get-by-no-registrasi-konsul-beda-episode/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

@@ -1,0 +1,233 @@
+http:
+  routers:
+
+    v1_order-obat_update-tindakan-lab-racikan_PUT:
+      rule: "PathPrefix(`/v1.0/order-obat/update-tindakan-lab-racikan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_create_POST:
+      rule: "PathPrefix(`/v1.0/order-obat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_create-order-obat-non-racikan_POST:
+      rule: "PathPrefix(`/v1.0/order-obat/create-order-obat-non-racikan`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_create-order-obat-non-list_POST:
+      rule: "PathPrefix(`/v1.0/order-obat/create-order-obat-non-list`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_create-order-obat-racikan_POST:
+      rule: "PathPrefix(`/v1.0/order-obat/create-order-obat-racikan`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_create-tindakan-lab-racikan_POST:
+      rule: "PathPrefix(`/v1.0/order-obat/create-tindakan-lab-racikan`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-order-obat-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-order-obat-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-non-racikan-by-nomor-resep_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-non-racikan-by-nomor-resep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-non-list-by-nomor-resep_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-non-list-by-nomor-resep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-racikan-by-nomor-resep_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-racikan-by-nomor-resep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-tindakan-lab-racikan-by-id-racikan_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-tindakan-lab-racikan-by-id-racikan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_update-racikan-by-id-racikan_PUT:
+      rule: "PathPrefix(`/v1.0/order-obat/update-racikan-by-id-racikan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_delete-tindakan-lab-racikan-by-id-lab-racikan_DELETE:
+      rule: "PathPrefix(`/v1.0/order-obat/delete-tindakan-lab-racikan-by-id-lab-racikan/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_delete-order-non-racikan-by-id-non-racikan_DELETE:
+      rule: "PathPrefix(`/v1.0/order-obat/delete-order-non-racikan-by-id-non-racikan/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_delete-order-non-list-by-id-non-list_DELETE:
+      rule: "PathPrefix(`/v1.0/order-obat/delete-order-non-list-by-id-non-list/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_delete-order-racikan-by-id-racikan_DELETE:
+      rule: "PathPrefix(`/v1.0/order-obat/delete-order-racikan-by-id-racikan/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_send-order-obat-by-nomor-resep_POST:
+      rule: "PathPrefix(`/v1.0/order-obat/send-order-obat-by-nomor-resep/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_send-order-obat-billing-by-nomor-resep_POST:
+      rule: "PathPrefix(`/v1.0/order-obat/send-order-obat-billing-by-nomor-resep/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-detail_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-detail/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_delete-order-obat_DELETE:
+      rule: "PathPrefix(`/v1.0/order-obat/delete-order-obat/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-resep-racikan-favorite_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-resep-racikan-favorite/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-by-booking_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-by-booking/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_update-non-racikan-by-id-non-racikan_PUT:
+      rule: "PathPrefix(`/v1.0/order-obat/update-non-racikan-by-id-non-racikan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_update-status-to-draft_PUT:
+      rule: "PathPrefix(`/v1.0/order-obat/update-status-to-draft/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_order-obat_getlist-order-obat-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/order-obat/getlist-order-obat-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

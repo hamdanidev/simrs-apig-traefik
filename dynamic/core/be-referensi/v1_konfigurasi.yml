@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_konfigurasi_getlist_GET:
+      rule: "PathPrefix(`/v1.0/konfigurasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_konfigurasi_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/konfigurasi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_konfigurasi_create_POST:
+      rule: "PathPrefix(`/v1.0/konfigurasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_konfigurasi_update_PUT:
+      rule: "PathPrefix(`/v1.0/konfigurasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_konfigurasi_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/konfigurasi/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

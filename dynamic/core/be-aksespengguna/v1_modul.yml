@@ -1,0 +1,71 @@
+http:
+  routers:
+
+    v1_modul_fitur_getlist_GET:
+      rule: "PathPrefix(`/v1.0/modul/fitur/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_modul_fitur_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/modul/fitur/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_modul_fitur_create_POST:
+      rule: "PathPrefix(`/v1.0/modul/fitur/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_modul_fitur_update_PUT:
+      rule: "PathPrefix(`/v1.0/modul/fitur/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_modul_fitur_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/modul/fitur/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_modul_fitur_getbykdmodul_GET:
+      rule: "PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    # duplicat_v1_modul_fitur_getbykdmodul_GET:
+    #   rule: "PathPrefix(`/v1.0/modul/fitur/getbykdmodul/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-aksespengguna
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'

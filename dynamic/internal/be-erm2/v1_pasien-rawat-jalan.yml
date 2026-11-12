@@ -1,0 +1,206 @@
+http:
+  routers:
+
+    v1_pasien-rawat-jalan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_getlist_selesai-layanan_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_getlist_by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_update_status_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/update/status/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_get-pasien-rawat-jalan_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/get-pasien-rawat-jalan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_update-status-spri_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/update-status-spri/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_get-by-no-registrasi-all_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/get-by-no-registrasi-all/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_get-by-no-referensi-all_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/get-by-no-referensi-all/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_getlist-all_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/getlist-all`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_buka-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/buka-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_batal-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/batal-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_selesai-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/selesai-layanan/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_count_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/count`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_get-pasien-per-dpjp_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/get-pasien-per-dpjp`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_batch-update-selesai-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/batch-update-selesai-layanan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    # duplicat_v1_pasien-rawat-jalan_batch-update-selesai-layanan_PUT:
+    #   rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/batch-update-selesai-layanan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_pasien-rawat-jalan_belum-selesai-layanan_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/belum-selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    # duplicat_v1_pasien-rawat-jalan_belum-selesai-layanan_GET:
+    #   rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/belum-selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-erm
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+    #     - "simrs-auth"
+
+    v1_pasien-rawat-jalan_getlist-all-group-by-sep_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/getlist-all-group-by-sep`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_update-status-billing_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/update-status-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_count-coding_GET:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/count-coding`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-rawat-jalan_update-odc_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-rawat-jalan/update-odc/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

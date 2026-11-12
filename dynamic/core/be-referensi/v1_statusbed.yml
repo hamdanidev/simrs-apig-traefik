@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_statusbed_getlist_GET:
+      rule: "PathPrefix(`/v1.0/statusbed/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_statusbed_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/statusbed/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_statusbed_create_POST:
+      rule: "PathPrefix(`/v1.0/statusbed/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_statusbed_update_PUT:
+      rule: "PathPrefix(`/v1.0/statusbed/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_statusbed_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/statusbed/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

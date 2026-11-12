@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_kelas_getlist_GET:
+      rule: "PathPrefix(`/v1.0/kelas/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kelas_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/kelas/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kelas_create_POST:
+      rule: "PathPrefix(`/v1.0/kelas/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kelas_update_PUT:
+      rule: "PathPrefix(`/v1.0/kelas/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kelas_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/kelas/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'
