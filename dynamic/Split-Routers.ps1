@@ -4,8 +4,9 @@
 
 .DESCRIPTION
     Scan semua .yml rekursif dari $Root. Untuk setiap file:
-      1. Baca semua router (section http > routers) dan service (http > services).
-      2. Ambil path dari PathPrefix(`...`) lalu tentukan "kunci grup":
+      1. Baca semua router (http > routers), termasuk router yang di-comment (#),
+         dan service (http > services).
+      2. Ambil path dari PathPrefix(`...`) / Path(`...`) lalu tentukan "kunci grup":
             /v1.0/erm/meso/create                          -> erm_meso
             /v1.0/erm/meso/obat-meso/get-by-id/            -> erm_meso
             /v1.0/erm/rekonsiliasi-obat/list-x/create      -> erm_rekonsiliasi-obat
@@ -16,15 +17,20 @@
             - buang segmen terakhir jika berupa kata aksi (create, update, delete, ...)
             - ambil maksimal $GroupDepth segmen pertama, gabung dengan "_"
       3. Tulis satu file per grup di folder yang sama: <kunci-grup>.yml
-         Isi file: router milik grup itu + definisi service yang dipakai router tersebut.
+         Isi file: router grup itu (aktif + yang di-comment) + definisi service yang dipakai.
+      4. Router dari file berbeda di folder yang sama yang kuncinya sama DIGABUNG ke satu file.
+         Router yang namanya & isinya identik tidak ditulis dobel (aman dijalankan ulang).
 
-    Isi router TIDAK diubah sama sekali (disalin apa adanya).
+    Isi router TIDAK diubah sama sekali (disalin apa adanya, termasuk tanda #).
 
-    Aman:
-      - File yang punya section lain selain routers/services (mis. middlewares) dilewati.
-      - File yang punya router tanpa PathPrefix dilewati.
-      - File tujuan yang sudah ada tidak ditimpa (kecuali -Force).
-      - File asli tidak dihapus kecuali pakai -DeleteOriginal.
+    Tidak ada data yang hilang:
+      - Section lain selain routers/services (mis. middlewares), router yang tidak punya
+        PathPrefix/Path, dan service yang tidak dipakai router di file itu akan TETAP
+        ada di file aslinya (file asli ditulis ulang berisi sisanya, tidak dihapus).
+      - File asli baru dihapus jika semua isinya sudah pindah (dan memakai -DeleteOriginal).
+
+    Di akhir proses ditampilkan laporan: file/folder yang dihapus, dan file yang tidak
+    dihapus beserta alasannya.
 
 .EXAMPLE
     .\Split-Routers.ps1 -WhatIf
@@ -42,10 +48,9 @@ param(
     # Kata aksi di ujung path yang tidak ikut dipakai untuk nama file
     [string[]]$ActionWords = @('create', 'update', 'delete', 'get-list', 'get-by-id'),
 
-    [switch]$WhatIf,          # hanya tampilkan rencana, tidak menulis apa pun
-    [switch]$Backup,          # buat <file>.bak dari file asli sebelum diubah/dihapus
-    [switch]$DeleteOriginal,  # hapus file asli setelah semua grupnya berhasil ditulis
-    [switch]$Force            # boleh menimpa file tujuan yang sudah ada
+    [switch]$WhatIf,          # hanya tampilkan rencana & laporan, tidak menulis/menghapus apa pun
+    [switch]$Backup,          # buat <file>.bak (sekali, tidak menimpa .bak lama) sebelum diubah/dihapus
+    [switch]$DeleteOriginal   # hapus file asli setelah semua isinya berhasil dipindah
 )
 
 if (-not $Root) { $Root = (Get-Location).Path }
@@ -66,7 +71,7 @@ Write-Host ("Mode        : " + $(if ($WhatIf) { 'WHATIF' } else { 'APPLY' })) -F
 Write-Host ''
 
 # =====================================================================
-# Helper
+# Helper: baris YAML
 # =====================================================================
 
 # Menghitung jumlah spasi di awal sebuah baris (indentasi).
@@ -75,15 +80,29 @@ function Get-IndentLength {
     return ($Line.Length - $Line.TrimStart().Length)
 }
 
-# True jika baris kosong, komentar (#), atau penanda dokumen (---).
+# True jika baris adalah komentar (diawali #).
+function Test-CommentLine {
+    param([string]$Line)
+    return $Line.TrimStart().StartsWith('#')
+}
+
+# True jika baris kosong, komentar, atau penanda dokumen (---).
 function Test-SkipLine {
     param([string]$Line)
     $t = $Line.Trim()
     return ($t -eq '' -or $t.StartsWith('#') -or $t -eq '---')
 }
 
+# Membuka komentar satu baris: buang '#' pertama dan satu spasi setelahnya.
+# Indentasi sebelum '#' dipertahankan.
+function Get-UncommentedLine {
+    param([string]$Line)
+    return ($Line -replace '^(\s*)#\s?', '$1')
+}
+
 # Mencari akhir sebuah blok YAML: baris berikutnya yang indentasinya <= baris awal.
-# Baris kosong/komentar di ekor blok dibuang. Hasil: indeks akhir (eksklusif).
+# Ekor blok yang dibuang: baris kosong dan komentar yang sejajar/lebih kiri dari awal blok
+# (komentar seperti itu milik blok berikutnya). Hasil: indeks akhir (eksklusif).
 function Get-BlockEnd {
     param([string[]]$Lines, [int]$Start, [int]$Limit)
 
@@ -93,30 +112,80 @@ function Get-BlockEnd {
         if (-not (Test-SkipLine $Lines[$end]) -and (Get-IndentLength $Lines[$end]) -le $indent) { break }
         $end++
     }
-    while ($end -gt ($Start + 1) -and (Test-SkipLine $Lines[$end - 1])) { $end-- }
+    while ($end -gt ($Start + 1)) {
+        $l = $Lines[$end - 1]
+        if ($l.Trim() -eq '' -or ((Test-CommentLine $l) -and (Get-IndentLength $l) -le $indent)) { $end-- }
+        else { break }
+    }
     return $end
 }
 
-# Memecah isi sebuah section (mis. routers) menjadi daftar blok anak: @{Name; Lines}.
+# True jika baris ke-$Index adalah awal sebuah blok yang di-comment, contoh:
+#     # nama_router:
+#     #   rule: "..."
+# (baris pertama = nama, baris berikutnya = komentar dengan indentasi lebih dalam)
+function Test-CommentedBlockStart {
+    param([string[]]$Lines, [int]$Index, [int]$End)
+
+    if (-not (Test-CommentLine $Lines[$Index])) { return $false }
+    $u = Get-UncommentedLine $Lines[$Index]
+    if ($u -notmatch '^\s*[A-Za-z0-9_.\-]+:\s*$') { return $false }
+
+    $n = $Index + 1
+    if ($n -ge $End) { return $false }
+    if ($Lines[$n].Trim() -eq '') { return $false }
+    if (-not (Test-CommentLine $Lines[$n])) { return $false }
+    $un = Get-UncommentedLine $Lines[$n]
+    return ((Get-IndentLength $un) -gt (Get-IndentLength $u))
+}
+
+# Memecah isi sebuah section (mis. routers) menjadi daftar blok anak.
+# Tiap blok: Name, Lines (asli), ParseLines (versi tanpa #), Commented.
 # Mengembalikan $null jika strukturnya tidak dikenali.
 function Get-ChildBlocks {
-    param([string[]]$Lines, [int]$Start, [int]$End)
+    param([string[]]$Lines, [int]$Start, [int]$End, [bool]$AllowCommented = $false)
 
     $blocks   = [System.Collections.Generic.List[object]]::new()
     $childLen = -1
     $j = $Start
     while ($j -lt $End) {
-        if (Test-SkipLine $Lines[$j]) { $j++; continue }
+        $line = $Lines[$j]
 
-        $len = Get-IndentLength $Lines[$j]
+        # --- Baris komentar: bisa jadi router yang di-comment ---
+        if (Test-CommentLine $line) {
+            if ($AllowCommented -and (Test-CommentedBlockStart -Lines $Lines -Index $j -End $End)) {
+                $startIndent = Get-IndentLength (Get-UncommentedLine $line)
+                $k = $j + 1
+                while ($k -lt $End) {
+                    $kl = $Lines[$k]
+                    if ($kl.Trim() -eq '' -or -not (Test-CommentLine $kl)) { break }
+                    if ((Get-IndentLength (Get-UncommentedLine $kl)) -le $startIndent) { break }
+                    $k++
+                }
+                $raw  = [string[]]@($Lines[$j..($k - 1)])
+                $unc  = [string[]]@($raw | ForEach-Object { Get-UncommentedLine $_ })
+                $name = (Get-UncommentedLine $line).Trim().TrimEnd(':')
+                $blocks.Add([PSCustomObject]@{
+                    Name = $name; Lines = $raw; ParseLines = $unc; Commented = $true
+                })
+                $j = $k
+                continue
+            }
+            $j++
+            continue
+        }
+        if (Test-SkipLine $line) { $j++; continue }
+
+        # --- Blok biasa ---
+        $len = Get-IndentLength $line
         if ($childLen -lt 0) { $childLen = $len }
-        if ($len -ne $childLen -or $Lines[$j] -notmatch '^\s*([A-Za-z0-9_.\-]+):\s*$') { return $null }
+        if ($len -ne $childLen -or $line -notmatch '^\s*([A-Za-z0-9_.\-]+):\s*$') { return $null }
 
         $name     = $Matches[1]
         $blockEnd = Get-BlockEnd -Lines $Lines -Start $j -Limit $End
+        $raw      = [string[]]@($Lines[$j..($blockEnd - 1)])
         $blocks.Add([PSCustomObject]@{
-            Name  = $name
-            Lines = [string[]]@($Lines[$j..($blockEnd - 1)])
+            Name = $name; Lines = $raw; ParseLines = $raw; Commented = $false
         })
         $j = $blockEnd
     }
@@ -125,7 +194,7 @@ function Get-ChildBlocks {
 }
 
 # Membaca satu file Traefik dynamic config.
-# Hasil: hashtable dengan Ok, Reason, SectionIndent, Routers, Services.
+# Hasil: hashtable berisi Ok, Reason, SectionIndent, Routers, Services, Extras.
 function Read-RouterFile {
     param([string[]]$Lines)
 
@@ -134,7 +203,8 @@ function Read-RouterFile {
         Reason        = ''
         SectionIndent = '  '
         Routers       = [System.Collections.Generic.List[object]]::new()
-        Services      = @{}
+        Services      = [ordered]@{}
+        Extras        = [System.Collections.Generic.List[object]]::new()   # section lain (mis. middlewares)
     }
 
     # 1. Cari 'http:' dan pastikan tidak ada key root lain (supaya tidak ada data hilang)
@@ -153,7 +223,7 @@ function Read-RouterFile {
     }
     $httpEnd = Get-BlockEnd -Lines $Lines -Start $httpIdx -Limit $Lines.Count
 
-    # 2. Baca section di dalam http: (hanya routers & services yang didukung)
+    # 2. Baca section di dalam http:
     $i      = $httpIdx + 1
     $secLen = -1
     while ($i -lt $httpEnd) {
@@ -167,36 +237,44 @@ function Read-RouterFile {
         }
 
         $sectionName = $Matches[1]
-        if ($sectionName -ne 'routers' -and $sectionName -ne 'services') {
-            $result.Reason = "ada section '$sectionName' (hanya routers & services yang didukung)"
-            return $result
-        }
-
-        $sectionEnd = Get-BlockEnd -Lines $Lines -Start $i -Limit $httpEnd
-        $blocks = Get-ChildBlocks -Lines $Lines -Start ($i + 1) -End $sectionEnd
-        if ($null -eq $blocks) {
-            $result.Reason = "isi '$sectionName' tidak bisa dibaca"
-            return $result
-        }
+        $sectionEnd  = Get-BlockEnd -Lines $Lines -Start $i -Limit $httpEnd
 
         if ($sectionName -eq 'routers') {
+            $blocks = Get-ChildBlocks -Lines $Lines -Start ($i + 1) -End $sectionEnd -AllowCommented $true
+            if ($null -eq $blocks) {
+                $result.Reason = "isi 'routers' tidak bisa dibaca"
+                return $result
+            }
             foreach ($b in $blocks) {
-                # Ambil rule dan nama service dari baris-baris router
+                # Ambil rule dan nama service (dari versi tanpa # bila router di-comment)
                 $rule = $null; $service = $null
-                foreach ($l in $b.Lines) {
+                foreach ($l in $b.ParseLines) {
                     if ($null -eq $rule -and $l -match '^\s*rule:\s*["''](.*)["'']\s*$') { $rule = $Matches[1] }
                     if ($null -eq $service -and $l -match '^\s*service:\s*["'']?([^"''\s]+)["'']?\s*$') { $service = $Matches[1] }
                 }
+                # Komentar biasa (bukan router) diabaikan
+                if ($b.Commented -and -not $rule) { continue }
+
                 $result.Routers.Add([PSCustomObject]@{
-                    Name    = $b.Name
-                    Lines   = $b.Lines
-                    Rule    = $rule
-                    Service = $service
+                    Name      = $b.Name
+                    Lines     = $b.Lines
+                    Rule      = $rule
+                    Service   = $service
+                    Commented = $b.Commented
                 })
             }
         }
-        else {
+        elseif ($sectionName -eq 'services') {
+            $blocks = Get-ChildBlocks -Lines $Lines -Start ($i + 1) -End $sectionEnd
+            if ($null -eq $blocks) {
+                $result.Reason = "isi 'services' tidak bisa dibaca"
+                return $result
+            }
             foreach ($b in $blocks) { $result.Services[$b.Name] = $b.Lines }
+        }
+        else {
+            # Section lain (middlewares, dst) disimpan utuh agar tidak hilang
+            $result.Extras.Add([string[]]@($Lines[$i..($sectionEnd - 1)]))
         }
 
         $i = $sectionEnd
@@ -241,11 +319,86 @@ function Get-GroupKey {
     return ($key -replace '[^A-Za-z0-9._\-]', '-')
 }
 
+# Path relatif terhadap $Root (untuk tampilan).
+function Get-RelativePath {
+    param([string]$Path)
+    if ($Path.StartsWith($Root, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $Path.Substring($Root.Length).TrimStart('\', '/')
+    }
+    return $Path
+}
+
+# Backup file ke <file>.bak (tidak menimpa .bak yang sudah ada = backup tertua dipertahankan).
+function Backup-File {
+    param([string]$Path)
+    $bak = "$Path.bak"
+    if (-not (Test-Path -LiteralPath $bak)) {
+        Copy-Item -LiteralPath $Path -Destination $bak
+        Write-Host "    [BAK] $(Get-RelativePath $bak)" -ForegroundColor DarkCyan
+    }
+}
+
+# =====================================================================
+# Helper: perencanaan hasil (target)
+# =====================================================================
+$targets     = @{}   # path (huruf kecil) -> objek target
+$targetOrder = [System.Collections.Generic.List[string]]::new()
+
+# Mengambil target untuk sebuah path file; dibuat jika belum ada.
+function Get-OrCreateTarget {
+    param([string]$Path, $Source)
+
+    $lk = $Path.ToLowerInvariant()
+    if (-not $targets.ContainsKey($lk)) {
+        $targets[$lk] = [PSCustomObject]@{
+            Path        = $Path
+            Name        = [System.IO.Path]::GetFileName($Path)
+            Routers     = [System.Collections.Generic.List[object]]::new()
+            RouterText  = @{}
+            Services    = [System.Collections.Generic.List[object]]::new()
+            ServiceText = @{}
+            Extras      = [System.Collections.Generic.List[object]]::new()
+            Eol         = $Source.Eol
+            HasBom      = $Source.HasBom
+            Indent      = $Source.Info.SectionIndent
+            SkipWrite   = $false
+            Failed      = $false
+        }
+        $targetOrder.Add($lk)
+    }
+    return $targets[$lk]
+}
+
+# Menambah router ke target. Router identik (nama + isi) tidak ditulis dobel.
+# Jika nama sama tapi isi beda, router tidak ditambah dan dicatat sebagai masalah.
+function Add-RouterToTarget {
+    param($Target, $Router, $State)
+
+    $rk   = "$($Router.Name)|$($Router.Commented)"
+    $text = ($Router.Lines -join "`n").TrimEnd()
+
+    if ($Target.RouterText.ContainsKey($rk)) {
+        if ($Target.RouterText[$rk] -cne $text) {
+            $State.Problems.Add("router '$($Router.Name)' namanya sama tapi isinya beda dengan yang sudah ada di $($Target.Name)")
+        }
+        return
+    }
+    $Target.RouterText[$rk] = $text
+    $Target.Routers.Add([PSCustomObject]@{
+        Name      = $Router.Name
+        Lines     = $Router.Lines
+        Commented = $Router.Commented
+        Service   = $Router.Service
+        Src       = $State.P
+    })
+}
+
 # =====================================================================
 # Pass 1: baca & parse semua file, kumpulkan semua definisi service
 # =====================================================================
 $parsed      = [System.Collections.Generic.List[object]]::new()
 $allServices = @{}
+$byPath      = @{}
 
 foreach ($file in $files) {
     $bytes  = [System.IO.File]::ReadAllBytes($file.FullName)
@@ -257,7 +410,17 @@ foreach ($file in $files) {
     $lines = [string[]]($text -split "`r?`n")
     $info  = Read-RouterFile -Lines $lines
 
-    $parsed.Add([PSCustomObject]@{ File = $file; Eol = $eol; HasBom = $hasBom; Info = $info })
+    $p = [PSCustomObject]@{
+        Path      = $file.FullName
+        PathLower = $file.FullName.ToLowerInvariant()
+        Dir       = $file.DirectoryName
+        Eol       = $eol
+        HasBom    = $hasBom
+        Text      = $text
+        Info      = $info
+    }
+    $parsed.Add($p)
+    $byPath[$p.PathLower] = $p
 
     # Simpan definisi service (dipakai bila router merujuk service di file lain)
     if ($info.Ok) {
@@ -268,161 +431,320 @@ foreach ($file in $files) {
 }
 
 # =====================================================================
-# Pass 2: pecah per file
+# Pass 2: rencana pemecahan
 # =====================================================================
-$written       = @{}   # target yang sudah dibuat pada run ini (cegah tabrakan)
-$totalSources  = 0
-$totalCreated  = 0
-$totalSkipped  = 0
+$keptReport = [System.Collections.Generic.List[object]]::new()   # file yang tidak dihapus + alasan
+$states     = [System.Collections.Generic.List[object]]::new()
+$blocked    = @{}                                                 # file yang tidak boleh ditimpa
+
+# File yang tidak bisa diproses tidak boleh ditimpa oleh file hasil
+foreach ($p in $parsed) {
+    if (-not $p.Info.Ok) {
+        $blocked[$p.PathLower] = $true
+        $keptReport.Add([PSCustomObject]@{ Path = $p.Path; Reason = "dilewati: $($p.Info.Reason)" })
+    }
+    elseif ($p.Info.Routers.Count -eq 0) {
+        $blocked[$p.PathLower] = $true
+        $keptReport.Add([PSCustomObject]@{ Path = $p.Path; Reason = 'dilewati: tidak ada router untuk dipecah' })
+    }
+}
 
 foreach ($p in $parsed) {
-    $src  = $p.File.FullName
-    $info = $p.Info
+    if ($blocked.ContainsKey($p.PathLower)) { continue }
 
-    # --- Validasi file ---
-    if (-not $info.Ok) {
-        Write-Host "[$src]" -ForegroundColor Cyan
-        Write-Warning "  Dilewati: $($info.Reason)"
-        Write-Host ''
-        $totalSkipped++
-        continue
+    $state = [PSCustomObject]@{
+        P        = $p
+        Targets  = [System.Collections.Generic.HashSet[string]]::new()
+        Problems = [System.Collections.Generic.List[string]]::new()
+        Notes    = [System.Collections.Generic.List[string]]::new()
     }
-    if ($info.Routers.Count -eq 0) { continue }   # tidak ada router, tidak ada yang dipecah
+    $states.Add($state)
 
-    # --- Kelompokkan router berdasarkan kunci grup ---
-    $groups       = @{}
-    $groupOrder   = [System.Collections.Generic.List[string]]::new()
-    $unclassified = [System.Collections.Generic.List[string]]::new()
+    $remainder = [System.Collections.Generic.List[object]]::new()   # router yang tetap di file asli
 
-    foreach ($r in $info.Routers) {
+    foreach ($r in $p.Info.Routers) {
+        # Tentukan kunci grup dari PathPrefix / Path
         $key = $null
-        if ($r.Rule -and $r.Rule -match 'PathPrefix\(`([^`]+)`\)') {
+        if ($r.Rule -and $r.Rule -match '(?:PathPrefix|Path)\(`([^`]+)`\)') {
             $path = $Matches[1]
             $key  = Get-GroupKey -Path $path -Depth $GroupDepth -ActionWords $ActionWords
         }
-        if (-not $key) { $unclassified.Add($r.Name); continue }
+        if (-not $key) { $remainder.Add($r); continue }
 
-        $lk = $key.ToLowerInvariant()
-        if (-not $groups.ContainsKey($lk)) {
-            $groups[$lk] = [PSCustomObject]@{
-                Key     = $key
-                Routers = [System.Collections.Generic.List[object]]::new()
-            }
-            $groupOrder.Add($lk)
+        $targetPath = Join-Path $p.Dir "$key.yml"
+        if ($blocked.ContainsKey($targetPath.ToLowerInvariant())) {
+            $remainder.Add($r)
+            $state.Problems.Add("router '$($r.Name)' tidak dipindah karena $key.yml sudah ada dan tidak bisa diproses")
+            continue
         }
-        $groups[$lk].Routers.Add($r)
+
+        $t = Get-OrCreateTarget -Path $targetPath -Source $p
+        Add-RouterToTarget -Target $t -Router $r -State $state
+        [void]$state.Targets.Add($t.Path.ToLowerInvariant())
     }
 
-    Write-Host "[$src]" -ForegroundColor Cyan
+    # Sisa (router tanpa PathPrefix + section lain) tetap di file asli
+    if ($remainder.Count -gt 0 -or $p.Info.Extras.Count -gt 0) {
+        $t = Get-OrCreateTarget -Path $p.Path -Source $p
+        foreach ($r in $remainder) { Add-RouterToTarget -Target $t -Router $r -State $state }
+        foreach ($ex in $p.Info.Extras) { $t.Extras.Add($ex) }
 
-    if ($unclassified.Count -gt 0) {
-        Write-Warning ("  Dilewati: router tanpa PathPrefix/tidak bisa dikelompokkan: " + ($unclassified -join ', '))
-        Write-Host ''
-        $totalSkipped++
-        continue
+        if ($remainder.Count -gt 0) {
+            $names = @($remainder | Select-Object -First 5 | ForEach-Object { $_.Name }) -join ', '
+            $state.Notes.Add("router tanpa PathPrefix/tidak bisa dikelompokkan tetap di file ini: $names")
+        }
+        if ($p.Info.Extras.Count -gt 0) {
+            $state.Notes.Add('section lain (mis. middlewares) tetap di file ini')
+        }
+        [void]$state.Targets.Add($p.PathLower)
     }
+}
 
-    # File yang hanya berisi 1 grup dan sudah bernama sesuai -> sudah rapi
-    $firstTarget = Join-Path $p.File.DirectoryName ($groups[$groupOrder[0]].Key + '.yml')
-    if ($groupOrder.Count -eq 1 -and $firstTarget -ieq $src) {
-        Write-Host '  [SKIP] sudah sesuai (1 grup, nama file sama)' -ForegroundColor DarkGray
-        Write-Host ''
-        continue
+# =====================================================================
+# Pass 3: tentukan service yang ikut ke tiap file hasil
+# =====================================================================
+$copiedDefs = @{}   # "<nama>|<isi>" -> sudah disalin ke suatu file hasil
+
+# 3a. Service yang dipakai router (yang aktif; kalau tidak ada yang aktif, pakai yang di-comment)
+foreach ($lk in $targetOrder) {
+    $t = $targets[$lk]
+
+    $refRouters = @($t.Routers | Where-Object { -not $_.Commented })
+    if ($refRouters.Count -eq 0) { $refRouters = @($t.Routers) }
+
+    foreach ($r in $refRouters) {
+        if (-not $r.Service) { continue }
+        $name = $r.Service
+        if ($t.ServiceText.ContainsKey($name)) { continue }
+
+        # Utamakan definisi dari file asal router, baru cari di file lain
+        $svcLines = $null
+        if ($r.Src.Info.Services.Contains($name)) { $svcLines = $r.Src.Info.Services[$name] }
+        elseif ($allServices.ContainsKey($name))  { $svcLines = $allServices[$name] }
+
+        if ($null -eq $svcLines) {
+            Write-Warning "Service '$name' (router '$($r.Name)') tidak ditemukan di file .yml mana pun."
+            continue
+        }
+
+        $svcText = ($svcLines -join "`n").TrimEnd()
+        $t.Services.Add([PSCustomObject]@{ Name = $name; Lines = $svcLines })
+        $t.ServiceText[$name] = $svcText
+        $copiedDefs["$name|$svcText"] = $true
     }
+}
 
-    $allOk     = $true
-    $selfWrite = $false
-    $backedUp  = $false
+# 3b. Service yang tidak terpakai router mana pun tetap dipertahankan di file aslinya
+foreach ($s in $states) {
+    foreach ($name in $s.P.Info.Services.Keys) {
+        $svcLines = $s.P.Info.Services[$name]
+        $svcText  = ($svcLines -join "`n").TrimEnd()
+        if ($copiedDefs.ContainsKey("$name|$svcText")) { continue }
 
-    foreach ($lk in $groupOrder) {
-        $g          = $groups[$lk]
-        $targetName = "$($g.Key).yml"
-        $target     = Join-Path $p.File.DirectoryName $targetName
-        $isSelf     = ($target -ieq $src)
-
-        # Cek tabrakan nama file tujuan
-        if ($written.ContainsKey($target.ToLowerInvariant())) {
-            Write-Warning "  Dilewati grup '$($g.Key)': $targetName sudah dibuat dari file lain pada run ini."
-            $allOk = $false; continue
+        $t = Get-OrCreateTarget -Path $s.P.Path -Source $s.P
+        if ($t.ServiceText.ContainsKey($name)) {
+            # Nama sama tapi definisi beda -> jangan menimpa file ini
+            $s.Problems.Add("service '$name' punya definisi berbeda dengan yang sudah ada di $($t.Name)")
+            $t.SkipWrite = $true
+            continue
         }
-        if ((Test-Path -LiteralPath $target) -and -not $isSelf -and -not $Force) {
-            Write-Warning "  Dilewati grup '$($g.Key)': $targetName sudah ada (pakai -Force untuk menimpa)."
-            $allOk = $false; continue
-        }
+        $t.Services.Add([PSCustomObject]@{ Name = $name; Lines = $svcLines })
+        $t.ServiceText[$name] = $svcText
+        $copiedDefs["$name|$svcText"] = $true
+        [void]$s.Targets.Add($s.P.PathLower)
+        $s.Notes.Add("service '$name' tidak dipakai router di file ini, tetap dipertahankan")
+    }
+}
 
-        # Kumpulkan service yang dipakai router di grup ini
-        $serviceNames = [System.Collections.Generic.List[string]]::new()
-        foreach ($r in $g.Routers) {
-            if ($r.Service -and -not $serviceNames.Contains($r.Service)) { $serviceNames.Add($r.Service) }
-        }
+# =====================================================================
+# Pass 4: susun isi & tulis file hasil
+# =====================================================================
+$cntNew = 0; $cntChanged = 0; $cntSame = 0; $cntFailed = 0
 
-        # Susun isi file baru
-        $si  = $info.SectionIndent
-        $out = [System.Collections.Generic.List[string]]::new()
-        $out.Add('http:')
+foreach ($lk in $targetOrder) {
+    $t        = $targets[$lk]
+    $existing = $byPath[$lk]
+    $si       = $t.Indent
+
+    # --- Susun isi file ---
+    $out = [System.Collections.Generic.List[string]]::new()
+    $out.Add('http:')
+    if ($t.Routers.Count -gt 0) {
         $out.Add("${si}routers:")
-        foreach ($r in $g.Routers) {
+        foreach ($r in $t.Routers) {
             $out.Add('')
             $out.AddRange([string[]]$r.Lines)
         }
+    }
+    if ($t.Services.Count -gt 0) {
+        if ($t.Routers.Count -gt 0) { $out.Add('') }
+        $out.Add("${si}services:")
+        foreach ($svc in $t.Services) { $out.AddRange([string[]]$svc.Lines) }
+    }
+    foreach ($ex in $t.Extras) {
+        $out.Add('')
+        $out.AddRange([string[]]$ex)
+    }
+    $newText = ($out -join $t.Eol) + $t.Eol
 
-        $serviceBlocks = [System.Collections.Generic.List[object]]::new()
-        foreach ($sn in $serviceNames) {
-            if ($info.Services.ContainsKey($sn))  { $serviceBlocks.Add($info.Services[$sn]) }
-            elseif ($allServices.ContainsKey($sn)) { $serviceBlocks.Add($allServices[$sn]) }
-            else { Write-Warning "  Service '$sn' tidak ditemukan di file .yml mana pun (grup '$($g.Key)')." }
-        }
-        if ($serviceBlocks.Count -gt 0) {
-            $out.Add('')
-            $out.Add("${si}services:")
-            foreach ($sb in $serviceBlocks) { $out.AddRange([string[]]$sb) }
-        }
+    # --- File sudah persis sama: tidak perlu ditulis ---
+    if ($null -ne $existing -and $existing.Text -ceq $newText) { $cntSame++; continue }
 
-        Write-Host ("  {0,-55} ({1} router)" -f $targetName, $g.Routers.Count) -ForegroundColor Yellow
+    $rel   = Get-RelativePath $t.Path
+    $label = if ($null -ne $existing) { 'UBAH' } else { 'BARU' }
+    Write-Host ("  [{0}] {1}  ({2} router)" -f $label, $rel, $t.Routers.Count) -ForegroundColor Yellow
 
-        if ($WhatIf) {
-            Write-Host "    [WHATIF] tidak menulis $targetName" -ForegroundColor DarkYellow
-        }
-        else {
-            # Backup file asli sekali saja sebelum ada perubahan
-            if ($Backup -and -not $backedUp) {
-                Copy-Item -LiteralPath $src -Destination "$src.bak" -Force
-                Write-Host "    [BAK] $src.bak" -ForegroundColor DarkCyan
-                $backedUp = $true
-            }
-            $newText = ($out -join $p.Eol) + $p.Eol
-            $enc     = [System.Text.UTF8Encoding]::new([bool]$p.HasBom)
-            [System.IO.File]::WriteAllText($target, $newText, $enc)
-            Write-Host "    [OK] $targetName" -ForegroundColor Green
-        }
-
-        $written[$target.ToLowerInvariant()] = $src
-        if ($isSelf) { $selfWrite = $true }
-        $totalCreated++
+    if ($t.SkipWrite) {
+        Write-Warning "    Tidak ditulis: ada service berbeda definisi di $($t.Name)."
+        $t.Failed = $true
+        $cntFailed++
+        continue
     }
 
-    # Hapus file asli bila diminta, semua grup sukses, dan file asli tidak ikut ditimpa
-    if ($DeleteOriginal) {
-        if (-not $allOk) {
-            Write-Warning '  File asli dipertahankan karena ada grup yang dilewati.'
+    if ($WhatIf) {
+        Write-Host '    [WHATIF] tidak menulis' -ForegroundColor DarkYellow
+    }
+    else {
+        try {
+            if ($Backup -and $null -ne $existing) { Backup-File -Path $t.Path }
+            $enc = [System.Text.UTF8Encoding]::new([bool]$t.HasBom)
+            [System.IO.File]::WriteAllText($t.Path, $newText, $enc)
         }
-        elseif ($selfWrite) {
-            Write-Host '  [INFO] file asli dipakai sebagai salah satu hasil, tidak dihapus.' -ForegroundColor DarkGray
-        }
-        elseif ($WhatIf) {
-            Write-Host "  [WHATIF] akan menghapus file asli: $([System.IO.Path]::GetFileName($src))" -ForegroundColor DarkYellow
-        }
-        else {
-            Remove-Item -LiteralPath $src -Force
-            Write-Host "  [DEL] $([System.IO.Path]::GetFileName($src))" -ForegroundColor Magenta
+        catch {
+            Write-Warning "    Gagal menulis $($t.Name): $($_.Exception.Message)"
+            $t.Failed = $true
+            $cntFailed++
+            continue
         }
     }
-    elseif (-not $selfWrite) {
-        Write-Host '  [INFO] file asli dipertahankan (pakai -DeleteOriginal untuk menghapus).' -ForegroundColor DarkGray
-    }
-
-    Write-Host ''
-    $totalSources++
+    if ($null -ne $existing) { $cntChanged++ } else { $cntNew++ }
 }
 
-Write-Host ("Selesai. File diproses: {0}, file hasil: {1}, dilewati: {2}" -f $totalSources, $totalCreated, $totalSkipped) -ForegroundColor Cyan
+# =====================================================================
+# Pass 5: hapus file asli yang isinya sudah pindah semua
+# =====================================================================
+$deleted     = [System.Collections.Generic.List[object]]::new()
+$cntSelfOk   = 0
+
+foreach ($s in $states) {
+    $p = $s.P
+
+    # Apakah ada file hasil milik file ini yang gagal ditulis?
+    $targetFailed = $false
+    foreach ($tl in $s.Targets) {
+        if ($targets[$tl].Failed) { $targetFailed = $true }
+    }
+
+    # File asli dipakai sebagai salah satu file hasil -> tidak dihapus
+    if ($targets.ContainsKey($p.PathLower)) {
+        $why = @($s.Notes) + @($s.Problems)
+        if ($why.Count -gt 0) {
+            $keptReport.Add([PSCustomObject]@{ Path = $p.Path; Reason = 'dipertahankan: ' + ($why -join '; ') })
+        }
+        else {
+            $cntSelfOk++
+        }
+        continue
+    }
+
+    if ($s.Problems.Count -gt 0) {
+        $keptReport.Add([PSCustomObject]@{ Path = $p.Path; Reason = 'tidak dihapus: ' + ($s.Problems -join '; ') })
+        continue
+    }
+    if ($targetFailed) {
+        $keptReport.Add([PSCustomObject]@{ Path = $p.Path; Reason = 'tidak dihapus: ada file hasil yang gagal/tidak ditulis' })
+        continue
+    }
+    if (-not $DeleteOriginal) {
+        $keptReport.Add([PSCustomObject]@{ Path = $p.Path; Reason = 'belum dihapus (jalankan dengan -DeleteOriginal)' })
+        continue
+    }
+
+    $names = @($s.Targets | ForEach-Object { $targets[$_].Name })
+
+    if (-not $WhatIf) {
+        try {
+            if ($Backup) { Backup-File -Path $p.Path }
+            Remove-Item -LiteralPath $p.Path -Force
+        }
+        catch {
+            $keptReport.Add([PSCustomObject]@{ Path = $p.Path; Reason = "gagal dihapus: $($_.Exception.Message)" })
+            continue
+        }
+    }
+    $deleted.Add([PSCustomObject]@{ Path = $p.Path; Dir = $p.Dir; Targets = $names })
+}
+
+# --- Hapus folder yang jadi kosong (hanya mode APPLY) ---
+$removedFolders = [System.Collections.Generic.List[string]]::new()
+if (-not $WhatIf) {
+    $dirs = @($deleted | ForEach-Object { $_.Dir } | Select-Object -Unique)
+    foreach ($dir in $dirs) {
+        $d = $dir
+        while ($d -and ($d -ine $Root) -and $d.StartsWith($Root, [System.StringComparison]::OrdinalIgnoreCase) -and (Test-Path -LiteralPath $d)) {
+            $remaining = @(Get-ChildItem -LiteralPath $d -Force)
+            if ($remaining.Count -gt 0) { break }
+            Remove-Item -LiteralPath $d -Force
+            $removedFolders.Add($d)
+            $d = Split-Path -Parent $d
+        }
+    }
+}
+
+# =====================================================================
+# Laporan akhir
+# =====================================================================
+Write-Host ''
+Write-Host '==================== LAPORAN ====================' -ForegroundColor Cyan
+Write-Host ("Mode                     : " + $(if ($WhatIf) { 'WHATIF (tidak ada perubahan nyata)' } else { 'APPLY' }))
+Write-Host ("File .yml dipindai       : {0}" -f $files.Count)
+Write-Host ("File hasil baru          : {0}" -f $cntNew)
+Write-Host ("File hasil diubah        : {0}" -f $cntChanged)
+Write-Host ("File hasil sudah sesuai  : {0} (tidak ditulis ulang)" -f $cntSame)
+Write-Host ("File asli dihapus        : {0}" -f $deleted.Count)
+Write-Host ("Folder dihapus           : {0}" -f $removedFolders.Count)
+Write-Host ("File tidak dihapus/lewat : {0}" -f $keptReport.Count)
+if ($cntFailed -gt 0) { Write-Host ("Gagal ditulis            : {0}" -f $cntFailed) -ForegroundColor Red }
+Write-Host ''
+
+# --- Daftar file/folder yang dihapus ---
+$delTitle = if ($WhatIf) { 'FILE ASLI YANG AKAN DIHAPUS (simulasi)' } else { 'FILE ASLI YANG DIHAPUS' }
+Write-Host "--- $delTitle ($($deleted.Count)) ---" -ForegroundColor Magenta
+if ($deleted.Count -eq 0) {
+    Write-Host '  (tidak ada)' -ForegroundColor DarkGray
+}
+else {
+    $byDir = $deleted | Group-Object -Property { Split-Path -Parent (Get-RelativePath $_.Path) } | Sort-Object Name
+    foreach ($g in $byDir) {
+        $folderLabel = if ([string]::IsNullOrEmpty($g.Name)) { '.' } else { $g.Name }
+        Write-Host "[$folderLabel]" -ForegroundColor Magenta
+        foreach ($d in ($g.Group | Sort-Object Path)) {
+            $show = @($d.Targets | Select-Object -First 4) -join ', '
+            if ($d.Targets.Count -gt 4) { $show += ', ...' }
+            Write-Host ("   - {0}  ->  {1} file ({2})" -f [System.IO.Path]::GetFileName($d.Path), $d.Targets.Count, $show)
+        }
+    }
+}
+Write-Host ''
+
+Write-Host "--- FOLDER YANG DIHAPUS ($($removedFolders.Count)) ---" -ForegroundColor Magenta
+if ($removedFolders.Count -eq 0) {
+    Write-Host '  (tidak ada)' -ForegroundColor DarkGray
+}
+else {
+    foreach ($f in $removedFolders) { Write-Host "   - $(Get-RelativePath $f)" }
+}
+Write-Host ''
+
+# --- Daftar file yang tidak dihapus + alasannya ---
+Write-Host "--- FILE YANG TIDAK DIHAPUS / DILEWATI ($($keptReport.Count)) ---" -ForegroundColor Yellow
+if ($keptReport.Count -eq 0) {
+    Write-Host '  (tidak ada)' -ForegroundColor DarkGray
+}
+else {
+    foreach ($k in ($keptReport | Sort-Object Path)) {
+        Write-Host ("   - {0}" -f (Get-RelativePath $k.Path)) -ForegroundColor Yellow
+        Write-Host ("       {0}" -f $k.Reason) -ForegroundColor DarkYellow
+    }
+}
+Write-Host ''
