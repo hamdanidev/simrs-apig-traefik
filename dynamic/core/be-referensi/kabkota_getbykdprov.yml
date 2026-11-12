@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_kabkota_getbykdprov_GET:
+      rule: "PathPrefix(`/v1.0/kabkota/getbykdprov/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

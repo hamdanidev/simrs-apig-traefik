@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_sirs-online_pasien-operasi_laporan_GET:
+      rule: "PathPrefix(`/v1.0/sirs-online/pasien-operasi/laporan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-sirs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SIRS_URL" }}'

@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_remunerasi_upload-potongan-bpjs_upload-data_POST:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-potongan-bpjs/upload-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_remunerasi_upload-potongan-bpjs_get-by-nip_GET:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-potongan-bpjs/get-by-nip/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-remunerasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REMUNERASI_URL" }}'

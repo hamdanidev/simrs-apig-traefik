@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_petugas-medis-lainnya_getbynik_GET:
+      rule: "PathPrefix(`/v1.0/petugas-medis-lainnya/getbynik`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kepegawaian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KEPEGAWAIAN_URL" }}'

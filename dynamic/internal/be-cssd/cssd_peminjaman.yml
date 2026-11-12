@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_cssd_peminjaman_get-list_GET:
+      rule: "PathPrefix(`/v1.0/cssd/peminjaman/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cssd_peminjaman_get-by-id-peminjaman_GET:
+      rule: "PathPrefix(`/v1.0/cssd/peminjaman/get-by-id-peminjaman/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cssd_peminjaman_create_POST:
+      rule: "PathPrefix(`/v1.0/cssd/peminjaman/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_cssd_peminjaman_update_PUT:
+      rule: "PathPrefix(`/v1.0/cssd/peminjaman/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-cssd
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-cssd:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CSSD_URL" }}'

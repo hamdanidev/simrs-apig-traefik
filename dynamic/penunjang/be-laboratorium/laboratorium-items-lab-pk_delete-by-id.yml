@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_laboratorium-items-lab-pk_delete-by-id_DELETE:
+      rule: "PathPrefix(`/v1.0/laboratorium-items-lab-pk/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lab
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-lab:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_LAB_URL" }}'

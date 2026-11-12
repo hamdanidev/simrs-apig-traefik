@@ -1,0 +1,80 @@
+http:
+  routers:
+
+    v1_pendaftaran_order-mcu_getlist-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-mcu/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-mcu_create-order_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-mcu/create-order`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-mcu_send_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-mcu/send/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-mcu_update-order_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-mcu/update-order`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-mcu_getlist-order-items-mcu-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-mcu/getlist-order-items-mcu-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-mcu_create-order-mcu-items_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-mcu/create-order-mcu-items`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-mcu_delete-order-mcu-items_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-mcu/delete-order-mcu-items/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-mcu_delete-order_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-mcu/delete-order/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pengguna_logout_POST:
+      rule: "PathPrefix(`/v1.0/pengguna/logout`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'

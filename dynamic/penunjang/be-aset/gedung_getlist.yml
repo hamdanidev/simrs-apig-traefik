@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_gedung_getlist_GET:
+      rule: "PathPrefix(`/v1.0/gedung/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aset:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ASET_URL" }}' # IP Server Prod

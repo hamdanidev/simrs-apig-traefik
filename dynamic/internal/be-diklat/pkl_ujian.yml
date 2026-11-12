@@ -1,0 +1,72 @@
+http:
+  routers:
+
+    v1_pkl_ujian_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_ujian_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_ujian_create_POST:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_ujian_update_PUT:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_ujian_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_ujian_update-kirim-kasir_PUT:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_ujian_update-status-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_ujian_update-bukti-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/pkl/ujian/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

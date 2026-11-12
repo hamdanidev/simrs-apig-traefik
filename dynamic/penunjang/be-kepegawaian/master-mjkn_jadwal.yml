@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_master-mjkn_jadwal_getlist_GET:
+      rule: "PathPrefix(`/v1.0/master-mjkn/jadwal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master-mjkn_jadwal_update-kuota-request_PUT:
+      rule: "PathPrefix(`/v1.0/master-mjkn/jadwal/update-kuota-request`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master-mjkn_jadwal_update-status_PUT:
+      rule: "PathPrefix(`/v1.0/master-mjkn/jadwal/update-status`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master-mjkn_jadwal_update_PUT:
+      rule: "PathPrefix(`/v1.0/master-mjkn/jadwal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kepegawaian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KEPEGAWAIAN_URL" }}'

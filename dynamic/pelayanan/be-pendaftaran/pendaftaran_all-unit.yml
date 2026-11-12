@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_pendaftaran_all-unit_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/all-unit/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_all-unit_update-no-rm_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/all-unit/update-no-rm/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_all-unit_get-by-no-rm-lengkap_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/all-unit/get-by-no-rm-lengkap/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_all-unit_get-by-no-sep-lengkap_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/all-unit/get-by-no-sep-lengkap/`) &&  (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_all-unit_update-kelas-standar-pelayanan_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/all-unit/update-kelas-standar-pelayanan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

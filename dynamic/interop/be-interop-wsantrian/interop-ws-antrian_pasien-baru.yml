@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_interop-ws-antrian_pasien-baru_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/pasien-baru`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-ws-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_WS_ANTRIAN_URL" }}'

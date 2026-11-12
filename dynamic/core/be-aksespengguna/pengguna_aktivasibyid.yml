@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pengguna_aktivasibyid_PUT:
+      rule: "PathPrefix(`/v1.0/pengguna/aktivasibyid/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'

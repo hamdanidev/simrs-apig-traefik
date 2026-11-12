@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_radiologi-items_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/radiologi-items/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_radiologi-items_create_POST:
+      rule: "PathPrefix(`/v1.0/radiologi-items/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_radiologi-items_update_PUT:
+      rule: "PathPrefix(`/v1.0/radiologi-items/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-radiologi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_RADIOLOGI_URL" }}'

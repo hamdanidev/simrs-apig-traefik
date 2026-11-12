@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_golonganpegawai_getlist_GET:
+      rule: "PathPrefix(`/v1.0/golonganpegawai/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

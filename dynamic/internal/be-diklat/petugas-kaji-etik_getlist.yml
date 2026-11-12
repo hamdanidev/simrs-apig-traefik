@@ -1,0 +1,16 @@
+http:
+  routers:
+
+    v1_petugas-kaji-etik_getlist_GET:
+      rule: "PathPrefix(`/v1.0/petugas-kaji-etik/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

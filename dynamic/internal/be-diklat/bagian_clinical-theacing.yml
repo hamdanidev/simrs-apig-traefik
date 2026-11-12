@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_bagian_clinical-theacing_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_clinical-theacing_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/clinical-theacing/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

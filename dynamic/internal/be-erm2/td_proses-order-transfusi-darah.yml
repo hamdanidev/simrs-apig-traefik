@@ -1,0 +1,152 @@
+http:
+  routers:
+
+    v1_td_proses-order-transfusi-darah_getlist_GET:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_getlist-order-transfusi-darah-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/getlist-order-transfusi-darah-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_getlist-order-jasa-transfusi-darah-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/getlist-order-jasa-transfusi-darah-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_update-status-order-diterima_PUT:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-status-order-diterima`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_update-order-jasa-transfusi-darah_PUT:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-order-jasa-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_update-status-order-selesai_PUT:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-status-order-selesai`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_create-order-jasa-transfusi-darah_POST:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/create-order-jasa-transfusi-darah`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_update-all-order-jasa-transfusi-darah_PUT:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-all-order-jasa-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_delete-order-jasa-transfusi-darah_DELETE:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/delete-order-jasa-transfusi-darah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_get-item-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/get-item-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_update-order-items-transfusi-darah_PUT:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/update-order-items-transfusi-darah`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_getlist-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/getlist-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_create-order-darah_POST:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/create-order-darah`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_create-order-items-transfusi-darah_POST:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/create-order-items-transfusi-darah`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_delete-order-darah_DELETE:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/delete-order-darah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_proses-order-transfusi-darah_delete-order-items-transfusi-darah_DELETE:
+      rule: "PathPrefix(`/v1.0/td/proses-order-transfusi-darah/delete-order-items-transfusi-darah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-transfusi-darah:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_TRANSFUSI_DARAH_URL" }}'

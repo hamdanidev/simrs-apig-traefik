@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_location_search-by-ide_POST:
+      rule: "PathPrefix(`/v1.0/location/search-by-ide`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-satu-sehat-interop:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SATU_SEHAT_INTEROP_URL" }}'

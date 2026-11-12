@@ -1,0 +1,18 @@
+http:
+  routers:
+
+    v1_unit-farmasi_update-pelayanan_PUT:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/update-pelayanan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

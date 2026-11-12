@@ -1,0 +1,134 @@
+http:
+  routers:
+
+    v1_pendaftaran_order-lab-mi_getlist-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/getlist-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_create-order_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/create-order`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_send_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/send/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_update-order_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/update-order`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_getlist-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/getlist-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_create-order-lab-items_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/create-order-lab-items`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_delete-order-lab-items_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/delete-order-lab-items/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_delete-tindakan-lab_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/delete-tindakan-lab/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_get-list-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/get-list-tindakan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_create-tindakan_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/create-tindakan`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_delete-order-lab_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/delete-order-lab/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_create-sample_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/create-sample`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_get-list-sample_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/get-list-sample/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_order-lab-mi_delete-sample_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/order-lab-mi/delete-sample/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

@@ -1,0 +1,72 @@
+http:
+  routers:
+
+    v1_pelatihan_peserta-pelatihan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_create_POST:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_update_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_update-kirim-kasir_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_update-bukti-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_peserta-pelatihan_update-status-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/peserta-pelatihan/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

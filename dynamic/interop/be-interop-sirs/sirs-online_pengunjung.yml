@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_sirs-online_pengunjung_jumlah-pasien_GET:
+      rule: "PathPrefix(`/v1.0/sirs-online/pengunjung/jumlah-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-sirs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SIRS_URL" }}'

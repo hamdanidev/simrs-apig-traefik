@@ -1,0 +1,116 @@
+http:
+  routers:
+
+    v1_spesialis_jadwal-radiologi_getlist_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_getbyid_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/getbyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_create_POST:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_update_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_deletebyid_DELETE:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_update-kuota_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/update-kuota`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_getbykdspesialis_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/getbykdspesialis/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_getbytanggal_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/getbytanggal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_getjadwalbytahunbulan_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/getjadwalbytahunbulan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_getjadwalbykditemdantanggal_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/getjadwalbykditemdantanggal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_getjadwalbykodemodalitasdantanggal_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/getjadwalbykodemodalitasdantanggal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal-radiologi_get-dokter-without-jadwal_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal-radiologi/get-dokter-without-jadwal`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kepegawaian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KEPEGAWAIAN_URL" }}'

@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_merge_document_POST:
+      rule: "PathPrefix(`/v1.0/merge/document`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix-2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix-2:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL_2" }}'

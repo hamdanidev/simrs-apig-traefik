@@ -1,0 +1,54 @@
+http:
+  routers:
+
+    v1_farmasi_depo-ok_get-list_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-ok/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-ok_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-ok/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-ok_create_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-ok/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-ok_update_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-ok/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-ok_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-ok/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

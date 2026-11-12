@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_bagian_journal-reading_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_journal-reading_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/journal-reading/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

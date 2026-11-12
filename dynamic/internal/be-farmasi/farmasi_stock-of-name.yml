@@ -1,0 +1,126 @@
+http:
+  routers:
+
+    v1_farmasi_stock-of-name_get-list-stock-of-name-barang-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/get-list-stock-of-name-barang-farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_get-list-stock-of-name-unit-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/get-list-stock-of-name-unit-farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_get-by-id-stock-of-name-barang-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/get-by-id-stock-of-name-barang-farmasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_get-by-unit-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/get-by-unit-farmasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_get-by-id-stock-of-name-unit-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/get-by-id-stock-of-name-unit-farmasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_create-stock-of-name-unit-farmasi_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/create-stock-of-name-unit-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_create-stock-of-name-barang-farmasi_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/create-stock-of-name-barang-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_create-all-stock-of-name-barang-farmasi_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/create-all-stock-of-name-barang-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_update-stock-of-name-unit-farmasi_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/update-stock-of-name-unit-farmasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_update-stock-of-name-barang-farmasi_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/update-stock-of-name-barang-farmasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_delete-stock-of-name-unit-farmasi_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/delete-stock-of-name-unit-farmasi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_delete-stock-of-name-barang-farmasi_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/delete-stock-of-name-barang-farmasi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_stock-of-name_get-list-stock-of-name-barang-farmasi-lengkap_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/stock-of-name/get-list-stock-of-name-barang-farmasi-lengkap`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

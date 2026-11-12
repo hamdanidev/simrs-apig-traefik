@@ -1,0 +1,63 @@
+http:
+  routers:
+
+    v1_master-poli-ruangan_ruangan_getall_GET:
+      rule: "PathPrefix(`/v1.0/master-poli-ruangan/ruangan/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master-poli-ruangan_ruangan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/master-poli-ruangan/ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master-poli-ruangan_ruangan_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/master-poli-ruangan/ruangan/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master-poli-ruangan_ruangan_create_POST:
+      rule: "PathPrefix(`/v1.0/master-poli-ruangan/ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master-poli-ruangan_ruangan_update_PUT:
+      rule: "PathPrefix(`/v1.0/master-poli-ruangan/ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master-poli-ruangan_ruangan_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/master-poli-ruangan/ruangan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

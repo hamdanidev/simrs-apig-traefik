@@ -1,0 +1,16 @@
+http:
+  routers:
+
+    v1_peserta-diklat_update-master_PUT:
+      rule: "PathPrefix(`/v1.0/peserta-diklat/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

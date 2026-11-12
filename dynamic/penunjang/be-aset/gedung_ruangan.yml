@@ -1,0 +1,62 @@
+http:
+  routers:
+
+    v1_gedung_ruangan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/gedung/ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_gedung_ruangan_getlistbykdgedung_GET:
+      rule: "PathPrefix(`/v1.0/gedung/ruangan/getlistbykdgedung/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_gedung_ruangan_create_POST:
+      rule: "PathPrefix(`/v1.0/gedung/ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_gedung_ruangan_update_PUT:
+      rule: "PathPrefix(`/v1.0/gedung/ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_gedung_ruangan_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/gedung/ruangan/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_gedung_ruangan_getlist-by-farmasi-ruangan_GET:
+      rule: "PathPrefix(`/v1.0/gedung/ruangan/getlist-by-farmasi-ruangan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-aset
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aset:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ASET_URL" }}' # IP Server Prod

@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_service-request_update_POST:
+      rule: "PathPrefix(`/v1.0/service-request/update`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-satu-sehat-interop:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SATU_SEHAT_INTEROP_URL" }}'

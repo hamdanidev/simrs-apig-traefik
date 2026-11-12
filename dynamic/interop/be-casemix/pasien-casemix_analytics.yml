@@ -1,0 +1,80 @@
+http:
+  routers:
+
+    v1_pasien-casemix_analytics_tarif-per-bulan_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/tarif-per-bulan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-casemix_analytics_pasien-by-kelas_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-kelas`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-casemix_analytics_pasien-by-jenis-kelamin_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-jenis-kelamin`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-casemix_analytics_pasien-by-cara-pulang_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-cara-pulang`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-casemix_analytics_pasien-by-los_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-los`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-casemix_analytics_pasien-by-umur_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/pasien-by-umur`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-casemix_analytics_total-klaim-tarif_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/total-klaim-tarif`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pasien-casemix_analytics_top-ten-icd10_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/analytics/top-ten-icd10`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

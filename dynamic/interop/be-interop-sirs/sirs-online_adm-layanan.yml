@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_sirs-online_adm-layanan_laporan-cara-bayar-sirs_get-list_GET:
+      rule: "PathPrefix(`/v1.0/sirs-online/adm-layanan/laporan-cara-bayar-sirs/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-sirs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SIRS_URL" }}'

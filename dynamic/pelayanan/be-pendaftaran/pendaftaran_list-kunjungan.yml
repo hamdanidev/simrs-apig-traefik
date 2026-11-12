@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pendaftaran_list-kunjungan_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/list-kunjungan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

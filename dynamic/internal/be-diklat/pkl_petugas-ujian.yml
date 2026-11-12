@@ -1,0 +1,56 @@
+http:
+  routers:
+
+    v1_pkl_petugas-ujian_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-ujian_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-ujian_get-by-id-pkl_GET:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/get-by-id-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-ujian_create_POST:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-ujian_update_PUT:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-ujian_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-ujian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

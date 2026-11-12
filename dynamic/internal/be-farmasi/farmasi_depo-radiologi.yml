@@ -1,0 +1,54 @@
+http:
+  routers:
+
+    v1_farmasi_depo-radiologi_get-list_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-radiologi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-radiologi_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-radiologi/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-radiologi_create_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-radiologi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-radiologi_update_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-radiologi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-radiologi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-radiologi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

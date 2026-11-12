@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_interop-ws-antrian_jadwal-operasi-pasien_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_interop-ws-antrian_jadwal-operasi-pasien_v02_POST:
+      rule: "PathPrefix(`/v1.0/interop-ws-antrian/jadwal-operasi-pasien/v02`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-ws-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_WS_ANTRIAN_URL" }}'

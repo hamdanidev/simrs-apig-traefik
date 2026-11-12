@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_bagian_tugas-ruangan_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tugas-ruangan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/tugas-ruangan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

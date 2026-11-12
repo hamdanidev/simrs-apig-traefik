@@ -1,0 +1,40 @@
+http:
+  routers:
+
+    v1_penelitian_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/penelitian/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_penelitian_create_POST:
+      rule: "PathPrefix(`/v1.0/penelitian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_penelitian_update_PUT:
+      rule: "PathPrefix(`/v1.0/penelitian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_penelitian_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/penelitian/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

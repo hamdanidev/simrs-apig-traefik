@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_hemodialisa_status_PUT:
+      rule: "PathPrefix(`/v1.0/hemodialisa/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ANTRIAN_URL" }}' # IP Server Prod

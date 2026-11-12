@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pendaftaran_rajal-apm-pasien_delete-mix_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rajal-apm-pasien/delete-mix/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

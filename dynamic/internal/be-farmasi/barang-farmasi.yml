@@ -1,0 +1,27 @@
+http:
+  routers:
+
+    v1_barang-farmasi_create_POST:
+      rule: "PathPrefix(`/v1.0/barang-farmasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_barang-farmasi_update_PUT:
+      rule: "PathPrefix(`/v1.0/barang-farmasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

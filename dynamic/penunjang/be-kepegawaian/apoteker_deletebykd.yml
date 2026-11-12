@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_apoteker_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/apoteker/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kepegawaian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KEPEGAWAIAN_URL" }}'

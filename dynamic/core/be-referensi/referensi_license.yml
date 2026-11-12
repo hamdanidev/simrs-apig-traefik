@@ -1,0 +1,25 @@
+http:
+  routers:
+
+    v1_referensi_license_status_GET:
+      rule: "PathPrefix(`/v1.0/referensi/license/status`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_referensi_license_update_PUT:
+      rule: "PathPrefix(`/v1.0/referensi/license/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_master_bagian-ppds_getlist_GET:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_bagian-ppds_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_bagian-ppds_create_POST:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_bagian-ppds_update_PUT:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_bagian-ppds_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/master/bagian-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

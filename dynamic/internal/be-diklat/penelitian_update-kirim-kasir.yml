@@ -1,0 +1,16 @@
+http:
+  routers:
+
+    v1_penelitian_update-kirim-kasir_PUT:
+      rule: "PathPrefix(`/v1.0/penelitian/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

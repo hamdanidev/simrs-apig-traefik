@@ -1,0 +1,54 @@
+http:
+  routers:
+
+    v1_farmasi_depo-kanca-sehati_get-list_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-kanca-sehati/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-kanca-sehati_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-kanca-sehati/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-kanca-sehati_create_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-kanca-sehati/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-kanca-sehati_update_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-kanca-sehati/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_depo-kanca-sehati_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/depo-kanca-sehati/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

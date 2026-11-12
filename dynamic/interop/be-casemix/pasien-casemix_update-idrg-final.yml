@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pasien-casemix_update-idrg-final_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-idrg-final`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

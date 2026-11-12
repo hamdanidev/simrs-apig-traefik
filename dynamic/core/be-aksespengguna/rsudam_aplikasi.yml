@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_rsudam_aplikasi_new_create_POST:
+      rule: "PathPrefix(`/v1.0/rsudam/aplikasi/new/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rsudam_aplikasi_new_edit_PUT:
+      rule: "PathPrefix(`/v1.0/rsudam/aplikasi/new/edit`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'

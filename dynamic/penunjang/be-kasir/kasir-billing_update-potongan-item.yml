@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_kasir-billing_update-potongan-item_PUT:
+      rule: "PathPrefix(`/v1.0/kasir-billing/update-potongan-item`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kasir:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KASIR_URL" }}' # IP Server Prod

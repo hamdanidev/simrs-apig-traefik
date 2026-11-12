@@ -1,0 +1,64 @@
+http:
+  routers:
+
+    v1_peningkatan-kompetensi_petugas-peningkatan-kompetensi_getlist_GET:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_peningkatan-kompetensi_petugas-peningkatan-kompetensi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_peningkatan-kompetensi_petugas-peningkatan-kompetensi_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_peningkatan-kompetensi_petugas-peningkatan-kompetensi_get-by-id-kegiatan-peningkatan-kompetensi_GET:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/get-by-id-kegiatan-peningkatan-kompetensi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_peningkatan-kompetensi_petugas-peningkatan-kompetensi_create_POST:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_peningkatan-kompetensi_petugas-peningkatan-kompetensi_update_PUT:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_peningkatan-kompetensi_petugas-peningkatan-kompetensi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/peningkatan-kompetensi/petugas-peningkatan-kompetensi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

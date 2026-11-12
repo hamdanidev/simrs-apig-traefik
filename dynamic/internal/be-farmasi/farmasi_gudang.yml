@@ -1,0 +1,81 @@
+http:
+  routers:
+
+    v1_farmasi_gudang_get-list_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/gudang/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_gudang_get-list-ready-stock_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/gudang/get-list-ready-stock`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_gudang_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/gudang/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_gudang_create_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/gudang/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_gudang_update_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/gudang/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_gudang_update-stock_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/gudang/update-stock/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_gudang_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/gudang/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_gudang_update-with-induk_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/gudang/update-with-induk/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

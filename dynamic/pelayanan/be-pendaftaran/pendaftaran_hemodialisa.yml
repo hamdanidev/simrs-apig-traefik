@@ -1,0 +1,170 @@
+http:
+  routers:
+
+    v1_pendaftaran_hemodialisa_get-list_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_get-list-hemodialisa-apm_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/get-list-hemodialisa-apm`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_create_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/create`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_generate-no-registrasi_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/generate-no-registrasi/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_update-step-1_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-step-1/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_update-step-2_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-step-2/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_update-step-3_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-step-3/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_update-step-4_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-step-4/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/delete/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_generate-no-registrasi-perbaikan_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/generate-no-registrasi-perbaikan/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_batalkan-pendaftaran_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/batalkan-pendaftaran/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_buka-pendaftaran_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/buka-pendaftaran/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_update-khusus-adm-layanan_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-khusus-adm-layanan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_create-by-apm_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/create-by-apm`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_update-sep_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-sep/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_hemodialisa_update-step-3-v2_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/hemodialisa/update-step-3-v2/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

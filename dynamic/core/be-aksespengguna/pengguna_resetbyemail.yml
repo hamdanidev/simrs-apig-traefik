@@ -1,0 +1,16 @@
+http:
+  routers:
+
+    v1_pengguna_resetbyemail_POST:
+      rule: "PathPrefix(`/v1.0/pengguna/resetbyemail`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'

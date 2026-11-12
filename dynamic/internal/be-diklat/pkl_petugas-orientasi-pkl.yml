@@ -1,0 +1,56 @@
+http:
+  routers:
+
+    v1_pkl_petugas-orientasi-pkl_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-orientasi-pkl_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-orientasi-pkl_get-by-id-orientasi-pkl_GET:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/get-by-id-orientasi-pkl/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-orientasi-pkl_create_POST:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-orientasi-pkl_update_PUT:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pkl_petugas-orientasi-pkl_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pkl/petugas-orientasi-pkl/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

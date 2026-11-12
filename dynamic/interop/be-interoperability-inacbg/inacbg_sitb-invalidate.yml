@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v2_inacbg_sitb-invalidate_POST:
+      rule: "PathPrefix(`/v2.0/inacbg/sitb-invalidate`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-inacbgv2:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_INACBGV2_URL" }}'

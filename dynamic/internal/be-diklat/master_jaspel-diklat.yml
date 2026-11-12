@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_master_jaspel-diklat_getlist_GET:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_jaspel-diklat_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_jaspel-diklat_create_POST:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_jaspel-diklat_update_PUT:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_jaspel-diklat_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/master/jaspel-diklat/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

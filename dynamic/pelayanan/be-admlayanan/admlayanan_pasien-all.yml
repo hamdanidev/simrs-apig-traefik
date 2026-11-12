@@ -1,0 +1,18 @@
+http:
+  routers:
+
+    v1_admlayanan_pasien-all_update-no-sep_PUT:
+      rule: "PathPrefix(`/v1.0/admlayanan/pasien-all/update-no-sep`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-admlayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ADMLAYANAN_URL" }}' # IP Server Prod
+          # - url: '{{ env "SERVICE_ADMLAYANAN_URL_2" }}' # IP Server Prod cadangan

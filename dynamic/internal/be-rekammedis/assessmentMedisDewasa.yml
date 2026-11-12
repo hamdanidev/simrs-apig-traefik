@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_assessmentMedisDewasa_create_POST:
+      rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_assessmentMedisDewasa_update_PUT:
+      rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_assessmentMedisDewasa_delete_GET:
+      rule: "PathPrefix(`/v1.0/assessmentMedisDewasa/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

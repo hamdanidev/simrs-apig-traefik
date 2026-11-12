@@ -1,0 +1,18 @@
+http:
+  routers:
+
+    v1_unit-farmasi_create-pelayanan_POST:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/create-pelayanan`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

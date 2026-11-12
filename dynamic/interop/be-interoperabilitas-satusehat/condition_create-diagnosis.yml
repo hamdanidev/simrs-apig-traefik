@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_condition_create-diagnosis_POST:
+      rule: "PathPrefix(`/v1.0/condition/create-diagnosis`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-satu-sehat-interop:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SATU_SEHAT_INTEROP_URL" }}'

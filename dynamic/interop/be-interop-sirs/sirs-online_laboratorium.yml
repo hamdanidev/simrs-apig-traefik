@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_sirs-online_laboratorium_laporan-kunjungan-pasien-by-tindakan_GET:
+      rule: "PathPrefix(`/v1.0/sirs-online/laboratorium/laporan-kunjungan-pasien-by-tindakan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sirs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-sirs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SIRS_URL" }}'

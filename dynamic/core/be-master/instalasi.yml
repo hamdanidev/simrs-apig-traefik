@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_instalasi_create_POST:
+      rule: "PathPrefix(`/v1.0/instalasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_instalasi_update_PUT:
+      rule: "PathPrefix(`/v1.0/instalasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-master:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MASTER_URL" }}'

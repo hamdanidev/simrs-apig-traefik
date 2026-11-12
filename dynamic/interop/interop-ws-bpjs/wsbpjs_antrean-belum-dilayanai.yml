@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_wsbpjs_antrean-belum-dilayanai_POST:
+      rule: "PathPrefix(`/v1.0/wsbpjs/antrean-belum-dilayanai`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ws-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-ws-bpjs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_WS_BPJS_URL" }}'

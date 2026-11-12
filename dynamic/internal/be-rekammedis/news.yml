@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_news_create_POST:
+      rule: "PathPrefix(`/v1.0/news/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_news_update_PUT:
+      rule: "PathPrefix(`/v1.0/news/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

@@ -1,0 +1,88 @@
+http:
+  routers:
+
+    v1_ppds_peserta-pendidikan-ppds_get-by-no-ktp_GET:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-no-ktp/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_get-by-nim_GET:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-nim/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_get-by-nama-tanggal-lahir_GET:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-nama-tanggal-lahir/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_create_POST:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_update_PUT:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_update-master_PUT:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/update-master`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_peserta-pendidikan-ppds_get-by-id-referensi_GET:
+      rule: "PathPrefix(`/v1.0/ppds/peserta-pendidikan-ppds/get-by-id-referensi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

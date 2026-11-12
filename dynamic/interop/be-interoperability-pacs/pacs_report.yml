@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_pacs_report_get-list-report_GET:
+      rule: "PathPrefix(`/v1.0/pacs/report/get-list-report`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pacs_report_get-by-accession-num_GET:
+      rule: "PathPrefix(`/v1.0/pacs/report/get-by-accession-num/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pacs_report_create-report_POST:
+      rule: "PathPrefix(`/v1.0/pacs/report/create-report`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pacs_report_delete-report_DELETE:
+      rule: "PathPrefix(`/v1.0/pacs/report/delete-report/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pacs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PACS_URL" }}'

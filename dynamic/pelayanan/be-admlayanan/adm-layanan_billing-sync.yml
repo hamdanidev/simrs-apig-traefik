@@ -1,0 +1,27 @@
+http:
+  routers:
+
+    v1_adm-layanan_billing-sync_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/adm-layanan/billing-sync/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_adm-layanan_billing-sync_sync_POST:
+      rule: "PathPrefix(`/v1.0/adm-layanan/billing-sync/sync/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-admlayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ADMLAYANAN_URL" }}' # IP Server Prod
+          # - url: '{{ env "SERVICE_ADMLAYANAN_URL_2" }}' # IP Server Prod cadangan

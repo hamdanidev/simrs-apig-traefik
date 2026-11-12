@@ -1,0 +1,27 @@
+http:
+  routers:
+
+    v1_adm-layanan_kirim-kasir_payload_GET:
+      rule: "PathPrefix(`/v1.0/adm-layanan/kirim-kasir/payload/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_adm-layanan_kirim-kasir_create_POST:
+      rule: "PathPrefix(`/v1.0/adm-layanan/kirim-kasir/create/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-admlayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ADMLAYANAN_URL" }}' # IP Server Prod
+          # - url: '{{ env "SERVICE_ADMLAYANAN_URL_2" }}' # IP Server Prod cadangan

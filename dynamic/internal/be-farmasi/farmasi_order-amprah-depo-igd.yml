@@ -1,0 +1,108 @@
+http:
+  routers:
+
+    v1_farmasi_order-amprah-depo-igd_get-list-depo-igd_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/get-list-depo-igd`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_get-list-order-amprah-depo-igd_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/get-list-order-amprah-depo-igd`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_get-by-id-depo-igd_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/get-by-id-depo-igd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_create-order-amprah-depo-igd_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/create-order-amprah-depo-igd`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_create-depo-igd_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/create-depo-igd`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_send-order-amprah-depo-igd_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/send-order-amprah-depo-igd/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_update-order-amprah-depo-igd_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/update-order-amprah-depo-igd/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_update-depo-igd_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/update-depo-igd/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_delete-order-amprah-depo-igd_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/delete-order-amprah-depo-igd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah-depo-igd_delete-depo-igd_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah-depo-igd/delete-depo-igd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

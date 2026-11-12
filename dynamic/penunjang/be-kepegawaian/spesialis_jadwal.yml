@@ -1,0 +1,159 @@
+http:
+  routers:
+
+    v1_spesialis_jadwal_getlist_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_create_POST:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_update-keterangan_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/update-keterangan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_update_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_deletebyid_DELETE:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_absendatang_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/absendatang`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_spesialis_jadwal_absenpulang_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/absenpulang`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_spesialis_jadwal_getbykdspesialis_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/getbykdspesialis/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_getbytanggal_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/getbytanggal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_getjadwalbytahunbulan_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/getjadwalbytahunbulan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_getjadwalbykdlayanandantanggal_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/getjadwalbykdlayanandantanggal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_getjadwalbykdspesialistanggaldanabsendatang_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/getjadwalbykdspesialistanggaldanabsendatang/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_update-kuota_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/update-kuota`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_update-hafis_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/update-hafis`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_update-waktu-absen-datang_PUT:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/update-waktu-absen-datang`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_getlist-belum-absen-pulang_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/getlist-belum-absen-pulang/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_spesialis_jadwal_getlist-dokter_GET:
+      rule: "PathPrefix(`/v1.0/spesialis/jadwal/getlist-dokter`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kepegawaian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KEPEGAWAIAN_URL" }}'

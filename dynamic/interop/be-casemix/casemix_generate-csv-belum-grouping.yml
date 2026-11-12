@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_casemix_generate-csv-belum-grouping_pasien-casemix_POST:
+      rule: "PathPrefix(`/v1.0/casemix/generate-csv-belum-grouping/pasien-casemix`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

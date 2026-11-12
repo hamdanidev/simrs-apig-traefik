@@ -1,0 +1,141 @@
+http:
+  routers:
+
+    v1_umum_jadwal_getlist_GET:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_getbyid_GET:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/getbyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_create_POST:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/create/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_update_PUT:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_deletebyid_DELETE:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/deletebyid/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_absendatang_PUT:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/absendatang`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_umum_jadwal_absenpulang_PUT:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/absenpulang`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_umum_jadwal_getbykdumum_GET:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/getbykdumum/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_getbykdinstalasi_GET:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/getbykdinstalasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_getbytanggal_GET:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/getbytanggal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_getjadwalbytahunbulan_GET:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/getjadwalbytahunbulan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_getjadwalbykdumumtanggaldanabsendatang_GET:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/getjadwalbykdumumtanggaldanabsendatang/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_update-keterangan_PUT:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/update-keterangan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_update-waktu-absen-datang_PUT:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/update-waktu-absen-datang`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_umum_jadwal_getlist-belum-absen-pulang_GET:
+      rule: "PathPrefix(`/v1.0/umum/jadwal/getlist-belum-absen-pulang`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kepegawaian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KEPEGAWAIAN_URL" }}'

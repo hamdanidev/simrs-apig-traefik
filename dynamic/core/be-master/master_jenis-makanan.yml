@@ -1,0 +1,62 @@
+http:
+  routers:
+
+    v1_master_jenis-makanan_get-list_GET:
+      rule: "PathPrefix(`/v1.0/master/jenis-makanan/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_jenis-makanan_get-all_GET:
+      rule: "PathPrefix(`/v1.0/master/jenis-makanan/get-all`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_jenis-makanan_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/master/jenis-makanan/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_jenis-makanan_create_POST:
+      rule: "PathPrefix(`/v1.0/master/jenis-makanan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_jenis-makanan_update_PUT:
+      rule: "PathPrefix(`/v1.0/master/jenis-makanan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_jenis-makanan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/master/jenis-makanan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-master:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MASTER_URL" }}'

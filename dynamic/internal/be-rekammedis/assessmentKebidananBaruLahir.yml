@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_assessmentKebidananBaruLahir_create_POST:
+      rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_assessmentKebidananBaruLahir_update_PUT:
+      rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_assessmentKebidananBaruLahir_delete_GET:
+      rule: "PathPrefix(`/v1.0/assessmentKebidananBaruLahir/delete/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

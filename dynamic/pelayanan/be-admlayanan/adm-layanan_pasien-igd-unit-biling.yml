@@ -1,0 +1,54 @@
+http:
+  routers:
+
+    v1_adm-layanan_pasien-igd-unit-biling_getlist_GET:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_adm-layanan_pasien-igd-unit-biling_getlist_selesai-layanan_GET:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/getlist/selesai-layanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_adm-layanan_pasien-igd-unit-biling_getlist_by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/getlist/by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_adm-layanan_pasien-igd-unit-biling_update_status-kedatangan_PUT:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/update/status-kedatangan/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_adm-layanan_pasien-igd-unit-biling_update_status_PUT:
+      rule: "PathPrefix(`/v1.0/adm-layanan/pasien-igd-unit-biling/update/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-admlayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-admlayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ADMLAYANAN_URL" }}' # IP Server Prod
+          # - url: '{{ env "SERVICE_ADMLAYANAN_URL_2" }}' # IP Server Prod cadangan

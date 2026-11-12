@@ -1,0 +1,99 @@
+http:
+  routers:
+
+    v1_farmasi_order-barang-farmasi-bebas_get-list_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_create_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_update_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_buka-order-barang-farmasi-bebas_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/buka-order-barang-farmasi-bebas`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_batalkan-order-barang-farmasi-bebas_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/batalkan-order-barang-farmasi-bebas`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_update-kategori_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/update-kategori/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_generate-no-antrian-depo_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/generate-no-antrian-depo/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_get-list-lengkap_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/get-list-lengkap`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-barang-farmasi-bebas_update-info-kasir_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-barang-farmasi-bebas/update-info-kasir/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

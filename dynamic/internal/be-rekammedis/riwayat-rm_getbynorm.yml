@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_riwayat-rm_getbynorm_GET:
+      rule: "PathPrefix(`/v1.0/riwayat-rm/getbynorm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

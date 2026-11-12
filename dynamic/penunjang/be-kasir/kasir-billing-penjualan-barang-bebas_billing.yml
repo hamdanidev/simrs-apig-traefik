@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_kasir-billing-penjualan-barang-bebas_billing_create_POST:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kasir-billing-penjualan-barang-bebas_billing_getlist_GET:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_kasir-billing-penjualan-barang-bebas_billing_getlist-billing-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/kasir-billing-penjualan-barang-bebas/billing/getlist-billing-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kasir
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-kasir:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KASIR_URL" }}' # IP Server Prod

@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_td_item-transfusi-darah_getlist_GET:
+      rule: "PathPrefix(`/v1.0/td/item-transfusi-darah/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-transfusi-darah:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_TRANSFUSI_DARAH_URL" }}'

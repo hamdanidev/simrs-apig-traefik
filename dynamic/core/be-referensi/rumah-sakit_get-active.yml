@@ -1,0 +1,16 @@
+http:
+  routers:
+
+    v1_rumah-sakit_get-active_GET:
+      rule: "PathPrefix(`/v1.0/rumah-sakit/get-active`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-referensi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-referensi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REFERENSI_URL" }}'

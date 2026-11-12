@@ -1,0 +1,99 @@
+http:
+  routers:
+
+    v1_farmasi_paket-obat_get-list-paket-obat_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/get-list-paket-obat`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_get-list-paket-obat-barang_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/get-list-paket-obat-barang`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_get-by-id-paket-obat_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/get-by-id-paket-obat/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_get-by-id-paket-obat-barang_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/get-by-id-paket-obat-barang/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_create-paket-obat_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/create-paket-obat`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_create-paket-obat-barang_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/create-paket-obat-barang`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_update-paket-obat_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/update-paket-obat/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_update-paket-obat-barang_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/update-paket-obat-barang/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_delete-paket-obat_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/delete-paket-obat/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_paket-obat_delete-paket-obat-barang_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/paket-obat/delete-paket-obat-barang/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

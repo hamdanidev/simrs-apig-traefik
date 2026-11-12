@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_sewa-aula_petugas-sewa-aula_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_petugas-sewa-aula_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_petugas-sewa-aula_create_POST:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_petugas-sewa-aula_update_PUT:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_petugas-sewa-aula_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/sewa-aula/petugas-sewa-aula/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

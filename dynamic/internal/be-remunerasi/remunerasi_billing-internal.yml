@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_remunerasi_billing-internal_import-data-billing_POST:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal/import-data-billing`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_remunerasi_billing-internal_import-data-billing-v2_POST:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal/import-data-billing-v2`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_remunerasi_billing-internal_proses-nats_POST:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal/proses-nats`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_remunerasi_billing-internal_get-by-nosep_GET:
+      rule: "PathPrefix(`/v1.0/remunerasi/billing-internal/get-by-nosep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-remunerasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REMUNERASI_URL" }}'

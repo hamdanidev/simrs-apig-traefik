@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_group_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/group/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'

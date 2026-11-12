@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_remunerasi_remun-umum_GET:
+      rule: "PathPrefix(`/v1.0/remunerasi/remun-umum`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-remunerasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REMUNERASI_URL" }}'

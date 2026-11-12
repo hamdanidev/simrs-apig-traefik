@@ -1,0 +1,16 @@
+http:
+  routers:
+
+    v1_absensi_getabsensibyidjadwal_GET:
+      rule: "PathPrefix(`/v1.0/absensi/getabsensibyidjadwal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-kepegawaian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-kepegawaian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_KEPEGAWAIAN_URL" }}'

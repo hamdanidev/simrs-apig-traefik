@@ -1,0 +1,108 @@
+http:
+  routers:
+
+    v1_farmasi_data-awal_get-list-data-awal-barang-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/get-list-data-awal-barang-farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_get-list-data-awal-unit-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/get-list-data-awal-unit-farmasi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_get-by-id-data-awal-barang-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/get-by-id-data-awal-barang-farmasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_get-by-unit-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/get-by-unit-farmasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_get-by-id-data-awal-unit-farmasi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/get-by-id-data-awal-unit-farmasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_create-data-awal-unit-farmasi_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/create-data-awal-unit-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_create-data-awal-barang-farmasi_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/create-data-awal-barang-farmasi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_update-data-awal-unit-farmasi_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/update-data-awal-unit-farmasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_update-data-awal-barang-farmasi_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/update-data-awal-barang-farmasi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_delete-data-awal-unit-farmasi_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/delete-data-awal-unit-farmasi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_data-awal_delete-data-awal-barang-farmasi_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/data-awal/delete-data-awal-barang-farmasi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

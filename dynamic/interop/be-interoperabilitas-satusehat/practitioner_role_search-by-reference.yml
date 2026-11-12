@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_practitioner_role_search-by-reference_POST:
+      rule: "PathPrefix(`/v1.0/practitioner_role/search-by-reference`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat-interop
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-satu-sehat-interop:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SATU_SEHAT_INTEROP_URL" }}'

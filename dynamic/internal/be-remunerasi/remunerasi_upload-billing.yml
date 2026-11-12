@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_remunerasi_upload-billing_upload-data_POST:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-billing/upload-data`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_remunerasi_upload-billing_get-by-nosep_GET:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-billing/get-by-nosep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_remunerasi_upload-billing_edit_PUT:
+      rule: "PathPrefix(`/v1.0/remunerasi/upload-billing/edit/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-remunerasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-remunerasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REMUNERASI_URL" }}'

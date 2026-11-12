@@ -1,0 +1,64 @@
+http:
+  routers:
+
+    v1_ppds_laporan-ujian-ppds_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    # duplicat_v1_ppds_laporan-ujian-ppds_get-by-id_GET:
+    #   rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+    #   service: service-diklat
+    #   entryPoints:
+    #     - web
+    #   middlewares:
+    #     - "simrs-cors"
+
+    v1_ppds_laporan-ujian-ppds_get-by-id-bagian-ppds_GET:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-id-bagian-ppds/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_laporan-ujian-ppds_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_laporan-ujian-ppds_create_POST:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_laporan-ujian-ppds_update_PUT:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_laporan-ujian-ppds_update-status-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/ppds/laporan-ujian-ppds/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

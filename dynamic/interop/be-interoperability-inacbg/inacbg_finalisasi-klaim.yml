@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v2_inacbg_finalisasi-klaim_POST:
+      rule: "PathPrefix(`/v2.0/inacbg/finalisasi-klaim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_inacbg_finalisasi-klaim_POST:
+      rule: "PathPrefix(`/v1.0/inacbg/finalisasi-klaim`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-inacbgv2:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_INACBGV2_URL" }}'

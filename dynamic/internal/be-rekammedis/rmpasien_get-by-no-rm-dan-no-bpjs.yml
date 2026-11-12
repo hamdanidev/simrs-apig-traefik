@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_rmpasien_get-by-no-rm-dan-no-bpjs_GET:
+      rule: "PathPrefix(`/v1.0/rmpasien/get-by-no-rm-dan-no-bpjs/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

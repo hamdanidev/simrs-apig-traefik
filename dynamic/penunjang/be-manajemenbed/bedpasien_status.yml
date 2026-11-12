@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_bedpasien_status_update_PUT:
+      rule: "PathPrefix(`/v1.0/bedpasien/status/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_bedpasien_status_update-khusus_PUT:
+      rule: "PathPrefix(`/v1.0/bedpasien/status/update-khusus`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-bed
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-bed:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BED_URL" }}' # IP Server Prod

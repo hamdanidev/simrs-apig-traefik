@@ -1,0 +1,90 @@
+http:
+  routers:
+
+    v1_farmasi_master-barang-produksi_get-list-barang-produksi_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/get-list-barang-produksi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_master-barang-produksi_get-list-bahan-baku_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/get-list-bahan-baku`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_master-barang-produksi_create-barang-produksi_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/create-barang-produksi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_master-barang-produksi_create-bahan-baku_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/create-bahan-baku`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_master-barang-produksi_update-barang-produksi_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/update-barang-produksi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_master-barang-produksi_update-bahan-baku_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/update-bahan-baku/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_master-barang-produksi_delete-barang-produksi_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/delete-barang-produksi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_master-barang-produksi_delete-bahan-baku_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/delete-bahan-baku/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_master-barang-produksi_get-by-kd-barang-stock_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/master-barang-produksi/get-by-kd-barang-stock/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

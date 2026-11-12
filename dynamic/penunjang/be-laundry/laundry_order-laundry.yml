@@ -1,0 +1,107 @@
+http:
+  routers:
+
+    v1_laundry_order-laundry_get-list-order-laundry_GET:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/get-list-order-laundry`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_get-list-order-laundry-with-barang-laundry_GET:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/get-list-order-laundry-with-barang-laundry`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_get-list-barang-laundry_GET:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/get-list-barang-laundry`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_get-by-id-barang-laundry_GET:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/get-by-id-barang-laundry/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_create-order-laundry_POST:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/create-order-laundry`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_create-barang-laundry_POST:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/create-barang-laundry`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_update-order-laundry_PUT:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/update-order-laundry/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_update-barang-laundry_PUT:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/update-barang-laundry/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_delete-order-laundry_DELETE:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/delete-order-laundry/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_laundry_order-laundry_delete-barang-laundry_DELETE:
+      rule: "PathPrefix(`/v1.0/laundry/order-laundry/delete-barang-laundry/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-laundry
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-laundry:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_LAUNDRY_URL" }}'

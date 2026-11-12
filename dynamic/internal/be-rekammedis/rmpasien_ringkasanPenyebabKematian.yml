@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_rmpasien_ringkasanPenyebabKematian_getlist_GET:
+      rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rmpasien_ringkasanPenyebabKematian_create_POST:
+      rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rmpasien_ringkasanPenyebabKematian_update_PUT:
+      rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rmpasien_ringkasanPenyebabKematian_deletebyid_GET:
+      rule: "PathPrefix(`/v1.0/rmpasien/ringkasanPenyebabKematian/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

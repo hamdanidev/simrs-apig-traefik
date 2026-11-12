@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_bundling_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bundling/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix-2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix-2:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL_2" }}'

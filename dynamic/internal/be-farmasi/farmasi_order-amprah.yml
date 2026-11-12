@@ -1,0 +1,144 @@
+http:
+  routers:
+
+    v1_farmasi_order-amprah_get-list-amprah_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/get-list-amprah`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_get-list-order-amprah_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/get-list-order-amprah`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_get-by-tujuan-order_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/get-by-tujuan-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_get-by-id-amprah_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/get-by-id-amprah/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_create-order-amprah_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/create-order-amprah`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_create-amprah_POST:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/create-amprah`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_update-order-amprah_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/update-order-amprah/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_update-amprah_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/update-amprah/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_delete-order-amprah_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/delete-order-amprah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_delete-amprah_DELETE:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/delete-amprah/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_buka-order-amprah_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/buka-order-amprah/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_batalkan-order-amprah_PUT:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/batalkan-order-amprah/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_get-list-order-amprah-with-amprah_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/get-list-order-amprah-with-amprah`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_farmasi_order-amprah_get-laporan-amprah_GET:
+      rule: "PathPrefix(`/v1.0/farmasi/order-amprah/get-laporan-amprah`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

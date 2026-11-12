@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_aplikasi_updateshowhomepage_PUT:
+      rule: "PathPrefix(`/v1.0/aplikasi/updateshowhomepage/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-aksespengguna
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-aksespengguna:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AKSESPENGGUNA_URL" }}'

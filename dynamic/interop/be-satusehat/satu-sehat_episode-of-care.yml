@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_satu-sehat_episode-of-care_get-list_GET:
+      rule: "PathPrefix(`/v1.0/satu-sehat/episode-of-care/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_satu-sehat_episode-of-care_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/satu-sehat/episode-of-care/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_satu-sehat_episode-of-care_update_PUT:
+      rule: "PathPrefix(`/v1.0/satu-sehat/episode-of-care/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_satu-sehat_episode-of-care_create_POST:
+      rule: "PathPrefix(`/v1.0/satu-sehat/episode-of-care/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-satu-sehat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SATU_SEHAT_URL" }}'

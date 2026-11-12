@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_generate-txt_pasien-jamkesda-dari-casemix_POST:
+      rule: "PathPrefix(`/v1.0/generate-txt/pasien-jamkesda-dari-casemix`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

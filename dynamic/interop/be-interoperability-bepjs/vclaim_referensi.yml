@@ -1,0 +1,152 @@
+http:
+  routers:
+
+    v1_vclaim_referensi_diagnosa_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/diagnosa`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_poli_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/poli`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_faskes_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/faskes`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_dokter-dpjp_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/dokter-dpjp`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_propinsi_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/propinsi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_kabupaten_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/kabupaten`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_kecamatan_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/kecamatan`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_diagnosa-prb_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/diagnosa-prb`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_obat-prb_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/obat-prb`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_tindakan-procedure_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/tindakan-procedure`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_kelas-rawat_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/kelas-rawat`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_dokter_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/dokter`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_spesialistik_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/spesialistik`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_ruang-rawat_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/ruang-rawat`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_cara-keluar_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/cara-keluar`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_referensi_pasca-pulang_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/referensi/pasca-pulang`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-bpjs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BPJS_URL" }}'

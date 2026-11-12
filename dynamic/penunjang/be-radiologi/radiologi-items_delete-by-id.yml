@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_radiologi-items_delete-by-id_DELETE:
+      rule: "PathPrefix(`/v1.0/radiologi-items/delete-by-id/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-radiologi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-radiologi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_RADIOLOGI_URL" }}'

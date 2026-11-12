@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_lis_registration_get-list-registration_GET:
+      rule: "PathPrefix(`/v1.0/lis/registration/get-list-registration`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lis_registration_get-by-patient-id-mr-and-order-number_GET:
+      rule: "PathPrefix(`/v1.0/lis/registration/get-by-patient-id-mr-and-order-number/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lis_registration_create-registration_POST:
+      rule: "PathPrefix(`/v1.0/lis/registration/create-registration`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lis_registration_delete-registration_DELETE:
+      rule: "PathPrefix(`/v1.0/lis/registration/delete-registration/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_lis_registration_update-registration_PUT:
+      rule: "PathPrefix(`/v1.0/lis/registration/update-registration/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-lis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-lis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_LIS_URL" }}'

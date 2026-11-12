@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    get_stats_claim:
+      rule: "Path(`/v1.0/pasien-casemix/stats_claim`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

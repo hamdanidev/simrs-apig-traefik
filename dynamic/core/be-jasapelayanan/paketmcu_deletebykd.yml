@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_paketmcu_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/paketmcu/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_JASA_PELAYANAN_URL" }}'

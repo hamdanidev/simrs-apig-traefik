@@ -1,0 +1,80 @@
+http:
+  routers:
+
+    v1_sarpras_monitoring-rutin_create_POST:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sarpras_monitoring-rutin_get-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/get-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sarpras_monitoring-rutin_getlist_GET:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sarpras_monitoring-rutin_update_PUT:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sarpras_monitoring-rutin_aktifkan-monitoring-rutin_PUT:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/aktifkan-monitoring-rutin/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sarpras_monitoring-rutin_selesai-pemeliharaan_PUT:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/selesai-pemeliharaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sarpras_monitoring-rutin_update-pemeliharaan_PUT:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/update-pemeliharaan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sarpras_monitoring-rutin_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/sarpras/monitoring-rutin/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-sarpras
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-sarpras:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SARPRAS_URL" }}'

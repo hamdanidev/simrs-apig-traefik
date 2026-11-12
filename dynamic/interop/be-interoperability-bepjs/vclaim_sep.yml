@@ -1,0 +1,89 @@
+http:
+  routers:
+
+    v1_vclaim_sep_insert-sep2_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/insert-sep2`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_sep_update-sep2_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/update-sep2`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_sep_cari-sep_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/cari-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_sep_delete-sep_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/delete-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_sep_data-sep-internal_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/data-sep-internal`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_sep_delete-sep-internal_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/delete-sep-internal`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_sep_pengajuan-sep_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/pengajuan-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_sep_approval-sep_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/approval-sep`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_vclaim_sep_update-pulang_POST:
+      rule: "PathPrefix(`/v1.0/vclaim/sep/update-pulang`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-bpjs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BPJS_URL" }}'

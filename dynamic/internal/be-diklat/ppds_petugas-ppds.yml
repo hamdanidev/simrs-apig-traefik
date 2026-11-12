@@ -1,0 +1,56 @@
+http:
+  routers:
+
+    v1_ppds_petugas-ppds_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_petugas-ppds_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_petugas-ppds_get-by-id-bagian-ppds_GET:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/get-by-id-bagian-ppds/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_petugas-ppds_create_POST:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_petugas-ppds_update_PUT:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_ppds_petugas-ppds_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/ppds/petugas-ppds/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

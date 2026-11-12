@@ -1,0 +1,80 @@
+http:
+  routers:
+
+    v1_pendaftaran_rawatjalan2_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rawatjalan2/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_rawatjalan2_getbynoregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rawatjalan2/getbynoregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_rawatjalan2_create_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rawatjalan2/create/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_rawatjalan2_generatenoregistrasi_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rawatjalan2/generatenoregistrasi/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_rawatjalan2_update_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rawatjalan2/update/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_rawatjalan2_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rawatjalan2/delete/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_rawatjalan2_sendto_POST:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rawatjalan2/sendto/`) &&  (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_rawatjalan2_getbynoantriandantanggalregistrasi_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/rawatjalan2/getbynoantriandantanggalregistrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

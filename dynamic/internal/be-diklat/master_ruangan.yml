@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_master_ruangan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/master/ruangan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_ruangan_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/master/ruangan/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_ruangan_create_POST:
+      rule: "PathPrefix(`/v1.0/master/ruangan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_ruangan_update_PUT:
+      rule: "PathPrefix(`/v1.0/master/ruangan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_master_ruangan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/master/ruangan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

@@ -1,0 +1,16 @@
+http:
+  routers:
+
+    v1_kaji-etik_update-bukti-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/kaji-etik/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

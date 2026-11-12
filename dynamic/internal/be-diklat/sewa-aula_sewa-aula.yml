@@ -1,0 +1,72 @@
+http:
+  routers:
+
+    v1_sewa-aula_sewa-aula_getlist_GET:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_sewa-aula_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_sewa-aula_create_POST:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_sewa-aula_update_PUT:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_sewa-aula_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_sewa-aula_update-kirim-kasir_PUT:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/update-kirim-kasir`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_sewa-aula_update-status-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/update-status-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_sewa-aula_sewa-aula_update-bukti-bayar_PUT:
+      rule: "PathPrefix(`/v1.0/sewa-aula/sewa-aula/update-bukti-bayar`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

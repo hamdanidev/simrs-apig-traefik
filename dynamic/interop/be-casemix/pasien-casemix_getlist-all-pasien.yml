@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pasien-casemix_getlist-all-pasien_GET:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/getlist-all-pasien`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

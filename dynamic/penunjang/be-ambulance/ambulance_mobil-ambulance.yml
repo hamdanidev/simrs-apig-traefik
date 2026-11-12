@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_ambulance_mobil-ambulance_getlist_GET:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ambulance_mobil-ambulance_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ambulance_mobil-ambulance_create_POST:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ambulance_mobil-ambulance_update_PUT:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ambulance_mobil-ambulance_delete-by-kd_DELETE:
+      rule: "PathPrefix(`/v1.0/ambulance/mobil-ambulance/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-ambulance
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-ambulance:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_AMBULANCE_URL" }}'

@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_master_petugas-farmasi_get-list_GET:
+      rule: "PathPrefix(`/v1.0/master/petugas-farmasi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_petugas-farmasi_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/master/petugas-farmasi/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_petugas-farmasi_create_POST:
+      rule: "PathPrefix(`/v1.0/master/petugas-farmasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_petugas-farmasi_update_PUT:
+      rule: "PathPrefix(`/v1.0/master/petugas-farmasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_master_petugas-farmasi_delete-by-kd_DELETE:
+      rule: "PathPrefix(`/v1.0/master/petugas-farmasi/delete-by-kd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-master:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MASTER_URL" }}'

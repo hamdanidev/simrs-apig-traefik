@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_bagian_tinjauan-pustaka_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_tinjauan-pustaka_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/tinjauan-pustaka/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

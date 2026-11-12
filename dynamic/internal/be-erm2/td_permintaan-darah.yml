@@ -1,0 +1,125 @@
+http:
+  routers:
+
+    v1_td_permintaan-darah_permintaan_create_POST:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_permintaan_update_PUT:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_permintaan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_permintaan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_permintaan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_permintaan_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_permintaan_getlist-with-distribusi-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/permintaan/getlist-with-distribusi-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_distribusi_create_POST:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_distribusi_update_PUT:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_distribusi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_distribusi_getlist_GET:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_distribusi_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_td_permintaan-darah_distribusi_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/td/permintaan-darah/distribusi/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-transfusi-darah
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-transfusi-darah:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_TRANSFUSI_DARAH_URL" }}'

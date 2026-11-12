@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    update_status_koding:
+      rule: "Path(`/v1.0/pasien-casemix/update-status-koding`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_instalasi_getbynama_GET:
+      rule: "PathPrefix(`/v1.0/instalasi/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-master:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MASTER_URL" }}'

@@ -1,5 +1,6 @@
 http:
   routers:
+
     v1_imunisasi_create_POST:
       rule: "PathPrefix(`/v1.0/imunisasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
       service: service-erm
@@ -20,15 +21,6 @@ http:
 
     v1_imunisasi_delete_DELETE:
       rule: "PathPrefix(`/v1.0/imunisasi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
-      service: service-erm
-      entryPoints:
-        - web
-      middlewares:
-        - "simrs-cors"
-        - "simrs-auth"
-
-    v1_imunisasi_getlist_GET:
-      rule: "PathPrefix(`/v1.0/imunisasi/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
       service: service-erm
       entryPoints:
         - web

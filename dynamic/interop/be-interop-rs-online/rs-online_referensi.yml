@@ -1,0 +1,35 @@
+http:
+  routers:
+
+    v1_rs-online_referensi_tempat-tidur_GET:
+      rule: "PathPrefix(`/v1.0/rs-online/referensi/tempat-tidur`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rs-online_referensi_sdm_GET:
+      rule: "PathPrefix(`/v1.0/rs-online/referensi/sdm`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rs-online_referensi_apd_GET:
+      rule: "PathPrefix(`/v1.0/rs-online/referensi/apd`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-be-interop-rs-online
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-be-interop-rs-online:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BE_INTEROP_RS_ONLINE_URL" }}'

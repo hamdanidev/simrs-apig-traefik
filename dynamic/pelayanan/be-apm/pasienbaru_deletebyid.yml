@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pasienbaru_deletebyid_DELETE:
+      rule: "PathPrefix(`/v1.0/pasienbaru/deletebyid/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-apm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-apm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_APM_URL" }}' # IP Server Prod

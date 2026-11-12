@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_unitlayananparent_getall_GET:
+      rule: "PathPrefix(`/v1.0/unitlayananparent/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_JASA_PELAYANAN_URL" }}'

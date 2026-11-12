@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_pelatihan_pelatihan_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_create_POST:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_update_PUT:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_pelatihan_pelatihan_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pelatihan/pelatihan/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

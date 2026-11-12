@@ -1,0 +1,48 @@
+http:
+  routers:
+
+    v1_bagian_etika_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/bagian/etika/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_getlist_GET:
+      rule: "PathPrefix(`/v1.0/bagian/etika/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_create_POST:
+      rule: "PathPrefix(`/v1.0/bagian/etika/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_update_PUT:
+      rule: "PathPrefix(`/v1.0/bagian/etika/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+    v1_bagian_etika_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/bagian/etika/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-diklat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+
+  services:
+    service-diklat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_DIKLAT_URL" }}'

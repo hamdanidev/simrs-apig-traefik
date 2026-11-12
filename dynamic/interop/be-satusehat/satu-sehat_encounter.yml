@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_satu-sehat_encounter_getlist_GET:
+      rule: "PathPrefix(`/v1.0/satu-sehat/encounter/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_satu-sehat_encounter_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/satu-sehat/encounter/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_satu-sehat_encounter_update_PUT:
+      rule: "PathPrefix(`/v1.0/satu-sehat/encounter/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_satu-sehat_encounter_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/satu-sehat/encounter/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_satu-sehat_encounter_create_POST:
+      rule: "PathPrefix(`/v1.0/satu-sehat/encounter/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-satu-sehat
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-satu-sehat:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_SATU_SEHAT_URL" }}'

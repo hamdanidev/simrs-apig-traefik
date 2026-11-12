@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pacs_update-patient-id_PUT:
+      rule: "PathPrefix(`/v1.0/pacs/update-patient-id/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pacs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pacs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PACS_URL" }}'

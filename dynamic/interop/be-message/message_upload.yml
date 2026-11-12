@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_message_upload_POST:
+      rule: "PathPrefix(`/v1.0/message/upload`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-message:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MESSAGE_URL" }}'

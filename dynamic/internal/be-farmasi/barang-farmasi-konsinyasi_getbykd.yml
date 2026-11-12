@@ -1,0 +1,18 @@
+http:
+  routers:
+
+    v1_barang-farmasi-konsinyasi_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/barang-farmasi-konsinyasi/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

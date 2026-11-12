@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_pendaftaran_apm-pasien_getlist_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/apm-pasien/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_apm-pasien_getbyid_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/apm-pasien/getbyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_apm-pasien_get-by-no-antrian-dan-tgl-antrian_GET:
+      rule: "PathPrefix(`/v1.0/pendaftaran/apm-pasien/get-by-no-antrian-dan-tgl-antrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_apm-pasien_update_PUT:
+      rule: "PathPrefix(`/v1.0/pendaftaran/apm-pasien/update/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_pendaftaran_apm-pasien_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/pendaftaran/apm-pasien/delete/`) &&  (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-pendaftaran
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-pendaftaran:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_PENDAFTARAN_URL" }}'

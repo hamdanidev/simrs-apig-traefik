@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_pasien-casemix_update-data-billing_PUT:
+      rule: "PathPrefix(`/v1.0/pasien-casemix/update-data-billing`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'
