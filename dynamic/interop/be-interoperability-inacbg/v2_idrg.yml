@@ -1,0 +1,80 @@
+http:
+  routers:
+
+    v2_idrg_diagnosa-set_POST:
+      rule: "PathPrefix(`/v2.0/idrg/diagnosa-set`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v2_idrg_diagnosa-get_POST:
+      rule: "PathPrefix(`/v2.0/idrg/diagnosa-get`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v2_idrg_procedure-get_POST:
+      rule: "PathPrefix(`/v2.0/idrg/procedure-get`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v2_idrg_procedure-set_POST:
+      rule: "PathPrefix(`/v2.0/idrg/procedure-set`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v2_idrg_grouper-1_POST:
+      rule: "PathPrefix(`/v2.0/idrg/grouper-1`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v2_idrg_grouper-final_POST:
+      rule: "PathPrefix(`/v2.0/idrg/grouper-final`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v2_idrg_grouper-reedit_POST:
+      rule: "PathPrefix(`/v2.0/idrg/grouper-reedit`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v2_idrg_to-inacbg-import_POST:
+      rule: "PathPrefix(`/v2.0/idrg/to-inacbg-import`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-inacbgv2
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-inacbgv2:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_INACBGV2_URL" }}'

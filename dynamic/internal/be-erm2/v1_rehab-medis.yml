@@ -1,0 +1,242 @@
+http:
+  routers:
+
+    v1_rehab-medis_get-asesmen-awal-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-asesmen-awal-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_create-asesmen-awal_POST:
+      rule: "PathPrefix(`/v1.0/rehab-medis/create-asesmen-awal`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_update-asesmen-awal_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-asesmen-awal`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_update-status-program-terapi_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-status-program-terapi/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_delete-asesmen-awal_DELETE:
+      rule: "PathPrefix(`/v1.0/rehab-medis/delete-asesmen-awal/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_get-terapi-pasien-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-terapi-pasien-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_create-terapi-pasien_POST:
+      rule: "PathPrefix(`/v1.0/rehab-medis/create-terapi-pasien`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_update-terapi-pasien_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-terapi-pasien`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_update-hasil-terapi-pasien_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-hasil-terapi-pasien`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_delete-terapi-pasien_DELETE:
+      rule: "PathPrefix(`/v1.0/rehab-medis/delete-terapi-pasien/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_getlist-asesmen-awal_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/getlist-asesmen-awal`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_update-rekomendasi_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-rekomendasi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_create-terapi-fisioterapi_POST:
+      rule: "PathPrefix(`/v1.0/rehab-medis/create-terapi-fisioterapi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_create-jadwal-terapi-fisioterapi_POST:
+      rule: "PathPrefix(`/v1.0/rehab-medis/create-jadwal-terapi-fisioterapi`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_update-jadwal-terapi-fisioterapi_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-jadwal-terapi-fisioterapi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_get-list-jadwal-terapi-fisioterapi_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-list-jadwal-terapi-fisioterapi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_get-jadwal-terapi-fisioterapi-by-id_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-jadwal-terapi-fisioterapi-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_get-terapi-by-id-jadwal_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-terapi-by-id-jadwal/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_get-jadwal-terapi-fisioterapi-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-jadwal-terapi-fisioterapi-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_delete-jadwal-terapi-fisioterapi_DELETE:
+      rule: "PathPrefix(`/v1.0/rehab-medis/delete-jadwal-terapi-fisioterapi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_update-terapi-fisioterapi_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-terapi-fisioterapi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_update-status-terapi-fisioterapi_PUT:
+      rule: "PathPrefix(`/v1.0/rehab-medis/update-status-terapi-fisioterapi`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_getlist-terapi-fisioterapi_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/getlist-terapi-fisioterapi`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_get-terapi-fisioterapi-by-id_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-terapi-fisioterapi-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_get-terapi-fisioterapi-by-nomor-order_GET:
+      rule: "PathPrefix(`/v1.0/rehab-medis/get-terapi-fisioterapi-by-nomor-order/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_rehab-medis_delete-terapi-fisioterapi_DELETE:
+      rule: "PathPrefix(`/v1.0/rehab-medis/delete-terapi-fisioterapi/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

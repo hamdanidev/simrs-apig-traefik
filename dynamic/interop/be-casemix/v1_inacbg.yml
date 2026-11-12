@@ -1,0 +1,17 @@
+http:
+  routers:
+
+    v1_inacbg_sitb-invalidate_POST:
+      rule: "PathPrefix(`/v1.0/inacbg/sitb-invalidate`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

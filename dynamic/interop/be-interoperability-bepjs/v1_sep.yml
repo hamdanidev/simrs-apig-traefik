@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_sep_getbynosep_GET:
+      rule: "PathPrefix(`/v1.0/sep/getbynosep/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sep_generatenosep_POST:
+      rule: "PathPrefix(`/v1.0/sep/generatenosep/`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-bpjs
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-bpjs:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_BPJS_URL" }}'

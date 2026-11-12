@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_surat-keterangan-disabilitas_get-list_GET:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-disabilitas/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-keterangan-disabilitas_create_POST:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-disabilitas/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-keterangan-disabilitas_get-by-id_GET:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-disabilitas/get-by-id/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-keterangan-disabilitas_update_PUT:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-disabilitas/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_surat-keterangan-disabilitas_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/surat-keterangan-disabilitas/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-mcu
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-mcu:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MCU_URL" }}'

@@ -1,0 +1,71 @@
+http:
+  routers:
+
+    v1_golongan-obat_getlist_GET:
+      rule: "PathPrefix(`/v1.0/golongan-obat/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_golongan-obat_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/golongan-obat/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_golongan-obat_create_POST:
+      rule: "PathPrefix(`/v1.0/golongan-obat/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_golongan-obat_update_PUT:
+      rule: "PathPrefix(`/v1.0/golongan-obat/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_golongan-obat_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/golongan-obat/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_golongan-obat_getall_GET:
+      rule: "PathPrefix(`/v1.0/golongan-obat/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_golongan-obat_getbynama_GET:
+      rule: "PathPrefix(`/v1.0/golongan-obat/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-master:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MASTER_URL" }}'

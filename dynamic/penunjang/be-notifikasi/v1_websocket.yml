@@ -1,0 +1,26 @@
+http:
+  routers:
+
+    v1_websocket_notifikasi-log_get-by-kd-user_GET:
+      rule: "PathPrefix(`/v1.0/websocket/notifikasi-log/get-by-kd-user/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-notifikasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-auth"
+        - "simrs-cors"
+
+    v1_websocket_notifikasi-log_update-status_PUT:
+      rule: "PathPrefix(`/v1.0/websocket/notifikasi-log/update-status`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-notifikasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-auth"
+        - "simrs-cors"
+
+  services:
+    service-notifikasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_NOTIFIKASI_URL" }}'

@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_upload-umbal_csv_POST:
+      rule: "PathPrefix(`/v1.0/upload-umbal/csv`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_upload-umbal_merge_POST:
+      rule: "PathPrefix(`/v1.0/upload-umbal/merge`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_upload-umbal_failed-records_GET:
+      rule: "PathPrefix(`/v1.0/upload-umbal/failed-records`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_upload-umbal_update_PUT:
+      rule: "PathPrefix(`/v1.0/upload-umbal/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-casemix
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-casemix:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_CASEMIX_URL" }}'

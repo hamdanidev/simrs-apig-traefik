@@ -1,0 +1,80 @@
+http:
+  routers:
+
+    v1_sender-wa_send-chat_POST:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-chat`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sender-wa_send-image_POST:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-image`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sender-wa_send-sticker_POST:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-sticker`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sender-wa_send-document_POST:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-document`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sender-wa_send-audio_POST:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-audio`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sender-wa_send-voice_POST:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-voice`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sender-wa_send-video_POST:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-video`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_sender-wa_send-location_POST:
+      rule: "PathPrefix(`/v1.0/sender-wa/send-location`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-interop-message
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-interop-message:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_INTEROP_MESSAGE_URL" }}'

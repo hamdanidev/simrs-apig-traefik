@@ -1,0 +1,53 @@
+http:
+  routers:
+
+    v1_radioterapi_getbytglantrian_GET:
+      rule: "PathPrefix(`/v1.0/radioterapi/getbytglantrian/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_radioterapi_panggilanke_PUT:
+      rule: "PathPrefix(`/v1.0/radioterapi/panggilanke/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_radioterapi_status_PUT:
+      rule: "PathPrefix(`/v1.0/radioterapi/status/`) &&  (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_radioterapi_next-number_GET:
+      rule: "PathPrefix(`/v1.0/radioterapi/next-number`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_radioterapi_total-antrian_GET:
+      rule: "PathPrefix(`/v1.0/radioterapi/total-antrian`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-antrian
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-antrian:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ANTRIAN_URL" }}' # IP Server Prod

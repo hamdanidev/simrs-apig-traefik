@@ -1,0 +1,71 @@
+http:
+  routers:
+
+    v1_unitlayananparent_getlist_GET:
+      rule: "PathPrefix(`/v1.0/unitlayananparent/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayananparent_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/unitlayananparent/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayananparent_create_POST:
+      rule: "PathPrefix(`/v1.0/unitlayananparent/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayananparent_update_PUT:
+      rule: "PathPrefix(`/v1.0/unitlayananparent/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayananparent_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/unitlayananparent/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayananparent_getall_GET:
+      rule: "PathPrefix(`/v1.0/unitlayananparent/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unitlayananparent_getbynama_GET:
+      rule: "PathPrefix(`/v1.0/unitlayananparent/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-jasa-pelayanan
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-jasa-pelayanan:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_JASA_PELAYANAN_URL" }}'

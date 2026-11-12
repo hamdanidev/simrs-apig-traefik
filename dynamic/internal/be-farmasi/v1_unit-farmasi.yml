@@ -1,0 +1,108 @@
+http:
+  routers:
+
+    v1_unit-farmasi_get-list_GET:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_get-list-pelayanan_GET:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/get-list-pelayanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_get-by-kd_GET:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/get-by-kd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_get-by-kd-pelayanan_GET:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/get-by-kd-pelayanan/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_create_POST:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_create-pelayanan_POST:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/create-pelayanan`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_update_PUT:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_update-pelayanan_PUT:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/update-pelayanan`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_delete-pelayanan_DELETE:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/delete-pelayanan/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_unit-farmasi_get-list-with-pelayanan_GET:
+      rule: "PathPrefix(`/v1.0/unit-farmasi/get-list-with-pelayanan`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-farmasi
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-farmasi:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_FARMASI_URL" }}'
+          # - url: '{{ env "SERVICE_FARMASI_URL_2" }}'

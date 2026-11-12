@@ -1,0 +1,71 @@
+http:
+  routers:
+
+    v1_supplier_getlist_GET:
+      rule: "PathPrefix(`/v1.0/supplier/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_supplier_getbykd_GET:
+      rule: "PathPrefix(`/v1.0/supplier/getbykd/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_supplier_create_POST:
+      rule: "PathPrefix(`/v1.0/supplier/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_supplier_update_PUT:
+      rule: "PathPrefix(`/v1.0/supplier/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_supplier_deletebykd_DELETE:
+      rule: "PathPrefix(`/v1.0/supplier/deletebykd/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_supplier_getall_GET:
+      rule: "PathPrefix(`/v1.0/supplier/getall`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_supplier_getbynama_GET:
+      rule: "PathPrefix(`/v1.0/supplier/getbynama/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-master:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MASTER_URL" }}'

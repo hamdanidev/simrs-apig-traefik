@@ -1,0 +1,107 @@
+http:
+  routers:
+
+    v1_resume-medis-rawat-inap_getlist_GET:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_get-by-no-registrasi_GET:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/get-by-no-registrasi/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_create_POST:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_update_PUT:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/update`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_delete_DELETE:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/delete/`) && (Method(`DELETE`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_get-by-no-registrasi-verifikator_GET:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/get-by-no-registrasi-verifikator/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_update-status-verifikator_PUT:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/update-status-verifikator/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_pasien_cek-verifikator_GET:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/pasien/cek-verifikator/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_pasien_update-selesai-verifikator_PUT:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/pasien/update-selesai-verifikator/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_pasien_update-khusus-status-verifikator_PUT:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/pasien/update-khusus-status-verifikator/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_resume-medis-rawat-inap_get-by-no-rm_GET:
+      rule: "PathPrefix(`/v1.0/resume-medis-rawat-inap/get-by-no-rm/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-erm:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_ERM_URL" }}'

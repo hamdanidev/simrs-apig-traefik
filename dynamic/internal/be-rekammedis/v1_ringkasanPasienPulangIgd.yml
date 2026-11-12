@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_ringkasanPasienPulangIgd_getList_GET:
+      rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/getList`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ringkasanPasienPulangIgd_create_POST:
+      rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/create`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ringkasanPasienPulangIgd_update_PUT:
+      rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/update/`) && (Method(`PUT`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_ringkasanPasienPulangIgd_deletebyid_GET:
+      rule: "PathPrefix(`/v1.0/ringkasanPasienPulangIgd/deletebyid/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-rekam-medis
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-rekam-medis:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_REKAM_MEDIS_URL" }}'

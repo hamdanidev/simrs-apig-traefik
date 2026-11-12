@@ -1,0 +1,44 @@
+http:
+  routers:
+
+    v1_encpt_get-list_GET:
+      rule: "PathPrefix(`/v1.0/encpt/get-list`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encpt_get-all_GET:
+      rule: "PathPrefix(`/v1.0/encpt/get-all`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encpt_get-by-kategori-hierarchical_GET:
+      rule: "PathPrefix(`/v1.0/encpt/get-by-kategori-hierarchical/`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_encpt_get-by-kategori_GET:
+      rule: "PathPrefix(`/v1.0/encpt/get-by-kategori`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-master
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+  services:
+    service-master:
+      loadBalancer:
+        servers:
+          - url: '{{ env "SERVICE_MASTER_URL" }}'
