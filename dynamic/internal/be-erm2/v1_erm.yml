@@ -3835,6 +3835,24 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    v1_erm_erm_laporan-indeks-kematian_getlist:
+      rule: "PathPrefix(`/v1.0/erm/laporan-indeks-kematian/getlist`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
+    v1_erm_laporan-indeks-kematian_get-all:
+      rule: "PathPrefix(`/v1.0/erm/laporan-indeks-kematian/get-all`) && (Method(`GET`) || Method(`OPTIONS`))"
+      service: service-erm
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-erm:
       loadBalancer:
