@@ -10,6 +10,15 @@ http:
         - "simrs-cors"
         - "simrs-auth"
 
+    v1_remun_proses-remunerasi-bpjs_by-json_POST:
+      rule: "PathPrefix(`/v1.0/remun/proses-remunerasi-bpjs/by-json`) && (Method(`POST`) || Method(`OPTIONS`))"
+      service: service-remun-hitung
+      entryPoints:
+        - web
+      middlewares:
+        - "simrs-cors"
+        - "simrs-auth"
+
   services:
     service-remun-hitung:
       loadBalancer:
